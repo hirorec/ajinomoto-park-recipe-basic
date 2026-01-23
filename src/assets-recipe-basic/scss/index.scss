@@ -57,6 +57,17 @@
     }
   }
 
+  .book-banner__label {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    @include pc {
+      width: vw(117.58);
+      height: vw(117.58);
+    }
+  }
+
   .book-banner__content {
     flex-shrink: 0;
 
