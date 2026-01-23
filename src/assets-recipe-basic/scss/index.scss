@@ -255,19 +255,41 @@
   @include sp {
     gap: 27px;
     margin: 0 0 40px;
-    padding-left: 24px;
   }
 
   .related-articles__items {
-    display: flex;
-
-    @include pc {
-      gap: 40px;
-      justify-content: center;
+    &.swiper {
+      @include sp {
+        width: 100% !important;
+      }
     }
 
-    @include sp {
-      gap: vwsp(26);
+    .swiper-wrapper {
+      display: flex;
+
+      @include pc {
+        gap: vw(40);
+        justify-content: center;
+      }
+    }
+
+    .swiper-slide {
+      @include pc {
+        width: vw(290) !important;
+      }
+
+      @include sp {
+        box-sizing: border-box;
+        padding-left: vwsp(26);
+        width: vwsp(215 + 26) !important;
+      }
+
+      &:last-child {
+        @include sp {
+          padding-right: vwsp(26);
+          width: vwsp(215 + 26 * 2) !important;
+        }
+      }
     }
   }
 
@@ -275,12 +297,11 @@
     flex-shrink: 0;
     display: flex;
     flex-direction: column;
-    gap: 22px;
-    width: 290px;
+    gap: vw(22);
     text-decoration: none;
 
     @include sp {
-      gap: 27px;
+      gap: vwsp(27);
       width: vwsp(215);
     }
 
@@ -291,8 +312,8 @@
       transition: all 0.2s linear;
 
       @include pc {
-        height: 194px;
-        border-radius: 8px;
+        height: vw(194);
+        border-radius: vw(8);
       }
 
       @include sp {
