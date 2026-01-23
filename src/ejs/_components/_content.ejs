@@ -1,3 +1,9 @@
+<!-- prettier-ignore -->
+<%
+  var breakPoint = process.env.RYORIJIYUKA_BREAKPOINT;
+  var assetPath = process.env.RYORIJIYUKA_ASSET_PATH 
+%>
+
 <div id="content">
   <div class="contentHeadArea spSearchView sticky">
     <div class="innerContentHeadArea">
@@ -69,24 +75,68 @@
 
   <!-- ///////////////////////////////////////////// コンテンツ各エリア ///////////////////////////////////////////// -->
   <div id="basicIndex">
-    <div class="mainVisual">
-      <div class="wrap1240">
-        <h1 class="commonPagetitle">
-          <img src="/wp-content/themes/ajinomoto/resources/images/recipe/basic/index/main.jpg" alt="レシピ特集" />
-        </h1>
-      </div>
+    <div class="main-visual">
+      <h1>
+        <picture>
+          <source media="(max-width: <%= breakPoint %>)" srcset="<%= assetPath %>/images/home/main-visual-sp.png" />
+          <img src="<%= assetPath %>/images/main-visual.png" alt="料理のきほんとしくみ" loading="eager" />
+        </picture>
+      </h1>
     </div>
-    <!-- /.mainVisual -->
+    <!-- /.main-visual -->
 
-    <div class="leadArea">
-      <div class="wrap860">
-        お料理の初心者さんいらっしゃい！<br />
-        キッチンで困ったときはこれを見れば大丈夫。<br />
-        野菜の切り方から、<br class="sp" />
-        あなたのライフスタイルにぴったりのレシピまで、料理の基本がすぐにわかります。
+    <p class="lead">
+      料理はじめてさんの「こんなこと誰に聞けばいいの？」に答えました。<br />
+      野菜の切り方から、ごはんの炊き方まで。毎日の料理で活躍する料理のきほんとしくみを紹介します。
+    </p>
+    <!-- /.lead -->
+
+    <div class="book-banner">
+      <div class="book-banner__inner">
+        <div class="book-banner__image">
+          <picture>
+            <source media="(max-width: <%= breakPoint %>)" srcset="<%= assetPath %>/images/home/book-sp.png" />
+            <img src="<%= assetPath %>/images/book.png" alt="" loading="lazy" />
+          </picture>
+        </div>
+
+        <div class="book-banner__content">
+          <div class="book-banner__fukidashi">
+            <picture>
+              <source
+                media="(max-width: <%= breakPoint %>)"
+                srcset="<%= assetPath %>/images/home/book-fukidashi-sp.svg"
+              />
+              <img src="<%= assetPath %>/images/book-fukidashi.svg" alt="" loading="lazy" />
+            </picture>
+          </div>
+          <div class="book-banner__subtitle">はじめてさんも、あらためてさんも</div>
+          <div class="book-banner__title">料理のしくみがわかる本</div>
+        </div>
+
+        <div class="book-banner__chara">
+          <picture>
+            <source media="(max-width: <%= breakPoint %>)" srcset="<%= assetPath %>/images/home/book-chara-sp.png" />
+            <img src="<%= assetPath %>/images/book-chara.png" alt="" loading="lazy" />
+          </picture>
+        </div>
       </div>
+      <a class="book-banner-link" href="/special/ryorijiyuka">
+        詳しく見る
+        <span class="book-banner-link__icon">
+          <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path d="M19 12L5 12" stroke="#ED6D46" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            <path
+              d="M12 19L19 12L12 5"
+              stroke="#ED6D46"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </span>
+      </a>
     </div>
-    <!-- /.leadArea -->
 
     <div class="basicIndexList">
       <div class="wrap860">
@@ -559,3 +609,5 @@
     </div>
   </div>
 </div>
+
+<%- include('./_resources.ejs'); %>

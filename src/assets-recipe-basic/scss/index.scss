@@ -1,1 +1,151 @@
-@use './object/project/index';
+@use './foundation/variables' as *;
+@use './foundation/mixins' as *;
+@use './foundation/function' as *;
+@use './object/component/abstract' as *;
+@use './object/fonts' as *;
+
+.main-visual {
+  width: 840px;
+  margin: 0 auto;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}
+
+.lead {
+  @extend %f-zen-kaku;
+  margin: 40.3px auto 79px;
+  text-align: center;
+  color: #767676;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 200%;
+  letter-spacing: 0.32px;
+}
+
+.book-banner {
+  position: relative;
+
+  @include pc {
+    margin: 78px auto;
+    width: vw(1279);
+  }
+
+  .book-banner__inner {
+    box-sizing: border-box;
+    position: relative;
+    display: flex;
+    background-color: #fff464;
+
+    @include pc {
+      gap: vw(42);
+      width: 100%;
+      padding: vw(13) vw(20) vw(16) vw(18.5);
+      border-radius: vw(16);
+    }
+  }
+
+  .book-banner__image {
+    flex-shrink: 0;
+    position: relative;
+
+    @include pc {
+      width: vw(381);
+    }
+  }
+
+  .book-banner__content {
+    flex-shrink: 0;
+
+    @include pc {
+      padding-top: vw(37 - 13);
+      width: vw(489);
+    }
+  }
+
+  .book-banner__subtitle,
+  .book-banner__title {
+    @extend %f-base;
+    font-weight: 600;
+  }
+
+  .book-banner__subtitle {
+    color: #282828;
+    text-align: justify;
+    line-height: 170%;
+
+    @include pc {
+      margin-top: vw(-10);
+      font-size: vw(24);
+      letter-spacing: vw(0.96);
+    }
+  }
+
+  .book-banner__title {
+    color: #e60012;
+    text-align: justify;
+    line-height: 170%;
+
+    @include pc {
+      font-size: vw(40);
+      letter-spacing: vw(1.6);
+    }
+  }
+
+  .book-banner__chara {
+    position: absolute;
+    right: 0;
+    top: 0;
+
+    @include pc {
+      width: vw(342);
+    }
+  }
+
+  .book-banner-link {
+    @extend %f-base;
+    box-sizing: border-box;
+    position: absolute;
+    bottom: vw(56 * -0.5);
+    right: vw(20);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #282828;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+
+    @include pc {
+      width: vw(308);
+      height: vw(56);
+      padding: vw(24) vw(8) vw(24) vw(16);
+      border-radius: vw(16);
+      font-size: vw(16);
+      letter-spacing: vw(-0.32);
+    }
+
+    .book-banner-link__icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+
+      @include pc {
+        border: solid vw(2) #fff;
+        width: vw(32);
+        height: vw(32);
+      }
+
+      .icon {
+        @include pc {
+          width: vw(24);
+          height: vw(24);
+        }
+      }
+    }
+  }
+}
