@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "preserveConstEnums": true,
+    "outDir": "./lib/",
+    "sourceMap": true,
+    "strict": true,
+    "resolveJsonModule": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/assets-recipe-basic/js/*"],
+      "@css/*": ["src/assets-recipe-basic/scss/*"],
+      "@images/*": ["src/assets-recipe-basic/images/*"],
+      // "@fonts/*": [
+      //   "./src/assets-recipe-basic/fonts/*"
+      // ],
+      "@swiper/*": ["./node_modules/swiper/*"]
+    }
+  },
+  "exclude": ["node_modules", "lib", "dist"]
+}

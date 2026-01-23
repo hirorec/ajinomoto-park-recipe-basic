@@ -1,0 +1,178 @@
+@use '../../../foundation/variables' as *;
+@use '../../../foundation/mixins' as *;
+@use '../../../foundation/function' as *;
+
+@use '../../../object/component/index' as *;
+@use '../../../object/fonts/index' as *;
+
+.jiyuka-main {
+  .fv {
+    z-index: 0;
+    width: 100%;
+    background: #fdd000;
+
+    @include pc {
+      height: vw(600 + 40);
+    }
+
+    @include sp {
+      height: vwsp(330 + 16);
+    }
+
+    .c-page-back-button {
+      position: absolute;
+
+      @include pc {
+        top: vw(28);
+        left: vw(49);
+      }
+
+      @include sp {
+        top: vwsp(12);
+        left: vwsp(14);
+      }
+    }
+  }
+
+  .fv__image {
+    position: absolute;
+    z-index: 10;
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+
+    @include pc {
+      top: vw(292);
+      width: vw(450);
+      height: vw(390);
+    }
+
+    @include sp {
+      top: vwsp(181);
+      width: vwsp(203);
+      height: vwsp(176);
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+
+  .fv__container {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+
+    @include pc {
+      padding-top: vw(127);
+    }
+
+    @include sp {
+      padding-top: vwsp(77.92);
+    }
+  }
+
+  .fv__fukidashi {
+    @include pc {
+      width: vw(509);
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+    }
+  }
+
+  .fv__chara {
+    position: absolute;
+    z-index: 1;
+
+    @include pc {
+      top: vw(409);
+      right: vw(326);
+      width: vw(151);
+    }
+
+    @include sp {
+      top: vwsp(236.92);
+      right: vwsp(19.91);
+      width: vwsp(68.09);
+      height: vwsp(68.09);
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+    }
+  }
+
+  .fv__title {
+    @include pc {
+      width: vw(709);
+      margin-top: vw(30);
+    }
+
+    @include sp {
+      width: vwsp(285);
+      margin-top: vwsp(15);
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+    }
+  }
+}
+
+// transitions
+.jiyuka-main {
+  .fv__image {
+    &.is-inactive {
+      @extend %c-el-hide-scale;
+    }
+
+    &.is-active {
+      @extend %c-el-show-scale;
+      transition-delay: 0.2s;
+    }
+  }
+
+  .fv__fukidashi {
+    &.is-inactive {
+      @extend %c-el-hide-y;
+    }
+
+    &.is-active {
+      @extend %c-el-show-y;
+    }
+  }
+
+  .fv__chara {
+    &.is-inactive {
+      @extend %c-el-hide-scale;
+    }
+
+    &.is-active {
+      @extend %c-el-show-scale;
+      transition-delay: 0.4s;
+    }
+  }
+
+  .fv__title {
+    &.is-inactive {
+      @extend %c-el-hide-scale;
+    }
+
+    &.is-active {
+      @extend %c-el-show-scale;
+      transition-delay: 0.2s;
+    }
+  }
+}

@@ -1,0 +1,171 @@
+@use '../../foundation/variables';
+@use '../../foundation/variables' as *;
+@use '../../foundation/mixins' as *;
+@use '../../foundation/function' as *;
+
+%c-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  border-width: 0;
+  white-space: nowrap;
+  clip-path: inset(50%);
+}
+
+%c-reset-button {
+  padding: 0;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  cursor: pointer;
+  appearance: none;
+}
+
+%c-reset-select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  outline: none;
+  background: transparent;
+
+  option {
+    min-height: auto;
+    padding: 0;
+  }
+}
+
+%c-reset-input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  outline: none;
+  background: transparent;
+}
+
+%c-reset-hr {
+  margin-block-start: 0;
+  margin-block-end: 0;
+  overflow: auto;
+  border-width: 0;
+}
+
+%c-cover-img {
+  width: 100%;
+  height: 100%;
+  font-size: 0;
+  object-fit: cover;
+}
+
+%c-cover-picture {
+  width: 100%;
+  height: 100%;
+  font-size: 0;
+
+  img {
+    @extend %c-cover-img;
+  }
+}
+
+%c-el-hide-y {
+  opacity: 0;
+
+  @include pc {
+    transform: translateY(vw(40));
+  }
+
+  @include sp {
+    transform: translateY(vwsp(40));
+  }
+}
+
+%c-el-show-y {
+  transform: translateY(0);
+  transition: all 1s ease(ease-out-cubic);
+  opacity: 1;
+}
+
+%c-el-hide-y-blur {
+  opacity: 0;
+
+  @include pc {
+    filter: blur(10px);
+    transform: translateY(vw(40));
+  }
+
+  @include sp {
+    filter: blur(rem(10));
+    transform: translateY(vs-sp(20));
+  }
+}
+
+%c-el-show-y-blur {
+  transform: translateY(0);
+  transition: all 1.5s ease(ease-out-cubic);
+  opacity: 1;
+  filter: blur(0);
+}
+
+%c-el-hide-blur-scale {
+  transform: scale(1.2);
+  opacity: 0;
+
+  @include pc {
+    filter: blur(vw(10));
+  }
+
+  @include sp {
+    filter: blur(vwsp(10));
+  }
+}
+
+%c-el-show-blur-scale {
+  transform: scale(1);
+  transition: all 1.5s ease(ease-out-cubic);
+  opacity: 1;
+  filter: blur(0);
+}
+
+%c-el-hide-scale {
+  transform: scale(0.5);
+  opacity: 0;
+}
+
+%c-el-show-scale {
+  transform: scale(1);
+  transition: all 1s ease(ease-in-out-back);
+  opacity: 1;
+}
+
+%c-el-hide {
+  opacity: 0;
+}
+
+%c-el-show {
+  transition: all 0.5s linear;
+  opacity: 1;
+}
+
+%c-el-hover-opacity {
+  transition: all 0.3s ease;
+
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
+%c-el-transition-all {
+  transition: all 0.25s ease-out;
+}
+
+%c-el-transition-color {
+  transition: color 0.25s ease-out;
+}
+
+%c-el-transition-background-color {
+  transition: background-color 0.25s ease-out;
+}

@@ -1,0 +1,75 @@
+<!-- prettier-ignore -->
+<%
+  var breakPoint = process.env.RYORIJIYUKA_BREAKPOINT;
+  var assetPath = process.env.RYORIJIYUKA_ASSET_PATH 
+%>
+
+<section class="pickup">
+  <div class="pickup__header">
+    <h2 class="c-section-title js-inview">ピックアップ</h2>
+    <p class="pickup__description js-inview">
+      「料理のしくみがわかる本」にまつわる<br />
+      あれこれを発信中！
+    </p>
+  </div>
+  <div id="js-pickup-swiper" class="swiper pickup__items js-inview">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <div class="pickup-item">
+          <div class="pickup-item__inner">
+            <div class="pickup-item__image">
+              <picture>
+                <source media="(max-width: <%= breakPoint %>)" srcset="<%= assetPath %>/images/home/pickup1.png" />
+                <img src="<%= assetPath %>/images/home/pickup1.png" alt="" loading="lazy" />
+              </picture>
+            </div>
+            <div class="pickup-item__body">
+              <p class="pickup-item__subtitle">「料理のしくみがわかる本」体験者に驚きの変化が！</p>
+              <h3 class="pickup-item__title">150人中約95%が「まなんでよかった！」</h3>
+            </div>
+          </div>
+          <div class="pickup-item__footer">
+            <a class="pickup-item-button" href="/recipe/basic/number"
+              >VIEW MORE
+              <span class="pickup-item-button__icon"><%- include('../_icon-arrow-right.ejs'); %></span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="pickup-item">
+          <div class="pickup-item__inner">
+            <div class="pickup-item__image"></div>
+            <div class="pickup-item__body">
+              <p class="pickup-item__subtitle">それぞれの暮らし、それぞれの変化。</p>
+              <h3 class="pickup-item__title">料理のしくみ学んでみました！</h3>
+            </div>
+          </div>
+          <div class="pickup-item__footer">
+            <a class="pickup-item-button" href="#"
+              >VIEW MORE
+              <span class="pickup-item-button__icon"><%- include('../_icon-arrow-right.ejs'); %></span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="pickup-item">
+          <div class="pickup-item__inner">
+            <div class="pickup-item__image"></div>
+            <div class="pickup-item__body">
+              <p class="pickup-item__subtitle">味の素が長年培ってきた料理メソッドを本邦初公開！</p>
+              <h3 class="pickup-item__title">「はじめのいっぽ」イベント 開催！</h3>
+            </div>
+          </div>
+          <div class="pickup-item__footer">
+            <a class="pickup-item-button" href="#"
+              >VIEW MORE
+              <span class="pickup-item-button__icon"><%- include('../_icon-arrow-right.ejs'); %></span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

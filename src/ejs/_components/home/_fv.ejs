@@ -1,0 +1,65 @@
+<!-- prettier-ignore -->
+<%
+  var breakPoint = process.env.RYORIJIYUKA_BREAKPOINT;
+  var assetPath = process.env.RYORIJIYUKA_ASSET_PATH 
+%>
+
+<div class="fv">
+  <h1 class="c-sr-only">はじめてさんも、あらためてさんも 料理のしくみがわかる本</h1>
+  <div class="fv__image">
+    <picture>
+      <source media="(max-width: <%= breakPoint %>)" srcset="<%= assetPath %>/images/kv-sp.png" />
+      <img src="<%= assetPath %>/images/kv.png" alt="" loading="lazy" />
+    </picture>
+  </div>
+  <div class="fv__container">
+    <div class="fv__asset fv__balloon is-inactive">
+      <picture>
+        <source media="(max-width: <%= breakPoint %>)" srcset="<%= assetPath %>/images/home/sp/fv-balloon.png" />
+        <img
+          src="<%= assetPath %>/images/home/fv-balloon.svg"
+          alt="味の素から、はじめての「料理のまなび本」"
+          loading="eager"
+        />
+      </picture>
+    </div>
+    <div class="fv__asset fv__date is-inactive">
+      <picture>
+        <source media="(max-width: <%= breakPoint %>)" srcset="<%= assetPath %>/images/home/sp/fv-date.svg" />
+        <img src="<%= assetPath %>/images/home/fv-date.svg" alt="2026年3月4日発売！" loading="eager" />
+      </picture>
+    </div>
+    <div class="fv__asset fv__chara is-inactive">
+      <picture>
+        <source media="(max-width: <%= breakPoint %>)" srcset="<%= assetPath %>/images/home/sp/fv-chara.svg" />
+        <img src="<%= assetPath %>/images/home/fv-chara.svg" alt="" loading="eager" />
+      </picture>
+    </div>
+    <div class="fv__asset fv__num is-inactive">
+      <picture>
+        <source media="(max-width: <%= breakPoint %>)" srcset="<%= assetPath %>/images/home/sp/fv-num.svg" />
+        <img src="<%= assetPath %>/images/home/fv-num.svg" alt="150人中" loading="eager" />
+      </picture>
+    </div>
+    <div class="fv__asset fv__chart is-inactive">
+      <picture>
+        <source media="(max-width: <%= breakPoint %>)" srcset="<%= assetPath %>/images/home/sp/fv-chart.svg" />
+        <img src="<%= assetPath %>/images/home/fv-chart.svg" alt="「まなんでよかった！」と回答 約95%" loading="eager" />
+      </picture>
+    </div>
+    <p class="fv__asset fv__note is-inactive">
+      ※本書の前身となる「料理のまなびプログラム」<br />
+      参加者のアンケートより
+    </p>
+  </div>
+  <div class="news is-inactive">
+    <div class="news__label">EVENT</div>
+    <div class="news__inner">
+      <div class="news__body">
+        <span>2026.2.9</span>
+        <span>書籍の予約を開始しました。</span>
+      </div>
+      <button class="news__button"><%- include('../_icon-arrow-right.ejs'); %></button>
+    </div>
+  </div>
+</div>

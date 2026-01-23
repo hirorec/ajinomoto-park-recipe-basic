@@ -1,0 +1,68 @@
+<!-- prettier-ignore -->
+<%
+  var breakPoint = process.env.RYORIJIYUKA_BREAKPOINT;
+  var assetPath = process.env.RYORIJIYUKA_ASSET_PATH 
+%>
+
+<section class="voice">
+  <div class="voice__header">
+    <h2 class="c-section-title js-inview">みんなの声</h2>
+    <p class="voice__description js-inview">
+      本の中身を体験したみなさんに、<br />
+      どんな変化があったのでしょう？<br class="u-sp" />リアルな声をお届け！
+    </p>
+  </div>
+
+  <div class="voice-icon voice-icon--1 js-inview">
+    <img src="<%= assetPath %>/images/home/voice-icon1.png" alt="" loading="lazy" />
+  </div>
+  <div class="voice-icon voice-icon--2 js-inview">
+    <img src="<%= assetPath %>/images/home/voice-icon2.png" alt="" loading="lazy" />
+  </div>
+
+  <div class="voice-balloon voice-balloon--1 js-inview">
+    <picture>
+      <source media="(max-width: <%= breakPoint %>)" srcset="<%= assetPath %>/images/home/sp/voice-balloon1.svg" />
+      <img src="<%= assetPath %>/images/home/voice-balloon1.svg" alt="" loading="lazy" />
+    </picture>
+    <p class="voice-balloon__text">
+      いまは、料理が楽しい。何が楽しいって、しくみを知れることが楽しい。知れば知るほど、しんどい気持ちが和らいでいく<br />
+      (岸田奈美さん／作家)
+    </p>
+  </div>
+  <div class="voice-balloon voice-balloon--2 js-inview">
+    <picture>
+      <source media="(max-width: <%= breakPoint %>)" srcset="<%= assetPath %>/images/home/sp/voice-balloon2.svg" />
+      <img src="<%= assetPath %>/images/home/voice-balloon2.svg" alt="" loading="lazy" />
+    </picture>
+    <p class="voice-balloon__text">
+      料理は4つの工程で成り立っていると知り、目からウロコでした<br />
+      (ポッドキャスター・会社員)
+    </p>
+  </div>
+  <div class="voice-balloon voice-balloon--3 js-inview">
+    <picture>
+      <source media="(max-width: <%= breakPoint %>)" srcset="<%= assetPath %>/images/home/sp/voice-balloon3.svg" />
+      <img src="<%= assetPath %>/images/home/voice-balloon3.svg" alt="" loading="lazy" />
+    </picture>
+    <p class="voice-balloon__text">
+      家族に美味しく食べてもらえて、喜んでもらえたのが何より嬉しかった！<br />
+      （30代／男性）
+    </p>
+  </div>
+  <div class="voice-balloon voice-balloon--4 js-inview">
+    <picture>
+      <source media="(max-width: <%= breakPoint %>)" srcset="<%= assetPath %>/images/home/sp/voice-balloon4.svg" />
+      <img src="<%= assetPath %>/images/home/voice-balloon4.svg" alt="" loading="lazy" />
+    </picture>
+    <p class="voice-balloon__text">
+      この本を通して、料理がぐっと身近なものになりました<br />
+      （20代／女性）
+    </p>
+  </div>
+
+  <a class="voice-more-button js-inview" href="/recipe/basic/voice">
+    <span class="voice-more-button__text">もっと見る</span>
+    <span class="voice-more-button__icon"><%- include('../_icon-arrow-right.ejs'); %></span>
+  </a>
+</section>

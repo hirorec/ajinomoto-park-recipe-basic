@@ -1,0 +1,40 @@
+@use './foundation/base';
+@use './foundation/override';
+@use './object/component';
+@use './object/fonts';
+@use './object/utility';
+
+body {
+  &.disable-scroll {
+    overflow: hidden;
+  }
+}
+
+.jiyuka-main {
+  @extend %f-base;
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background-color: #fff;
+  color: #282828;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.5;
+  text-rendering: geometricPrecision;
+  -webkit-text-size-adjust: 100%;
+  -moz-font-feature-settings: 'palt';
+  -webkit-font-feature-settings: 'palt';
+  font-feature-settings: 'palt';
+
+  picture {
+    font-size: 0;
+  }
+
+  button {
+    @extend %f-base;
+  }
+}
+
+header {
+  margin-bottom: 0;
+}

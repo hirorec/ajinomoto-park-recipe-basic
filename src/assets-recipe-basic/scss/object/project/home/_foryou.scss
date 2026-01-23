@@ -1,0 +1,166 @@
+@use '../../../foundation/variables' as *;
+@use '../../../foundation/mixins' as *;
+@use '../../../foundation/function' as *;
+
+@use '../../component/index' as *;
+
+.jiyuka-main {
+  .foryou {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    background-color: #5dc2d0;
+
+    @include pc {
+      height: vw(858 + 40);
+      margin-top: vw(-40);
+      padding: vw(80) 0 0 0;
+      border-radius: vw(40) vw(40) 0 0;
+    }
+
+    @include sp {
+      height: vwsp(1072 + 24);
+      margin-top: vwsp(-24);
+      padding: vwsp(40) 0 0 0;
+      border-radius: vwsp(24) vwsp(24) 0 0;
+    }
+  }
+
+  .foryou-item {
+    position: absolute;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    &--1 {
+      @include pc {
+        top: vw(196);
+        left: vw(83);
+        width: vw(393);
+      }
+
+      @include sp {
+        top: vwsp(137);
+        left: vwsp(23);
+        width: vwsp(242);
+      }
+    }
+
+    &--2 {
+      @include pc {
+        top: vw(207);
+        left: vw(514);
+        width: vw(405.74);
+      }
+
+      @include sp {
+        top: vwsp(324);
+        left: vwsp(127);
+        width: vwsp(240);
+      }
+    }
+
+    &--3 {
+      @include pc {
+        top: vw(208);
+        right: vw(79);
+        width: vw(356);
+      }
+
+      @include sp {
+        top: vwsp(510);
+        left: vwsp(8);
+        width: vwsp(205);
+      }
+    }
+
+    &--4 {
+      @include pc {
+        top: vw(427);
+        left: vw(158.99);
+        width: vw(470.16);
+      }
+
+      @include sp {
+        top: vwsp(645);
+        left: vwsp(112);
+        width: vwsp(251);
+      }
+    }
+
+    &--5 {
+      @include pc {
+        top: vw(435);
+        right: vw(276.45);
+        width: vw(483.65);
+      }
+
+      @include sp {
+        top: vwsp(852);
+        left: vwsp(0);
+        width: vwsp(258);
+      }
+    }
+
+    .foryou-item__text {
+      @extend %c-sr-only;
+    }
+  }
+}
+
+// transitions
+.jiyuka-main {
+  .foryou-item {
+    &.is-inactive {
+      @extend %c-el-hide-scale;
+    }
+
+    &.is-active {
+      @extend %c-el-show-scale;
+    }
+
+    &--1 {
+      &.is-active {
+        @include pc {
+          transition-delay: 0s;
+        }
+      }
+    }
+
+    &--2 {
+      &.is-active {
+        @include pc {
+          transition-delay: 0.2s;
+        }
+      }
+    }
+
+    &--3 {
+      &.is-active {
+        @include pc {
+          transition-delay: 0.1s;
+        }
+      }
+    }
+
+    &--4 {
+      &.is-active {
+        @include pc {
+          transition-delay: 0.2s;
+        }
+      }
+    }
+
+    &--5 {
+      &.is-active {
+        @include pc {
+          transition-delay: 0.1s;
+        }
+      }
+    }
+  }
+}

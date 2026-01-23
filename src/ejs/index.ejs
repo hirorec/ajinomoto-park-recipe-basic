@@ -1,0 +1,49 @@
+<!-- prettier-ignore -->
+<%
+  var breakPoint = process.env.RYORIJIYUKA_BREAKPOINT;
+  var assetPath = process.env.RYORIJIYUKA_ASSET_PATH 
+%>
+<%- include('./_components/_header.ejs'); %>
+
+<main id="js-jiyuka" class="jiyuka-main">
+  <div class="cover">
+    <div class="cover__chara is-inactive">
+      <img class="icon" src="<%= assetPath %>/images/cover-chara.png" alt="" />
+    </div>
+    <div class="cover__attention">※クリックしたら始まります</div>
+  </div>
+
+  <div class="jiyuka-main__inner is-inactive">
+    <%- include('./_components/home/_fv.ejs'); %>
+
+    <div class="fixed-nav is-inactive">
+      <button type="button" class="c-button c-button--green fixed-nav__button">
+        <img class="icon" src="<%= assetPath %>/images/icon-cart.svg" alt="" />
+        <span class="text">購入する</span>
+      </button>
+      <button type="button" class="c-button c-button--blue fixed-nav__button">
+        <img class="icon" src="<%= assetPath %>/images/icon-book.svg" alt="" />
+        <span class="text">試し読み</span>
+      </button>
+    </div>
+
+    <div class="contents">
+      <div class="contents__inner">
+        <!-- prettier-ignore -->
+        <%- include('./_components/home/_intro.ejs'); %>
+        <%- include('./_components/home/_foryou.ejs'); %>
+        <%- include('./_components/home/_pickup.ejs'); %>
+        <%- include('./_components/home/_voice.ejs'); %>
+        <a id="js-fixed-nav-hide-trigger" class="fixed-nav-hide-trigger"></a>
+        <!-- prettier-ignore -->
+        <%- include('./_components/_book.ejs'); %>
+        <%- include('./_components/home/_outro.ejs'); %>
+      </div>
+      <div class="contents__footer"></div>
+    </div>
+  </div>
+</main>
+
+<!-- prettier-ignore -->
+<%- include('./_components/_resources.ejs'); %>
+<%- include('./_components/_footer.ejs'); %>

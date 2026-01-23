@@ -1,0 +1,332 @@
+@use '../../../foundation/variables' as *;
+@use '../../../foundation/mixins' as *;
+@use '../../../foundation/function' as *;
+
+@use '../../component/index' as *;
+
+.jiyuka-main {
+  .book {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff464;
+
+    @include pc {
+      margin-top: vw(-40);
+      padding: vw(79) vw(104) vw(80 + 40) vw(80);
+      border-radius: vw(40) vw(40) 0 0;
+      gap: vw(73);
+    }
+
+    @include sp {
+      margin-top: vwsp(-40);
+      padding: vwsp(30) vwsp(24) vwsp(56 + 24);
+      border-radius: vwsp(40) vwsp(40) 0 0;
+      gap: vwsp(24);
+    }
+  }
+
+  .book__title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include pc {
+      gap: vw(16);
+    }
+
+    @include sp {
+      gap: vwsp(8);
+    }
+
+    .sub {
+      font-weight: 600;
+      line-height: 180%;
+
+      @include pc {
+        font-size: vw(22);
+        letter-spacing: vw(0.88);
+      }
+
+      @include sp {
+        font-size: vwsp(12);
+      }
+    }
+
+    .main {
+      font-weight: 600;
+      line-height: 1;
+
+      @include pc {
+        font-size: vw(40);
+        letter-spacing: vw(1.6);
+      }
+
+      @include sp {
+        font-size: vwsp(22);
+        letter-spacing: vwsp(0.88);
+      }
+    }
+  }
+
+  .book__container {
+    display: flex;
+    width: 100%;
+
+    @include pc {
+      justify-content: space-between;
+      gap: vw(133);
+    }
+
+    @include sp {
+      flex-direction: column;
+      gap: vwsp(20);
+    }
+  }
+
+  .book-summary {
+    display: flex;
+    flex-direction: column;
+
+    @include pc {
+      flex-shrink: 0;
+      gap: vw(24);
+      width: vw(398);
+    }
+
+    @include sp {
+      gap: vwsp(19);
+    }
+
+    .book-summary__image {
+      width: 100%;
+      aspect-ratio: 1;
+      overflow: hidden;
+
+      @include pc {
+        height: vw(398);
+        border-radius: vw(80);
+      }
+
+      @include sp {
+        height: vwsp(327);
+        border-radius: vwsp(24);
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .book-summary__text {
+      display: flex;
+      flex-direction: column;
+
+      @include pc {
+        gap: vw(16);
+      }
+
+      @include sp {
+        gap: vwsp(8);
+      }
+    }
+
+    .book-summary__title {
+      font-weight: 600;
+      line-height: 150%;
+
+      @include pc {
+        font-size: vw(22);
+        letter-spacing: vw(0.88);
+      }
+
+      @include sp {
+        font-size: vwsp(20);
+      }
+    }
+
+    .book-summary__description {
+      font-weight: 600;
+      line-height: 180%;
+
+      @include pc {
+        font-size: vw(16);
+        letter-spacing: vw(0.64);
+      }
+
+      @include sp {
+        font-size: vwsp(12);
+      }
+    }
+  }
+
+  .book__sections {
+    display: flex;
+    flex-direction: column;
+
+    @include pc {
+      flex: 1;
+      gap: vw(74);
+    }
+
+    @include sp {
+      gap: vwsp(48);
+    }
+  }
+
+  .book-section {
+    display: flex;
+    flex-direction: column;
+
+    @include pc {
+      gap: vw(23);
+    }
+
+    @include sp {
+      gap: vwsp(22);
+    }
+
+    .book-section__image {
+      flex-shrink: 0;
+      width: 100%;
+      background-color: #fff;
+
+      @include pc {
+        height: vw(399);
+        padding: vw(35) vw(32);
+        border-radius: vw(8);
+      }
+
+      @include sp {
+        height: vwsp(178);
+        padding: vwsp(8);
+        border-radius: vwsp(8);
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+
+        @include pc {
+          border-radius: vw(8);
+        }
+
+        @include sp {
+          border-radius: vwsp(8);
+        }
+      }
+    }
+
+    .book-section-point {
+      display: flex;
+      flex-shrink: 0;
+      align-items: center;
+
+      @include pc {
+        gap: vw(23);
+      }
+
+      @include sp {
+        gap: vwsp(23);
+      }
+
+      .book-section-point__label {
+        @extend %f-quicksand;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #fff;
+        font-weight: 600;
+        line-height: 1;
+
+        @include pc {
+          width: vw(84);
+          padding: vw(8) vw(16);
+          border-radius: vw(80);
+          font-size: vw(14);
+          letter-spacing: vw(0.56);
+        }
+
+        @include sp {
+          width: vwsp(73);
+          height: vwsp(36);
+          padding: vwsp(8) vwsp(16);
+          border-radius: vwsp(80);
+          font-size: vwsp(10);
+          letter-spacing: vwsp(0.2);
+        }
+      }
+
+      .book-section-point__text {
+        font-weight: 600;
+        line-height: 150%;
+
+        @include pc {
+          font-size: vw(16);
+          letter-spacing: vw(0.64);
+        }
+
+        @include sp {
+          font-size: vwsp(12);
+        }
+      }
+    }
+  }
+}
+
+// transitions
+.jiyuka-main {
+  .book__title {
+    &.is-inactive {
+      @extend %c-el-hide-y;
+    }
+
+    &.is-active {
+      @extend %c-el-show-y;
+    }
+  }
+
+  .book-summary__image {
+    &.is-inactive {
+      @extend %c-el-hide-scale;
+    }
+
+    &.is-active {
+      @extend %c-el-show-scale;
+    }
+  }
+
+  .book-summary__title {
+    &.is-inactive {
+      @extend %c-el-hide-y;
+    }
+
+    &.is-active {
+      @extend %c-el-show-y;
+    }
+  }
+
+  .book-summary__description {
+    &.is-inactive {
+      @extend %c-el-hide-y;
+    }
+
+    &.is-active {
+      @extend %c-el-show-y;
+    }
+  }
+
+  .book-section {
+    &.is-inactive {
+      @extend %c-el-hide-y;
+    }
+
+    &.is-active {
+      @extend %c-el-show-y;
+    }
+  }
+}

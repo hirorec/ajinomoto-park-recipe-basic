@@ -1,0 +1,37 @@
+@use '../../foundation/mixins' as *;
+
+.u-sp {
+  display: none !important;
+
+  @include sp {
+    display: block !important;
+  }
+}
+
+.u-pc {
+  @include sp {
+    display: none !important;
+  }
+}
+
+.u-sronly {
+  display: inline-block;
+  position: fixed;
+  width: 1px;
+  height: 1px;
+  margin: -999999px;
+  overflow: hidden;
+  font-size: 0;
+}
+
+.u-nowrap {
+  white-space: nowrap;
+}
+
+.u-pc-nowrap {
+  white-space: nowrap;
+
+  @include sp {
+    white-space: normal;
+  }
+}

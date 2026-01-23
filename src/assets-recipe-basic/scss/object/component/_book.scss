@@ -1,0 +1,385 @@
+@use '../../foundation/variables' as *;
+@use '../../foundation/mixins' as *;
+@use '../../foundation/function' as *;
+
+@use '../fonts/index' as *;
+@use './abstract' as *;
+
+.jiyuka-main {
+  .c-book {
+    display: flex;
+    position: relative;
+    align-items: flex-start;
+    justify-content: center;
+    background-color: #fff;
+
+    @include pc {
+      margin-top: vw(-40);
+      padding: vw(80) 0 vw(80 + 40) 0;
+      border-radius: vw(40) vw(40) 0 0;
+      gap: vw(40);
+    }
+
+    @include sp {
+      margin-top: vwsp(-24);
+      padding: vwsp(25) vwsp(25) vwsp(20 + 24);
+      border-radius: vwsp(24) vwsp(24) 0 0;
+      gap: vwsp(40);
+    }
+
+    @include sp {
+      flex-direction: column;
+    }
+  }
+
+  .c-book__image {
+    overflow: hidden;
+    background-color: #d9d9d9;
+
+    @include pc {
+      width: vw(398);
+      height: vw(398);
+      border-radius: vw(32);
+    }
+
+    @include sp {
+      width: 100%;
+      height: vwsp(328);
+      aspect-ratio: 1;
+      border-radius: vwsp(16);
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .c-book__header {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    gap: 0.5em;
+  }
+
+  .c-book__chara {
+    @include pc {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      width: vw(234);
+    }
+
+    @include sp {
+      width: 100%;
+    }
+  }
+
+  .c-book__title {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3em;
+    font-weight: 600;
+
+    .sub {
+      line-height: 180%;
+
+      @include pc {
+        font-size: vw(24);
+        letter-spacing: vw(0.96);
+      }
+
+      @include sp {
+        font-size: vwsp(16);
+        letter-spacing: vwsp(0.64);
+      }
+    }
+
+    .main {
+      color: #e60012;
+      line-height: 180%;
+
+      @include pc {
+        font-size: vw(40);
+        letter-spacing: vw(1.6);
+      }
+
+      @include sp {
+        font-size: vwsp(40);
+        letter-spacing: vwsp(1.6);
+      }
+    }
+  }
+
+  .c-book__summary {
+    font-weight: 600;
+    line-height: 180%;
+
+    @include pc {
+      font-size: vw(16);
+    }
+
+    @include sp {
+      font-size: vwsp(16);
+    }
+  }
+
+  .c-book__content {
+    display: flex;
+    flex-direction: column;
+
+    @include pc {
+      gap: vw(24);
+    }
+
+    @include sp {
+      gap: vwsp(24);
+      width: 100%;
+    }
+  }
+
+  .c-book-banner {
+    display: flex;
+    background-color: #fff464;
+
+    @include pc {
+      width: vw(839);
+      padding: vw(19) vw(24);
+      border-radius: vw(16);
+      gap: vw(24);
+    }
+
+    @include sp {
+      flex-direction: column;
+      width: 100%;
+      padding: vwsp(8) vwsp(8) vwsp(24);
+      border-radius: vwsp(16);
+      gap: vwsp(14);
+    }
+
+    .c-book-banner__image {
+      flex-shrink: 0;
+      overflow: hidden;
+      background-color: #fff;
+
+      @include pc {
+        width: vw(155);
+        height: vw(155);
+        border-radius: vw(8);
+      }
+
+      @include sp {
+        width: 100%;
+        height: vwsp(160);
+        border-radius: vwsp(8);
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .c-book-banner__content {
+      display: flex;
+
+      @include pc {
+        gap: vw(20);
+      }
+
+      @include sp {
+        flex-direction: column;
+        align-items: center;
+        gap: vwsp(14);
+      }
+    }
+
+    .c-book-banner__title {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      align-self: center;
+
+      @include sp {
+        text-align: center;
+      }
+
+      .sub {
+        font-weight: 600;
+        line-height: 180%;
+
+        @include pc {
+          font-size: vw(16);
+        }
+
+        @include sp {
+          display: none;
+        }
+      }
+
+      .main {
+        font-weight: 600;
+        line-height: 180%;
+
+        @include pc {
+          font-size: vw(22);
+        }
+
+        @include sp {
+          font-size: vwsp(22);
+        }
+      }
+    }
+
+    .c-book-banner__ui {
+      display: flex;
+      flex-direction: column;
+      flex-shrink: 0;
+      justify-content: flex-end;
+
+      @include pc {
+        gap: vw(11);
+        width: vw(232);
+      }
+
+      @include sp {
+        gap: vwsp(14);
+      }
+    }
+
+    .c-book-banner__fukidashi {
+      width: 100%;
+
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+
+  .c-book__buttons {
+    display: flex;
+
+    @include pc {
+      gap: vw(18);
+    }
+
+    @include sp {
+      flex-direction: column;
+      gap: vwsp(18);
+    }
+  }
+
+  .c-book-button {
+    @include sp {
+      flex-shrink: 0;
+    }
+
+    &--buy {
+      @include pc {
+        width: vw(232);
+      }
+
+      @include sp {
+        width: vwsp(255);
+      }
+    }
+
+    &--valuebooks,
+    &--amazon,
+    &--test {
+      @include pc {
+        flex: 1;
+      }
+    }
+
+    &--valuebooks,
+    &--amazon {
+      .text {
+        @extend %f-quicksand;
+        font-weight: 700;
+      }
+    }
+
+    &--valuebooks {
+      .text {
+        @include pc {
+          width: vw(254);
+        }
+      }
+    }
+
+    &--amazon {
+      .text {
+        @include pc {
+          width: vw(117);
+        }
+      }
+    }
+  }
+}
+
+// transitions
+.jiyuka-main {
+  .c-book__image {
+    &.is-inactive {
+      @extend %c-el-hide-scale;
+    }
+
+    &.is-active {
+      @extend %c-el-show-scale;
+    }
+  }
+
+  .c-book__title {
+    &.is-inactive {
+      @extend %c-el-hide-y;
+    }
+
+    &.is-active {
+      @extend %c-el-show-y;
+    }
+  }
+
+  .c-book__summary {
+    &.is-inactive {
+      @extend %c-el-hide-y;
+    }
+
+    &.is-active {
+      @extend %c-el-show-y;
+    }
+  }
+
+  .c-book__chara {
+    &.is-inactive {
+      @extend %c-el-hide-scale;
+    }
+
+    &.is-active {
+      @extend %c-el-show-scale;
+    }
+  }
+
+  .c-book-banner {
+    &.is-inactive {
+      @extend %c-el-hide-y;
+    }
+
+    &.is-active {
+      @extend %c-el-show-y;
+    }
+  }
+
+  .c-book__buttons {
+    &.is-inactive {
+      @extend %c-el-hide-y;
+    }
+
+    &.is-active {
+      @extend %c-el-show-y;
+    }
+  }
+}

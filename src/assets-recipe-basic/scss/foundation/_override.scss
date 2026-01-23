@@ -1,0 +1,43 @@
+@use './variables' as *;
+@use './mixins' as *;
+@use './function' as *;
+
+header {
+  // position: fixed !important;
+  z-index: 10;
+
+  @include pc {
+    height: $header-heigh-pc;
+  }
+}
+
+.contentHeadArea {
+  display: none !important;
+}
+
+#footer {
+  position: relative;
+  margin-top: 0;
+  z-index: 2;
+}
+
+#container {
+  position: relative;
+  z-index: 1;
+}
+
+#content {
+  max-width: 100% !important;
+}
+
+.bottomMenu {
+  display: none !important;
+}
+
+.commonPt {
+  padding-top: 0 !important;
+}
+
+.bdrTitle {
+  display: none !important;
+}

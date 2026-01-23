@@ -1,0 +1,27 @@
+{
+  "cSpell.words": [
+    "ajinomoto",
+    "comingsoon",
+    "Customizer",
+    "glslify",
+    "gsap",
+    "htdocs",
+    "Inview",
+    "jiyuka",
+    "livewell",
+    "outro",
+    "ryorijiyuka",
+    "shuei",
+    "smacss",
+    "vwsp"
+  ],
+  "eslint.validate": ["typescript"],
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "explicit"
+  },
+  "prettier.stylelintIntegration": true,
+  "css.validate": false,
+  "less.validate": false,
+  "scss.validate": false
+}

@@ -1,0 +1,69 @@
+@use './variables' as *;
+
+// min-width
+@mixin min($_width) {
+  @media screen and (min-width: #{$_width}px) {
+    @content;
+  }
+}
+// max-width
+@mixin max($_width) {
+  @media screen and (max-width: #{$_width}px) {
+    @content;
+  }
+}
+
+// min-width and max-width
+@mixin and($_min-width, $_max-width) {
+  @media screen and (min-width: #{$_min-width}px) and (max-width: #{$_max-width}px) {
+    @content;
+  }
+}
+
+// SP用レイアウト
+@mixin sp() {
+  @include max($break-point) {
+    @content;
+  }
+}
+
+// PC用レイアウト
+@mixin pc() {
+  @include min($break-point + 1) {
+    @content;
+  }
+}
+
+// PC用最小レイアウト
+// @mixin pc-min() {
+//   @include and($break-point + 1, $min-width-pc) {
+//     @content;
+//   }
+// }
+
+// PC maxレイアウト
+@mixin pc-max() {
+  @include min($base-width-pc) {
+    @content;
+  }
+}
+
+@mixin line-clamp($max-row) {
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+  -webkit-line-clamp: $max-row;
+  overflow: hidden;
+}
+
+@mixin line-clamp-disabled() {
+  display: block;
+  overflow: auto;
+}
+
+@mixin hover() {
+  @media (any-hover: hover) {
+    &:hover {
+      @content;
+    }
+  }
+}

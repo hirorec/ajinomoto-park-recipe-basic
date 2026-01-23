@@ -1,0 +1,19 @@
+@use 'sass:map';
+@use './variables' as *;
+
+@function ease($name) {
+  @return map.get($ease-map, $name);
+}
+
+@function rem($size) {
+  @return #{$size * 0.01}rem;
+}
+
+@function vw($size, $viewport: $base-width-pc) {
+  $rate: calc(100 / $viewport);
+  @return $rate * $size * 1vw;
+}
+
+@function vwsp($size, $viewport: $base-width-sp) {
+  @return vw($size, $viewport);
+}
