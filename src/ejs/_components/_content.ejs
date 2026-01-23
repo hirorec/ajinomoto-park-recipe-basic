@@ -78,7 +78,7 @@
     <div class="main-visual">
       <h1>
         <picture>
-          <source media="(max-width: <%= breakPoint %>)" srcset="<%= assetPath %>/images/home/main-visual-sp.png" />
+          <source media="(max-width: <%= breakPoint %>)" srcset="<%= assetPath %>/images/main-visual-sp.png" />
           <img src="<%= assetPath %>/images/main-visual.png" alt="料理のきほんとしくみ" loading="eager" />
         </picture>
       </h1>
@@ -86,8 +86,10 @@
     <!-- /.main-visual -->
 
     <p class="lead">
-      料理はじめてさんの「こんなこと誰に聞けばいいの？」に答えました。<br />
-      野菜の切り方から、ごはんの炊き方まで。毎日の料理で活躍する料理のきほんとしくみを紹介します。
+      料理はじめてさんの<br class="u-sp" />「こんなこと誰に聞けばいいの？」に答えました。<br />
+      野菜の切り方から、ごはんの炊き方まで。<br class="u-sp" />毎日の料理で活躍する料理のきほんとしくみを<br
+        class="u-sp"
+      />紹介します。
     </p>
     <!-- /.lead -->
 
@@ -95,7 +97,7 @@
       <div class="book-banner__inner">
         <div class="book-banner__image">
           <picture>
-            <source media="(max-width: <%= breakPoint %>)" srcset="<%= assetPath %>/images/home/book-sp.png" />
+            <source media="(max-width: <%= breakPoint %>)" srcset="<%= assetPath %>/images/book-sp.png" />
             <img src="<%= assetPath %>/images/book.png" alt="" loading="lazy" />
           </picture>
         </div>
@@ -103,10 +105,7 @@
         <div class="book-banner__content">
           <div class="book-banner__fukidashi">
             <picture>
-              <source
-                media="(max-width: <%= breakPoint %>)"
-                srcset="<%= assetPath %>/images/home/book-fukidashi-sp.svg"
-              />
+              <source media="(max-width: <%= breakPoint %>)" srcset="<%= assetPath %>/images/book-fukidashi-sp.svg" />
               <img
                 src="<%= assetPath %>/images/book-fukidashi.svg"
                 alt="料理のしくみを基礎からしっかりまなびたいあなたに。"
@@ -114,32 +113,32 @@
               />
             </picture>
           </div>
+          <div class="book-banner__chara">
+            <picture>
+              <source media="(max-width: <%= breakPoint %>)" srcset="<%= assetPath %>/images/book-chara-sp.png" />
+              <img src="<%= assetPath %>/images/book-chara.png" alt="" loading="lazy" />
+            </picture>
+          </div>
           <div class="book-banner__subtitle">はじめてさんも、あらためてさんも</div>
           <div class="book-banner__title">料理のしくみがわかる本</div>
         </div>
 
-        <div class="book-banner__chara">
-          <picture>
-            <source media="(max-width: <%= breakPoint %>)" srcset="<%= assetPath %>/images/home/book-chara-sp.png" />
-            <img src="<%= assetPath %>/images/book-chara.png" alt="" loading="lazy" />
-          </picture>
-        </div>
+        <a class="book-banner-link" href="/special/ryorijiyuka">
+          詳しく見る
+          <span class="book-banner-link__icon">
+            <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M19 12L5 12" stroke="#ED6D46" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              <path
+                d="M12 19L19 12L12 5"
+                stroke="#ED6D46"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </span>
+        </a>
       </div>
-      <a class="book-banner-link" href="/special/ryorijiyuka">
-        詳しく見る
-        <span class="book-banner-link__icon">
-          <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-            <path d="M19 12L5 12" stroke="#ED6D46" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-            <path
-              d="M12 19L19 12L12 5"
-              stroke="#ED6D46"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-          </svg>
-        </span>
-      </a>
     </div>
 
     <div class="basicIndexList">

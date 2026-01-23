@@ -5,8 +5,15 @@
 @use './object/fonts' as *;
 
 .main-visual {
-  width: 840px;
   margin: 0 auto;
+
+  @include pc {
+    width: 840px;
+  }
+
+  @include sp {
+    width: vwsp(327);
+  }
 
   img {
     width: 100%;
@@ -17,21 +24,36 @@
 
 .lead {
   @extend %f-zen-kaku;
-  margin: 40.3px auto 79px;
   text-align: center;
   color: #767676;
   font-weight: 700;
-  font-size: 16px;
   line-height: 200%;
-  letter-spacing: 0.32px;
+
+  @include pc {
+    margin: 40.3px auto 79px;
+    font-size: 16px;
+    letter-spacing: 0.32px;
+  }
+
+  @include sp {
+    margin: 32px auto 6px;
+    font-size: vwsp(12);
+    letter-spacing: vwsp(0.24);
+  }
 }
 
 .book-banner {
   position: relative;
+  margin: 78px auto;
 
   @include pc {
     margin: 78px auto;
     width: vw(1279);
+  }
+
+  @include sp {
+    margin: 6px auto 40px;
+    width: vwsp(324);
   }
 
   .book-banner__inner {
@@ -46,6 +68,13 @@
       padding: vw(13) vw(20) vw(16) vw(18.5);
       border-radius: vw(16);
     }
+
+    @include sp {
+      flex-direction: column;
+      gap: vwsp(18);
+      padding: vwsp(13);
+      border-radius: vwsp(20);
+    }
   }
 
   .book-banner__image {
@@ -54,6 +83,20 @@
 
     @include pc {
       width: vw(381);
+    }
+
+    @include sp {
+      width: 100%;
+    }
+  }
+
+  .book-banner__fukidashi {
+    @include pc {
+      width: vw(489);
+    }
+
+    @include sp {
+      align-self: center;
     }
   }
 
@@ -69,6 +112,8 @@
   }
 
   .book-banner__content {
+    display: flex;
+    flex-direction: column;
     flex-shrink: 0;
 
     @include pc {
@@ -81,47 +126,65 @@
   .book-banner__title {
     @extend %f-base;
     font-weight: 600;
+    line-height: 170%;
+
+    @include pc {
+      text-align: justify;
+    }
+
+    @include sp {
+      text-align: center;
+    }
   }
 
   .book-banner__subtitle {
     color: #282828;
-    text-align: justify;
-    line-height: 170%;
 
     @include pc {
       margin-top: vw(-10);
       font-size: vw(24);
       letter-spacing: vw(0.96);
     }
+
+    @include sp {
+      margin-top: vwsp(7);
+      font-size: vwsp(14);
+      letter-spacing: vwsp(0.56);
+    }
   }
 
   .book-banner__title {
     color: #e60012;
-    text-align: justify;
-    line-height: 170%;
 
     @include pc {
       font-size: vw(40);
       letter-spacing: vw(1.6);
     }
+
+    @include sp {
+      font-size: vwsp(24);
+      letter-spacing: vwsp(0.96);
+    }
   }
 
   .book-banner__chara {
-    position: absolute;
-    right: 0;
-    top: 0;
-
     @include pc {
+      position: absolute;
+      right: 0;
+      top: 0;
       width: vw(342);
+    }
+
+    @include sp {
+      align-self: flex-end;
+      width: vwsp(247.812);
+      margin-top: vwsp(-35);
     }
   }
 
   .book-banner-link {
     @extend %f-base;
     box-sizing: border-box;
-    position: absolute;
-    bottom: vw(56 * -0.5);
-    right: vw(20);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -131,12 +194,20 @@
     font-weight: 600;
 
     @include pc {
+      position: absolute;
+      bottom: vw(56 * -0.5);
+      right: vw(20);
       width: vw(308);
       height: vw(56);
       padding: vw(24) vw(8) vw(24) vw(16);
       border-radius: vw(16);
       font-size: vw(16);
-      letter-spacing: vw(-0.32);
+    }
+
+    @include sp {
+      height: vwsp(56);
+      padding: vwsp(24) vwsp(8) vwsp(24) vwsp(16);
+      border-radius: vwsp(16);
     }
 
     .book-banner-link__icon {
@@ -151,10 +222,21 @@
         height: vw(32);
       }
 
+      @include sp {
+        border: solid vwsp(2) #fff;
+        width: vwsp(32);
+        height: vwsp(32);
+      }
+
       .icon {
         @include pc {
           width: vw(24);
           height: vw(24);
+        }
+
+        @include sp {
+          width: vwsp(24);
+          height: vwsp(24);
         }
       }
     }
