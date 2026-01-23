@@ -10,6 +10,7 @@
     "sourceMap": true,
     "strict": true,
     "resolveJsonModule": true,
+    "types": ["node"],
     "baseUrl": ".",
     "paths": {
       "@/*": ["src/assets-recipe-basic/js/*"],
