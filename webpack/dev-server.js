@@ -1,6 +1,7 @@
 const { resolve, join } = require('path')
 const fs = require('fs')
 let ASSETS_DIR = '/recipe/basic/assets'
+const publicDir = resolve(__dirname, '../public')
 
 if (process.env.NODE_ENV === 'production') {
   ASSETS_DIR = 'https://s3-11.park.ajinomoto.co.jp/assets'
@@ -10,9 +11,16 @@ module.exports = {
   hot: false,
   liveReload: true,
   port: 9000,
-  static: {
-    directory: resolve(__dirname, './'),
-  },
+  static: [
+    {
+      directory: publicDir,
+      publicPath: '/',
+    },
+    {
+      directory: resolve(__dirname, './'),
+      publicPath: '/',
+    },
+  ],
   onBeforeSetupMiddleware: function (devServer) {
     const existsSync = (res, fileName, next, contentType) => {
       if (fs.existsSync(fileName)) {

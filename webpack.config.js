@@ -146,7 +146,10 @@ const config = {
       'process.env': JSON.stringify(environmentConfig),
     }),
     new CopyWebpackPlugin({
-      patterns: [{ from: `${__dirname}/src/${BASE_ASSETS_DIR}/images`, to: `${OUTPUT_BASE_ASSETS_DIR}/images` }],
+      patterns: [
+        { from: `${__dirname}/src/${BASE_ASSETS_DIR}/images`, to: `${OUTPUT_BASE_ASSETS_DIR}/images` },
+        { from: `${__dirname}/public`, to: '.' },
+      ],
     }),
     // new CopyWebpackPlugin({
     //   patterns: [{ from: `${__dirname}/src/${BASE_ASSETS_DIR}/fonts`, to: `${OUTPUT_BASE_ASSETS_DIR}/fonts` }],
