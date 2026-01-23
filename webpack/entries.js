@@ -1,6 +1,6 @@
 module.exports = [
   {
     path: 'index',
-    chunk: 'home',
+    chunk: 'index',
   },
 ]

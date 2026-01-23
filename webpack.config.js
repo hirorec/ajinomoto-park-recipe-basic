@@ -17,9 +17,7 @@ const BASE_ASSETS_DIR = 'assets-recipe-basic'
 const OUTPUT_BASE_ASSETS_DIR = 'recipe/basic/assets-recipe-basic'
 const isProduction = process.env.NODE_ENV === 'production' || process.env.NODE_ENV === 'staging'
 const imagesRoot = resolve(__dirname, `src/${BASE_ASSETS_DIR}/images`)
-const entry = {
-  common: resolve(`src/${BASE_ASSETS_DIR}/js/common.ts`),
-}
+const entry = {}
 
 entries.forEach((e) => {
   entry[e.chunk] = resolve(`src/${BASE_ASSETS_DIR}/js/${e.chunk}.ts`)

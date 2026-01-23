@@ -1,49 +1,2283 @@
-<!-- prettier-ignore -->
-<%
-  var breakPoint = process.env.RYORIJIYUKA_BREAKPOINT;
-  var assetPath = process.env.RYORIJIYUKA_ASSET_PATH 
-%>
-<%- include('./_components/_header.ejs'); %>
+<!DOCTYPE html>
 
-<main id="js-jiyuka" class="jiyuka-main">
-  <div class="cover">
-    <div class="cover__chara is-inactive">
-      <img class="icon" src="<%= assetPath %>/images/cover-chara.png" alt="" />
-    </div>
-    <div class="cover__attention">※クリックしたら始まります</div>
-  </div>
+<html lang="ja">
+  <head>
+    <!-- Google Tag Manager -->
+    <script>
+      ;(function (w, d, s, l, i) {
+        w[l] = w[l] || []
+        w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' })
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != 'dataLayer' ? '&l=' + l : ''
+        j.async = true
+        j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl
+        f.parentNode.insertBefore(j, f)
+      })(window, document, 'script', 'dataLayer', 'GTM-54GMHWF')
+    </script>
+    <!-- End Google Tag Manager -->
+    <!-- meta -->
+    <meta charset="utf-8" />
+    <title>料理の基本・初心者向け情報｜レシピ大百科（レシピ・料理）｜【味の素パーク】たべる楽しさを、もっと。</title>
+    <meta
+      name="description"
+      content="料理初心者の方におすすめ！「料理の基本」では、食材の切り方から下ごしらえ、だしのとり方、火加減など、料理の基本を写真と動画で解説。味の素パークは味の素KKがおくるレシピ サイトです。簡単に作れる人気レシピなど、味の素が厳選した失敗しないレシピを12808件掲載！毎日の夕飯・お弁当のおかずなどおすすめの料理 が満載！"
+    />
+    <meta name="keywords" content="味の素,味の素パーク" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- OGP meta START -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@AJINOMOTOPARK" />
+    <meta
+      property="og:title"
+      content="料理の基本・初心者向け情報｜レシピ大百科（レシピ・料理）｜【味の素パーク】たべる楽しさを、もっと。"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://park.ajinomoto.co.jp/recipe/basic/" />
+    <meta
+      property="og:image"
+      content="https://park.ajinomoto.co.jp/wp-content/themes/ajinomoto/resources/images/common/sp/ogp.png"
+    />
+    <meta property="og:site_name" content="AJINOMOTO PARK" />
+    <meta
+      property="og:description"
+      content="料理初心者の方におすすめ！「料理の基本」では、食材の切り方から下ごしらえ、だしのとり方、火加減など、料理の基本を写真と動画で解説。味の素パークは味の素KKがおくるレシピ サイトです。簡単に作れる人気レシピなど、味の素が厳選した失敗しないレシピを12808件掲載！毎日の夕飯・お弁当のおかずなどおすすめの料理 が満載！"
+    />
+    <!-- OGP meta END -->
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon-precomposed" href="/apple-touch-icon-precomposed.png" />
 
-  <div class="jiyuka-main__inner is-inactive">
-    <%- include('./_components/home/_fv.ejs'); %>
+    <script>
+      var NPSUGGEST_ACCOUNT = 'park_ajinomoto_co_jp'
+      var NPSUGGEST_SERVER = 'park-ajinomoto-co-jp-f-s.snva.jp'
+    </script>
+    <script
+      type="text/javascript"
+      src="//park-ajinomoto-co-jp-f-s.snva.jp/js/naviplus_suggestitem_view.js"
+      charset="UTF-8"
+    ></script>
+    <script
+      type="text/javascript"
+      src="//park-ajinomoto-co-jp-f-s.snva.jp/js/naviplus_suggest.js"
+      charset="UTF-8"
+    ></script>
+    <link
+      href="//park-ajinomoto-co-jp-f-s.snva.jp/css/naviplus_suggest.css"
+      rel="stylesheet"
+      crossorigin
+      type="text/css"
+    />
+    <script>
+      NPSuggest.bind({
+        server: 'park-ajinomoto-co-jp-f-s.snva.jp',
+        accountID: 'park_ajinomoto_co_jp',
+        inputAreaID: 'searchBtn',
+        submitBtnID: 'searchSubmit',
+        maxSuggest: 5,
+      })
+    </script>
+    <!--<script>
+            NPSuggest.bind({
+            server: 'park-ajinomoto-co-jp-f-s.snva.jp',
+            accountID: 'park_ajinomoto_co_jp',
+            inputAreaID: 'searchBtnSP',
+            submitBtnID: 'searchSubmitSP',
+            maxSuggest: 5,
+            });
+            </script>-->
+    <!--<script>
+            NPSuggest.bind({
+            server: 'park-ajinomoto-co-jp-f-s.snva.jp',
+            accountID: 'park_ajinomoto_co_jp',
+            inputAreaID: 'searchBtnSP_2',
+            submitBtnID: 'searchSubmitSP_2',
+            maxSuggest: 5,
+            });
+            </script>-->
 
-    <div class="fixed-nav is-inactive">
-      <button type="button" class="c-button c-button--green fixed-nav__button">
-        <img class="icon" src="<%= assetPath %>/images/icon-cart.svg" alt="" />
-        <span class="text">購入する</span>
-      </button>
-      <button type="button" class="c-button c-button--blue fixed-nav__button">
-        <img class="icon" src="<%= assetPath %>/images/icon-book.svg" alt="" />
-        <span class="text">試し読み</span>
-      </button>
-    </div>
+    <!-- Start KARTE Tag -->
+    <script>
+      !(function (n) {
+        if (!window[n]) {
+          var o = (window[n] = function () {
+            var n = [].slice.call(arguments)
+            return o.x ? o.x.apply(0, n) : o.q.push(n)
+          })
+          ;(o.q = []),
+            (o.i = Date.now()),
+            (o.allow = function () {
+              o.o = 'allow'
+            }),
+            (o.deny = function () {
+              o.o = 'deny'
+            })
+        }
+      })('krt')
+    </script>
+    <script async src="https://cdn-edge.karte.io/15c9a710f4aed176117fe44113dfc029/edge.js"></script>
+    <!-- End KARTE Tag -->
+    <link rel="dns-prefetch" href="//cdnjs.cloudflare.com" />
+    <link rel="dns-prefetch" href="//s.w.org" />
+    <link
+      rel="stylesheet"
+      id="wp-block-library-css"
+      href="https://park.ajinomoto.co.jp/wp-includes/css/dist/block-library/style.min.css?ver=20251225"
+      type="text/css"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      id="ajistyle-css"
+      href="https://park.ajinomoto.co.jp/wp-content/themes/ajinomoto/style.css?ver=20251225"
+      type="text/css"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      id="ajinomoto_init-css"
+      href="https://park.ajinomoto.co.jp/wp-content/themes/ajinomoto/resources/styles/_init.css?ver=20251225"
+      type="text/css"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      id="ajinomoto_colorbox-css"
+      href="https://park.ajinomoto.co.jp/wp-content/themes/ajinomoto/resources/styles/_colorbox.css?ver=20251225"
+      type="text/css"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      id="ajinomoto_slick-css"
+      href="https://park.ajinomoto.co.jp/wp-content/themes/ajinomoto/resources/styles/_slick.css?ver=20251225"
+      type="text/css"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      id="ajinomoto_base-css"
+      href="https://park.ajinomoto.co.jp/wp-content/themes/ajinomoto/resources/styles/_base.css?ver=20251225"
+      type="text/css"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      id="ajinomoto_recipe_card-css"
+      href="https://park.ajinomoto.co.jp/wp-content/themes/ajinomoto/resources/styles/_recipe_card.css?ver=20251225"
+      type="text/css"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      id="ajinomoto_recipe_card_new-css"
+      href="https://park.ajinomoto.co.jp/wp-content/themes/ajinomoto/resources/styles/_recipe_card_new.css?ver=20251225"
+      type="text/css"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      id="ajinomoto_recipe_corner-css"
+      href="https://park.ajinomoto.co.jp/wp-content/themes/ajinomoto/resources/styles/_recipe_corner_new.css?ver=20251225"
+      type="text/css"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      id="ajinomoto_recipe_menu-css"
+      href="https://park.ajinomoto.co.jp/wp-content/themes/ajinomoto/resources/styles/_recipe_menu.css?ver=20251225"
+      type="text/css"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      id="ajinomoto_recipe_menu_new-css"
+      href="https://park.ajinomoto.co.jp/wp-content/themes/ajinomoto/resources/styles/_recipe_menu_new.css?ver=20251225"
+      type="text/css"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      id="ajinomoto_recipe_basic-css"
+      href="https://park.ajinomoto.co.jp/wp-content/themes/ajinomoto/resources/styles/_recipe_basic.css?ver=20251225"
+      type="text/css"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      id="ajinomoto_recipe_top-css"
+      href="https://park.ajinomoto.co.jp/wp-content/themes/ajinomoto/resources/styles/_recipe_top.css?ver=20251225"
+      type="text/css"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      id="ajinomoto_recipe_top_new-css"
+      href="https://park.ajinomoto.co.jp/wp-content/themes/ajinomoto/resources/styles/_recipe_top_new.css?ver=20251225"
+      type="text/css"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      id="ajinomoto_clip-css"
+      href="https://park.ajinomoto.co.jp/wp-content/themes/ajinomoto/resources/styles/_clip.css?ver=20251225"
+      type="text/css"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      id="ajinomoto_rireki-css"
+      href="https://park.ajinomoto.co.jp/wp-content/themes/ajinomoto/resources/styles/_rireki.css?ver=20251225"
+      type="text/css"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      id="ajinomoto_nutrition-css"
+      href="https://park.ajinomoto.co.jp/wp-content/themes/ajinomoto/resources/styles/_nutrition.css?ver=20251225"
+      type="text/css"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      id="ajinomoto_magazine-css"
+      href="https://park.ajinomoto.co.jp/wp-content/themes/ajinomoto/resources/styles/_magazine.css?ver=20251225"
+      type="text/css"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      id="ajinomoto_campaign-css"
+      href="https://park.ajinomoto.co.jp/wp-content/themes/ajinomoto/resources/styles/_campaign.css?ver=20251225"
+      type="text/css"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      id="ajinomoto_kenko-css"
+      href="https://park.ajinomoto.co.jp/wp-content/themes/ajinomoto/resources/styles/_kenko.css?ver=20251225"
+      type="text/css"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      id="ajinomoto_user-css"
+      href="https://park.ajinomoto.co.jp/wp-content/themes/ajinomoto/resources/styles/_user.css?ver=20251225"
+      type="text/css"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      id="ajinomoto_ajinomotopark_top-css"
+      href="https://park.ajinomoto.co.jp/wp-content/themes/ajinomoto/resources/styles/_ajinomotopark_top.css?ver=20251225"
+      type="text/css"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      id="ajinomoto_ajinomotopark_recipe-css"
+      href="https://park.ajinomoto.co.jp/wp-content/themes/ajinomoto/resources/styles/_ajinomotopark_recipe.css?ver=20251225"
+      type="text/css"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      id="ajinomoto_form-css"
+      href="https://park.ajinomoto.co.jp/wp-content/themes/ajinomoto/resources/styles/_form.css?ver=20251225"
+      type="text/css"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      id="ajinomoto_about-css"
+      href="https://park.ajinomoto.co.jp/wp-content/themes/ajinomoto/resources/styles/_about.css?ver=20251225"
+      type="text/css"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      id="ajinomoto_error-css"
+      href="https://park.ajinomoto.co.jp/wp-content/themes/ajinomoto/resources/styles/_error.css?ver=20251225"
+      type="text/css"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      id="ajinomoto_room-css"
+      href="https://park.ajinomoto.co.jp/wp-content/themes/ajinomoto/resources/styles/_room.css?ver=20251225"
+      type="text/css"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      id="ajinomoto_htmlfp-css"
+      href="https://park.ajinomoto.co.jp/wp-content/themes/ajinomoto/resources/styles/_htmlfp.css?ver=20251225"
+      type="text/css"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      id="ajinomoto_membership_agreement-css"
+      href="https://park.ajinomoto.co.jp/wp-content/themes/ajinomoto/resources/styles/_membership_agreement.css?ver=20251225"
+      type="text/css"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      id="ajinomoto_terms_of_service-css"
+      href="https://park.ajinomoto.co.jp/wp-content/themes/ajinomoto/resources/styles/_terms_of_service.css?ver=20251225"
+      type="text/css"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      id="20200715renewal_base-css"
+      href="https://park.ajinomoto.co.jp/wp-content/themes/ajinomoto/resources/styles/renewal/_base.css?ver=20251225"
+      type="text/css"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      id="20200715renewal_header-css"
+      href="https://park.ajinomoto.co.jp/wp-content/themes/ajinomoto/resources/styles/renewal/_header.css?ver=20251225"
+      type="text/css"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      id="ajinomoto_recommend_contents-css"
+      href="https://park.ajinomoto.co.jp/wp-content/themes/ajinomoto/resources/styles/_recommend_contents.css?ver=20251225"
+      type="text/css"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      id="ajinomoto_trend_contents-css"
+      href="https://park.ajinomoto.co.jp/wp-content/themes/ajinomoto/resources/styles/_trend_contents.css?ver=20251225"
+      type="text/css"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      id="ajinomoto_faq-css"
+      href="https://park.ajinomoto.co.jp/wp-content/themes/ajinomoto/resources/styles/_faq.css?ver=20251225"
+      type="text/css"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      id="ajinomoto_renewal_common-css"
+      href="https://park.ajinomoto.co.jp/wp-content/themes/ajinomoto/resources/styles/_renewal_common.css?ver=20251225"
+      type="text/css"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      id="ajinomoto_renewal_recommend-css"
+      href="https://park.ajinomoto.co.jp/wp-content/themes/ajinomoto/resources/styles/_recommend_recipe_corner.css?ver=20251225"
+      type="text/css"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      id="ajinomoto_transition_area-css"
+      href="https://park.ajinomoto.co.jp/wp-content/themes/ajinomoto/resources/styles/_transition_area.css?ver=20251225"
+      type="text/css"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      id="ajinomoto_popular_categories-css"
+      href="https://park.ajinomoto.co.jp/wp-content/themes/ajinomoto/resources/styles/_recipe_corner_categories.css?ver=20251225"
+      type="text/css"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      id="ajinomoto_content_corner-css"
+      href="https://park.ajinomoto.co.jp/wp-content/themes/ajinomoto/resources/styles/_recommend_content_corner.css?ver=20251225"
+      type="text/css"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      id="ajinomoto_nutrition_link_area-css"
+      href="https://park.ajinomoto.co.jp/wp-content/themes/ajinomoto/resources/styles/_nutrition_link_area.css?ver=20251225"
+      type="text/css"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      id="ajinomoto_recommend_categories-css"
+      href="https://park.ajinomoto.co.jp/wp-content/themes/ajinomoto/resources/styles/_recommend_corner_categories.css?ver=20251225"
+      type="text/css"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      id="ajinomoto_recommend_corner_top-css"
+      href="https://park.ajinomoto.co.jp/wp-content/themes/ajinomoto/resources/styles/_recommend_corner_top.css?ver=20251225"
+      type="text/css"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      id="ajinomoto_id_sns_area-css"
+      href="https://park.ajinomoto.co.jp/wp-content/themes/ajinomoto/resources/styles/ajinomoto-id/_import.css?ver=20251225"
+      type="text/css"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      id="custom_admin_page-css"
+      href="https://park.ajinomoto.co.jp/wp-content/themes/ajinomoto/css/custom_admin_page.css?ver=20251225"
+      type="text/css"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      id="custom_admin_profile-css"
+      href="https://park.ajinomoto.co.jp/wp-content/themes/ajinomoto/css/custom_admin_profile.css?ver=20251225"
+      type="text/css"
+      media="all"
+    />
+    <script
+      type="text/javascript"
+      src="https://park.ajinomoto.co.jp/wp-includes/js/jquery/jquery.js?ver=1.12.4-wp"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://park.ajinomoto.co.jp/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://park.ajinomoto.co.jp/wp-content/themes/ajinomoto/js/registerValidation.js?ver=20251225"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://park.ajinomoto.co.jp/wp-content/themes/ajinomoto/js/recommend_keyword.js?ver=20251225"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/object-fit-images/3.2.4/ofi.js?ver=20251225"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://park.ajinomoto.co.jp/wp-content/themes/ajinomoto/resources/scripts/_stickyfill.min.js?ver=20251225"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://park.ajinomoto.co.jp/wp-content/themes/ajinomoto/js/aid_function.js?ver=20251225"
+    ></script>
+    <script type="text/javascript">
+      /* <![CDATA[ */
+      var set_obj = {
+        post_ID: '1068',
+        user_ID: null,
+        path: 'https:\/\/park.ajinomoto.co.jp\/wp-admin\/admin-ajax.php',
+        resource_path: 'https:\/\/park.ajinomoto.co.jp\/wp-content\/themes\/ajinomoto',
+      }
+      /* ]]> */
+    </script>
+    <script
+      type="text/javascript"
+      src="https://park.ajinomoto.co.jp/wp-content/plugins/ps-admin-forms/inc/../resources/js/send_clip.js?var=20260123132736&#038;ver=20251225"
+    ></script>
+    <link rel="https://api.w.org/" href="https://park.ajinomoto.co.jp/wp-json/" />
+    <link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://park.ajinomoto.co.jp/xmlrpc.php?rsd" />
+    <link
+      rel="wlwmanifest"
+      type="application/wlwmanifest+xml"
+      href="https://park.ajinomoto.co.jp/wp-includes/wlwmanifest.xml"
+    />
+    <link rel="shortlink" href="https://park.ajinomoto.co.jp/?p=1068" />
+    <link
+      rel="alternate"
+      type="application/json+oembed"
+      href="https://park.ajinomoto.co.jp/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fpark.ajinomoto.co.jp%2Frecipe%2Fbasic%2F"
+    />
+    <link
+      rel="alternate"
+      type="text/xml+oembed"
+      href="https://park.ajinomoto.co.jp/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fpark.ajinomoto.co.jp%2Frecipe%2Fbasic%2F&#038;format=xml"
+    />
+    <link rel="canonical" href="https://park.ajinomoto.co.jp/recipe/basic/" />
+    <script type="text/javascript">
+      ;(function () {
+        var s = document.createElement('script')
+        s.type = 'text/javascript'
+        s.async = true
+        s.src = 'https://bvr.ast.snva.jp/beaver.js?serial=bcd748cd-cde9-48a9-8c19-75c62e85afd1'
+        var x = document.getElementsByTagName('script')[0]
+        x.parentNode.insertBefore(s, x)
+      })()
+      var _sna_dam = _sna_dam || []
+    </script>
 
-    <div class="contents">
-      <div class="contents__inner">
-        <!-- prettier-ignore -->
-        <%- include('./_components/home/_intro.ejs'); %>
-        <%- include('./_components/home/_foryou.ejs'); %>
-        <%- include('./_components/home/_pickup.ejs'); %>
-        <%- include('./_components/home/_voice.ejs'); %>
-        <a id="js-fixed-nav-hide-trigger" class="fixed-nav-hide-trigger"></a>
-        <!-- prettier-ignore -->
-        <%- include('./_components/_book.ejs'); %>
-        <%- include('./_components/home/_outro.ejs'); %>
+    <script src="//park.ajinomoto.co.jp/wp-content/themes/ajinomoto/js/url-search-params.js"></script>
+
+    <script>
+      //W3C DOM イベントモデルサポートブラウザ. FireFox, Chrome, Safari, Opera, IE9
+      if (window.addEventListener) {
+        window.onload = function () {
+          var target = document
+          var targetTextBox = document.getElementById('searchBtn')
+          //var targetTextBoxSP = document.getElementById('searchBtnSP');
+          target.addEventListener('keypress', setEvent)
+          /* 2019-08-01 AP_JSエラー LI_MING UPDATE START*/
+          if (targetTextBox) {
+            targetTextBox.addEventListener('keypress', setEvent)
+          }
+          /*if (targetTextBoxSP) {
+                targetTextBoxSP.addEventListener("keypress",setEventSP);
+            }*/
+          /* 2019-08-01 AP_JSエラー LI_MING UPDATE END*/
+        }
+      }
+
+      function setEvent(evt) {
+        if (evt.keyCode == 13) {
+          var frm = document.getElementById('customSearch')
+          var search_word = document.getElementById('searchBtn').value
+          if (frm) {
+            if (typeof search_word != 'undefined' && search_word != '') {
+              frm.submit()
+            }
+          }
+        }
+      }
+
+      /*function setEventSP(evt){
+        if (evt.keyCode == 13){
+            var frm = document.getElementById('customSearchSP');
+            var search_word = document.getElementById('searchBtnSP').value;
+            if (frm){
+                if (typeof search_word != "undefined" && search_word != ''){
+                    frm.submit();
+                }
+            }
+        }
+    }*/
+
+      /* 2019-08-01 AP_JSエラー LI_MING UPDATE START*/
+      jQuery(window).on('beforeunload', function (e) {
+        document.cookie = 'fromDirect=null'
+      })
+      /* 2019-08-01 AP_JSエラー LI_MING UPDATE START*/
+    </script>
+
+    <script type="text/javascript">
+      if (window.location.hash && window.location.hash == '#_=_') {
+        window.location.hash = ''
+      }
+    </script>
+
+    <!-- Schema.org -->
+
+    <!-- ---------------------------------------- -->
+    <!--                 GIGYA API                -->
+    <!-- ---------------------------------------- -->
+
+    <script type="text/javascript" src="https://cdns.gigya.com/js/gigya.js?apikey=4_WpyR2bWooXDvUvOIrZM5ew"></script>
+
+    <script type="text/javascript">
+      // ==============================================
+      // セッション情報の破棄
+      // ==============================================
+      function aidDestroySession() {
+        const xhr = new XMLHttpRequest()
+        xhr.open('POST', '/wp-json/aid/aidDestroySession')
+        xhr.addEventListener('loadend', function () {
+          apLogoutSession()
+        })
+        xhr.send()
+      }
+
+      // ==============================================
+      // Park ログアウト
+      // ==============================================
+      function apLogoutSession(response) {
+        const xhr = new XMLHttpRequest()
+        xhr.open('POST', '/wp-json/aid/apLogoutSession')
+        xhr.addEventListener('loadend', function () {
+          window.location.href = '/'
+        })
+        xhr.send()
+      }
+
+      // ==============================================
+      // ログアウト
+      // ==============================================
+      function clickAIDLogout() {
+        gigya.accounts.logout()
+        gigya.accounts.addEventHandlers({
+          onLogout: function (event) {
+            aidDestroySession()
+          },
+        })
+      }
+    </script>
+  </head>
+  <body class="">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-54GMHWF"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe
+    ></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <noscript>
+      <div id="noscript">
+        当サイトを最適な状態で閲覧していただくにはブラウザの<span>JavaScriptを有効</span>にしてご利用下さい。<br />
+        JavaScriptを無効のままご覧いただいた場合、正しい情報を取得できない場合がございます。
       </div>
-      <div class="contents__footer"></div>
-    </div>
-  </div>
-</main>
+    </noscript>
 
-<!-- prettier-ignore -->
-<%- include('./_components/_resources.ejs'); %>
-<%- include('./_components/_footer.ejs'); %>
+    <!-- DTM scripts -->
+    <script type="text/javascript">
+      var _ltv_user_id = ''
+    </script>
+    <!-- /DTM scripts -->
+
+    <script type="text/javascript">
+      localStorage.setItem('ap_ltv_user_id', '')
+      localStorage.setItem('ap_member_id', '')
+    </script>
+
+    <!-- [AJINOMOTO ID] Check: CDC Login Session  -->
+    <script type="text/javascript">
+      window.addEventListener('DOMContentLoaded', (event) => {
+        const loginVisibleEl = document.querySelectorAll('[data-visible="login"]')
+        const logoutVisibleEl = document.querySelectorAll('[data-visible="logout"]')
+        const checkmemberloggedin = false
+        const needsDestroyAPSession = true
+
+        verifyLogin()
+
+        /**
+         * ブラウザとCDC間のログインセッションを確認する
+         */
+        function verifyLogin() {
+          gigya.accounts.verifyLogin({
+            callback: function (response) {
+              if (response.errorCode == '0' && checkmemberloggedin) {
+                // Status: Login Success
+
+                // ログアウト状態の要素を削除
+                logoutVisibleEl.forEach(function (element) {
+                  element.remove()
+                })
+                // ログイン状態の要素を表示
+                loginVisibleEl.forEach(function (element) {
+                  element.style.visibility = 'visible'
+                })
+                // ログインボタンのクリックイベントを指定
+                addClickEventLoginModal()
+
+                // Register for AJINOMOTO ID Login Session
+                aidCreateServerSession([
+                  { name: 'aidUID', value: response.UID },
+                  { name: 'aidUIDSignature', value: response.UIDSignature },
+                  { name: 'aidSignatureTimestamp', value: response.signatureTimestamp },
+                ]).then((result) => {
+                  // Register for PARK Login Session
+                  aidAddParkLoginCookie(response.UID)
+                })
+              } else {
+                // Status: Login Failed
+
+                // ログイン状態の要素を削除
+                loginVisibleEl.forEach(function (element) {
+                  element.remove()
+                })
+                // ログアウト状態の要素を表示
+                logoutVisibleEl.forEach(function (element) {
+                  element.style.visibility = 'visible'
+                })
+
+                if (needsDestroyAPSession) {
+                  const xhr = new XMLHttpRequest()
+                  xhr.open('POST', '/wp-json/aid/apLogoutSession')
+                  xhr.send()
+
+                  const xhr2 = new XMLHttpRequest()
+                  xhr2.open('POST', '/wp-json/aid/aidDestroySession')
+                  xhr2.send()
+                }
+              }
+            },
+          })
+        }
+
+        /**
+         * ログインボタンのクリックイベントを設定する
+         */
+        function addClickEventLoginModal() {
+          // Modal Open
+          $(document).on('click', '.modalBtnLoggedin', function (e) {
+            $('.modalLoggedin').fadeIn(300)
+            e.preventDefault()
+          })
+          // Modal Close
+          $('.modal, .modal .mdClose').on('click', function () {
+            $('.modal').fadeOut(300)
+          })
+          // Content stopPropagation
+          $('.modalInner').on('click', function (e) {
+            e.stopPropagation()
+          })
+        }
+      })
+    </script>
+    <!-- /[AJINOMOTO ID] Check: CDC Login Session  -->
+
+    <div id="wrapper" class="chFixed">
+      <!-- <input id="isOpenedMenu" type="checkbox"> -->
+      <!-- メニュー非表示時 -->
+      <header>
+        <div class="wrapperLogo searchView">
+          <a href="https://park.ajinomoto.co.jp">
+            <img
+              src="https://park.ajinomoto.co.jp/wp-content/themes/ajinomoto/resources/images/common/sp/AP_logo_horizontal_grad.svg"
+              id="logoInClosedMenu"
+              alt="AJINOMOTO PARK"
+            />
+          </a>
+        </div>
+
+        <div class="loginIconArea">
+          <div class="wrapperBtnLogin">
+            <a href="#" class="modalBtnLoggedin" data-visible="login" style="visibility: hidden">
+              <img
+                src="https://park.ajinomoto.co.jp/wp-content/themes/ajinomoto/resources/images/common/sp/AP_svg_icon_loggedin_grad.svg"
+                alt="ログイン中"
+                class="iconLoggedin"
+              />
+              <p class="textLoggedin">LOGIN中</p>
+            </a>
+            <a
+              href="https://park.ajinomoto.co.jp/user/ajinomoto-id/auth/login/"
+              data-visible="logout"
+              style="visibility: hidden"
+            >
+              <img
+                src="https://park.ajinomoto.co.jp/wp-content/themes/ajinomoto/resources/images/common/sp/AP_svg_icon_login_grad.svg"
+                alt="ログイン"
+                class="iconLogin"
+              />
+              <p class="textLogin">LOGIN</p>
+            </a>
+          </div>
+        </div>
+
+        <div class="shopIconArea">
+          <div class="wrapperBtnShop">
+            <a href="https://direct.ajinomoto.co.jp/?utm_source=ap&utm_medium=referral&utm_content=header">
+              <img
+                src="https://park.ajinomoto.co.jp/wp-content/themes/ajinomoto/resources/images/common/sp/AP_svg_icon_store.svg"
+                alt="オンラインショップ"
+                class="iconShop"
+              />
+              <p class="textShop">ONLINE SHOP</p>
+            </a>
+          </div>
+        </div>
+
+        <div class="btnToggleMenu">
+          <button type="button" class="toggleMenu" id="menuOpen"></button>
+          <!-- <label class="btnToggleMenu" for="isOpenedMenu"> -->
+          <div class="wrapperBtnOpen">
+            <svg class="imgHumbergerButton" data-name="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 28">
+              <title>OPEN MENU</title>
+              <path class="cls-1" d="M0,0V4H60V0ZM0,16H60V12H0ZM0,28H60V24H0Z" />
+            </svg>
+            <p class="textHumbergerButton">MENU</p>
+          </div>
+          <!-- </label> -->
+        </div>
+      </header>
+      <!-- メニュー表示時 -->
+      <div class="bgOpenedMenu">
+        <div class="menuContainer">
+          <div class="wrapperLogo">
+            <a href="https://park.ajinomoto.co.jp">
+              <img
+                src="https://park.ajinomoto.co.jp/wp-content/themes/ajinomoto/resources/images/common/sp/AP_logo_horizontal_fff.svg"
+                id="logoInOpenedMenu"
+                alt="AJINOMOTO PARK"
+              />
+            </a>
+          </div>
+          <div class="btnToggleMenu">
+            <button type="button" class="toggleMenu" id="menuClose">></button>
+            <!-- <label class="btnToggleMenu" for="isOpenedMenu"> -->
+            <div class="wrapperBtnClose">
+              <svg class="imgHumbergerButton" data-name="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 38 38">
+                <title>CLOSE MENU</title>
+                <polygon class="cls-1" points="38 3 35 0 19 16 3 0 0 3 16 19 0 35 3 38 19 22 35 38 38 35 22 19 38 3" />
+              </svg>
+              <p class="textHumbergerButton">CLOSE</p>
+            </div>
+            <!-- </label> -->
+          </div>
+          <nav id="menuContainer">
+            <!-- メニュー　PCでは左側 -->
+            <div id="left">
+              <input id="isOpenedRecipeAcordion" class="sp" type="checkbox" />
+              <label class="acd-label acd-labelOpen sp" for="isOpenedRecipeAcordion">
+                <span class="titleItemListMenu-en icon recipe">RECIPE</span>
+                <span class="titleItemListMenu-ja icon acordion">レシピ</span>
+              </label>
+              <ul class="listMenu recipe">
+                <li class="itemListMenu pc">
+                  <span class="titleItemListMenu-en icon recipe">RECIPE</span>
+                  <span class="titleItemListMenu-ja icon acordion">レシピ</span>
+                </li>
+                <li class="itemListMenu">
+                  <a href="https://park.ajinomoto.co.jp/recipe/" class="linkItemListMenu"></a>
+                  <span class="titleItemListMenu-ja icon arrow">レシピ大百科トップ</span>
+                </li>
+                <li class="itemListMenu">
+                  <a href="https://park.ajinomoto.co.jp/recipe/corner/" class="linkItemListMenu"></a>
+                  <span class="titleItemListMenu-ja icon arrow">レシピ特集</span>
+                </li>
+                <li class="itemListMenu">
+                  <a href="https://park.ajinomoto.co.jp/menu/" class="linkItemListMenu"></a>
+                  <span class="titleItemListMenu-ja icon arrow">献立</span>
+                </li>
+                <li class="itemListMenu">
+                  <a href="https://park.ajinomoto.co.jp/recipe/basic/" class="linkItemListMenu"></a>
+                  <span class="titleItemListMenu-ja icon arrow">料理の基本</span>
+                </li>
+                <li class="itemListMenu pc">
+                  <a href="https://community.park.ajinomoto.co.jp/view/home" class="linkItemListMenu"></a>
+                  <img
+                    src="https://park.ajinomoto.co.jp/wp-content/themes/ajinomoto/resources/images/common/sp/AP_svg_icon_community.svg"
+                    alt=""
+                  />
+                  <span class="titleItemListMenu-ja icon ajinomotalk">コミュニティに参加する</span>
+                </li>
+              </ul>
+            </div>
+            <!-- メニュー　PCでは右側 -->
+            <div id="right">
+              <ul class="listMenu">
+                <li class="itemListMenu">
+                  <a href="https://park.ajinomoto.co.jp/magazine/" class="linkItemListMenu"></a>
+                  <span class="titleItemListMenu-en icon magazine">PARK MAGAZINE</span>
+                  <span class="titleItemListMenu-ja icon arrow">使える・楽しい</span>
+                </li>
+                <li class="itemListMenu">
+                  <!-- TODO: aタグ リンク先URL -->
+                  <a href="https://park.ajinomoto.co.jp/activity/" class="linkItemListMenu"></a>
+                  <span class="titleItemListMenu-en icon activity">PARK ACTIVITY</span>
+                  <span class="titleItemListMenu-ja icon arrow">参加する</span>
+                </li>
+                <li class="itemListMenu">
+                  <!-- //スペシャル -->
+                  <a href="https://park.ajinomoto.co.jp/special/" class="linkItemListMenu"></a>
+                  <span class="titleItemListMenu-en">SPECIAL</span>
+                  <span class="titleItemListMenu-ja icon arrow">スペシャル</span>
+                </li>
+                <li class="itemListMenu">
+                  <a href="https://park.ajinomoto.co.jp/campaign/" class="linkItemListMenu"></a>
+                  <span class="titleItemListMenu-en">CAMPAIGN</span>
+                  <span class="titleItemListMenu-ja icon arrow">キャンペーン</span>
+                </li>
+                <li class="itemListMenu">
+                  <a href="https://park.ajinomoto.co.jp/about/" class="linkItemListMenu"></a>
+                  <span class="titleItemListMenu-en">ABOUT</span>
+                  <span class="titleItemListMenu-ja icon arrow">「AJINOMOTO PARK」について</span>
+                </li>
+                <li class="itemListMenu sp">
+                  <a href="https://community.park.ajinomoto.co.jp/view/home" class="linkItemListMenu"></a>
+                  <img
+                    src="https://park.ajinomoto.co.jp/wp-content/themes/ajinomoto/resources/images/common/sp/AP_svg_icon_community.svg"
+                    alt=""
+                  />
+                  <span class="titleItemListMenu-ja icon ajinomotalk">コミュニティに参加する</span>
+                </li>
+              </ul>
+            </div>
+            <div id="bottom">
+              <ul class="listMenu">
+                <li class="itemListMenu clipBtn" id="clip">
+                  <!-- TODO: 非ログイン状態の場合のモーダル実装 -->
+                  <a href="https://park.ajinomoto.co.jp/clip/" class="modalBtnType02 linkItemListMenu"></a>
+                  <span class="titleItemListMenu-en icon clip">保存一覧</span>
+                </li>
+                <li class="itemListMenu" id="history">
+                  <a href="https://park.ajinomoto.co.jp/rireki/" class="linkItemListMenu"></a>
+                  <span class="titleItemListMenu-en icon history">閲覧履歴</span>
+                </li>
+              </ul>
+            </div>
+            <!-- メニュー　ログイン状態 -->
+            <div id="logined" data-visible="login" style="visibility: hidden">
+              <ul class="listMenu">
+                <li class="itemListMenu">
+                  <a href="https://park.ajinomoto.co.jp/user/edit/" class="linkItemListMenu">
+                    <span class="titleItemListMenu-en icon arrow">登録情報の確認・変更</span>
+                  </a>
+                </li>
+                <li class="itemListMenu">
+                  <a href="https://park.ajinomoto.co.jp/user/resign/" class="linkItemListMenu">
+                    <span class="titleItemListMenu-en icon arrow">退会について</span>
+                  </a>
+                </li>
+                <li class="itemListMenu">
+                  <a href="https://park.ajinomoto.co.jp/user/edit/mail-deregister/" class="linkItemListMenu">
+                    <span class="titleItemListMenu-en icon arrow">メール配信の登録・停止</span>
+                  </a>
+                </li>
+                <li class="itemListMenu">
+                  <a href="javascript: void(0);" class="btn-logout" onclick="clickAIDLogout()">
+                    <span class="titleItemListMenu-en icon arrow">ログアウト</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <!-- メニュー　非ログイン状態 -->
+            <div id="nonLogin" data-visible="logout" style="visibility: hidden">
+              <ul class="listMenu">
+                <li class="itemListMenu">
+                  <a
+                    href="https://park.ajinomoto.co.jp/user/ajinomoto-id/entry/?from=common.header.menu"
+                    class="linkItemListMenu btnRegister"
+                  >
+                    <span class="textGrad">新規会員登録</span>
+                  </a>
+                </li>
+                <li class="itemListMenu">
+                  <a
+                    href="https://park.ajinomoto.co.jp/user/ajinomoto-id/auth/login/"
+                    class="linkItemListMenu btnLogin"
+                  >
+                    <span>ログイン</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </div>
+
+      <nav class="bottomMenu">
+        <ul class="listBottomMenu">
+          <li class="itemListBottomMenu popular">
+            <a href="/recipe/#recipe_ranking_current"></a>
+            <span class="labelBottomMenu">人気レシピ</span>
+          </li>
+          <li class="itemListBottomMenu recipe">
+            <a href="/recipe/corner/"></a>
+            <span class="labelBottomMenu">レシピ特集</span>
+          </li>
+          <li class="itemListBottomMenu menu">
+            <a href="/menu/"></a>
+            <span class="labelBottomMenu">今週の献立</span>
+          </li>
+          <li class="itemListBottomMenu magazine">
+            <a href="/magazine/"></a>
+            <span class="labelBottomMenu">読みもの</span>
+          </li>
+          <li class="itemListBottomMenu history">
+            <a href="/clip/" class="tutorialFocus02" id="customFlothingSP"></a>
+            <span class="labelBottomMenu">保存/履歴</span>
+          </li>
+        </ul>
+        <!--<div class="trendModal">
+        <a href="#" id="closeTrendModal"></a>
+        <ul class="listHashtag">
+                            <li class="itemListHashtag">
+                    <a href="" class="btnHashtag">
+                        <span class="hashtagName textGrad">＃ </span>
+                        <span class="bg"></span>
+                    </a>
+                </li>
+                    </ul>
+    </div>-->
+      </nav>
+
+      <div id="container" class="searchView">
+        <div id="content">
+          <div class="contentHeadArea spSearchView sticky">
+            <div class="innerContentHeadArea">
+              <div class="searchArea clearfix">
+                <form
+                  id="customSearch"
+                  class="tutorialFocus01"
+                  name="customSearch"
+                  action="/recipe/search"
+                  method="GET"
+                >
+                  <input
+                    type="text"
+                    autocomplete="off"
+                    name="search_word"
+                    class="formTxt"
+                    value=""
+                    placeholder="料理名や食材でレシピを検索"
+                    id="searchBtn"
+                  />
+                  <input type="submit" value="" class="searchBtn" id="searchSubmit" />
+                </form>
+              </div>
+              <div class="wordList02 type01">
+                <p>人気キーワード</p>
+                <div class="arwL"></div>
+                <ul class="clearfix fadeArea">
+                  <li>
+                    <a href="https://park.ajinomoto.co.jp/recipe/search/?search_word=ポトフ" onClick="">ポトフ</a>
+                  </li>
+                  <li>
+                    <a href="https://park.ajinomoto.co.jp/recipe/search/?search_word=みぞれ鍋" onClick="">みぞれ鍋</a>
+                  </li>
+                  <li>
+                    <a href="https://park.ajinomoto.co.jp/recipe/corner/products/hondashi/" onClick="">「ほんだし」</a>
+                  </li>
+                  <li><a href="https://park.ajinomoto.co.jp/recipe/search/?search_word=大根" onClick="">大根</a></li>
+                  <li><a href="https://park.ajinomoto.co.jp/recipe/search/?search_word=白菜" onClick="">白菜</a></li>
+                  <li><a href="https://park.ajinomoto.co.jp/recipe/search/?search_word=餅" onClick="">餅</a></li>
+                  <li>
+                    <a href="https://park.ajinomoto.co.jp/recipe/search/?search_word=おでん" onClick="">おでん</a>
+                  </li>
+                  <li><a href="https://park.ajinomoto.co.jp/recipe/search/?search_word=牡蠣" onClick="">牡蠣</a></li>
+                  <li><a href="https://park.ajinomoto.co.jp/recipe/card/701316/" onClick="">生チョコ</a></li>
+                  <li><a href="https://park.ajinomoto.co.jp/recipe/corner/event/nabe/" onClick="">鍋</a></li>
+                  <li><a href="https://park.ajinomoto.co.jp/recipe/card/705840/" onClick="">トリュフ</a></li>
+                  <li>
+                    <a href="https://park.ajinomoto.co.jp/recipe/search/?search_word=けんちん汁" onClick=""
+                      >けんちん汁</a
+                    >
+                  </li>
+                  <li>
+                    <a href="https://park.ajinomoto.co.jp/recipe/search/?search_word=ぶり大根" onClick="">ぶり大根</a>
+                  </li>
+                  <li>
+                    <a href="https://park.ajinomoto.co.jp/recipe/search/?search_word=だし巻き卵" onClick=""
+                      >だし巻き卵</a
+                    >
+                  </li>
+                  <li>
+                    <a href="https://park.ajinomoto.co.jp/recipe/search/?search_word=シチュー" onClick="">シチュー</a>
+                  </li>
+                  <li><a href="https://park.ajinomoto.co.jp/recipe/card/706981/" onClick="">水炊き</a></li>
+                  <li><a href="https://park.ajinomoto.co.jp/recipe/card/704999/" onClick="">ブラウニー</a></li>
+                  <li>
+                    <a href="https://park.ajinomoto.co.jp/recipe/search/?search_word=チョコレートケーキ" onClick=""
+                      >チョコレートケーキ</a
+                    >
+                  </li>
+                  <li><a href="https://park.ajinomoto.co.jp/recipe/card/704642/" onClick="">あんこう鍋</a></li>
+                  <li>
+                    <a href="https://park.ajinomoto.co.jp/recipe/corner/event/nabe/kasane-nabe/" onClick=""
+                      >ミルフィーユ鍋</a
+                    >
+                  </li>
+                </ul>
+                <div class="arwR"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ///////////////////////////////////////////// コンテンツ各エリア ///////////////////////////////////////////// -->
+          <div id="basicIndex">
+            <div class="mainVisual">
+              <div class="wrap1240">
+                <h1 class="commonPagetitle">
+                  <img
+                    src="/wp-content/themes/ajinomoto/resources/images/recipe/basic/index/main.jpg"
+                    alt="レシピ特集"
+                  />
+                </h1>
+              </div>
+            </div>
+            <!-- /.mainVisual -->
+
+            <div class="leadArea">
+              <div class="wrap860">
+                お料理の初心者さんいらっしゃい！<br />
+                キッチンで困ったときはこれを見れば大丈夫。<br />
+                野菜の切り方から、<br class="sp" />
+                あなたのライフスタイルにぴったりのレシピまで、料理の基本がすぐにわかります。
+              </div>
+            </div>
+            <!-- /.leadArea -->
+
+            <div class="basicIndexList">
+              <div class="wrap860">
+                <ul class="clearfix fadeArea">
+                  <li>
+                    <a href="/recipe/basic/chomiryo/">
+                      <img
+                        src="/wp-content/themes/ajinomoto/resources/images/recipe/basic/index/btn_01.jpg"
+                        alt="計量・計り方"
+                      />
+                      <span
+                        ><span><span>計量・計り方</span></span></span
+                      >
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/recipe/basic/ingredients_bunryou/">
+                      <img
+                        src="/wp-content/themes/ajinomoto/resources/images/recipe/basic/index/btn_02.jpg"
+                        alt="食材の目安量"
+                      />
+                      <span
+                        ><span><span>食材の目安量</span></span></span
+                      >
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/recipe/basic/chomiryo_bunryou/">
+                      <img
+                        src="/wp-content/themes/ajinomoto/resources/images/recipe/basic/index/btn_03.jpg"
+                        alt="調味料の目安量"
+                      />
+                      <span
+                        ><span><span>調味料の目安量</span></span></span
+                      >
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/recipe/basic/houcho/">
+                      <img
+                        src="/wp-content/themes/ajinomoto/resources/images/recipe/basic/index/btn_04.jpg"
+                        alt="包丁の使い方"
+                      />
+                      <span
+                        ><span><span>包丁の使い方</span></span></span
+                      >
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/recipe/basic/vege_cutting/">
+                      <img
+                        src="/wp-content/themes/ajinomoto/resources/images/recipe/basic/index/btn_13.jpg"
+                        alt="切り方"
+                      />
+                      <span
+                        ><span><span>切り方</span></span></span
+                      >
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/recipe/basic/chourikigu/">
+                      <img
+                        src="/wp-content/themes/ajinomoto/resources/images/recipe/basic/index/btn_05.jpg"
+                        alt="調理器具"
+                      />
+                      <span
+                        ><span><span>調理器具</span></span></span
+                      >
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/recipe/basic/vege_handling/">
+                      <img
+                        src="/wp-content/themes/ajinomoto/resources/images/recipe/basic/index/btn_06.jpg"
+                        alt="食材別の下ごしらえ・切り方"
+                      />
+                      <span
+                        ><span><span>食材別の下ごしらえ・切り方</span></span></span
+                      >
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/recipe/basic/heating/">
+                      <img
+                        src="/wp-content/themes/ajinomoto/resources/images/recipe/basic/index/btn_07.jpg"
+                        alt="火加減"
+                      />
+                      <span
+                        ><span><span>火加減</span></span></span
+                      >
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/recipe/basic/friedoil/">
+                      <img
+                        src="/wp-content/themes/ajinomoto/resources/images/recipe/basic/index/btn_08.jpg"
+                        alt="揚げ油の温度"
+                      />
+                      <span
+                        ><span><span>揚げ油の温度</span></span></span
+                      >
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/recipe/basic/dashi/">
+                      <img
+                        src="/wp-content/themes/ajinomoto/resources/images/recipe/basic/index/btn_09.jpg"
+                        alt="だしの取り方"
+                      />
+                      <span
+                        ><span><span>だしの取り方</span></span></span
+                      >
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/recipe/basic/cookrice/">
+                      <img
+                        src="/wp-content/themes/ajinomoto/resources/images/recipe/basic/index/btn_10.jpg"
+                        alt="ご飯の炊き方"
+                      />
+                      <span
+                        ><span><span>ご飯の炊き方</span></span></span
+                      >
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/recipe/basic/vege_keeping/">
+                      <img
+                        src="/wp-content/themes/ajinomoto/resources/images/recipe/basic/index/btn_11.jpg"
+                        alt="食材の保存方法"
+                      />
+                      <span
+                        ><span><span>食材の保存方法</span></span></span
+                      >
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/recipe/basic/qa/">
+                      <img
+                        src="/wp-content/themes/ajinomoto/resources/images/recipe/basic/index/btn_12.jpg"
+                        alt="食のQ&#038;A"
+                      />
+                      <span
+                        ><span><span>食のQ&amp;A</span></span></span
+                      >
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <!-- /.basicIndexList -->
+          </div>
+          <!-- /#basicIndex -->
+
+          <section class="popularityKeywordsSection">
+            <div class="sectionTitle">
+              <p><span class="textGrad">KEYWORD</span></p>
+              <h2>人気キーワード</h2>
+            </div>
+            <div class="popularityKeywordsList wrap1100">
+              <ul class="clearfix">
+                <li><a href="https://park.ajinomoto.co.jp/recipe/search/?search_word=大根">大根</a></li>
+                <li><a href="https://park.ajinomoto.co.jp/recipe/search/?search_word=白菜">白菜</a></li>
+                <li><a href="https://park.ajinomoto.co.jp/recipe/search/?search_word=餅">餅</a></li>
+                <li><a href="https://park.ajinomoto.co.jp/recipe/search/?search_word=おでん">おでん</a></li>
+                <li><a href="https://park.ajinomoto.co.jp/recipe/search/?search_word=牡蠣">牡蠣</a></li>
+                <li><a href="https://park.ajinomoto.co.jp/recipe/card/701316/">生チョコ</a></li>
+                <li><a href="https://park.ajinomoto.co.jp/recipe/corner/event/nabe/">鍋</a></li>
+                <li><a href="https://park.ajinomoto.co.jp/recipe/card/705840/">トリュフ</a></li>
+                <li><a href="https://park.ajinomoto.co.jp/recipe/search/?search_word=けんちん汁">けんちん汁</a></li>
+                <li><a href="https://park.ajinomoto.co.jp/recipe/search/?search_word=ぶり大根">ぶり大根</a></li>
+                <li><a href="https://park.ajinomoto.co.jp/recipe/search/?search_word=だし巻き卵">だし巻き卵</a></li>
+                <li><a href="https://park.ajinomoto.co.jp/recipe/search/?search_word=シチュー">シチュー</a></li>
+                <li><a href="https://park.ajinomoto.co.jp/recipe/card/706981/">水炊き</a></li>
+                <li><a href="https://park.ajinomoto.co.jp/recipe/card/704999/">ブラウニー</a></li>
+                <li>
+                  <a href="https://park.ajinomoto.co.jp/recipe/search/?search_word=チョコレートケーキ"
+                    >チョコレートケーキ</a
+                  >
+                </li>
+                <li><a href="https://park.ajinomoto.co.jp/recipe/card/704642/">あんこう鍋</a></li>
+                <li><a href="https://park.ajinomoto.co.jp/recipe/corner/event/nabe/kasane-nabe/">ミルフィーユ鍋</a></li>
+              </ul>
+            </div>
+          </section>
+
+          <section class="modalIconSearchArea">
+            <h2 class="bigTitle_uline" id="search_by_category">カテゴリからさがす</h2>
+            <div class="clearfix">
+              <div class="box">
+                <h3 class="inTtl">定番食材で探す</h3>
+                <ul class="lists">
+                  <li class="modalBtn">
+                    <a data-modal="num01">
+                      <span class="ico"
+                        ><img
+                          src="https://park.ajinomoto.co.jp/wp-content/themes/ajinomoto/resources/images/recipe/index/icon_category_01.svg"
+                          alt=""
+                      /></span>
+                      <span class="txt">肉</span>
+                    </a>
+                  </li>
+                  <li class="modalBtn">
+                    <a data-modal="num02">
+                      <span class="ico"
+                        ><img
+                          src="https://park.ajinomoto.co.jp/wp-content/themes/ajinomoto/resources/images/recipe/index/icon_category_02.svg"
+                          alt=""
+                      /></span>
+                      <span class="txt">魚介</span>
+                    </a>
+                  </li>
+                  <li class="modalBtn spBgNon">
+                    <a data-modal="num03">
+                      <span class="ico"
+                        ><img
+                          src="https://park.ajinomoto.co.jp/wp-content/themes/ajinomoto/resources/images/recipe/index/icon_category_03.svg"
+                          alt=""
+                      /></span>
+                      <span class="txt">野菜</span>
+                    </a>
+                  </li>
+                  <li class="modalBtn">
+                    <a data-modal="num04">
+                      <span class="ico"
+                        ><img
+                          src="https://park.ajinomoto.co.jp/wp-content/themes/ajinomoto/resources/images/recipe/index/icon_category_04.svg"
+                          alt=""
+                      /></span>
+                      <span class="txt">その他</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div class="box">
+                <h3 class="inTtl">ジャンルで探す</h3>
+                <ul class="lists">
+                  <li>
+                    <a href="https://park.ajinomoto.co.jp/recipe/search/?s3%5B%5D=1">
+                      <span class="ico"
+                        ><img
+                          src="https://park.ajinomoto.co.jp/wp-content/themes/ajinomoto/resources/images/recipe/index/icon_category_05.svg"
+                          alt=""
+                      /></span>
+                      <span class="txt">和風</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://park.ajinomoto.co.jp/recipe/search/?s3%5B%5D=2">
+                      <span class="ico"
+                        ><img
+                          src="https://park.ajinomoto.co.jp/wp-content/themes/ajinomoto/resources/images/recipe/index/icon_category_06.svg"
+                          alt=""
+                      /></span>
+                      <span class="txt">洋風</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://park.ajinomoto.co.jp/recipe/search/?s3%5B%5D=3">
+                      <span class="ico"
+                        ><img
+                          src="https://park.ajinomoto.co.jp/wp-content/themes/ajinomoto/resources/images/recipe/index/icon_category_07.svg"
+                          alt=""
+                      /></span>
+                      <span class="txt">中華風</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://park.ajinomoto.co.jp/recipe/search/?s3%5B%5D=4">
+                      <span class="ico"
+                        ><img
+                          src="https://park.ajinomoto.co.jp/wp-content/themes/ajinomoto/resources/images/recipe/index/icon_category_08.svg"
+                          alt=""
+                      /></span>
+                      <span class="txt">韓国風</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://park.ajinomoto.co.jp/recipe/search/?s3%5B%5D=5">
+                      <span class="ico"
+                        ><img
+                          src="https://park.ajinomoto.co.jp/wp-content/themes/ajinomoto/resources/images/recipe/index/icon_category_09.svg"
+                          alt=""
+                      /></span>
+                      <span class="txt wide">エスニック</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div class="box">
+                <h3 class="inTtl">料理区分で探す</h3>
+                <ul class="lists">
+                  <li>
+                    <a href="https://park.ajinomoto.co.jp/recipe/search/?s1%5B%5D=1">
+                      <span class="ico"
+                        ><img
+                          src="https://park.ajinomoto.co.jp/wp-content/themes/ajinomoto/resources/images/recipe/index/icon_category_10.svg"
+                          alt=""
+                      /></span>
+                      <span class="txt">主菜</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://park.ajinomoto.co.jp/recipe/search/?s1%5B%5D=2">
+                      <span class="ico"
+                        ><img
+                          src="https://park.ajinomoto.co.jp/wp-content/themes/ajinomoto/resources/images/recipe/index/icon_category_11.svg"
+                          alt=""
+                      /></span>
+                      <span class="txt">副菜</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://park.ajinomoto.co.jp/recipe/search/?s1%5B%5D=4">
+                      <span class="ico"
+                        ><img
+                          src="https://park.ajinomoto.co.jp/wp-content/themes/ajinomoto/resources/images/recipe/index/icon_category_13.svg"
+                          alt=""
+                      /></span>
+                      <span class="txt">主食</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://park.ajinomoto.co.jp/recipe/search/?s1%5B%5D=3">
+                      <span class="ico"
+                        ><img
+                          src="https://park.ajinomoto.co.jp/wp-content/themes/ajinomoto/resources/images/recipe/index/icon_category_12.svg"
+                          alt=""
+                      /></span>
+                      <span class="txt">汁物</span>
+                    </a>
+                  </li>
+                  <li class="wide">
+                    <a href="https://park.ajinomoto.co.jp/recipe/search/?s1%5B%5D=5">
+                      <span class="ico"
+                        ><img
+                          src="https://park.ajinomoto.co.jp/wp-content/themes/ajinomoto/resources/images/recipe/index/icon_category_14.svg"
+                          alt=""
+                      /></span>
+                      <span class="txt wide">デザート</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <section class="comnonBoderSection">
+            <h2 class="bigTitle_new">おすすめレシピ</h2>
+            <div class="inLead">味の素KKが選んだ、おすすめのレシピをご紹介</div>
+            <div class="wrap1200">
+              <ul class="fourColumnList type01 moreDisplayArea">
+                <li>
+                  <a href="https://park.ajinomoto.co.jp/recipe/card/708053/" class="fade">
+                    <img src="https://park.ajinomoto.co.jp/wp-content/uploads/2018/03/708053.jpeg" alt="" />
+                    <div class="txt ellipsisStrengthRecipe" id="strengthRecipe2">こがしマヨたまトースト</div>
+                  </a>
+                  <div class="cat">
+                    <a href="/tag/100001/" class="btnHashtag">
+                      <span class="hashtagName textGrad">＃CMレシピ</span>
+                      <span class="bg"></span>
+                    </a>
+                  </div>
+                </li>
+                <li>
+                  <a href="https://park.ajinomoto.co.jp/recipe/card/800270/" class="fade">
+                    <img src="https://park.ajinomoto.co.jp/wp-content/uploads/2018/03/800270.jpeg" alt="" />
+                    <div class="txt ellipsisStrengthRecipe" id="strengthRecipe3">やみつき！無限ピーマン</div>
+                  </a>
+                  <div class="cat">
+                    <a href="/tag/100001/" class="btnHashtag">
+                      <span class="hashtagName textGrad">＃CMレシピ</span>
+                      <span class="bg"></span>
+                    </a>
+                  </div>
+                </li>
+                <li>
+                  <a href="https://park.ajinomoto.co.jp/recipe/card/800369/" class="fade">
+                    <img src="https://park.ajinomoto.co.jp/wp-content/uploads/2018/03/800369.jpeg" alt="" />
+                    <div class="txt ellipsisStrengthRecipe" id="strengthRecipe4">とろ卵豚キャベツ</div>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://park.ajinomoto.co.jp/recipe/card/801691/" class="fade">
+                    <img src="https://park.ajinomoto.co.jp/wp-content/uploads/2019/11/801691.jpeg" alt="" />
+                    <div class="txt ellipsisStrengthRecipe" id="strengthRecipe5">BLTミルフィーユサンド</div>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://park.ajinomoto.co.jp/recipe/card/707446/" class="fade">
+                    <img src="https://park.ajinomoto.co.jp/wp-content/uploads/2018/03/707446.jpeg" alt="" />
+                    <div class="txt ellipsisStrengthRecipe" id="strengthRecipe6">ふっくらジューシーハンバーグ</div>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://park.ajinomoto.co.jp/recipe/card/710682/" class="fade">
+                    <img src="https://park.ajinomoto.co.jp/wp-content/uploads/2018/03/710682.jpeg" alt="" />
+                    <div class="txt ellipsisStrengthRecipe" id="strengthRecipe7">青椒肉絲</div>
+                  </a>
+                  <div class="cat">
+                    <a href="/tag/100001/" class="btnHashtag">
+                      <span class="hashtagName textGrad">＃CMレシピ</span>
+                      <span class="bg"></span>
+                    </a>
+                  </div>
+                </li>
+                <li>
+                  <a href="https://park.ajinomoto.co.jp/recipe/card/709198/" class="fade">
+                    <img src="https://park.ajinomoto.co.jp/wp-content/uploads/2018/03/709198.jpeg" alt="" />
+                    <div class="txt ellipsisStrengthRecipe" id="strengthRecipe8">肉みそキャベツ</div>
+                  </a>
+                  <div class="cat">
+                    <a href="/tag/100001/" class="btnHashtag">
+                      <span class="hashtagName textGrad">＃CMレシピ</span>
+                      <span class="bg"></span>
+                    </a>
+                  </div>
+                </li>
+                <li>
+                  <a href="https://park.ajinomoto.co.jp/recipe/card/801322/" class="fade">
+                    <img src="https://park.ajinomoto.co.jp/wp-content/uploads/2019/01/801322.jpeg" alt="" />
+                    <div class="txt ellipsisStrengthRecipe" id="strengthRecipe9">鶏団子とひらひら人参のスープ野菜</div>
+                  </a>
+                  <div class="cat">
+                    <a href="/tag/100001/" class="btnHashtag">
+                      <span class="hashtagName textGrad">＃CMレシピ</span>
+                      <span class="bg"></span>
+                    </a>
+                  </div>
+                </li>
+                <li>
+                  <a href="https://park.ajinomoto.co.jp/recipe/card/710074/" class="fade">
+                    <img src="https://park.ajinomoto.co.jp/wp-content/uploads/2018/03/710074.jpeg" alt="" />
+                    <div class="txt ellipsisStrengthRecipe" id="strengthRecipe10">黄金炒飯</div>
+                  </a>
+                  <div class="cat">
+                    <a href="/tag/100001/" class="btnHashtag">
+                      <span class="hashtagName textGrad">＃CMレシピ</span>
+                      <span class="bg"></span>
+                    </a>
+                  </div>
+                </li>
+                <li>
+                  <a href="https://park.ajinomoto.co.jp/recipe/card/800919/" class="fade">
+                    <img src="https://park.ajinomoto.co.jp/wp-content/uploads/2018/03/800919.jpeg" alt="" />
+                    <div class="txt ellipsisStrengthRecipe" id="strengthRecipe11">豚バラピーマン</div>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://park.ajinomoto.co.jp/recipe/card/704735/" class="fade">
+                    <img src="https://park.ajinomoto.co.jp/wp-content/uploads/2018/03/704735.jpeg" alt="" />
+                    <div class="txt ellipsisStrengthRecipe" id="strengthRecipe12">回鍋肉</div>
+                  </a>
+                  <div class="cat">
+                    <a href="/tag/100001/" class="btnHashtag">
+                      <span class="hashtagName textGrad">＃CMレシピ</span>
+                      <span class="bg"></span>
+                    </a>
+                  </div>
+                </li>
+              </ul>
+              <div class="moreDisplayBtn js-moreDisplayBtn">
+                <span class="inMore"
+                  >もっと見る
+                  <span class="arw"></span>
+                </span>
+                <span class="inClose"
+                  >閉じる
+                  <span class="arw"></span>
+                </span>
+              </div>
+            </div>
+          </section>
+
+          <div class="breadcrumb fixPage">
+            <div class="breadcrumb">
+              <ul class="clearfix">
+                <li><a href="https://park.ajinomoto.co.jp/recipe/">レシピ大百科</a></li>
+                <li>料理の基本</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- /#content -->
+      </div>
+      <!-- /#container -->
+      <footer id="footer">
+        <section class="ftrTagArea">
+          <div class="ftrLogo">
+            <span
+              ><img
+                src="https://park.ajinomoto.co.jp/wp-content/themes/ajinomoto/resources/images/common/pc/ftr_logo.png"
+                alt="AJINOMOTO"
+            /></span>
+          </div>
+          <div class="pageTop">
+            <span>
+              <a href="#wrapper" class="smooth fade">
+                <svg class="icon_arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29.25 52.66">
+                  <defs>
+                    <style>
+                      .cls-1 {
+                        fill-rule: evenodd;
+                      }
+                    </style>
+                  </defs>
+                  <title>AP_svg</title>
+                  <polygon
+                    class="cls-1"
+                    points="29.25 26.33 25.2 22 25.15 22.05 4.05 0 0 4.32 21.06 26.33 0 48.33 4.05 52.66 25.15 30.61 25.2 30.65 29.25 26.33"
+                  />
+                </svg>
+              </a>
+            </span>
+          </div>
+          <? /*php endif; */?>
+        </section>
+        <section class="ftrContetns">
+          <section class="newSnsAcountArea">
+            <ul class="mainLists">
+              <li>
+                <a href="https://lin.ee/8hiLQ47" target="_blank"
+                  ><span
+                    ><img
+                      src="/wp-content/themes/ajinomoto/resources/images/recipe/index_new/ico_line.png"
+                      alt="LINEでお友達になる" /></span
+                  ><span>LINEからレシピ・献立検索！<br />LINEでお友だちになる </span></a
+                >
+              </li>
+              <li>
+                <a href="https://twitter.com/ajinomotopark" target="_blank"
+                  ><span
+                    ><img
+                      src="/wp-content/themes/ajinomoto/resources/images/recipe/index_new/ico_twitter.png"
+                      alt="Xをフォローする" /></span
+                  ><span>最新情報をいち早くお知らせ！<br />Xをフォローする</span></a
+                >
+              </li>
+            </ul>
+            <ul class="subLists">
+              <li>
+                <a href="https://www.youtube.com/channel/UCxbv_OKLGqvkg3eDNEoDJpw" target="_blank"
+                  ><span
+                    ><img
+                      src="/wp-content/themes/ajinomoto/resources/images/recipe/index_new/ico_youtube.png"
+                      alt="Youtubeを登録する" /></span
+                  ><span>公式チャンネル</span></a
+                >
+              </li>
+              <li>
+                <a href="https://community.park.ajinomoto.co.jp/view/home" target="_blank"
+                  ><span
+                    ><img
+                      src="/wp-content/themes/ajinomoto/resources/images/recipe/index_new/ico_ajinomotalk.png"
+                      alt="食の楽しい！発見コミュニティを登録する" /></span
+                  ><span>食を楽しむコミュニティ</span></a
+                >
+              </li>
+              <li>
+                <a href="https://www.pinterest.jp/ajinomotoparksocial/boards/" target="_blank"
+                  ><span
+                    ><img
+                      src="/wp-content/themes/ajinomoto/resources/images/recipe/index_new/ico_pinterest.png"
+                      alt="Pinterestをフォローする" /></span
+                  ><span>「AJINOMOTO PARK」</span></a
+                >
+              </li>
+              <li class="snsMail">
+                <a href="https://park.ajinomoto.co.jp/user/entry/?reg=1"
+                  ><span
+                    ><img
+                      src="/wp-content/themes/ajinomoto/resources/images/recipe/index_new/ico_mail.png"
+                      alt="メールマガジンを登録する" /></span
+                  ><span>メールマガジン</span></a
+                >
+              </li>
+              <li>
+                <a href="https://www.facebook.com/ajinomoto.co.jp" target="_blank"
+                  ><span
+                    ><img
+                      src="/wp-content/themes/ajinomoto/resources/images/recipe/index_new/ico_facebook.png"
+                      alt="Facebookをフォローする" /></span
+                  ><span>公式アカウント</span></a
+                >
+              </li>
+              <li>
+                <a href="https://www.instagram.com/ajinomoto_park/" target="_blank"
+                  ><span
+                    ><img
+                      src="/wp-content/themes/ajinomoto/resources/images/recipe/index_new/ico_insta.png"
+                      alt="Instagramをフォローする" /></span
+                  ><span>公式アカウント</span></a
+                >
+              </li>
+            </ul>
+          </section>
+          <section class="fNav">
+            <ul class="fNav01">
+              <li>
+                <a href="https://park.ajinomoto.co.jp/ap_terms_of_service"><span>利用規約</span></a>
+              </li>
+              <!--
+                    -->
+              <li>
+                <a href="https://park.ajinomoto.co.jp/ap_membership_agreement"><span>会員規約</span></a>
+              </li>
+              <!--
+                    -->
+              <li>
+                <a href="https://park.ajinomoto.co.jp/faq/"><span>よくあるお問い合わせ</span></a>
+              </li>
+            </ul>
+            <ul class="fNav02">
+              <li>
+                <a href="https://www.ajinomoto.co.jp/"><span>味の素KK商品情報サイト</span></a>
+              </li>
+              <!--
+                    -->
+              <li>
+                <a href="https://www.ajinomoto.com/jp/"><span>味の素KK企業情報サイト</span></a>
+              </li>
+              <!--
+                    -->
+              <li>
+                <a href="https://ajinomoto-direct.shop/?adid=ba01010396ajioo"><span>オンラインショップ</span></a>
+              </li>
+              <!--
+                    -->
+              <li>
+                <a href="https://www.ajinomoto.co.jp/privacy/"><span>プライバシーポリシー</span></a>
+              </li>
+              <!--
+                    -->
+              <li>
+                <a href="https://www.ajinomoto.co.jp/terms/socialmedia.html"
+                  ><span>ソーシャルメディアガイドライン</span></a
+                >
+              </li>
+              <!--
+                    -->
+              <li>
+                <a href="https://www.ajinomoto.co.jp/terms/trademark.html"><span>商標について</span></a>
+              </li>
+            </ul>
+          </section>
+          <p id="copyright">Copyright (c) 1996-2026 AJINOMOTO CO.,INC All rights reserved.</p>
+        </section>
+      </footer>
+
+      <div class="modal modalLoggedin">
+        <div class="modalTable">
+          <div class="modalCell">
+            <div class="modalInner">
+              <ul class="btnArea">
+                <li class="btn">
+                  <a
+                    class="mem-button mem-button--default"
+                    href="https://park.ajinomoto.co.jp/clip/"
+                    class="fade"
+                    onClick=""
+                  >
+                    <span class="mem-button__inner">
+                      <span class="mem-button__text">
+                        <img
+                          src="https://park.ajinomoto.co.jp/wp-content/themes/ajinomoto/resources/images/common/sp/AP_svg_icon_keep_grad.svg"
+                        />
+                        <span class="mem-button__label mem-button__label">保存一覧</span>
+                      </span>
+                    </span>
+                  </a>
+                </li>
+                <li class="btn">
+                  <a
+                    class="mem-button mem-button--default"
+                    href="https://park.ajinomoto.co.jp/rireki/"
+                    class="fade"
+                    onClick=""
+                  >
+                    <span class="mem-button__inner">
+                      <span class="mem-button__text">
+                        <img
+                          src="https://park.ajinomoto.co.jp/wp-content/themes/ajinomoto/resources/images/common/sp/AP_svg_icon_history_grad.svg"
+                        />
+                        <span class="mem-button__label mem-button__label">閲覧履歴</span>
+                      </span>
+                    </span>
+                  </a>
+                </li>
+                <li class="btn">
+                  <a
+                    class="mem-button mem-button--default"
+                    href="https://park.ajinomoto.co.jp/user/edit/"
+                    class="fade"
+                    onClick=""
+                  >
+                    <span class="mem-button__inner">
+                      <span class="mem-button__text">
+                        <img
+                          src="https://park.ajinomoto.co.jp/wp-content/themes/ajinomoto/resources/images/common/sp/AP_svg_icon_user_grad.svg"
+                        />
+                        <span class="mem-button__label mem-button__label">登録情報の確認・変更</span>
+                      </span>
+                    </span>
+                  </a>
+                </li>
+              </ul>
+              <a class="btn-logout" onclick="clickAIDLogout()" data-visible="login">
+                <span class="titleItemListMenu-en icon arrow">ログアウト</span>
+              </a>
+              <div class="mdClose"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="popularityModal modal" data-modal="num01">
+        <div class="modalTable">
+          <div class="modalCell">
+            <div class="modalInner">
+              <dl class="popularityModalContents">
+                <dt>
+                  <ul class="bigTitle_uline">
+                    <li class="ico">
+                      <img
+                        src="https://park.ajinomoto.co.jp/wp-content/themes/ajinomoto/resources/images/recipe/index/icon_category_01.svg"
+                        alt=""
+                      />
+                    </li>
+                    <li class="title">肉</li>
+                  </ul>
+                </dt>
+                <dd>
+                  <ul>
+                    <li>
+                      <a href="https://park.ajinomoto.co.jp/recipe/search/?search_word=牛肉">
+                        <span class="icon arrow"></span>
+                        牛肉
+                      </a>
+                    </li>
+                    <li>
+                      <a href="https://park.ajinomoto.co.jp/recipe/search/?search_word=豚肉">
+                        <span class="icon arrow"></span>
+                        豚肉
+                      </a>
+                    </li>
+                    <li>
+                      <a href="https://park.ajinomoto.co.jp/recipe/search/?search_word=豚バラ肉">
+                        <span class="icon arrow"></span>
+                        豚バラ肉
+                      </a>
+                    </li>
+                    <li>
+                      <a href="https://park.ajinomoto.co.jp/recipe/search/?search_word=鶏肉">
+                        <span class="icon arrow"></span>
+                        鶏肉
+                      </a>
+                    </li>
+                    <li>
+                      <a href="https://park.ajinomoto.co.jp/recipe/search/?search_word=鶏もも肉">
+                        <span class="icon arrow"></span>
+                        鶏もも肉
+                      </a>
+                    </li>
+                    <li>
+                      <a href="https://park.ajinomoto.co.jp/recipe/search/?search_word=鶏手羽元">
+                        <span class="icon arrow"></span>
+                        鶏手羽元
+                      </a>
+                    </li>
+                    <li>
+                      <a href="https://park.ajinomoto.co.jp/recipe/search/?search_word=ひき肉">
+                        <span class="icon arrow"></span>
+                        ひき肉
+                      </a>
+                    </li>
+                    <li>
+                      <a href="https://park.ajinomoto.co.jp/recipe/search/?search_word=合いびき肉">
+                        <span class="icon arrow"></span>
+                        合いびき肉
+                      </a>
+                    </li>
+                    <li>
+                      <a href="https://park.ajinomoto.co.jp/recipe/search/?search_word=ウインナー">
+                        <span class="icon arrow"></span>
+                        ウインナー
+                      </a>
+                    </li>
+                    <li>
+                      <a href="https://park.ajinomoto.co.jp/recipe/search/?search_word=ハム">
+                        <span class="icon arrow"></span>
+                        ハム
+                      </a>
+                    </li>
+                  </ul>
+                </dd>
+              </dl>
+              <div class="mdClose"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="popularityModal modal" data-modal="num02">
+        <div class="modalTable">
+          <div class="modalCell">
+            <div class="modalInner">
+              <dl class="popularityModalContents">
+                <dt>
+                  <ul class="bigTitle_uline">
+                    <li class="ico">
+                      <img
+                        src="https://park.ajinomoto.co.jp/wp-content/themes/ajinomoto/resources/images/recipe/index/icon_category_02.svg"
+                        alt=""
+                      />
+                    </li>
+                    <li class="title">魚介</li>
+                  </ul>
+                </dt>
+                <dd>
+                  <ul>
+                    <li>
+                      <a href="https://park.ajinomoto.co.jp/recipe/search/?search_word=まぐろ">
+                        <span class="icon arrow"></span>
+                        まぐろ
+                      </a>
+                    </li>
+                    <li>
+                      <a href="https://park.ajinomoto.co.jp/recipe/search/?search_word=ツナ缶">
+                        <span class="icon arrow"></span>
+                        ツナ缶
+                      </a>
+                    </li>
+                    <li>
+                      <a href="https://park.ajinomoto.co.jp/recipe/search/?search_word=さば">
+                        <span class="icon arrow"></span>
+                        さば
+                      </a>
+                    </li>
+                    <li>
+                      <a href="https://park.ajinomoto.co.jp/recipe/search/?search_word=さば缶">
+                        <span class="icon arrow"></span>
+                        さば缶
+                      </a>
+                    </li>
+                    <li>
+                      <a href="https://park.ajinomoto.co.jp/recipe/search/?search_word=鮭（さけ）">
+                        <span class="icon arrow"></span>
+                        鮭（さけ）
+                      </a>
+                    </li>
+                    <li>
+                      <a href="https://park.ajinomoto.co.jp/recipe/search/?search_word=たら">
+                        <span class="icon arrow"></span>
+                        たら
+                      </a>
+                    </li>
+                    <li>
+                      <a href="https://park.ajinomoto.co.jp/recipe/search/?search_word=いか">
+                        <span class="icon arrow"></span>
+                        いか
+                      </a>
+                    </li>
+                    <li>
+                      <a href="https://park.ajinomoto.co.jp/recipe/search/?search_word=えび">
+                        <span class="icon arrow"></span>
+                        えび
+                      </a>
+                    </li>
+                    <li>
+                      <a href="https://park.ajinomoto.co.jp/recipe/search/?search_word=たこ">
+                        <span class="icon arrow"></span>
+                        たこ
+                      </a>
+                    </li>
+                    <li>
+                      <a href="https://park.ajinomoto.co.jp/recipe/search/?search_word=いわし">
+                        <span class="icon arrow"></span>
+                        いわし
+                      </a>
+                    </li>
+                    <li>
+                      <a href="https://park.ajinomoto.co.jp/recipe/search/?search_word=鯵（あじ）">
+                        <span class="icon arrow"></span>
+                        鯵（あじ）
+                      </a>
+                    </li>
+                  </ul>
+                </dd>
+              </dl>
+              <div class="mdClose"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="popularityModal modal" data-modal="num03">
+        <div class="modalTable">
+          <div class="modalCell">
+            <div class="modalInner">
+              <dl class="popularityModalContents">
+                <dt>
+                  <ul class="bigTitle_uline">
+                    <li class="ico">
+                      <img
+                        src="https://park.ajinomoto.co.jp/wp-content/themes/ajinomoto/resources/images/recipe/index/icon_category_03_mini.svg"
+                        alt=""
+                      />
+                    </li>
+                    <li class="title">野菜</li>
+                  </ul>
+                </dt>
+                <dd>
+                  <ul>
+                    <li>
+                      <a href="https://park.ajinomoto.co.jp/recipe/search/?search_word=キャベツ">
+                        <span class="icon arrow"></span>
+                        キャベツ
+                      </a>
+                    </li>
+                    <li>
+                      <a href="https://park.ajinomoto.co.jp/recipe/search/?search_word=玉ねぎ">
+                        <span class="icon arrow"></span>
+                        玉ねぎ
+                      </a>
+                    </li>
+                    <li>
+                      <a href="https://park.ajinomoto.co.jp/recipe/search/?search_word=にんじん">
+                        <span class="icon arrow"></span>
+                        にんじん
+                      </a>
+                    </li>
+                    <li>
+                      <a href="https://park.ajinomoto.co.jp/recipe/search/?search_word=もやし">
+                        <span class="icon arrow"></span>
+                        もやし
+                      </a>
+                    </li>
+                    <li>
+                      <a href="https://park.ajinomoto.co.jp/recipe/search/?search_word=じゃがいも">
+                        <span class="icon arrow"></span>
+                        じゃがいも
+                      </a>
+                    </li>
+                    <li>
+                      <a href="https://park.ajinomoto.co.jp/recipe/search/?search_word=ピーマン">
+                        <span class="icon arrow"></span>
+                        ピーマン
+                      </a>
+                    </li>
+                    <li>
+                      <a href="https://park.ajinomoto.co.jp/recipe/search/?search_word=ブロッコリー">
+                        <span class="icon arrow"></span>
+                        ブロッコリー
+                      </a>
+                    </li>
+                    <li>
+                      <a href="https://park.ajinomoto.co.jp/recipe/search/?search_word=しめじ">
+                        <span class="icon arrow"></span>
+                        しめじ
+                      </a>
+                    </li>
+                    <li>
+                      <a href="https://park.ajinomoto.co.jp/recipe/search/?search_word=しいたけ">
+                        <span class="icon arrow"></span>
+                        しいたけ
+                      </a>
+                    </li>
+                    <li>
+                      <a href="https://park.ajinomoto.co.jp/recipe/search/?search_word=エリンギ">
+                        <span class="icon arrow"></span>
+                        エリンギ
+                      </a>
+                    </li>
+                    <li>
+                      <a href="https://park.ajinomoto.co.jp/recipe/search/?search_word=かぼちゃ">
+                        <span class="icon arrow"></span>
+                        かぼちゃ
+                      </a>
+                    </li>
+                    <li>
+                      <a href="https://park.ajinomoto.co.jp/recipe/search/?search_word=きゅうり">
+                        <span class="icon arrow"></span>
+                        きゅうり
+                      </a>
+                    </li>
+                    <li>
+                      <a href="https://park.ajinomoto.co.jp/recipe/search/?search_word=大根">
+                        <span class="icon arrow"></span>
+                        大根
+                      </a>
+                    </li>
+                    <li>
+                      <a href="https://park.ajinomoto.co.jp/recipe/search/?search_word=なす">
+                        <span class="icon arrow"></span>
+                        なす
+                      </a>
+                    </li>
+                    <li>
+                      <a href="https://park.ajinomoto.co.jp/recipe/search/?search_word=白菜">
+                        <span class="icon arrow"></span>
+                        白菜
+                      </a>
+                    </li>
+                    <li>
+                      <a href="https://park.ajinomoto.co.jp/recipe/search/?search_word=たけのこ">
+                        <span class="icon arrow"></span>
+                        たけのこ
+                      </a>
+                    </li>
+                  </ul>
+                </dd>
+              </dl>
+              <div class="mdClose"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="popularityModal modal" data-modal="num04">
+        <div class="modalTable">
+          <div class="modalCell">
+            <div class="modalInner">
+              <dl class="popularityModalContents">
+                <dt>
+                  <ul class="bigTitle_uline">
+                    <li class="ico">
+                      <img
+                        src="https://park.ajinomoto.co.jp/wp-content/themes/ajinomoto/resources/images/recipe/index/icon_category_04.svg"
+                        alt=""
+                      />
+                    </li>
+                    <li class="title">その他</li>
+                  </ul>
+                </dt>
+                <dd>
+                  <ul>
+                    <li>
+                      <a href="https://park.ajinomoto.co.jp/recipe/search/?search_word=卵">
+                        <span class="icon arrow"></span>
+                        卵
+                      </a>
+                    </li>
+                    <li>
+                      <a href="https://park.ajinomoto.co.jp/recipe/search/?search_word=豆腐">
+                        <span class="icon arrow"></span>
+                        豆腐
+                      </a>
+                    </li>
+                    <li>
+                      <a href="https://park.ajinomoto.co.jp/recipe/search/?search_word=厚揚げ">
+                        <span class="icon arrow"></span>
+                        厚揚げ
+                      </a>
+                    </li>
+                    <li>
+                      <a href="https://park.ajinomoto.co.jp/recipe/search/?search_word=油揚げ">
+                        <span class="icon arrow"></span>
+                        油揚げ
+                      </a>
+                    </li>
+                    <li>
+                      <a href="https://park.ajinomoto.co.jp/recipe/search/?search_word=豆乳">
+                        <span class="icon arrow"></span>
+                        豆乳
+                      </a>
+                    </li>
+                    <li>
+                      <a href="https://park.ajinomoto.co.jp/recipe/search/?search_word=ひじき">
+                        <span class="icon arrow"></span>
+                        ひじき
+                      </a>
+                    </li>
+                    <li>
+                      <a href="https://park.ajinomoto.co.jp/recipe/search/?search_word=わかめ">
+                        <span class="icon arrow"></span>
+                        わかめ
+                      </a>
+                    </li>
+                    <li>
+                      <a href="https://park.ajinomoto.co.jp/recipe/search/?search_word=うどん">
+                        <span class="icon arrow"></span>
+                        うどん
+                      </a>
+                    </li>
+                    <li>
+                      <a href="https://park.ajinomoto.co.jp/recipe/search/?search_word=そば">
+                        <span class="icon arrow"></span>
+                        そば
+                      </a>
+                    </li>
+                    <li>
+                      <a href="https://park.ajinomoto.co.jp/recipe/search/?search_word=そうめん">
+                        <span class="icon arrow"></span>
+                        そうめん
+                      </a>
+                    </li>
+                    <li class="wide">
+                      <a href="https://park.ajinomoto.co.jp/recipe/search/?search_word=パスタ・スパゲッティ">
+                        <span class="icon arrow"></span>
+                        パスタ・スパゲッティ
+                      </a>
+                    </li>
+                  </ul>
+                </dd>
+              </dl>
+              <div class="mdClose"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--/////////////////////////////////////////////////////////////////// -->
+    </div>
+    <!-- /#wrapper -->
+    <!-- js -->
+    <script
+      type="text/javascript"
+      src="https://park.ajinomoto.co.jp/wp-includes/js/wp-embed.min.js?ver=20251225"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://park.ajinomoto.co.jp/wp-content/themes/ajinomoto/resources/scripts/sortAreaTabs.js?ver=20251225"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://park.ajinomoto.co.jp/wp-content/themes/ajinomoto/resources/scripts/_lib.js?ver=20251225"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://park.ajinomoto.co.jp/wp-content/themes/ajinomoto/resources/scripts/_util.js?ver=20251225"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://park.ajinomoto.co.jp/wp-content/themes/ajinomoto/resources/scripts/_jquery.matchHeight.js?ver=20251225"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://park.ajinomoto.co.jp/wp-content/themes/ajinomoto/resources/scripts/_jquery.colorbox.js?ver=20251225"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://park.ajinomoto.co.jp/wp-content/themes/ajinomoto/resources/scripts/_jquery.new_content_ajax.js?ver=20251225"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://park.ajinomoto.co.jp/wp-content/themes/ajinomoto/resources/scripts/_slick.js?ver=20251225"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://park.ajinomoto.co.jp/wp-content/themes/ajinomoto/resources/scripts/_form.js?ver=20251225"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://park.ajinomoto.co.jp/wp-content/themes/ajinomoto/resources/scripts/_init.js?ver=20251225"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://park.ajinomoto.co.jp/wp-content/themes/ajinomoto/js/nst_ellipsis.js?ver=20251225"
+    ></script>
+    <!-- cojp log footer-->
+    <script type="text/javascript" language="javascript" src="//www.ajinomoto.co.jp/shared_file/js/log.js"></script>
+    <!-- object-fit-image -->
+    <script>
+      objectFitImages('img.object-fit')
+      objectFitImages()
+
+      var elements = $('.sticky')
+      Stickyfill.add(elements)
+    </script>
+    <script
+      type="text/javascript"
+      language="javascript"
+      src="https://park.ajinomoto.co.jp/wp-content/themes/ajinomoto/resources/scripts/nav.js?version=20251225"
+    ></script>
+    <!-- /cojp log footer-->
+  </body>
+</html>
