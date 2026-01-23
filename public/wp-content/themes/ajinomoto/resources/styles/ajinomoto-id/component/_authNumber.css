@@ -1,0 +1,44 @@
+@media screen and (min-width: 980px) {
+  .aid-authNumber__form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .aid-authNumber__label {
+    margin-right: 20px;
+    font-size: 24px;
+    font-weight: bold;
+  }
+  .aid-authNumber__input {
+    width: 240px;
+  }
+  .aid-authNumber__input[type="number"]::-webkit-outer-spin-button,
+  .aid-authNumber__input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none; 
+    margin: 0;
+    -moz-appearance:textfield;
+  }
+}
+
+@media screen and (max-width: 979px) {
+  .aid-authNumber__form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .aid-authNumber__label {
+    margin-right: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    white-space: nowrap;
+  }
+  .aid-authNumber__input {
+    width: 60vw;
+  }
+  .aid-authNumber__input[type="number"]::-webkit-outer-spin-button,
+  .aid-authNumber__input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none; 
+    margin: 0;
+    -moz-appearance:textfield;
+  }
+}

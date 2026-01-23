@@ -1,0 +1,1461 @@
+@charset "utf-8";
+/**
+ * clip.css
+ */
+
+/* bdrTitle
+--------------------------------------------------*/
+#clipPage {
+	padding-top: 20px;
+    margin-bottom: 50px;
+}
+#clipPage .bdrTitle {
+	margin-bottom: 18px;
+}
+#clipPage .bdrTitle .ttl {
+	padding-bottom: 0px;
+	flex-wrap: wrap;
+	font-weight: 700;
+}
+#clipPage .bdrTitle span {
+	display: inline-block;
+    padding-left: 29px;
+    font-size: 5.41vw;
+	background: url(/wp-content/themes/ajinomoto/resources/images/common/sp/AP_svg_icon_keep.svg) no-repeat left center;
+	background-size: 20px auto;
+}
+#clipPage .titleContentsItem a {
+    color: #000;
+    text-decoration: none;
+}
+#clipPage .categoryLabel {
+    background-color: #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+#clipPage .categoryName {
+    background-color: #fff;
+    font-family: 'Lato', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1.0;
+    text-align: center;
+    padding: 5px 10px;
+    padding-left: 24.5px;
+}
+
+#clipPage .categoryName::before {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    top: calc(50% - 10px);
+    left: 5px;
+    width: 15px;
+    height: 13px;
+    vertical-align: middle;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+#clipPage .categoryLabel.recipe::before {
+    top: calc(50% - 6.5px);
+    height: 13px;
+    background-image: url(/wp-content/themes/ajinomoto/resources/images/common/sp/AP_svg_icon_recipe.svg);
+}
+#clipPage .categoryLabel.magazine::before {
+    top: calc(50% - 6.5px);
+    height: 13px;
+    background-image: url(/wp-content/themes/ajinomoto/resources/images/common/sp/AP_svg_icon_magazine.svg);
+}
+#clipPage .categoryLabel.activity::before {
+    top: calc(50% - 6.5px);
+    height: 13px;
+    background-image: url(/wp-content/themes/ajinomoto/resources/images/common/sp/AP_svg_icon_activity.svg);
+}
+#clipPage .categoryLabel.menu::before {
+    top: calc(50% - 7px);
+    height: 16px;
+    background-image: url(/wp-content/themes/ajinomoto/resources/images/common/sp/AP_svg_icon_menu.svg);
+}
+#clipPage .wrapperClipBtn {
+	position: relative;
+	/* margin: 40px 40px 40px 0!important; */
+}
+:root {
+    --clip-item-bdr-radius: 10px;
+}
+#clipPage .activityLabel {
+    position: absolute;
+    z-index: 1;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 15%;
+    max-height: 35px;
+    border-radius: 0 0 var(--clip-item-bdr-radius) var(--clip-item-bdr-radius);
+    color: #ffffff;
+    text-align: center;
+}
+#clipPage .activityLabel.past {
+    background-color: #000000;
+    opacity: 0.7;
+}
+#clipPage .activityLabel.participation {
+    background: rgb(217,44,107);
+    background: -webkit-linear-gradient(0, rgba(217,44,107,1) 0%, rgba(236,110,30,1) 100%);
+    background: -moz-linear-gradient(0, rgba(217,44,107,1) 0%, rgba(236,110,30,1) 100%);
+    background: -ms-linear-gradient(0, rgba(217,44,107,1) 0%, rgba(236,110,30,1) 100%);
+    background: linear-gradient(90deg, rgba(217,44,107,1) 0%, rgba(236,110,30,1) 100%);
+}
+
+#clipPage .activityLabel.participation::before {
+    content: '';
+    position: absolute;
+    display: inline-block;
+    vertical-align: middle;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url('/wp-content/themes/ajinomoto/resources/images/common/sp/AP_icon_people.png');
+}
+/*/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
+/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/*/
+
+@media screen and (max-width: 979px) {
+
+    #clipPage {
+        padding-top: 5px;
+    }
+
+    #clipPage .bdrTitle {
+        display: none;
+    }
+
+    #clipPage .menuTab {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        margin: 0px auto 28px;
+        border-bottom: 3px solid #e4e3e3;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+    #clipPage .menuTab .tabTitle {
+        font-size: 14px;
+        margin: 5px 5px 0px;
+        font-weight: 700;
+        width: calc(100% - 20px);
+        text-align: center;
+        border: 1px solid #e4e3e3;
+        border-radius: 6px 6px 0px 0px / 6px 6px 0px 0px;
+        border-bottom: none;
+        background: #a5a4a4;
+    }
+
+    #clipPage .menuTab .tabTitle:hover {
+        background: #c2c1c1;
+    }
+
+    #clipPage .menuTab .tabTitle.active {
+        background: -moz-linear-gradient(bottom, #e4e3e3, #FFF);
+        background: -webkit-linear-gradient(bottom, #e4e3e3, #FFF);
+        background: linear-gradient(to top, #e4e3e3, #FFF);
+    }
+
+    .tabTitle.active span.clip::before {
+        content: "";
+        display: inline-block;
+        background-image: url("/wp-content/themes/ajinomoto/resources/images/common/sp/AP_svg_icon_keep_grad_fill.svg");
+        background-repeat: no-repeat;
+        vertical-align: -3px;
+        background-size: contain;
+        height: 15px;
+        width: 15px;
+        padding-right: 10px;
+    }
+
+    .tabTitle span.history::before {
+        content: "";
+        display: inline-block;
+        background-image: url("/wp-content/themes/ajinomoto/resources/images/common/sp/AP_svg_icon_history_fff.svg");
+        background-repeat: no-repeat;
+        vertical-align: -3px;
+        background-size: contain;
+        height: 15px;
+        width: 15px;
+        padding-right: 10px;
+    }
+
+    .tabTitle a{
+        display: block;
+        text-decoration: none;
+        padding: 6px 1px;
+        color: #FFF;
+    }
+
+    .tabTitle.active a {
+        color: #000;
+    }
+
+    /* コンテンツ */
+    #clipPage .listContents {
+        display: flex;
+        justify-content: start;
+        flex-wrap: wrap;
+    }
+
+    #clipPage .itemListContents {
+        width: calc((100% - 15px) / 2);
+        margin-bottom: 15px;
+    }
+
+    #clipPage .itemListContents:nth-child(odd) {
+        margin-right: 15px;
+    }
+
+    #clipPage .btnContents {
+        position: relative;
+    }
+
+    #clipPage .btnContentsItem a {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 2;
+    }
+
+    #clipPage .btnContentsItem,
+    #clipPage .btnContentsItemMenu {
+        position: relative;
+        margin-bottom: 10px;
+    }
+
+    #clipPage .btnContentsItem::before,
+    #clipPage .btnContentsItemMenu::before {
+        content: '';
+        display: block;
+        padding-top: 66.7%;
+    }
+
+    #clipPage .btnContentsItem img {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: var(--clip-item-bdr-radius);
+    }
+
+    #clipPage .btnContentsItemMenu img {
+        position: absolute;
+        float: none;
+        top: 0;
+        right: 0;
+        width: 33.334%;
+        height: 50%;
+        object-fit: cover;
+        border-radius: 0 var(--clip-item-bdr-radius) 0 0;
+    }
+    #clipPage .btnContentsItemMenu img:nth-child(3) {
+        top: 50%;
+        border-radius: 0 0 var(--clip-item-bdr-radius) 0;
+    }
+    #clipPage .btnContentsItemMenu img:first-child {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 66.667%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: var(--clip-item-bdr-radius) 0 0 var(--clip-item-bdr-radius);
+    }
+    @media only screen and (min-width:980px) {
+        #menuMonthly .menuRecipeBox .imgs a,
+        #menuMonthly .menuRecipeBox .imgs a:first-child {
+            position: static;
+            float: left;
+            width: 33.3333%;
+        }
+    }
+
+    #clipPage .titleContentsItem p {
+        font-family: 'Noto Sans Japanese', sans-serif;
+        font-size: 14px;
+        font-weight: 700;
+        margin-bottom: 5px;
+    }
+
+    #clipPage .hashtagItem .listHashtag {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+		
+    }
+    #clipPage .hashtagItem .hashtagName {
+        font-size: 10px;
+    }
+    /* 保存ボタン */
+    #clipPage .wrapperActions {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        margin: 0 2.5px;
+        margin-bottom: 10px;
+        margin-top: 10px;
+    }
+    #clipPage .wrapperClipBtn {
+        position: relative;
+    }
+    #clipPage .btnClip {
+        position: relative;
+        display: flex;
+        justify-content: flex-start!important;
+        border-radius: 30px;
+        border : solid 1px black ;
+        font-family: 'Noto Sans Japanese', sans-serif;
+        text-decoration: none;
+        color: black;
+        transition: .4s;
+        padding: 6px 0!important;
+    }
+    #clipPage .btnClip:hover,
+    #clipPage .btnClip:active {
+        background: #eee;
+    }
+    #clipPage .iconIsCliped {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        top: 0;
+        left: 0;
+        padding: 0 10px;
+    }
+    /* widthはアイコンのサイズ heightはボタンの高さ */
+    #clipPage .imgClipBtn {
+        width: 52.5px;
+        height: 18px;
+    }
+    #clipPage .numClipedCount {
+        margin-left: 10px;
+        font-family: 'Lato', sans-serif;
+        font-size: 14px;
+        font-weight: 400;
+    }
+    #clipPage .textBtnClip {
+        position: relative;
+        width: 100%;
+        padding: 0px 20px;
+        text-align: center;
+        text-decoration: none;
+        /* border-left: 1px solid #000; */
+        margin-left: -10px;
+    }
+    #clipPage .textBtnClip p {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        font-size: 14px;
+        font-weight: 400;
+        -webkit-transform : translate(-50%,-50%);
+        transform : translate(-50%,-50%);
+        width: 100px;
+    }
+    #clipPage .activityLabel {
+        height: 20%;
+        max-height: 25px;
+    }
+    #clipPage .activityLabel p {
+        /* margin-top: vw; */
+        font-size: 14px;
+        font-weight: 500;
+    }
+    #clipPage .activityLabel.participation::before {
+        top: calc(50% - 7px);
+        left: calc(50% - 57px);
+        /* left: 10px; */
+        width: 12px;
+        height: 12px;
+    }
+}
+
+/*/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
+/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/*/
+
+@media only screen and (min-width:980px) {
+	#clipPage {
+		padding-top: 50px;
+        margin-bottom: 100px;
+	}
+    #clipPage .menuTab {
+        display: none;
+    }
+    #clipPage .bdrTitle .ttl {
+        text-align: center;
+    }
+	#clipPage .bdrTitle span {
+		padding-left: 42px;
+		background-size: 28px auto;
+		font-size: 28px;
+	}
+	
+    /* コンテンツ */
+    #clipPage .listContents {
+        display: flex;
+        justify-content: start;
+        flex-wrap: wrap;
+    }
+
+    #clipPage .itemListContents {
+        width: calc((100% - 60px) / 3);
+        margin-bottom: 30px;
+    }
+
+    #clipPage .itemListContents:nth-child(3n+2) {
+        margin-right: 30px;
+        margin-left: 30px;
+    }
+
+    #clipPage .btnContents {
+        position: relative;
+    }
+
+    #clipPage .btnContentsItem a {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 2;
+    }
+
+    #clipPage .btnContentsItem,
+    #clipPage .btnContentsItemMenu {
+        position: relative;
+        margin-bottom: 10px;
+    }
+
+    #clipPage .btnContentsItem::before,
+    #clipPage .btnContentsItemMenu::before {
+        content: '';
+        display: block;
+        padding-top: 66.7%;
+    }
+
+    #clipPage .btnContentsItem img {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: var(--clip-item-bdr-radius);
+    }
+
+    #clipPage .btnContentsItemMenu img {
+        position: absolute;
+        float: none;
+        top: 0;
+        right: 0;
+        width: 33.334%;
+        height: 50%;
+        object-fit: cover;
+        border-radius: 0 var(--clip-item-bdr-radius) 0 0;
+    }
+    #clipPage .btnContentsItemMenu img:nth-child(3) {
+        top: 50%;
+        border-radius: 0 0 var(--clip-item-bdr-radius) 0;
+    }
+    #clipPage .btnContentsItemMenu img:first-child {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 66.667%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: var(--clip-item-bdr-radius) 0 0 var(--clip-item-bdr-radius);
+    }
+
+    #clipPage .titleContentsItem p {
+        font-family: 'Noto Sans Japanese', sans-serif;
+        font-size: 18px;
+        font-weight: 700;
+        margin-bottom: 10px;
+    }
+
+    #clipPage .hashtagItem .listHashtag {
+        display:-webkit-box;
+        display:-ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: nowrap;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    }
+    #clipPage .hashtagItem .hashtagName {
+        font-size: 14px;
+    }
+    /* 保存ボタン */
+    #clipPage .wrapperActions {
+        display: flex;
+        margin: 0 5px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    #clipPage .btnClip {
+		display: flex;
+		justify-content: flex-start!important;
+		position: relative;
+		border-radius: 30px;
+		border : solid 1px black ;               
+        font-family: 'Noto Sans Japanese', sans-serif;
+		text-decoration: none;
+		color: black;
+		transition: .4s;
+        padding: 6px 0!important;
+    }
+    #clipPage .btnClip:hover,
+    #clipPage .btnClip:active {
+        background: #eee;
+    }
+    #clipPage .iconIsCliped {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        top: 0;
+        left: 0;
+        padding: 0 15px;
+        opacity: 1;
+    }
+	/* widthはアイコンのサイズ heightはボタンの高さ */
+	#clipPage .imgClipBtn {
+		width: 60px;
+		height: 25px;
+	}
+	
+    #clipPage .numClipedCount {
+        margin-left: 10px;
+        font-family: 'Lato', sans-serif;
+        font-size: 14px;
+        font-weight: 400;
+    }
+
+    #clipPage .textBtnClip {
+		position: relative;
+        width: 100%;
+        padding: 0 20px;
+		text-align: center;
+        /* border-left: 1px solid #000; */
+        margin-left: -10px;
+	}
+    #clipPage .textBtnClip p {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		font-size: 14px;
+		font-weight: 400;
+		-webkit-transform : translate(-50%,-50%);
+		transform : translate(-50%,-50%);
+		width: 100px;
+	}
+	#clipPage .mem-stripeBox {
+		width: 1200px;
+	}
+    #clipPage .activityLabel p {
+        margin-top: 2px;
+        font-size: 19.73px;
+        font-weight: 500;
+    }
+    #clipPage .activityLabel.participation::before {
+        top: calc(50% - 10px);
+        left: calc(50% - 85px);
+        width: 18px;
+        height: 18px;
+    }
+}
+
+/* cautText
+--------------------------------------------------*/
+#clipPage .cautText {
+    position: relative;
+    text-align: center;
+    font-weight: 500;
+    margin-top: 35px;
+    padding-bottom: 20px;
+    margin-bottom: 35px;
+}
+
+/* clipModal01
+--------------------------------------------------*/
+.clipModal .modalTable {
+	padding: 0 15px;
+	position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%);
+    transform: translateX(-50%);
+    -webkit-transform: translateY(-50%) translateX(-50%);
+    -ms-transform: translateY(-50%) translateX(-50%);
+}
+.clipModal .modalInner {
+	position: relative;
+	max-width: 680px;
+	margin: 0 auto;
+	padding: 30px 15px;
+	border-radius: 0;
+	background-color: #eeeeee;
+	background-image: -o-radial-gradient(#ffffff 16%, transparent 32%),
+						-o-radial-gradient(#ffffff 16%, transparent 32%);
+	background-image: radial-gradient(#ffffff 16%, transparent 32%),
+						radial-gradient(#ffffff 16%, transparent 32%);
+	background-position: 0 0, 3px 3px;
+	background-size: 6px 6px;
+}
+.clipModal .modalTitle {
+	position: relative;
+	font-size: 16px;
+	font-weight: 500;
+	padding-bottom: 20px;
+	margin-bottom: 30px;
+	text-align: center;
+}
+.clipModal .modalTitle:before {
+	content: '';
+	position: absolute;
+	left: 50%;
+	bottom: 0;
+	display: inline-block;
+	width: 75px;
+	height: 5px;
+	-moz-transform: translateX(-50%);
+	-webkit-transform: translateX(-50%);
+	-ms-transform: translateX(-50%);
+	transform: translate(-50%);
+	background-color: #000000;
+}
+.clipModal .txtArea {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	width: 315px;
+	margin: 0 auto 20px auto;
+	line-height: 1.6;
+	font-weight: 500;
+}
+.clipModal .txtArea .pcImg {
+    width: 35px;
+    height: 35px;
+	margin-right: 20px;
+}
+.clipModal .txtArea .heartImg {
+	width: 35px;
+	margin-right: 20px;
+}
+.clipModal .txtArea .txt {
+	font-size: 14px;
+	font-weight: 500;
+	width: 83%;
+}
+.clipModal .btnArea {
+	margin-top: 30px;
+}
+.clipModal .btn {
+	max-width: 315px;
+	height: 45px;
+	margin: auto;
+	margin-bottom: 20px;
+	position: relative;
+}
+.clipModal .modalInner .mdClose {
+    top: -35px;
+	right: 0;
+	width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+.clipModal .modalInner .mdClose:before, 
+.clipModal .modalInner .mdClose:after {
+	background-color: #ffffff;
+}
+@media only screen and (min-width:980px) {
+	.clipModal .modalTable {
+		padding: 0;
+	}
+	.clipModal .modalInner {
+		max-width: 920px;
+		padding: 40px;
+	}
+	.clipModal .modalTitle {
+		font-size: 24px;
+		font-weight: 500;
+		padding-bottom: 30px;
+		margin-bottom: 50px;
+	}
+	.clipModal .modalTitle:before {
+		width: 120px;
+		height: 5px;
+	}
+	.clipModal .txtArea {
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-align: center;
+		    -ms-flex-align: center;
+		        align-items: center;
+		-webkit-box-pack: center;
+		    -ms-flex-pack: center;
+		        justify-content: center;
+		width: 505px;
+		margin: 0 auto 30px auto;
+		line-height: 1.6;
+		font-weight: 500;
+	}
+	.clipModal .txtArea .pcImg {
+        width: 60px;
+        height: 45px;
+		margin-right: 30px;
+	}
+	.clipModal .txtArea .heartImg {
+		width: 60px;
+		height: 60px;
+		margin-right: 30px;
+	}
+	.clipModal .txtArea .txt {
+		font-size: 16px;
+		font-weight: 500;
+	}
+	.clipModal .btnArea {
+		margin-top: 40px;
+	}
+	.clipModal .btn {
+		max-width: 505px;
+		height: 70px;
+		margin-bottom: 20px;
+	}
+	.clipModal .btn .mem-button {
+		height: 70px;
+	}
+	.clipModal .modalInner .mdClose {
+		top: -45px;
+		right: 0;
+	}
+}
+
+/* clipModal02
+--------------------------------------------------*/
+
+@media screen and (max-width: 979px) {
+    #clipPage .wrap1200 {
+        position: relative;
+    }
+    .fillterBtn {
+        width: 130px;
+        justify-content: center; 
+        display: flex;
+        align-items: center;
+        top: 1vw;
+        /* right: 15px; */
+        height: 33px;
+        border-radius: 20px;
+        background-color: #eeeeee;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 30px;
+    }
+    .fillterBtn a {
+        display: flex;
+        padding: 6px 15px 7px 40px;
+        text-decoration: none;
+    }
+    .fillterBtn span {
+        position: relative;
+        font-size: 12px;
+        font-weight: 500;
+        vertical-align: top;
+    }
+    .fillterBtn span:before {
+        content: '';
+        position: absolute;
+        top: .4em;
+        left: -25px;
+        width: 14px;
+        height: 14px;
+        background-image: url('/wp-content/themes/ajinomoto/resources/images/common/sp/icon_fillter.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        vertical-align: middle;
+    }
+    .clipFillterModal .modalTable {
+        padding: 0;
+        background-color: #ffffff;
+        height: 100vh;
+    }
+    .clipFillterModal .modalCell {
+        vertical-align: top;
+        height: 100%;
+    }
+    .clipFillterModal .modalInner {
+        max-width: 92%;
+        padding: 25px 0 110px;
+        border-radius: 0;
+        overflow-y: scroll;
+    }
+    .clipFillterModal .modalTitle {
+        width: 100%;
+        margin: 0 auto;
+        font-size: 18px;
+        font-weight: 500;
+        padding: 15px 0;
+        border-bottom: 2px solid #000000;
+    }
+    .clipFillterModal .modalTitle span {
+        position: relative;
+        padding-left: 45px;
+    }
+    .clipFillterModal .modalTitle span:before {
+        content: '';
+        position: absolute;
+        top: .4em;
+        left: 15px;
+        width: 20px;
+        height: 23px;
+        background-image: url('/wp-content/themes/ajinomoto/resources/images/common/sp/icon_fillter.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        vertical-align: middle;
+    }
+    .clipFillterModal .fillterArea {
+        max-width: 315px;
+        margin: 20px auto;
+    }
+    .clipFillterModal .fillterTitle {
+        font-size: 14px;
+        font-weight: 500;
+        margin-bottom: 15px;
+    }
+    .clipFillterModal .tagFilter {
+        margin-top: 20px;
+    }
+    .clipFillterModal .fillterCat {
+        width: 100%;
+    }
+    .clipFillterModal label {
+        margin: 0 0 10px;
+        position: relative;
+    }
+    .clipFillterModal .catName:before {
+        content: '';
+        position: absolute;
+        top: .3em;
+        left: 16px;
+        z-index: 1;
+        width: 18px;
+        height: 18px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        vertical-align: middle;
+    }
+    .clipFillterModal .racipeTxt:before {
+        background-image: url('/wp-content/themes/ajinomoto/resources/images/common/sp/AP_svg_icon_recipe.svg');
+    }
+    .clipFillterModal .menuTxt:before {
+        background-image: url('/wp-content/themes/ajinomoto/resources/images/common/sp/AP_svg_icon_menu.svg');
+    }
+    .clipFillterModal .magazineTxt:before {
+        background-image: url('/wp-content/themes/ajinomoto/resources/images/common/sp/AP_svg_icon_magazine.svg');
+    }
+    .clipFillterModal .activityTxt:before {
+        background-image: url('/wp-content/themes/ajinomoto/resources/images/common/sp/AP_svg_icon_activity.svg');
+    }
+    .clipFillterModal .menuTxt:before {
+        background-image: url('/wp-content/themes/ajinomoto/resources/images/common/sp/AP_svg_icon_menu.svg');
+    }
+    .clipFillterModal .catLabel {
+        border-radius: 5px;
+        box-sizing: border-box;
+        padding: 9px 0 10px;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        cursor: pointer;
+        position: relative;
+        text-decoration: none;
+        background: #000000;
+        background: -webkit-gradient(linear, left top, right top, from(#000000), to(#000000));
+        background: -o-linear-gradient(left, #000000 0%, #000000 100%);
+        background: linear-gradient(90deg, #000000 0%, #000000 100%);
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        overflow: hidden;
+    }
+    .clipFillterModal .catLabel:hover {
+        opacity: .5;
+    }
+    .clipFillterModal .catLabel .catName {
+        position: relative;
+        z-index: 1;
+        display: inline-block;
+        top: 0;
+        background: #000000;
+        -webkit-background-clip: text;
+    }
+
+    .clipFillterModal .catLabel .bg {
+        background: #ffffff;
+        border-radius: 4px;
+        overflow: hidden;
+        display: block;
+        position: absolute;
+        top: 1px;
+        left: 1px;
+        width: calc(100% - 2px);
+        height: calc(100% - 2px);
+        z-index: 0;
+    }
+
+    input[name="category[]"],
+    input[name="slug[]"] {
+        display: none;
+    }
+
+    #recipeCat:checked ~ .fillterCat .recipeCat_label,
+    #magazineCat:checked ~ .fillterCat .magazineCat_label,
+    #activityCat:checked ~ .fillterCat .activityCat_label,
+    #menuCat:checked ~ .fillterCat .menuCat_label {
+        background: rgb(217,44,107);
+        background: -webkit-gradient(linear, left top, right top, from(rgba(217,44,107,1)), to(rgba(236,110,30,1)));
+        background: -o-linear-gradient(left, rgba(217,44,107,1) 0%, rgba(236,110,30,1) 100%);
+        background: linear-gradient(90deg, rgba(217,44,107,1) 0%, rgba(236,110,30,1) 100%);
+    }
+
+    #recipeCat:checked ~ .fillterCat .racipeTxt,
+    #magazineCat:checked ~ .fillterCat .magazineTxt,
+    #activityCat:checked ~ .fillterCat .activityTxt,
+    #menuCat:checked ~ .fillterCat .menuTxt {
+        background: linear-gradient(90deg, rgba(217,44,107,1) 0%, rgba(236,110,30,1) 100%);
+        -webkit-background-clip: text;
+        color: #e60012;
+    }
+
+    #recipeCat:checked ~ .fillterCat .recipeCat_label .bg,
+    #magazineCat:checked ~ .fillterCat .magazineCat_label .bg,
+    #activityCat:checked ~ .fillterCat .activityCat_label .bg,
+    #menuCat:checked ~ .fillterCat .menuCat_label .bg {
+        opacity: 1;
+        background: #fbf3ef;
+    }
+
+    #recipeCat:checked ~ .fillterCat .racipeTxt:before {
+        background-image: url('/wp-content/themes/ajinomoto/resources/images/common/sp/AP_svg_icon_recipe_grad.svg');
+    }
+    #magazineCat:checked ~ .fillterCat .magazineTxt:before {
+        background-image: url('/wp-content/themes/ajinomoto/resources/images/common/sp/AP_svg_icon_magazine_grad.svg');
+    }
+    #activityCat:checked ~ .fillterCat .activityTxt:before {
+        background-image: url('/wp-content/themes/ajinomoto/resources/images/common/sp/AP_svg_icon_activity_grad.svg');
+    }
+    #menuCat:checked ~ .fillterCat .menuTxt:before {
+        background-image: url('/wp-content/themes/ajinomoto/resources/images/common/sp/AP_svg_icon_menu_grad.svg');
+    }
+    .clipFillterModal .catLabel span {
+        font-size: 14px;
+        font-weight: 600;
+        display: inline-block;
+        width: 100%;
+        text-align: center;
+    }
+
+    .tagFilter .listHashtag {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-flow: wrap;
+        flex-flow: wrap;
+        -ms-flex-wrap: wrap;
+        justify-content: flex-start;
+        -webkit-box-pack: start;
+        -ms-flex-pack: start;
+    }
+    .tagFilter .itemListHashtag {
+        border-radius: 21px;
+        margin: 0 8px 5px 0;
+    }
+    .tagFilter .btnHashtag {
+        background: #000;
+        padding: 7px 15px;
+    }
+    .tagFilter .btnHashtag .hashtagName {
+        font-family: 'Noto Sans Japanese', 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', sans-serif;
+        font-size: 14px;
+        font-weight: 500;
+        color: #000;
+    }
+    .tagFilter .btnHashtag .textGrad {
+        background: none;
+        -webkit-text-fill-color: #000;
+    }
+    .tagFilter .btnHashtag .bg {
+        top: 1px;
+        left: 1px;
+        width: calc(100% - 2px);
+        height: calc(100% - 2px);
+    }
+    .tagFilter .btnHashtag:hover {
+        opacity: .5;
+    }
+    .tagFilter .btnHashtag:hover .bg {
+        background: #fff;
+    }
+    input[name="slug[]"].tagCat:checked + .btnHashtag {
+        background: rgb(217,44,107);
+        background: -o-linear-gradient(left, rgba(217,44,107,1) 0%, rgba(236,110,30,1) 100%);
+        background: -webkit-gradient(linear, left top, right top, from(rgba(217,44,107,1)), to(rgba(236,110,30,1)));
+        background: linear-gradient(90deg, rgba(217,44,107,1) 0%, rgba(236,110,30,1) 100%);
+    }
+    input[name="slug[]"].tagCat:checked + .btnHashtag .textGrad {
+        background: -webkit-gradient(linear, left top, right top, from(rgba(217,44,107,1)), to(rgba(236,110,30,1)));
+        background: -o-linear-gradient(left, rgba(217,44,107,1) 0%, rgba(236,110,30,1) 100%);
+        background: linear-gradient(90deg, rgba(217,44,107,1) 0%, rgba(236,110,30,1) 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: rgba(255,255,255,0.0);
+    }
+    input[name="slug[]"].tagCat:checked + .btnHashtag .bg {
+        opacity: 1;
+        background: #fbf3ef;
+    }
+    .submitArea .btn.clearBtn {
+        margin-top: 15px;
+        font-size: 12px;
+        font-weight: 500;
+    }    
+    .clipFillterModal .submitArea {
+        margin-right: calc(50% - 50vw);
+        margin-left: calc(50% - 50vw);
+        background-color: #eeeeee;
+        padding: 20px 0;
+        width: 100%;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        z-index: 1;
+    }
+    .clipFillterModal .btn {
+        max-width: 315px;
+        width: 92%;
+        margin: 0 auto;
+    }
+    .clipFillterModal .btn .mem-gradText{
+        font-size: 14px;
+    }
+    .clipFillterModal .mem-button__label{
+        width: 100%;
+        height: 100%;
+    }
+    .clearBtn {
+        text-align: center;
+    }
+    .clearBtn a {
+        text-decoration: none;
+        position: relative;
+    }
+    .clearBtn a:before {
+        content: "";
+        position: absolute;
+        top: 5px;
+        left: -20px;
+        -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        transform: rotate(45deg);
+        width: 5px;
+        height: 5px;
+        border-top: 2px solid #383838;
+        border-right: 2px solid #383838;
+    }
+    .clearBtn a span {
+        font-size: 16px;
+        font-weight: 500;
+    }
+    .clipFillterModal .modalInner .mdClose {
+        top: 40px;
+        right: 10px;
+        width: 25px;
+        height: 25px;
+    }
+
+    .clipFillterModal .modalInner .mdClose:before,
+    .clipFillterModal .modalInner .mdClose:after {
+        background-color: #000000;
+    }
+}
+@media screen and (min-width:980px) {
+    #clipPage .wrap1200 {
+        position: relative;
+    }
+    .fillterBtn {
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 50px;
+        width: 145px;
+        top: 5px;
+        right: 13px;
+        border-radius: 25px;
+        background-color: #eeeeee;
+    }
+    .fillterBtn a {
+        display:block;
+        padding: 5px 20px 9px 50px;
+        text-decoration: none;
+    }
+    .fillterBtn span {
+        position: relative;
+        font-size: 14px;
+        font-weight: 500;
+    }
+    .fillterBtn span:before {
+        content: '';
+        position: absolute;
+        top: .4em;
+        left: -30px;
+        width: 14px;
+        height: 14px;
+        background-image: url('/wp-content/themes/ajinomoto/resources/images/common/sp/icon_fillter.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        vertical-align: middle;
+    }
+    .clipFillterModal .modalTable {
+        padding: 0;
+        background-color: #ffffff;
+    }
+    .clipFillterModal .modalInner {
+        max-width: 900px;
+        padding: 80px 0 0;
+        border-radius: 0;
+    }
+    .clipFillterModal .modalTitle {
+        font-size: 24px;
+        font-weight: 500;
+        border-bottom: 2px solid #000000;
+        padding: 0 0 15px 80px;
+        position: relative;
+    }
+    .clipFillterModal .modalTitle:before {
+        content: '';
+        position: absolute;
+        top: .5em;
+        left: 40px;
+        width: 23px;
+        height: 23px;
+        background-image: url('/wp-content/themes/ajinomoto/resources/images/common/sp/icon_fillter.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        vertical-align: middle;
+    }
+    .clipFillterModal .fillterArea {
+        margin: 40px 40px;
+    }
+    .clipFillterModal .fillterTitle {
+        font-size: 18px;
+        font-weight: 600;
+        margin-bottom: 15px;
+    }
+    .clipFillterModal .tagFilter {
+        margin-top: 35px;
+    }
+    .clipFillterModal .fillterCat {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-column-gap: 10px;
+    }
+    .clipFillterModal .tagFilter .fillterCat {
+        width: 100%;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+    }
+    .clipFillterModal label {
+        margin: 0;
+        position: relative;
+    }
+    .clipFillterModal .catName:before {
+        content: '';
+        position: absolute;
+        top: .3em;
+        left: 16px;
+        z-index: 1;
+        width: 18px;
+        height: 18px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        vertical-align: middle;
+    }
+    .clipFillterModal .racipeTxt:before {
+        background-image: url('/wp-content/themes/ajinomoto/resources/images/common/sp/AP_svg_icon_recipe.svg');
+    }
+    .clipFillterModal .menuTxt:before {
+        background-image: url('/wp-content/themes/ajinomoto/resources/images/common/sp/AP_svg_icon_menu.svg');
+    }
+    .clipFillterModal .magazineTxt:before {
+        background-image: url('/wp-content/themes/ajinomoto/resources/images/common/sp/AP_svg_icon_magazine.svg');
+    }
+    .clipFillterModal .activityTxt:before {
+        background-image: url('/wp-content/themes/ajinomoto/resources/images/common/sp/AP_svg_icon_activity.svg');
+    }
+    .clipFillterModal .menuTxt:before {
+        background-image: url('/wp-content/themes/ajinomoto/resources/images/common/sp/AP_svg_icon_menu.svg');
+    }
+    .clipFillterModal .catLabel {
+        border-radius: 8px;
+        box-sizing: border-box;
+        padding: 12px 0 13px;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        cursor: pointer;
+        position: relative;
+        text-decoration: none;
+        background: #000000;
+        background: -webkit-gradient(linear, left top, right top, from(#000000), to(#000000));
+        background: -o-linear-gradient(left, #000000 0%, #000000 100%);
+        background: linear-gradient(90deg, #000000 0%, #000000 100%);
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        overflow: hidden;
+    }
+    .clipFillterModal .catLabel:hover {
+        opacity: .5;
+    }
+    .clipFillterModal .catLabel .catName {
+        position: relative;
+        z-index: 1;
+        display: inline-block;
+        top: 0;
+        background: #000000;
+        -webkit-background-clip: text;
+    }
+
+    .clipFillterModal .catLabel .bg {
+        background: #ffffff;
+        border-radius: 5px;
+        overflow: hidden;
+        display: block;
+        position: absolute;
+        top: 2px;
+        left: 2px;
+        width: calc(100% - 4px);
+        height: calc(100% - 4px);
+        z-index: 0;
+    }
+
+    input[name="category[]"],
+    input[name="slug[]"] {
+        display: none;
+    }
+
+    #recipeCat:checked ~ .fillterCat .recipeCat_label,
+    #magazineCat:checked ~ .fillterCat .magazineCat_label,
+    #activityCat:checked ~ .fillterCat .activityCat_label,
+    #menuCat:checked ~ .fillterCat .menuCat_label {
+        background: rgb(217,44,107);
+        background: -webkit-gradient(linear, left top, right top, from(rgba(217,44,107,1)), to(rgba(236,110,30,1)));
+        background: -o-linear-gradient(left, rgba(217,44,107,1) 0%, rgba(236,110,30,1) 100%);
+        background: linear-gradient(90deg, rgba(217,44,107,1) 0%, rgba(236,110,30,1) 100%);
+    }
+
+    #recipeCat:checked ~ .fillterCat .racipeTxt,
+    #magazineCat:checked ~ .fillterCat .magazineTxt,
+    #activityCat:checked ~ .fillterCat .activityTxt,
+    #menuCat:checked ~ .fillterCat .menuTxt {
+        background: linear-gradient(90deg, rgba(217,44,107,1) 0%, rgba(236,110,30,1) 100%);
+        -webkit-background-clip: text;
+        color: #e60012;
+    }
+
+    #recipeCat:checked ~ .fillterCat .recipeCat_label .bg,
+    #magazineCat:checked ~ .fillterCat .magazineCat_label .bg,
+    #activityCat:checked ~ .fillterCat .activityCat_label .bg,
+    #menuCat:checked ~ .fillterCat .menuCat_label .bg {
+        opacity: 1;
+        background: #fbf3ef;
+    }
+
+    #recipeCat:checked ~ .fillterCat .racipeTxt:before {
+        background-image: url('/wp-content/themes/ajinomoto/resources/images/common/sp/AP_svg_icon_recipe_grad.svg');
+    }
+
+    #magazineCat:checked ~ .fillterCat .magazineTxt:before {
+        background-image: url('/wp-content/themes/ajinomoto/resources/images/common/sp/AP_svg_icon_magazine_grad.svg');
+    }
+
+    #activityCat:checked ~ .fillterCat .activityTxt:before {
+        background-image: url('/wp-content/themes/ajinomoto/resources/images/common/sp/AP_svg_icon_activity_grad.svg');
+    }
+
+    #menuCat:checked ~ .fillterCat .menuTxt:before {
+        background-image: url('/wp-content/themes/ajinomoto/resources/images/common/sp/AP_svg_icon_menu_grad.svg');
+    }
+
+    .clipFillterModal .catLabel span {
+        font-size: 16.45px;
+        font-weight: 600;
+        display: inline-block;
+        width: 100%;
+        text-align: center;
+    }
+
+    .tagFilter .listHashtag {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-flow: wrap;
+        flex-flow: wrap;
+        -ms-flex-wrap: wrap;
+        justify-content: flex-start;
+        -webkit-box-pack: start;
+        -ms-flex-pack: start;
+    }
+    .tagFilter .itemListHashtag {
+        border-radius: 21px;
+        margin: 0 14px 30px 0;
+    }
+    .tagFilter .btnHashtag {
+        background: #000;
+        padding: 8px 15px;
+    }
+    .tagFilter .btnHashtag .hashtagName {
+        font-family: 'Noto Sans Japanese', 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', sans-serif;
+        font-size: 22.4px;
+        font-weight: 500;
+        color: #000;
+    }
+    .tagFilter .btnHashtag .textGrad {
+        background: none;
+        -webkit-text-fill-color: #000;
+    }
+    .tagFilter .btnHashtag .bg {
+        top: 2px;
+        left: 2px;
+        width: calc(100% - 4px);
+        height: calc(100% - 4px);
+    }
+    .tagFilter .btnHashtag:hover {
+        opacity: .5;
+    }
+    .tagFilter .btnHashtag:hover .bg {
+        background: #fff;
+    }
+    input[name="slug[]"].tagCat:checked + .btnHashtag {
+        background: rgb(217,44,107);
+        background: -o-linear-gradient(left, rgba(217,44,107,1) 0%, rgba(236,110,30,1) 100%);
+        background: -webkit-gradient(linear, left top, right top, from(rgba(217,44,107,1)), to(rgba(236,110,30,1)));
+        background: linear-gradient(90deg, rgba(217,44,107,1) 0%, rgba(236,110,30,1) 100%);
+    }
+    input[name="slug[]"].tagCat:checked + .btnHashtag .textGrad {
+        background: -webkit-gradient(linear, left top, right top, from(rgba(217,44,107,1)), to(rgba(236,110,30,1)));
+        background: -o-linear-gradient(left, rgba(217,44,107,1) 0%, rgba(236,110,30,1) 100%);
+        background: linear-gradient(90deg, rgba(217,44,107,1) 0%, rgba(236,110,30,1) 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: rgba(255,255,255,0.0);
+    }
+    input[name="slug[]"].tagCat:checked + .btnHashtag .bg {
+        opacity: 1;
+        background: #fbf3ef;
+    }
+    .submitArea .btn.clearBtn {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        margin-top: 15px;
+        font-weight: 500;
+    }
+    .clipFillterModal .submitArea {
+        margin-right: calc(50% - 50vw);
+        margin-left: calc(50% - 50vw);
+        background-color: #eeeeee;
+        padding: 30px;
+    }
+    .clipFillterModal .btn {
+        width: 500px;
+        margin: 0 auto;
+    }
+    .clipFillterModal .btn .mem-gradText{
+        font-size: 20px;
+    }
+    .clipFillterModal .mem-button__label{
+        width: 100%;
+        height: 100%;
+    }
+    .clearBtn {
+        text-align: center;
+        
+    }
+    .clearBtn a {
+        position: relative;
+        text-decoration: none;
+    }
+    .clearBtn a:before {
+        content: "";
+        position: absolute;
+        top: .5em;
+        left: -20px;
+        -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        transform: rotate(45deg);
+        width: 8px;
+        height: 8px;
+        border-top: 2px solid #383838;
+        border-right: 2px solid #383838;
+    }
+    .clearBtn a span {
+        font-size: 16px;
+        font-weight: 500;
+    }
+    .clipFillterModal .modalInner .mdClose {
+        top: 85px;
+    }
+    .clipFillterModal .modalInner .mdClose:before,
+    .clipFillterModal .modalInner .mdClose:after {
+        background-color: #000000;
+    }
+}

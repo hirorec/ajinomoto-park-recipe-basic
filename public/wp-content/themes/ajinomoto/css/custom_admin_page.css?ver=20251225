@@ -1,0 +1,33 @@
+a#magazine_tag-add-toggle,a#magazine_category-add-toggle,label[for='menu_order'],input#menu_order{
+    
+    display:none;
+}
+
+.RecipeRelationCustomView .acf-relationship .selection .choices{
+    width: 30%;
+}
+
+.RecipeRelationCustomView .acf-relationship .selection .values{
+    width: 70%;
+}
+
+.RecipeRelationCustomView .acf-relationship .selection .values .acf-rel-item{
+    width: 30%;
+    float: left;
+}
+
+.RecipeRelationCustomView .acf-relationship .selection .values .list .acf-rel-item .thumbnail{
+    width: initial;
+    height: initial;
+    background-color: initial;
+}
+
+.RecipeRelationCustomView .acf-relationship .selection .values .list .acf-rel-item .thumbnail img{
+    max-height: initial;
+    max-width: 100%;
+    background-color: initial;
+}
+
+.misc-amp-status,#amp-post-preview{
+    display:none;
+}

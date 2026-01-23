@@ -1,0 +1,828 @@
+const emailCheckErr = '<div id="emailCheckError" class="mem-formAnnotaion mem-formAnnotaion--error">既にこのメールアドレスは使われています。</div>';
+const emailNoExistErr = '<div id="emailNoExistError" class="mem-formAnnotaion mem-formAnnotaion--error">このメールアドレスは「AJINOMOTO ID」（新アカウント）には登録されていません。「AJINOMOTO PARK」会員アカウント（旧アカウント）のパスワードを忘れた場合は<a href="https://park.ajinomoto.co.jp/user/password-reminder/">こちら</a>から再設定をしてください。</div>';
+const rePassErr = '<div id="passVerifyerror" class="mem-formAnnotaion mem-formAnnotaion--error">パスワードと一致しません。</div>';
+const passErr = '<div id="passError" class="mem-formAnnotaion mem-formAnnotaion--error">英数混合の8～64文字以内で推測されにくい複雑なものを設定してください。</div>';
+const oldPassErr = '<div id="oldPassError" class="mem-formAnnotaion mem-formAnnotaion--error">半角英数8～64文字以内で入力して下さい。</div>';
+const zipCodeErr1 = '<div id="xipError" class="mem-formAnnotaion mem-formAnnotaion--error">半角数字で正しい郵便番号を入力して下さい。「- （ハイフン）」を入れている場合は、入れずに入力して下さい。また、事業所の個別郵便番号は使用できません。</div>';
+const zipCodeErr2 = '<div id="xipError" class="mem-formAnnotaion mem-formAnnotaion--error">7桁の半角数字で入力してください。</div>';
+const emailErr = '<div id="emailError" class="mem-formAnnotaion mem-formAnnotaion--error">メールアドレスは入力必須です。</div>';
+const emailRegexErr = '<div id="emailRegexError" class="mem-formAnnotaion mem-formAnnotaion--error">メールアドレスに適していません。</div>';
+const genderErr = '<div id="gendererror" class="mem-formAnnotaion mem-formAnnotaion--error">入力必須です。</div>';
+const yearErr = '<div id="yearError" class="mem-formAnnotaion mem-formAnnotaion--error">年は入力必須です。</div>'
+const monthErr = '<div id="monthError" class="mem-formAnnotaion mem-formAnnotaion--error">月は入力必須です。</div>';
+const codeErr = '<div id="codeError" class="mem-formAnnotaion mem-formAnnotaion--error">認証番号に誤りがあります。</div>';
+const sendCodeErr = '<div id="sendCodeError" class="mem-formAnnotaion mem-formAnnotaion--error">認証コードの再送に失敗しました。</div>';
+const limitSendCodeErr = '<div id="limitSendCodeError" class="mem-formAnnotaion mem-formAnnotaion--error">認証番号の送信回数の限度を超えました。しばらく経ってからお試しください。</div>';
+const successSendCodeErr = '<div id="successSendCodeError" class="mem-formAnnotaion mem-formAnnotaion--error">認証コードを再送しました。</div>'
+const aidAgreeErr = '<div id="agreeError" class="mem-formAnnotaion mem-formAnnotaion--error mem-formAnnotaion--fontsize16">全てに同意してください。</div>';
+const snsErr = '<div id="snsError" class="mem-formAnnotaion mem-formAnnotaion--error">登録しようとしたアカウントは既に登録されています。ログイン画面よりログインしてください。</div>';
+const validErr = '<div id="validError" class="mem-formAnnotaion mem-formAnnotaion--error">値を入力してください。</div>'
+const loginCheckErr = '<div id="loginCheckError" class="mem-formAnnotaion mem-formAnnotaion--error">メールアドレスまたは、パスワードに誤りがあるか、登録されていません。</div>';
+const linkErr = '<div id="linkError" class="mem-formAnnotaion mem-formAnnotaion--error">ログインされたアカウントはすでに「AJINOMOTO ID」に情報引き継ぎがされています。</div>';
+const snsLinkErr = '<div id="snsLinkError" class="mem-formAnnotaion mem-formAnnotaion--error">ログイン連携されているSNSが1つのため、連携解除はできません。<br>解除したい場合は、先に他のSNSに連携いただくかパスワードの設定をお願いいたします。</div>';
+const aidLinkErr = '<div id="aidLinkError" class="mem-formAnnotaion mem-formAnnotaion--error">ログインされたアカウントはすでに「AJINOMOTO PARK」会員アカウントに情報引き継ぎがされています。</div>';
+const changePassErr = '<div id="changePassError" class="mem-formAnnotaion mem-formAnnotaion--error">現在のパスワードもしくは新しいパスワードが間違えています。</div>';
+const passValidErr = '<div id="passValidError" class="mem-formAnnotaion mem-formAnnotaion--error">パスワードを入力してください。</div>';
+const accountLockErr = '<div id="accountLockError" class="mem-formAnnotaion mem-formAnnotaion--error">連続してパスワードを間違ったため、アカウントをロックしました。 しばらく経ってからログインを行ってください。</div>'
+const emailValidErr = '<div id="emailValidError" class="mem-formAnnotaion mem-formAnnotaion--error">メールアドレスを入力してください。</div>'
+const communitySnsErr = '<div id="communitySnsError" class="mem-formAnnotaion mem-formAnnotaion--error">連携されているアカウントが存在しないか、「AJINOMOTO PARK」のサービス利用に必要な初回設定が完了していません。一度<a href="/user/ajinomoto-id/auth/login/" class="aid-text--attention">こちら</a>の画面からログインしてください</div>';
+const communityParkLoginErr = '<div id="communityParkLoginError" class="mem-formAnnotaion mem-formAnnotaion--error">「AJINOMOTO ID」へ新規会員登録し、移行手続きを行っていただく必要があります。<a href="/user/auth/login" class="aid-text--attention">こちら</a>からログインして移行手続きをお願いいたします。</div>';
+const communityAIDLoginErr = '<div id="communityAIDLoginError" class="mem-formAnnotaion mem-formAnnotaion--error">「AJINOMOTO PARK」のサービス利用に必要な初回設定が完了していません。一度<a href="/user/ajinomoto-id/auth/login/" class="aid-text--attention">こちら</a>の画面からログインしてください</div>';
+const faildSNSLinkPassErr = '<div id="faildSNSLinkPassError" class="mem-formAnnotaion mem-formAnnotaion--error">パスワードに誤りがあります。<br>パスワードを忘れた方は<a href="/user/ajinomoto-id/password-reminder/" class="aid-text--attention">こちら</a></div>';
+
+const regex = {
+  "email" : /^(?=.{1,255}$)(?=(.{1,64}@.{1,255}))(?!(\.+.*@.{1,255}))(?!(.*\.+@.{1,255}))(?!.*[.]{2,})([!#$%&'*+\-\\\/=?\^_`{|}~a-zA-Z0-9}]{1,64}(\.[!#$%&'*+\-\\\/=?\^_`{|}~a-zA-Z0-9]{0,}){0,})@((\[(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)(\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)){3}\])|([a-zA-Z0-9-]{1,63}(\.[a-zA-Z0-9-]{2,63}){1,}))$/g,
+  "zipCode" : /^\d{7}$/
+};
+
+
+function aidCreateServerSession(sendData) {
+  return new Promise(function(resolve, reject){
+    const data = new FormData();
+    sendData.forEach(object => {
+      data.append( object.name, object.value);
+    });
+    const xhr = new XMLHttpRequest();
+    xhr.open('POST', '/wp-json/aid/saveAIDSession');
+    xhr.addEventListener('loadend', function() {
+      resolve(this.response);
+    });
+    xhr.send(data);
+  });
+};
+
+function aidRemoveSession(removeSessionList) {
+  removeSessionList.forEach(function(item){
+    sessionStorage.removeItem(item);
+  });
+}
+
+function aidSetSession(setSessionList) {
+  Object.keys(setSessionList).forEach(key => {
+    sessionStorage.setItem(key, setSessionList[key]);
+  })
+}
+
+function aidControlSNSErrMsg() {
+  const target = document.querySelector(".mem-buttonGroup");
+  const errTarget = document.getElementById("snsError");
+
+  if (errTarget !== null) {
+    errTarget.remove();
+  }
+  target.closest('.mem-formButtonArea').insertAdjacentHTML('afterbegin', snsErr);
+}
+
+function clickAllAgreeCheckBox(allAgreeEl, agreeList) {
+  const allAgreeFlg = allAgreeEl.checked;
+
+  agreeList.forEach(function(item){
+    item.checked = allAgreeFlg;
+  });
+}
+
+function aidCheckAgree(allAgreeEl,agreeList) {
+  let checkArray = [false,false,false];
+
+  for (let i = 0; i < agreeList.length; i++) {
+    checkArray[i] = agreeList[i].checked;
+  }
+  allAgreeEl.checked = checkArray.every(value => value == true);
+}
+
+function aidCheckAllAgreeStatus(allAgreeEl) {
+  return allAgreeEl.checked;
+}
+
+function aidDisabledSubmitBtn(targetId) {
+  const submitBtn = document.querySelector("#"+ targetId);
+  submitBtn.classList.add("aid-button__button--disabled")
+}
+
+function aidAvailableSubmitBtn(targetId) {
+  const submitBtn = document.querySelector("#"+ targetId);
+  submitBtn.classList.remove("aid-button__button--disabled")
+}
+
+function aidDisabledSNSBtn(targetId) {
+  const submitBtn = document.querySelector("#"+ targetId);
+  submitBtn.classList.add("mem-button--disabled")
+}
+
+function aidAvailableSNSBtn(targetId) {
+  const submitBtn = document.querySelector("#"+ targetId);
+  submitBtn.classList.remove("mem-button--disabled")
+}
+
+function aidAvailableAllSNSBtn() {
+  const lineEl = document.querySelector(".mem-button--line");
+  const twitterEl = document.querySelector(".mem-button--tw");
+  const facebookEl = document.querySelector(".mem-button--fb");
+  const appleEl = document.querySelector(".mem-button--g");
+
+  const list = [lineEl, twitterEl, facebookEl, appleEl];
+  for (i=0; i < list.length; i++) {
+    list[i].classList.remove("mem-button--disabled");
+  }
+}
+
+function aidValidateEmail(emailEl) {
+  let emailValidation = {
+    "status" : false,
+    "errMsg" : null,
+    "errEl"  : null
+  }
+  const email = emailEl.value;
+
+  if(email == undefined || email == null || email == "" || email.length == 0) {
+    emailValidation["status"] = false;
+    emailValidation["errMsg"] = emailErr; 
+  }else{
+    emailValidation["status"] = true;
+  }
+  emailValidation["errEl"] = document.getElementById("emailError");
+  aidControlErrMsg(emailEl, emailValidation["errEl"], emailValidation);
+
+  if(email.match(regex.email) == null) {
+    emailValidation["status"] = false;
+    emailValidation["errMsg"] = emailRegexErr;
+  }else{
+    emailValidation["status"] = true;
+  }
+  emailValidation["errEl"] = document.getElementById("emailRegexError");
+  aidControlErrMsg(emailEl, emailValidation["errEl"], emailValidation);
+
+  return emailValidation["status"];
+}
+
+function aidValidatePassword(passEl) {
+  let passValidation = {
+    "status" : true,
+    "errMsg" : null,
+    "errEl"  : null
+  }
+  const password = passEl.value;
+
+  if(password == undefined || password == null || password == "") {
+    passValidation["status"] = false;
+    passValidation["errMsg"] = passValidErr;
+  }else{
+    passValidation["status"] = true;
+  }
+  passValidation["errEl"] = document.getElementById("passValidError");
+  aidControlErrMsg(passEl, passValidation["errEl"], passValidation);
+  
+  return passValidation["status"];
+}
+
+function aidComparePassword(passEl, rePassEl) {
+  let rePassValidation = {
+    "status" : false,
+    "errMsg" : null
+  }
+  const rePassErrEl = document.getElementById("passVerifyerror");
+
+  if (passEl.value === "" || rePassEl.value === "" ) {
+    rePassValidation["status"] = false;
+    rePassValidation["errMsg"] = rePassErr;
+  } else {
+    if (passEl.value === rePassEl.value) {
+      rePassValidation["status"] = true;
+      rePassValidation["errMsg"] = null;
+    } else {
+      rePassValidation["status"] = false;
+      rePassValidation["errMsg"] = rePassErr;
+    }
+  }
+
+  aidControlErrMsg(rePassEl, rePassErrEl, rePassValidation);
+  return rePassValidation["status"];
+}
+
+function aidValidateAgree(allAgreeEl) {
+  const agreeErrEl = document.getElementById('agreeError');
+  let result = false;
+  if(aidCheckAllAgreeStatus(allAgreeEl)) {
+    result = true;
+  } else {
+    if (agreeErrEl === null || agreeErrEl === undefined) {
+      allAgreeEl.closest('.aid-agreement__items').insertAdjacentHTML('afterbegin', aidAgreeErr);
+    }
+  }
+
+  return result;
+}
+
+function aidValidateGender(genderEl) {
+  let genderValidation = {
+      "status" : false,
+      "errMsg" : null
+    }
+  const genderErrEl = document.getElementById("gendererror");
+  let selectEl = '';
+
+  for (let i = 0; i < genderEl.length; i++){
+    if (genderEl.item(i).checked){
+      selectEl = genderEl.item(i).value;
+    }
+  }
+
+  if (selectEl === '' || selectEl === null || selectEl === undefined) {
+    genderValidation["status"] = false;
+    genderValidation["errMsg"] = genderErr;
+  } else {
+    genderValidation["status"] = true;
+    genderValidation["errMsg"] = null;
+  }
+
+  aidControlErrMsg(genderEl[0], genderErrEl, genderValidation)
+  return genderValidation["status"];
+}
+
+function aidValidateYear(yearEl) {
+  let yearValidation = {
+    "status" : false,
+    "errMsg" : null
+  }
+  const yearErrEl = document.getElementById("yearError");
+  const year = yearEl.value;
+
+  if (year == "" || year == null || year == undefined) {
+    yearValidation["status"] = false;
+    yearValidation["errMsg"] = yearErr;
+  } else {
+    yearValidation["status"] = true;
+    yearValidation["errMsg"] = null;
+  }
+
+  aidControlErrMsg(yearEl, yearErrEl, yearValidation)
+  return yearValidation["status"];
+}
+
+function aidValidateMonth(monthEl) {
+  let monthValidation = {
+    "status" : false,
+    "errMsg" : null
+  }
+  const monthErrEl = document.getElementById("monthError");
+  const month = monthEl.value;
+
+  if (month == "0" || month == "" || month == null || month == undefined) {
+    monthValidation["status"] = false;
+    monthValidation["errMsg"] = monthErr;
+  } else {
+    monthValidation["status"] = true;
+    monthValidation["errMsg"] = null;
+  }
+
+  aidControlErrMsg(monthEl, monthErrEl, monthValidation)
+  return monthValidation["status"];
+}
+
+function aidValidateExistEmail(emailEl, isAvailable) {
+  const emailCheckValidation = {
+      "status" : isAvailable,
+      "errMsg" : emailCheckErr
+  }
+  const emailErrEl = document.getElementById("emailCheckError");
+  if (emailCheckValidation["status"]) {
+    if (emailErrEl !== null) {
+        emailErrEl.remove();
+    }
+
+    return true;
+  } else {
+    if (emailErrEl === null) {
+      emailEl.closest('.mem-formControlWrap').insertAdjacentHTML('afterbegin', emailCheckValidation["errMsg"]);
+    }
+
+    return false;
+  }
+}
+
+function aidValidateZipCode(zipCodeEl, zipCodeRegex) {
+  return new Promise(function (resolve, reject){
+    let zipCodeValidation = {
+      "status" : false,
+      "errMsg" : null
+    }
+    const zipCodeErrEl = document.getElementById("xipError");
+    const zipCode = zipCodeEl.value;
+
+    if (zipCodeRegex.test(zipCode)) {
+      const data = new FormData();
+      data.append('zipCode', zipCode);
+      const xhr = new XMLHttpRequest();
+      xhr.open('POST', '/wp-json/aid/checkZipCode');
+      xhr.addEventListener('loadend', function() {
+        checkFlg = xhr.response == "true" ? true : false;
+
+        if (checkFlg) {
+          zipCodeValidation["status"] = true;
+          zipCodeValidation["errMsg"] = null;
+        } else {
+          zipCodeValidation["status"] = false;
+          zipCodeValidation["errMsg"] = zipCodeErr1;
+        }
+        aidControlErrMsg(zipCodeEl, zipCodeErrEl, zipCodeValidation);
+        resolve(zipCodeValidation["status"]);
+      });
+      xhr.send(data);
+    } else {
+      zipCodeValidation["status"] = false;
+      zipCodeValidation["errMsg"] = zipCodeErr2;
+      aidControlErrMsg(zipCodeEl, zipCodeErrEl, zipCodeValidation);
+      resolve(zipCodeValidation["status"]);
+    }
+  })
+}
+
+function aidControlErrMsg(target, errTarget, validation) {
+  if (errTarget !== null) {
+    target.classList.remove("mem-formControl--error");
+    errTarget.remove();
+  }
+
+  if (validation["status"] == false) {
+    target.classList.add("mem-formControl--error");
+    target.closest('.mem-formControlWrap').insertAdjacentHTML('afterbegin', validation["errMsg"]);
+  }
+}
+
+function aidCheckAvailableLoginID (email) {
+  return new Promise(function (resolve, reject){
+    gigya.accounts.isAvailableLoginID({
+      loginID: email, 
+      callback: function(response) {
+        if (response.errorCode == 0) {
+        } else {
+          response.isAvailable = false;
+        }
+
+        resolve(response.isAvailable);
+      }
+    })
+  })
+}
+
+function controlToggleBtn() {
+  const toggleBtn = document.querySelector(".js-mem-buttonShowPassword");
+
+  const inputElHash = {
+    "toggleBtn" : toggleBtn
+  }
+
+  toggleBtn.addEventListener('click', (event) => {
+    aidTogglePassword(event.target);
+  });
+}
+
+function aidTogglePassword(btnEl) {
+
+  let PassShowStatus = {
+    "status" : false,
+    "showMsg" : "文字を表示する",
+    "hideMsg" : "文字を隠す",
+  }
+
+  if (btnEl.textContent === PassShowStatus["hideMsg"]) {
+    document.querySelectorAll("input[type=text]").forEach((element) => {
+      element.setAttribute("type", "password");
+    });
+    PassShowStatus["status"] = true;
+    btnEl.textContent = PassShowStatus["showMsg"];        
+  } else {
+    document.querySelectorAll("input[type=password]").forEach((element) => {
+      element.setAttribute("type", "text");
+    });
+    PassShowStatus["status"] = false;
+    btnEl.textContent = PassShowStatus["hideMsg"];
+  }
+
+  return PassShowStatus["status"];
+}
+
+function compareParkMustData(userData) {
+  const parkMustList = ["gender", "birthYear", "birthMonth", "zip"];
+  for (let i = 0; i < parkMustList.length; i++) {
+    if (userData[parkMustList[i]] == null || userData[parkMustList[i]] == undefined) {
+      return false;
+    }
+  }
+
+  return true;
+}
+
+function checkParkLogin(loginMail,loginPassword) {
+  return new Promise(function (resolve, reject){
+    const data = new FormData();
+    data.append('loginMail', loginMail);
+    data.append('loginPassword', loginPassword);
+    const xhr = new XMLHttpRequest();
+    xhr.open('POST', '/wp-json/aid/checkParkLogin');
+    xhr.addEventListener('loadend', function() {
+      resolve(xhr.response == "true" ? true : false);
+    });
+    xhr.send(data);
+  })
+};
+
+function aidAddParkLoginCookie(aidUID) {
+  return new Promise(function (resolve, reject){
+    const data = new FormData();
+    data.append('aidUID', aidUID);
+    const xhr = new XMLHttpRequest();
+    xhr.open('POST', '/wp-json/aid/memberLoginFromUID');
+    xhr.addEventListener('loadend', function() {
+      resolve(xhr.response == "true" ? true : false);
+    });
+    xhr.send(data);
+  })
+};
+
+function aidRestoreParkUserData(aidUID, loginMail, userData) {
+  return new Promise(function (resolve, reject) { 
+    const data = new FormData(); 
+    data.append('aidUID', aidUID); 
+    data.append('loginMail', loginMail); 
+    data.append('userData', JSON.stringify(userData)); 
+    const xhr = new XMLHttpRequest(); 
+    xhr.open('POST', '/wp-json/aid/restoreParkUserFromUID');
+    xhr.addEventListener('loadend', function() {
+      resolve(xhr.response == "true" ? true : false);
+    });
+    xhr.send(data); 
+  }); 
+};
+
+function aidExistUserServiceStatus(data) {
+  if (data.useServiceStatus !== null && data.useServiceStatus !== undefined) {
+    if (data.useServiceStatus.park === "1") {
+      return true;
+    }
+  }
+
+  return false;
+}
+
+function aidCreateFormSubmit(action, sendData) {
+  const form = document.createElement('form');
+  form.action = action;
+  form.method = 'POST';
+  document.body.append(form);
+
+  form.addEventListener('formdata', (e) => {
+    let item = e.formData;
+    sendData.forEach(object => {
+      item.set( object.name, object.value);
+    });
+  });
+  form.submit();
+}
+
+function aidLinkConflictSNSAccount(regToken) {
+  const socialRegToken = regToken;
+
+  gigya.accounts.getConflictingAccount({
+    "regToken" : socialRegToken,
+    callback: function (response) {
+      if (response.errorCode == 0) {
+        const sendData = [
+          {name: "providers", value: response.conflictingAccount.loginProviders},
+          {name: "loginID", value: response.conflictingAccount.loginID},
+          {name: "regToken", value: socialRegToken}
+        ]
+        aidCreateFormSubmit('/user/edit/sns-link/', sendData);
+      }
+    }
+  });
+}
+
+function aidSelectParkUserAPI(search, identifyKey, selectKey) {
+  return new Promise(function(resolve, reject){
+    const data = new FormData();
+    data.append('search', search);
+    if( identifyKey ) data.append('identifyKey', identifyKey);
+    if( selectKey ) data.append('selectKey', selectKey);
+    const xhr = new XMLHttpRequest();
+    xhr.open('POST', '/wp-json/aid/aidSelectParkUserAPI');
+    xhr.addEventListener('loadend', function() {
+      const result = (this.response) ? JSON.parse(this.response) : false;
+      resolve(result);
+    });
+    xhr.send(data);
+  });
+}
+
+function aidClickParkLoginButton(redirectPath, passwordID='userpassword') {
+  let array = [];
+  let loginMailEl = document.getElementById('email');
+  array.push(aidCheckRegexEmailValidation(loginMailEl));
+
+  let loginPasswordEl = document.getElementById(passwordID);
+  array.push(aidValidatePassword(loginPasswordEl));
+
+  if (array.every(value => value === true)) {
+    checkParkLogin(loginMailEl.value,loginPasswordEl.value)
+    .then ((result) => {
+      if (result) {
+        aidSelectParkUserAPI(loginMailEl.value, "email", "ajinomoto_id")
+        .then((response) => {
+          if (response.data.ajinomoto_id === null) {
+            aidCreateServerSession([
+              {name: "tmpParkEmail", value : loginMailEl.value },
+            ]).then((result) => {
+              if (result) {
+                window.location.href = redirectPath;
+              } else {
+                window.location.href = '/';
+              }
+            });
+          } else {
+            let parkLoginUIDValidation = {
+              "status" : false,
+              "errMsg" : linkErr,
+              "errEl"  : null
+            }
+            parkLoginUIDValidation["errEl"] = document.getElementById("linkError");
+            aidControlErrMsg(loginMailEl, parkLoginUIDValidation["errEl"], parkLoginUIDValidation);    
+          }
+        })
+
+      } else {
+        let parkLoginValidation = {
+          "status" : false,
+          "errMsg" : loginCheckErr,
+          "errEl"  : null
+        }
+        parkLoginValidation["errEl"] = document.getElementById("loginCheckError");
+        aidControlErrMsg(loginMailEl, parkLoginValidation["errEl"], parkLoginValidation);
+      }
+    })
+  } else {
+    const loginErr = document.getElementById("loginCheckError");
+    if (loginErr !== undefined && loginErr !== null) {
+      loginErr.remove();
+    }
+  }
+};
+
+function aidValidPassword(password) {
+  if(password == undefined || password == null || password == "") {
+    return false;
+  }
+  let pwLength = password.length;
+  if(pwLength < 8 || pwLength > 64) {
+    return false;
+  }
+  let pwPattern = /^((?=.*[A-Za-z])(?=.*[0-9]).{8,64}|(?=.*[A-Za-z])(?=.*[\\\|\/!#$%&()*+,.:;=?@\[\]^_{}\-<>'"~`]).{8,64}|(?=.*[0-9])(?=.*[\\\|\/!#$%&()*+,.:;=?@\[\]^_{}\-<>'"~`]).{8,64})$/g;
+  if(password.match(pwPattern) == null) {
+    return false;
+  }
+  return true;
+}
+
+function aidCheckRegexEmailValidation(emailEl) {
+  let emailValidation = {
+    "status" : false,
+    "errMsg" : null
+  }
+  const emailValidErrEl = document.getElementById("emailValidError");
+  const emailRegexErrEl = document.getElementById("emailRegexError");
+  const email = emailEl.value;
+
+  if (emailRegexErrEl !== null) {
+    emailRegexErrEl.remove();
+  } 
+
+  if (emailValidErrEl !== null) {
+    emailValidErrEl.remove();
+  } 
+
+  if (email == "") {
+    emailValidation["errMsg"] = emailValidErr;
+    aidControlErrMsg(emailEl, emailValidErrEl, emailValidation);
+    return false;
+  }
+
+  const mailPattern = regex["email"];
+  if (email.match(mailPattern) == null) {
+    emailValidation["errMsg"] = emailRegexErr;
+    aidControlErrMsg(emailEl, emailRegexErrEl, emailValidation);
+    return false;
+  }
+
+  emailEl.classList.remove("mem-formControl--error");
+  return true;
+}
+
+
+function aidCheckRegexPasswordValidation(passEl) {
+  let passValidation = {
+    "status" : false,
+    "errMsg" : null
+  }
+  const passValidErrEl = document.getElementById("passValidError");
+  const passErrEl = document.getElementById("passError");
+  const password = passEl.value;
+
+  if (passErrEl !== null) {
+    passErrEl.remove();
+  }
+
+  if (passValidErrEl !== null) {
+    passValidErrEl.remove();
+  }
+
+  if (password == "") {
+    passValidation["errMsg"] = passValidErr;
+    aidControlErrMsg(passEl, passValidErrEl, passValidation);
+    return false;
+  }
+
+  const pwPattern = /^((?=.*[A-Za-z])(?=.*[0-9]).{8,64}|(?=.*[A-Za-z])(?=.*[\\\|\/!#$%&()*+,.:;=?@\[\]^_{}\-<>'"~`]).{8,64}|(?=.*[0-9])(?=.*[\\\|\/!#$%&()*+,.:;=?@\[\]^_{}\-<>'"~`]).{8,64})$/g;
+  if(password.match(pwPattern) == null) {
+    passValidation["errMsg"] = passErr;
+    aidControlErrMsg(passEl, passErrEl, passValidation);
+
+    return false;
+  }
+
+  passEl.classList.remove("mem-formControl--error");
+  return true;
+}
+
+function aidControlLoginError(errorID, error, targetID) {
+  const targetEl = document.getElementById(targetID);
+  const errList = targetEl.closest(".mem-formControlWrap").querySelectorAll(".mem-formAnnotaion");
+  errList.forEach(function(element) {
+    element.remove();
+  });
+
+  const errorEl = document.getElementById(errorID);
+  if (errorEl == null) {
+    targetEl.closest('.mem-formControlWrap').insertAdjacentHTML('afterbegin', error);
+  }
+}
+
+ function aidSendCodeControlErrMsg(target, errTarget, validation) {
+  const codeErrEl = document.getElementById("codeError");
+  const sendCodeErrEl = document.getElementById("sendCodeError");
+  const limitSendCodeErrEl = document.getElementById("limitSendCodeError");
+  const successSendCodeErrEl = document.getElementById("successSendCodeError");
+
+  if (codeErrEl !== null && errTarget !== codeErrEl ) {
+    codeErrEl.remove();
+  }
+
+  if (sendCodeErrEl !== null && errTarget !== sendCodeErrEl ) {
+    sendCodeErrEl.remove();
+  }
+
+  if (limitSendCodeErrEl !== null && errTarget !== limitSendCodeErrEl ) {
+    limitSendCodeErrEl.remove();
+  }
+
+  if (successSendCodeErrEl !== null && errTarget !== successSendCodeErrEl ) {
+    successSendCodeErrEl.remove();
+  }
+
+  if (errTarget == null) {
+    target.closest('.mem-formControlWrap').insertAdjacentHTML('afterbegin', validation["errMsg"]);
+  }
+}
+
+function aidResendOneTimePassword(target, regToken, email) {
+  const code = document.getElementById("number");
+  const codeValidation = {
+    "status" : false,
+    "errMsg" : null
+  }
+
+  target.style.pointerEvents = "none";
+  target.style.opacity = "0.4";
+  gigya.accounts.otp.sendCode({
+    "regToken": regToken,
+    "email": email,
+    callback: function(response) {
+      if (response.errorCode == 0) {
+        codeValidation["errMsg"] = successSendCodeErr;
+        const successSendCodeErrEl = document.getElementById("successSendCodeError");
+
+        aidSendCodeControlErrMsg(code, successSendCodeErrEl, codeValidation);
+
+        const vToken = response.vToken;
+        sessionStorage.setItem('aid-park_vToken', vToken);
+      } else if (response.errorCode == 403000) {
+        codeValidation["errMsg"] = limitSendCodeErr;
+        const limitSendCodeErrEl = document.getElementById("limitSendCodeError");
+
+        aidSendCodeControlErrMsg(code, limitSendCodeErrEl, codeValidation);
+      } else {
+        codeValidation["errMsg"] = sendCodeErr;
+        const sendCodeErrEl = document.getElementById("sendCodeError");
+
+        aidSendCodeControlErrMsg(code, sendCodeErrEl, codeValidation);
+      }
+
+      target.style.pointerEvents = "unset";
+      target.style.opacity = "1.0";
+    }
+  });
+}
+
+async function aidAccountLinkParkLogin(response) {
+  await aidCreateServerSession([
+    {name: "aidUID", value: response.UID},
+    {name: "aidUIDSignature", value: response.UIDSignature},
+    {name: "aidSignatureTimestamp", value: response.signatureTimestamp}
+  ])
+
+  aidLinkParkUser()
+  .then(async (result)=>{
+    if ( result ) {
+      aidAddParkLoginCookie(response.UID)
+      .then((result) => {
+        if (result) {
+          window.location.href = "/user/account-link/ajinomoto-id/edit/complete/";
+        }
+      });
+    } else {
+      await aidCreateServerSession([
+        {name: "aidUID", value: ""},
+        {name: "aidUIDSignature", value: ""},
+        {name: "aidSignatureTimestamp", value: ""}
+      ])
+      window.location.href = "/";
+    }
+  });
+}
+
+function aidLinkParkUser() {
+  return new Promise(function(resolve, reject){
+    gigya.accounts.verifyLogin({
+      callback: function (response) {
+        if (response.errorCode == 0) {
+          const sendData = {
+            "email" : response.profile.email,
+            "zip" : response.data.zip,
+            "gender" : response.data.gender,
+            "birthday" : response.data.birthYear + response.data.birthMonth
+          }
+
+          const data = new FormData();
+          for( let key in sendData ){
+            data.append(key, sendData[key]);
+          }
+          const xhr = new XMLHttpRequest();
+          xhr.open('POST', '/wp-json/aid/aidLinkParkUser');
+          xhr.addEventListener('loadend', function() {
+            const result = (this.response) ? JSON.parse(this.response) : false;
+            resolve(result);
+          });
+          xhr.send(data);      
+        }
+      }
+    });
+  });
+}
+
+function aidUpdateParkUser(sendData) {
+  return new Promise(function(resolve, reject){
+    const data = new FormData();
+    for( const key in sendData ){
+      data.append(key, sendData[key]);
+    }
+    const xhr = new XMLHttpRequest();
+    xhr.open('POST', '/wp-json/aid/aidUpdateParkUser');
+    xhr.addEventListener('loadend', function() {
+      const result = (this.response) ? JSON.parse(this.response) : false;
+      resolve(result);
+    });
+    xhr.send(data);
+  });
+}
+
+function browserBack() {
+  history.pushState(null, null, null);
+  window.addEventListener('popstate', function(e) {
+    e.preventDefault();
+    history.pushState(null, null, null);
+    window.location.href = "/";
+  });
+}
+
+function aidCreateQonDataAPI(ajinomoto_id) {
+  return new Promise(function(resolve, reject){
+    const data = new FormData();
+    data.append("aidUID", ajinomoto_id);
+    
+    const xhr = new XMLHttpRequest();
+    xhr.open('POST', '/wp-json/aid/aidCreateQonData');
+    xhr.addEventListener('loadend', function() {
+      const result = (this.response) ? JSON.parse(this.response) : false;
+      resolve(result);
+    });
+    xhr.send(data);
+  });
+}

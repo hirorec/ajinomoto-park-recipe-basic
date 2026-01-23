@@ -1,0 +1,330 @@
+.linkPopularCorner :hover,
+.linkPopularCorner :active,
+.titlePopularCorner :hover,
+.titlePopularCorner :active,
+.itemListLinks:active .btnLinkItem {
+    opacity: .5;
+}
+
+.mainPopularCorner .linkArea{
+    max-width: 315px;
+    width: 84vw;
+    height: 45px;
+    margin: auto;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    position: relative;
+    border: solid #000000 2px;
+    border-radius: 4px;
+    -webkit-box-shadow: 2px 2px;
+    box-shadow: 2px 2px;
+}
+
+.morePopularCorner .linkArea:hover{
+    background-color: #eeeeee;
+}
+
+.morePopularCorner .linkArea a{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    position: absolute;
+    text-decoration: none;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.mainPopularCorner .comnonBoderSection{
+    padding: 0;
+    border-top: none;
+}
+
+@media screen and (min-width: 980px) {
+    .mainPopularCorner .linkArea{
+        max-width: 500px;
+        width: 500px;
+        height: 70px;
+    }
+
+    .mainPopularCorner .linkArea span{
+        font-weight: 500;
+        font-size: 20px;
+    }
+
+    .mainPopularCorner .linkArea a{
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        position: absolute;
+        text-decoration: none;
+        top: 0;
+        width: 100%;
+        height: 100%;
+    }
+    .mainPopularCorner .wrap1200 {
+        max-width: 1100px;
+        margin-right: auto;
+        margin-left: auto;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .mainPopularCorner .comnonBoderSection .bigTitle_uline{
+        font-size: 25px;
+        position: relative;
+        margin-bottom: 50px;
+        padding-bottom: 20px;
+        margin-top: 80px;
+    }
+
+    .mainPopularCorner .titleAndTxt01 h3 a{
+        text-decoration: none;
+        font-family: 'Noto Sans Japanese', sans-serif;
+        font-size: 20px;
+    }
+    .mainPopularCorner .titleAndTxt01 h3{
+        border-top: solid 1px;
+        border-bottom : solid 1px; 
+        padding-top: 11.5px;
+        padding-bottom: 11.5px;
+        font-size: 20px;
+        font-weight: 600;
+        margin-bottom: 40px;
+        text-align: center;
+    }
+    .itemPopularCorner{
+        display: flex;
+    }
+    .itemPopularCorner .boxPopularCorner{
+        width: 22.9%;
+        max-width: 252px;
+        padding-right: 2.7%
+    }
+    .itemPopularCorner .boxPopularCorner:nth-child(4){
+        padding-right: 0;
+        margin-right: 0;
+    }
+    .itemPopularCorner .boxPopularCorner img{
+        border-radius: 20px;
+        margin-bottom: 15px;
+        width: 100%;
+        height: 170px;
+        object-fit: contain;
+        font-family: 'object-fit:contain';
+    }
+    .itemPopularCorner .boxPopularCorner a {
+        font-size: 16px;
+        text-decoration: none;
+    }
+    .itemPopularCorner .boxPopularCorner .ttl{
+        font-weight: 500;
+        font-size: 16px;
+        margin-bottom: 15px;
+    }
+    .itemPopularCorner .itemListHashtag {
+        display: flex;
+        white-space: nowrap;
+        position: relative;
+        margin: 5px;
+        margin-right: 3px;
+    }
+    .itemPopularCorner  .listHashtag {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        -webkit-box-pack: start;
+        -ms-flex-pack: start;
+        justify-content: flex-start;
+    }
+    .itemPopularCorner .inRightBtn02 a{
+        text-align: center;
+    }
+    .mainPopularCorner .wrap1200 .moreLink{
+        text-align: center;
+        margin-top: 35px;
+        margin-bottom: 68px;
+    }
+    .mainPopularCorner .moreLink a{
+        color: #000000;
+        padding-left: 20px;
+        font-size: 18px;
+    }
+    .mainPopularCorner .moreLink a::before{
+        position: absolute;
+        top: 20px;
+        top: 47%;
+        right: 80%;
+        display: block;
+        content: '';
+        width: 0.4em;
+        margin-right: 20px;
+        height: 0.4em;
+        margin-top: -0.2em;
+        border-top: #666 solid 2px;
+        border-right: #666 solid 2px;
+        transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
+        -moz-transform: rotate(45deg);
+    }
+    .itemPopularCorner .boxPopularCorner:nth-child(n+5){
+        display: none;
+    }
+}
+@media screen and (max-width: 979px) {
+    .mainPopularCorner .titleAndTxt01 h3 a{
+        text-decoration: none;
+        font-family: 'Noto Sans Japanese', sans-serif;
+    }
+    .mainPopularCorner .titleAndTxt01 h3{
+        width: 84%;
+        border-top: solid 1px;
+        border-bottom : solid 1px; 
+        padding-top: 8px;
+        padding-bottom: 8px;
+        font-size: 16px;
+        margin-bottom: 40px;
+        font-weight: 600;
+        margin-left: 8%;
+        margin-right: 8%;
+        text-align: center;
+    }
+
+    .itemPopularCorner .boxPopularCorner{
+        padding-right: 8%;
+        padding-left:  8%;
+        display: flex;
+        margin-bottom: 17px;
+    }
+    .mainPopularCorner .wrap1200 {
+        margin-right: 0;
+        margin-left:  0;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .itemPopularCorner .itemListHashtag {
+        display: flex;
+        white-space: nowrap;
+        position: relative;
+        margin: 5px;
+        margin-left: 0;
+    }
+    .itemPopularCorner  .listHashtag {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        -webkit-box-pack: start;
+        -ms-flex-pack: start;
+        justify-content: flex-start;
+    }
+    .titlePopularCorner{
+        height: fit-content;
+    }
+    .itemPopularCorner .linkPopularCorner{
+        width: 50%;
+        padding-right: 2%;
+    }
+    .itemPopularCorner .boxPopularCorner a {
+        font-size: 16px;
+        text-decoration: none;
+    }
+    .itemPopularCorner .boxPopularCorner:nth-child(n+4){
+        display: none;
+    }
+    .boxPopularCorner .ttl{
+        width: 100%;
+    }
+    .itemPopularCorner .boxPopularCorner img{
+        border-radius: 10px;
+        width: 100%;
+        min-height: 100px;
+        height: 26.6vw;
+        object-fit: contain;
+        font-family: 'object-fit: contain';
+    }
+    .itemPopularCorner .charPopularCorner{
+        width: 50%;
+        padding-left: 2%;
+    }
+    .itemPopularCorner .boxPopularCorner .ttl{
+        font-weight: 600;
+        font-size: 14px;
+        margin-bottom: 3px;
+    }
+
+    .mainPopularCorner .comnonBoderSection .bigTitle_uline{
+        font-size: 18.335px;
+        position: relative;
+        margin-bottom: 40px;
+        padding-bottom: 20px;
+    }
+    .itemPopularCorner .inRightBtn02 a{
+        text-align: center;
+    }
+    .mainPopularCorner .wrap1200 .moreLink{
+        text-align: center;
+        margin-top: 30px;
+        margin-bottom: 50px;
+    }
+    .moreLink a{
+        color: #000000;
+        padding-left: 20px;
+        font-size: 14px;
+    }
+    .moreLink a::before{
+        position: absolute;
+        top: 20px;
+        top: 47%;
+        right: 80%;
+        display: block;
+        content: '';
+        width: 0.4em;
+        margin-right: 20px;
+        height: 0.4em;
+        margin-top: -0.2em;
+        border-top: #666 solid 2px;
+        border-right: #666 solid 2px;
+        transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
+        -moz-transform: rotate(45deg);
+    }
+    .morePopularCorner .linkArea{
+        max-width: 315px;
+        width: 84vw;
+        height: 45px;
+        margin: auto;
+        margin-bottom: 50px;
+        margin-top: 35px;
+        position: relative;
+        border: solid #000000 2px;
+        border-radius: 4px;
+        -webkit-box-shadow: 2px 2px;
+        box-shadow: 2px 2px;
+    }
+    .morePopularCorner .linkArea span{
+        font-size: 14px;
+        font-weight: 500;
+    }
+}

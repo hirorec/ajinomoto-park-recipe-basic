@@ -1,0 +1,73 @@
+(function($) {
+	jQuery(document).ready(function() {
+        //最新の日付取得と文字型へ変換
+        var now = new Date();
+        var year = now.getFullYear();
+        var mon = now.getMonth()+1;
+        var day = now.getDate();
+        var hour = now.getHours();
+        var min = ('0' + now.getMinutes()).slice(-2);
+        var sec = ('0' + now.getSeconds()).slice(-2);
+        var now_date = year + '-' + mon + '-' + day + ' ' + hour + ':' + min + ':' + sec;
+
+        //let test_date = '2018-01-01 10:26:53'
+
+        //localstorageから情報取得
+        var ajp_info = JSON.parse(localStorage.getItem('ajp_info'));
+
+        //カテゴリートップかのフラグを取得
+        var cat_top_flag = $('#php-val').data('val');
+
+        if(ajp_info){
+            //ajp_dateから日付を切り出し
+            var dates = ajp_info['dates'];
+            
+            //各カテゴリートップを閲覧しているか判定し閲覧している場合は日付更新
+            if(cat_top_flag == 'recipe_top'){
+                dates['r_date'] = now_date;
+            }else if(cat_top_flag == 'magazine_top'){
+                dates['m_date'] = now_date;
+            }else if(cat_top_flag == 'activity_top'){
+                dates['a_date'] = now_date;
+            }
+
+            //各カテゴリーの最新記事と前回閲覧時刻を見て新着アイコンをつける
+            $.ajax({
+                type : 'POST',
+                url : '/wp-admin/admin-ajax.php',
+                data : ajp_info,
+                dataType: 'json',
+            }).done(function(data) {
+                Object.keys(data).forEach(function(key) { //key: datas[key]
+                    if(data[key] == true){
+                        $('li.itemListBottomMenu'+'.'+key).addClass('newCont');
+                    }
+                });
+
+                //ローカルストレージの値更新
+                Object.assign(ajp_info['data'], data);
+                localStorage.setItem('ajp_info', JSON.stringify(ajp_info));
+            }).fail(function(jqXHR, textStatus, errorThrown) {
+                console.log(jqXHR);
+                console.log(textStatus);
+                console.log(errorThrown);
+            });
+        }else{
+            //初回データ格納
+            var obj = {
+                action: 'ajax_sp_bottom_menu',
+                dates: {
+                    r_date: now_date, //recipe
+                    m_date: now_date, //magazine
+                    a_date: now_date, //activty
+                },
+                data: {
+                    recipe: true,
+                    magazine: true,
+                    activity: true,
+                }
+            }
+            localStorage.setItem('ajp_info', JSON.stringify(obj));
+        }
+    });
+})(jQuery);

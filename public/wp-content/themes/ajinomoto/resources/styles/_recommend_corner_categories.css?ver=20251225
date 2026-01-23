@@ -1,0 +1,1089 @@
+
+.foodImgContent img:active, 
+.foodImgContent img:hover,
+.cornerImgContent img:active,
+.cornerImgContent img:hover,
+.foodTextLink .txtlink .searchword:active,
+.foodTextLink .txtlink .searchword:hover,
+.foodText span:active,
+.foodText span:hover,
+.basicText span:active,
+.basicText span:hover,
+.imgList .basicListContent a img:active,
+.imgList .basicListContent a img:hover,
+.basicListContent .imgIndexContent span:active,
+.basicListContent .imgIndexContent span:hover,
+.seasonLists li a.textLink_R:active,
+.seasonLists li a.textLink_R:hover{
+    opacity: .5;
+}
+
+#cornerCategoryPage .commonAnchorList li a{
+	text-decoration: none;
+	font-weight: 500;
+}
+
+#cornerCategoryPage .commonAnchorList li a:before {
+	top: 4px;
+	left: 0;
+	border-radius: 0px;
+}
+
+#cornerCategoryPage .commonAnchorList li a:before { background-color: #de0202; }
+
+#cornerCategoryPage .ballTitle01{
+    border-top: solid 1px;
+    border-bottom: solid 1px;
+    padding-top: 13px;
+    padding-bottom: 13px;
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 40px;
+}
+.ballTitle01 > *:before {
+    background-image: none;
+}
+.ballTitle01 > *:after {
+    background-image: none;
+}
+#cornerCategoryPage .categoryContentslist a{
+    text-decoration: none;
+}
+
+#cornerCategoryPage .catBox + .catBox{
+	background: none;
+}
+
+#cornerCategoryPage .bdrTitle .ttl{
+    background: none;
+}
+.foodListContent a{
+    text-decoration: none;
+}
+/* 季節のレシピ */
+a.textLink_R.green:before{
+    background: none;
+}
+#cornerCategoryPage .seasonLists .inBox {
+    padding: 30px 0 40px;
+}
+#cornerCategoryPage .r_mark:before {
+    position: absolute;
+    bottom: -1px;
+    right: -3px;
+    display: block;
+    content: '®';
+}
+#cornerCategoryPage .r_mark{
+    margin-right: 3px;
+    margin-left: 1px;
+}
+#cornerCategoryPage .wrap860{
+    display: none;
+}
+/* 季節のレシピ */
+a.textLink_R.green:before{
+    background: none;
+}
+#cornerCategoryPage .r_mark:before {
+    position: absolute;
+    bottom: -1px;
+    right: -3px;
+    display: block;
+    content: '®';
+}
+#cornerCategoryPage .r_mark{
+    margin-right: 3px;
+    margin-left: 1px;
+}
+
+@media only screen and (max-width:979px) {
+    #cornerCategoryPage .anchorListArea {
+        margin-left: 8%;
+        margin-right: 8%;
+    }
+	#cornerCategoryPage .commonAnchorList{
+		padding-top: 5px;
+		padding-bottom: 25px;
+	}
+	#cornerCategoryPage .categoryContentslist li {
+        margin-bottom: 15px;
+    }
+	.btnHashtag{
+		padding: 2px 7.5px;
+	}
+	#cornerCategoryPage .catBox{
+		padding-top: 10px;
+	}
+	#cornerCategoryPage .ballTitle01 {
+		border-top: solid 1px;
+		border-bottom: solid 1px;
+		padding-top: 10px;
+		padding-bottom: 10px;
+		font-size: 16px;
+		font-weight: 700;
+		margin-bottom: 35px;
+		text-align: center;
+		max-width: 84%;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	#cornerCategoryPage .bdrTitle{
+		margin-bottom: 40px;
+	}
+	#cornerCategoryPage .bdrTitle p {
+		font-weight: 400;
+		padding-right: 30px;
+		padding-left: 30px;
+		font-size: 14px;
+	}
+	#cornerCategoryPage .bdrTitle .ttl{
+		padding-top: 10px;
+		font-size: 24px;
+        padding-bottom: 22.5px;
+	}
+    #cornerCategoryPage .imgBdrTitle{
+        margin-bottom: 27px;
+    }
+    #cornerCategoryPage .wrap860 {
+        margin-right: 8%;
+        margin-left: 8%;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    #cornerCategoryPage .commonAnchorList li a{
+        margin-bottom: 24px;
+		font-size: 14px;
+    	font-weight: 400;
+    }
+	#cornerCategoryPage .commonAnchorList{
+		border-bottom: none;
+	}
+    #cornerCategoryPage .categoryContentslist img{
+        border-radius: 10px;
+        width: 100%;
+        min-height: 100px;
+        height: 26.6vw;
+        object-fit: contain;
+        font-family: 'object-fit: contain';
+    }
+    #cornerCategoryPage .categoryContentslist .txts{
+        text-decoration: none;
+    }
+    #cornerCategoryPage .categoryContentslist{
+        padding-right: 8%;
+        padding-left: 8%;
+        display: flex;
+		flex-wrap: wrap;
+        margin-bottom: 17px;
+    }
+    #cornerCategoryPage .categoryContentslist li {
+        display: flex;
+        /*flex-wrap: wrap;*/
+    }
+    #cornerCategoryPage .categoryContentsLink{
+        width: 50%;
+        padding-right: 2%;
+    }
+    #cornerCategoryPage .spDisplayItem{
+        width: 50%;
+        padding-left: 2%;
+    }
+    #cornerCategoryPage .categoryContentslist .ttl{
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 14px;
+        display: block;
+        margin-bottom: 6px;
+    }
+    #cornerCategoryPage .categoryContentslist .txt{
+        display: block;
+        font-size: 12px;
+        margin-bottom: 5px;
+		font-weight: 400;
+    }
+    .listHashtag{
+        display: flex;
+        flex-wrap: wrap;
+        width: auto;
+    }
+    /* 食材別レシピ */
+    .foodListContent .foodImgContent{
+        width: 53%;
+    }
+    .foodListContent span.img img{
+        border-radius: 10px;
+        width: 100%;
+        min-height: 100px;
+        height: 26.6vw;
+        object-fit: contain;
+        font-family: 'object-fit: contain';
+	}
+    li.foodListContent {
+		display: flex;
+        padding-right: 8%;
+        padding-left: 8%;
+        margin-bottom: 17px;
+    }
+    #cornerCategoryPage .foodTextLink {
+        width: 47%;
+        padding-left: 9%;
+        position: relative;
+        top: -7px;
+	}
+    #cornerCategoryPage .foodTextLink .txtlink{
+        font-weight: 400;
+        margin-bottom: 6px;
+        font-size:14px; 
+        margin-left: 10px;
+    }
+    #cornerCategoryPage .foodTextLink .txtlink .searchword a::before{
+        position: relative;
+        top: 14px;
+        right: 20px;
+        display: block;
+        content: '';
+        width: 0.4em;
+        margin-right: 20px;
+        height: 0.4em;
+        margin-top: -0.2em;
+        border-top: #000000 solid 1.5px;
+        border-right: #000000 solid 1.5px;
+        transform: rotate( 45deg);
+        -ms-transform: rotate(45deg);
+        -webkit-transform: rotate( 45deg);
+        -moz-transform: rotate(45deg);
+    }
+    .foodListContent .foodText {
+        width: 48%;
+        padding-left: 3%;
+        line-height: normal;
+    }
+    .foodListContent .cornerImgContent {
+        width: 48%;
+    }
+    .foodText .txts .ttl{
+        font-size: 14px;
+        font-weight: 500;
+        display: block;
+        margin-bottom: 5px;
+    }
+    .foodText .txts .txt{
+        font-size: 11px;
+        font-weight: 400;
+        line-height: normal;
+    }
+    #cornerCategoryPage .catBox{
+        padding: 0;
+    }
+    #cornerCategoryPage .listHashtag{
+        margin-top: 6px;
+    }
+    /* 定番基本 */
+    #cornerCategoryPage li.basicListContent{
+        width: 100%;
+        display: flex;
+        margin-bottom: 20px;
+    }
+    #cornerCategoryPage li.basicListContent:last-child{
+        margin-bottom: 45px;
+    }
+    ul.inList.fadeArea.clearfix.childMacthHeight {
+        display: flex;
+        flex-wrap: wrap;
+        margin-left: 8%;
+        margin-right: 8%;
+    }
+    #cornerCategoryPage .basicListContent span.img img {
+        border-radius: 10px;
+        width: 100%;
+        min-height: 100px;
+        height: 26.6vw;
+        object-fit: contain;
+        font-family: 'object-fit: contain';
+    }
+    .basicListContent .cornerImgContent {
+        width: 48%;
+        padding-right: 2%;
+    }
+    .basicListContent .basicText {
+        width: 48%;
+        padding-left: 2%;
+        line-height: normal;
+    }
+    #cornerCategoryPage .basicText .ttl{
+        font-size: 14px;
+        font-weight: 700;
+        display: block;
+        margin-bottom: 3px;
+    }
+    #cornerCategoryPage .basicText .txt{
+        font-size: 11px;
+        font-weight: 400;
+        display: block;
+    }
+     /* 味の素商品活用術 */
+    #cornerCategoryPage .products_list {
+        overflow: hidden;
+    }
+    #cornerCategoryPage .products_list ul li a {
+        box-sizing: border-box;
+        overflow: hidden;
+        display: block;
+        height: 100%;
+        width: 100%;
+        padding: 1vw;
+        text-align: center;
+        text-decoration: none;
+        border: 1px solid #000000;
+        border-radius: 5px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    #cornerCategoryPage .products_list ul li {
+        box-sizing: border-box;
+        position: relative;
+        display: inline-flex;
+        width: 31.5%;
+        height: 32.5vw;
+        margin-right: 2.6%;
+        margin-bottom: 15px;
+    }
+    #cornerCategoryPage ul.clearfix.childMacthHeight.smoothArea {
+        display: flex;
+        flex-wrap: wrap;
+        margin-left: 8%;
+        margin-right: 8%;
+    }
+    #cornerCategoryPage ul.imgList{
+        display: flex;
+        flex-wrap: wrap;
+        margin-left: 8%;
+        margin-right: 8%;
+    }
+    #cornerCategoryPage .products_list ul li:nth-child(3n){
+        margin-right: 0;
+    }
+    #cornerCategoryPage .products_list ul li a p {
+        font-size: 12px;
+        font-weight: 400;
+        width: 95%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    #cornerCategoryPage .products_list .productImage{
+        width: 100%;
+    }
+    #cornerCategoryPage .products_list ul li img {
+        width: 85%;
+    }
+    #cornerCategoryPage .catBox .ballTitle01 .img img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    #cornerCategoryPage .catBox .ballTitle01 .img{
+        width: 55px;
+        height: 45px;
+    }
+    #cornerCategoryPage .catBox .ballTitle01 .imgTitle{
+        font-size: 16px;
+        position: relative;
+        padding-left: 10px;
+    }
+    #cornerCategoryPage .r_mark:before {
+        position: absolute;
+        bottom: -1px;
+        right: -2px;
+        display: block;
+        content: '®';
+    }
+    #cornerCategoryPage .r_mark{
+        margin-right: 3px;
+        margin-left: 2px;
+    }
+    #cornerCategoryPage .ballTitle01 .r_mark{
+        margin-right: 3px;
+        margin-left: 0px;
+    }
+    #cornerCategoryPage .ballTitle01 > *{
+        padding: 0
+    }
+    #cornerCategoryPage .ballTitleImg{
+        height: 60px;
+        padding-top: 0px;
+        padding-bottom: 0px;
+        margin-bottom: 33px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #cornerCategoryPage li.basicListContent .imgIndexContent{
+        width: 50%;
+        padding-left: 2%;
+    }
+    #cornerCategoryPage li.basicListContent .listImgContent{
+        width: 50%;
+        padding-right: 2%;
+    }
+    #cornerCategoryPage li.basicListContent img{
+        border-radius: 10px;
+        min-height: 100px;
+        height: 26.6vw;
+        object-fit: contain;
+        font-family: 'object-fit: contain';
+    }
+    #cornerCategoryPage .imgIndexContent span a{
+        font-size: 14px;
+        text-decoration: none;
+        font-weight: 500;
+    }
+    #cornerCategoryPage .links p{
+        text-align: center;
+        margin-bottom: 45px;
+        margin-top: 5px;
+        width: 204px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    #cornerCategoryPage .links p a{
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 400;
+        position: relative;
+    }
+    #cornerCategoryPage .links p a::before{
+        position: absolute;
+        top: 0.5em;
+        left: -10px;
+        display: block;
+        content: '';
+        width: 0.4em;
+        margin-right: 20px;
+        height: 0.4em;
+        margin-top: -0.2em;
+        border-top: #000000 solid 1px;
+        border-right: #000000 solid 1px;
+        transform: rotate( 45deg);
+        -ms-transform: rotate(45deg);
+        -webkit-transform: rotate( 45deg);
+        -moz-transform: rotate(45deg);
+    }
+    #cornerCategoryPage .products_list {
+		padding-bottom: 40px;
+	}
+    /* 季節のレシピ */
+    #cornerCategoryPage .seasonLists .ballTitle01 img{
+        height: 40px;
+        width: 45px;
+        object-fit: contain;
+    }
+    #cornerCategoryPage .seasonLists .ballTitle01 p{
+        font-size: 16px;
+        font-weight: 600;
+        position: relative;
+        top: 12px;
+    }
+    #cornerCategoryPage .seasonLists .inBox {
+        margin-left: 8%;
+        margin-right: 8%;
+        margin-top: -70px;
+        padding-top: 100px;
+    }
+    #cornerCategoryPage .seasonLists .ballTitle01{
+        margin-bottom: 0;
+    }
+    a.textLink_R.green:before{
+        position: absolute;
+        left: 0;
+        display: block;
+        content: '';
+        width: 0.4em;
+        margin-right: 20px;
+        height: 0.4em;
+        margin-top: -0.2em;
+        border-top: #000000 solid 1px;
+        border-right: #000000 solid 1px;
+        transform: rotate( 45deg);
+        -ms-transform: rotate(45deg);
+        -webkit-transform: rotate( 45deg);
+        -moz-transform: rotate(45deg);
+        border-radius: 0;
+    }
+    #cornerCategoryPage .seasonLists li a.textLink_R{
+        text-decoration: none;
+        font-weight: 500;
+        padding-left: 20px;
+        font-size: 14px;
+    }
+    a.textLink_R:after{
+        display: none;
+    }
+    #cornerCategoryPage .seasonLists dd .inTtl {
+        margin-bottom: 8px;
+        font-weight: 600;
+        font-size: 14px;
+        letter-spacing: 3px;
+    }
+    #cornerCategoryPage .seasonLists dt {
+        margin-bottom: 15px;
+        font-size: 14px;
+        font-weight: 700;
+        text-align: center;
+    }
+    #cornerCategoryPage .seasonLists dl + dl {
+        margin-top: 30px;
+    }
+    #cornerCategoryPage .commonAnchorList.seasonList li + li{
+        margin-left: 42px;
+    }
+    .commonAnchorList .double li{
+        position: relative;
+        right: 20px;
+    }   
+    #cornerCategoryPage li.foodListContent:last-child{
+        margin-bottom:45px;
+    }
+}
+
+@media only screen and (min-width:980px) {
+    #cornerCategoryPage .anchorListArea{
+        max-width: 860px;
+        margin-right: auto;
+        margin-left: auto;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    #cornerCategoryPage .bdrTitle p {
+        text-align: center;
+    }
+	/* 新規追加部分 */
+	#cornerCategoryPage .catBox .inList {
+		margin: 0;
+		display: flex;
+		flex-wrap: wrap;
+	}
+	#cornerCategoryPage .catBox .inList li {
+		display: inline-block;
+		/* width: 100%; */
+	}
+	#cornerCategoryPage .catBox .inList li .fullWidth{
+		display: inline-block;
+		width: 100%;
+		padding: 0;
+	}
+	#cornerCategoryPage .catBox .inList li:nth-child(4n){
+		margin-right: 0;
+	}
+	#cornerCategoryPage .catBox .inList .img {
+		float: left;
+		width: 43.1%;
+		width: 100%;
+		float: none;
+	}
+	#cornerCategoryPage .catBox .inList .img img {
+		border-radius: 20px;
+		width: 252px;
+    	height: 168px;
+		object-fit: contain;
+		font-family: 'object-fit: contain';
+        margin-bottom: 5px;
+	}
+	#cornerCategoryPage .catBox .inList .txts {
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+		float: right;
+		width: 100%;
+		padding-left: 0;
+		margin-left: 0;
+		line-height: 1.5;
+	}
+    #cornerCategoryPage .catBox .inList .txts .txt{
+        font-size: 14px;
+        font-weight: 400;
+    }
+	#cornerCategoryPage #cornerCategoryPage strong{
+		font-weight: 800;
+	}
+	.commonAnchorList li, .commonAnchorList.col2 li{
+		padding-top: 15px;
+	}
+    /* タイトル */
+	#cornerCategoryPage .bdrTitle p{
+		font-weight: 400;
+		font-size: 16px;
+	}
+    #cornerCategoryPage .bdrTitle .ttl {
+        margin-top: 25px;
+        padding-bottom: 20px;
+		font-size: 28px;
+    }
+    #cornerCategoryPage .bdrTitle{
+        margin-bottom: 65px;
+    }
+    #cornerCategoryPage .imgBdrTitle{
+        margin-bottom: 55px;
+    }
+    #cornerCategoryPage .commonAnchorList{
+        padding-top: 10px;
+        padding-bottom: 60px;
+        padding-left: 20px;
+    }
+    .commonAnchorList li:nth-child(2n){
+        padding-left: 45px;
+    }
+    #cornerCategoryPage .catBox{
+        padding: 30px 0 40px;
+    }
+    /* ハッシュタグ　*/
+    #cornerCategoryPage .listHashtag{
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        -webkit-box-pack: start;
+        -ms-flex-pack: start;
+        justify-content: flex-start;
+        margin-top: 10px;
+    }
+    #cornerCategoryPage .itemListHashtag{
+        display: flex;
+        white-space: nowrap;
+        position: relative;
+        margin: 5px;
+        margin-right: 3px;
+        width: auto;
+    }
+    .btnHashtag .hashtagName {
+        font-family: 'Noto Sans JP', sans-serif;
+        font-size: 14px;
+        position: relative;
+        z-index: 1;
+        display: inline-block;
+        top: 0;
+    }
+    .btnHashtag .bg {
+        background: #ffffff;
+        border-radius: 100vh;
+        overflow: hidden;
+        display: block;
+        position: absolute;
+        top: 1px;
+        left: 1px;
+        width: calc(100% - 2px);
+        height: calc(100% - 2px);
+        z-index: 0;
+    }
+    #cornerCategoryPage .itemListHashtag a{
+        cursor: pointer;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        position: relative;
+        padding: 2px 12px;
+        text-decoration: none;
+        border-radius: 100vh;
+        background: rgb(217,44,107);
+        background: -webkit-gradient(linear, left top, right top, from(rgba(217,44,107,1)), to(rgba(236,110,30,1)));
+        background: -o-linear-gradient(left, rgba(217,44,107,1) 0%, rgba(236,110,30,1) 100%);
+        background: linear-gradient(90deg, rgba(217,44,107,1) 0%, rgba(236,110,30,1) 100%);
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        overflow: hidden;
+    }
+    /* 画像　テキスト*/
+    #cornerCategoryPage .categoryContentslist img{
+        border-radius: 20px;
+        margin-bottom: 15px;
+        width: 100%;
+        height: 170px;
+        object-fit: contain;
+        font-family: 'object-fit:contain';
+    }
+    #cornerCategoryPage .categoryContentslist{
+        margin-bottom: 15px;
+    }
+    #cornerCategoryPage .categoryContentslist .ttl{
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 16px;
+        display: block;
+        margin-bottom: 10px;
+    }
+    #cornerCategoryPage .categoryContentslist .txt{
+        display: block;
+        margin-bottom: 10px;
+		font-size: 14px;
+		font-weight: 400;
+    }
+    #cornerCategoryPage .categoryContentslist span{
+        text-decoration: none;
+    }
+    #cornerCategoryPage .categoryContents{
+        width: 1100px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+    #cornerCategoryPage .categoryContentslist{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .categoryContentslist li{
+        width: 22.9%;
+        margin-right: 30px;
+        margin-bottom: 50px;
+    }
+    .categoryContentslist li:nth-child(n+4){
+        margin-right: 0px;
+    }
+    #cornerCategoryPage .catBox{
+        padding: 0;
+    }
+    /* 味の素商品活用術 */
+    #cornerCategoryPage .r_mark{
+        margin-left: 2px;
+    }
+    #cornerCategoryPage .r_mark:before {
+        position: absolute;
+        bottom: -2px;
+        right: -2px;
+        display: block;
+        content: '®';
+    }
+    #cornerCategoryPage .ballTitle01 .r_mark:before {
+        position: absolute;
+        bottom: -1px;
+        right: 0px;
+        display: block;
+        content: '®';
+    }
+	#cornerCategoryPage .catBox .imgList .img img{
+		border-radius: 10px;
+		width: 252px;
+		height: 168px;
+		object-fit: contain;
+		font-family: 'object-fit: contain';
+	}
+    #cornerCategoryPage .products_list {
+        overflow: hidden;
+        margin:auto;
+        width: auto;
+        max-width: 1100px;
+    }
+    #cornerCategoryPage .products_list ul li a {
+        box-sizing: border-box;
+        overflow: hidden;
+        display: block;
+        height: 100%;
+        padding: 1vw;
+        text-align: center;
+        text-decoration: none;
+        border: 1px solid #000000;
+        border-radius: 10px;
+        width: 160px;
+        height: 170px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    #cornerCategoryPage .products_list ul li {
+        box-sizing: border-box;
+        position: relative;
+        display: inline-flex;
+        margin-right: 2.35%;
+        width: 14.4%;
+        padding-bottom: 28px;
+    }
+    #cornerCategoryPage .products_list ul li a p {
+        font-size: 14px;
+        font-weight: 500;
+        width: 100%;
+    }
+    #cornerCategoryPage .products_list .productImage{
+        width: 100%;
+    }
+    #cornerCategoryPage .products_list ul li:nth-child(6n) {
+        margin-right: 0px;
+    }
+    #cornerCategoryPage .products_list ul li:last-child{
+        margin-bottom: 42px;
+    }
+    #cornerCategoryPage .products_list ul li img {
+        width: 120px;
+    }    
+    #cornerCategoryPage .catBox .ballTitle01 .img img{
+        position: relative;
+        top: 10px;
+        width: 80px;
+        height: 70px;
+        object-fit: cover;
+    }
+    #cornerCategoryPage .catBox .ballTitle01 .imgTitle{
+        font-size: 20px;
+        position: relative;
+        top: 25px;
+        padding-left: 15px;
+    }
+    #cornerCategoryPage .ballTitle01 > *{
+        padding: 0
+    }
+    #cornerCategoryPage .ballTitleImg{
+        height: 91px;
+        padding-top: 0px;
+        padding-bottom: 0px;
+    }
+    #cornerCategoryPage li.basicListContent:nth-child(4n){
+        margin-right: 0;
+    }
+    #cornerCategoryPage ul.imgList{
+        display: inline-flex;
+        width: 1100px;
+        flex-wrap: wrap;
+    }
+    #cornerCategoryPage ul.imgList li.basicListContent{
+        margin-bottom: 32px;
+    }
+    #cornerCategoryPage .imgIndexContent span a{
+        font-size: 16px;
+        text-decoration: none;
+        font-weight: 500;
+    }
+    #cornerCategoryPage .links p{
+        text-align: center;
+        margin-bottom: 65px;
+    }
+    #cornerCategoryPage .links p a{
+        text-decoration: none;
+        font-size: 18px;
+        font-weight: 400;
+        position: relative;
+        padding-left: 15px;
+    }
+    #cornerCategoryPage .links p a::before{
+        position: absolute;
+        top: 0.5em;
+        left: 0;
+        display: block;
+        content: '';
+        width: 0.4em;
+        margin-right: 20px;
+        height: 0.4em;
+        margin-top: -0.2em;
+        border-top: #000000 solid 2px;
+        border-right: #000000 solid 2px;
+        transform: rotate( 45deg);
+        -ms-transform: rotate(45deg);
+        -webkit-transform: rotate( 45deg);
+        -moz-transform: rotate(45deg);
+    }
+	/*　食材別レシピ　*/
+	ul.foodList.fadeArea.clearfix.childMacthHeight {
+		margin-left: auto;
+		margin-right: auto;
+		display: flex;
+    	flex-wrap: wrap;
+        padding-left: 95px;
+	}
+	li.foodListContent {
+        width: 52%;
+        display: flex;
+        margin-bottom: 45px;
+    }
+    li.foodListContent:nth-child(2n){
+        width: 48%;
+    }
+    #cornerCategoryPage li.foodListContent:nth-child(2n) .foodText{
+        width: 42%;
+        padding-right: 0;
+    }
+	#cornerCategoryPage span.img img {
+		border-radius: 10px;
+		width: 252px;
+		height: 168px;
+		object-fit: contain;
+		font-family: 'object-fit: contain';
+	}
+	#cornerCategoryPage .foodTextLink {
+		width: 30%;
+        margin-left: 50px;
+        margin-top: 10px;
+	}
+    #cornerCategoryPage .foodText {
+        width: 40%;
+        display: inline-block;
+        padding-left: 23px;
+        padding-right: 23px;
+    }
+    .foodTextLink .txtlink .searchword a::before{
+        position: relative;
+        top: 16.5px;
+        right: 15%;
+        display: block;
+        content: '';
+        width: 0.4em;
+        margin-right: 20px;
+        height: 0.4em;
+        margin-top: -0.2em;
+        border-top: #000000 solid 2px;
+        border-right: #000000 solid 2px;
+        transform: rotate( 45deg);
+        -ms-transform: rotate(45deg);
+        -webkit-transform: rotate( 45deg);
+        -moz-transform: rotate(45deg);
+    }
+    .foodText .txts .ttl{
+        font-size: 16px;
+        font-weight: 500;
+        display: block;
+        margin-bottom: 1px;
+    }
+    .foodText .txts .txt{
+        font-size: 14px;
+        font-weight: 400;
+        margin-bottom: 10px;
+    }
+    .foodTextLink .txtlink{
+        font-weight: 500;
+        margin-bottom: 9px;
+    }
+    #cornerCategoryPage .recommendCornerCategory{
+        margin-top: 0px;
+    }
+    #cornerCategoryPage .cornerImgContent{
+        width: 252px;
+        display: contents;
+    }
+    /* 定番・基本 */
+    #cornerCategoryPage li.basicListContent{
+        width: 22.9%;
+        display: inline-block;
+		padding: 0;
+		margin-right: 2.7%;
+        margin-bottom: 45px;
+    }
+    #cornerCategoryPage .basicText .ttl{
+        font-size: 16px;
+        font-weight: 500;
+        display: block;
+        margin-bottom: 5px;
+    }
+    #cornerCategoryPage .clearfix a{
+        font-size: 16px;
+    }
+    #cornerCategoryPage .basicText {
+        display: grid;
+    }
+    .basicListContent a img{
+        border-radius: 10px;
+		width: 252px;
+		height: 168px;
+		object-fit: contain;
+		font-family: 'object-fit: contain';
+        margin-bottom: 10px;
+    }
+    /* 季節のレシピ */
+    #cornerCategoryPage .commonAnchorList li a {
+        padding-left: 30px;
+    }
+    #cornerCategoryPage .seasonList li{
+        padding-left: 0px;
+    }
+    #cornerCategoryPage .commonAnchorList.seasonList li{
+        position: relative;
+        right: 15px;
+    }
+    #cornerCategoryPage .commonAnchorList.seasonList li + li{
+        margin-left: 110px;
+    }
+    #cornerCategoryPage .commonAnchorList{
+        border-bottom: none;
+    }
+    #cornerCategoryPage .seasonLists .ballTitle01 img{
+        height: 65px;
+        width: 65px;
+        object-fit: contain;
+    }
+    #cornerCategoryPage .seasonLists .ballTitle01 p{
+        font-size: 20px;
+        font-weight: 600;
+        position: relative;
+        top: 17px;
+    }
+    #cornerCategoryPage .seasonLists .ballTitle01{
+        margin-bottom: 0;
+        max-width: 1100px;
+        margin-left: auto;
+        margin-right: auto;
+        padding-top: 11.5px;
+        padding-bottom: 11.5px;
+    }
+    #cornerCategoryPage .seasonLists dt {
+        margin-bottom: 25px;
+        text-align: center;
+    }
+    #cornerCategoryPage .seasonLists .inBox ul.lastContent{
+        padding-left: 88px;
+    }
+    #cornerCategoryPage .seasonLists .inBox {
+		display: table;
+		width: 100%;
+		padding: 35px 0;
+	}
+    #cornerCategoryPage .seasonLists .inBox dt {
+		font-size: 20px;
+        font-weight: 700;
+        text-align: left;
+	}
+    a.textLink_R.green:before{
+        position: absolute;
+        left: 0;
+        display: block;
+        content: '';
+        width: 0.4em;
+        margin-right: 20px;
+        height: 0.4em;
+        margin-top: -0.2em;
+        border-top: #000000 solid 1px;
+        border-right: #000000 solid 1px;
+        transform: rotate( 45deg);
+        -ms-transform: rotate(45deg);
+        -webkit-transform: rotate( 45deg);
+        -moz-transform: rotate(45deg);
+        border-radius: 0;
+    }
+    a.textLink_R:after{
+        display: none;
+    }
+    #cornerCategoryPage .seasonLists li a.textLink_R{
+        text-decoration: none;
+        font-weight: 500;
+    }
+    #cornerCategoryPage .seasonLists li a.textLink_R {
+        padding: 0 0 0 20px;
+        font-size: 18px;
+    }
+    #cornerCategoryPage .seasonLists dd .inTtl {
+        font-size: 18px;
+        margin-bottom: 8px;
+        font-weight: 600;
+        letter-spacing: 3px;
+    }
+    #cornerCategoryPage .seasonLists .inBox {
+        max-width: 1100px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: -180px;
+        padding-top: 215px;
+    }
+    .commonAnchorList {
+        position: relative;
+        right: 30px;
+    }
+    #cornerCategoryPage .seasonLists dl:first-child{
+        padding-left: 88px;
+    }
+}

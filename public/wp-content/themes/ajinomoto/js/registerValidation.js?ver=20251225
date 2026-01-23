@@ -1,0 +1,1709 @@
+jQuery(function($){
+
+    var forms = [];
+    var today = new Date();
+    var userpassword;
+    var userpasswordVerify;
+    var pageSlug;
+    var elements = {
+        buttonSubmit: null,
+        formSubmit: null,
+        buttonBack: null,
+        formBack: null
+    };
+    var TYPES = {
+        INPUT_AS_TEXT: 'INPUT_AS_TEXT',
+        PASSWORD:      'PASSWORD',
+        EMAIL:         'EMAIL',
+        TEXT:          'TEXT',
+        RADIO:         'RADIO',
+        CHECKBOX:      'CHECKBOX',
+        SELECT:        'SELECT',
+        TEXTAREA:      'TEXTAREA'
+    };
+    var SLUGS = {
+        USER_EDIT:                  'USER_EDIT',
+        USER_EDIT_CONFIRM:          'USER_EDIT_CONFIRM',
+        USER_ENTRY:                 'USER_ENTRY',
+        USER_ENTRY_REG:             'USER_ENTRY_REG',
+        USER_INPUT:                 'USER_INPUT',
+        USER_CONFIRM:               'USER_CONFIRM',
+        MAIL_DEREGISTER_ENTRY:      'MAIL_DEREGISTER_ENTRY',
+        MAIL_DEREGISTER_CONFIRM:    'MAIL_DEREGISTER_CONFIRM',
+        MAIL_DEREGISTER_COMPLETE:   'MAIL_DEREGISTER_COMPLETE',
+        USER_AUTH_LOGIN:            'USER_AUTH_LOGIN',
+        LOGIN_BEFORE_EDIT:          'LOGIN_BEFORE_EDIT',
+        PASSWORD_CHANGE:            'PASSWORD_CHANGE',
+        PASSWORD_REMINDER:          'PASSWORD_REMINDER',
+        PASSWORD_REMINDER_EDIT:     'PASSWORD_REMINDER_EDIT',
+        PASSWORD_REMINDER_COMPLETE: 'PASSWORD_REMINDER_COMPLETE',
+        MAIL_CHANGE:                'MAIL_CHANGE',
+        RESIGN:                     'RESIGN'
+    };
+    var SELECTOR_NAMES = {
+      container:       '.mem-formControlWrap',
+      formFlag:        '.mem-formFlag',
+      mailError:       'mailerror',
+      passError:       'passerror',
+      passVerifyError: 'passVerifyerror',
+      dateError:       'dateError',
+      dateMonthError:  'dateMonthError',
+      zipError:        'xipError',
+      nicknameError:   'nicknameerror',
+      genderError:     'gendererror',
+      workError:       'workerror',
+      livingError:     'livingerror',
+      themeError:      'themeerror',
+      errorMessage:    'mem-formAnnotaion mem-formAnnotaion--error',
+      errorInput:      'mem-formControl--error',
+      buttonDisabled:  'mem-button--disabled',
+      toggleActive:    'mem-formControlToggle--active',
+      toggleTarget:    'js-mem-formControlToggle',
+      buttonSubmit:    'js-mem-buttonSubmit',
+      buttonBack:      'js-mem-buttonBack',
+      formSubmit:      'js-mem-hiddenSubmitButton',
+      formBack:        'js-mem-hiddenBackButton',
+      errorShowArea:   'js-mem-errorShowArea',
+      errorArea:       'js-mem-errorArea'
+    };
+
+    var generateErrorMessage = function(type, string, isArea = false) {
+      if (isArea) {
+        return '<div id="' + type + 'Area' + '" class="'
+          + SELECTOR_NAMES.errorMessage + '">' + string + '</div>';
+      }
+      return '<div id="' + type + '" class="'
+          + SELECTOR_NAMES.errorMessage + '">' + string + '</div>';
+    };
+
+    var generateErrorArea = function() {
+        $('.' + SELECTOR_NAMES.errorShowArea).append(
+                '<div class="mem-formHeadError ' + SELECTOR_NAMES.errorArea + '">※入力内容にエラーがあります。</div>'
+            );
+    };
+
+    var deleteErrorMessage = function(type, isArea = false) {
+      if (isArea) {
+          $('#' + type + 'Area').remove();
+      } else {
+          $('#' + type).remove();
+      }
+    };
+
+    var showError = function(target, error, selectorName, msg, ) {
+        if (error.length){
+            error.text(msg);
+        } else {
+            target.before(generateErrorMessage(selectorName, msg));
+        }
+    };
+
+    var showErrorArea = function(type, string) {
+        if (!$('.' + SELECTOR_NAMES.errorArea).length) {
+            // 入力内容確認の下にエラーメッセージを表示するエリアを作成
+            generateErrorArea();
+        }
+        deleteErrorMessage(type, true);
+        $('.' + SELECTOR_NAMES.errorArea).append(generateErrorMessage(type, string, true));
+    };
+
+    var initErrorArea = function() {
+        $('.' + SELECTOR_NAMES.errorArea).remove();
+    };
+
+    var checkLengthMax = function(ele, max) {
+        if (ele.val().length > max) {
+            return false;
+        }
+        return true;
+    };
+
+    var getSlug = function() {
+        var path = document.location.pathname.replace('index.html', '');
+
+        if (/^\/user\/entry\/input\/$/.test(path)) {
+            return SLUGS.USER_INPUT;
+        } else if (/^\/user\/entry\/confirm\/$/.test(path)) {
+            if ($('.mw_wp_form').hasClass('mw_wp_form_input')) {
+                return SLUGS.USER_INPUT;
+            } else {
+                return SLUGS.USER_CONFIRM;
+            }
+        } else if (/^\/user\/entry\/$/.test(path)) {
+            if (/\?reg=1/.test(document.location.search)) {
+                return SLUGS.USER_ENTRY_REG;
+            } else {
+                return SLUGS.USER_ENTRY;
+            }
+        } else if (/^\/user\/edit\/mail-deregister\/$/.test(path)) {
+            return SLUGS.MAIL_DEREGISTER_ENTRY_ENTRY;
+        } else if (/^\/user\/edit\/mail-deregister\/confirm\/$/.test(path)) {
+            return SLUGS.MAIL_DEREGISTER_ENTRY_CONFIRM;
+        } else if (/^\/user\/edit\/mail-deregister\/complete-edit\/$/.test(path)) {
+            return SLUGS.MAIL_DEREGISTER_ENTRY_COMPLETE;
+        } else if (/^\/user\/edit\/login\/$/.test(path)) {
+            return SLUGS.LOGIN_BEFORE_EDIT;
+        } else if (/^\/user\/edit\/password-change\/$/.test(path)) {
+            return SLUGS.PASSWORD_CHANGE;
+        } else if (/^\/user\/password-reminder\/$/.test(path)) {
+            return SLUGS.PASSWORD_REMINDER;
+        } else if (/^\/user\/password-reminder\/edit\/$/.test(path)) {
+            if ($('.mw_wp_form').hasClass('mw_wp_form_input')) {
+                return SLUGS.PASSWORD_REMINDER_EDIT;
+            } else {
+                return SLUGS.PASSWORD_REMINDER_COMPLETE;
+            }
+        } else if (/^\/user\/edit\/mail-change\/$/.test(path)) {
+            return SLUGS.MAIL_CHANGE;
+        } else if (/^\/user\/resign\/$/.test(path)) {
+            if ($('.mw_wp_form').hasClass('mw_wp_form_input')) {
+                return SLUGS.RESIGN;
+            } else {
+                return SLUGS.RESIGN_CONFIRM;
+            }
+        } else if (/^\/user\/auth\/login\/$/.test(path)) {
+            return SLUGS.USER_AUTH_LOGIN;
+        } else if (/^\/user\/edit\/$/.test(path) || /^\/user\/edit\/confirm\/$/.test(path)) {
+            if ($('.mw_wp_form').hasClass('mw_wp_form_input')) {
+                return SLUGS.USER_EDIT;
+            } else {
+                return SLUGS.USER_EDIT_CONFIRM;
+            }
+        }
+
+        return 'noForm';
+    };
+
+    var changeAppearanceFormControls = {
+        selectorNames: {
+            RADIO: '.mwform-radio-field',
+            CHECKBOX: '.mwform-checkbox-field'
+        },
+        init: function() {
+            var self = this;
+            var formSections = $('.mem-formSection');
+
+            formSections.each(function() {
+                var formSection = $(this);
+                var type = self.getTypes(formSection);
+                var object = {};
+
+                if (type.length === 0) return;
+
+                if (type[0] === TYPES.RADIO || type[0] === TYPES.CHECKBOX) {
+                    object['elements'] = (self.changeCheck(formSection, type));
+                } else {
+                    object['elements'] = (self.changeText(formSection, type));
+                    // TODO textarea用の処理を追加
+                }
+
+                object['isRequired'] = self.getIsRequired(formSection);
+                object['isGroup']    = formSection.find('.mem-formGroup').length > 0;
+                forms.push(object);
+            });
+
+            elements.buttonSubmit = $('div[id^=mw_wp_form_mw-wp-form-] .' + SELECTOR_NAMES.buttonSubmit);
+            elements.formSubmit = $('div[id^=mw_wp_form_mw-wp-form-] .' + SELECTOR_NAMES.formSubmit);
+
+            elements.buttonBack = $('div[id^=mw_wp_form_mw-wp-form-] .' + SELECTOR_NAMES.buttonBack);
+            elements.formBack = $('div[id^=mw_wp_form_mw-wp-form-] .' + SELECTOR_NAMES.formBack);
+        },
+        /**
+         * フォーム部品のタイプを返す
+         */
+        getTypes: function(formSection) {
+            var result      = [];
+            var hasRadio    = false;
+            var hasCheckbox = false;
+
+            formSection.find(this.selectorNames['RADIO']).each(function() {
+                if (hasRadio) return;
+                result.push(TYPES.RADIO);
+                hasRadio = true;
+            });
+
+            formSection.find(this.selectorNames['CHECKBOX']).each(function() {
+                if (hasCheckbox) return;
+                result.push(TYPES.CHECKBOX);
+                hasCheckbox = true;
+            });
+
+            formSection.find('input[type="text"].mem-formShowAsText').each(function() {
+                result.push(TYPES.INPUT_AS_TEXT);
+            });
+
+            formSection.find('input[type="email"]').each(function() {
+                result.push(TYPES.EMAIL);
+            });
+
+            formSection.find('input[type="password"]').each(function() {
+                result.push(TYPES.PASSWORD);
+            });
+
+            formSection.find('input[type="text"]').each(function() {
+                result.push(TYPES.TEXT);
+            });
+
+            formSection.find('select').each(function() {
+                result.push(TYPES.SELECT);
+            });
+
+            formSection.find('textarea').each(function() {
+                result.push(TYPES.TEXTAREA);
+            });
+
+            return result;
+        },
+        getIsRequired: function(formSection) {
+            return (formSection.find(SELECTOR_NAMES.formFlag).length > 0
+                && formSection.find(SELECTOR_NAMES.formFlag).text().trim() === '必須');
+        },
+        /**
+         * 最初のフォーム部品にIDとラベルにfor属性を付与
+         */
+        changeText: function(formSection, types) {
+            var retVal          = [];
+            var isGroup         = formSection.find('.mem-formGroup').length > 0;
+            var fieldsSelector  = isGroup
+                ? '.mem-formGroup__item'
+                : '.mem-formControlWrap';
+            var fields     = formSection.find(fieldsSelector);
+
+            fields.each(function(index) {
+                var field      = $(this);
+                var selector   = types[index] === TYPES.SELECT
+                    ? selector = types[index].toLowerCase()
+                    : selector = 'input[type=' + types[index].toLowerCase() + ']';
+                var element    = field.find(selector);
+                var label      = field.find('label');
+                var nameString = element.attr('name');
+
+                element.attr('id', nameString);
+                label.attr('for', nameString);
+
+                retVal.push({
+                    type: types[index],
+                    element: element
+                });
+            });
+
+            return retVal;
+        },
+        /**
+         * DOMの移動とクラス付与
+         *     選択肢が複数の場合は.mem-formGroup__itemを付与
+         */
+        changeCheck: function(formSection, types) {
+            var type    = types[0];
+            var isGroup = formSection.find('.mem-formGroup').length > 0;
+            var fields  = formSection.find(this.selectorNames[type]);
+
+            fields.each(function(index) {
+                var field      = $(this);
+                var element    = field.find('input[type=' + type.toLowerCase() + ']');
+                var label      = field.find('label');
+                var text       = label.text();
+                var nameString = element.attr('name');
+
+                field.addClass('mem-formCheck');
+                element.attr('id', nameString + index);
+                label
+                    .addClass('mem-formCheck__label')
+                    .attr('for', nameString + index)
+                    .before(element)
+                    .text(text);
+
+                if (isGroup) {
+                    field.wrap('<div class="mem-formGroup__item">');
+                }
+            });
+
+            return [{
+                type: type,
+                element: fields,
+                isGroup: isGroup
+            }];
+        }
+    };
+
+    var initEmail = function() {
+        $('input[name=email]').attr('autocomplete', 'off');
+
+        $('input[name=emailconfirm]').attr('autocomplete', 'off');
+        $('input[name=emailconfirm]').bind('paste', function(e){ e.preventDefault(); });
+        $('input[name=emailconfirm]').bind('drop', function(e) { e.preventDefault(); });
+    };
+
+    var initUserpassword = function() {
+        if ($("input[name=userpassword]").length > 0) {
+            $('input[name=userpassword]').attr('autocomplete', 'off');
+        } else if($("input[name=pass]").length > 0) {
+            $("input[name=pass]").attr("autocomplete", "off");
+        }
+
+        if ($("input[name=userpasswordVerify]").length > 0) {
+            $('input[name=userpasswordVerify]').attr('autocomplete', 'off');
+        } else if ($("input[name=passConfirm]").length > 0) {
+            $("input[name=passConfirm]").attr("autocomplete", "off");
+        }
+    };
+
+    var initUsernick = function() {
+        $('input[name=usernick]').attr('autocomplete', 'off');
+    };
+
+    var initUserzip = function() {
+        $('input[name=userzip]').attr('autocomplete', 'off');
+    };
+
+    var getUserpassword = function() {
+        if ($("input[name=userpassword]").length > 0) {
+            return $("input[name=userpassword]");
+        } else if ($("input[name=pass]").length > 0) {
+            return $("input[name=pass]");
+        }
+        return;
+    };
+
+    var getUserpasswordVerify = function() {
+        if ($("input[name=userpasswordVerify]").length > 0) {
+            return $("input[name=userpasswordVerify]");
+        } else if ($("input[name=passConfirm]").length > 0) {
+            return $("input[name=passConfirm]");
+        }
+        return;
+    };
+
+    var validateUserpasswordAll = function() {
+        if (userpassword == undefined) return;
+
+        userpassword.on('blur', function() {
+
+            if (userpassword.val().length > 64) {
+                $(this).addClass(SELECTOR_NAMES.errorInput);
+
+                if (!$('#' + SELECTOR_NAMES.passError).length) {
+                    $(this).before(generateErrorMessage(
+                        SELECTOR_NAMES.passError,
+                        '半角英数8～64文字以内で入力して下さい。'
+                    ));
+                } else if($('#' + SELECTOR_NAMES.passError).length) {
+                    $('#' + SELECTOR_NAMES.passError)
+                        .text('半角英数8～64文字以内で入力して下さい。');
+                } else {
+                    $('#' + SELECTOR_NAMES.passError).remove();
+                    $(this).removeClass(SELECTOR_NAMES.errorInput);
+                }
+            } else if($(this).val().length < 8) {
+                $(this).addClass(SELECTOR_NAMES.errorInput);
+
+                if (!$('#' + SELECTOR_NAMES.passError).length) {
+                    $(this).before(generateErrorMessage(
+                        SELECTOR_NAMES.passError,
+                        '半角英数8～64文字以内で入力して下さい。'
+                    ));
+                } else if($('#' + SELECTOR_NAMES.passError).length) {
+                    $('#' + SELECTOR_NAMES.passError)
+                        .text('半角英数8～64文字以内で入力して下さい。');
+                } else {
+                    $('#' + SELECTOR_NAMES.passError).remove();
+                    $(this).removeClass(SELECTOR_NAMES.errorInput);
+                }
+            } else {
+                $('#' + SELECTOR_NAMES.passError).remove();
+                $(this).removeClass(SELECTOR_NAMES.errorInput);
+            }
+        });
+    };
+
+    /**
+     * パスワードの登録・変更時に使用するバリデーション
+     */
+    var validateUserpassword = function() {
+        if (userpassword == undefined) return;
+
+        userpassword.blur(function() {
+            var value        = $(this).val();
+            var isEmpty      = value.length <= 0;
+            var isMinChar8   = value.length < 8;
+            var isOverChar64 = value.length > 64;
+            var isAjinomoto = value.indexOf('ajinomoto') >= 0;
+
+            if (isEmpty) {
+                $(this).addClass(SELECTOR_NAMES.errorInput);
+
+                if (!$('#' + SELECTOR_NAMES.passError).length) {
+                    $(this).before(generateErrorMessage(
+                        SELECTOR_NAMES.passError,
+                        'パスワードは入力必須です。'
+                    ));
+                } else if($('#' + SELECTOR_NAMES.passError).length) {
+                    $('#' + SELECTOR_NAMES.passError)
+                        .text('パスワードは入力必須です。');
+                } else {
+                    $('#' + SELECTOR_NAMES.passError).remove();
+                    $(this).removeClass(SELECTOR_NAMES.errorInput);
+                }
+            } else if (isMinChar8) {
+                $(this).addClass(SELECTOR_NAMES.errorInput);
+
+                if (!$('#' + SELECTOR_NAMES.passError).length) {
+                    $(this).before(generateErrorMessage(
+                        SELECTOR_NAMES.passError,
+                        '半角英数8～64文字以内で入力して下さい。'
+                    ));
+                } else if ($('#' + SELECTOR_NAMES.passError).length) {
+                    $('#' + SELECTOR_NAMES.passError)
+                        .text('半角英数8～64文字以内で入力して下さい。');
+                } else {
+                    $('#' + SELECTOR_NAMES.passError).remove();
+                    $(this).removeClass(SELECTOR_NAMES.errorInput);
+                }
+            } else if (isOverChar64) {
+                $(this).addClass(SELECTOR_NAMES.errorInput);
+
+                if (!$('#' + SELECTOR_NAMES.passError).length) {
+                    $(this).before(generateErrorMessage(
+                        SELECTOR_NAMES.passError,
+                        '半角英数8～64文字以内で入力して下さい。'
+                    ));
+                } else if($('#' + SELECTOR_NAMES.passError).length) {
+                    $('#' + SELECTOR_NAMES.passError)
+                        .text('半角英数8～64文字以内で入力して下さい。');
+                } else {
+                    $('#' + SELECTOR_NAMES.passError).remove();
+                    $(this).removeClass(SELECTOR_NAMES.errorInput);
+                }
+            } else if (isAjinomoto) {
+                $(this).addClass(SELECTOR_NAMES.errorInput);
+
+                if (!$('#' + SELECTOR_NAMES.passError).length) {
+                    $(this).before(generateErrorMessage(
+                        SELECTOR_NAMES.passError,
+                        'パスワードに使用できない文言が含まれています。'
+                    ));
+                } else if($('#' + SELECTOR_NAMES.passError).length) {
+                    $('#' + SELECTOR_NAMES.passError)
+                        .text('パスワードに使用できない文言が含まれています。');
+                } else {
+                    $('#' + SELECTOR_NAMES.passError).remove();
+                    $(this).removeClass(SELECTOR_NAMES.errorInput);
+                }
+            } else if (
+                (!($(this).val().match(/[0-9]/)) || !( $(this).val().match(/[a-zA-Z]/)))
+                || $(this).val().indexOf($('input[name=email]').val().substring(0 , $('input[name=email]').val().indexOf('@'))) >= 0
+                /*|| $(this).val().indexOf('ajinomoto') >= 0 */) {
+                $(this).addClass(SELECTOR_NAMES.errorInput);
+
+                if (!$('#' + SELECTOR_NAMES.passError).length) {
+                    $(this).before(generateErrorMessage(
+                        SELECTOR_NAMES.passError,
+                        '英数混合の推測されにくい複雑なものを設定してください。'
+                    ));
+                } else if($('#' + SELECTOR_NAMES.passError).length) {
+                    $('#' + SELECTOR_NAMES.passError)
+                        .text('英数混合の推測されにくい複雑なものを設定してください。');
+                } else {
+                    $('#' + SELECTOR_NAMES.passError).remove();
+                    $(this).removeClass(SELECTOR_NAMES.errorInput);
+                }
+            } else {
+                if (!(/^[\u0020-\u007e]+$/).test($(this).val())) {
+                    $(this).addClass(SELECTOR_NAMES.errorInput);
+
+                    if (!$('#' + SELECTOR_NAMES.passError).length) {
+                        $(this).before(generateErrorMessage(
+                            SELECTOR_NAMES.passError,
+                            '全角文字や使用不可能な文字などが含まれています。半角の（アルファベット・数字・使用可能な記号）のみ使用できます。'
+                        ));
+                    } else if($('#' + SELECTOR_NAMES.passError).length) {
+                        $('#' + SELECTOR_NAMES.passError)
+                            .text('全角文字や使用不可能な文字などが含まれています。半角の（アルファベット・数字・使用可能な記号）のみ使用できます。');
+                    } else {
+                        $('#' + SELECTOR_NAMES.passError).remove();
+                        $(this).removeClass(SELECTOR_NAMES.errorInput);
+                    }
+                } else {
+                    $('#' + SELECTOR_NAMES.passError).remove();
+                    $(this).removeClass(SELECTOR_NAMES.errorInput);
+                }
+            }
+        });
+    };
+
+    var validateUserpasswordverify = function() {
+        if (userpasswordVerify == undefined) return;
+
+        userpasswordVerify.blur(function(){
+
+            var mailPrefix = '';
+            if ($('input[name=email]').length > 0 && $('input[name=email]').val() !== '') {
+                var mailPrefix = $('input[name=email]')
+                    .val()
+                    .substring(0 , $('input[name=email]').val().indexOf('@'));
+            }
+
+            var value        = $(this).val();
+            var isEmpty      = value.length <= 0;
+            var isMismatch   = value !== userpassword.val();
+            var isMinChar8   = value.length < 8;
+            var isOverChar64 = value.length > 64;
+            var isNoNumber   = !(value.match(/[0-9]/));
+            var isNoEnglish  = !(value.match(/[a-zA-Z]/));
+            var isAjinomoto  = value.indexOf('ajinomoto') >= 0;
+
+            if (isEmpty) {
+                $(this).addClass(SELECTOR_NAMES.errorInput);
+
+                if(!$('#' + SELECTOR_NAMES.passVerifyError).length) {
+                    $(this).before(generateErrorMessage(
+                        SELECTOR_NAMES.passVerifyError,
+                        'パスワード(確認)は入力必須です。'
+                    ));
+                } else if($('#' + SELECTOR_NAMES.passVerifyError).length){
+                    $('#' + SELECTOR_NAMES.passVerifyError).text('パスワード(確認)は入力必須です。');
+                } else {
+                    $('#' + SELECTOR_NAMES.passVerifyError).remove();
+                    $(this).removeClass(SELECTOR_NAMES.errorInput);
+                }
+            } else if (isMismatch) {
+                $(this).addClass(SELECTOR_NAMES.errorInput);
+
+                if(!$('#' + SELECTOR_NAMES.passVerifyError).length) {
+                    $(this).before(generateErrorMessage(
+                        SELECTOR_NAMES.passVerifyError,
+                        'パスワード(確認)が一致しません。'
+                    ));
+                } else if($('#' + SELECTOR_NAMES.passVerifyError).length){
+                    $('#' + SELECTOR_NAMES.passVerifyError).text('パスワード(確認)が一致しません。');
+                } else {
+                    $('#' + SELECTOR_NAMES.passVerifyError).remove();
+                    $(this).removeClass(SELECTOR_NAMES.errorInput);
+                }
+            } else if (isMinChar8) {
+                $(this).addClass(SELECTOR_NAMES.errorInput);
+
+                if(!$('#' + SELECTOR_NAMES.passVerifyError).length) {
+                    $(this).before(generateErrorMessage(
+                        SELECTOR_NAMES.passVerifyError,
+                        '半角英数8～64文字以内で入力して下さい。'
+                    ));
+                } else if($('#' + SELECTOR_NAMES.passVerifyError).length){
+                    $('#' + SELECTOR_NAMES.passVerifyError).text('半角英数8～64文字以内で入力して下さい。');
+                } else {
+                    $('#' + SELECTOR_NAMES.passVerifyError).remove();
+                    $(this).removeClass(SELECTOR_NAMES.errorInput);
+                }
+            } else if(isOverChar64) {
+                $(this).addClass(SELECTOR_NAMES.errorInput);
+
+                if(!$('#' + SELECTOR_NAMES.passVerifyError).length) {
+                    $(this).before(generateErrorMessage(
+                        SELECTOR_NAMES.passVerifyError,
+                        '半角英数8～64文字以内で入力して下さい。'
+                    ));
+                }
+                else if($('#' + SELECTOR_NAMES.passVerifyError).length){
+                    $('#' + SELECTOR_NAMES.passVerifyError).text('半角英数8～64文字以内で入力して下さい。');
+                }
+                else {
+                    $('#' + SELECTOR_NAMES.passVerifyError).remove();
+                    $(this).removeClass(SELECTOR_NAMES.errorInput);
+                }
+            } else if(isAjinomoto) {
+                $(this).addClass(SELECTOR_NAMES.errorInput);
+
+                if (!$('#' + SELECTOR_NAMES.passVerifyError).length) {
+                    $(this).before(generateErrorMessage(
+                        SELECTOR_NAMES.passVerifyError,
+                        'パスワードに使用できない文言が含まれています。'
+                    ));
+                } else if ($('#' + SELECTOR_NAMES.passVerifyError).length){
+                    $('#' + SELECTOR_NAMES.passVerifyError).text('パスワードに使用できない文言が含まれています。');
+                } else {
+                    $('#' + SELECTOR_NAMES.passVerifyError).remove();
+                    $(this).removeClass(SELECTOR_NAMES.errorInput);
+                }
+            } else if (
+                (!($(this).val().match(/[0-9]/)) || !( $(this).val().match(/[a-zA-Z]/)))
+                || $(this).val().indexOf($('input[name=email]').val().substring(0 , $('input[name=email]').val().indexOf('@'))) >= 0
+                /*|| $(this).val().indexOf('ajinomoto') >= 0 */) {
+                $(this).addClass(SELECTOR_NAMES.errorInput);
+
+                if (!$('#' + SELECTOR_NAMES.passVerifyError).length) {
+                    $(this).before(generateErrorMessage(
+                        SELECTOR_NAMES.passVerifyError,
+                        '英数混合の推測されにくい複雑なものを設定してください。'
+                    ));
+                } else if ($('#' + SELECTOR_NAMES.passVerifyError).length){
+                    $('#' + SELECTOR_NAMES.passVerifyError).text('英数混合の推測されにくい複雑なものを設定してください。');
+                } else {
+                    $('#' + SELECTOR_NAMES.passVerifyError).remove();
+                    $(this).removeClass(SELECTOR_NAMES.errorInput);
+                }
+            } else {
+                if (!(/^[\u0020-\u007e]+$/).test(value)){
+                    $(this).addClass(SELECTOR_NAMES.errorInput);
+
+                    if(!$(SELECTOR_NAMES.errorInput).length) {
+                        $(this).before(generateErrorMessage(
+                            SELECTOR_NAMES.passVerifyError,
+                            '全角文字や使用不可能な文字などが含まれています。半角の（アルファベット・数字・使用可能な記号）のみ使用できます。'
+                        ));
+                    } else if ($('#' + SELECTOR_NAMES.passVerifyError).length){
+                        $('#' + SELECTOR_NAMES.passVerifyError).text('全角文字や使用不可能な文字などが含まれています。半角の（アルファベット・数字・使用可能な記号）のみ使用できます。');
+                    } else {
+                        $('#' + SELECTOR_NAMES.passVerifyError).remove();
+                        $(this).removeClass(SELECTOR_NAMES.errorInput);
+                    }
+                } else {
+                    $(this).removeClass(SELECTOR_NAMES.errorInput);
+                    $('#' + SELECTOR_NAMES.passVerifyError).remove();
+                }
+            }
+        });
+    };
+
+    var validateUserpasswordNew = function() {
+        if (userpassword == undefined) return;
+
+        var value        = userpassword.val();
+        var isEmpty      = value.length <= 0;
+        var isMinChar8   = value.length < 8;
+        var isOverChar64 = value.length > 64;
+        var userEmail    = $('input[name=email]').val();
+        var $passError   = $('#' + SELECTOR_NAMES.passError);
+        var isAjinomoto = value.indexOf('ajinomoto') >= 0;
+
+        userpassword.addClass(SELECTOR_NAMES.errorInput);
+
+        if (isEmpty) {
+            var msg = '入力必須です。';
+            showError(userpassword, $passError, SELECTOR_NAMES.passError, msg);
+            showErrorArea(SELECTOR_NAMES.passError, 'パスワード：' + msg);
+            return false;
+        }
+
+        if (isMinChar8) {
+            var msg = '半角英数8～64文字以内で入力して下さい。';
+            showError(userpassword, $passError, SELECTOR_NAMES.passError, msg);
+            showErrorArea(SELECTOR_NAMES.passError, 'パスワード：' + msg);
+            return false;
+        }
+
+        if (isOverChar64) {
+            var msg = '半角英数8～64文字以内で入力して下さい。';
+            showError(userpassword, $passError, SELECTOR_NAMES.passError, msg);
+            showErrorArea(SELECTOR_NAMES.passError, 'パスワード：' + msg);
+            return false;
+        }
+
+        if (isAjinomoto) {
+            var msg = 'パスワードに使用できない文言が含まれています。';
+            showError(userpassword, $passError, SELECTOR_NAMES.passError, msg);
+            showErrorArea(SELECTOR_NAMES.passError, 'パスワード：' + msg);
+            return false;
+        }
+
+        if (!(value.match(/[0-9]/)) || !(value.match(/[a-zA-Z]/))
+            || value.indexOf(userEmail.substring(0 , userEmail.indexOf('@'))) >= 0
+            /*|| value.indexOf('ajinomoto') >= 0*/) {
+            var msg = '英数混合の推測されにくい複雑なものを設定してください。';
+            showError(userpassword, $passError, SELECTOR_NAMES.passError, msg);
+            showErrorArea(SELECTOR_NAMES.passError, 'パスワード：' + msg);
+            return false;
+        }
+
+        if (!(/^[\u0020-\u007e]+$/).test(value)) {
+            var msg = '全角文字や使用不可能な文字などが含まれています。半角の（アルファベット・数字・使用可能な記号）のみ使用できます。';
+            showError(userpassword, $passError, SELECTOR_NAMES.passError, msg);
+            showErrorArea(SELECTOR_NAMES.passError, 'パスワード' + msg);
+            return false;
+        }
+
+        // すべてのバリデーションがOKの場合
+        $passError.remove();
+        userpassword.removeClass(SELECTOR_NAMES.errorInput);
+        deleteErrorMessage(SELECTOR_NAMES.passError, true);
+        return true;
+    };
+
+    var validateUserpasswordverifyNew = function() {
+        if (userpasswordVerify == undefined) return;
+
+          var value            = userpasswordVerify.val();
+          var isEmpty          = value.length <= 0;
+          var isMismatch       = value !== userpassword.val();
+          var isMinChar8       = value.length < 8;
+          var isOverChar64     = value.length > 64;
+          var userEmail        = $('input[name=email]').val();
+          var $passVerifyError = $('#' + SELECTOR_NAMES.passVerifyError);
+          var isAjinomoto = value.indexOf('ajinomoto') >= 0;
+
+          userpasswordVerify.addClass(SELECTOR_NAMES.errorInput);
+
+          if (isEmpty) {
+              var msg = '入力必須です。';
+              showError(userpasswordVerify, $passVerifyError, SELECTOR_NAMES.passVerifyError, msg);
+              showErrorArea(SELECTOR_NAMES.passVerifyError, 'パスワード（確認）：' + msg);
+              return false;
+          }
+
+          if (isMismatch) {
+              var msg = 'パスワードと一致しません。';
+              showError(userpasswordVerify, $passVerifyError, SELECTOR_NAMES.passVerifyError, msg);
+              showErrorArea(SELECTOR_NAMES.passVerifyError, 'パスワード（確認）：' + msg);
+              return false;
+          }
+
+          if (isMinChar8) {
+              var msg = '半角英数8～64文字以内で入力して下さい。';
+              showError(userpasswordVerify, $passVerifyError, SELECTOR_NAMES.passVerifyError, msg);
+              showErrorArea(SELECTOR_NAMES.passVerifyError, 'パスワード（確認）：' + msg);
+              return false;
+          }
+
+          if (isOverChar64) {
+            var msg = '半角英数8～64文字以内で入力して下さい。';
+            showError(userpasswordVerify, $passVerifyError, SELECTOR_NAMES.passVerifyError, msg);
+            showErrorArea(SELECTOR_NAMES.passVerifyError, 'パスワード（確認）：' + msg);
+            return false;
+          }
+
+          if (isAjinomoto) {
+            var msg = 'パスワードに使用できない文言が含まれています。';
+            showError(userpasswordVerify, $passVerifyError, SELECTOR_NAMES.passVerifyError, msg);
+            showErrorArea(SELECTOR_NAMES.passVerifyError, 'パスワード：' + msg);
+            return false;
+          }
+
+          if (!(value.match(/[0-9]/)) || !(value.match(/[a-zA-Z]/))
+            || value.indexOf(userEmail.substring(0 , userEmail.indexOf('@'))) >= 0
+            /*|| value.indexOf('ajinomoto') >= 0*/) {
+              var msg = '英数混合の推測されにくい複雑なものを設定してください。';
+              showError(userpasswordVerify, $passVerifyError, SELECTOR_NAMES.passVerifyError, msg);
+              showErrorArea(SELECTOR_NAMES.passVerifyError, 'パスワード（確認）：' + msg);
+              return false;
+          }
+
+          if (!(/^[\u0020-\u007e]+$/).test(value)) {
+              var msg = '全角文字や使用不可能な文字などが含まれています。半角の（アルファベット・数字・使用可能な記号）のみ使用できます。';
+              showError(userpasswordVerify, $passVerifyError, SELECTOR_NAMES.passVerifyError, msg);
+              showErrorArea(SELECTOR_NAMES.passVerifyError, 'パスワード（確認）：' + msg);
+              return false;
+          }
+
+          // すべてのバリデーションがOKの場合
+          $passVerifyError.remove();
+          userpasswordVerify.removeClass(SELECTOR_NAMES.errorInput);
+          deleteErrorMessage(SELECTOR_NAMES.passVerifyError, true);
+          return true;
+    };
+
+    var validateGender = function() {
+        var $genderError = $('#' + SELECTOR_NAMES.genderError);
+        var msg          = '入力必須です。';
+
+        // 初期化
+        deleteErrorMessage(SELECTOR_NAMES.genderError, true);
+
+        if ($('input[name=usergender]:checked').size() === 0) {
+
+            // 項目の上にエラーメッセージを表示
+            if(!$genderError.length){
+                $('input[name=usergender]')
+                    .closest(SELECTOR_NAMES.container)
+                    .before(generateErrorMessage(SELECTOR_NAMES.genderError, msg));
+            }
+
+            // 入力内容確認の下にエラーメッセージを表示
+            showErrorArea(SELECTOR_NAMES.genderError, '性別：' + msg);
+            return false;
+        }
+
+        // バリデーションがOKの場合
+        $genderError.remove();
+        deleteErrorMessage(SELECTOR_NAMES.genderError, true);
+        return true;
+    };
+
+    var validateUserzip = function() {
+        var $zipError   = $('#' + SELECTOR_NAMES.zipError);
+        var $userzip    = $('input[name=userzip]').val($('input[name=userzip]').val().replace(/-/g,''));
+        var value       = $userzip.val();
+        var isEmpty     = value.length <= 0;
+        var isNotNumber = !(/^\d+$/).test(value);
+        var isMinChar7  = value.length < 7 && value.length > 0;
+        var isOverChar7 = value.length > 7;
+        var msg         = "";
+
+        // 初期化
+        $userzip.addClass(SELECTOR_NAMES.errorInput);
+        deleteErrorMessage(SELECTOR_NAMES.zipError, true);
+
+        if (isEmpty) {
+            msg = '入力必須です。';
+            showError($userzip, $zipError, SELECTOR_NAMES.zipError, msg);
+            showErrorArea(SELECTOR_NAMES.zipError, '郵便番号：' + msg);
+            return false;
+        }
+
+        if (isNotNumber){
+            msg = '半角文字で正しい郵便番号を入力して下さい。「-（ハイフン）」を入れている場合は、入れずに入力して下さい。また、事業所の個別郵便番号は使用できません。';
+            showError($userzip, $zipError, SELECTOR_NAMES.zipError, msg);
+            showErrorArea(SELECTOR_NAMES.zipError, '郵便番号：' + msg);
+            return false;
+        }
+
+        if (isMinChar7) {
+            msg = '半角数字7文字で入力して下さい。';
+            showError($userzip, $zipError, SELECTOR_NAMES.zipError, msg);
+            showErrorArea(SELECTOR_NAMES.zipError, '郵便番号：' + msg);
+            return false;
+        }
+
+
+        if (isOverChar7) {
+            msg = '半角数字7文字で入力して下さい。';
+            showError($userzip, $zipError, SELECTOR_NAMES.zipError, msg);
+            showErrorArea(SELECTOR_NAMES.zipError, '郵便番号：' + msg);
+            return false;
+        }
+
+        // 存在している郵便番号かどうか
+        if (!isExistZip(value)) {
+            msg = '半角文字で正しい郵便番号を入力して下さい。「- （ハイフン）」を入れている場合は、入れずに入力して下さい。また、事業所の個別郵便番号は使用できません。';
+            showError($userzip, $zipError, SELECTOR_NAMES.zipError, msg);
+            showErrorArea(SELECTOR_NAMES.zipError, '郵便番号：' + msg);
+            return false;
+        }
+
+        // すべてのバリデーションがOKの場合
+        $zipError.remove();
+        $userzip.removeClass(SELECTOR_NAMES.errorInput);
+        deleteErrorMessage(SELECTOR_NAMES.zipError, true);
+        return true;
+    };
+
+    var isExistZip = function(zip) {
+        var isExist = true;
+        $.ajax({
+            method: 'POST',
+            url: '/wp-admin/admin-ajax.php',
+            async: false,
+            data: { action: 'ajax_forbidden_zips', userzip: zip }
+        }).done(function( res ) {
+            if (res === 'NopeCount') {
+                isExist = false;
+            }
+        }).fail(function(jqXHR, textStatus, errorThrown) {
+            isExist = false;
+            console.log(jqXHR);
+            console.log(textStatus);
+            console.log(errorThrown);
+        });
+        return isExist;
+    };
+
+    var validateUsernick = function() {
+        var $usernick      = $('input[name=usernick]');
+        var $nicknameError = $('#' + SELECTOR_NAMES.nicknameError);
+
+        // 初期化
+        $usernick.addClass(SELECTOR_NAMES.errorInput);
+        deleteErrorMessage(SELECTOR_NAMES.nicknameError, true);
+
+        if (!checkLengthMax($usernick, 25)) {
+            var msg = '全角半角25文字以内で入力してください。';
+            showError($usernick, $nicknameError, SELECTOR_NAMES.nicknameError, msg);
+            showErrorArea(SELECTOR_NAMES.nicknameError, 'ニックネーム：' + msg);
+            return false;
+        }
+
+        // バリデーションがOKの場合
+        $nicknameError.remove();
+        $nicknameError.removeClass(SELECTOR_NAMES.errorInput);
+        $usernick.removeClass(SELECTOR_NAMES.errorInput);
+        deleteErrorMessage(SELECTOR_NAMES.nicknameError, true);
+        return true;
+    };
+
+    var validateYear = function() {
+        var $useryear  = $('select[name=useryear]');
+        var $usermonth = $('select[name=usermonth]');
+        var $dateError = $('#' + SELECTOR_NAMES.dateError);
+
+        // 初期化
+        deleteErrorMessage(SELECTOR_NAMES.dateError, true);
+
+        if ($useryear.val() * 1 === today.getFullYear()
+              && $usermonth.val() * 1 > today.getMonth() + 1) {
+            var msg = '未来の生年月は選択できません';
+
+            if (!$dateError.length) {
+                $useryear.closest(SELECTOR_NAMES.container)
+                        .before(generateErrorMessage(SELECTOR_NAMES.dateError, msg));
+            }
+
+            showErrorArea(SELECTOR_NAMES.dateError, '生年月：' + msg);
+            return false;
+        }
+
+        if ($useryear.val() === '') {
+            var msg = '年は入力必須です。';
+
+            if (!$dateError.length) {
+                $useryear
+                .closest(SELECTOR_NAMES.container)
+                .before(generateErrorMessage(SELECTOR_NAMES.dateError, msg));
+            }
+
+            showErrorArea(SELECTOR_NAMES.dateError, '生年月：' + msg);
+            return false;
+        }
+
+        // バリデーションがOKの場合
+        $dateError.remove();
+        deleteErrorMessage(SELECTOR_NAMES.dateError, true);
+        return true;
+    };
+
+    var validateMonth = function() {
+        var $useryear       = $('select[name=useryear]');
+        var $usermonth      = $('select[name=usermonth]');
+        var $dateMonthError = $('#' + SELECTOR_NAMES.dateMonthError);
+
+        // 初期化
+        deleteErrorMessage(SELECTOR_NAMES.dateMonthError, true);
+
+        if ($usermonth.val() === '0') {
+            var msg = '月は入力必須です。';
+
+            if (!$dateMonthError.length) {
+                $useryear.closest(SELECTOR_NAMES.container)
+                        .before(generateErrorMessage(SELECTOR_NAMES.dateMonthError, msg));
+            }
+
+            showErrorArea(SELECTOR_NAMES.dateMonthError, '生年月：' + msg);
+            return false;
+        }
+
+        // バリデーションがOKの場合
+        $dateMonthError.remove();
+        deleteErrorMessage(SELECTOR_NAMES.dateMonthError, true);
+        return true;
+    };
+
+    var validateWork = function() {
+        var $workError = $('#' + SELECTOR_NAMES.workError);
+        var msg        = '入力必須です。';
+
+        // 初期化
+        deleteErrorMessage(SELECTOR_NAMES.workError, true);
+
+        if ($('input[name=userwork]:checked').size() === 0) {
+
+            // 項目の上にエラーメッセージを表示
+            if(!$workError.length){
+              $('input[name=userwork]')
+              .closest(SELECTOR_NAMES.container)
+              .before(generateErrorMessage(SELECTOR_NAMES.workError, msg));
+            }
+
+            // 入力内容確認の下にエラーメッセージを表示
+            showErrorArea(SELECTOR_NAMES.workError, '現在のご職業有無：' + msg);
+            return false;
+        }
+
+        // バリデーションがOKの場合
+        $workError.remove();
+        deleteErrorMessage(SELECTOR_NAMES.workError);
+        return true;
+    };
+
+    var validateLivingTogether = function() {
+        var $livingError = $('#' + SELECTOR_NAMES.livingError);
+        var msg          = '入力必須です。';
+
+        // 初期化
+        deleteErrorMessage(SELECTOR_NAMES.livingError, true);
+
+        if ($('input[name=livingtogether]:checked').size() === 0) {
+            // 項目の上にエラーメッセージを表示
+            if(!$livingError.length){
+              $('input[name=livingtogether]')
+              .closest(SELECTOR_NAMES.container)
+              .before(generateErrorMessage(SELECTOR_NAMES.livingError, msg));
+            }
+              // 入力内容確認の下にエラーメッセージを表示
+              showErrorArea(SELECTOR_NAMES.livingError, '現在同居している家族構成：' + msg);
+              return false;
+        }
+
+        // バリデーションがOKの場合
+        $livingError.remove();
+        deleteErrorMessage(SELECTOR_NAMES.livingError);
+        return true;
+    };
+
+    var validateUserTheme = function() {
+        var $themeError   = $('#' + SELECTOR_NAMES.themeError);
+        var msg           = '入力必須です。';
+        var countCheckbox = 0;
+        var values = [
+          '商品活用術',
+          '簡単・時短・節約',
+          'お弁当',
+          '作り置き・常備菜',
+          '季節・行事',
+          '栄養・健康・美容',
+          'おもてなし・パーティ'
+        ];
+
+        values.forEach(function(value) {
+          countCheckbox += $('input[value=' + value + ']:checked').size();
+        });
+
+        // 初期化
+        deleteErrorMessage(SELECTOR_NAMES.themeError, true);
+
+        if (countCheckbox === 0) {
+
+            // 項目の上にエラーメッセージを表示
+            if(!$themeError.length){
+              $('input[value=商品活用術]')
+              .closest(SELECTOR_NAMES.container)
+              .before(generateErrorMessage(SELECTOR_NAMES.themeError, msg));
+            }
+
+            // 入力内容確認の下にエラーメッセージを表示
+            showErrorArea(SELECTOR_NAMES.themeError, '現在ご関心のあるテーマ：' + msg);
+            return false;
+        }
+
+        // バリデーションがOKの場合
+        $themeError .remove();
+        deleteErrorMessage(SELECTOR_NAMES.themeError);
+        return true;
+    };
+
+    var disabledEnterSubmit = function() {
+        $('input').on('keyup keypress', function(e){
+            var keyCode = e.keyCode || e.which;
+            if (keyCode === 13) {
+                e.preventDefault();
+                return false;
+            }
+        });
+    };
+
+    var validateEmail = function() {
+        function checkForbiddenDomain(value) {
+            $.ajax({
+                method: 'POST',
+                url: '/wp-admin/admin-ajax.php',
+                data: {
+                    action: 'ajax_forbidden_domains',
+                    email: value.val()
+                }
+            }).done(function(res) {
+                if(res == 'Nope') {
+                    $(this).addClass(SELECTOR_NAMES.errorInput);
+
+                    if (!$('#' + SELECTOR_NAMES.mailError).length) {
+                        $('input[name=email]').before(generateErrorMessage(
+                            SELECTOR_NAMES.mailError,
+                            'このメールアドレスでは登録できません。(一部のフリーメールは登録できません) 恐れ入りますが他のメールアドレスでご登録下さい。')
+                        );
+                    } else if ($('#' + SELECTOR_NAMES.mailError).length) {
+                        $('#' + SELECTOR_NAMES.mailError).text('このメールアドレスでは登録できません。(一部のフリーメールは登録できません) 恐れ入りますが他のメールアドレスでご登録下さい。');
+                    }
+                }
+                else if (res == 'NopeCount') {
+                    $(this).addClass(SELECTOR_NAMES.errorInput);
+
+                    if(!$('#' + SELECTOR_NAMES.mailError).length) {
+                        $('input[name=email]').before(generateErrorMessage(
+                            SELECTOR_NAMES.mailError,
+                            '登録済みです。'
+                        ));
+                    }
+                    else if($('#' + SELECTOR_NAMES.mailError).length) {
+                        $('#' + SELECTOR_NAMES.mailError).html('登録済みです。');
+                    }
+                }
+                if (pageSlug === SLUGS.MAIL_CHANGE) {
+                    if($('input[name=emailconfirm]').val().length <= 0){
+                        elements.buttonSubmit
+                            .addClass(SELECTOR_NAMES.buttonDisabled)
+                            .prop('disabled', true);
+                    }
+                }
+            });
+        }
+
+        function checkRegisteredMail(value) {
+            $.ajax({
+                method: 'POST',
+                url: '/wp-admin/admin-ajax.php',
+                data: {
+                    action: 'ajax_forbidden_domains',
+                    email: value.val()
+                }
+            }).done(function(res) {
+                if(res == '') {
+                    $(this).addClass(SELECTOR_NAMES.errorInput);
+
+                    if(!$('#' + SELECTOR_NAMES.mailError).length) {
+                        $('input[name=email]').before(generateErrorMessage(
+                            SELECTOR_NAMES.mailError,
+                            '登録されていません。'
+                        ));
+                        elements.buttonSubmit
+                            .addClass(SELECTOR_NAMES.buttonDisabled)
+                            .prop('disabled', true);
+                    }
+                }
+            });
+        }
+
+        $("input[name=email]").blur(function(){
+
+            // remove_error_msg(jQuery(this));
+
+            if ($(this).val().length <= 0) {
+                if(!$('#' + SELECTOR_NAMES.mailError).length){
+                    $(this).addClass(SELECTOR_NAMES.errorInput);
+                    $(this).before(generateErrorMessage(
+                        SELECTOR_NAMES.mailError,
+                        'メールアドレスは入力必須です。'
+                    ));
+                } else if ($('#' + SELECTOR_NAMES.mailError).length) {
+                    $('#' + SELECTOR_NAMES.mailError).text('メールアドレスは入力必須です。');
+                } else {
+                    $('#' + SELECTOR_NAMES.mailError).remove();
+                    $(this).removeClass(SELECTOR_NAMES.errorInput);
+                }
+            } else {
+                if (!(/^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,18}$/).test($(this).val())) {
+                    $(this).addClass(SELECTOR_NAMES.errorInput);
+
+                    if(!$('#' + SELECTOR_NAMES.mailError).length) {
+                        $(this).before(generateErrorMessage(
+                            SELECTOR_NAMES.mailError,
+                            '登録済みです。'
+                        ));
+                    } else if ($('#' + SELECTOR_NAMES.mailError).length) {
+                        $('#' + SELECTOR_NAMES.mailError).text('登録済みです。');
+                    }
+                } else if ($(this).val().length > 255) {
+                    $(this).addClass(SELECTOR_NAMES.errorInput);
+
+                    if (!$('#' + SELECTOR_NAMES.mailError).length) {
+                        $(this).before(generateErrorMessage(
+                            SELECTOR_NAMES.mailError,
+                            'メールアドレスは半角255文字以内で入力してください。'
+                        ));
+                    } else if($('#' + SELECTOR_NAMES.mailError).length) {
+                        $('#' + SELECTOR_NAMES.mailError).text('メールアドレスは半角255文字以内で入力してください。');
+                    }
+                } else {
+                    $('#' + SELECTOR_NAMES.mailError).remove();
+                    $(this).removeClass(SELECTOR_NAMES.errorInput);
+                    if (pageSlug === SLUGS.USER_ENTRY_REG) {
+                        elements.buttonSubmit
+                            .addClass(SELECTOR_NAMES.buttonDisabled)
+                            .prop('disabled', true);
+                    }
+                }
+
+                if (pageSlug === SLUGS.MAIL_CHANGE) {
+                    if ($('input[name=emailconfirm]').length > 0 && $('input[name=emailconfirm]').val().length <= 0) {
+                        elements.buttonSubmit
+                            .addClass(SELECTOR_NAMES.buttonDisabled)
+                            .prop('disabled', true);
+                    }
+                }
+
+                if (pageSlug === SLUGS.USER_ENTRY_REG
+                || pageSlug === SLUGS.MAIL_CHANGE) {
+                    checkForbiddenDomain($(this))
+                };
+                if (pageSlug === SLUGS.PASSWORD_REMINDER) {
+                    checkRegisteredMail($(this))
+                }
+            }
+        });
+    };
+
+    var validateEmailconfirm = function() {
+        $('input[name=emailconfirm]').blur(function(){
+
+            // remove_error_msg($(this));
+
+            if($(this).val().length < 1){
+                if(!$('#emailcerror').length){
+                    $(this).addClass('inputerror');
+                    $(this).before('<div id="emailcerror" class="mem-formAnnotaion mem-formAnnotaion--error">メールアドレス（確認）は入力必須です。</div>');
+                }
+                else if($('#emailcerror').length) {
+                    $('#emailcerror').text('メールアドレス（確認）は入力必須です。');
+                }
+                else{
+                    $(this).removeClass('inputerror');
+                    $('#emailcerror').remove();
+                }
+            } else {
+                if ($(this).val() != $('input[name=email]').val()){
+                    $(this).addClass('inputerror');
+
+                    if (!$('#emailcerror').length) {
+                        $(this).before('<div id="emailcerror" class="mem-formAnnotaion mem-formAnnotaion--error">メールアドレス（確認）が一致しません。</div>');
+                    }
+                    else if($('#emailcerror').length) {
+                        $('#emailcerror').text('メールアドレス（確認）が一致しません。');
+                    }
+                    else{
+                        $(this).removeClass('inputerror');
+                        $('#emailcerror').remove();
+                    }
+                }
+                else{
+                    $(this).removeClass('inputerror');
+                    $('#emailcerror').remove();
+                }
+            }
+        });
+    };
+
+    var disbaledSubmitButton = function(e) {
+        e.preventDefault();
+    };
+
+    var initSubmitButton = function() {
+        elements.buttonSubmit
+            .addClass(SELECTOR_NAMES.buttonDisabled)
+            .on('click', disbaledSubmitButton);
+    };
+
+    var checkEmpty = function() {
+        var result = forms.some(function(form) {
+            if (!form.isRequired) return;
+            var isEmpty = false;
+
+            form.elements.forEach(function(formControl) {
+                if (formControl.element.closest('.mem-formSection').css('display') === 'none') return;
+
+                if (formControl.type === TYPES.RADIO || formControl.type === TYPES.CHECKBOX) {
+                    isEmpty = true;
+                    formControl.element.each(function() {
+                        if ($(this).find('input').prop('checked')) isEmpty = false;
+                    });
+                } else {
+                    if (formControl.element.val() === '') isEmpty = true;
+                }
+            });
+
+            return isEmpty;
+        });
+
+        return result;
+    };
+
+    var checkError = function() {
+        return $('div[id$=error]').length > 0;
+    };
+
+    var checkSubmitButton = function() {
+
+        // 会員登録（本登録）入力ページ　& 登録情報の確認・変更入力ページの場合は処理を行わない
+        pageSlug = getSlug();
+        if (pageSlug === SLUGS.USER_INPUT || pageSlug === SLUGS.USER_EDIT) return;
+
+        var hasError = checkEmpty() || checkError();
+        if (hasError) {
+            elements.buttonSubmit
+                .addClass(SELECTOR_NAMES.buttonDisabled)
+                .on('click', disbaledSubmitButton);
+        } else {
+            elements.buttonSubmit
+                .removeClass(SELECTOR_NAMES.buttonDisabled)
+                .off('click', disbaledSubmitButton);
+        }
+    };
+
+    var remove_error_msg = function(h) {
+        var id = $(h).attr('name').replace('onfirm','');
+        $('#'+id).remove();
+    };
+
+    var clickHandlerNicknameSuggestions = function() {
+        $('body').on('click', '#nicknamesuggestions > div', function() {
+            var value = $(this).attr('data-suggest');
+            $('input[name=usernick]')
+                .val(value)
+                .removeClass(SELECTOR_NAMES.errorInput);
+            $('#nicknamesuggestions').remove();
+            $('#nicknameerror').remove();
+            checkSubmitButton();
+        });
+    };
+
+    var clickHandlerSubmitButton = function() {
+        if (elements.buttonSubmit != undefined) {
+            elements.buttonSubmit.on('click', function(e) {
+                elements.formSubmit.click();
+                e.preventDefault();
+                return false;
+            });
+        }
+
+        if (elements.buttonBack != undefined) {
+            elements.buttonBack.on('click', function(e) {
+                if (pageSlug === SLUGS.USER_ENTRY) {
+                    history.go(-1);
+                } else {
+                    elements.formBack.click();
+                }
+
+                e.preventDefault();
+                return false;
+            });
+        }
+    };
+
+    var clickHandlerSubmitButtonValidate = function() {
+        // バリデーションの初期化
+        initErrorArea();
+
+        elements.buttonSubmit.on('click', function(e) {
+            var results = [];
+            var validateFunctions = [
+                validateUserpasswordNew,
+                validateUserpasswordverifyNew,
+                validateGender,
+                // validateUsernick,
+                validateYear,
+                validateMonth,
+                validateUserzip,
+                // validateWork,
+                // validateLivingTogether,
+                // validateUserTheme
+            ];
+            var isSuccess = false;
+
+            // バリデーションを実行
+            validateFunctions.forEach(function(validateFunction){
+                results.push(validateFunction());
+            });
+
+            // バリデーションの結果を判定
+            isSuccess = results.indexOf(false) >=0 ? false : true;
+
+            if (isSuccess) {
+                // phpの処理
+                elements.formSubmit.click();
+            } else {
+                // エラーだったらページのトップへスクロールする
+                $("html,body").animate({scrollTop: 0});
+            }
+        });
+
+        if (elements.buttonBack != undefined) {
+            elements.buttonBack.on('click', function(e) {
+                if (pageSlug === SLUGS.USER_ENTRY) {
+                    history.go(-1);
+                } else {
+                    elements.formBack.click();
+                }
+
+                e.preventDefault();
+                return false;
+            });
+        }
+    };
+
+    var initErrorCheck = {
+        init: function() {
+            var self = this;
+
+            forms.forEach(function(form) {
+                form.elements.forEach(function(formControl) {
+                    switch (formControl.type) {
+                        case TYPES.TEXT:
+                        case TYPES.EMAIL:
+                        case TYPES.PASSWORD:
+                            self.addHandlerText(formControl);
+                            break;
+
+                        case TYPES.SELECT:
+                            self.addHandlerSelect(formControl);
+                            break;
+
+                        case TYPES.RADIO:
+                        case TYPES.CHECKBOX:
+                            self.addHandlerCheck(formControl);
+                            break;
+
+                        // TODO textarea用の処理を追加
+                        // case TYPES.TEXTAREA:
+                        //     break;
+
+                        default:
+                            break;
+                    }
+
+                });
+            });
+        },
+        addHandlerText: function(formControl) {
+            formControl.element.on('blur', function() {
+                checkSubmitButton();
+            });
+        },
+        addHandlerSelect: function(formControl) {
+            formControl.element.on('change', function() {
+                checkSubmitButton();
+            });
+        },
+        addHandlerCheck: function(formControl) {
+            formControl.element.on('change', function() {
+                checkSubmitButton();
+            })
+        }
+    };
+
+    var clickHandlerTogglePane = function() {
+        $('input[type=checkbox]').change(function(){
+            if ($(this).val() === 'その他') {
+                var target = $(this).closest('.mem-formSection')
+                        .children('.' + SELECTOR_NAMES.toggleTarget);
+
+                if ($(this).is(':checked')) {
+                        target.addClass(SELECTOR_NAMES.toggleActive);
+                } else {
+                        target.removeClass(SELECTOR_NAMES.toggleActive);
+                }
+            }
+        });
+    };
+
+    var clickHandlerShowPasswordButton = function() {
+        $('.js-mem-buttonShowPassword').click(function(){
+            if ($(this).text() === '文字を隠す') {
+                $(this).text('文字を表示する');
+                $('input[type=text]').attr('type', 'password');
+            } else {
+                $(this).text('文字を隠す');
+                $('input[type=password]').attr('type', 'text');
+            }
+        });
+    };
+
+    var initPage = function() {
+        userpassword       = getUserpassword();
+        userpasswordVerify = getUserpasswordVerify();
+        pageSlug           = getSlug();
+
+        // MW-WP-Formが出力するフォーム部品の見た目を整える
+        changeAppearanceFormControls.init();
+
+        // Enterによる送信を制御
+        disabledEnterSubmit();
+
+        if (pageSlug === SLUGS.USER_INPUT || pageSlug === SLUGS.USER_EDIT) {
+            // 会員登録（本登録）入力ページの処理
+            // 登録情報の確認・変更入力ページの処理
+
+            // パスワード入力欄を初期化
+            initUserpassword();
+
+            // 郵便番号入力欄を初期化
+            initUserzip();
+
+            // ニックネーム入力欄を初期化
+            // initUsernick();
+
+            // バリデーションを初期化
+            initErrorArea();
+
+            // バリデーションの実行
+            clickHandlerSubmitButtonValidate();
+
+        } else {
+            // 各ページごとの処理
+            switch (pageSlug) {
+                // 会員登録（仮登録）入力ページここから
+                case SLUGS.USER_ENTRY_REG:
+                    // メール入力欄を初期化
+                    initEmail();
+
+                    // メール入力欄のバリデーションを追加
+                    validateEmail();
+
+                    // 送信ボタンを非活性状態にする
+                    initSubmitButton();
+                    break;
+
+                // ログインページここから
+                case SLUGS.USER_AUTH_LOGIN:
+                    // メール入力欄を初期化
+                    initEmail();
+
+                    // パスワード入力欄を初期化
+                    initUserpassword();
+
+                    // パスワード入力欄のバリデーションを追加
+                    validateUserpasswordAll();
+
+                    // 送信ボタンを非活性状態にする
+                    initSubmitButton();
+                    break;
+
+                // メール配信の設定変更入力ページここから
+                case SLUGS.MAIL_DEREGISTER_ENTRY:
+                    // 送信ボタンを非活性状態にする
+                    initSubmitButton();
+                    break;
+
+                // 登録情報変更前の再ログインページここから
+                case SLUGS.LOGIN_BEFORE_EDIT:
+                    break;
+
+                // パスワード再設定ページここから
+                // パスワード再設定（忘れ）の新しいパスワード入力ページここから
+                case SLUGS.PASSWORD_CHANGE:
+                case SLUGS.PASSWORD_REMINDER_EDIT:
+                    // パスワード入力欄を初期化
+                    initUserpassword();
+
+                    // // パスワード入力欄登録用のバリデーションを追加
+                    // validateUserpassword();
+
+                    // // パスワード確認入力欄のバリデーションを追加
+                    // validateUserpasswordverify();
+
+                    // // 文字を表示するボタンへクリックイベントハンドラを追加
+                    // clickHandlerShowPasswordButton();
+
+                    // // 送信ボタンを非活性状態にする
+                    // initSubmitButton();
+                    break;
+
+                // パスワード再設定（忘れ）のメール入力ページここから
+                case SLUGS.PASSWORD_REMINDER:
+                    // メール入力欄を初期化
+                    initEmail();
+
+                    // メール入力欄のバリデーションを追加
+                    validateEmail();
+
+                    // 送信ボタンを非活性状態にする
+                    initSubmitButton();
+                    break;
+
+                // メールアドレス変更の入力ページここから
+                case SLUGS.MAIL_CHANGE:
+                    // メール入力欄を初期化
+                    initEmail();
+
+                    // メール入力欄のバリデーションを追加
+                    validateEmail();
+
+                    // メール入力欄の確認入力にバリデーションを追加
+                    validateEmailconfirm();
+
+                    // 送信ボタンを非活性状態にする
+                    initSubmitButton();
+                    break;
+
+                // 退会ページここから
+                case SLUGS.RESIGN:
+                    // その他の選択肢を選択した場合にテキストエリアを表示させる
+                    clickHandlerTogglePane();
+
+                    // 送信ボタンを非活性状態にする
+                    initSubmitButton();
+                    break;
+
+                default:
+                    break;
+            }
+
+            // 各フォーム部品にバリデーション実行のイベントハンドラを追加
+            initErrorCheck.init();
+
+            // submitボタンと戻るボタンのクリック時のイベントハンドラを追加
+            clickHandlerSubmitButton();
+        }
+    };
+
+    // 初期化開始
+    initPage();
+    window.checkSubmitButton = checkSubmitButton;
+
+    // TODO 会員本登録以外のページのバリデートの調査・整理
+
+
+    jQuery("input[name=login_userpassword]").blur(function(){
+
+        remove_error_msg(jQuery(this));
+
+        if(jQuery(this).val().length <= 0){
+            jQuery(this).addClass("inputerror");
+            if(!jQuery("#passerror").length) {
+                jQuery(this).before("<div id='passerror' class='errortext'>パスワードは入力必須です。</div>");
+            } else {
+                jQuery(this).removeClass("inputerror");
+                if(jQuery("#passerror").length)
+                    jQuery("#passerror").remove();
+            }
+        }
+    });
+
+    jQuery("input[name=login_useremail]").blur(function(){
+
+        remove_error_msg(jQuery(this));
+
+        if(jQuery(this).val().length <= 0){
+            jQuery(this).addClass("inputerror");
+            if(!jQuery("#mailerror").length) {
+                jQuery(this).before("<div id='passerror' class='errortext'>パスワードは入力必須です。</div>");
+            } else {
+                jQuery(this).removeClass("inputerror");
+                if(jQuery("#mailerror").length)
+                    jQuery("#mailerror").remove();
+            }
+        }
+    });
+
+    jQuery(document).ready(function(){
+
+        var errors = jQuery(this).find('div[name^=e_mes_]');
+        var inputs = jQuery(this).find('*[class^=form]');
+
+        if(errors.length && inputs.length){
+
+            errors.each(function(i){
+                var target = jQuery(errors[i]).attr('name').match(/^(e_mes_)(.+)/)[2];
+                inputs.each(function(j){
+
+                    if(jQuery(inputs[j]).attr('name') != null && jQuery(inputs[j]).attr('name').indexOf(target) !== -1){
+                        jQuery(errors[i]).find('span.error').each(function(k){
+
+                            if(jQuery(inputs[j]).get(0).tagName == 'SELECT'){
+                                jQuery(inputs[j]).parent().before("<div id='"+ jQuery(inputs[j]).attr('name').replace('onfirm','') + "' class='errortext'>"+jQuery(this).text()+"</div>");
+                            }else{
+                                jQuery(inputs[j]).before("<div id='"+ jQuery(inputs[j]).attr('name').replace('onfirm','') + "' class='errortext'>"+jQuery(this).text()+"</div>");
+                            }
+                        });
+                        return false;
+                    }
+
+                });
+
+            });
+        }
+
+    });
+});

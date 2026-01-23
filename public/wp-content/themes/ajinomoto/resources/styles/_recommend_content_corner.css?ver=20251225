@@ -1,0 +1,400 @@
+@charset "utf-8";
+/**
+ * style.css
+ */
+
+
+/* hover */
+ .recommendContents .slick-slide:hover{
+    opacity: .5;
+}
+
+.moreRecommendContents .linkArea:hover{
+    background-color: #eeeeee;
+}
+
+@media only screen and (min-width:980px) {
+    .recommendContentCorner .slick-next:before, .slick-prev:before {
+        display: none;
+    }
+    .moreRecommendContents .linkArea {
+        max-width: 315px;
+        width: 84vw;
+        height: 45px;
+        margin: auto;
+        margin-top: 70px;
+        margin-bottom: 75px;
+        position: relative;
+        border: solid #000000 2px;
+        border-radius: 4px;
+        -webkit-box-shadow: 2px 2px;
+        box-shadow: 2px 2px;
+    }
+    .recommendContentCorner .bigTitle_uline {
+        font-size: 25px;
+        padding-bottom: 30px;
+        margin-bottom: 50px;
+        margin-top: 80px;
+    }
+    .moreRecommendContents .linkArea {
+        max-width: 500px;
+        width: 500px;
+        height: 70px;
+    }
+
+    .moreRecommendContents .linkArea span {
+        font-weight: 500;
+        font-size: 20px;
+    }
+
+    .moreRecommendContents .linkArea a {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        position: absolute;
+        text-decoration: none;
+        top: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .recommendContents {
+        max-width: 1220px;
+        margin-left: auto;
+        margin-right: auto;
+        /* margin-bottom: 60px; */
+        margin-bottom: 100px;
+    }
+    .recommendContents .slick-slide img {
+        display: block;
+        width: 340px;
+        height: 227px;
+        border-radius: 15px;
+        object-fit: cover;
+        font-family: 'object-fit:cover';
+    }
+    .recommendContents .slick-track {
+        position: relative;
+        top: 0;
+        left: 0;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        height: 230px;
+    }
+    .recommendContents .contentsSlider {
+        width: 100%;
+    }
+    .recommendContents .contentsSlider .img {
+        position: relative;
+        background-color: black;
+        border-radius: 20px;
+        max-width: 340px;
+        width: 100%;
+    }
+    .recommendContents .contentsSlider .img.menu-card::before {
+        content: '';
+        display: block;
+        padding-top: 66.7%;
+    }
+    .recommendContents .contentsSlider .img .object-fit {
+        border-radius: 10px;
+        opacity: 0.6;
+        width: 34.67vw;
+        height: 23.07vw;
+        max-height: 172px;
+        -o-object-fit: cover;
+        object-fit: cover;
+        font-family: 'object-fit: cover;'
+    }
+
+    .recommendContents.linkArea{
+        width: 160px;
+        height: 50px;
+        position: relative;
+        border: solid #000000 2px;
+        border-radius: 4px;
+        -webkit-box-shadow: 2px 2px;
+                box-shadow: 2px 2px;
+        text-align: center;
+        font-size: 16px;
+        font-weight: 400;
+    }
+    .recommendContents.linkArea a{
+        position: absolute;
+        text-decoration: none;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+    .recommendContents .contentsSlider {
+        width: 100%;
+    }
+    .recommendContents .contentsSlider ul {
+        padding: 0 60px;
+    }
+    .recommendContents .contentsSlider li {
+        width: 340px;
+        height:	225px;
+        margin-right: 35px;
+    }
+    .recommendContents .contentsSlider .img .object-fit {
+        border-radius: 20px;
+        opacity: 0.6;
+        width: 100%;
+        height:	100%;
+        -o-object-fit: cover;
+        object-fit: cover;
+        font-family: 'object-fit: cover;'
+    }
+
+    .recommendContents .contentsSlider .slick-prev {
+        border-top: black solid 4px ;
+        border-left: black solid 4px ;
+        -ms-transform: rotate(-45deg);
+        -webkit-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+        top: 45%;
+        left: 5px;
+    }
+    .recommendContents .contentsSlider .slick-prev img {
+        width: 10px;
+        -ms-transform: rotate(180deg);
+        -webkit-transform: rotate(180deg);
+        transform: rotate(180deg);
+    }
+    .recommendContents .contentsSlider .slick-next {
+        border-top: black solid 4px ;
+        border-right: black solid 4px ;
+        -ms-transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
+        transform: rotate(45deg);
+        top: 45%;
+        right: 5px;
+    }
+    .recommendContents .contentsSlider .slick-next img {
+        width: 10px;
+    }
+}
+@media only screen and (max-width:979px) {
+    .moreRecommendContents .linkArea{
+        max-width: 315px;
+        width: 84vw;
+        height: 45px;
+        margin: auto;
+        margin-top: 5%;
+        margin-bottom: 5%;
+        position: relative;
+        border: solid #000000 1px;
+        border-radius: 4px;
+        -webkit-box-shadow: 2px 2px;
+        box-shadow: 2px 2px;
+    }
+    .recommendContents{
+        margin-bottom: 0;
+    }
+    .moreRecommendContents .linkArea {
+        margin-bottom: 45px;
+        margin-top: 0;
+    }
+    .recommendContentCorner .bigTitle_uline {
+        position: relative;
+        text-align: center;
+        font-weight: 420;
+        font-size: 18px;
+        padding-bottom: 20px;
+        margin-bottom: 40px;
+        margin-top: 45px;
+    }
+    .moreRecommendContents .linkArea span{
+        font-weight: 400;
+        font-size: 14px;
+    }
+
+    .moreRecommendContents .linkArea a{
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        position: absolute;
+        text-decoration: none;
+        top: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .recommendContents .slick-track {
+        position: relative;
+        top: 0;
+        left: 0;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 19%;
+        height: auto;
+        margin-bottom: 30px;
+    }
+    .contentsSlider {
+        width: 100%;
+    }
+    .contentsSlider ul{
+        position: relative;
+    }
+    .contentsSlider .img {
+        position: relative;
+        background-color: black;
+        border-radius: 20px;
+        max-width: 340px;
+        width: 100%;
+        margin-left: 80px;
+    }
+    .contentsSlider .img.menu-card::before {
+        content: '';
+        display: block;
+        padding-top: 66.7%;
+    }
+    .contentsSlider img.object-fit {
+        border-radius: 10px;
+        width: 60vw;
+        height: 40vw;
+        -o-object-fit: cover;
+        object-fit: cover;
+        font-family: 'object-fit: cover;';
+        margin: 0 5px;
+    }
+    
+    .contentsSlider .menu-card img.object-fit:nth-child(3)  {
+        top: 50%;
+        border-radius: 0 0 10px 0;
+    }
+
+    .contentsSlider .catLabel {
+        position: absolute;
+        top: 1vw;
+        left: 2vw;
+        width: 4vw;
+        fill: #ffffff;
+        opacity: 0.8;
+        background-color: transparent;
+    }
+    .contentsSlider .ttl {
+        position: absolute;
+        bottom: 10px;
+        border-radius: 10px;
+        font-size: 12px;
+        font-weight: 600;
+        color: #ffffff;
+        padding: 0 10px;
+    }
+    .recommendContents.noCheckedContents{
+        text-align: center;
+    }
+    .recommendContents.noCheckedContents p{
+        font-weight: 500;
+    }
+
+    .recommendContents.titleArea{
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        justify-content: space-between;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        padding: 0 60px;
+        margin-bottom: 25px
+    }
+    .recommendContents.titleArea h2{
+        display: inline-block;
+        font-size: 25px;
+        font-weight: 400;
+    }
+    .recommendContents.linkArea{
+        width: 160px;
+        height: 50px;
+        position: relative;
+        border: solid #000000 2px;
+        border-radius: 4px;
+        -webkit-box-shadow: 2px 2px;
+                box-shadow: 2px 2px;
+        text-align: center;
+        font-size: 16px;
+        font-weight: 400;
+    }
+    .recommendContents.linkArea a{
+        position: absolute;
+        text-decoration: none;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+    .contentsSlider {
+        width: 100%;
+    }
+    .contentsSlider ul {
+        margin: 0 auto;
+    }
+    .contentsSlider .img .object-fit {
+        border-radius: 20px;
+        opacity: 0.6;
+        width: 100%;
+        height:	100%;
+        -o-object-fit: cover;
+        object-fit: cover;
+        font-family: 'object-fit: cover;'
+    }
+    .contentsSlider  img.object-fit:nth-child(3)  {
+        top: 50%;
+        border-radius: 0 0 20px 0;
+    }
+
+    .contentsSlider li:nth-child(odd) .ttl {
+        bottom: 20px;
+    }
+    .contentsSlider li:nth-child(even) .ttl {
+        top: 100px;
+        height: 53px;
+    }
+    .contentsSlider .slick-prev {
+        border-top: black solid 4px ;
+        border-left: black solid 4px ;
+        -ms-transform: rotate(-45deg);
+        -webkit-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+        top: 45%;
+        left: 0;
+    }
+    .contentsSlider .slick-prev img {
+        width: 10px;
+        -ms-transform: rotate(180deg);
+        -webkit-transform: rotate(180deg);
+        transform: rotate(180deg);
+    }
+    .contentsSlider .slick-next {
+        border-top: black solid 4px ;
+        border-right: black solid 4px ;
+        -ms-transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
+        transform: rotate(45deg);
+        top: 45%;
+        right: 0;
+    }
+    .contentsSlider .slick-next img {
+        width: 10px;
+    }
+}

@@ -1,0 +1,512 @@
+@media screen and (max-width: 979px) {
+    /* あなたへのおすすめマガジン */
+    .karteRecommendTop,
+    .karteSpecifiedTagMagazine {
+        margin-bottom: 60px;
+    }
+    .karteRecommendArticle {
+        margin: 60px 15px 58px 15px;
+    }
+    .karteRecommendArticle .content {
+        margin-top: 30px;
+    }
+    .karteRecommendArticle .sectionTitle {
+        position: relative;
+        text-align: center;
+    }
+    .karteRecommendTop .listRecommend,
+    .karteSpecifiedTagMagazine .listRecommend {
+        width: 100%;
+        overflow-y: hidden;
+        white-space: nowrap;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+    }
+    .itemListRecommend:first-child {
+        padding-left: 10px;
+    }
+    .itemListRecommend:last-child {
+        padding-right: 10px;
+    }
+    .karteRecommendTop .itemListRecommend,
+    .karteSpecifiedTagMagazine .itemListRecommend {
+        margin: 0 10px;
+        -webkit-box-flex: 1;
+        -ms-flex: 1;
+        flex: 1;
+        max-width: calc(80% - 20px);
+    }
+    .karteRecommendArticle .listRecommend {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        justify-content: start;
+        flex-wrap: wrap;
+    }
+    .listRecommend::-webkit-scrollbar{
+        display: none;
+    }
+    .karteRecommendArticle .itemListRecommend {
+        width: calc((100% - 15px) / 2);
+        margin-bottom: 15px;
+    }
+    .karteRecommendArticle .itemListRecommend:nth-child(odd) {
+        margin-right: 15px;
+    }
+
+    .btnRecommendItem {
+        position: relative;
+    }
+    .btnRecommendItem a {
+        cursor: pointer;
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 100;
+    }
+
+    .btnRecommendItem img {
+        border-radius: 10px;
+        max-width: 100%;
+    }
+
+    .categoryLabel {
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: #fff;
+        font-family: 'Lato', sans-serif;
+        font-size: 13px;
+        font-weight: 700;
+        line-height: 1.0;
+        text-align: center;
+        padding: 5px 10px;
+        padding-left: 24.5px;
+    }
+    
+    .categoryLabel::before {
+        content: '';
+        display: inline-block;
+        position: absolute;
+        top: calc(50% - 10px);
+        left: 5px;
+        width: 15px;
+        height: 13px;
+        vertical-align: middle;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+    .categoryLabel.recipe::before {
+        top: calc(50% - 6.5px);
+        height: 13px;
+        background-image: url( 'data:image/svg+xml;utf-8,<svg fill="%23000" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 31 26"><title>RECIPE</title><g><g><path d="M24.5,3a6.51,6.51,0,0,0-2.62.55,7.51,7.51,0,0,0-12.76,0A6.5,6.5,0,0,0,0,9.5a6.45,6.45,0,0,0,5,6.32V25a1,1,0,0,0,1,1H25a1,1,0,0,0,1-1V15.82A6.45,6.45,0,0,0,31,9.5,6.51,6.51,0,0,0,24.5,3ZM7,24V22H24v2ZM24.91,14A1,1,0,0,0,24,15v5H7V15a1,1,0,0,0-.91-1A4.5,4.5,0,1,1,9,5.75a1,1,0,0,0,.84.13,1,1,0,0,0,.63-.57,5.51,5.51,0,0,1,10.1,0,1,1,0,0,0,.63.57A1,1,0,0,0,22,5.75,4.44,4.44,0,0,1,24.5,5a4.5,4.5,0,0,1,.41,9Z"/></g></g></svg>' );
+    }
+    .categoryLabel.magazine::before {
+        top: calc(50% - 6.5px);
+        height: 13px;
+        background-image: url( 'data:image/svg+xml;utf-8,<svg fill="%23000" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30.2 24.62"><title></title><g><g><path d="M29.52,1.08A23.7,23.7,0,0,0,22.15,0a24.11,24.11,0,0,0-7,1,24.11,24.11,0,0,0-7-1A23.7,23.7,0,0,0,.68,1.08,1,1,0,0,0,0,2V19.62a1,1,0,0,0,.41.81,1,1,0,0,0,.91.14,24.47,24.47,0,0,1,13.47,0h.05a.76.76,0,0,0,.21,0h.08l.25,0h0a24.47,24.47,0,0,1,13.47,0,1.06,1.06,0,0,0,.31.05,1,1,0,0,0,.59-.19,1,1,0,0,0,.41-.81V2A1,1,0,0,0,29.52,1.08ZM8.05,17.59a25,25,0,0,0-6.05.7V2.77a24.78,24.78,0,0,1,12.1,0V18.29A25,25,0,0,0,8.05,17.59Zm20.15.7a25,25,0,0,0-6.05-.7,25,25,0,0,0-6,.7V2.77a24.78,24.78,0,0,1,12.1,0Z"/><path d="M29.51,22.67a23.88,23.88,0,0,0-7.36-1.08,24.12,24.12,0,0,0-7,1,24.12,24.12,0,0,0-7-1A23.59,23.59,0,0,0,.69,22.67a1,1,0,0,0-.64,1.27,1,1,0,0,0,1,.68,1.25,1.25,0,0,0,.32-.05,24.47,24.47,0,0,1,13.47,0,1,1,0,0,0,.63,0,24.47,24.47,0,0,1,13.47,0,1,1,0,1,0,.62-1.9Z"/></g></g></svg>' );
+    }
+    .categoryLabel.activity::before {
+        top: calc(50% - 6.5px);
+        height: 13px;
+        background-image: url( 'data:image/svg+xml;utf-8,<svg fill="%23000" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29.98 21.57"><title></title><g><g><path d="M29.59.21A1,1,0,0,0,28.74,0L7.08,5.43l-5.8-1.7a1,1,0,0,0-.88.16,1,1,0,0,0-.4.8V16.88a1,1,0,0,0,.4.81,1,1,0,0,0,.88.15l5.8-1.7,21.66,5.4a1,1,0,0,0,.24,0,1,1,0,0,0,.61-.21,1,1,0,0,0,.39-.79V1A1,1,0,0,0,29.59.21ZM2,6,6.37,7.31v7L2,15.55ZM28,19.29,8.37,14.4V7.17L28,2.28Z"/></g></g></svg>' );
+    }
+
+    .infoRecommendItem {
+        white-space: initial;
+    }
+
+    .titleRecommendItem {
+        margin-bottom: 5px;
+        word-break: break-all;
+        margin-top: 8px;
+    }
+    .titleRecommendItem p {
+        font-size: 14px;
+        font-weight: 700;
+        width: 285px;
+    }
+    
+    .titleRecommendItem a {
+        color: #000;
+        text-decoration: none;
+    }
+
+    .titleArticleRecommendItem {
+        margin-bottom: 5px;
+        word-break: break-all;
+        margin-top: 8px;
+    }
+    .titleArticleRecommendItem p {
+        font-size: 14px;
+        font-weight: 700;
+    }
+    .itemListArticleRecommend {
+        width: calc((100% - 15px) / 2);
+        margin-bottom: 15px;
+    }
+    .itemListArticleRecommend:nth-child(odd) {
+        margin-right: 15px;
+    }
+    
+    .btnHashtag {
+        cursor: pointer;
+        display: -webkit-box;
+		display: -webkit-flex;
+  		display: -ms-flexbox;
+		display: flex;
+        position: relative;
+        padding: 3px 7.5px;
+        text-decoration: none;
+        border-radius: 100vh;
+        background: rgb(217,44,107);
+        background: -webkit-gradient(linear, left top, right top, from(rgba(217,44,107,1)), to(rgba(236,110,30,1)));
+        background: -o-linear-gradient(left, rgba(217,44,107,1) 0%, rgba(236,110,30,1) 100%);
+        background: linear-gradient(90deg, rgba(217,44,107,1) 0%, rgba(236,110,30,1) 100%);
+        -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+        overflow: hidden;
+    }
+
+    .btnHashtag .hashtagName {
+        font-family: 'Lato', 'Noto Sans Japanese', sans-serif;
+        font-size: 14px;
+        font-weight: 500;
+        position: relative;
+        z-index: 1;
+        display: inline-block;
+        top: 0;
+    }
+
+    .btnHashtag .bg {
+        background: #fff;
+        border-radius: 100vh;
+        overflow: hidden;
+        display: block;
+        position: absolute;
+        top: 1px;
+        left: 1px;
+        width: calc(100% - 2px);
+        height: calc(100% - 2px);
+        z-index: 0;
+    }
+    
+    .itemListHashtag {
+        position: relative;
+        margin: 2.5px;
+    }
+
+    .hashtagRecommendItem .listHashtag {
+        display: -webkit-box;
+		display: -webkit-flex;
+  		display: -ms-flexbox;
+		display: flex;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        -webkit-box-pack: start;
+        -ms-flex-pack: start;
+        justify-content: flex-start;
+    }
+
+    .hashtagRecommendItem .hashtagName {
+        font-size: 10px;
+    }
+    .article_bottom_contents h2 {
+        padding: 20px 0 0 0;
+        font-family: 'Noto Sans Japanese', sans-serif;
+        font-size: 18px;
+        font-weight: 700;
+        border: none;
+    }
+    .article_bottom_contents h2::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100px;
+        height: 2px;
+        background: #de0202;
+        border: none;
+    }
+    .karteSpecifiedTagMagazine .linkArea {
+        max-width: 315px;
+        width: 84vw;
+        height: 45px;
+        margin: 30px auto 60px auto;
+        position: relative;
+        border: solid #000000 2px;
+        border-radius: 4px;
+        -webkit-box-shadow: 2px 2px;
+        box-shadow: 2px 2px;
+        max-width: 315px;
+        position: relative;
+    }
+    .karteSpecifiedTagMagazine .linkArea:hover {
+        background-color: #eeeeee;
+    }
+    .karteSpecifiedTagMagazine .linkArea a {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        position: absolute;
+        text-decoration: none;
+        top: 0;
+        width: 100%;
+        height: 100%;
+    }
+    .karteSpecifiedTagMagazine .linkArea span {
+        font-size: 14px;
+        font-weight: 500;
+    }
+}
+@media screen and (min-width: 980px) {
+    /* あなたへのおすすめマガジン */
+    .karteRecommendTop,
+    .karteSpecifiedTagMagazine,
+    .karteRecommendArticle {
+        margin-bottom: 120px;
+    }
+    .karteRecommendArticle .sectionTitle {
+        position: relative;
+        text-align: center;
+    }
+    .karteRecommendArticle .content {
+        margin-top: 40px;
+    }
+    .listRecommend {
+        display: -ms-grid;
+        display: grid;
+        -ms-grid-columns: 1fr 40px 1fr 40px 1fr;
+        grid-template-columns: repeat(3, 1fr);
+        grid-column-gap: 40px;
+        grid-row-gap: 60px;
+        max-width: 1100px;
+        margin: 0 auto;
+    }
+    .karteSpecifiedTagMagazine .listRecommend {
+        margin: 50px auto 60px auto;
+    }
+    .btnRecommendItem {
+        position: relative;
+        margin-bottom: 15px;
+    }
+    .btnRecommendItem a {
+        cursor: pointer;
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 100;
+    }
+
+    .btnRecommendItem img {
+        border-radius: 20px;
+        max-width: 100%;
+    }
+
+    .categoryLabel {
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: #fff;
+        font-family: 'Lato', sans-serif;
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 1.0;
+        text-align: center;
+        padding: 8px 10px;
+        padding-left: 28px;
+    }
+    
+    .categoryLabel::before {
+        content: '';
+        display: inline-block;
+        position: absolute;
+        top: calc(50% - 10px);
+        left: 5px;
+        width: 20px;
+        height: 17px;
+        vertical-align: middle;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+    .categoryLabel.recipe::before {
+        top: calc(50% - 8.5px);
+        height: 17px;
+        background-image: url( 'data:image/svg+xml;utf-8,<svg fill="%23000" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 31 26"><title>RECIPE</title><g><g><path d="M24.5,3a6.51,6.51,0,0,0-2.62.55,7.51,7.51,0,0,0-12.76,0A6.5,6.5,0,0,0,0,9.5a6.45,6.45,0,0,0,5,6.32V25a1,1,0,0,0,1,1H25a1,1,0,0,0,1-1V15.82A6.45,6.45,0,0,0,31,9.5,6.51,6.51,0,0,0,24.5,3ZM7,24V22H24v2ZM24.91,14A1,1,0,0,0,24,15v5H7V15a1,1,0,0,0-.91-1A4.5,4.5,0,1,1,9,5.75a1,1,0,0,0,.84.13,1,1,0,0,0,.63-.57,5.51,5.51,0,0,1,10.1,0,1,1,0,0,0,.63.57A1,1,0,0,0,22,5.75,4.44,4.44,0,0,1,24.5,5a4.5,4.5,0,0,1,.41,9Z"/></g></g></svg>' );
+    }
+    .categoryLabel.menu::before {
+        top: calc(50% - 8.5px);
+        height: 17px;
+        background-image: url( '/wp-content/themes/ajinomoto/resources/images/common/sp/AP_svg_icon_menu.svg' );
+    }
+    .categoryLabel.magazine::before {
+        top: calc(50% - 6.5px);
+        height: 13px;
+        background-image: url( 'data:image/svg+xml;utf-8,<svg fill="%23000" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30.2 24.62"><title></title><g><g><path d="M29.52,1.08A23.7,23.7,0,0,0,22.15,0a24.11,24.11,0,0,0-7,1,24.11,24.11,0,0,0-7-1A23.7,23.7,0,0,0,.68,1.08,1,1,0,0,0,0,2V19.62a1,1,0,0,0,.41.81,1,1,0,0,0,.91.14,24.47,24.47,0,0,1,13.47,0h.05a.76.76,0,0,0,.21,0h.08l.25,0h0a24.47,24.47,0,0,1,13.47,0,1.06,1.06,0,0,0,.31.05,1,1,0,0,0,.59-.19,1,1,0,0,0,.41-.81V2A1,1,0,0,0,29.52,1.08ZM8.05,17.59a25,25,0,0,0-6.05.7V2.77a24.78,24.78,0,0,1,12.1,0V18.29A25,25,0,0,0,8.05,17.59Zm20.15.7a25,25,0,0,0-6.05-.7,25,25,0,0,0-6,.7V2.77a24.78,24.78,0,0,1,12.1,0Z"/><path d="M29.51,22.67a23.88,23.88,0,0,0-7.36-1.08,24.12,24.12,0,0,0-7,1,24.12,24.12,0,0,0-7-1A23.59,23.59,0,0,0,.69,22.67a1,1,0,0,0-.64,1.27,1,1,0,0,0,1,.68,1.25,1.25,0,0,0,.32-.05,24.47,24.47,0,0,1,13.47,0,1,1,0,0,0,.63,0,24.47,24.47,0,0,1,13.47,0,1,1,0,1,0,.62-1.9Z"/></g></g></svg>' );
+    }
+    .categoryLabel.activity::before {
+        top: calc(50% - 6.5px);
+        height: 13px;
+        background-image: url( 'data:image/svg+xml;utf-8,<svg fill="%23000" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29.98 21.57"><title></title><g><g><path d="M29.59.21A1,1,0,0,0,28.74,0L7.08,5.43l-5.8-1.7a1,1,0,0,0-.88.16,1,1,0,0,0-.4.8V16.88a1,1,0,0,0,.4.81,1,1,0,0,0,.88.15l5.8-1.7,21.66,5.4a1,1,0,0,0,.24,0,1,1,0,0,0,.61-.21,1,1,0,0,0,.39-.79V1A1,1,0,0,0,29.59.21ZM2,6,6.37,7.31v7L2,15.55ZM28,19.29,8.37,14.4V7.17L28,2.28Z"/></g></g></svg>' );
+    }
+
+    .titleRecommendItem {
+        margin-bottom: 10px;
+    }
+    .titleRecommendItem p {
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 1.5;
+    }
+    
+    .titleRecommendItem a {
+        color: #000;
+        text-decoration: none;
+    }
+    .titleArticleRecommendItem {
+        margin-bottom: 10px;
+    }
+    .titleArticleRecommendItem p {
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 1.5;
+    }
+
+    .btnHashtag {
+        cursor: pointer;
+        display: -webkit-box;
+		display: -webkit-flex;
+  		display: -ms-flexbox;
+		display: flex;
+        position: relative;
+        padding: 2px 12px;
+        text-decoration: none;
+        border-radius: 100vh;
+        background: rgb(217,44,107);
+        background: -webkit-gradient(linear, left top, right top, from(rgba(217,44,107,1)), to(rgba(236,110,30,1)));
+        background: -o-linear-gradient(left, rgba(217,44,107,1) 0%, rgba(236,110,30,1) 100%);
+        background: linear-gradient(90deg, rgba(217,44,107,1) 0%, rgba(236,110,30,1) 100%);
+        -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+        overflow: hidden;
+    }
+
+    .btnHashtag:hover .bg {
+        opacity: 1;
+        background: #fbf3ef;
+    }
+
+    .btnHashtag .hashtagName {
+        font-family: 'Noto Sans JP', sans-serif;
+        font-size: 14px;
+        position: relative;
+        z-index: 1;
+        display: inline-block;
+        top: 0;
+    }
+
+    .btnHashtag .bg {
+        background: #ffffff;
+        border-radius: 100vh;
+        overflow: hidden;
+        display: block;
+        position: absolute;
+        top: 1px;
+        left: 1px;
+        width: calc(100% - 2px);
+        height: calc(100% - 2px);
+        z-index: 0;
+    }
+
+    .itemListHashtag {
+        position: relative;
+        margin: 5px;
+    }
+
+    .hashtagRecommendItem .listHashtag {
+        display: -webkit-box;
+		display: -webkit-flex;
+  		display: -ms-flexbox;
+		display: flex;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        -webkit-box-pack: start;
+        -ms-flex-pack: start;
+        justify-content: flex-start;
+    }
+    .hashtagRecommendItem .hashtagName {
+        font-size: 14px;
+    }
+    .article_bottom_contents h2 {
+        padding: 25px 0 0 0;
+        margin-top: 0;
+        margin-bottom: 0;
+        font-family: 'Noto Sans Japanese', sans-serif;
+        font-size: 24px;
+        font-weight: 700;
+        border: none;
+    }
+    .article_bottom_contents h2::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 160px;
+        height: 3px;
+        background: #de0202;
+        border: none;
+    }
+    .karteSpecifiedTagMagazine .linkArea {
+        max-width: 500px;
+        width: 500px;
+        height: 70px;
+        margin: auto;
+        position: relative;
+        border: solid #000000 2px;
+        border-radius: 4px;
+        -webkit-box-shadow: 2px 2px;
+        box-shadow: 2px 2px;
+        background-color: #fff;
+    }
+    .karteSpecifiedTagMagazine .linkArea:hover {
+        background-color: #eeeeee;
+    }
+    .karteSpecifiedTagMagazine .linkArea a {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        position: absolute;
+        text-decoration: none;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+    .karteSpecifiedTagMagazine .linkArea span {
+        font-size: 20px;
+        font-weight: 500;
+    }
+}

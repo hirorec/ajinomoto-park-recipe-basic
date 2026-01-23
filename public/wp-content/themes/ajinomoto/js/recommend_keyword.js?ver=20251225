@@ -1,0 +1,61 @@
+window.addEventListener('DOMContentLoaded', function(){
+  jQuery(function($){
+
+    var error_msg;
+    var word;
+
+    $("#publish").on('click',function(){
+        word = $("td[data-name='recommendWord'] div.acf-input div.acf-repeater div.acf-input-wrap").find('input');
+        //console.dir(word);
+        //console.log(word.length);
+
+        var array = new Array();
+        var i;
+        for (var i = 0; i < word.length; i++) {
+            array[i] = [word[i].value];
+            //console.log(array[i][0]);
+        }
+      
+        /* 2019-08-01 AP_JSエラー LI_MING UPDATE START*/
+        const list = array.reduce(function(pre,current){
+            for (var i = 0; i < current.length; i++) {
+                pre.push(current[i]); 
+            }
+            return pre;
+        },[]);
+        /* 2019-08-01 AP_JSエラー LI_MING UPDATE END*/
+
+        var x = $.grep(list, function(e){return e;});
+
+        error_msg = '';
+        /*recipe_id = $("td[data-name='れしぴid']").find('input').val();*/
+
+        var wordArray;
+        for(var i = 0; i < x.length; i++) {
+            if(x.indexOf(x[i]) !== x.lastIndexOf(x[i])) {
+                wordArray = i;
+            }
+        }
+
+        if(x.indexOf(x[wordArray]) !== x.lastIndexOf(x[wordArray])) {
+        // error_msg += '「' + x[wordArray] + '」' + 'が重複しています。\n';
+            error_msg += '「ワード・類義語」に重複があります。';
+        }
+
+        if(error_msg){
+            alert(error_msg);
+            $('.spinner').css('visibility', 'hidden');
+            $('#publish').removeClass('button-primary-disabled');
+            return false;
+        }
+
+    });
+
+  });
+
+});
+
+
+
+
+

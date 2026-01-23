@@ -1,0 +1,226 @@
+/* for validate */
+
+// ペースト禁止
+$(document).on('paste','input[data-validate="double"]',function(){
+  return false;
+});
+$(function(){
+
+  // 家族構成切り替え
+
+  var formElem = $('.jsFormCheck');
+  var errorParentClass = 'error';
+  var errorParentLongClass = 'errorLong';
+  // init
+  if ( formElem ) {
+    formValidate(formElem, errorParentClass, errorParentLongClass);
+    toggleArea();
+    toggleFam();
+  }
+
+});
+
+function toggleArea() {
+  // 全部のチェックボックスからdata-triggerがついているものを探す
+  var triggers = jQuery('input[data-trigger]');
+  $.each(triggers, function(k, t){
+    var name = $(t).data("trigger");
+    $(t).on("load change blur", function(){
+      if ( $(this).prop("checked") == true ) {
+        $('[data-aim="'+name+'"]').removeClass("aimPasssive").addClass("aimActive");
+        $('[data-aim="'+name+'"]').find("textarea").prop("disabled", false)
+        $('[data-aim="'+name+'"]').find("input").prop("disabled", false);
+      } else {
+        $('[data-aim="'+name+'"]').removeClass("aimActive").addClass("aimPasssive");
+        $('[data-aim="'+name+'"]').find("textarea").prop("disabled", true)
+        $('[data-aim="'+name+'"]').find("input").prop("disabled", true);
+      }
+    })
+  });
+}
+
+function toggleFam() {
+  // $('[data-aim="family"]').removeClass("aim2Active").addClass("aim2Passsive");
+  $('[name="familyCount"]').prop("disabled", true);
+  $('[name="familyChildAge"]').prop("disabled", true);
+  // 全部のチェックボックスからdata-triggerがついているものを探す
+  $("input[name=family]").on("load change blur", function(){
+    console.log("A");
+    if ( $(this).val() == "単身" ) {
+      $('[name="familyCount"]').prop("disabled", true);
+      $('[name="familyChildAge"]').prop("disabled", true);
+      // $('[data-aim="family"]').removeClass("aim2Active").addClass("aim2Passsive");
+      // $('[data-aim="family"]').find("select").prop("disabled", true)
+    } else if ( $(this).val() == "大人複数" ) {
+      $('[name="familyCount"]').prop("disabled", false);
+      $('[name="familyChildAge"]').prop("disabled", true);
+    } else {
+      $('[name="familyCount"]').prop("disabled", false);
+      $('[name="familyChildAge"]').prop("disabled", false);
+      // $('[data-aim="family"]').removeClass("aim2Passsive").addClass("aim2Active");
+      // $('[data-aim="family"]').find("select").prop("disabled", false)
+    }
+  })
+}
+
+
+function formValidate(formElem, errorParentClass, errorParentLongClass) {
+  // required なパーツを探す
+  // 順番に処理する 必須のみ
+  var requiredNormList = [
+    'input[type=text]',
+    'input[type=email]',
+    'input[type=password]',
+    'input[type=radio]',
+    'input[type=checkbox]',
+    'textarea',
+    'select',
+  ];
+  $.each( formElem.children('dl'), function() {
+    var p = $(this);
+    $.each( requiredNormList, function(i, value) {
+      p.find(value).on('change blur', function(){
+        var elem = $(this);
+        var res = doCheck(p, elem);
+        if ( res.long == true ) {
+          res.error == true ? p.addClass(errorParentClass).addClass(errorParentLongClass).find(".errorTxt").text(res.message) : p.removeClass(errorParentClass).removeClass(errorParentLongClass);
+        } else {
+          res.error == true ? p.removeClass(errorParentLongClass).addClass(errorParentClass).find(".errorTxt").text(res.message) : p.removeClass(errorParentClass).removeClass(errorParentLongClass);
+        }
+      });
+    });
+  });
+}
+
+function doCheck(p, elem) {
+  var res = { "error": false };
+  var name = p.find('dt').text();
+  // name の例外を処理
+  if ( name == "メールアドレス(半角英数)" ) { name = "メールアドレス"; }
+  if ( name == "メールアドレス 確認(半角英数)" ) { name = "メールアドレス(確認)"; }
+  if ( name == "パスワード (半角英数8～64文字)" ) { name = "パスワード"; }
+  if ( name == "パスワード(半角英数8～64文字)" ) { name = "パスワード"; }
+  if ( name == "パスワードを再度入力してください" ) { name = "パスワード(確認)"; }
+  if ( name == "パスワード再入力(半角英数8～64文字)" ) { name = "パスワード再入力"; }
+  // required が付いているdlだけ選択
+  if ( elem.attr('type') == "radio" || elem.attr('type') == "checkbox" ) {
+    if ( p.data("required") == true ) {
+      if ( elem.prop("checked") == false ) {
+        res = { "error": true, "message" : name + "は入力必須です" };
+      }
+    }
+  } else {
+    if ( p.data("required") == true ) {
+      if ( elem.val() == undefined || elem.val() == '' ) {
+        res = { "error": true, "message" : name + "は入力必須です" };
+      }
+    }
+  }
+  // error なら一旦返す
+  if ( res.error == true ) { return res; }
+  // email
+  if ( elem.data('validate') == "email" ) {
+    var val = elem.val();
+    res = validateEmail(val);
+  }
+  // passwd
+  if ( elem.data('validate') == "passwd" ) {
+    var val = elem.val();
+    res = validatePasswd(val);
+  }
+  // zip
+  if ( elem.data('validate') == "zip" ) {
+    var val = elem.val();
+    res = validateZip(val);
+  }
+  // 二重チェック
+  if ( elem.data('validate') == "double" ) {
+    var pair = elem.data('pair');
+    var val = elem.val();
+    var val2 = $('[name="'+pair+'"]').val();
+    if ( val !== val2 ) {
+      res = {
+        "error": true,
+        "message" : name + "が一致しません。",
+      };
+    }
+  }
+  return res;
+}
+function validateEmail(val) {
+  var res = { "error":false };
+  // 型チェック
+  if ( val.length > 255 ) {
+    res = {
+      "error": true,
+      "message" : "メールアドレスは半角255文字以内で入力してください。",
+    };
+    return res;
+  }
+  if ( val.match('renraku\.in|shibuya\-center\.com|meltmail\.com|titbit\.in|supermailer\.jp|tempthe\.net') ) {
+    res = {
+      "error": true,
+      "message" : "このメールアドレスでは登録できません。(一部のフリーメールは登録できません) 恐れ入りますが他のメールアドレスでご登録下さい。",
+      "long": true,
+    };
+    return res;
+  }
+  if ( ! val.match('^[a-zA-Z0-9\._%\+\-]+@[a-zA-Z0-9\.\-]+\.[a-zA-Z]{2,4}$') ) {
+    res = {
+      "error": true,
+      "message" : "メールアドレスの形式が正しくありません。全角文字などが含まれていないかもう一度ご確認下さい。",
+      "long": true,
+    };
+    return res;
+  }
+  return res;
+}
+function validatePasswd(val) {
+  var res = { "error":false };
+  // 型チェック
+  if ( val.length > 64 || val.length < 8 ) {
+    res = {
+      "error": true,
+      "message" : "半角英数8～64文字以内で入力して下さい。",
+    };
+    return res;
+  }
+  //if ( ! val.match('^[\u0020-\u007e]+$') ) {
+  /*if(!( val.match('^[0-9]+$') || !( val.match('^[a-zA-Z]+$') ) ) ||  val.indexOf(jQuery("input[name=email]").val().substring(0 , jQuery("input[name=email]").val().indexOf('@')) ) >= 0 || val.indexOf('ajinomoto') >= 0 ){
+    res = {
+      "error": true,
+      "message" : "英数混合の推測されにくい複雑なものを設定してください。1",
+      "long": true,
+    };
+    return res;
+  }*/
+  if ( ! val.match('^[\u0020-\u007e]+$') ) {
+    res = {
+      "error": true,
+      "message" : "全角文字や使用不可能な文字などが含まれています。半角の（アルファベット・数字・使用可能な記号）のみ使用できます。2",
+      "long": true,
+    };
+    return res;
+  }
+  return res;
+}
+function validateZip(val) {
+  var res = { "error":false };
+  // 型チェック
+  if ( ! val.match('^[0-9]+$') ) {
+    res = {
+      "error": true,
+      "message" : "半角文字で正しい郵便番号を入力して下さい。「-（ハイフン）」を入れている場合は、入れずに入力して下さい。また、事業所の個別郵便番号は使用できません。",
+      "long": true,
+    };
+    return res;
+  }
+  if ( ! val.match('^[0-9]{7}$') ) {
+    res = {
+      "error": true,
+      "message" : "半角数字7文字で入力して下さい。",
+    };
+    return res;
+  }
+  return res;
+}

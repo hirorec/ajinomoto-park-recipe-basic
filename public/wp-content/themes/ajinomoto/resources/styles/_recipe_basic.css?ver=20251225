@@ -1,0 +1,1428 @@
+@charset "utf-8";
+/**
+ * style.css
+ */
+
+@media only screen and (min-width:980px) {}
+
+
+/*--------------------------------------------------
+ basicIndex
+--------------------------------------------------*/
+
+/* leadArea
+--------------------------------------------------*/
+#basicIndex .leadArea {
+	margin: 20px 0 30px;
+	text-align: center;
+}
+@media only screen and (min-width:980px) {
+	#basicIndex .leadArea {
+		margin: 40px 0 60px;
+	}
+}
+
+
+/* basicIndexList
+--------------------------------------------------*/
+#basicIndex .basicIndexList ul {
+	margin: -13px 0 0 -13px;
+	padding-bottom: 40px;
+}
+#basicIndex .basicIndexList ul li {
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	        box-sizing: border-box;
+	float: left;
+	width: 50%;
+	padding: 13px 0 0 13px;
+}
+#basicIndex .basicIndexList ul li img {
+	width: 100%;
+}
+#basicIndex .basicIndexList ul li a {
+	overflow: hidden;
+	position: relative;
+	display: block;
+	text-decoration: none;
+	border-radius: 5px;
+	font-size: 3.54vw;
+	font-weight: 500;
+	line-height: 1;
+}
+#basicIndex .basicIndexList ul li a > span {
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	        box-sizing: border-box;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	display: block;
+	width: 100%;
+	padding: 0 10px;
+	background-color: rgba(255,255,255,0.7);
+}
+#basicIndex .basicIndexList ul li a > span > span {
+	display: table;
+	height: 2.7em;
+	width: 100%;
+}
+#basicIndex .basicIndexList ul li a > span > span span {
+	display: table-cell;
+	vertical-align: middle;
+}
+@media only screen and (min-width:980px) {
+	#cornerIndex .mainVisual {
+		margin-bottom: 40px;
+	}
+	#basicIndex .basicIndexList ul {
+		margin: -40px 0 0 -40px;
+		padding-bottom: 80px;
+	}
+	#basicIndex .basicIndexList ul li {
+		width: 33.333%;
+		padding: 40px 0 0 40px;
+	}
+	#basicIndex .basicIndexList ul li a {
+		font-size: 16px;
+	}
+	#basicIndex .basicIndexList ul li a > span {
+		padding: 0 15px;
+	}
+	#basicIndex .basicIndexList ul li a > span > span {
+		height: 3.5em;
+	}
+}
+
+
+
+
+/*--------------------------------------------------
+ basicChomiryo1
+--------------------------------------------------*/
+
+/* leadArea
+--------------------------------------------------*/
+#basicChomiryo1 .leadArea,
+#basicDetailTemple02 .leadArea {
+	margin-bottom: 10px;
+}
+@media only screen and (min-width:980px) {
+	#basicChomiryo1 .leadArea,
+	#basicDetailTemple02 .leadArea {
+		margin-bottom: 30px;
+		text-align: center;
+	}
+}
+
+/* commonAnchorList
+--------------------------------------------------*/
+#basicChomiryo1 .commonAnchorList,
+#basicDetailTemple02 .commonAnchorList {
+	margin-bottom: 20px;
+}
+@media only screen and (min-width:980px) {
+	#basicChomiryo1 .commonAnchorList,
+	#basicDetailTemple02 .commonAnchorList {
+		margin-bottom: 60px;
+	}
+}
+
+
+/* basicChomiryo1Box
+--------------------------------------------------*/
+
+/* ballTitle01 */
+#basicChomiryo1 .basicChomiryo1Box .ballTitle01,
+#basicDetailTemple02 .basicDetailTemple02Box .ballTitle01 {
+	margin-bottom: 10px;
+}
+@media only screen and (min-width:980px) {
+	#basicChomiryo1 .basicChomiryo1Box .bdrtitle_TB,
+	#basicDetailTemple02 .basicDetailTemple02Box .bdrtitle_TB {
+		margin-bottom: 50px;
+	}
+	#basicChomiryo1 .basicChomiryo1Box .ballTitle01,
+	#basicDetailTemple02 .basicDetailTemple02Box .ballTitle01 {
+		margin-bottom: 20px;
+	}
+}
+
+/* imageTextArea */
+#basicChomiryo1 .basicChomiryo1Box .imageTextArea,
+#basicDetailTemple02 .basicDetailTemple02Box .imageTextArea {
+	margin-bottom: 40px;
+}
+#basicChomiryo1 .basicChomiryo1Box .imageTextArea li,
+#basicDetailTemple02 .basicDetailTemple02Box .imageTextArea li {
+	padding: 13px 0;
+}
+#basicChomiryo1 .basicChomiryo1Box .imageTextArea li:after,
+#basicChomiryo1 .basicChomiryo1Box .imageTextArea li.pc_bdr .inCont:after,
+#basicDetailTemple02 .basicDetailTemple02Box .imageTextArea li:after,
+#basicDetailTemple02 .basicDetailTemple02Box .imageTextArea li.pc_bdr .inCont:after {
+	display: block;
+	clear: both;
+	height: 0;
+	content: '';
+}
+#basicChomiryo1 .basicChomiryo1Box .imageTextArea li + li,
+#basicDetailTemple02 .basicDetailTemple02Box .imageTextArea li + li {
+	background: url(/wp-content/themes/ajinomoto/resources/images/common/sp/bdr_dot04.png) repeat-x left top;
+	background-size: auto 2px;
+}
+#basicChomiryo1 .basicChomiryo1Box .imageTextArea li .img,
+#basicDetailTemple02 .basicDetailTemple02Box .imageTextArea li .img {
+	float: left;
+	width: 44.32%;
+}
+#basicChomiryo1 .basicChomiryo1Box .imageTextArea li .img + .txt,
+#basicDetailTemple02 .basicDetailTemple02Box .imageTextArea li .img + .txt {
+	float: right;
+	width: 51.7%;
+}
+#basicChomiryo1 .basicChomiryo1Box#anc03 .imageTextArea,
+#basicDetailTemple02 .basicDetailTemple02Box#anc03 .imageTextArea {
+	margin-bottom: 20px;
+}
+#basicChomiryo1 .basicChomiryo1Box .imageTextArea li.pc_bdr .inTtl,
+#basicDetailTemple02 .basicDetailTemple02Box .imageTextArea li.pc_bdr .inTtl {
+	margin-bottom: 7px;
+	font-weight: 500;
+	color: #905f30;
+}
+#basicChomiryo1 .basicChomiryo1Box .imageTextArea li .tableList dl,
+#basicDetailTemple02 .basicDetailTemple02Box .imageTextArea li .tableList dl {
+	display: table;
+	width: 100%;
+}
+#basicChomiryo1 .basicChomiryo1Box .imageTextArea li .tableList dl > *,
+#basicDetailTemple02 .basicDetailTemple02Box .imageTextArea li .tableList dl > * {
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	        box-sizing: border-box;
+	display: table-cell;
+	vertical-align: top;
+}
+#basicChomiryo1 .basicChomiryo1Box .imageTextArea li .tableList dt,
+#basicDetailTemple02 .basicDetailTemple02Box .imageTextArea li .tableList dt {
+	width: 50%;
+	padding-right: 10px;
+}
+#basicChomiryo1 .basicChomiryo1Box .imageTextArea li .tableList dd,
+#basicDetailTemple02 .basicDetailTemple02Box .imageTextArea li .tableList dd {
+	padding-left: 10px;
+}
+@media only screen and (min-width:980px) {
+	#basicChomiryo1 .basicChomiryo1Box .imageTextArea,
+	#basicDetailTemple02 .basicDetailTemple02Box .imageTextArea {
+		margin: 40px 0 70px;
+	}
+	#basicChomiryo1 .basicChomiryo1Box .imageTextArea ul,
+	#basicDetailTemple02 .basicDetailTemple02Box .imageTextArea ul {
+		margin: -40px 0 0 -30px;
+	}
+	#basicChomiryo1 .basicChomiryo1Box .imageTextArea li,
+	#basicChomiryo1 .basicChomiryo1Box .imageTextArea li + li,
+	#basicDetailTemple02 .basicDetailTemple02Box .imageTextArea li,
+	#basicDetailTemple02 .basicDetailTemple02Box .imageTextArea li + li {
+		-webkit-box-sizing: border-box;
+		   -moz-box-sizing: border-box;
+		        box-sizing: border-box;
+		float: left;
+		width: 50%;
+		padding: 40px 0 0 30px;
+		border-top: none;
+		background: none;
+	}
+	#basicChomiryo1 .basicChomiryo1Box .imageTextArea li.pc_bdr,
+	#basicDetailTemple02 .basicDetailTemple02Box .imageTextArea li.pc_bdr {
+		width: 100%;
+	}
+	#basicChomiryo1 .basicChomiryo1Box .imageTextArea li.pc_bdr .inCont,
+	#basicDetailTemple02 .basicDetailTemple02Box .imageTextArea li.pc_bdr .inCont {
+		width: 50%;
+		margin: 0 auto;
+		padding: 20px;
+		border: #ffc3a0 solid 1px;
+	}
+	#basicChomiryo1 .basicChomiryo1Box#anc03 .imageTextArea,
+	#basicDetailTemple02 .basicDetailTemple02Box#anc03 .imageTextArea {
+		margin-bottom: 70px;
+	}
+}
+
+
+#basicChomiryo1 .inVideo,
+#basicDetailTemple02 .inVideo {
+	position: relative;
+	height: 0;
+	max-width: 630px;
+	padding-bottom: 55.6%;
+	margin-bottom: 20px;
+}
+#basicChomiryo1 .basicCommonVideoBg .inVideo {
+	max-width: 850px;
+}
+#basicChomiryo1 .basicCommonVideoBg .inVideo.type02 {
+	padding-bottom: 55.8%;
+}
+#basicChomiryo1 .inVideo > *,
+#basicDetailTemple02 .inVideo > * {
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: block;
+	width: 100%;
+	height: 100%;
+	min-width: 100%;
+	min-height: 100%;
+}
+
+@media only screen and (min-width:980px) {
+	#basicChomiryo1 .inVideo,
+	#basicDetailTemple02 .inVideo {
+		margin-bottom: 20px;
+	}
+}
+
+
+
+
+/*--------------------------------------------------
+ basicChourikigu
+--------------------------------------------------*/
+
+/* chourikiguList
+--------------------------------------------------*/
+#basicChourikigu .chourikiguList {
+	margin-bottom: 40px;
+}
+#basicChourikigu .chourikiguList li + li {
+	margin-top: 40px;
+}
+#basicChourikigu .chourikiguList .txt {
+	margin-bottom: 15px;
+}
+@media only screen and (min-width:980px) {
+	#basicChourikigu .chourikiguList {
+		margin: 60px 0;
+	}
+	#basicChourikigu .chourikiguList li:after {
+		display: block;
+		clear: both;
+		height: 0;
+		content: '';
+	}
+	#basicChourikigu .chourikiguList li + li {
+		margin-top: 60px;
+	}
+	#basicChourikigu .chourikiguList li .img {
+		float: left;
+		width: 47.5%;
+	}
+	#basicChourikigu .chourikiguList li .txt {
+		float: right;
+		width: 47.5%;
+	}
+}
+
+
+/*--------------------------------------------------
+ basicVege_handlingIndex
+--------------------------------------------------*/
+
+/* leadArea
+--------------------------------------------------*/
+#basicVege_handlingIndex .leadArea {
+	margin-bottom: 40px;
+}
+
+#basicVege_handlingIndex .groupArea {
+	margin-bottom: 40px;
+}
+#basicVege_handlingIndex .groupArea .inGroup + .inGroup {
+	margin-top: 40px;
+}
+#basicVege_handlingIndex .groupArea .inList ul {
+	margin: -13px 0 0 -13px;
+}
+#basicVege_handlingIndex .groupArea .inList li {
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	        box-sizing: border-box;
+	float: left;
+	width: 33.333%;
+	padding: 13px 0 0 13px;
+}
+#basicVege_handlingIndex .groupArea .inList li img {
+	width: 100%;
+}
+#basicVege_handlingIndex .groupArea .inList li a {
+	overflow: hidden;
+	position: relative;
+	display: block;
+	text-decoration: none;
+	border-radius: 5px;
+}
+#basicVege_handlingIndex .groupArea .inList li a .txt {
+	position: absolute;
+	display: block;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 38%;
+	font-size: 3.5vw;
+	font-weight: 500;
+	background-color: rgba(255,255,255,0.7);
+}
+#basicVege_handlingIndex .groupArea .inList li a .txt > span {
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	        box-sizing: border-box;
+	display: table;
+	width: 100%;
+	height: 100%;
+	padding: 0 7.5%;
+	line-height: 1.2;
+}
+#basicVege_handlingIndex .groupArea .inList li a .txt > span > span {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+@media only screen and (min-width:980px) {
+	#basicVege_handlingIndex .leadArea {
+		margin-top: 50px;
+	}
+
+	/* snavArea */
+	#basicVege_handlingIndex .snavArea {
+		margin: 60px 0 40px;
+	}
+	#basicVege_handlingIndex .snavArea ul {
+		margin-left: -20px;
+	}
+	#basicVege_handlingIndex .snavArea li {
+		-webkit-box-sizing: border-box;
+		   -moz-box-sizing: border-box;
+		        box-sizing: border-box;
+		float: left;
+		width: 25%;
+		padding-left: 20px;
+		text-align: center;
+	}
+	#basicVege_handlingIndex .snavArea li a {
+		display: block;
+		padding: 10px 0;
+		border: #888888 solid 1px;
+		border-radius: 10px;
+		font-weight: 500;
+		text-decoration: none;
+	}
+	#basicVege_handlingIndex .snavArea li a.on,
+	#basicVege_handlingIndex .snavArea li a:hover {
+		background-color: #cc8759;
+		color: #fff;
+	}
+
+	/* groupArea */
+	#basicVege_handlingIndex .groupArea {
+		margin-bottom: 80px;
+	}
+	#basicVege_handlingIndex .groupArea .inGroup {
+		display: none;
+	}
+	#basicVege_handlingIndex .groupArea .inGroup.on {
+		display: block;
+	}
+	#basicVege_handlingIndex .groupArea .inGroup + .inGroup {
+		margin-top: 0;
+	}
+	#basicVege_handlingIndex .groupArea .inList ul {
+		margin: -20px 0 0 -20px;
+	}
+	#basicVege_handlingIndex .groupArea .inList li {
+		width: 25%;
+		padding: 20px 0 0 20px;
+	}
+	#basicVege_handlingIndex .groupArea .inList li a {
+		border-radius: 10px;
+	}
+	#basicVege_handlingIndex .groupArea .inList li a .txt {
+		height: 29%;
+		font-size: 17px;
+	}
+}
+
+
+/*--------------------------------------------------
+ basicVege_handlingDetail
+--------------------------------------------------*/
+#basicVege_handlingDetail .bdrBox01,
+#basicVege_keeping .bdrBox01 {
+	margin-bottom: 20px;
+	padding: 10px;
+	border: #dddddd solid 1px;
+}
+#basicVege_handlingDetail .bdrBox01 dt,
+#basicVege_keeping .bdrBox01 dt {
+	margin-bottom: 5px;
+	font-weight: 500;
+	color: #c0101d;
+}
+#basicVege_handlingDetail .bdrBox01 dd.dotList > *,
+#basicVege_keeping .bdrBox01 dd.dotList > * {
+	position: relative;
+	padding-left: 1.2em;
+}
+#basicVege_handlingDetail .bdrBox01 dd.dotList > * span,
+#basicVege_keeping .bdrBox01 dd.dotList > * span {
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: block;
+	color: #c0101d;
+}
+#basicVege_handlingDetail .ballTitle01,
+#basicVege_keeping .ballTitle01 {
+	margin-bottom: 0;
+}
+
+#basicVege_handlingDetail .basicVege_handlingDetailBg + .basicVege_handlingDetailBox {
+	margin-top: 33px;
+}
+#basicVege_handlingDetail .basicVege_handlingDetailBox .lead {
+	margin: 15px 0;
+}
+#basicVege_handlingDetail .basicVege_handlingDetailBox .listTtl + .lead {
+	margin: 5px 0 15px;
+}
+#basicVege_handlingDetail .basicVege_handlingDetailBox .caseTxt {
+	margin: 15px 0 35px;
+}
+#basicVege_handlingDetail .basicVege_handlingDetailBox .caseTxt dt {
+	margin-bottom: 5px;
+	color: #905f30;
+	font-weight: 500;
+}
+@media only screen and (min-width:980px) {
+	#basicVege_handlingDetail .bdrBox01,
+	#basicVege_keeping .bdrBox01 {
+		margin-bottom: 30px;
+		padding: 15px;
+	}
+	#basicVege_handlingDetail .bdrBox01 dt,
+	#basicVege_keeping .bdrBox01 dt {
+		margin-bottom: 10px;
+	}
+	#basicVege_handlingDetail .basicVege_handlingDetailBg + .basicVege_handlingDetailBox {
+		margin-top: 70px;
+	}
+	#basicVege_handlingDetail .basicVege_handlingDetailBox .lead {
+		margin: 25px 0;
+	}
+	#basicVege_handlingDetail .basicVege_handlingDetailBox .listTtl + .lead {
+		margin: 10px 0 30px;
+	}
+	#basicVege_handlingDetail .basicVege_handlingDetailBox .caseTxt {
+		margin: 50px 0 0;
+	}
+}
+
+/* commonAnchorList
+--------------------------------------------------*/
+#basicVege_handlingDetail .commonAnchorList,
+#basicVege_keeping .commonAnchorList {
+	margin-bottom: 20px;
+}
+@media only screen and (min-width:980px) {
+	#basicVege_handlingDetail .commonAnchorList,
+	#basicVege_keeping .commonAnchorList {
+		margin-bottom: 60px;
+	}
+}
+
+/* imageTextArea
+--------------------------------------------------*/
+#basicVege_handlingDetail .imageTextArea,
+#basicHeating .imageTextArea,
+#basicFriedoil .imageTextArea,
+#basicVege_keeping .imageTextArea {
+	margin-bottom: 20px;
+}
+#basicVege_handlingDetail .imageTextArea li,
+#basicHeating .imageTextArea li,
+#basicFriedoil .imageTextArea li,
+#basicVege_keeping .imageTextArea li {
+	padding: 13px 0;
+}
+#basicVege_handlingDetail .imageTextArea li:after,
+#basicVege_handlingDetail .imageTextArea li .inCont:after,
+#basicHeating .imageTextArea li:after,
+#basicHeating .imageTextArea li .inCont:after,
+#basicFriedoil .imageTextArea li:after,
+#basicFriedoil .imageTextArea li .inCont:after,
+#basicVege_keeping .imageTextArea li:after,
+#basicVege_keeping .imageTextArea li .inCont:after {
+	display: block;
+	clear: both;
+	height: 0;
+	content: '';
+}
+#basicVege_handlingDetail .imageTextArea li + li,
+#basicHeating .imageTextArea li + li,
+#basicFriedoil .imageTextArea li + li,
+#basicVege_keeping .imageTextArea li + li {
+	background: url(/wp-content/themes/ajinomoto/resources/images/common/sp/bdr_dot04.png) repeat-x left top;
+	background-size: auto 2px;
+}
+#basicVege_handlingDetail .imageTextArea li .img,
+#basicHeating .imageTextArea li .img,
+#basicFriedoil .imageTextArea li .img,
+#basicVege_keeping .imageTextArea li .img {
+	float: left;
+	width: 44.32%;
+}
+#basicVege_handlingDetail .imageTextArea li .img + .txt,
+#basicHeating .imageTextArea li .img + .txt,
+#basicFriedoil .imageTextArea li .img + .txt,
+#basicVege_keeping .imageTextArea li .img + .txt {
+	float: right;
+	width: 51.7%;
+}
+#basicVege_handlingDetail .imageTextArea li .txt strong,
+#basicHeating .imageTextArea li .txt strong,
+#basicFriedoil .imageTextArea li .txt strong,
+#basicVege_keeping .imageTextArea li .txt strong {
+	display: block;
+	font-weight: 500;
+	color: #905f30;
+}
+#basicVege_handlingDetail .imageTextArea li .txt p + p,
+#basicHeating .imageTextArea li .txt p + p,
+#basicFriedoil .imageTextArea li .txt p + p,
+#basicVege_keeping .imageTextArea li .txt p + p {
+	margin-top: 1em;
+}
+#basicVege_handlingDetail .imageTextArea .listTtl,
+#basicVege_keeping .imageTextArea .listTtl {
+	color: #905f30;
+	font-weight: 500;
+}
+#basicVege_handlingDetail .imageTextArea ul + .listTtl,
+#basicVege_keeping .imageTextArea ul + .listTtl {
+	margin-top: 20px;
+}
+#basicVege_handlingDetail .imageTextArea .listTtl.mintyo {
+	font-size: 5vw;
+}
+#basicVege_handlingDetail .imageTextArea.pinBdr {
+	padding: 1px;
+	background: #fcf5f6;
+	border: #e1a8ae solid 2px;
+}
+#basicVege_handlingDetail .imageTextArea.pinBdr .listTtl {
+	color: #c0101d;
+}
+#basicVege_handlingDetail .imageTextArea.pinBdr .inBg {
+	padding: 10px 15px;
+	background: #fcf5f6;
+	border: #e1a8ae solid 1px;
+}
+#basicVege_handlingDetail .imageTextArea.pinBdr .brownBtn .bg:before {
+	background-image: url(/wp-content/themes/ajinomoto/resources/images/common/sp/btn_brown_left02.png);
+}
+#basicVege_handlingDetail .imageTextArea.pinBdr .brownBtn .bg:after {
+	background-image: url(/wp-content/themes/ajinomoto/resources/images/common/sp/btn_brown_right02.png);
+}
+
+@media only screen and (max-width:979px) {
+	#basicVege_handlingDetail .imageTextArea.spOneCol li .img,
+	#basicHeating .imageTextArea.spOneCol li .img,
+	#basicFriedoil .imageTextArea.spOneCol li .img,
+	#basicVege_keeping .imageTextArea.spOneCol li .img {
+		float: none;
+		width: auto;
+		text-align: center;
+	}
+	#basicVege_handlingDetail .imageTextArea.spOneCol li .img + .txt,
+	#basicHeating .imageTextArea.spOneCol li .img + .txt,
+	#basicFriedoil .imageTextArea.spOneCol li .img + .txt,
+	#basicVege_keeping .imageTextArea.spOneCol li .img + .txt {
+		float: none;
+		width: auto;
+		margin-top: 15px;
+	}
+}
+@media only screen and (min-width:980px) {
+	#basicVege_handlingDetail .imageTextArea,
+	#basicHeating .imageTextArea,
+	#basicFriedoil .imageTextArea,
+	#basicVege_keeping .imageTextArea {
+		margin-bottom: 70px;
+		padding-top: 30px;
+	}
+	#basicVege_handlingDetail .imageTextArea ul,
+	#basicHeating .imageTextArea ul,
+	#basicFriedoil .imageTextArea ul,
+	#basicVege_keeping .imageTextArea ul {
+		margin: -40px 0 0 -30px;
+	}
+	#basicVege_handlingDetail .imageTextArea li,
+	#basicVege_handlingDetail .imageTextArea li + li,
+	#basicHeating .imageTextArea li,
+	#basicHeating .imageTextArea li + li,
+	#basicFriedoil .imageTextArea li,
+	#basicFriedoil .imageTextArea li + li,
+	#basicVege_keeping .imageTextArea li,
+	#basicVege_keeping .imageTextArea li + li {
+		-webkit-box-sizing: border-box;
+		   -moz-box-sizing: border-box;
+		        box-sizing: border-box;
+		float: left;
+		width: 50%;
+		padding: 40px 0 0 30px;
+		border-top: none;
+		background: none;
+	}
+	#basicVege_handlingDetail .imageTextArea li.oneCl,
+	#basicHeating .imageTextArea li.oneCl,
+	#basicFriedoil .imageTextArea li.oneCl,
+	#basicVege_keeping .imageTextArea li.oneCl {
+		width: 100%;
+	}
+	#basicVege_handlingDetail .imageTextArea li.oneCl .img,
+	#basicHeating .imageTextArea li.oneCl .img,
+	#basicFriedoil .imageTextArea li.oneCl .img,
+	#basicVege_keeping .imageTextArea li.oneCl .img {
+		width: 36%;
+	}
+	#basicVege_handlingDetail .imageTextArea li.oneCl.type02 .img,
+	#basicHeating .imageTextArea li.oneCl.type02 .img,
+	#basicFriedoil .imageTextArea li.oneCl.type02 .img,
+	#basicVege_keeping .imageTextArea li.oneCl.type02 .img {
+		width: 15%;
+	}
+	#basicVege_handlingDetail .imageTextArea li.oneCl .img + .txt,
+	#basicHeating .imageTextArea li.oneCl .img + .txt,
+	#basicFriedoil .imageTextArea li.oneCl .img + .txt,
+	#basicVege_keeping .imageTextArea li.oneCl .img + .txt {
+		width: 60%;
+	}
+	#basicVege_handlingDetail .imageTextArea li.oneCl.type02 .img + .txt,
+	#basicHeating .imageTextArea li.oneCl.type02 .img + .txt,
+	#basicFriedoil .imageTextArea li.oneCl.type02 .img + .txt,
+	#basicVege_keeping .imageTextArea li.oneCl.type02 .img + .txt {
+		width: 81%;
+	}
+	#basicVege_handlingDetail .imageTextArea li.oneCl img,
+	#basicHeating .imageTextArea li.oneCl img,
+	#basicFriedoil .imageTextArea li.oneCl img,
+	#basicVege_keeping .imageTextArea li.oneCl img {
+		width: 100%;
+	}
+	#basicVege_handlingDetail .imageTextArea li.oneCl.type02 .btn,
+	#basicHeating .imageTextArea li.oneCl.type02 .btn,
+	#basicFriedoil .imageTextArea li.oneCl.type02 .btn,
+	#basicVege_keeping .imageTextArea li.oneCl.type02 .btn {
+		float: left;
+		width: 100%;
+		margin-top: 30px;
+		text-align: center;
+	}
+	#basicVege_handlingDetail .imageTextArea li.oneCl.type02 .btn a,
+	#basicHeating .imageTextArea li.oneCl.type02 .btn a,
+	#basicFriedoil .imageTextArea li.oneCl.type02 .btn a,
+	#basicVege_keeping .imageTextArea li.oneCl.type02 .btn a {
+		max-width: 500px;
+		margin: 0 auto;
+	}
+	#basicVege_handlingDetail .imageTextArea .listTtl,
+	#basicHeating .imageTextArea .listTtl,
+	#basicVege_keeping .imageTextArea .listTtl {
+		margin-bottom: 15px;
+	}
+	#basicVege_handlingDetail .imageTextArea ul + .listTtl,
+	#basicHeating .imageTextArea ul + .listTtl,
+	#basicVege_keeping .imageTextArea ul + .listTtl {
+		margin-top: 50px;
+	}
+	#basicVege_handlingDetail .imageTextArea .listTtl.mintyo,
+	#basicHeating .imageTextArea .listTtl.mintyo,
+	#basicVege_keeping .imageTextArea .listTtl.mintyo {
+		margin-bottom: 30px;
+		font-size: 22px;
+	}
+	#basicVege_handlingDetail .imageTextArea.pinBdr,
+	#basicHeating .imageTextArea.pinBdr,
+	#basicVege_keeping .imageTextArea.pinBdr {
+		padding: 2px;
+	}
+	#basicVege_handlingDetail .imageTextArea.pinBdr .inBg,
+	#basicHeating .imageTextArea.pinBdr .inBg,
+	#basicVege_keeping .imageTextArea.pinBdr .inBg {
+		padding: 20px 15px;
+		background: #fcf5f6;
+		border: #e1a8ae solid 1px;
+	}
+}
+@media only screen and (max-width:979px) {
+	#basicVege_handlingDetail .imageTextArea li.oneCl.type02 .img,
+	#basicHeating .imageTextArea li.oneCl.type02 .img,
+	#basicFriedoil .imageTextArea li.oneCl.type02 .img,
+	#basicVege_keeping .imageTextArea li.oneCl.type02 .img {
+		float: none;
+		width: auto;
+		margin-bottom: 20px;
+		text-align: center;
+	}
+	#basicVege_handlingDetail .imageTextArea li.oneCl.type02 .img + .txt,
+	#basicHeating .imageTextArea li.oneCl.type02 .img + .txt,
+	#basicFriedoil .imageTextArea li.oneCl.type02 .img + .txt,
+	#basicVege_keeping .imageTextArea li.oneCl.type02 .img + .txt {
+		float: none;
+		width: auto;
+	}
+	#basicVege_handlingDetail .imageTextArea li.oneCl.type02 .btn,
+	#basicHeating .imageTextArea li.oneCl.type02 .btn,
+	#basicFriedoil .imageTextArea li.oneCl.type02 .btn,
+	#basicVege_keeping .imageTextArea li.oneCl.type02 .btn {
+		margin-top: 20px;
+	}
+}
+
+
+/* basicVege_handlingDetailBg
+--------------------------------------------------*/
+#basicVege_handlingDetail .basicVege_handlingDetailBg,
+#basicFriedoil .basicFriedoilBoxBg,
+.basicCommonVideoBg {
+	padding: 20px 0 40px;
+	/*20191105 ISSUE-522 LIMING UPDATE*/
+	/*background: url(/wp-content/themes/ajinomoto/resources/images/common/sp/bg_wall01.jpg);*/
+}
+.basicCommonVideoBg {
+	margin-bottom: 40px;
+}
+.basicCommonVideoBg:last-child {
+	margin-bottom: 10px;
+}
+#basicVege_handlingDetail .basicVege_handlingDetailBg .inVideo,
+#basicFriedoil .basicFriedoilBoxBg .inVideo,
+.basicCommonVideoBg .inVideo {
+	position: relative;
+	height: 0;
+	max-width: 850px;
+	margin-top: 10px;
+	padding-bottom: 55.6%;
+}
+.basicCommonVideoBg .inVideo.type02 {
+	padding-bottom: 55.8%;
+}
+#basicVege_handlingDetail .basicVege_handlingDetailBg p,
+#basicFriedoil .basicFriedoilBoxBg p,
+.basicCommonVideoBg p {
+	margin-top: 1.5em;
+}
+#basicVege_handlingDetail .basicVege_handlingDetailBg .inVideo > *,
+#basicFriedoil .basicFriedoilBoxBg .inVideo > *,
+.basicCommonVideoBg .inVideo > * {
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: block;
+	width: 100%;
+	height: 100%;
+	min-width: 100%;
+	min-height: 100%;
+}
+@media only screen and (min-width:980px) {
+	#basicVege_handlingDetail .basicVege_handlingDetailBg,
+	#basicFriedoil .basicFriedoilBoxBg,
+	.basicCommonVideoBg {
+		padding: 50px 0 60px;
+	}
+	#basicVege_handlingDetail .basicVege_handlingDetailBg .inVideo,
+	#basicFriedoil .basicFriedoilBoxBg .inVideo,
+	.basicCommonVideoBg .inVideo {
+		margin-top: 20px;
+	}
+	.basicCommonVideoBg {
+		margin-bottom: 70px;
+	}
+}
+
+
+/* basicVege_handlingDetailBtns
+--------------------------------------------------*/
+#basicVege_handlingDetail .basicVege_handlingDetailBtns {
+	margin: 20px 0 30px;
+}
+#basicVege_handlingDetail .basicVege_handlingDetailBtns li + li {
+	margin-top: 15px;
+}
+#basicVege_handlingDetail .basicVege_handlingDetailBtns a {
+	max-width: 260px;
+	margin: 0 auto;
+}
+/*#basicVege_handlingDetail .basicVege_handlingDetailBtns a:after {
+	position: absolute;
+	top: 50%;
+	display: block;
+	content: '';
+	width: 5px;
+	height: 5px;
+	border-top: #fff solid 2px;
+	border-right: #fff solid 2px;
+	margin-top: -4px;
+}*/
+#basicVege_handlingDetail .basicVege_handlingDetailBtns .next a:after {
+	right: 15px;
+	transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	-webkit-transform: rotate(45deg);
+	-moz-transform: rotate(45deg);
+}
+#basicVege_handlingDetail .basicVege_handlingDetailBtns .prev a:after {
+	left: 15px;
+	transform: rotate(-135deg);
+	-ms-transform: rotate(-135deg);
+	-webkit-transform: rotate(-135deg);
+	-moz-transform: rotate(-135deg);
+}
+
+@media only screen and (min-width:980px) {
+	#basicVege_handlingDetail .basicVege_handlingDetailBtns {
+		margin: 50px 0 70px;
+	}
+	#basicVege_handlingDetail .basicVege_handlingDetailBtns ul {
+		margin-right: -20px;
+	}
+	#basicVege_handlingDetail .basicVege_handlingDetailBtns li,
+	#basicVege_handlingDetail .basicVege_handlingDetailBtns li + li {
+		-webkit-box-sizing: border-box;
+		   -moz-box-sizing: border-box;
+		        box-sizing: border-box;
+		float: right;
+		width: 50%;
+		margin: 0;
+		padding-right: 20px;
+	}
+	#basicVege_handlingDetail .basicVege_handlingDetailBtns .only li {
+		float: none;
+		width: auto;
+		max-width: 420px;
+		margin: 0 auto;
+	}
+	#basicVege_handlingDetail .basicVege_handlingDetailBtns li a {
+		max-width: none;
+	}
+}
+
+
+/* basicVege_handlingDetailRecipe
+--------------------------------------------------*/
+#basicVege_handlingDetail .basicVege_handlingDetailRecipe {
+	margin-bottom: 40px;
+}
+#basicVege_handlingDetail .basicVege_handlingDetailRecipe li a,
+#basicVege_handlingDetail .basicVege_handlingDetailRecipe li a span {
+	display: block;
+	text-decoration: none;
+}
+@media only screen and (max-width:979px) {
+	#basicVege_handlingDetail .basicVege_handlingDetailRecipe li + li {
+		margin-top: 17px;
+	}
+	#basicVege_handlingDetail .basicVege_handlingDetailRecipe li:after {
+		display: block;
+		clear: both;
+		height: 0;
+		content: '';
+	}
+	#basicVege_handlingDetail .basicVege_handlingDetailRecipe li .img {
+		float: left;
+		width: 34%;
+	}
+	#basicVege_handlingDetail .basicVege_handlingDetailRecipe li .ttl {
+		float: right;
+		width: 63%;
+		font-weight: 500;
+	}
+}
+@media only screen and (min-width:980px) {
+	#basicVege_handlingDetail .basicVege_handlingDetailRecipe {
+		position: relative;
+		margin-bottom: 60px;
+	}
+	#basicVege_handlingDetail .basicVege_handlingDetailRecipe li a {
+		margin: 0 8px;
+	}
+	#basicVege_handlingDetail .basicVege_handlingDetailRecipe li .img {
+		margin-bottom: 10px;
+	}
+	#basicVege_handlingDetail .basicVege_handlingDetailRecipe li .ttl {
+		font-weight: 500;
+	}
+	#basicVege_handlingDetail .basicVege_handlingDetailRecipe .slick-arrow {
+		position: absolute;
+		top: 0;
+		display: block;
+		border: none;
+		cursor: pointer;
+		outline: none;
+		padding: 0;
+		appearance: none;
+		background-color: transparent;
+		text-indent: -9999px;
+		width: 13px;
+		height: 100%;
+		margin-top: -24px;
+		background-repeat: no-repeat;
+		background-position: center center;
+		background-size: 100% auto;
+		cursor: pointer;
+		z-index: 10;
+	}
+	#basicVege_handlingDetail .basicVege_handlingDetailRecipe .slick-next {
+		right: -13px;
+		background-image: url(/wp-content/themes/ajinomoto/resources/images/common/sp/arw_pink01.png);
+	}
+	#basicVege_handlingDetail .basicVege_handlingDetailRecipe .slick-prev {
+		left: -13px;
+		background-image: url(/wp-content/themes/ajinomoto/resources/images/common/sp/arw_pink02.png);
+	}
+}
+
+
+/*--------------------------------------------------
+ basicQaIndex
+--------------------------------------------------*/
+#basicQaIndex .basicQaIndexBox {
+	margin-bottom: 45px;
+}
+#basicQaIndex .basicQaIndexBox li {
+	display: none;
+}
+#basicQaIndex .basicQaIndexBox li:first-child,
+#basicQaIndex .basicQaIndexBox li:nth-child(2) {
+	display: block;
+}
+#basicQaIndex .basicQaIndexBox li + li {
+	margin-top: 15px;
+}
+#basicQaIndex .basicQaIndexBox li a {
+	overflow: hidden;
+	position: relative;
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	        box-sizing: border-box;
+	display: table;
+	width: 100%;
+	height: 65px;
+	padding-right: 33px;
+	border-radius: 5px;
+	text-decoration: none;
+	background: #eda67c right top;
+	background-size: 50% 100%;
+}
+#basicQaIndex .basicQaIndexBox li a:before {
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: block;
+	content: '';
+	width: 10px;
+	height: 100%;
+	background-color: #fff;
+}
+#basicQaIndex .basicQaIndexBox li a:after {
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	        box-sizing: border-box;
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: block;
+	content: '';
+	width: 100%;
+	height: 100%;
+	border: #888 solid 1px;
+	border-radius: 5px;
+}
+#basicQaIndex .basicQaIndexBox li a span {
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	        box-sizing: border-box;
+	display: table-cell;
+	width: 100%;
+	margin-left: -1px;
+	padding: 10px 20px 10px 45px;
+	vertical-align: middle;
+	background: #fff url(/wp-content/themes/ajinomoto/resources/images/recipe/basic/qa/index/icon_q.png) no-repeat 15px center;
+	background-size: 16px auto;
+}
+#basicQaIndex .basicQaIndexBox li a span.arw {
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: block;
+	width: 100%;
+	height: 100%;
+	background: transparent;
+}
+#basicQaIndex .basicQaIndexBox li a span.arw:before,
+#basicQaIndex .basicQaIndexBox li a span.arw:after {
+	position: absolute;
+	top: 50%;
+	display: block;
+	content: '';
+}
+#basicQaIndex .basicQaIndexBox li a span.arw:before {
+	right: 9px;
+	width: 15px;
+	height: 15px;
+	margin-top: -8px;
+	background-color: #fff;
+	border-radius: 50%;
+}
+#basicQaIndex .basicQaIndexBox li a span.arw:after {
+	right: 15px;
+	width: 4px;
+	height: 4px;
+	margin-top: -3px;
+	border-top: #cc8759 solid 1px;
+	border-right: #cc8759 solid 1px;
+	transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	-webkit-transform: rotate(45deg);
+	-moz-transform: rotate(45deg);
+}
+#basicQaIndex .basicQaIndexBox .brownBtn a {
+	max-width: 150px;
+	margin: 20px auto 0;
+}
+#basicQaIndex .basicQaIndexBox .brownBtn a .txt > span span {
+	position: relative;
+	display: inline-block;
+	padding-right: 33px;
+}
+#basicQaIndex .basicQaIndexBox .brownBtn a .txt > span span:after {
+	position: absolute;
+	top: 50%;
+	right: 0;
+	display: block;
+	content: '';
+	width: 22px;
+	height: 19px;
+	margin-top: -9px;
+	background: url(/wp-content/themes/ajinomoto/resources/images/recipe/basic/qa/index/icon_panda.png) no-repeat center center;
+	background-size: 100% auto;
+}
+@media only screen and (min-width:980px) {
+	#basicQaIndex .basicQaIndexBox {
+		margin-bottom: 100px;
+	}
+	#basicQaIndex .basicQaIndexBox ul {
+		margin: -30px 0 0 -30px;
+	}
+	#basicQaIndex .basicQaIndexBox li {
+		-webkit-box-sizing: border-box;
+		   -moz-box-sizing: border-box;
+		        box-sizing: border-box;
+		float: left;
+		width: 50%;
+		padding: 30px 0 0 30px;
+	}
+	#basicQaIndex .basicQaIndexBox li + li {
+		margin-top: 0;
+	}
+	#basicQaIndex .basicQaIndexBox li a {
+		height: auto;
+	}
+	#basicQaIndex .basicQaIndexBox li a:before {
+		display: none;
+	}
+	#basicQaIndex .basicQaIndexBox li a span {
+		padding: 20px 20px 20px 45px;
+	}
+	#basicQaIndex .basicQaIndexBox .brownBtn {
+		margin-top: 40px;
+	}
+	#basicQaIndex .basicQaIndexBox .brownBtn a {
+		max-width: 350px;
+	}
+	#basicQaIndex .basicQaIndexBox .brownBtn a .txt > span span {
+		padding-right: 43px;
+	}
+	#basicQaIndex .basicQaIndexBox .brownBtn a .txt > span span:after {
+		width: 32px;
+		height: 28px;
+		margin-top: -14px;
+	}
+}
+
+
+/*--------------------------------------------------
+ basicQaDetail
+--------------------------------------------------*/
+#basicQaDetail .qTitle {
+	position: relative;
+	margin-bottom: 15px;
+	padding: 6px 0 6px 40px;
+	font-size: 5vw;
+	font-weight: 500;
+	line-height: 1.3;
+}
+#basicQaDetail .qTitle:after {
+	position: absolute;
+	top: 50%;
+	left: 0;
+	display: block;
+	content: '';
+	width: 32px;
+	height: 32px;
+	margin-top: -16px;
+	background: url(/wp-content/themes/ajinomoto/resources/images/recipe/basic/qa/index/icon_q02.png) no-repeat left center;
+	background-size: 100% auto;
+}
+#basicQaDetail .answerTxt {
+	padding: 10px;
+	border: #888 solid 1px;
+	border-radius: 7px;
+}
+#basicQaDetail .answerTxt p + .inMovie {
+	margin-top: 1.5em;
+}
+#basicQaDetail .answerTxt .inMovie {
+	position: relative;
+	width: 100%;
+	height: 0;
+	padding-bottom: 56.2%;
+}
+#basicQaDetail .answerTxt .inMovie iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+#basicQaDetail .answerTxt a {
+	margin-top: 20px;
+}
+#basicQaDetail .brownBtn {
+	margin: 30px 0;
+}
+#basicQaDetail .brownBtn a {
+	max-width: 260px;
+	margin: 0 auto;
+}
+@media only screen and (min-width:980px) {
+	#basicQaDetail .qTitle {
+		padding: 6px 0 6px 60px;
+		font-size: 20px;
+	}
+	#basicQaDetail .qTitle:after {
+		width: 44px;
+		height: 44px;
+		margin-top: -22px;
+	}
+	#basicQaDetail .answerTxt {
+		padding: 20px;
+	}
+	#basicQaDetail .brownBtn {
+		margin: 50px 0;
+	}
+	#basicQaDetail .brownBtn a {
+		max-width: 320px;
+	}
+}
+
+
+/*--------------------------------------------------
+ basicIngredients_bunryou1
+--------------------------------------------------*/
+
+/* leadArea
+--------------------------------------------------*/
+@media only screen and (min-width:980px) {
+	#basicIngredients_bunryou1 .leadArea {
+		text-align: center;
+	}
+}
+
+/* basicIngredients_bunryou1Box
+--------------------------------------------------*/
+#basicIngredients_bunryou1 .basicIngredients_bunryou1Box {
+	padding: 20px 0 40px;
+	/*20191105 ISSUE-522 LIMING UPDATE*/
+	/*background: url(/wp-content/themes/ajinomoto/resources/images/common/sp/bg_wall01.jpg);*/
+}
+#basicIngredients_bunryou1 .basicIngredients_bunryou1Box .commonAnchorList {
+	margin-bottom: 50px;
+	border-bottom: none;
+}
+#basicIngredients_bunryou1 .basicIngredients_bunryou1Box + .basicIngredients_bunryou1Box {
+	margin-top: 20px;
+}
+/* list */
+#basicIngredients_bunryou1 .list {
+	max-width: 500px;
+	margin: 0 auto;
+}
+#basicIngredients_bunryou1 .list + .list {
+	margin-top: 50px;
+}
+#basicIngredients_bunryou1 .list table {
+	width: 100%;
+	border-left: #e5e5e5 solid 1px;
+	border-top: #e5e5e5 solid 1px;
+	border-collapse:separate;
+}
+#basicIngredients_bunryou1 .list .listHead > * {
+	background-color: #cc8759;
+	text-align: center;
+	font-size: 14px;
+	color: #fff;
+	vertical-align: middle;
+}
+/*#basicIngredients_bunryou1 .list .listHead td:nth-child(1){ width: 125px; }*/
+#basicIngredients_bunryou1 .list .listHead td:nth-child(2){ width: 70px; }
+#basicIngredients_bunryou1 .list .listHead td:nth-child(3){ width: 85px; }
+#basicIngredients_bunryou1 .list.type2 .listHead td:nth-child(2){ width: 110px; }
+#basicIngredients_bunryou1 .list.type3 .listHead td:nth-child(2){ width: 90px; }
+
+#basicIngredients_bunryou1 .list tr > * {
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	        box-sizing: border-box;
+	border-right: #e5e5e5 solid 1px;
+	border-bottom: #e5e5e5 solid 1px;
+	padding: 8px 5px;
+	font-size: 12px;
+	background-color: #fff;
+}
+#basicIngredients_bunryou1 .list tr.gray > * {
+	background-color: #f3f3f3;
+}
+#basicIngredients_bunryou1 .list tr > * {
+	background-color: #fff;
+	vertical-align: top;
+}
+#basicIngredients_bunryou1 .list th {
+	position: relative;
+}
+#basicIngredients_bunryou1 .list.typeWideTh th {
+	width: 120px
+}
+#basicIngredients_bunryou1 .list th small {
+	display: block;
+	margin-top: 1em;
+	line-height: 1;
+}
+#basicIngredients_bunryou1 .list td {
+	text-align: right;
+}
+#basicIngredients_bunryou1 .listCap {
+	margin-top: 20px;
+	font-size: 12px;
+	line-height: 1.3;
+}
+#basicIngredients_bunryou1 .listCaption {
+	margin-top: 5px;
+	font-size: 3.1vw;
+}
+@media only screen and (min-width:980px) {
+	#basicIngredients_bunryou1 .basicIngredients_bunryou1Box {
+		padding: 60px 0;
+	}
+	#basicIngredients_bunryou1 .basicIngredients_bunryou1Box + .basicIngredients_bunryou1Box {
+		margin-top: 40px;
+	}
+	#basicIngredients_bunryou1 .list {
+		max-width: 640px;
+	}
+	#basicIngredients_bunryou1 .list + .list {
+		margin-top: 80px;
+	}
+	#basicIngredients_bunryou1 .list .listHead > * {
+		font-size: 17px;
+	}
+	#basicIngredients_bunryou1 .list .listHead td:nth-child(2),
+	#basicIngredients_bunryou1 .list.type2 .listHead td:nth-child(2),
+	#basicIngredients_bunryou1 .list.type3 .listHead td:nth-child(2){ width: auto; }
+	#basicIngredients_bunryou1 .list .listHead td:nth-child(3){ width: auto; }
+	#basicIngredients_bunryou1 .list tr > * {
+		padding: 10px 10px;
+		font-size: 17px;
+	}
+	#basicIngredients_bunryou1 .list td {
+		text-align: right;
+	}
+	#basicIngredients_bunryou1 .listCap {
+		margin-top: 40px;
+		font-size: 14px;
+		line-height: 1.5;
+	}
+	#basicIngredients_bunryou1 .listCaption {
+		margin-top: 15px;
+		font-size: 14px;
+	}
+}
+
+
+/*--------------------------------------------------
+ basicHeating
+--------------------------------------------------*/
+
+/* leadArea
+--------------------------------------------------*/
+#basicHeating .leadArea {
+	margin-bottom: 10px;
+}
+@media only screen and (min-width:980px) {
+	#basicHeating .leadArea {
+		margin-bottom: 30px;
+		text-align: center;
+	}
+}
+
+/*--------------------------------------------------
+ basicFriedoil
+--------------------------------------------------*/
+
+/* leadArea
+--------------------------------------------------*/
+#basicFriedoil .leadArea {
+	margin-bottom: 10px;
+}
+@media only screen and (min-width:980px) {
+	#basicFriedoil .leadArea {
+		margin-bottom: 30px;
+		text-align: center;
+	}
+}
+
+/*--------------------------------------------------
+ basicVege_keeping
+--------------------------------------------------*/
+
+/* leadArea
+--------------------------------------------------*/
+#basicVege_keeping .leadArea {
+	margin-bottom: 10px;
+}
+@media only screen and (max-width:979px) {
+	#basicVege_keeping .basicVege_keepingBox {
+		margin-top: -36px;
+		padding-top: 36px;
+	}
+}
+@media only screen and (min-width:980px) {
+	#basicVege_keeping .leadArea {
+		margin-bottom: 30px;
+		text-align: center;
+	}
+}

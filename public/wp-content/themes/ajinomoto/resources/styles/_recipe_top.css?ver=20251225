@@ -1,0 +1,1553 @@
+@charset "utf-8";
+/**
+ * style.css
+ */
+
+@media only screen and (min-width:980px) {}
+
+.deviceHomeAdd {
+	position: fixed;
+	top: 0;
+	left: 0;
+	display: none;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,0.3);
+	z-index: 500;
+}
+.deviceHomeAdd .innerPos {
+	position: absolute;
+	bottom: 20px;
+	left: 0;
+}
+.deviceHomeAdd .innerContent {
+	position: relative;
+	margin: 0 15px;
+	padding: 20px 15px;
+	background: url(/wp-content/themes/ajinomoto/resources/images/common/sp/bg_wall01.jpg);
+	border-radius: 5px;
+}
+.deviceHomeAdd .innerContent:before {
+	position: absolute;
+	top: 100%;
+	left: 50%;
+	display: block;
+	content: '';
+	width: 16px;
+	height: 14px;
+	margin-left: -8px;
+	background: url(/wp-content/themes/ajinomoto/resources/images/common/sp/arw_wall.png) no-repeat center center;
+	background-size: 100% auto;
+}
+.deviceHomeAdd .innerContent .img {
+	float: left;
+	width: 28%;
+}
+.deviceHomeAdd .innerContent .txt {
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	        box-sizing: border-box;
+	float: right;
+	width: 66%;
+	font-size: 4vw;
+	padding-right: 20px;
+}
+.deviceHomeAdd .innerContent .close {
+	position: absolute;
+	top: 13px;
+	right: 13px;
+	width: 14px;
+	height: 14px;
+	cursor: pointer;
+}
+.deviceHomeAdd .innerContent .close:before,
+.deviceHomeAdd .innerContent .close:after {
+	position: absolute;
+	top: 50%;
+	left: 0;
+	display: block;
+	content: '';
+	width: 100%;
+	height: 2px;
+	margin-top: -1px;
+	background-color: #888;
+}
+
+.deviceHomeAdd .innerContent .close:before {
+	transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	-webkit-transform: rotate(45deg);
+	-moz-transform: rotate(45deg);
+}
+.deviceHomeAdd .innerContent .close:after {
+	transform: rotate(-45deg);
+	-ms-transform: rotate(-45deg);
+	-webkit-transform: rotate(-45deg);
+	-moz-transform: rotate(-45deg);
+}
+
+
+/* topBox
+--------------------------------------------------*/
+#recipeIndex .topBox {
+	position: relative;
+}
+#recipeIndex .topBox .wrap1200 {
+	position: relative;
+	padding: 0;
+}
+
+
+/* meta */
+#recipeIndex .topBox .meta {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	overflow: hidden;
+}
+#recipeIndex .topBox .meta .metaInner {
+	position: relative;
+	z-index: 3;/*AP_ISSUE-271 2019-01-21 WANG_BIN UPDATE FROM DESIGN COMPANY. */
+}
+#recipeIndex .topBox .meta:before,
+#recipeIndex .topBox .meta:after,
+#recipeIndex .topBox .meta .metaInner:after {
+	position: absolute;
+	display: block;
+	content: '';
+	background: url(/wp-content/themes/ajinomoto/resources/images/common/sp/bg_wall01.jpg);
+	z-index: 1;
+}
+#recipeIndex .topBox .meta:before,
+#recipeIndex .topBox .meta .metaInner:after {
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 50%;
+}
+#recipeIndex .topBox .meta:before,
+#recipeIndex .topBox .meta:after {
+/*	box-shadow:0px 0px 6px 3px #ebebeb;
+	-moz-box-shadow:0px 0px 6px 3px #ebebeb;
+	-webkit-box-shadow:0px 0px 6px 3px #ebebeb;
+*/
+}
+#recipeIndex .topBox .meta:after {
+	bottom: 0;
+	left: 50%;
+	width: 140%;
+	height: 0;
+	padding-bottom: 140%;
+	margin: 0 0 1.5% -70%;
+	border-radius: 50%;
+}
+#recipeIndex .topBox .meta .inTtl {
+	position: relative;
+	text-align: center;
+	z-index: 2;
+}
+#recipeIndex .topBox .meta .inTtl span {
+	position: relative;
+	display: inline-block;
+	font-weight: 500;
+	padding: 2% 11.5% 8%;
+	line-height: 1.3;
+}
+#recipeIndex .topBox .meta .inTtl span strong {
+	display: block;
+	font-weight: 500;
+	font-size: 5vw;
+}
+#recipeIndex .topBox .meta .inTtl span img {
+	position: absolute;
+	top: 12%;
+	left: 5%;
+	display: block;
+	width: 12%;
+}
+/*AP_ISSUE-271 2019-01-21 WANG_BIN UPDATE FROM DESIGN COMPANY. START*/
+
+/* type02 */
+#recipeIndex .topBox .meta.type02:before,
+#recipeIndex .topBox .meta.type02:after,
+#recipeIndex .topBox .meta.type02 .metaInner:after {
+	display: none;
+}
+/*#recipeIndex .topBox .meta.type02:before,
+#recipeIndex .topBox .meta.type02:after {
+	box-shadow: none;
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+}*/
+#recipeIndex .topBox .meta.type02 .sq {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 2;
+	opacity: 0.9;
+}
+#recipeIndex .topBox .meta.type02 .sq .bg01 {
+	overflow: hidden;
+	position: absolute;
+	top: 50%;
+	width: 100%;
+	height: 50%;
+	display: block;
+}
+#recipeIndex .topBox .meta.type02 .sq .bg01:after {
+	position: absolute;
+	display: block;
+	content: '';
+	bottom: 0;
+	left: 50%;
+	width: 140%;
+	height: 0;
+	padding-bottom: 140%;
+	margin: 0 0 1.5% -70%;
+	border-radius: 50%;
+	background: url(/wp-content/themes/ajinomoto/resources/images/common/sp/bg_wall01.jpg);
+	z-index: 1;
+	/*box-shadow:0px 0px 6px 3px #ebebeb;
+	-moz-box-shadow:0px 0px 6px 3px #ebebeb;
+	-webkit-box-shadow:0px 0px 6px 3px #ebebeb;*/
+}
+#recipeIndex .topBox .meta.type02 .sq .bg02 {
+	overflow: hidden;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	height: 50%;
+	display: block;
+	background: url(/wp-content/themes/ajinomoto/resources/images/common/sp/bg_wall01.jpg);
+	/*box-shadow:0px 0px 6px 3px #ebebeb;
+	-moz-box-shadow:0px 0px 6px 3px #ebebeb;
+	-webkit-box-shadow:0px 0px 6px 3px #ebebeb;*/
+}
+#recipeIndex .topBox .meta.type02 small {
+	display: block;
+	margin-top: 1vw;
+	padding-top: 1.98vw;
+	background: url(/wp-content/themes/ajinomoto/resources/images/common/sp/bdr_dot01.png) repeat-x left top;
+	background-size: 6px auto;
+}
+#recipeIndex .topBox .meta.type02 + .wrap1200 > .images,
+#recipeIndex .topBox .meta.type03 + .wrap1200 > .images {
+	padding-top: 0;
+}
+/* type03 */
+#recipeIndex .topBox .meta.type03:before,
+#recipeIndex .topBox .meta.type03:after,
+#recipeIndex .topBox .meta.type03 .metaInner:after {
+	display: none;
+}
+#recipeIndex .topBox .meta.type03 .sq {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 2;
+	opacity: 0.8;
+}
+#recipeIndex .topBox .meta.type03 .sq .bg01 {
+	overflow: hidden;
+	position: absolute;
+	top: 50%;
+	width: 100%;
+	height: 50%;
+	display: block;
+	z-index: 2;
+}
+#recipeIndex .topBox .meta.type03 .sq .bg01:after {
+	position: absolute;
+	display: block;
+	content: '';
+	bottom: 0;
+	left: 50%;
+	width: 140%;
+	height: 0;
+	padding-bottom: 140%;
+	margin: 0 0 1.5% -70%;
+	border-radius: 50%;
+	background: url(/wp-content/themes/ajinomoto/resources/images/common/sp/bg_wall01.jpg);
+}
+#recipeIndex .meta.type03 .sq .bg02 {
+	overflow: hidden;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	height: 50%;
+	display: block;
+	background: url(/wp-content/themes/ajinomoto/resources/images/common/sp/bg_wall01.jpg);
+}
+@media only screen and (min-width:980px) {
+	#recipeIndex .topBox .meta:before,
+	#recipeIndex .topBox .meta .metaInner:after {
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 45px;
+	}
+	#recipeIndex .topBox .meta:after {
+		bottom: 5px;
+		width: 1600px;
+		height: 1600px;
+		margin-left: -800px;
+	}
+	#recipeIndex .topBox .meta .inTtl span {
+		font-size: 20px;
+		padding: 15px 60px 45px;
+	}
+	#recipeIndex .topBox .meta .inTtl span strong {
+		font-size: 24px;
+	}
+	#recipeIndex .topBox .meta.type02 .inTtl span {
+		padding-bottom: 100px;
+	}
+	#recipeIndex .topBox .meta.type02 .sq {
+		top: 0;
+	}
+	#recipeIndex .topBox .meta.type02 .sq .bg01 {
+		top: 55px;
+	}
+	#recipeIndex .topBox .meta.type02 .sq .bg01:after {
+		top: auto;
+		bottom: 0;
+		width: 1600px;
+		height: 1600px;
+		margin-left: -800px;
+	}
+	#recipeIndex .topBox .meta.type02 .sq .bg02 {
+		height: 55px;
+	}
+	#recipeIndex .topBox .meta.type02 small {
+		margin-top: 5px;
+		padding-top: 7px;
+		font-size: 16px;
+	}
+	#recipeIndex .topBox .meta.type02 .inTtl span img {
+		left: 7%;
+	}
+}
+/*AP_ISSUE-271 2019-01-21 WANG_BIN UPDATE FROM DESIGN COMPANY. END*/
+
+/* images */
+#recipeIndex .images {
+	padding-top: 9%;
+}
+#recipeIndex .images a {
+	position: relative;
+	float: left;
+	width: 50%;
+	display: block;
+}
+#recipeIndex .images a:first-child {
+	width: 100%;
+}
+/*  2019/1/7　TP永井
+*AP_ISSUE-292:サイト改善：おすすめ献立のレシピ名の文字縁の色を変更したい
+* #444 を全て#666に変更
+*  2019/6/18　TP石橋
+* #666 を全て#000に変更
+*/
+/*  2019/7/11　TP石橋
+* #000 を全て#666にもどす
+*/
+#recipeIndex .images a span {
+	height:55px;
+	overflow: hidden;
+	position: absolute;
+	bottom: 10px;
+	left: 12px;
+	/*display: block;*/
+	display: none;
+	color: #fff;
+	font-weight: 500;
+	text-shadow: #666 2px 0px, #666 -2px 0px, #666 0px -2px, #666 0px 2px, #666 2px 2px, #666 -2px 2px, #666 2px -2px, #666 -2px -2px, #666 1px 2px, #666 -1px 2px, #666 1px -2px, #666 -1px -2px, #666 2px 1px, #666 -2px 1px, #666 2px -1px, #666 -2px -1px;
+}
+/* 以上 */
+@media only screen and (min-width:980px) {
+	#recipeIndex .images {
+		padding-top: 45px;
+	}
+	#recipeIndex .images a {
+		overflow: hidden;
+		position: absolute;
+		top: 0;
+		left: 64.52%;
+		float: none;
+		width: 35.48%;
+		height: 50%;
+	}
+	#recipeIndex .images a:first-child {
+		position: static;
+		width: 64.52%;
+		height: auto;
+	}
+	#recipeIndex .images a:nth-child(3) {
+		top: 50%;
+	}
+	#recipeIndex .images a span {
+		height:61px;
+	}
+}
+
+
+
+
+/* lead */
+#recipeIndex .lead {
+	margin: 12px auto 20px;
+}
+@media only screen and (min-width:980px) {
+	#recipeIndex .lead {
+		margin: 20px auto 40px;
+	}
+}
+
+
+/* weeklyBtn */
+#recipeIndex .weeklyBtn {
+	margin-bottom: 40px;
+}
+#recipeIndex .weeklyBtn a {
+	max-width: 260px;
+	margin: 0 auto;
+}
+@media only screen and (min-width:980px) {
+	#recipeIndex .weeklyBtn {
+		margin-bottom: 60px;
+	}
+	#recipeIndex .weeklyBtn a {
+		max-width: 310px;
+	}
+}
+
+
+
+
+/* recipeIndexList */
+#recipeIndex .recipeIndexList li + li {
+	margin-top: 15px;
+}
+#recipeIndex .recipeIndexList li:after {
+	display: block;
+	clear: both;
+	height: 0;
+	content: '';
+}
+#recipeIndex .recipeIndexList a {
+	overflow: hidden;
+	position: relative;
+	display: block;
+	font-size: 3.54vw;
+	font-weight: 500;
+	text-decoration: none;
+	border-radius: 5px;
+}
+#recipeIndex .recipeIndexList a > span {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	display: block;
+	width: 100%;
+	padding: 0 10px;
+	background-color: rgba(255,255,255,0.7);
+}
+#recipeIndex .recipeIndexList a > span > span {
+	display: table;
+	height: 3.2em;
+	width: 100%;
+}
+#recipeIndex .recipeIndexList a > span > span > span {
+	display: table-cell;
+	vertical-align: middle;
+	line-height: 1.3;
+}
+#recipeIndex .recipeIndexList li.inCol2 > span {
+	float: right;
+	width: 47.73%;
+	display: block;
+}
+#recipeIndex .recipeIndexList li.inCol2 > span:first-child {
+	float: left;
+}
+@media only screen and (min-width:980px) {
+	#recipeIndex .recipeIndexList ul {
+		margin: -20px 0 0 -30px;
+	}
+	#recipeIndex .recipeIndexList li {
+		-webkit-box-sizing: border-box;
+		   -moz-box-sizing: border-box;
+		        box-sizing: border-box;
+		float: left;
+		width: 50%;
+		padding: 20px 0 0 30px;
+	}
+	#recipeIndex .recipeIndexList li + li {
+		margin-top: 0;
+	}
+	#recipeIndex .recipeIndexList a {
+		font-size: 17px;
+		border-radius: 10px;
+	}
+	#recipeIndex .recipeIndexList a > span {
+		padding: 0 15px;
+	}
+	#recipeIndex .recipeIndexList a > span > span {
+		height: 3.5em;
+	}
+}
+
+/*ohara*/
+#recipeIndex .recipeIndexList a > span > span > span{
+	height: 45px;
+	display: none;
+}
+
+/*iphone5/5s*/
+@media screen and (max-width: 414px) {
+	#recipeIndex .recipeIndexList a > span > span > span{
+		height: 30px;
+		display: none;
+	}
+}
+
+/*ipad用*/
+@media screen and (min-width: 415px)  and (max-width: 979px) {
+	#recipeIndex .images a span{
+		height: 100px;
+		display: none;
+	}
+}
+
+
+
+.attentionBox,
+.recommendBox  {
+	margin-bottom: 40px;
+}
+@media only screen and (min-width:980px) {
+	.attentionBox,
+	.recommendBox {
+		margin-bottom: 60px;
+	}
+}
+
+
+.recommendBox .circleTitle01 span,
+.recommendBox .recipeTitle span {
+	font-size: 4.16vw;
+	font-weight: 500;
+}
+
+@media only screen and (max-width:980px) {
+		.circleTitle01 > * small {
+		display: block;
+		margin-top: 2px;
+		font-size: 4.16vw;
+	}
+
+	.recommendBox .circleTitle01 span,
+	.recommendBox .recipeTitle span {
+		font-size: 5.41vw;
+	}
+}
+
+@media only screen and (min-width:980px) {
+	.recommendBox .circleTitle01 span,
+	.recommendBox .recipeTitle span {
+		font-size: 30px;
+	}
+}
+
+
+/* recipeIndexCampaignSlide
+--------------------------------------------------*/
+#recipeIndex .recipeIndexCampaignSlide {
+	position: relative;
+	margin-bottom: 40px;
+}
+#recipeIndex .recipeIndexCampaignSlide li a {
+	display: block;
+	margin: 0 5px;
+	text-decoration: none;
+	background-color: #faf1e1;
+}
+#recipeIndex .recipeIndexCampaignSlide li * {
+	display: block;
+}
+#recipeIndex .recipeIndexCampaignSlide li img {
+	width: 100%;
+}
+#recipeIndex .recipeIndexCampaignSlide li .texts {
+	padding: 10px 13px;
+}
+#recipeIndex .recipeIndexCampaignSlide li .ttl {
+	font-weight: 500;
+}
+#recipeIndex .recipeIndexCampaignSlide .slick-dots {
+	margin-top: 10px;
+	text-align: center;
+}
+#recipeIndex .recipeIndexCampaignSlide .slick-dots li {
+	display: inline-block;
+	margin: 4px;
+}
+#recipeIndex .recipeIndexCampaignSlide .slick-dots li button {
+	display: block;
+	border: none;
+	cursor: pointer;
+	outline: none;
+	padding: 0;
+	appearance: none;
+	text-indent: -9999px;
+	width: 8px;
+	height: 8px;
+	background-color: #e5e5e5;
+	border-radius: 50%;
+}
+#recipeIndex .recipeIndexCampaignSlide .slick-dots li.slick-active button {
+	background-color: #ed1b24;
+}
+@media only screen and (min-width:980px) {
+	#recipeIndex .recipeIndexCampaignSlide {
+		margin-bottom: 60px;
+	}
+	#recipeIndex .recipeIndexCampaignSlide li a {
+		max-width: 310px;
+		margin: 0 8px;
+	}
+	#recipeIndex .recipeIndexCampaignSlide li * {
+		display: block;
+	}
+	#recipeIndex .recipeIndexCampaignSlide li img {
+		width: 100%;
+	}
+	#recipeIndex .recipeIndexCampaignSlide li .texts {
+		padding: 13px 20px 20px;
+	}
+	#recipeIndex .recipeIndexCampaignSlide .slick-dots {
+		margin-top: 25px;
+	}
+	#recipeIndex .recipeIndexCampaignSlide .slick-dots li {
+		margin: 6px;
+	}
+	#recipeIndex .recipeIndexCampaignSlide .slick-dots li button {
+		width: 14px;
+		height: 14px;
+	}
+	#recipeIndex .recipeIndexCampaignSlide .slick-arrow {
+		position: absolute;
+		top: 110px;
+		display: block;
+		border: none;
+		cursor: pointer;
+		outline: none;
+		padding: 0;
+		appearance: none;
+		background-color: transparent;
+		text-indent: -9999px;
+		width: 48px;
+		height: 48px;
+		background-repeat: no-repeat;
+		background-position: center center;
+		background-size: cover;
+		cursor: pointer;
+		z-index: 10;
+	}
+	#recipeIndex .recipeIndexCampaignSlide .slick-prev {
+		left: 0;
+		background-image: url(/wp-content/themes/ajinomoto/resources/images/recipe/menu/index/arw_01.png);
+	}
+	#recipeIndex .recipeIndexCampaignSlide .slick-next {
+		right: 0;
+		background-image: url(/wp-content/themes/ajinomoto/resources/images/recipe/menu/index/arw_02.png);
+	}
+}
+
+/* bannerBox
+--------------------------------------------------*/
+#recipeIndex .bannerBox {
+	margin-bottom: 40px;
+}
+/* #recipeIndex .bannerBox .inList {
+	padding-top: 40px;
+	border-top: #fb8079 solid 1px;
+	text-align: center;
+} */
+#recipeIndex .bannerBox .inList li + li {
+	margin-top: 13px;
+	padding-top: 13px;
+	background: url(/wp-content/themes/ajinomoto/resources/images/common/sp/dot.png) repeat-x left top;
+	background-size: auto 2px;
+}
+/* #recipeIndex .bannerBox .inList li:nth-child(5),
+#recipeIndex .bannerBox .inList li:nth-child(6) {
+	background: none;
+	border-top: #fb8079 solid 1px;
+} */
+@media only screen and (min-width:980px) {
+	#recipeIndex .bannerBox {
+		margin-bottom: 60px;
+	}
+/* 	#recipeIndex .bannerBox .inList {
+		overflow: hidden;
+		padding-top: 60px;
+		border-top: #fb8079 solid 3px;
+	} */
+	#recipeIndex .bannerBox .inList ul {
+		margin: -30px 0 0 -30px;
+	}
+	#recipeIndex .bannerBox .inList li {
+		position: relative;
+		-webkit-box-sizing: border-box;
+		   -moz-box-sizing: border-box;
+		        box-sizing: border-box;
+		float: left;
+		width: 50%;
+		padding: 30px 0 0 30px;
+	}
+	#recipeIndex .bannerBox .inList li + li {
+		margin-top: 0;
+		padding-top: 30px;
+		border-top: none;
+		background: none;
+	}
+	#recipeIndex .bannerBox .inList li:nth-child(3),
+	#recipeIndex .bannerBox .inList li:nth-child(4) {
+		margin-top: 20px;
+		padding-top: 20px;
+	}
+	#recipeIndex .bannerBox .inList li:nth-child(3):after {
+		position: absolute;
+		top: 0;
+		left: 0;
+		display: block;
+		content: '';
+		width: 200%;
+		height: 3px;
+		background: url(/wp-content/themes/ajinomoto/resources/images/common/sp/dot.png) repeat-x left bottom;
+		background-size: auto 100%;
+	}
+/* 	#recipeIndex .bannerBox .inList li:nth-child(5),
+	#recipeIndex .bannerBox .inList li:nth-child(6) {
+		margin-top: 50px;
+		padding-top: 50px;
+		border-top: #fb8079 solid 3px;
+	} */
+}
+
+/* snsAcountArea
+--------------------------------------------------*/
+#recipeIndex .snsAcountArea {
+	padding: 30px 0 0;
+}
+#recipeIndex .snsAcountArea .btns {
+	padding-bottom: 20px;
+	background: url(/wp-content/themes/ajinomoto/resources/images/common/sp/dot.png) repeat-x left bottom;
+	background-size: auto 2px;
+}
+
+@media only screen and (min-width:980px) {
+	#recipeIndex .snsAcountArea {
+		padding: 55px 0 15px;
+	}
+	#recipeIndex .snsAcountArea .btns {
+		padding-bottom: 50px;
+		background-size: auto 3px;
+	}
+}
+
+
+/* floatbnr
+--------------------------------------------------*/
+.recipeIndexFloatbnr {
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	        box-sizing: border-box;
+	position: fixed;
+	bottom: -150px;
+	left: 0;
+	width: 100%;
+	transition: 0.5s;
+	-webkit-transition: 0.5s;
+	z-index: 200;
+}
+.recipeIndexFloatbnr.on {
+	bottom: 0;
+}
+.recipeIndexFloatbnr.off {
+	bottom: -150px !important;
+}
+.recipeIndexFloatbnr .floatbnrInner {
+	position: relative;
+	margin: 0 auto;
+}
+.recipeIndexFloatbnr .floatbnrInner img {
+	width: 100%;
+}
+.recipeIndexFloatbnr .floatbnrInner .close {
+	position: absolute;
+	top: -25px;
+	right: 3px;
+	display: block;
+	width: 20px;
+	font-size: 10px;
+	font-weight: 900;
+	color: #f81e1e;
+	background-color: #fff;
+	border: #f81e1e solid 1px;
+	line-height: 20px;
+	text-align: center;
+	border-radius: 50%;
+	cursor: pointer;
+}
+@media only screen and (min-width:980px) {
+	.recipeIndexFloatbnr {
+		padding-left: 270px;
+	}
+	.recipeIndexFloatbnr .floatbnrInner {
+		max-width: 720px;
+		padding: 10px 30px 0;
+	}
+	.recipeIndexFloatbnr .floatbnrInner .close {
+		top: 0;
+		right: 15px;
+		width: 20px;
+		border: #f81e1e solid 2px;
+		line-height: 20px;
+	}
+}
+
+
+
+.snsArea .inTxt {
+	display: block;
+	max-width: 240px;
+	margin: 15px auto 0;
+}
+@media only screen and (min-width:980px) {
+	.snsArea .inTxt {
+		max-width: 335px;
+		margin: 20px auto 0;
+	}
+}
+
+.popularityFild {
+	padding: 30px 0;
+	background: url(/wp-content/themes/ajinomoto/resources/images/common/sp/bg_wall01.jpg);
+}
+/* 2019/06/22 AP_ISSUE-381 Add Start */
+.popularityFild + .popularityFild {
+	padding-top: 15px;
+}
+/* 2019/06/22 AP_ISSUE-381 Add End */
+.popularity .inWrap {
+	max-width: 1060px;
+	margin: 0 auto;
+}
+.imgtxtrecipe {
+	margin-top: 32px;
+	width:245px;
+	height: 30px;
+}
+.popularity ul {
+	position: relative;
+}
+.popularity ul li {
+	box-sizing: border-box;
+	position: relative;
+	float: left;
+	width: 20%;
+}
+.popularity ul li + li:before {
+	position: absolute;
+	top: 15%;
+	left: 0;
+	display: block;
+	content: '';
+	width: 2px;
+	height: 80%;
+	background: url(/wp-content/themes/ajinomoto/resources/images/common/sp/bdr_dot02.png) repeat-y left bottom;
+	background-size: 2px auto;
+	z-index: 2;
+}
+.popularity ul li a {
+	position: relative;
+	box-sizing: border-box;
+	overflow: hidden;
+	display: table;
+	width: 100%;
+	background-position:20px 15px;
+	background-repeat: no-repeat;
+	height: 60px;
+	text-align: center;
+	text-decoration: none;
+	font-weight: bold;
+	background-color: #fff;
+}
+/* 2019/06/22 AP_ISSUE-381 Add Start */
+.popularity ul li > small {
+	display: block;
+	margin-top: 5px;
+	text-align: right;
+	font-size: 8px;
+	position: absolute;
+	top: 100%;
+	right: 0;
+}
+/* 2019/06/22 AP_ISSUE-381 Add End */
+.noT .popularity ul li a:hover {
+	background-color: #ffd9dc;
+}
+.popularity ul li a .txt {
+	/* 2019/06/22 AP_ISSUE-381 Add Start */
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	        box-sizing: border-box;
+	/* 2019/06/22 AP_ISSUE-381 Add End */
+	display: table-cell;
+	vertical-align: middle;
+}
+/* 2019/06/22 AP_ISSUE-381 Add Start */
+.popularity ul li a .txt small {
+	line-height: 1;
+	font-size: 10px;
+	padding-bottom: 5px;
+}
+.popularity ul li.wide .txt {
+	padding-left: 2.3em;
+}
+/* 2019/06/22 AP_ISSUE-381 Add End */
+.popularity ul li a .ico {
+	position: absolute;
+	top: 50%;
+	left: 20px;
+	display: block;
+	line-height: 0;
+	text-align: left;
+	transform: translateY(-50%);
+}
+@media only screen and (max-width:980px) {
+	/* 2019/06/22 AP_ISSUE-381 Add */
+	.popularityFild + .popularityFild {
+		padding-top: 0;
+	}
+	.popularity ul {
+		position: relative;
+		margin: 0 13px;
+		background-color: #fff;
+		border-radius: 5px;
+	}
+	.popularity ul li:after {
+		position: absolute;
+		bottom: 0;
+		left: 2%;
+		height: 2px;
+		width: 96%;
+		display: block;
+		content: '';
+		background: url(/wp-content/themes/ajinomoto/resources/images/common/sp/bdr_dot01.png) repeat-x left bottom;
+		background-size: auto 2px;
+		z-index: 2;
+	}
+	.popularity ul li + li:before {
+		display: none;
+	}
+	.popularity ul li:nth-child(odd):before {
+		position: absolute;
+		top: 2%;
+		left: auto;
+		right: 0;
+		height: 96%;
+		display: block;
+		content: '';
+		width: 2px;
+		background: url(/wp-content/themes/ajinomoto/resources/images/common/sp/bdr_dot02.png) repeat-y left bottom;
+		background-size: 2px auto;
+		z-index: 2;
+	}
+	.popularity ul li.spBgNon:after,
+	.popularity ul li:last-child:after {
+		display: none;
+	}
+	.popularity ul li {
+		padding: 0;
+	}
+	.popularity ul li a {
+		height: auto;
+		border-radius: 0 !important;
+		padding: 10px 0 10px 13px;
+		background-color: transparent !important;
+	}
+	.popularity ul li a .ico {
+		left: 10px;
+		width: 20%;
+	}
+	.popularity ul li a .ico img {
+		max-height: 1.4em;
+	}
+	/* 2019/06/22 AP_ISSUE-381 Add Start */
+	.popularity ul.col4 li {
+		width: 50%;
+	}
+	.popularity ul li.wide .txt {
+		padding-left: 1em;
+	}
+	/* 2019/06/22 AP_ISSUE-381 Add End */
+}
+
+.popularityModal .modalTable {
+	height: 100%;
+}
+.popularityModal .modalInner {
+	position: relative;
+	max-width: 680px;
+	margin: 0 auto;
+	padding: 5vw 0;
+	border-radius: 0;
+	background: url(data:image/gif;base64,R0lGODlhCAAIAIAAAP///+7u7iH/C1hNUCBEYXRhWE1QPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNi4wLWMwMDIgNzkuMTY0MzYwLCAyMDIwLzAyLzEzLTAxOjA3OjIyICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtbG5zOnhtcD0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLyIgeG1wTU06T3JpZ2luYWxEb2N1bWVudElEPSJ4bXAuZGlkOjc5NzlhNWVlLTQzYzQtNDliMC05ZGY1LThhOTk4ZjEwNTZiZiIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDoyREZBMDRGREEzRUIxMUVBQjE1OUFFN0JGMUYxQjFCMCIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDoyREZBMDRGQ0EzRUIxMUVBQjE1OUFFN0JGMUYxQjFCMCIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ0MgMjAxOSAoTWFjaW50b3NoKSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOmE1ZjVkMmFhLTJhNTItNGY4Ni1hMTNjLTkyMGUwOThjNWE3ZiIgc3RSZWY6ZG9jdW1lbnRJRD0iYWRvYmU6ZG9jaWQ6cGhvdG9zaG9wOjY3YTUxNDNhLTgwYzctYTA0Ny1iZGEwLTBhOGE3NDIxM2UwYiIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PgH//v38+/r5+Pf29fTz8vHw7+7t7Ovq6ejn5uXk4+Lh4N/e3dzb2tnY19bV1NPS0dDPzs3My8rJyMfGxcTDwsHAv769vLu6ubi3trW0s7KxsK+urayrqqmop6alpKOioaCfnp2cm5qZmJeWlZSTkpGQj46NjIuKiYiHhoWEg4KBgH9+fXx7enl4d3Z1dHNycXBvbm1sa2ppaGdmZWRjYmFgX15dXFtaWVhXVlVUU1JRUE9OTUxLSklIR0ZFRENCQUA/Pj08Ozo5ODc2NTQzMjEwLy4tLCsqKSgnJiUkIyIhIB8eHRwbGhkYFxYVFBMSERAPDg0MCwoJCAcGBQQDAgEAACH5BAAAAAAALAAAAAAIAAgAAAINjANwl9uLFJOOwnpTAQA7);
+}
+/* 2019/06/22 AP_ISSUE-381 Add Start */
+.popularityModal .inCap {
+	margin-top: 10px;
+	font-size: 10px;
+	text-align: right;
+}
+/* 2019/06/22 AP_ISSUE-381 Add End */
+.popularityModal .popularityModalContents dt {
+	margin-bottom: 3vw;
+	font-size: 5.42vw;
+	font-weight: bold;
+	text-align: center;
+}
+.popularityModal .popularityModalContents dt > * {
+	display: inline-block;
+	vertical-align: middle;
+}
+/* 2019/06/22 AP_ISSUE-381 Add Start */
+.popularityModal .popularityModalContents dt > small {
+	padding: 0 0 5px 5px;
+	font-size: 50%;
+	vertical-align: bottom;
+}
+/* 2019/06/22 AP_ISSUE-381 Add End */
+.popularityModal .popularityModalContents dt ul {
+	display: flex;
+	justify-content: center;
+}
+.popularityModal .bigTitle_uline {
+	margin-bottom: 0;
+}
+.popularityModal .bigTitle_uline:before {
+	width: 85px;
+}
+.popularityModal .popularityModalContents dt .ico {
+	margin-right: 2.7vw;
+	width: 5.5vw;
+	transform: translateY(20%);
+}
+.popularityModal .popularityModalContents dt .title {
+	font-weight: 410;
+	font-size: 18px;
+	margin: auto 0;
+}
+.popularityModal .popularityModalContents dd {
+	padding: 0 2vw;
+}
+.popularityModal .popularityModalContents dd ul {
+	margin: 1vw -1vw 1vw 1vw;
+	display: flex;
+	flex-wrap: wrap;
+}
+.popularityModal .popularityModalContents dd li {
+	position: relative;
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	        box-sizing: border-box;
+	width: 23.33%;
+	display: flex;
+	padding: 3vw 0 0 0.5vw;
+	margin: 0.5% 5%;
+	vertical-align: top;
+}
+.popularityModal .popularityModalContents dd .wide {
+	width: 50%;
+}
+.popularityModal .popularityModalContents .arrow {
+	position: relative;
+}
+.popularityModal .popularityModalContents a {
+	font-size: 14px;
+	font-weight: 400;
+	text-decoration: none;
+}
+.popularityModal .popularityModalContents .arrow::before {
+	content: "";
+	position: absolute;
+	top: 32%;
+	left: -16px;
+	-webkit-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	transform: rotate(45deg);
+	width: 5px;
+	height: 5px;
+	border-top: 1px solid #000000;
+	border-right: 1px solid #000000;
+}
+.popularityModal .modalInner .mdClose {
+    top: -35px;
+	right: 0;
+	width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+.popularityModal .modalInner .mdClose:before,
+.popularityModal .modalInner .mdClose:after {
+	background-color: #ffffff;
+}
+@media only screen and (min-width:980px) {
+	.popularityModal .modalInner {
+		min-width: 860px;
+		padding: 30px 30px;
+	}
+	.popularityModal .bigTitle_uline {
+		margin-bottom: 30px;
+	}
+	.popularityModal .bigTitle_uline:before {
+		width: 115px;
+	}
+	.popularityModal .popularityModalContents dt {
+		margin-bottom: 20px;
+		font-size: 26px;
+	}
+	.popularityModal .popularityModalContents dt .ico {
+		margin-right: 20px;
+		width: 35px;
+		transform: translateY(15%);
+	}
+	.popularityModal .popularityModalContents dt .title {
+		font-weight: 500;
+		font-size: 25px;
+	}
+	.popularityModal .popularityModalContents dd {
+		padding: 0;
+	}
+	.popularityModal .popularityModalContents dd ul {
+		margin: 0 -20px 0 40px;
+	}
+	.popularityModal .popularityModalContents dd li {
+		width: 14%;
+		padding: 0 0;
+		margin: 13px 1.3%;
+		vertical-align: top;
+	}
+	.popularityModal .popularityModalContents a {
+		font-size: 18px;
+		font-weight: 420;
+	}
+	.popularityModal .popularityModalContents dd .wide {
+		width: 25%;
+	}
+	.popularityModal .popularityModalContents .arrow::before {
+		border-top: 2px solid #000000;
+		border-right: 2px solid #000000;
+		top: 25%;
+		left: -22px;
+		width: 8px;
+		height: 8px;
+	}
+	.popularityModal .modalInner .mdClose {
+		top: -40px;
+		width: 30px;
+		height: 30px;
+		cursor: pointer;
+	}
+}
+
+/* 2019/06/22 AP_ISSUE-382 Add */
+/*trendBox
+------------------------------------------*/
+.trendBox {
+	margin-bottom: 40px;
+}
+.trendBox .trendList {
+	/* padding: 15px 15px 10px;
+	border: #fc8b93 solid 6px;
+	border-radius: 5px; */
+	position: relative;
+	padding: 25px 25px 20px;
+	border-radius: 5px;
+}
+.trendBox .trendList .borders {
+	position: absolute;
+	display: block;
+	background-position: center center;
+	z-index: 1;
+}
+
+.trendBox .trendList .bdrLT,
+.trendBox .trendList .bdrLB,
+.trendBox .trendList .bdrRT,
+.trendBox .trendList .bdrRB {
+	width: 20px;
+	height: 20px;
+	background-repeat: no-repeat;
+	background-size: 100% auto;
+	z-index: 2;
+}
+.trendBox .trendList .bdrLT {
+	top: 0;
+	left: 0;
+	background-image: url(/wp-content/themes/ajinomoto/resources/images/common/pc/trend_bdr_lefttop.jpg);
+}
+.trendBox .trendList .bdrLB {
+	bottom: 0;
+	left: 0;
+	background-image: url(/wp-content/themes/ajinomoto/resources/images/common/pc/trend_bdr_leftbottom.jpg);
+}
+.trendBox .trendList .bdrRT {
+	top: 0;
+	right: 0;
+	background-image: url(/wp-content/themes/ajinomoto/resources/images/common/pc/trend_bdr_righttop.jpg);
+}
+.trendBox .trendList .bdrRB {
+	bottom: 0;
+	right: 0;
+	background-image: url(/wp-content/themes/ajinomoto/resources/images/common/pc/trend_bdr_rightbottom.jpg);
+}
+
+.trendBox .trendList .bdrTX,
+.trendBox .trendList .bdrBX {
+	width: 100%;
+	height: 20px;
+	background-size: auto 100%;
+}
+.trendBox .trendList .bdrTX {
+	top: 0;
+	left: 0;
+	background-image: url(/wp-content/themes/ajinomoto/resources/images/common/pc/trend_bdr_topx.jpg);
+}
+.trendBox .trendList .bdrBX {
+	bottom: 0;
+	left: 0;
+	background-image: url(/wp-content/themes/ajinomoto/resources/images/common/pc/trend_bdr_bottomx.jpg);
+}
+
+.trendBox .trendList .bdrLY,
+.trendBox .trendList .bdrRY {
+	height: 100%;
+	width: 20px;
+	background-size: 100% auto;
+}
+.trendBox .trendList .bdrLY {
+	bottom: 0;
+	left: 0;
+	background-image: url(/wp-content/themes/ajinomoto/resources/images/common/pc/trend_bdr_lefty.jpg);
+}
+.trendBox .trendList .bdrRY {
+	bottom: 0;
+	right: 0;
+	background-image: url(/wp-content/themes/ajinomoto/resources/images/common/pc/trend_bdr_righty.jpg);
+}
+.trendBox .trendList ul {
+	display: flex;
+	flex-wrap: wrap;
+}
+.trendBox .trendList li {
+	position: relative;
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	        box-sizing: border-box;
+	width: 50%;
+	margin-bottom: 5px;
+	padding-left: 1.3em;
+}
+.trendBox .trendList li a {
+	display: block;
+}
+.trendBox .trendList li:before {
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: block;
+	content: '●';
+	color: #fc8b93;
+}
+@media only screen and (min-width:980px) {
+	.trendBox {
+		margin-bottom: 60px;
+	}
+	.trendBox .trendList {
+		/* padding: 20px 20px 10px; */
+		padding: 30px 30px 23px;
+		border-width: 10px;
+		border-radius: 10px;
+	}
+	.trendBox .trendList ul {
+		display: flex;
+		flex-wrap: wrap;
+	}
+	.trendBox .trendList li {
+		width: 20%;
+		margin-bottom: 8px;
+	}
+	
+	.trendBox .trendList .bdrLT,
+	.trendBox .trendList .bdrLB,
+	.trendBox .trendList .bdrRT,
+	.trendBox .trendList .bdrRB {
+		width: 28px;
+		height: 28px;
+	}
+	.trendBox .trendList .bdrTX,
+	.trendBox .trendList .bdrBX {
+		height: 28px;
+	}
+	.trendBox .trendList .bdrLY,
+	.trendBox .trendList .bdrRY {
+		width: 28px;
+	}
+	
+}
+/* 2019/06/22 AP_ISSUE-382 End */
+
+/*recommendRecipeContents
+------------------------------------------*/
+.recommendRecipeContents {
+	max-width: 1230px;
+	margin: 0 auto 60px;
+	padding: 0 5px;
+}
+.recommendRecipeContents ul {
+	display: flex;
+	flex-wrap: wrap;
+}
+.recommendRecipeContents li {
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	        box-sizing: border-box;
+	width: 25%;
+	padding: 15px;
+}
+.recommendRecipeContents li a {
+	overflow: hidden;
+	position: relative;
+	display: block;
+	text-decoration: none;
+	border-radius: 5px;
+}
+.recommendRecipeContents li a .txt {
+	position: absolute;
+	bottom: 10px;
+	left: 12px;
+	display: block;
+	color: #fff;
+	font-weight: 500;
+	line-height: 1.2;
+	text-shadow: #666 2px 0px, #666 -2px 0px, #666 0px -2px, #666 0px 2px, #666 2px 2px, #666 -2px 2px, #666 2px -2px, #666 -2px -2px, #666 1px 2px, #666 -1px 2px, #666 1px -2px, #666 -1px -2px, #666 2px 1px, #666 -2px 1px, #666 2px -1px, #666 -2px -1px;
+}
+.recommendRecipeContents .btn {
+	max-width: 270px;
+	margin: 25px auto 0;
+}
+.recommendRecipeContents .btn .arw {
+	position: relative;
+	padding-right: 23px;
+}
+.recommendRecipeContents .btn .arw:after {
+	position: absolute;
+	top: 49%;
+	right: 0;
+	display: block;
+	content: '';
+	width: 5px;
+	height: 5px;
+	margin-top: -5px;
+	border-top: #fff solid 2px;
+	border-right: #fff solid 2px;
+	transform: rotate(135deg);
+	-ms-transform: rotate(135deg);
+	-webkit-transform: rotate(135deg);
+	-moz-transform: rotate(135deg);
+}
+.recommendRecipeContents .btn .arw.on:after {
+	margin-top: -2px;
+	transform: rotate(-45deg);
+	-ms-transform: rotate(-45deg);
+	-webkit-transform: rotate(-45deg);
+	-moz-transform: rotate(-45deg);
+}
+
+/* 2019/07/26 AP_ISSUE-454 takumi_mito  */
+.recommendRecipeContents .btn .out {
+	position: relative;
+	padding-right: 23px;
+}
+.recommendRecipeContents .btn .out:before {
+	position: absolute;
+	top: 13px;
+	right: -5px;
+	box-sizing: border-box;
+	display: block;
+	content: '';
+	width: 5px;
+	height: 5px;
+	margin-top: -5px;
+	border: 5px solid transparent;
+	border-left: 5px solid #fff;
+	transform: rotate(0deg);
+	-ms-transform: rotate(0deg);
+	-webkit-transform: rotate(0deg);
+	-moz-transform: rotate(0deg);
+}
+.recommendRecipeContents .btn .out:after {
+	position: absolute;
+	top: 17px;
+	right: 5px;
+	box-sizing: border-box;
+	display: block;
+	content: '';
+	width: 8px;
+	height: 8px;
+	margin-top: -5px;
+	border: 0 solid transparent;
+	border-left: 3px solid #fff;
+	border-radius: 0 0 0 10px;
+	transform: rotate(90deg);
+	-ms-transform: rotate(90deg);
+	-webkit-transform: rotate(90deg);
+	-moz-transform: rotate(90deg);
+}
+
+.recommendRecipeContents .btn .closeBtn {
+	display: none;
+}
+@media only screen and (max-width:980px) {
+	.recommendRecipeContents ul {
+		padding: 0;
+	}
+	.recommendRecipeContents li {
+		width: 50%;
+		padding: 5px;
+	}
+	.recommendRecipeContents .btn {
+		max-width: 180px;
+		margin-top: 10px;
+	}
+}
+
+/* 2019/06/24 AP_ISSUE-355 LI_MING Add Start */
+/*updateHistory
+------------------------------------------*/
+.updateHistory {
+	position: relative;
+	padding: 0 13px;
+	margin-bottom: 60px;
+}
+.updateHistory .inner {
+	position: relative;
+}
+.updateHistory .inner:before,
+.updateHistory .inner:after {
+	position: absolute;
+	left: 0;
+	display: block;
+	content: '';
+	width: 100%;
+	height: 6px;
+	background: url(/wp-content/themes/ajinomoto/resources/images/common/sp/bdr_pink.png) center center;
+	background-size: 100% 100%;
+}
+.updateHistory .inner:before {
+	top: 0;
+}
+.updateHistory .inner:after {
+	bottom: 0;
+}
+.updateHistory .title {
+	padding: 25px 0;
+	cursor: pointer;
+}
+.updateHistory .title span {
+	position: relative;
+	display: table;
+	margin: 0 auto;
+	padding-right: 23px;
+	font-size: 16px;
+	font-weight: bold;
+}
+.updateHistory .title span:before,
+.updateHistory .title span:after {
+	position: absolute;
+	display: block;
+	content: '';
+}
+.updateHistory .title span:before {
+	right: 0;
+	top: 50%;
+	width: 16px;
+	height: 16px;
+	margin-top: -8px;
+	background-color: #fb8079;
+	border-radius: 50%;
+}
+.updateHistory .title span:after {
+	top: 50%;
+	right: 5px;
+	width: 4px;
+	height: 4px;
+	margin-top: -4px;
+	border-right: #fff solid 2px;
+	border-bottom: #fff solid 2px;
+	transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	-webkit-transform: rotate(45deg);
+	-moz-transform: rotate(45deg);
+}
+.updateHistory .title.on span:after {
+	margin-top: -2px;
+	transform: rotate(-135deg);
+	-ms-transform: rotate(-135deg);
+	-webkit-transform: rotate(-135deg);
+	-moz-transform: rotate(-135deg);
+}
+.updateHistory ul {
+	display: none;
+}
+.updateHistory li {
+	padding: 10px 0;
+	font-size: 13px;
+}
+.updateHistory li + li {
+	background: url(/wp-content/themes/ajinomoto/resources/images/common/sp/bdr_dot01.png) repeat-x left top;
+	background-size: auto 2px;
+}
+@media only screen and (min-width:980px) {
+	.updateHistory {
+		max-width: 860px;
+		margin: 0 auto 60px;
+	}
+	.updateHistory .inner:before,
+	.updateHistory .inner:after {
+		height: 6px;
+	}
+	.updateHistory .title span {
+		font-size: 18px;
+	}
+	.updateHistory li {
+		padding: 15px 0;
+		font-size: 17px;
+	}
+	.updateHistory li + li {
+		background-size: auto 3px;
+	}
+}
+/* 2019/06/24 AP_ISSUE-355 LI_MING Add End */

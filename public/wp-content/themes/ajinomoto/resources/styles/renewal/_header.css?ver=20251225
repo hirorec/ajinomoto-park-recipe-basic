@@ -1,0 +1,1845 @@
+/* SP/PC共通 */
+.wrapperLogo {
+    box-sizing: content-box;
+}
+
+.borderTopGrad {
+    background: rgb(217,44,107);
+    background: -ms-linear-gradient(0, rgba(217,44,107,1) 0%, rgba(236,110,30,1) 100%);
+    background: linear-gradient(90deg, rgba(217,44,107,1) 0%, rgba(236,110,30,1) 100%);
+}
+
+.bgOpenedMenu {
+    display: none!important;
+    position: fixed;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    font-family: 'Noto Sans Japanese', sans-serif;
+    font-weight: 400;
+    z-index: 99;
+}
+
+.bgOpenedMenu.active {
+    display: block!important;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 100;
+    -ms-overflow-y: scroll;
+    overflow-y: scroll;
+}
+
+#isOpenedMenu {
+    display: none!important;
+}
+
+/* #isOpenedMenu + header .wrapperBtnClose,
+#isOpenedMenu:checked + header .wrapperBtnOpen,
+#isOpenedMenu + header #logoInOpenedMenu,
+#isOpenedMenu:checked + header #logoInClosedMenu {
+    display: none!important;
+}
+
+#isOpenedMenu:checked + header .wrapperBtnClose,
+#isOpenedMenu + header .wrapperBtnOpen,
+#isOpenedMenu + header #logoInClosedMenu,
+#isOpenedMenu:checked + header #logoInOpenedMenu {
+    display: block!important;
+} */
+
+.linkItemListMenu:hover ~ .titleItemListMenu-en,
+.linkItemListMenu:hover ~ .titleItemListMenu-ja,
+.linkItemListMenu:hover ~ .titleItemListMenu-en::before,
+.linkItemListMenu:hover ~ .titleItemListMenu-ja::after,
+.linkItemListMenu:hover ~ img,
+.btnLogin:hover {
+    opacity: .5;
+}
+
+.btnRegister:hover {
+    background-color: #fbf3ef;
+}
+
+@media screen and (max-width: 979px) {
+    .sp {
+        display: unset;
+    }
+    .pc {
+        display: none!important;
+    }
+
+    .borderTopGrad {
+        width: calc(100% - 50px);
+        height: 4px;
+        position: absolute;
+        top: 0;
+    }
+
+    .bgOpenedMenu {
+        background: rgb(217,44,107);
+        background: linear-gradient(180deg, rgba(217,44,107,1) 0%, rgba(236,110,30,1) 100%);
+        background: -ms-linear-gradient(90deg, rgba(217,44,107,1) 0%, rgba(236,110,30,1) 100%);
+    }
+
+    /* ヘッダー */
+    header {
+        background-color: #fff;
+        height: 50px;
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 100%;
+        /* position: fixed; */
+        /* z-index: 1000; */
+    }
+
+    header.top {
+        height: 100%;
+    }
+
+    .wrapperLogo {
+        display: flex;
+        justify-content: start;
+        position: relative;
+        width: 100%;
+        height: 28px;
+        margin: 0;
+        padding: 11.5px 0 7.5px;
+        z-index: 97;
+    }
+
+    .wrapperLogo a {
+        height: 100%;
+    }
+
+    header.top .wrapperLogo {
+        height: 74px;
+        padding: 20px 0 25px 0;
+        position: relative;
+        top: -3px;
+        left: 0;
+    }
+
+    #logoInOpenedMenu,
+    #logoInClosedMenu {
+        height: 100%;
+        width: auto;
+        fill: #fff;
+    }
+
+    #logoInClosedMenu.top {
+        margin-left: 15px;
+    }
+
+    .wrapperBtnShop{
+        padding-left: 13px;
+    }
+
+    .shopIconArea {
+        box-sizing: border-box;
+        display: block;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        width: 50px;
+        height: 50px;
+        position: absolute;
+        top: 0;
+        right: 50px;
+        z-index: 97;
+        padding-top: 10px;
+    }
+
+    .shopIconArea .iconShop {
+        width: unset;
+    }
+
+    .loginIconArea {
+        box-sizing: border-box;
+        display: block;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        width: 50px;
+        height: 50px;
+        position: absolute;
+        top: 0;
+        right: 100px;
+        z-index: 97;
+    }
+
+    .loginIconArea .iconLoggedin {
+        position: absolute;
+        top: 10px;
+        right: 5px;
+        width: 40px;
+    }
+
+    .textShop {
+        display: inline-block;
+        margin: 0;
+        position: absolute;
+        top: 65%;
+        right: 0%;
+        transform: translateX(-50%);
+        -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+        font-size: 10px;
+        font-weight: 700;
+        line-height: 1;
+        color: #de0202;
+        text-align: center;
+        -webkit-transform:scale(0.8);
+        -moz-transform:scale(0.8);
+        -ms-transform:scale(0.8);
+        -o-transform:scale(0.8);
+        transform:scale(0.8);
+    }
+
+    .textLogin {
+        display: inline-block;
+        margin: 0;
+        position: absolute;
+        top: 74%;
+        left: 15%;
+        transform: translateX(-50%);
+        -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+        font-size: 10px;
+        font-weight: 700;
+        line-height: 1;
+        color: #de0202;
+        text-align: center;
+        -webkit-transform:scale(0.8);
+        -moz-transform:scale(0.8);
+        -ms-transform:scale(0.8);
+        -o-transform:scale(0.8);
+        transform:scale(0.8);
+    }
+
+    .shopIconArea .textShop {
+        bottom: 5px;
+        letter-spacing: 0.14em;
+    }
+
+    .wrapperBtnLogin .textLogin {
+        bottom: 5px;
+        letter-spacing: 0.14em;
+    }
+
+    .textLoggedin {
+        display: inline-block;
+        margin: 0;
+        position: absolute;
+        top: 74%;
+        left: 0;
+        transform: translateX(-50%);
+        -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+        font-size: 10px;
+        font-weight: 700;
+        line-height: 1;
+        color: #de0202;
+        text-align: center;
+        -webkit-transform:scale(0.8);
+        -moz-transform:scale(0.8);
+        -ms-transform:scale(0.8);
+        -o-transform:scale(0.8);
+        transform:scale(0.8);
+    }
+
+    .wrapperBtnLogin .textLoggedin {
+        bottom: 5px;
+        letter-spacing: 0.14em;
+        width: 50px;
+    }
+
+    .btnToggleMenu {
+        display: block;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        width: 50px;
+        height: 50px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 97;
+        background-color: #de0202;
+    }
+
+    .toggleMenu {
+        cursor: pointer;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 100;
+        opacity: 0;
+    }
+
+    .imgHumbergerButton {
+        display: block;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        fill: #fff;
+    }
+
+    .wrapperBtnClose .imgHumbergerButton {
+        top: 10px;
+        width: 19px;
+        height: 19px;
+    }
+
+    .wrapperBtnOpen .imgHumbergerButton {
+        top: 15px;
+        width: 30px;
+        height: 14px;
+    }
+
+    .textHumbergerButton {
+        display: inline-block;
+        margin: 0;
+        position: absolute;
+        top: 70%;
+        left: 15%;
+        transform: translateX(-50%);
+        -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+        font-size: 10px;
+        font-weight: 700;
+        line-height: 1;
+        color: #fff;
+        text-align: center;
+        -webkit-transform:scale(0.8);
+        -moz-transform:scale(0.8);
+        -ms-transform:scale(0.8);
+        -o-transform:scale(0.8);
+        transform:scale(0.8);
+    }
+
+    .wrapperBtnClose .textHumbergerButton {
+        bottom: 10px;
+        letter-spacing: 0.04em;
+    }
+
+    .wrapperBtnOpen .textHumbergerButton {
+        bottom: 5px;
+        letter-spacing: 0.14em;
+    }
+
+
+    /* aタグ 親要素いっぱいに広げる */
+    #menuContainer #left .linkItemListMenu,
+    #menuContainer #right .linkItemListMenu,
+    #menuContainer #bottom .linkItemListMenu,
+    #menuContainer #nonLogin .linkItemListMenu {
+        cursor: pointer;
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 100;
+    }
+
+    /* メニュー 大枠 */
+    #menuContainer {
+        padding: 0 15px;
+    }
+
+    #menuContainer #nonLogin,
+    #menuContainer #logined {
+        font-size: 14px;
+    }
+
+    #menuContainer #clip,
+    #menuContainer #history {
+        flex-grow: 1;
+        text-align: center;
+    }
+
+
+    /* ul.listMenu 共通指定 */
+    .listMenu {
+        margin: 0;
+        padding: 0;
+        color: #fff;
+        list-style-type: none;
+    }
+
+
+    /* ul.listMenu 個別指定 */
+    #menuContainer #bottom .listMenu {
+        display: flex;
+        padding: 20px 0;
+    }
+
+    #menuContainer #nonLogin .listMenu {
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+    #menuContainer #logined .listMenu {
+        padding: 12px 0;
+        border-top: 1px solid #fff;
+        display: -ms-grid;
+        display: grid;
+        -ms-grid-columns: 50% 50%;
+        grid-template-columns: 50% 50%;
+    }
+
+    #menuContainer #logined .itemListMenu:nth-child(1) {
+        -ms-grid-column: 1;
+        -ms-grid-row: 1;
+    }
+    #menuContainer #logined .itemListMenu:nth-child(2) {
+        -ms-grid-column: 2;
+        -ms-grid-row: 1;
+    }
+    #menuContainer #logined .itemListMenu:nth-child(3) {
+        -ms-grid-column: 1;
+        -ms-grid-row: 2;
+    }
+    #menuContainer #logined .itemListMenu:nth-child(4) {
+        -ms-grid-column: 2;
+        -ms-grid-row: 2;
+    }
+
+    /* li.itemListMenu */
+    .itemListMenu {
+        padding: 20px;
+        border-bottom: 1px solid #fff;
+    }
+
+    #menuContainer #left .itemListMenu,
+    #menuContainer #right .itemListMenu,
+    #menuContainer #nonLogin .itemListMenu {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        padding: 18px 20px;
+    }
+    #menuContainer #right .itemListMenu:nth-child(3),
+    #menuContainer #right .itemListMenu:nth-child(4),
+    #menuContainer #right .itemListMenu:nth-child(5){
+        padding: 14px 20px;
+    }
+
+
+    #menuContainer #right .itemListMenu:first-child {
+        border-top: 1px solid #fff;
+    }
+
+    #menuContainer #right .itemListMenu:last-child {
+        padding: 20px 20px;
+    }
+
+    #menuContainer #right .itemListMenu:last-child img {
+        height: 31px;
+    }
+
+    #menuContainer #bottom .itemListMenu {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        padding: 14px;
+        border-right: 1px solid #fff;
+        border-bottom: none;
+    }
+
+    #menuContainer #bottom .itemListMenu:last-child {
+        border-right: none;
+    }
+
+    #menuContainer #nonLogin .itemListMenu {
+        margin: 0 15px;
+        padding: 20px;
+        border-bottom: none;
+    }
+
+    #menuContainer #logined .itemListMenu {
+        padding: 10px 0;
+        font-size: 12px;
+        border-bottom: none;
+    }
+
+
+    /*
+    a.linkItemListMenu 個別指定
+    共通指定はaタグを親要素いっぱいに広げるの箇所にまとめてます。
+    */
+    #menuContainer #logined .linkItemListMenu {
+        color: #fff;
+        text-decoration: none;
+        position: relative;
+    }
+
+
+    /* li.itemListMenuの中の英語タイトル テキスト共通指定 */
+    .titleItemListMenu-en {
+        font-family: 'Lato', 'Noto Sans Japanese', sans-serif;
+        font-size: 15px;
+        font-weight: bold;
+    }
+
+    /* li.itemListMenuの中の英語タイトル テキスト個別指定*/
+    .titleItemListMenu-en.recipe,
+    .titleItemListMenu-en.magazine,
+    .titleItemListMenu-en.activity {
+        padding-left: 20px;
+    }
+
+    .titleItemListMenu-en.clip,
+    .titleItemListMenu-en.history {
+        font-size: 13px;
+        font-weight: 400;
+        line-height: 1;
+    }
+
+    /* li.itemListMenuの中の英語タイトル アイコン共通指定 */
+    .titleItemListMenu-en.icon::before {
+        content: '';
+        display: inline-block;
+        position: absolute;
+        top: calc(50% - 10px);
+        left: 15px;
+        width: 20px;
+        height: 20px;
+        vertical-align: middle;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+
+    /* li.itemListMenuの中の英語タイトル アイコン個別指定 */
+    .titleItemListMenu-en.recipe::before {
+        top: calc(50% - 6.5px);
+        height: 17px;
+        background-image: url('../../images/common/sp/AP_svg_icon_recipe_fff.svg');
+        /* background-image: url( 'data:image/svg+xml;utf-8,<svg fill="%23fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 31 26"><title>RECIPE</title><g><g><path d="M24.5,3a6.51,6.51,0,0,0-2.62.55,7.51,7.51,0,0,0-12.76,0A6.5,6.5,0,0,0,0,9.5a6.45,6.45,0,0,0,5,6.32V25a1,1,0,0,0,1,1H25a1,1,0,0,0,1-1V15.82A6.45,6.45,0,0,0,31,9.5,6.51,6.51,0,0,0,24.5,3ZM7,24V22H24v2ZM24.91,14A1,1,0,0,0,24,15v5H7V15a1,1,0,0,0-.91-1A4.5,4.5,0,1,1,9,5.75a1,1,0,0,0,.84.13,1,1,0,0,0,.63-.57,5.51,5.51,0,0,1,10.1,0,1,1,0,0,0,.63.57A1,1,0,0,0,22,5.75,4.44,4.44,0,0,1,24.5,5a4.5,4.5,0,0,1,.41,9Z"/></g></g></svg>' ); */
+    }
+
+    .titleItemListMenu-en.magazine::before {
+        top: calc(50% - 8.5px);
+        height: 17px;
+        background-image: url('../../images/common/sp/AP_svg_icon_magazine_fff.svg');
+        /* background-image: url( 'data:image/svg+xml;utf-8,<svg fill="%23fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30.2 24.62"><title>MAGAZINE</title><g><g><path d="M29.52,1.08A23.7,23.7,0,0,0,22.15,0a24.11,24.11,0,0,0-7,1,24.11,24.11,0,0,0-7-1A23.7,23.7,0,0,0,.68,1.08,1,1,0,0,0,0,2V19.62a1,1,0,0,0,.41.81,1,1,0,0,0,.91.14,24.47,24.47,0,0,1,13.47,0h.05a.76.76,0,0,0,.21,0h.08l.25,0h0a24.47,24.47,0,0,1,13.47,0,1.06,1.06,0,0,0,.31.05,1,1,0,0,0,.59-.19,1,1,0,0,0,.41-.81V2A1,1,0,0,0,29.52,1.08ZM8.05,17.59a25,25,0,0,0-6.05.7V2.77a24.78,24.78,0,0,1,12.1,0V18.29A25,25,0,0,0,8.05,17.59Zm20.15.7a25,25,0,0,0-6.05-.7,25,25,0,0,0-6,.7V2.77a24.78,24.78,0,0,1,12.1,0Z"/><path d="M29.51,22.67a23.88,23.88,0,0,0-7.36-1.08,24.12,24.12,0,0,0-7,1,24.12,24.12,0,0,0-7-1A23.59,23.59,0,0,0,.69,22.67a1,1,0,0,0-.64,1.27,1,1,0,0,0,1,.68,1.25,1.25,0,0,0,.32-.05,24.47,24.47,0,0,1,13.47,0,1,1,0,0,0,.63,0,24.47,24.47,0,0,1,13.47,0,1,1,0,1,0,.62-1.9Z"/></g></g></svg>' ); */
+    }
+
+    .titleItemListMenu-en.activity::before {
+        top: calc(50% - 7.5px);
+        height: 15px;
+        background-image: url('../../images/common/sp/AP_svg_icon_activity_fff.svg');
+        /* background-image: url( 'data:image/svg+xml;utf-8,<svg fill="%23fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29.98 21.57"><title>ACTIVITY</title><g><g><path d="M29.59.21A1,1,0,0,0,28.74,0L7.08,5.43l-5.8-1.7a1,1,0,0,0-.88.16,1,1,0,0,0-.4.8V16.88a1,1,0,0,0,.4.81,1,1,0,0,0,.88.15l5.8-1.7,21.66,5.4a1,1,0,0,0,.24,0,1,1,0,0,0,.61-.21,1,1,0,0,0,.39-.79V1A1,1,0,0,0,29.59.21ZM2,6,6.37,7.31v7L2,15.55ZM28,19.29,8.37,14.4V7.17L28,2.28Z"/></g></g></svg>' ); */
+    }
+
+    .titleItemListMenu-en.clip::before {
+        position: relative;
+        top: -1px;
+        left: -10px;
+        width: 16.5px;
+        height: 15px;
+        background-image: url('../../images/common/sp/AP_svg_icon_keep_fff.svg');
+        /* background-image: url( 'data:image/svg+xml;utf-8,<svg fill="%23fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 47.35 42.57"><title>CLIP</title><g><g><path d="M23.68,42.57,3.91,22.8A13.36,13.36,0,0,1,22.8,3.91l.88.87.87-.87A13.36,13.36,0,0,1,43.45,22.8ZM13.35,3A10.36,10.36,0,0,0,6,20.68L23.68,38.33,41.32,20.68A10.36,10.36,0,1,0,26.67,6l-3,3-3-3A10.3,10.3,0,0,0,13.35,3Z"/></g></g></svg>' ); */
+    }
+
+    .titleItemListMenu-en.history::before {
+        position: relative;
+        top: -1.75px;
+        left: -10px;
+        width: 16.5px;
+        height: 16.5px;
+        background-image: url('../../images/common/sp/AP_svg_icon_history_fff.svg');
+        /* background-image: url( 'data:image/svg+xml;utf-8,<svg fill="%23fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 27.17 27.17"><title>HISTORY</title><g><g><path d="M13.58,27.17A13.59,13.59,0,1,1,27.17,13.58,13.59,13.59,0,0,1,13.58,27.17ZM13.58,2A11.59,11.59,0,1,0,25.17,13.58,11.6,11.6,0,0,0,13.58,2Z"/><polygon points="19.34 14.59 12.59 14.59 12.59 4.3 14.59 4.3 14.59 12.59 19.34 12.59 19.34 14.59"/></g></g></svg>' ); */
+    }
+    #menuContainer #logined .titleItemListMenu-en.arrow{
+        font-size: 12px;
+        font-weight: 400;
+        padding-left: 20px;
+    }
+
+    #menuContainer #logined .titleItemListMenu-en.arrow::before {
+        left: 0;
+        width: 20px;
+        height: 12px;
+        background-image: url('../../images/common/sp/AP_svg_icon_arrow_fff.svg');
+        vertical-align: unset;
+        position: absolute;
+        top: .3em;
+    }
+
+    /* li.itemListMenuの中の日本語タイトル テキスト共通指定 */
+    .titleItemListMenu-ja {
+        font-family: 'Noto Sans Japanese', sans-serif;
+        font-size: 12px;
+        font-weight: 400;
+        text-align: right;
+    }
+
+    /* li.itemListMenuの中の日本語タイトル テキスト個別指定 */
+    .titleItemListMenu-ja.acordion {
+        padding-right: 30px;
+    }
+
+    .titleItemListMenu-ja.arrow {
+        padding-right: 30px;
+    }
+
+    .titleItemListMenu-ja.ajinomotalk {
+        padding-right: 30px;
+    }
+
+    /* li.itemListMenuの中の日本語タイトル アイコン共通指定 */
+    .titleItemListMenu-ja.icon::before,
+    .titleItemListMenu-ja.icon::after {
+        content: '';
+        display: inline-block;
+        position: absolute;
+        top: calc(50% - 10px);
+        right: 20px;
+        width: 10px;
+        height: 20px;
+        vertical-align: middle;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+
+    /* li.itemListMenuの中の日本語タイトル アイコン個別指定 */
+    .titleItemListMenu-ja.acordion::before {
+        top: 50%;
+        width: 15px;
+        height: 15px;
+        visibility: hidden;
+        background-image: url('../../images/common/sp/AP_svg_icon_minus_fff.svg');
+    }
+
+    .titleItemListMenu-ja.acordion::after {
+        top: calc(50% - 7.5px);
+        width: 15px;
+        height: 15px;
+        visibility: visible;
+        background-image: url('../../images/common/sp/AP_svg_icon_plus_fff.svg');
+        /* background-image: url( 'data:image/svg+xml;utf-8,<svg fill="%23fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28"><title>ARROW</title><polygon class="cls-1" points="28 12 16 12 16 0 12 0 12 12 0 12 0 16 12 16 12 28 16 28 16 16 28 16 28 12"/></svg>' ); */
+    }
+
+
+    .titleItemListMenu-ja.arrow::after {
+        top: calc(50% - 7.5px);
+        height: 15px;
+        background-image: url('../../images/common/sp/AP_svg_icon_arrow_fff.svg');
+        /* background-image: url( 'data:image/svg+xml;utf-8,<svg fill="%23fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29.25 52.66"><title>ARROW</title><polygon class="cls-1" points="29.25 26.33 25.2 22 25.15 22.05 4.05 0 0 4.32 21.06 26.33 0 48.33 4.05 52.66 25.15 30.61 25.2 30.65 29.25 26.33"/></svg>' ); */
+    }
+
+    .titleItemListMenu-ja.ajinomotalk::after {
+        top: calc(50% - 7.5px);
+        width: 15px;
+        height: 15px;
+        background-image: url('../../images/common/sp/AP_svg_icon_link.svg');
+    }
+
+
+    /* レシピ内 アコーディオン用 個別指定 */
+    #menuContainer #isOpenedRecipeAcordion {
+        display: none;
+    }
+    .acd-label{
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+        margin: 0;
+        padding: 22px 20px;
+        padding-bottom: 18px;
+    }
+    .listMenu.recipe{
+        height: 0;
+        opacity: 0;
+        padding: 0 20px;
+        transition: .5s;
+        visibility: hidden;
+    }
+    .listMenu.recipe .itemListMenu {
+        padding: 16px!important;
+        opacity: 0;
+        border-bottom: none;
+        opacity: 0;
+        transition: .1s;
+    }
+
+    #menuContainer #isOpenedRecipeAcordion:checked + .acd-label {
+        border-bottom: none;
+    }
+    #menuContainer #isOpenedRecipeAcordion:checked + .acd-label + .listMenu.recipe{
+        height: 222px;
+        opacity: 1;
+        visibility: visible;
+    }
+    #menuContainer #isOpenedRecipeAcordion:checked + .acd-label + .listMenu.recipe .itemListMenu {
+        opacity: 1;
+        visibility: visible;
+        transition: 1s;
+    }
+
+    #menuContainer #isOpenedRecipeAcordion:checked + .acd-label + .listMenu.recipe > .itemListMenu{
+        opacity: 1;
+        transition: 0.3s;
+        visibility: visible;
+    }
+
+    #menuContainer #isOpenedRecipeAcordion:checked + .acd-label .titleItemListMenu-ja.acordion::before {
+        visibility: visible;
+    }
+    #menuContainer #isOpenedRecipeAcordion:checked + .acd-label .titleItemListMenu-ja.acordion::after {
+        visibility: hidden;
+    }
+
+    .recipe .titleItemListMenu-ja.arrow::after {
+        top: calc(50% - 7px);
+        height: 14px;
+    }
+
+    .listMenu.recipe .titleItemListMenu-ja {
+        font-size: 13px;
+    }
+
+
+    /* メニュー内 コンポーネント個別指定 */
+    .btnRegister {
+        display: flex!important;
+        justify-content: center;
+        align-items: center;
+        background-color: #fff;
+        border-radius: 2px;
+        text-decoration: none;
+    }
+
+    .textGrad {
+        background: linear-gradient(90deg, rgba(217,44,107,1) 0%, rgba(236,110,30,1) 100%);
+        background-clip: text;
+            -webkit-background-clip: text;
+        -webkit-text-fill-color: rgba(255,255,255,0.0);
+        color: #e60012;
+    }
+
+    .btnLogin {
+        display: flex!important;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid #fff;
+        border-radius: 2px;
+        text-decoration: none;
+        color: #fff;
+        margin-top: 20px;
+    }
+
+    .btn-logout {
+        text-decoration: none;
+        color: #fff;
+        position: relative;
+    }
+
+    /* 下部メニュー */
+    .bottomMenu {
+        display: block;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 50px;
+        background-color: #fff;
+        border-top: 1px solid #ccc;
+        z-index: 98;
+    }
+
+    .listBottomMenu {
+        display: flex;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .itemListBottomMenu {
+        position: relative;
+        width: calc(100% / 5);
+        height: 100%;
+        z-index: 1;
+    }
+
+    .itemListBottomMenu.newCont:before {
+        content: '';
+        position: absolute;
+        top: 10%;
+        right: 24%;
+        border-radius: 50%;
+        background: #de0202;
+        width: 8px;
+        height: 8px;
+    }
+
+    .itemListBottomMenu a {
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 2;
+    }
+
+    .labelBottomMenu {
+        position: absolute;
+        bottom: 8px;
+        left: 50%;
+        width: 100%;
+        transform: translateX(-50%);
+        font-family: 'Noto Sans Japanese', sans-serif;
+        font-size: 10px;
+        font-weight: 400;
+        line-height: 1.0;
+        text-align: center;
+    }
+
+    .labelBottomMenu::before {
+        content: '';
+        position: absolute;
+        bottom: 16px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-repeat: no-repeat;
+    }
+
+    .trend .labelBottomMenu::before {
+        width: 14px;
+        height: 16.5px;
+        background-image: url('/wp-content/themes/ajinomoto/resources/images/common/sp/AP_svg_icon_hashtag_grad.svg?version=20220513');
+    }
+
+    .popular .labelBottomMenu::before {
+        width: 24px;
+        height: 18.5px;
+        background-size: contain;
+        background-image: url('/wp-content/themes/ajinomoto/resources/images/common/sp/AP_svg_icon_popular_recipe_grad.svg?version=20220513');
+    }
+
+    .recipe .labelBottomMenu::before {
+        width: 20px;
+        height: 19px;
+        background-size: contain;
+        background-image: url('/wp-content/themes/ajinomoto/resources/images/common/sp/AP_svg_icon_recipe_content_grad.svg?version=20220513');
+    }
+
+    .magazine .labelBottomMenu::before {
+        width: 20.5px;
+        height: 17.5px;
+        background-image: url('/wp-content/themes/ajinomoto/resources/images/common/sp/AP_svg_icon_magazine_grad.svg?version=20220513');
+    }
+
+    .activity .labelBottomMenu::before {
+        width: 18px;
+        height: 14px;
+        bottom: 17.5px;
+        background-image: url('/wp-content/themes/ajinomoto/resources/images/common/sp/AP_svg_icon_activity_grad.svg?version=20220513');
+    }
+
+    .menu .labelBottomMenu::before {
+        width: 20px;
+        height: 20px;
+        background-size: contain;
+        background-image: url('/wp-content/themes/ajinomoto/resources/images/common/sp/AP_svg_icon_monthly_menu_grad.svg?version=20220513');
+    }
+
+    .history .labelBottomMenu::before {
+        width: 42.5px;
+        height: 16.5px;
+        background-image: url('/wp-content/themes/ajinomoto/resources/images/common/sp/AP_svg_icon_clip_history_grad.svg?version=20220513');
+    }
+
+    .trendModal {
+        display: none;
+        position: absolute;
+        bottom: 51px;
+        left: 0;
+        width: calc(100% - 60px);
+        padding: 20px 30px;
+        background-color: #eee;
+        border-top: 1px solid #ccc;
+        z-index: 98;
+    }
+
+    .trendModal.active {
+        display: block;
+    }
+
+    .trendModal::before,
+    .trendModal::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 0;
+    }
+
+    .trendModal::before {
+        bottom: -6px;
+        left: 33px;
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        border-top: 6px solid #ccc;
+    }
+
+    .trendModal::after {
+        bottom: -4px;
+        left: 34px;
+        border-left: 4px solid transparent;
+        border-right: 4px solid transparent;
+        border-top: 5px solid #eee;
+    }
+
+    #closeTrendModal {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        width: 10px;
+        height: 10px;
+        background-image: url('/wp-content/themes/ajinomoto/resources/images/common/sp/AP_svg_icon_close.svg');
+        background-repeat: no-repeat;
+    }
+
+    .trendModal .listHashtag {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+    }
+
+    .trendModal .itemListHashtag {
+        margin: 7.5px 3.75px;
+    }
+
+    .trendModal .btnHashtag {
+        cursor: pointer;
+        display: flex;
+        position: relative;
+        padding: 7px 10px;
+        text-decoration: none;
+        border-radius: 100vh;
+        background: rgb(217,44,107);
+        background: -webkit-linear-gradient(90deg, rgba(217,44,107,1) 0%, rgba(236,110,30,1) 100%);
+        background: -moz-linear-gradient(90deg, rgba(217,44,107,1) 0%, rgba(236,110,30,1) 100%);
+        background: -ms-linear-gradient(90deg, rgba(217,44,107,1) 0%, rgba(236,110,30,1) 100%);
+        background: linear-gradient(90deg, rgba(217,44,107,1) 0%, rgba(236,110,30,1) 100%);
+        box-sizing: border-box;
+        overflow: hidden;
+    }
+
+    .trendModal .btnHashtag .hashtagName {
+        font-family: 'Lato', 'Noto Sans Japanese', sans-serif;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 1.0;
+        position: relative;
+        z-index: 1;
+        display: inline-block;
+        top: 0;
+    }
+}
+
+
+@media screen and (min-width: 980px) {
+    .sp {
+        display: none!important;
+    }
+    .pc {
+        display: unset;
+    }
+
+    .borderTopGrad {
+        width: calc(100% - 80px);
+        height: 8px;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    .bgOpenedMenu {
+        background-color: rgba(0, 0, 0, .4);
+    }
+
+    .bgOpenedMenu .menuContainer {
+        background: rgb(217,44,107);
+        background: linear-gradient(180deg, rgba(217,44,107,1) 0%, rgba(236,110,30,1) 100%);
+        background: -ms-linear-gradient(270deg, rgba(217,44,107,1) 0%, rgba(236,110,30,1) 100%);
+        -ms-overflow-y: scroll;
+        overflow-y: scroll;
+        z-index: 101;
+    }
+
+    .bgOpenedMenu .menuContainer::-webkit-scrollbar {
+        display:none;
+    }
+
+    header {
+        background-color: #fff;
+        height: 80px;
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    header * {
+        box-sizing: content-box;
+    }
+
+    header.top {
+        height: 100%;
+    }
+
+    .wrapperLogo {
+        display: flex;
+        justify-content: center;
+        position: relative;
+        width: 100%;
+        height: 60px;
+        margin: 0;
+        padding: 21.5px 0 13.5px;
+        z-index: 98;
+    }
+
+    .wrapperLogo.searchView {
+        top: 0;
+        z-index: 99;
+    }
+
+    .bgOpenedMenu .wrapperLogo {
+        display: flex;
+        justify-content: center;
+        position: relative;
+        width: 100%;
+        height: 50px;
+        margin: 0;
+        padding: 20px 0;
+        z-index: 98;
+    }
+
+    header.top .wrapperLogo {
+        height: 130px;
+        margin: 15px 0;
+        padding: 60px 0;
+        position: relative;
+        top: -6px;
+        left: 0;
+    }
+
+    .wrapperLogo a {
+        height: 100%;
+    }
+
+    #logoInOpenedMenu,
+    #logoInClosedMenu {
+        height: 100%;
+        width: auto;
+        fill: #fff;
+    }
+
+    #logoInClosedMenu.top {
+        margin-left: 15px;
+    }
+
+    .wrapperBtnShop a{
+        display: block;
+        text-align: center;
+    }
+
+    .shopIconArea {
+        box-sizing: border-box;
+        display: block;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        width: 80px;
+        height: 80px;
+        position: absolute;
+        top: 0;
+        right: 80px;
+        z-index: 99;
+        padding-top: 10px;
+    }
+
+    .shopIconArea .iconShop {
+        width: 40px;
+        padding-top: 4px;
+    }
+
+    .loginIconArea {
+        box-sizing: border-box;
+        cursor: pointer;
+        display: block;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        width: 80px;
+        height: 80px;
+        position: absolute;
+        top: 0;
+        right: 160px;
+        z-index: 99;
+    }
+
+    .loginIconArea .iconLoggedin {
+        position: absolute;
+        top: 20px;
+        right: 13px;
+        width: 65px;
+    }
+
+    .textShop {
+        display: inline-block;
+        margin: 0;
+        position: absolute;
+        top: 66%;
+        left: 50%;
+        transform: translateX(-50%);
+        -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+        font-family: 'Lato', sans-serif;
+        font-size: 12.5px;
+        font-weight: 700;
+        line-height: 1;
+        color: #de0202;
+        text-align: center;
+        letter-spacing: 0.1em;
+    }
+
+    .textLogin {
+        display: inline-block;
+        margin: 0;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+        font-family: 'Lato', sans-serif;
+        font-size: 12.5px;
+        font-weight: 700;
+        line-height: 1;
+        color: #de0202;
+        text-align: center;
+        letter-spacing: 0.1em;
+    }
+
+    .shopIconArea .textShop {
+        bottom: 5px;
+        letter-spacing: 0.14em;
+    }
+
+    .wrapperBtnLogin .textLogin {
+        top: 60px;
+    }
+
+    .textLoggedin {
+        display: inline-block;
+        margin: 0;
+        position: absolute;
+        left: 44%;
+        transform: translateX(-50%);
+        -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+        font-family: 'Lato', sans-serif;
+        font-size: 12.5px;
+        font-weight: 700;
+        line-height: 1;
+        color: #de0202;
+        text-align: center;
+        letter-spacing: 0.1em;
+    }
+
+    .wrapperBtnLogin .textLoggedin {
+        top: 60px;
+        width: 60px;
+    }
+
+    .btnToggleMenu {
+        cursor: pointer;
+        display: block;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        width: 80px;
+        height: 80px;
+        position: fixed;
+        top: 0;
+        right: 0;
+        z-index: 99;
+        background-color: #de0202;
+    }
+
+    .toggleMenu {
+        cursor: pointer;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 100;
+        opacity: 0;
+    }
+
+    .wrapperBtnOpen,
+    .wrapperBtnClose,
+    .wrapperBtnLogin {
+        width: 100%;
+        height: 100%;
+    }
+
+    .imgHumbergerButton {
+        display: block;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+        fill: #fff;
+    }
+
+    .wrapperBtnOpen .imgHumbergerButton {
+        top: 25px;
+        width: 50px;
+        height: 23px;
+    }
+
+    .wrapperBtnClose .imgHumbergerButton {
+        top: 15px;
+        width: 30px;
+        height: 30px;
+    }
+
+    .textHumbergerButton {
+        display: inline-block;
+        margin: 0;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+        font-family: 'Lato', sans-serif;
+        font-size: 12.5px;
+        font-weight: 700;
+        line-height: 1;
+        color: #fff;
+        text-align: center;
+        letter-spacing: 0.1em;
+    }
+
+    .wrapperBtnOpen .textHumbergerButton {
+        top: 60px;
+    }
+
+    .wrapperBtnClose .textHumbergerButton {
+        bottom: 19px;
+    }
+
+
+    /* aタグ 親要素いっぱいに広げる */
+    #menuContainer #left .linkItemListMenu,
+    #menuContainer #right .linkItemListMenu,
+    #menuContainer #bottom .linkItemListMenu,
+    #menuContainer #nonLogin .linkItemListMenu {
+        cursor: pointer;
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 100;
+        font-weight: 400;
+    }
+
+    #menuContainer {
+        display: -ms-grid;
+        display: grid;
+        -ms-grid-columns: 50% 50%;
+        grid-template-columns: 50% 50%;
+        padding: 30px 100px 30px 100px;
+    }
+
+    #menuContainer #left {
+        padding: 0;
+        padding-right: 70px;
+        -ms-grid-column: 1;
+        grid-column: 1 / 2;
+        -ms-grid-row: 1;
+        grid-row: 1 / 2;
+        border-right: 2px solid #fff;
+    }
+
+    #menuContainer #right {
+        padding: 0;
+        padding-left: 70px;
+        -ms-grid-column: 2;
+        grid-column: 2 / 3;
+        -ms-grid-row: 1;
+        grid-row: 1 / 2;
+    }
+
+    #menuContainer #bottom {
+        padding: 30px 0;
+        -ms-grid-column: 1;
+        -ms-grid-column-span: 2;
+        grid-column: 1 / 3;
+        -ms-grid-row: 2;
+        grid-row: 2 / 3;
+    }
+
+    #menuContainer #nonLogin,
+    #menuContainer #logined {
+        font-size: 20px;
+        -ms-grid-column: 1;
+        -ms-grid-column-span: 2;
+        grid-column: 1 / 3;
+        -ms-grid-row: 3;
+        grid-row: 3 / 4;
+    }
+
+    #menuContainer #clip,
+    #menuContainer #history {
+        margin: 0 40px;
+        text-align: center;
+    }
+
+
+    /* ul.listMenu 共通指定 */
+    .listMenu {
+        margin: 0;
+        padding: 0;
+        color: #fff;
+        list-style-type: none;
+    }
+
+
+    /* ul.listMenu 個別指定 */
+    #menuContainer #bottom .listMenu {
+        display: flex;
+        justify-content: center;
+        padding: 30px 0;
+        border-top: 2px solid #fff;
+        border-bottom: 2px solid #fff;
+    }
+
+    #menuContainer #nonLogin .listMenu {
+        display: flex;
+        justify-content: center;
+        padding: 0;
+        text-align: center;
+    }
+
+    #menuContainer #logined .listMenu {
+        display: flex;
+        justify-content: center;
+    }
+
+    /* li.itemListMenu */
+    .itemListMenu {
+        padding: 0;
+        border-bottom: 1px solid #fff;
+    }
+
+    #menuContainer #left .itemListMenu,
+    #menuContainer #right .itemListMenu,
+    #menuContainer #nonLogin .itemListMenu {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        padding: 15px 0;
+        border-bottom: none;
+        line-height: 1.5;
+    }
+
+    #menuContainer #left .itemListMenu.pc {
+        display: flex!important;
+        padding: 0;
+    }
+
+    #menuContainer #left .itemListMenu.pc:first-child {
+        margin-bottom: 15px;
+    }
+
+    #menuContainer #right .itemListMenu {
+        padding: 0;
+        margin: 40px 0;
+    }
+
+    #menuContainer #left .itemListMenu:first-child,
+    #menuContainer #right .itemListMenu:first-child {
+        padding-top: 0;
+        margin-top: 0;
+    }
+
+    #menuContainer #left .itemListMenu:last-child,
+    #menuContainer #right .itemListMenu:last-child {
+        margin-bottom: 0;
+    }
+
+    #menuContainer #left .itemListMenu:last-child {
+        padding: 30px 0 15px 0;
+    }
+
+    #menuContainer #left .itemListMenu:last-child img {
+        height: 50px;
+    }
+
+    #menuContainer #right .itemListMenu:last-child{
+        margin-bottom: 40px;
+    }
+
+    #menuContainer #bottom .itemListMenu {
+        position: relative;
+        padding: 0;
+        padding-left: 25px;
+        border-bottom: none;
+    }
+
+    #menuContainer #bottom .itemListMenu:last-child {
+        border-right: none;
+    }
+
+    #menuContainer #nonLogin .itemListMenu {
+        width: 312px;
+        margin: 0 15px;
+        padding: 25px 0;
+        border-bottom: none;
+    }
+
+    #menuContainer #logined .itemListMenu {
+        padding: 0;
+        font-size: 18px;
+        border-bottom: none;
+    }
+
+
+    /*
+    a.linkItemListMenu 個別指定
+    共通指定はaタグを親要素いっぱいに広げるの箇所にまとめてます。
+    */
+    #menuContainer #logined .linkItemListMenu {
+        color: #fff;
+        text-decoration: none;
+    }
+
+
+    /* li.itemListMenuの中の英語タイトル テキスト共通指定 */
+    .titleItemListMenu-en {
+        font-family: 'Lato', 'Noto Sans Japanese', sans-serif;
+        font-size: 22px;
+        font-weight: 700;
+    }
+
+
+    /* li.itemListMenuの中の英語タイトル テキスト個別指定*/
+    .titleItemListMenu-en.recipe,
+    .titleItemListMenu-en.magazine,
+    .titleItemListMenu-en.activity {
+        padding-left: 50px;
+    }
+
+    .titleItemListMenu-en.clip,
+    .titleItemListMenu-en.history {
+        font-size: 20px;
+        font-weight: 400;
+    }
+
+
+    /* li.itemListMenuの中の英語タイトル アイコン共通指定 */
+    .titleItemListMenu-en.icon::before {
+        content: '';
+        display: inline-block;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 30px;
+        height: 30px;
+        transform: translateY(-50%);
+        vertical-align: middle;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+
+
+    /* li.itemListMenuの中の英語タイトル アイコン個別指定 */
+    .titleItemListMenu-en.recipe::before {
+        height: 25px;
+        background-image: url('../../images/common/sp/AP_svg_icon_recipe_fff.svg');
+        /* background-image: url( 'data:image/svg+xml;utf-8,<svg preserveAspectRatio="xMinYMid" fill="%23fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 31 26"><title>RECIPE</title><g><g><path d="M24.5,3a6.51,6.51,0,0,0-2.62.55,7.51,7.51,0,0,0-12.76,0A6.5,6.5,0,0,0,0,9.5a6.45,6.45,0,0,0,5,6.32V25a1,1,0,0,0,1,1H25a1,1,0,0,0,1-1V15.82A6.45,6.45,0,0,0,31,9.5,6.51,6.51,0,0,0,24.5,3ZM7,24V22H24v2ZM24.91,14A1,1,0,0,0,24,15v5H7V15a1,1,0,0,0-.91-1A4.5,4.5,0,1,1,9,5.75a1,1,0,0,0,.84.13,1,1,0,0,0,.63-.57,5.51,5.51,0,0,1,10.1,0,1,1,0,0,0,.63.57A1,1,0,0,0,22,5.75,4.44,4.44,0,0,1,24.5,5a4.5,4.5,0,0,1,.41,9Z"/></g></g></svg>' ); */
+    }
+
+    .titleItemListMenu-en.magazine::before {
+        top: calc(50% - 12.5px);
+        height: 25px;
+        transform: translateY(0);
+        background-image: url('../../images/common/sp/AP_svg_icon_magazine_fff.svg');
+        /* background-image: url( 'data:image/svg+xml;utf-8,<svg fill="%23fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30.2 24.62"><title>MAGAZINE</title><g><g><path d="M29.52,1.08A23.7,23.7,0,0,0,22.15,0a24.11,24.11,0,0,0-7,1,24.11,24.11,0,0,0-7-1A23.7,23.7,0,0,0,.68,1.08,1,1,0,0,0,0,2V19.62a1,1,0,0,0,.41.81,1,1,0,0,0,.91.14,24.47,24.47,0,0,1,13.47,0h.05a.76.76,0,0,0,.21,0h.08l.25,0h0a24.47,24.47,0,0,1,13.47,0,1.06,1.06,0,0,0,.31.05,1,1,0,0,0,.59-.19,1,1,0,0,0,.41-.81V2A1,1,0,0,0,29.52,1.08ZM8.05,17.59a25,25,0,0,0-6.05.7V2.77a24.78,24.78,0,0,1,12.1,0V18.29A25,25,0,0,0,8.05,17.59Zm20.15.7a25,25,0,0,0-6.05-.7,25,25,0,0,0-6,.7V2.77a24.78,24.78,0,0,1,12.1,0Z"/><path d="M29.51,22.67a23.88,23.88,0,0,0-7.36-1.08,24.12,24.12,0,0,0-7,1,24.12,24.12,0,0,0-7-1A23.59,23.59,0,0,0,.69,22.67a1,1,0,0,0-.64,1.27,1,1,0,0,0,1,.68,1.25,1.25,0,0,0,.32-.05,24.47,24.47,0,0,1,13.47,0,1,1,0,0,0,.63,0,24.47,24.47,0,0,1,13.47,0,1,1,0,1,0,.62-1.9Z"/></g></g></svg>' ); */
+    }
+
+    .titleItemListMenu-en.activity::before {
+        height: 22px;
+        background-image: url('../../images/common/sp/AP_svg_icon_activity_fff.svg');
+        /* background-image: url( 'data:image/svg+xml;utf-8,<svg fill="%23fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29.98 21.57"><title>ACTIVITY</title><g><g><path d="M29.59.21A1,1,0,0,0,28.74,0L7.08,5.43l-5.8-1.7a1,1,0,0,0-.88.16,1,1,0,0,0-.4.8V16.88a1,1,0,0,0,.4.81,1,1,0,0,0,.88.15l5.8-1.7,21.66,5.4a1,1,0,0,0,.24,0,1,1,0,0,0,.61-.21,1,1,0,0,0,.39-.79V1A1,1,0,0,0,29.59.21ZM2,6,6.37,7.31v7L2,15.55ZM28,19.29,8.37,14.4V7.17L28,2.28Z"/></g></g></svg>' ); */
+    }
+
+    .titleItemListMenu-en.clip::before {
+        position: relative;
+        top: calc(50% - 12.5px);
+        left: -20px;
+        height: 25px;
+        transform: none;
+        background-image: url('../../images/common/sp/AP_svg_icon_keep_fff.svg');
+        /* background-image: url( 'data:image/svg+xml;utf-8,<svg fill="%23fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 47.35 42.57"><title>CLIP</title><g><g><path d="M23.68,42.57,3.91,22.8A13.36,13.36,0,0,1,22.8,3.91l.88.87.87-.87A13.36,13.36,0,0,1,43.45,22.8ZM13.35,3A10.36,10.36,0,0,0,6,20.68L23.68,38.33,41.32,20.68A10.36,10.36,0,1,0,26.67,6l-3,3-3-3A10.3,10.3,0,0,0,13.35,3Z"/></g></g></svg>' ); */
+        vertical-align: unset;
+    }
+
+    .titleItemListMenu-en.history::before {
+        position: relative;
+        top: calc(50% - 12.5px);
+        left: -20px;
+        width: 25px;
+        height: 25px;
+        transform: none;
+        background-image: url('../../images/common/sp/AP_svg_icon_history_fff.svg');
+        /* background-image: url( 'data:image/svg+xml;utf-8,<svg fill="%23fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 27.17 27.17"><title>HISTORY</title><g><g><path d="M13.58,27.17A13.59,13.59,0,1,1,27.17,13.58,13.59,13.59,0,0,1,13.58,27.17ZM13.58,2A11.59,11.59,0,1,0,25.17,13.58,11.6,11.6,0,0,0,13.58,2Z"/><polygon points="19.34 14.59 12.59 14.59 12.59 4.3 14.59 4.3 14.59 12.59 19.34 12.59 19.34 14.59"/></g></g></svg>' ); */
+        vertical-align: unset;
+    }
+
+    #menuContainer #logined .titleItemListMenu-en.arrow{
+        font-size: 18px;
+        font-weight: 400;
+        padding: 0 25px;
+    }
+
+    #menuContainer #logined .titleItemListMenu-en.arrow::before {
+        position: relative;
+        top: calc(50% - 6.5px);
+        left: 0;
+        width: 23px;
+        height: 15px;
+        background-image: url('../../images/common/sp/AP_svg_icon_arrow_fff.svg');
+        /* background-image: url( 'data:image/svg+xml;utf-8,<svg fill="%23fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29.25 52.66"><title>ARROW</title><polygon class="cls-1" points="29.25 26.33 25.2 22 25.15 22.05 4.05 0 0 4.32 21.06 26.33 0 48.33 4.05 52.66 25.15 30.61 25.2 30.65 29.25 26.33"/></svg>' ); */
+        vertical-align: unset;
+    }
+
+
+    /* li.itemListMenuの中の日本語タイトル テキスト共通指定 */
+    .titleItemListMenu-ja {
+        font-family: 'Noto Sans Japanese', sans-serif;
+        font-size: 20px;
+        font-weight: 400;
+        text-align: right;
+    }
+
+
+    /* li.itemListMenuの中の日本語タイトル テキスト個別指定 */
+    .titleItemListMenu-ja.acordion {
+        padding-right: 40px;
+    }
+
+    .titleItemListMenu-ja.arrow {
+        padding-right: 48px;
+    }
+
+    .titleItemListMenu-ja.ajinomotalk {
+        padding-right: 48px;
+    }
+
+    /* li.itemListMenuの中の日本語タイトル アイコン共通指定 */
+    .titleItemListMenu-ja.icon::after {
+        content: '';
+        display: inline-block;
+        position: absolute;
+        top: calc(50% - 15px);
+        right: 0;
+        width: 30px;
+        height: 30px;
+        vertical-align: middle;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+
+
+    /* li.itemListMenuの中の日本語タイトル アイコン個別指定 */
+    .titleItemListMenu-ja.acordion::after {
+        top: calc(50% - 7.5px);
+        width: 15px;
+        height: 15px;
+        background-image: url('../../images/common/sp/AP_svg_icon_plus_fff.svg');
+        /* background-image: url( 'data:image/svg+xml;utf-8,<svg fill="%23fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28"><title>ARROW</title><polygon class="cls-1" points="28 12 16 12 16 0 12 0 12 12 0 12 0 16 12 16 12 28 16 28 16 16 28 16 28 12"/></svg>' ); */
+    }
+
+    .titleItemListMenu-ja.arrow::after {
+        top: calc(50% - 11px);
+        width: 13px;
+        height: 22px;
+        background-image: url('../../images/common/sp/AP_svg_icon_arrow_fff.svg');
+        /* background-image: url( 'data:image/svg+xml;utf-8,<svg fill="%23fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29.25 52.66"><title>ARROW</title><polygon class="cls-1" points="29.25 26.33 25.2 22 25.15 22.05 4.05 0 0 4.32 21.06 26.33 0 48.33 4.05 52.66 25.15 30.61 25.2 30.65 29.25 26.33"/></svg>' ); */
+    }
+
+    .titleItemListMenu-ja.ajinomotalk::after {
+        top: calc(47% - 0px);
+        height: 22px;
+        right: -12px;
+        background-image: url('../../images/common/sp/AP_svg_icon_link.svg');
+    }
+
+    /* レシピ内 アコーディオン用 個別指定 */
+    #menuContainer #isOpenedRecipeAcordion {
+        display: none;
+    }
+    .acd-label{
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+        margin-bottom: 1px;
+        padding: 22px 20px;
+    }
+    .listMenu.recipe{
+        height: auto;
+        padding: 0;
+        opacity: 1;
+        transition: none;
+        visibility: visible;
+    }
+
+    #menuContainer #isOpenedRecipeAcordion:checked + .acd-label {
+        border-bottom: none;
+    }
+    #menuContainer #isOpenedRecipeAcordion:checked + .acd-label + .listMenu.recipe{
+        height: 300px;
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .recipe .titleItemListMenu-ja.acordion {
+        padding-right: 0;
+    }
+    .recipe .titleItemListMenu-ja.acordion::after {
+        display: none;
+    }
+
+    .recipe .titleItemListMenu-ja.arrow::after {
+        top: calc(50% - 11px);
+        width: 13px;
+        height: 22px;
+    }
+
+    .listMenu.recipe .titleItemListMenu-ja {
+        font-size: 20px;
+    }
+
+
+    /* メニュー内 コンポーネント個別指定 */
+    .btnRegister {
+        display: flex!important;
+        justify-content: center;
+        align-items: center;
+        background-color: #fff;
+        border-radius: 4px;
+        text-decoration: none;
+    }
+
+    .textGrad {
+        background: linear-gradient(90deg, rgba(217,44,107,1) 0%, rgba(236,110,30,1) 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: rgba(255,255,255,0.0);
+        color: #e60012;
+    }
+
+    .btnLogin {
+        display: flex!important;
+        justify-content: center;
+        align-items: center;
+        border: 2px solid #fff;
+        border-radius: 4px;
+        text-decoration: none;
+        color: #fff;
+    }
+
+    .btn-logout {
+        text-decoration: none;
+        color: #fff;
+    }
+
+    /* 下部メニュー */
+    .bottomMenu {
+        display: none;
+    }
+}
+
+@media all and (-ms-high-contrast: none) {
+    .textGrad {
+        background: none;
+        color: #e60012;
+    }
+}
+
+@media (max-width: 979px) and (-ms-high-contrast: none) {
+    #menuContainer #left .itemListMenu,
+    #menuContainer #nonLogin .itemListMenu {
+        display: flex;
+        justify-content: flex-start!important;
+        align-items: center;
+        position: relative;
+    }
+
+    #menuContainer #right .itemListMenu {
+        display: block;
+        width: 100%;
+        position: relative;
+    }
+
+    #menuContainer #right .itemListMenu .titleItemListMenu-ja {
+        float: right;
+        transform: translateY(100%);
+    }
+
+    #menuContainer #right .itemListMenu .titleItemListMenu-ja.arrow {
+        padding-right: 60px;
+    }
+
+    #menuContainer #right .itemListMenu:first-child .titleItemListMenu-ja::after {
+        top: calc(50% - 7.5px);
+    }
+
+    #menuContainer #right .itemListMenu .titleItemListMenu-en {
+        transform: translateY(-50%);
+    }
+
+    .titleItemListMenu-en.magazine::before {
+        top: calc(50% - 8.5px);
+        left: -5px;
+        height: 17px;
+        background-image: url('../../images/common/sp/AP_svg_icon_magazine_fff.svg');
+        /* background-image: url( 'data:image/svg+xml;utf-8,<svg fill="%23fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30.2 24.62"><title>MAGAZINE</title><g><g><path d="M29.52,1.08A23.7,23.7,0,0,0,22.15,0a24.11,24.11,0,0,0-7,1,24.11,24.11,0,0,0-7-1A23.7,23.7,0,0,0,.68,1.08,1,1,0,0,0,0,2V19.62a1,1,0,0,0,.41.81,1,1,0,0,0,.91.14,24.47,24.47,0,0,1,13.47,0h.05a.76.76,0,0,0,.21,0h.08l.25,0h0a24.47,24.47,0,0,1,13.47,0,1.06,1.06,0,0,0,.31.05,1,1,0,0,0,.59-.19,1,1,0,0,0,.41-.81V2A1,1,0,0,0,29.52,1.08ZM8.05,17.59a25,25,0,0,0-6.05.7V2.77a24.78,24.78,0,0,1,12.1,0V18.29A25,25,0,0,0,8.05,17.59Zm20.15.7a25,25,0,0,0-6.05-.7,25,25,0,0,0-6,.7V2.77a24.78,24.78,0,0,1,12.1,0Z"/><path d="M29.51,22.67a23.88,23.88,0,0,0-7.36-1.08,24.12,24.12,0,0,0-7,1,24.12,24.12,0,0,0-7-1A23.59,23.59,0,0,0,.69,22.67a1,1,0,0,0-.64,1.27,1,1,0,0,0,1,.68,1.25,1.25,0,0,0,.32-.05,24.47,24.47,0,0,1,13.47,0,1,1,0,0,0,.63,0,24.47,24.47,0,0,1,13.47,0,1,1,0,1,0,.62-1.9Z"/></g></g></svg>' ); */
+    }
+
+    .titleItemListMenu-en.activity::before {
+        top: calc(50% - 7.5px);
+        left: -5px;
+        height: 15px;
+        background-image: url('../../images/common/sp/AP_svg_icon_activity_fff.svg');
+        /* background-image: url( 'data:image/svg+xml;utf-8,<svg fill="%23fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30.2 24.62"><title>MAGAZINE</title><g><g><path d="M29.52,1.08A23.7,23.7,0,0,0,22.15,0a24.11,24.11,0,0,0-7,1,24.11,24.11,0,0,0-7-1A23.7,23.7,0,0,0,.68,1.08,1,1,0,0,0,0,2V19.62a1,1,0,0,0,.41.81,1,1,0,0,0,.91.14,24.47,24.47,0,0,1,13.47,0h.05a.76.76,0,0,0,.21,0h.08l.25,0h0a24.47,24.47,0,0,1,13.47,0,1.06,1.06,0,0,0,.31.05,1,1,0,0,0,.59-.19,1,1,0,0,0,.41-.81V2A1,1,0,0,0,29.52,1.08ZM8.05,17.59a25,25,0,0,0-6.05.7V2.77a24.78,24.78,0,0,1,12.1,0V18.29A25,25,0,0,0,8.05,17.59Zm20.15.7a25,25,0,0,0-6.05-.7,25,25,0,0,0-6,.7V2.77a24.78,24.78,0,0,1,12.1,0Z"/><path d="M29.51,22.67a23.88,23.88,0,0,0-7.36-1.08,24.12,24.12,0,0,0-7,1,24.12,24.12,0,0,0-7-1A23.59,23.59,0,0,0,.69,22.67a1,1,0,0,0-.64,1.27,1,1,0,0,0,1,.68,1.25,1.25,0,0,0,.32-.05,24.47,24.47,0,0,1,13.47,0,1,1,0,0,0,.63,0,24.47,24.47,0,0,1,13.47,0,1,1,0,1,0,.62-1.9Z"/></g></g></svg>' ); */
+    }
+}
+
+@media (min-width: 980px) and (-ms-high-contrast: none) {
+    #menuContainer #left .itemListMenu,
+    #menuContainer #nonLogin .itemListMenu {
+        display: flex;
+        justify-content: flex-start!important;
+        align-items: center;
+        position: relative;
+        padding: 20px 0;
+        border-bottom: none;
+    }
+
+    #menuContainer #left .itemListMenu {
+        margin: 0;
+    }
+
+    #menuContainer #left .itemListMenu.pc {
+        display: block!important;
+        overflow: hidden;
+    }
+
+    #menuContainer #left .itemListMenu.pc .titleItemListMenu-en {
+        float: left;
+    }
+    #menuContainer #left .itemListMenu.pc .titleItemListMenu-ja {
+        float: right;
+    }
+
+    #menuContainer #nonLogin .itemListMenu {
+        width: 312px;
+        margin: 0 15px;
+        padding: 25px 0;
+    }
+
+    #menuContainer #right .itemListMenu {
+        display: block;
+        width: 100%;
+        position: relative;
+        padding: 20px 0;
+        margin: 30px 0;
+        border-bottom: none;
+    }
+
+    #menuContainer #right .itemListMenu .titleItemListMenu-ja {
+        float: right;
+    }
+
+    #menuContainer #right .itemListMenu:first-child .titleItemListMenu-ja::after {
+        top: calc(50% - 22px);
+    }
+
+    .titleItemListMenu-en.magazine::before {
+        top: calc(50% - 12.5px);
+        height: 25px;
+        transform: translateY(-50%);
+        background-image: url('../../images/common/sp/AP_svg_icon_magazine_fff.svg');
+        /* background-image: url( 'data:image/svg+xml;utf-8,<svg fill="%23fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30.2 24.62"><title>MAGAZINE</title><g><g><path d="M29.52,1.08A23.7,23.7,0,0,0,22.15,0a24.11,24.11,0,0,0-7,1,24.11,24.11,0,0,0-7-1A23.7,23.7,0,0,0,.68,1.08,1,1,0,0,0,0,2V19.62a1,1,0,0,0,.41.81,1,1,0,0,0,.91.14,24.47,24.47,0,0,1,13.47,0h.05a.76.76,0,0,0,.21,0h.08l.25,0h0a24.47,24.47,0,0,1,13.47,0,1.06,1.06,0,0,0,.31.05,1,1,0,0,0,.59-.19,1,1,0,0,0,.41-.81V2A1,1,0,0,0,29.52,1.08ZM8.05,17.59a25,25,0,0,0-6.05.7V2.77a24.78,24.78,0,0,1,12.1,0V18.29A25,25,0,0,0,8.05,17.59Zm20.15.7a25,25,0,0,0-6.05-.7,25,25,0,0,0-6,.7V2.77a24.78,24.78,0,0,1,12.1,0Z"/><path d="M29.51,22.67a23.88,23.88,0,0,0-7.36-1.08,24.12,24.12,0,0,0-7,1,24.12,24.12,0,0,0-7-1A23.59,23.59,0,0,0,.69,22.67a1,1,0,0,0-.64,1.27,1,1,0,0,0,1,.68,1.25,1.25,0,0,0,.32-.05,24.47,24.47,0,0,1,13.47,0,1,1,0,0,0,.63,0,24.47,24.47,0,0,1,13.47,0,1,1,0,1,0,.62-1.9Z"/></g></g></svg>' ); */
+    }
+
+    .titleItemListMenu-en.clip::before {
+        transform: translateY(0);
+    }
+
+    .titleItemListMenu-en.history::before {
+        transform: translateY(0);
+    }
+
+    #menuContainer #logined .titleItemListMenu-en.arrow::before {
+        position: relative;
+        top: calc(50% - 6.5px);
+        left: 0;
+        width: 23px;
+        height: 15px;
+        transform: none;
+        background-image: url('../../images/common/sp/AP_svg_icon_arrow_fff.svg');
+        /* background-image: url( 'data:image/svg+xml;utf-8,<svg fill="%23fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29.25 52.66"><title>ARROW</title><polygon class="cls-1" points="29.25 26.33 25.2 22 25.15 22.05 4.05 0 0 4.32 21.06 26.33 0 48.33 4.05 52.66 25.15 30.61 25.2 30.65 29.25 26.33"/></svg>' ); */
+        vertical-align: unset;
+    }
+}
+
+@supports (-ms-ime-align:auto) {
+    #menuContainer #logined .titleItemListMenu-en.arrow::before {
+        position: relative;
+        top: calc(50% - 6.5px);
+        left: 0;
+        width: 23px;
+        height: 15px;
+        transform: none;
+        background-image: url('../../images/common/sp/AP_svg_icon_arrow_fff.svg');
+        /* background-image: url( 'data:image/svg+xml;utf-8,<svg fill="%23fff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29.25 52.66"><title>ARROW</title><polygon class="cls-1" points="29.25 26.33 25.2 22 25.15 22.05 4.05 0 0 4.32 21.06 26.33 0 48.33 4.05 52.66 25.15 30.61 25.2 30.65 29.25 26.33"/></svg>' ); */
+        vertical-align: unset;
+    }
+
+    #menuContainer #bottom .titleItemListMenu-en.icon::before {
+        transform: none;
+    }
+}

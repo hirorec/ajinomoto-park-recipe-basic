@@ -1,0 +1,56 @@
+/* Add Override */
+.mem-formTitle__flag { margin-left: auto;}
+
+@media screen and (min-width: 980px) {
+  .mem-section--parting {
+    border-top: 1px solid #707070;
+    padding-top: 40px;
+  }
+  .mem-section--partingBottom {
+    padding-bottom: 50px;
+    border-bottom: 1px solid #707070;
+  }
+}
+
+@media screen and (max-width: 979px) {
+  .mem-section--parting {
+    position: relative;
+    padding-top: 40px;
+  }
+  .mem-section--parting::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 8vw;
+    right: 8vw;
+    height: 1px;
+    background-color: #707070;
+  }
+  .mem-section--partingBottom {
+    position: relative;
+    padding-bottom: 40px;
+  }
+  .mem-section--partingBottom::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 8vw;
+    right: 8vw;
+    height: 1px;
+    background-color: #707070;
+  }
+}
+
+.mem-content--sso .aid-figure {
+  max-width: 100%;
+  width: 40%;
+  margin: auto;
+  margin-bottom: 30px;
+}
+
+@media screen and (max-width: 979px) {
+  .mem-content--sso .aid-figure {
+    width: 60%;
+    margin-bottom: 20px;
+  }
+}

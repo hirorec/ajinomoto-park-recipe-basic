@@ -1,0 +1,2337 @@
+/**
+ * init.js
+ */
+
+(function($){
+
+/* init
+--------------------------------------------------*/
+	pj.init = function(){
+		$.htmlAddClass();
+		$('img.ahover, .ahoverList img').rollover();
+		$('.fhover').fadeover();
+		$('a.smooth,.smoothArea a').smoothScroll();
+		$('a.commonPop').commonPop();
+	}
+
+/* default_set
+--------------------------------------------------*/
+	var default_set = function() {
+
+		// judge
+		var
+			ua = navigator.userAgent.toLowerCase(),
+			ver = navigator.appVersion.toLowerCase(),
+			isIE11 = (ua.indexOf('trident/7') > -1),
+			isMSIE = (ua.indexOf('msie') > -1) && (ua.indexOf('opera') == -1),
+			isIE = isMSIE || isIE11,
+			isiPhone = (ua.indexOf('iphone') > -1),
+			isAndroid = (ua.indexOf('android') > -1) && (ua.indexOf('mobile') > -1);
+
+		if(isIE) {
+			$('body').addClass('IE');
+		}
+		if(isiPhone){
+			$('body').addClass('iphone');
+		}
+		if(isAndroid){
+			$('body').addClass('android');
+		} else {
+			$('body').addClass('android_none');
+		}
+
+		// sp pc judge
+		if( window.ontouchstart === null ){
+			return;
+		} else {
+			$('body').addClass('noT');
+		}
+
+		// img protect
+		/*$('img').on('contextmenu',function(){
+			return false;
+		});
+		$('img').mousedown(
+			function(e){
+				e.preventDefault();
+			}
+		);
+		$('img').mouseup(
+			function(e){
+				e.preventDefault();
+			}
+		);*/
+
+        // img protect
+			$('img:not(.dl)').on('contextmenu',function(){
+                    return false;
+            });
+            $('img:not(.dl)').mousedown(
+                    function(e){
+                            e.preventDefault();
+                    }
+            );
+            $('img:not(.dl)').mouseup(
+                    function(e){
+                            e.preventDefault();
+                    }
+            );
+
+
+		// tel link
+		$('.tel').on('click', function(){
+			if( window.ontouchstart === null ){
+				return;
+			} else {
+				return false;
+			}
+		});
+
+	}
+
+/* no_scroll
+--------------------------------------------------*/
+	function no_scroll(){
+		//PC用
+		var scroll_event = 'onwheel' in document ? 'wheel' : 'onmousewheel' in document ? 'mousewheel' : 'DOMMouseScroll';
+		$(document).on(scroll_event,function(e){e.preventDefault();});
+		//SP用
+		$(document).on('touchmove.noScroll', function(e) {e.preventDefault();});
+	}
+
+/* return_scroll
+--------------------------------------------------*/
+	function return_scroll(){
+		//PC用
+		var scroll_event = 'onwheel' in document ? 'wheel' : 'onmousewheel' in document ? 'mousewheel' : 'DOMMouseScroll';
+		$(document).off(scroll_event);
+		//SP用
+		$(document).off('.noScroll');
+	}
+
+
+
+/* spJsReset
+--------------------------------------------------*/
+	var spJsReset = function() {
+		$(window).on('resize', function(){
+			var w = $(window).width();
+			if(w > 979){
+				$('body').removeClass('open');
+				$('#gNav').removeAttr('style');
+			}
+		});
+	}
+
+/* spOtherHeader
+--------------------------------------------------*/
+	var spOtherHeader = function() {
+		var
+			others = [
+				{dirName:'/user/auth/login', title:'ログイン'},
+				{dirName:'/user/password-reminder', title:'パスワードの再設定'},
+				{dirName:'/user/entry', title:'新規会員登録(無料)'},
+				{dirName:'/user/entry/sns', title:'外部サービスから登録'},
+				{dirName:'/user/edit/login', title:'登録情報の変更'},
+				{dirName:'/user/edit', title:'登録情報の確認・変更'},
+				{dirName:'/user/edit/mail-change', title:'メールアドレス変更'},
+				{dirName:'/user/edit/password-change', title:'パスワードの再設定'},
+				{dirName:'/user/edit/sns-deregister', title:'SNSとの連携・解除'},
+				{dirName:'/user/edit/mail-deregister', title:'メール配信の設定変更'},
+				{dirName:'/user/resign/', title:'退会の手続き'},
+				{dirName:'/ap_terms_of_service/', title:'「AJINOMOTO PARK」利用規約'},
+				{dirName:'/ap_membership_agreement/', title:'「AJINOMOTO PARK」会員規約'}
+			];
+		var host = location.host;
+		$.each(others, function(index, elem){
+			if(document.URL.match(elem.dirName)){
+				// $('#header').addClass('otherHeader');
+				// $('.contentHeadArea').addClass('none');
+				$('#header .siteTilte').append('<span><strong>'+elem.title+'</strong></span>');
+			}
+		});
+
+		// ajinomoto park top
+		if(document.URL.match('/') || document.URL.match('/error') || document.URL.match('/room') || document.URL.match('/htmlfp')){
+			$('body').addClass('topStyle');
+			// $('#header').addClass('otherHeader');
+			// $('.contentHeadArea').addClass('none');
+		}
+
+		// on nav
+		if(document.URL.match('/kenko')){
+			if (document.URL.match('/menu/kenko')){
+				$('.siteTilte').addClass('on');
+			} else {
+				$('.gNav .iconBtnList li:nth-child(1)').addClass('on');
+			}
+		}
+		if(document.URL.match('/magazine')){
+			$('.gNav .iconBtnList li:nth-child(2)').addClass('on');
+		}
+		if(document.URL.match('/campaign')){
+			$('.gNav .iconBtnList li:nth-child(3)').addClass('on');
+		}
+		if(document.URL.match('/')){
+			$('.gNav .iconBtnList li:nth-child(4)').addClass('on');
+		}
+
+		// recipe TOP
+		if($('#header').hasClass('inH1')){
+			var el = $('.siteTilte').html();
+			$('.siteTilte').replaceWith('<h1 class="siteTilte">'+el+'</h1>');
+		}
+
+		if(document.URL.match('/recipe') ){
+			$('.siteTilte').addClass('on');
+			// $('#wrapper').addClass('chFixed');
+			// $(window).on('load resize', function(){
+			// 	var ww = $(window).width();
+			// 	if(ww>980){
+			// 		var contentHeadAreaH = $('.contentHeadArea').outerHeight();
+			// 		$('#container').css({
+			// 			'padding-top': contentHeadAreaH
+			// 		});
+			// 	} else {
+			// 		$('#container').removeAttr('style');
+			// 	}
+			// });
+		}
+
+
+	}
+
+/* spOtherHeader02
+--------------------------------------------------*/
+var spOtherHeader02 = function() {
+	var
+		others02 = [
+			{dirName:'/campaign', title:'<img src="/wp-content/themes/ajinomoto/resources/images/campaign/index/txt_campaign.png" alt="キャンペーン" class="imgtxtCommon">'},
+			// {dirName:'/about/', title:'<img src="/wp-content/themes/ajinomoto/resources/images/about/txt_about.png" alt="AJINOMOTO PARK とは" class="imgtxtCommon">'},
+			{dirName:'/magazine', title:'<img src="/wp-content/themes/ajinomoto/resources/images/magazine/index/txt_magazine.png" alt="“おいしいを楽しむ”マガジン" class="imgtxtCommon">'},
+			{dirName:'/kenko', title:'<img src="/wp-content/themes/ajinomoto/resources/images/kenko/index/txt_kenko.png" alt="テーマ別健康と食情報" class="imgtxtCommon">'},
+			{dirName:'/faq', title:'<img src="/wp-content/themes/ajinomoto/resources/images/faq/txt_qa02.png" alt="よくあるお問い合わせ" class="imgtxtCommon">'}
+		];
+	var host = location.host;
+	$.each(others02, function(index, elem){
+		if(document.URL.match(elem.dirName)){
+			if(document.URL.match('/menu/kenko')){
+				return;
+			}else{
+				// $('#header').addClass('otherHeader');
+				// $('.contentHeadArea').addClass('none');
+				/*$('#header .siteTilte').append('<span><strong>'+elem.title+'</strong></span>');*/
+				/*$('#container #content').prepend('<div class="otherHeader02"><div class="inCell">'+elem.title+'</div></div>');*/
+			}
+		}
+	});
+	if(document.URL.match('https?://.*?/(.*?)(?=/)') !== null){;
+		if(document.URL.match('https?://.*?/(.*?)(?=/)')[1] === 'about'){
+			// $('#header').addClass('otherHeader');
+			// $('.contentHeadArea').addClass('none');
+		}
+	}
+
+	if($('.siteTilte').children().length <= 1 && $('#header').hasClass('otherHeader')){
+		$('#header').addClass('only');
+	}
+}
+
+
+/* spHeader
+--------------------------------------------------*/
+	// var spHeader = function() {
+	// 	var start_pos = 0;
+	// 	$(window).on('resize scroll load', function(){
+	// 		var
+	// 			scroll = $(window).scrollTop(),
+	// 			ww = $(window).width(),
+	// 			pos = $('.siteLogo').outerHeight();
+	// 			chPos = (ww < 980) ? 50 : 80;
+	// 		wordList02();
+
+	// 		if (scroll > start_pos) {
+	// 			$('.fixedAera,.contentHeadArea,.searchSpFixedBtn').removeClass('up');
+	// 			$('.fixedAera,.contentHeadArea,.searchSpFixedBtn').addClass('down');
+	// 		} else {
+	// 			$('.fixedAera,.contentHeadArea,.searchSpFixedBtn').addClass('up');
+	// 			$('.fixedAera,.contentHeadArea,.searchSpFixedBtn').removeClass('down');
+	// 		}
+	// 		start_pos = scroll;
+
+
+	// 		if( scroll > pos ){
+	// 			$('.fixedAera').addClass('fixed');
+	// 		} else {
+	// 			$('.fixedAera').removeClass('fixed');
+	// 		}
+
+	// 		/* 2019/06/22 AP_ISSUE-399 Add Start */
+	// 		if( scroll > chPos ){
+	// 			$('.contentHeadArea').addClass('fixed');
+	// 			$('#recipeIndex').addClass('fixedSearchView');
+	// 		} else {
+	// 			$('.contentHeadArea').removeClass('fixed');
+	// 			$('#recipeIndex').removeClass('fixedSearchView');
+	// 		}
+
+	// 		if (scroll < 10) {
+	// 			$('.fixedAera,.contentHeadArea').addClass('almostTop');
+	// 		} else {
+	// 			$('.fixedAera,.contentHeadArea').removeClass('almostTop');
+	// 		}
+	// 		/* 2019/06/22 AP_ISSUE-399 Add End */
+	// 		if($('.searchSpFixedBtn').length){
+	// 			var searchPos = $('#recipeSearch').offset().top;
+	// 			if(searchPos-chPos<scroll){
+	// 				$('.searchSpFixedBtn').addClass('fixed');
+	// 			} else {
+	// 				$('.searchSpFixedBtn').removeClass('fixed');
+	// 			}
+	// 		}
+	// 	});
+	// }
+
+/* spGnav
+--------------------------------------------------*/
+	var spGnav = function() {
+		$('.hdrMenu').on('click', function(){
+			$('.gNav').fadeIn(100, function(){
+				$('.gNav').addClass('open');
+				var
+					giH = $('.gNavInner').height(),
+					wh = $(window).height();
+				if(giH < wh){
+					no_scroll();
+				}
+			});
+		});
+		$('.gNav').on('click', function(e){
+			$('.gNav').removeClass('open');
+			$('.gNav').fadeOut();
+			return_scroll();
+		});
+		$('.gNav .gNavInner').on('click', function(e){
+			e.stopPropagation();
+		});
+	}
+
+/* snsArea
+--------------------------------------------------*/
+	var snsArea = function() {
+		if($('.snsArea').length){
+			$('.snsArea .clip a').on('click', function(){
+				$(this).toggleClass('on');
+				return false;
+			});
+		}
+	}
+
+/* bodyFix & bodyFixReset
+--------------------------------------------------*/
+	var
+		scrollPosi,
+		bodyElm = $('body');
+
+	var bodyFix = function() {
+		scrollPosi = $(window).scrollTop();
+		$('body').css({
+			'position': 'fixed',
+			'width': '100%',
+			'z-index': '1',
+			'top': -scrollPosi
+		});
+	}
+
+	var bodyFixReset = function() {
+		bodyElm.css({
+			'position': 'relative',
+			'width': 'auto',
+			'top':'auto'
+		});
+		$("html, body").scrollTop(scrollPosi);
+	}
+
+/* modalBtn
+--------------------------------------------------*/
+	var modalBtn = function() {
+		if($('.modalBtn').length){
+			$('.modalBtn a').on('click', function() {
+				if($(this).attr('data-modal')!= undefined){
+					var btnData = $(this).attr('data-modal');
+					$('.modal').each(function(index, el) {
+						var mdData = $(this).attr('data-modal');
+						if(mdData == btnData){
+							$(this).fadeIn(300);
+						}
+					});
+				} else if($(this).hasClass('clip_btn')){
+				} else if($(this).hasClass('modalBtnType02')){
+					$('.modal02').fadeIn(300);
+				} else if($(this).hasClass('modalBtnLoggedin')) {
+					$('.modalLoggedin').fadeIn(300);
+				} else if($(this).hasClass('modalBtnLinebookmark')) {
+					$('.lineBookmarkModalArea').fadeIn(300);
+				} else if($(this).hasClass('btnLineBookmark')) {
+					if(window.matchMedia("(min-width: 980px)").matches) {
+					    $('.lineBookmarkQRModalArea').fadeIn(300);
+					}else{
+						window.open($(this).attr('href'), '_blank');
+						return;
+					}
+				} else {
+					$('.modal').fadeIn(300);
+				}
+				// $('body').addClass('lock');
+				var ww = $(window).width();
+				if(ww < 980 && !$(this).hasClass('clip_btn')){
+					bodyFix();
+				}
+
+				//20181218 おすすめ献立表示変更
+				if($('.imageListSwipe').length){
+					if(ww > 979) {
+						var h = $('.imageListSwipe .left').height();
+						$('.recommendModalInner .imageListSwipe .right li').height(h/2);
+					}
+				}
+				// if($('.imageListSlide').length){
+				// 	$('.imageListSlide .right ul').slick({
+				// 		verticalSwiping: true,
+				// 		slidesToShow: 1,
+				// 		slidesToScroll: 1,
+				// 		dots: true,
+				// 		appendDots: $('.addDots'),
+				// 		appendArrows: $('.addArrows')
+				// 	});
+				// }
+				//ここまで
+
+				return false;
+			});
+
+			$('.fork01 a').on('click', function(){
+				$('.recommendModalArea').fadeIn(300);
+				$('.carouselArea').slick('setPosition');
+				// $('body').addClass('lock');
+				var ww = $(window).width();
+				if(ww < 980){
+					bodyFix();
+				}
+				if($('.imageListSwipe').length){
+					if(ww > 979) {
+						var h = $('.imageListSwipe .left').height();
+						$('.recommendModalInner .imageListSwipe .right li').height(h/2);
+					}
+				}
+				if($('.imageListSlide').length){
+					$('.imageListSlide .right ul').slick({
+						// verticalSwiping: true,
+						slidesToShow: 1,
+						slidesToScroll: 1,
+						dots: true,
+						appendDots: $('.addDots'),
+						appendArrows: $('.addArrows')
+					});
+				}
+				//ここまで
+
+				return false;
+			});
+			$('.modal, .modal .mdClose, .modal02, .modal02 .mdClose').on('click', function(){
+				$('.modal').fadeOut(300);
+				$('.modal02').fadeOut(300);
+				// $('body').removeClass('lock');
+				var ww = $(window).width();
+				if(ww < 980){
+					bodyFixReset();
+				}
+			});
+
+			//20181218 おすすめ献立表示変更
+			$('.modalInner,.addDots,.addArrows').on('click', function(e){
+				e.stopPropagation();
+			});
+
+			//ヘッダー「LOGIN中」ボタン押下
+			$(document).on('click', '.modalBtnLoggedin', function() {
+				$('.modalLoggedin').fadeIn(300);
+			});
+			$(window).on('load resize', function(){
+				// リサイズに合わせカルーセル位置をセット
+				if ($('.recommendModalArea').length) {
+					$('.carouselArea').slick('setPosition');
+				}
+				// 小さすぎるサイズの場合はモーダルを消す
+				if ($(window).height() < 370) {
+					if ($('.recommendModalArea').length) {
+						$('.recommendModalArea').fadeOut(300);
+					}
+				}
+				if($('.imageListSwipe').length){
+					var
+						ww = $(window).width(),
+						count = $('.imageListSwipe .right li').length;
+					if(ww < 980 && ww > 709){
+						var right_size = 680;
+						$('.recommendModalInner .imageListSwipe .right').width(right_size);
+						$('.recommendModalInner .imageListSwipe .right ul').width(right_size/2*count);
+						$('.Inner .imageListSwipe .right li').width(right_size/2);
+					}
+					if(ww < 710){
+						var right_size = ww-26;
+						$('.recommendModalInner .imageListSwipe .right').width(right_size);
+						$('.recommendModalInner .imageListSwipe .right ul').width(right_size/2*count);
+						$('.recommendModalInner .imageListSwipe .right li').width(right_size/2);
+					}
+					if(ww > 979) {
+						var h = $('.imageListSwipe .left').height();
+						$('.recommendModalInner .imageListSwipe .right').width('33.13%');
+						$('.recommendModalInner .imageListSwipe .right ul,.recommendModalInner .imageListSwipe .right li').width('auto');
+						$('.recommendModalInner .imageListSwipe .right ul').height(h/2*count);
+						$('.recommendModalInner .imageListSwipe .right li').height(h/2);
+					} else {
+						$('.recommendModalInner .imageListSwipe .right ul,.recommendModalInner .imageListSwipe .right li').height('auto');
+					}
+				}
+			});
+
+			$(window).on('load resize', function(){
+				var
+					WW = $(window).width();
+				if(980 <= WW && $('body').hasClass('sp_mode')){
+					$('.modal,.modal02').hide();
+					if($('.imageListSlide').length){
+						$('.imageListSlide .right ul').slick('unslick');
+					}
+				}
+				if(980 > WW  && $('body').hasClass('pc_mode')) {
+					$('.modal,.modal02').hide();
+					if($('.imageListSlide').length){
+						$('.imageListSlide .right ul').slick('unslick');
+					}
+				}
+			});
+			//ここまで
+		}
+		if($('.modalBtnShare').length){
+			$('.modalBtnShare a').on('click', function(){
+				$('.modalShare').fadeIn(300);
+				var ww = $(window).width();
+				if(ww < 980){
+					bodyFix();
+				}
+				return false;
+			});
+			$('.modalShare, .modalShare .mdClose').on('click', function(){
+				$('.modalShare').fadeOut(300);
+				var ww = $(window).width();
+				if(ww < 980){
+					bodyFixReset();
+				}
+			});
+			$('.modalShare .inInner').on('click', function(e){
+				e.stopPropagation();
+			});
+    }
+	}
+
+/* childMacthHeight
+--------------------------------------------------*/
+	var childMacthHeight = function() {
+		if($('.childMacthHeight').length){
+			$('.childMacthHeight > *').matchHeight();
+		}
+		if($('.childMacthHeight li span.txt.match-height').length){
+			$('.childMacthHeight li span.txt.match-height').matchHeight();
+		}
+		if($('.commonAnchorList').length){
+			$('.commonAnchorList li').matchHeight();
+		}
+		if($('.childTargetMacthHeight').length){
+			$('.childTargetMacthHeight .targetMH').matchHeight({
+				byRow: false
+			});
+		}
+		if($('.matchH_num01').length){
+			$('.matchH_num01').matchHeight();
+		}
+		if($('.matchH_num02').length){
+			$('.matchH_num02').matchHeight();
+		}
+		if($('.matchH_num03').length){
+			$('.matchH_num03').matchHeight();
+		}
+		if($('.matchH_num04').length){
+			$('.matchH_num04').matchHeight();
+		}
+	}
+
+
+/* recommendArea
+--------------------------------------------------*/
+	var recommendArea = function() {
+
+		// sp pc judge
+		if( !(window.ontouchstart === null) ){
+			// open action
+			$(document).on({
+				'mouseenter': function(){
+					/* WANG_BIN AP_ISSUE-310 2019-03-01 UPD START  */
+					var ww = $(window).width();
+					if(ww>979){
+						$('.contentHeadArea .commonSearchArea').slideDown();
+					}
+					/* WANG_BIN AP_ISSUE-310 2019-03-01 UPD END  */
+				}
+			}, '.recommendArea');
+
+			// close action
+			$('.contentHeadArea').nextAll().on({
+				'mouseenter': function(){
+					/* WANG_BIN AP_ISSUE-310 2019-03-01 UPD START  */
+					var ww = $(window).width();
+					if(ww>979){
+						$('.contentHeadArea .commonSearchArea').slideUp();
+					}
+					/* WANG_BIN AP_ISSUE-310 2019-03-01 UPD END  */
+				}
+			});
+			$(document).on({
+				'mouseenter': function(){
+					/* WANG_BIN AP_ISSUE-310 2019-03-01 UPD START  */
+					var ww = $(window).width();
+					if(ww>979){
+						$('.contentHeadArea .commonSearchArea').slideUp();
+					}
+					/* WANG_BIN AP_ISSUE-310 2019-03-01 UPD END  */
+				}
+			}, '#header,#footer,.contentHeadArea .searchArea,.contentHeadArea .btns');
+		}
+	}
+
+
+/* spSearch
+--------------------------------------------------*/
+	var spSearch = function() {
+		var el = $('.commonSearchArea').html();
+		$('#wrapper').append('<div class="spCommonSearch"><div class="commonSearchArea">'+el+'</div><div class="close"></div></div>');
+	}
+
+/* spSearchAction
+--------------------------------------------------*/
+	var spSearchAction = function() {
+		$(document).on('click','.hdrSearch', function(){
+			$('.spCommonSearch').addClass('open');
+			bodyFix();
+		});
+		$(document).on('click','.spCommonSearch .close', function(){
+			$('.spCommonSearch').removeClass('open');
+			bodyFixReset();
+		});
+	}
+
+/* colorboxModal
+--------------------------------------------------*/
+	var colorboxModal = function() {
+		var ww = $(window).width();
+		if(980 < ww){
+			$('.colorbox_single').colorbox({
+				maxWidth:"900px",
+				opacity: 0.7
+			});
+			$('.colorbox_gallery').colorbox({
+				rel:'slideshow',
+				maxWidth:"900px",
+				opacity: 0.7
+			});
+		} else {
+			$('.colorbox_single').colorbox({
+				maxWidth:"90%",
+				maxHeight:"90%",
+				opacity: 0.7
+			});
+			$('.colorbox_gallery').colorbox({
+				rel:'slideshow',
+				maxWidth:"90%",
+				maxHeight:"90%",
+				opacity: 0.7
+			});
+		}
+
+	}
+
+/* 2019/06/22 AP_ISSUE-399 Add */
+/* chFixed
+--------------------------------------------------*/
+	var chFixed = function() {
+		//if(document.URL.match('/recipe') ||  document.URL.match('/hash/tag') ){
+		if(document.URL.match('/recipe') || document.URL.match('/search') ){
+			// $('#wrapper').addClass('chFixed');
+			// $(window).on('load resize', function(){
+			// 	var ww = $(window).width();
+			// 	if(ww>980){
+			// 		var contentHeadAreaH = $('.contentHeadArea').outerHeight();
+			// 		$('#container').css({
+			// 			'padding-top': contentHeadAreaH
+			// 		});
+			// 	} else {
+			// 		$('#container').removeAttr('style');
+			// 	}
+			// });
+		}
+	}
+
+/* inc
+--------------------------------------------------*/
+	var inc = function() {
+		// header include
+        /* PS change */
+		/*$.ajax({
+			type: 'GET',
+			url: '/wp-content/themes/ajinomoto/resources/include/header.html',
+			dataType: 'html',
+			success: function(data) {*/
+				//$('#header').append(data);
+				// spHeader();
+				spGnav();
+				/* spSearchAction(); */
+				/* spOtherHeader(); */
+				/* 2019/06/22 AP_ISSUE-399 Add */
+				chFixed();
+				spOtherHeader02();
+		/*	},
+			error:function() {
+				alert('問題がありました。');
+			}
+		});*/
+
+		// footer include
+		/*$.ajax({
+			type: 'GET',
+			url: '/wp-content/themes/ajinomoto/resources/include/footer.html',
+			dataType: 'html',
+			success: function(data) {
+				$('#footer').append(data);
+			},
+			error:function() {
+				alert('問題がありました。');
+			}
+		});
+        */
+		// contentHeadArea include
+		/*$.ajax({
+			type: 'GET',
+			url: '/wp-content/themes/ajinomoto/resources/include/content_head.html',
+			dataType: 'html',
+			success: function(data) {
+				$('.contentHeadArea').append(data);
+				spSearch();*/
+				recommendArea();
+				/* WANG_BIN AP_ISSUE-310 2019-03-01 ADD START  */
+					spSearchItem();
+				/* WANG_BIN AP_ISSUE-310 2019-03-01 ADD END  */
+				/* 2019/06/22 AP_ISSUE-382 Add */
+				// wordList02();
+		/*	},
+			error:function() {
+				alert('問題がありました。');
+			}
+		});*/
+
+		// roomHeader include
+		/*if($('#header.roomHead').length){
+			$.ajax({
+				type: 'GET',
+				url: '/wp-content/themes/ajinomoto/resources/include/room_head.html',
+				dataType: 'html',
+				success: function(data) {
+					$('#header .fixedAera').append(data);*/
+					room_head();
+		/*		},
+				error:function() {
+					alert('問題がありました。');
+				}
+			});
+		}*/
+        /* PS change end */
+	}
+
+
+
+
+/*--------------------------------------------------
+ recipe_card_page
+--------------------------------------------------*/
+
+/* recipeInfo
+--------------------------------------------------*/
+	var recipeInfo = function() {
+		if($('.recipeDetailTop .nutritionBtn').length){
+			$('.recipeDetailTop .nutritionBtn a').on('click', function(){
+				$(this).toggleClass('on');
+				$('.recipeDetailTop .nutritionArea').slideToggle(300);
+				return false;
+			});
+		}
+		if($('.recommendModalArea .carousel').length){
+			$('.carouselArea').slick({
+				dots: true,
+				arrows: true,
+				appendDots: ".slideNavInner",
+				appendArrows: ".slideNavInner",
+				prevArrow: '<button class="slick-prev slick-arrow" aria-label="Previous" type="button" style="display: block;"><img src="/wp-content/themes/ajinomoto/resources/images/common/sp/icon_arrow.svg"></button>',
+				nextArrow: '<button class="slick-next slick-arrow" aria-label="Next" type="button" style="display: block;"><img src="/wp-content/themes/ajinomoto/resources/images/common/sp/icon_arrow.svg"></button>',
+				centerMode: true,
+				centerPadding: '0%',
+				slidesToShow: 1,
+				slidesToScroll: 1,
+				variableWidth: true
+			});
+		}
+	}
+
+/* recipeIndexCampaignSlide
+--------------------------------------------------*/
+	var recipeIndexCampaignSlide = function() {
+		if($('.recipeIndexCampaignSlide').length){
+			$('.recipeIndexCampaignSlide ul').slick({
+				dots: true,
+				infinite: true,
+				variableWidth: true,
+				centerMode: true,
+				slidesToShow: 1,
+				responsive: [
+					{
+						breakpoint: 980,
+						settings: {
+							arrows: false,
+							slidesToShow: 1,
+							variableWidth: false,
+							centerPadding: '60px'
+						}
+					}
+				]
+			});
+		}
+	}
+
+/* recipeOther
+--------------------------------------------------*/
+	var recipeOther = function() {
+		if($('.recipeOther').length){
+			$('.otherList ul').slick({
+				dots: true,
+				arrows: false,
+				infinite: true,
+				slidesToShow: 6,
+				variableWidth: false,
+				responsive: [
+					{
+						breakpoint: 980,
+						settings: {
+							slidesToShow: 1,
+							variableWidth: true,
+						}
+					}
+				]
+			});
+		}
+	}
+
+/* recipeSearchBtn
+--------------------------------------------------*/
+	var recipeSearchBtn = function() {
+		if($('.searchHeads').length){
+			$('.searchHeads .btn a').on('click', function(){
+				$(this).toggleClass('on');
+				$('.searchSelect').slideToggle();
+				return false;
+			});
+		}
+	}
+
+/* recipeSearchResult
+--------------------------------------------------*/
+/* 	var recipeSearchResult = function() {
+		if($('.recipeSearchResult').length){
+			var now = $('.recipeSearchResult .tabBtn a.on').attr('href');
+			$('.recipeSearchResult .inList'+now).show();
+			$('.recipeSearchResult .tabBtn a').on('click', function(){
+				var id = $(this).attr('href');
+				$('.recipeSearchResult .tabBtn a').removeClass('on');
+				$(this).toggleClass('on');
+				$('.recipeSearchResult .inList').hide();
+				$('.recipeSearchResult .inList'+id).fadeIn();
+				return false;
+			});
+			$('.recipeSearchResult .inList li .txt').each(function(index, el) {
+				if ($(this).text().length > 25) {
+					//25文字まで表示する、という設定
+					$(this).text($(this).text().substr(0, 25));
+					//25文字以降に表示する代替テキスト。
+					$(this).append('...');
+				}
+			});
+		}
+	}
+ */
+/* [new]recipeSearchResult
+--------------------------------------------------*/
+var recipeSearchResult = function() {
+	if($('.recipeSearchResult').length){
+		$('.recipeSearchResult .inList').hide();
+		var now = $('.recipeSearchResult div.checked').attr('class');
+		now = now.replace(" checked", "");
+		//console.log(now);
+		$('.recipeSearchResult .inList'+now).show();
+		$('.flex.type02.recipeSearchResult div').on('click', function(){
+			var id = $(this).attr('class');
+			//console.log(id);
+			if( id.indexOf( "#newList" ) !== -1 ){
+				$('.recipeSearchResult .\\#popularityList').removeClass('checked');
+				$('.recipeSearchResult .\\#newList').addClass('checked');
+				jQuery("li.sp_sort_show a").text("新着順");
+			} else {
+				$('.recipeSearchResult .\\#popularityList').addClass('checked');
+				$('.recipeSearchResult .\\#newList').removeClass('checked');
+				jQuery("li.sp_sort_show a").text("人気順");
+			}
+			id = id.replace(" checked", "");
+			$('.recipeSearchResult .inList').hide();
+			$('.recipeSearchResult .inList'+id).fadeIn();
+		});
+	}
+}
+
+/* recipeMaterialBtn
+--------------------------------------------------*/
+	var recipeMaterialBtn = function() {
+		if($('.recipeMaterialBtn').length){
+			$(window).on('scroll resize load', function(){
+				var
+					scroll = $(window).scrollTop(),
+					wh = $(window).height(),
+					endPos = $('.recipeMake').offset().top + $('.recipeMake').outerHeight(),
+					pos = $('.recipeMaterialBtn').offset().top;
+				if(scroll > endPos - 99){
+					$('.recipeMaterialBtn').addClass('off');
+				} else {
+					$('.recipeMaterialBtn').removeClass('off');
+				}
+				if(scroll + 99 > pos){
+					$('.recipeMaterialBtn').addClass('fixed');
+				} else {
+					$('.recipeMaterialBtn').removeClass('fixed');
+				}
+			});
+		}
+	}
+
+/* recipeIndexList
+--------------------------------------------------*/
+	var recipeIndexList = function() {
+		if($('#recipeIndex .recipeIndexList').length){
+			$('#recipeIndex .recipeIndexList a > span > span > span').each(function(){
+					// 12文字まで表示
+				if ($(this).text().length > 12) {
+					//12文字まで表示する、という設定
+					$(this).text($(this).text().substr(0, 12));
+					//12文字以降に表示する代替テキスト。
+					$(this).append('...');
+				}
+			});
+		}
+	}
+
+/*--------------------------------------------------
+ menu_page
+--------------------------------------------------*/
+
+/* menuCategory
+--------------------------------------------------*/
+	var menuCategory = function() {
+		if($('.menuCategory li').length % 2 != 0){
+			$('.menuCategory ul').append('<li class="lastLi"><a href="#"></a></li>');
+		}
+		if($('.menuCategory').length){
+			$('.menuCategory li a').matchHeight();
+		}
+	}
+
+
+/*--------------------------------------------------
+ corner_page
+--------------------------------------------------*/
+
+/* corner_page
+--------------------------------------------------*/
+	var corner_page = function() {
+		if($('.cornerCategory li').length % 2 != 0){
+			$('.cornerCategory ul').append('<li class="lastLi"><a href="#"></a></li>');
+		}
+		if($('.cornerCategory').length){
+			$('.cornerCategory li a').matchHeight();
+		}
+		if($('.cornerDetailList01').length){
+			$('.cornerDetailList01 li').matchHeight();
+		}
+		if($('.cornerDetailList02').length){
+			$('.cornerDetailList02 li').matchHeight();
+		}
+		if($('#cornerDetail03 .menuArea').length){
+			$('#cornerDetail03 .menuArea li').matchHeight();
+		}
+
+		function slideCornerListOff(){
+			$('.otherCornerList .inList').slick('unslick');
+		}
+
+		function slideCornerList(){
+			$('.otherCornerList .inList').slick({
+				dots: false,
+				infinite: true,
+				slidesToShow: 6
+			});
+		}
+
+		if($('.otherCornerList').length){
+			var WW = $(window).width();
+			if(980 <= WW){
+				slideCornerList();
+			}
+			$(window).on('load resize', function(){
+				var
+					WW = $(window).width();
+				if(980 <= WW && $('body').hasClass('sp_mode')){
+					slideCornerList();
+				}
+				if(980 > WW  && $('body').hasClass('pc_mode')) {
+					slideCornerListOff();
+				}
+			});
+		}
+	}
+
+
+/*--------------------------------------------------
+ basic_page
+--------------------------------------------------*/
+
+/* basic_page
+--------------------------------------------------*/
+	var basic_page = function() {
+
+		function slideBasicListOff(){
+			$('.basicVege_handlingDetailRecipe .inslider ul').slick('unslick');
+		}
+
+		function slideBasicList(){
+			$('.basicVege_handlingDetailRecipe .inslider ul').slick({
+				dots: false,
+				infinite: true,
+				slidesToShow: 4
+			});
+		}
+
+		if($('.basicVege_handlingDetailBox .imageTextArea').length){
+			$('.basicVege_handlingDetailBox .imageTextArea li').matchHeight();
+		}
+
+		if($('.basicVege_handlingDetailRecipe').length){
+			var WW = $(window).width();
+			if(980 <= WW){
+				slideBasicList();
+			}
+			$(window).on('load resize', function(){
+				var
+					WW = $(window).width();
+				if(980 <= WW && $('body').hasClass('sp_mode')){
+					slideBasicList();
+				}
+				if(980 > WW  && $('body').hasClass('pc_mode')) {
+					slideBasicListOff();
+				}
+			});
+		}
+
+		if($('#basicVege_handlingIndex .snavArea').length){
+			$('#basicVege_handlingIndex .snavArea a').on('click', function(){
+				var num = $(this).index('#basicVege_handlingIndex .snavArea a');
+				$('.groupArea .inGroup,#basicVege_handlingIndex .snavArea a').removeClass('on');
+				$(this).addClass('on');
+				$('.groupArea .inGroup').eq(num).addClass('on');
+				return false;
+			});
+		}
+
+		if($('#basicQaIndex .basicQaIndexBox').length){
+			$('#basicQaIndex .basicQaIndexBox li a').matchHeight();
+			$('#basicQaIndex .basicQaIndexBox .brownBtn a').on('click', function(){
+				var _thisP = $(this).closest('.basicQaIndexBox'),
+					n = _thisP.find('li').length;
+				_thisP.find('li').fadeIn(400);
+				_thisP.find('.brownBtn').hide();
+				return false;
+			});
+		}
+	}
+
+
+
+
+
+/*--------------------------------------------------
+ clip_page
+--------------------------------------------------*/
+
+/* clipPage
+--------------------------------------------------*/
+	var clipPage = function() {
+		if($('#clipPage .clipList').length){
+			$('.clipList li').matchHeight();
+		}
+	}
+
+/*--------------------------------------------------
+ rireki_page
+--------------------------------------------------*/
+/* rirekiPage
+--------------------------------------------------*/
+var rirekiPage = function() {
+	if($('#rirekiPage .clipList').length){
+		$('.clipList li').matchHeight();
+	}
+}
+
+/*--------------------------------------------------
+ nutrition_page
+--------------------------------------------------*/
+
+/* nutrition_page
+--------------------------------------------------*/
+	var nutrition_page = function() {
+		if($('.nutritionNav').length){
+			$('.nutritionNav li a').matchHeight();
+		}
+		if($('.nutritionElementBox').length){
+			$('.nutritionElementBox').matchHeight();
+		}
+		if($('.nutritionElementBox dd').length){
+			$('.nutritionElementBox dd').matchHeight();
+		}
+		if($('.accordionBtn').length){
+			// element add
+			if($('.accordionBtnWrap').length){
+				$('.accordionBtnWrap').after('<div class="accordionTabBody"></div>');
+				$('.accordionBody').each(function() {
+					var el = $(this).html();
+					$('.accordionTabBody').append('<div class="tabBodyInner"><div class="infade">'+el+'</div></div>');
+				});
+			}
+
+			// click action
+			$('.accordionBtn a').on('click', function(){
+				var
+					ww = $(window).width(),
+					_this = $(this),
+					_this_btn = $(this).closest('.accordionBtn'),
+					_this_btn_num = _this_btn.index('.accordionBtn'),
+					_this_body = _this_btn.find('.accordionBody'),
+					slideSpeed = 400;
+				if(ww < 980){
+					_this_btn.toggleClass('on');
+					_this_body.slideToggle(slideSpeed);
+				} else {
+					if(_this_btn.hasClass('on')){
+						$('.accordionBtn').removeClass('on');
+						$('.accordionTabBody .tabBodyInner').slideUp(slideSpeed);
+					} else {
+						$('.accordionBtn, .accordionTabBody .tabBodyInner .infade').removeClass('on');
+						_this_btn.addClass('on');
+						$('.accordionTabBody .tabBodyInner').hide();
+						$('.accordionTabBody .tabBodyInner .nutritionElementBox').removeAttr('style');
+						$('.accordionTabBody .tabBodyInner').eq(_this_btn_num).slideDown(slideSpeed, function(){
+							$('.accordionTabBody .tabBodyInner .nutritionElementBox dd').matchHeight();
+							$('.accordionTabBody .tabBodyInner .nutritionElementBox').matchHeight();
+							$('.accordionTabBody .tabBodyInner .infade').addClass('on');
+						});
+						childMacthHeight();
+					}
+				}
+				return false;
+			});
+
+		}
+	}
+
+
+/*--------------------------------------------------
+ magazine_page
+--------------------------------------------------*/
+
+/* magazineCategory
+--------------------------------------------------*/
+	var magazineCategory = function() {
+		if($('.magazineCategory li').length % 2 != 0){
+			$('.magazineCategory ul').append('<li class="lastLi"><a href="#"></a></li>');
+		}
+		if($('.magazineCategory').length){
+			$('.magazineCategory li a').matchHeight();
+		}
+	}
+
+
+/*--------------------------------------------------
+ kenko_page
+--------------------------------------------------*/
+	var kenko_page = function() {
+		if($('.kenkoCommonSnav').length){
+			$('.kenkoCommonSnav li a').matchHeight({
+				byRow: false
+			});
+		}
+		if($('.kenkoCategory li').length % 2 != 0){
+			$('.kenkoCategory ul').append('<li class="lastLi"><a href="#"></a></li>');
+		}
+		if($('.kenkoCategory').length){
+			$('.kenkoCategory li a').matchHeight();
+		}
+	}
+
+/*--------------------------------------------------
+ recipecard osusume
+--------------------------------------------------*/
+if($('.recommendContents .contentsSlider').length){
+	$('.contentsSlider ul').slick({
+		autoplay: true,
+		autoplaySpeed: 5000,
+		arrows: true,
+		slidesToShow: 3,
+		variableWidth: true,
+		responsive: [{
+			breakpoint: 980,
+			settings: {
+				arrows: false,
+				centerMode: true,
+				slidesToShow: 1,
+				swipeToSlide: true,
+			},
+		  }]
+	});
+}
+/*--------------------------------------------------
+ contentsSliderType01
+--------------------------------------------------*/
+var contentsSliderType01 = function() {
+  if($('.contentsSliderType01').length){
+    $('.contentsSliderType01 ul').slick({
+      arrows: true,
+      slidesToShow: 4,
+      variableWidth: true,
+      responsive: [{
+        breakpoint: 980,
+        settings: {
+          arrows: false,
+          slidesToShow: 2,
+          swipeToSlide: true,
+        },
+        }]
+    });
+  }
+}
+/*--------------------------------------------------
+ ajinomotoParkTop_page
+--------------------------------------------------*/
+
+/* ajinomotoParkTop_page
+--------------------------------------------------*/
+	var ajinomotoParkTop_page = function() {
+		if($('#ajinomotoParkTop .campaignSlide').length){
+			if($('.campaignSlide li').length < 3){
+				$('.campaignSlide').addClass('only');
+			} else {
+				$('.campaignSlide').addClass('slideOn');
+			}
+			function onlyS() {
+				$('.campaignSlide.only ul').slick({
+					dots: true,
+					arrows: false,
+					infinite: true,
+					autoplay: true,
+					variableWidth: false,
+					centerMode: true,
+					slidesToShow: 1,
+					centerPadding: '30px'
+				});
+			}
+			$(window).on('resize load', function(){
+				var ww = $(window).width();
+				if(980 <= ww && $('body').hasClass('sp_mode')){
+					$('.campaignSlide.only ul').slick('unslick');
+				}
+				if(980 > ww && $('body').hasClass('pc_mode')) {
+					onlyS();
+				}
+			});
+			$(window).on('load', function(){
+				var ww = $(window).width();
+				if(980 > ww) {
+					onlyS();
+				}
+			});
+			$('.campaignSlide.slideOn ul').slick({
+				dots: true,
+				infinite: true,
+				variableWidth: true,
+				centerMode: true,
+				autoplay: true,
+				slidesToShow: 1,
+				responsive: [
+					{
+						breakpoint: 980,
+						settings: {
+							arrows: false,
+							slidesToShow: 1,
+							variableWidth: false,
+							centerPadding: '30px'
+						}
+					}
+				]
+			});
+		}
+		if($('#ajinomotoParkTop .recomendSlide').length){
+			$('.recomendSlide ul').slick({
+				dots: true,
+				infinite: true,
+				variableWidth: true,
+				centerMode: true,
+				autoplay: true,
+				slidesToShow: 1,
+				responsive: [
+					{
+						breakpoint: 980,
+						settings: {
+							arrows: false,
+							slidesToShow: 1,
+							variableWidth: false,
+							centerPadding: '30px'
+						}
+					}
+				]
+			});
+		}
+		if($('#ajinomotoParkTop .magazineSlider').length){
+			$('.magazineSlider').slick({
+				arrows: false,
+				slidesToShow: 3,
+				slidesToScroll: 1,
+				autoplay: true,
+				autoplaySpeed: 0,
+				speed: 8000,
+				cssEase: 'linear',
+				variableWidth: true,
+			});
+		}
+		if($('#ajinomotoParkTop .topCarousel').length){
+			$('.carouselArea').slick({
+				dots: true,
+				arrows: true,
+				appendDots: ".slideNavInner",
+				appendArrows: ".slideNavInner",
+				prevArrow: '<button class="slick-prev slick-arrow" aria-label="Previous" type="button" style="display: block;"><img src="/wp-content/themes/ajinomoto/resources/images/common/sp/icon_arrow.svg"></button>',
+				nextArrow: '<button class="slick-next slick-arrow" aria-label="Next" type="button" style="display: block;"><img src="/wp-content/themes/ajinomoto/resources/images/common/sp/icon_arrow.svg"></button>',
+				centerMode: true,
+				slidesToShow: 1,
+				variableWidth: true,
+				autoplay: true,
+				autoplaySpeed: 5000,
+			});
+		}
+		if($('#ajinomotoParkTop .weeklyMenuCarousel').length){
+			$('.weeklyMenuCarouselArea').slick({
+				dots: false,
+				arrows: true,
+				appendArrows: ".carouselArrow",
+				prevArrow: '<button class="prev" aria-label="Previous" type="button">前日</button>',
+				nextArrow: '<button class="next" aria-label="Next" type="button">翌日</button>',
+				infinite: false,
+				slidesToShow: 1,
+				slidesToScroll: 1,
+				centerMode: true,
+				variableWidth: true
+			});
+			var today = new Date();
+			$('.weeklyMenuCarouselArea').slick('slickGoTo', today.getDay(), true);
+		}
+		if($('.activityCarousel').length){
+			$('.carouselArea').slick({
+				dots: true,
+				arrows: true,
+				appendDots: ".slideNavInner",
+				appendArrows: ".slideNavInner",
+				prevArrow: '<button class="slick-prev slick-arrow" aria-label="Previous" type="button" style="display: block;"><img src="/wp-content/themes/ajinomoto/resources/images/common/sp/icon_arrow.svg"></button>',
+				nextArrow: '<button class="slick-next slick-arrow" aria-label="Next" type="button" style="display: block;"><img src="/wp-content/themes/ajinomoto/resources/images/common/sp/icon_arrow.svg"></button>',
+				centerMode: true,
+				slidesToShow: 1,
+				variableWidth: true,
+				autoplay: true,
+				autoplaySpeed: 5000,
+			});
+		}
+	}
+
+/*--------------------------------------------------
+ menuTop_page
+--------------------------------------------------*/
+	var menuTop_page = function() {
+		if($('#menuTop .weeklyMenuCarousel').length){
+			$('.weeklyMenuCarouselArea').slick({
+				dots: false,
+				arrows: true,
+				appendArrows: ".carouselArrow",
+				prevArrow: '<button class="prev" aria-label="Previous" type="button">前日</button>',
+				nextArrow: '<button class="next" aria-label="Next" type="button">翌日</button>',
+				infinite: false,
+				slidesToShow: 1,
+				slidesToScroll: 1,
+				centerMode: true,
+				variableWidth: true
+			});
+			var today = new Date();
+			$('.weeklyMenuCarouselArea').slick('slickGoTo', today.getDay(), true);
+		}
+	}
+
+/*--------------------------------------------------
+ about_page
+--------------------------------------------------*/
+	var about_page = function() {
+		if($('#about').length){
+			$('#about .introduction li .gh').matchHeight();
+			$('#about .introduction li a').matchHeight();
+		}
+	}
+
+
+/*--------------------------------------------------
+ room_page
+--------------------------------------------------*/
+	var room_page = function() {
+		$(window).on('scroll', function(){
+			var
+				sc = $(window).scrollTop(),
+				wh = $(window).height();
+			if($('#room_talk_detail .baloon').length){
+				$('#room_talk_detail .baloon').each(function(index, el) {
+					var pos = $(this).offset().top;
+					if(pos < sc + (wh*0.8)){
+						$(this).addClass('show');
+					}
+				});
+			}
+			if($('.roomFooterPanda').length){
+				var fpos = $('.roomFooterPanda').offset().top;
+				if(fpos < sc + (wh*0.6)){
+					$('.roomFooterPanda').addClass('show');
+				}
+			}
+		});
+
+		if($('#room_about .slider01').length){
+			$('#room_about .slider01 ul').slick({
+				dots: true
+			});
+		}
+	}
+
+	var room_head = function(){
+		if($('.roomHead').length){
+			$('#wrapper').append('<div class="roomOverLay" />');
+			$('.roomHead .inBtn a').on('click', function(){
+				$('.roomHead .roomNav').slideToggle(300);
+				$('.roomHead').toggleClass('menuOpen');
+				$('.roomOverLay').fadeToggle(300);
+				return false;
+			});
+
+			$(window).on('resize load', function(){
+				var
+                    siteLogoH = $('.siteLogo').outerHeight(),
+					siteTilteH = $('.siteTilte').outerHeight(),
+					roomHeaderH = $('.roomHeader').outerHeight(),
+					ww = $(window).width();
+				if(ww > 979){
+					$('#container').removeAttr('style');
+				} else {
+					$('#container').css({
+						'padding-top':siteLogoH+siteTilteH+roomHeaderH
+					});
+				}
+			});
+
+		}
+	}
+
+/*--------------------------------------------------
+ deviceHomeAdd
+--------------------------------------------------*/
+	var deviceHomeAdd = function() {
+		if($('.deviceHomeAdd').length && $('body').hasClass('iphone')){
+			$('.deviceHomeAdd').show();
+			$('.deviceHomeAdd').on('click', function(){
+				$(this).fadeOut();
+			});
+		}
+	}
+
+/*--------------------------------------------------
+ bdrTitle
+--------------------------------------------------*/
+	var bdrTitle = function() {
+		if($('.bdrTitle .ttl img').length){
+			$('.bdrTitle .ttl img').closest('.ttl').addClass('mbMin');
+		}
+	}
+
+
+/*--------------------------------------------------
+ pageTop
+--------------------------------------------------*/
+	var pageTop = function() {
+		if($('.pageTop').length){
+			$(window).on('scroll load', function(){
+				var
+					sc = $(window).scrollTop(),
+					wh = $(window).height();
+					pos = $('.pageTop').offset().top;
+				if(wh+sc>pos){
+					$('.pageTop').addClass('stop');
+				} else {
+					$('.pageTop').removeClass('stop');
+				}
+				if(sc>200){
+					$('.pageTop').addClass('on');
+				} else {
+					$('.pageTop').removeClass('on');
+				}
+			});
+		}
+	}
+
+/*--------------------------------------------------
+ mode
+--------------------------------------------------*/
+	var mode = function() {
+		var
+			startWW = $(window).width();
+		if(980 <= startWW){
+			$('body').addClass('pc_mode');
+		} else {
+			$('body').addClass('sp_mode');
+		}
+		$(window).on('resize', function(){
+			var WW = $(window).width();
+			if(980 <= WW && $('body').hasClass('sp_mode')){
+				$('body').removeClass('sp_mode');
+				$('body').addClass('pc_mode');
+			}
+			if(980 > WW && $('body').hasClass('pc_mode')) {
+				$('body').removeClass('pc_mode');
+				$('body').addClass('sp_mode');
+			}
+		});
+	}
+
+/*--------------------------------------------------
+ spSearchItem
+--------------------------------------------------*/
+	var spSearchItem = function() {
+		$('.spSearchItem .cancel').on('click', function(){
+			$(this).prev('.formTxt').val('');
+		});
+		$('.spSearchItem .formTxt').focus(function(){
+			$(this).closest('.spSearchItem').nextAll('.spDownArea').slideDown();
+		});
+		$('.spSearchItem .formTxt').blur(function(){
+			$(this).closest('.spSearchItem').nextAll('.spDownArea').slideUp();
+		});
+	}
+
+/*--------------------------------------------------
+ breadcrumb
+--------------------------------------------------*/
+	var breadcrumb = function() {
+		if ($('.breadcrumb .moreBtn').length){
+			$('.breadcrumb ul:gt(1)').hide();
+			$('.breadcrumb .moreBtn a').on('click', function(){
+				$('.breadcrumb ul').slideDown(200);
+				$('.breadcrumb .moreBtn').hide();
+				$('.breadcrumb .closeBtn').show();
+				return false;
+			});
+			$('.breadcrumb .closeBtn a').on('click', function(){
+				$('.breadcrumb .moreBtn').show();
+				$('.breadcrumb ul:gt(1)').slideUp(200);
+				$('.breadcrumb .closeBtn').hide();
+				return false;
+			});
+		}
+	}
+
+/*--------------------------------------------------
+ wordList02
+--------------------------------------------------*/
+	var wordList02 = function() {
+		if ($('.contentHeadArea .wordList02.type02').length){
+			var timer = false;
+			$('.contentHeadArea .wordList02.type02 ul').on('scroll',function() {
+				var
+					scL = $('.contentHeadArea .wordList02.type02 ul').scrollLeft(),
+					pWide = $('.contentHeadArea .wordList02.type02 ul').outerWidth(),
+					cWide = 0;
+				$('.contentHeadArea .wordList02.type02 li').each(function(index, el) {
+					var el_cm = $(this).outerWidth();
+					cWide = cWide + el_cm;
+				});
+					$('.contentHeadArea .wordList02.type02 .arwL').css('display','none');
+					$('.contentHeadArea .wordList02.type02 .arwR').css('display','none');
+
+					if(scL > 10) {
+						$('.contentHeadArea .wordList02.type02 .arwL').fadeIn();
+					} else {
+						$('.contentHeadArea .wordList02.type02 .arwL').fadeOut();
+					}
+					if(cWide > pWide + scL - 10) {
+						$('.contentHeadArea .wordList02.type02 .arwR').fadeIn();
+					} else {
+						$('.contentHeadArea .wordList02.type02 .arwR').fadeOut();
+					}
+			});
+		}
+	}
+
+/*--------------------------------------------------
+ recommendRecipeField
+--------------------------------------------------*/
+	var recommendRecipeField = function() {
+		if ($('#recommendRecipeField').length){
+			var
+				n = $('.recommendRecipeContents li').length,
+				ww = $(window).width(),
+				Num = 4;
+			$('.recommendRecipeContents li:gt(3)').hide();
+			$('.recommendRecipeContents .moreBtn a').on('click', function(){
+				Num +=12;
+				$('.recommendRecipeContents li:lt('+Num+')').fadeIn(400);
+				if(n <= Num){
+					$('.recommendRecipeContents .moreBtn').hide();
+					$('.recommendRecipeContents .closeBtn').show();
+				}
+				return false;
+			});
+			$('.recommendRecipeContents .closeBtn a').on('click', function(){
+				$('.recommendRecipeContents .moreBtn').show();
+				$('.recommendRecipeContents li:gt(3)').hide();
+				$('.recommendRecipeContents .closeBtn').hide();
+				return false;
+			});
+		}
+	}
+
+
+/* 2019/07/24 AP_ISSUE-355 LI_MING Add Start */
+/*--------------------------------------------------
+ updateHistory
+--------------------------------------------------*/
+	var updateHistory = function() {
+		if ($('.updateHistory').length){
+			$('.updateHistory .title').on('click', function(){
+				$(this).toggleClass('on');
+				$('.updateHistory ul').slideToggle();
+			});
+		}
+	}
+/* 2019/07/24 AP_ISSUE-355 LI_MING Add End */
+
+
+/*--------------------------------------------------
+ moreDisplayArea
+--------------------------------------------------*/
+	var moreDisplayArea = function() {
+		if ($('.moreDisplayArea').length){
+			var Num01 = 4;
+			$('.moreDisplayArea').each(function(index, el) {
+				$(this).children('li:gt(3)').hide();
+			});
+			$('.js-moreDisplayBtn > .inMore').on('click', function(){
+				var
+					n01 = $(this).closest('.js-moreDisplayBtn').prev('.moreDisplayArea').children('li').length;
+				Num01 +=n01; // 1クリックで表示する個数を設定（現在：すべてを表示）
+				$(this).closest('.js-moreDisplayBtn').prev('.moreDisplayArea').children('li:lt('+Num01+')').slideDown();
+				if(n01 <= Num01){
+					$(this).closest('.js-moreDisplayBtn').addClass('on');
+				}
+				ellipsisRecommendContentsCorner();
+				ellipsisStrengthRecipe();
+				replaceRMark();
+			});
+			$('.js-moreDisplayBtn > .inClose').on('click', function(){
+				Num01 = 4;
+				$(this).closest('.js-moreDisplayBtn').prev('.moreDisplayArea').children('li:gt(3)').slideUp();
+				$(this).closest('.js-moreDisplayBtn').removeClass('on');
+			});
+		}
+	}
+
+
+/*--------------------------------------------------
+ popularityKeywordsList
+--------------------------------------------------*/
+	// var popularityKeywordsList = function() {
+	// 	if ($('.popularityKeywordsList').length){
+	// 		var Num02 = 10;
+	// 		$('.popularityKeywordsList ul').each(function(index, el) {
+	// 			$(this).children('li:gt(9)').hide();
+	// 		});
+	// 		$('.popularityKeywordsList .js-moreDisplayBtnKeywordsList > .inMore').on('click', function(){
+	// 			var
+	// 				n02 = $(this).closest('.js-moreDisplayBtnKeywordsList').prev('ul').children('li').length;
+	// 			Num02 +=n02; // 1クリックで表示する個数を設定（現在：すべてを表示）
+	// 			$(this).closest('.js-moreDisplayBtnKeywordsList').prev('ul').children('li:lt('+Num02+')').show();
+	// 			if(n02 <= Num02){
+	// 				$(this).closest('.js-moreDisplayBtnKeywordsList').addClass('on');
+	// 			}
+
+	// 		});
+	// 		$('.js-moreDisplayBtnKeywordsList > .inClose').on('click', function(){
+	// 			Num02 = 10;
+	// 			$(this).closest('.js-moreDisplayBtnKeywordsList').prev('ul').children('li:gt(9)').hide();
+	// 			$(this).closest('.js-moreDisplayBtnKeywordsList').removeClass('on');
+	// 		});
+	// 	}
+	// }
+
+
+
+/*--------------------------------------------------
+ pickupSlideArea
+--------------------------------------------------*/
+	var pickupSlideArea = function() {
+		if ($('.pickupSlideArea').length){
+			$('.pickupSlideArea ul').slick({
+				autoplay: true,
+				dots: false,
+				infinite: true,
+				slidesToShow: 3,
+				responsive: [
+					{
+						breakpoint: 980,
+						settings: {
+							centerMode: true,
+							centerPadding: '30px',
+							arrows: false,
+							slidesToShow: 1
+						}
+					}
+				]
+			});
+		}
+	}
+
+/* searchSideArea
+--------------------------------------------------*/
+	var searchSideArea = function() {
+		if($('.searchSideArea').length){
+			// var searchSideAreaEL = $('#recipeSearch .searchCols .searchSideArea').prop('outerHTML');
+			// $('#wrapper').append('<div class="fixedSearchSideArea">'+searchSideAreaEL+'</div>');
+			//$('.searchCols .searchSideArea .accordionBtn').on('click', function(event) {	//AP_ISSUE-487 WANG_BIN
+			$('.searchSideArea .accordionBtn:not(.originalAC)').on('click', function(event) {
+				$(this).toggleClass('on');
+				$(this).closest('.box').find('.accordionBody').slideToggle();
+				$(this).closest('.box').find('.flex .intl').matchHeight({byRow:false});
+			});
+			//AP_ISSUE-487 WANG_BIN START
+			$('.searchSideArea .accordionBtn.originalAC').on('click', function(event) {
+				if($(this).hasClass('on')){
+					$(this).removeClass('on');
+					$(this).closest('.box').find('.inAccordion dt').removeClass('on');
+					$(this).closest('.box').find('.inAccordion dd').slideUp();
+				} else {
+					$(this).addClass('on');
+					$(this).closest('.box').find('.inAccordion dt').addClass('on');
+					$(this).closest('.box').find('.inAccordion dd').slideDown();
+				}
+			});
+			$('#recipeSearch .searchSideArea .inAccordion dt').on('click', function(event) {
+				$(this).toggleClass('on');
+				$(this).next('dd').slideToggle();
+				var countOnItem = $('#recipeSearch .searchSideArea .inAccordion dt.on').length;
+				if (countOnItem == 3) {
+					$('.searchSideArea .accordionBtn.originalAC').addClass('on');
+				}else if(countOnItem == 0){
+					$('.searchSideArea .accordionBtn.originalAC').removeClass('on');
+				}
+			});
+			//AP_ISSUE-487 WANG_BIN END
+			// SP時絞り込みエリア表示制御
+			$('.searchSpFixedBtn a').on('click', function(){
+				$('.searchSideArea').hide();
+				$('.searchSideArea').show();
+				$('.searchSideArea').fadeIn();
+				// $('.fixedAera,.contentHeadArea').removeClass('up');
+				// $('.fixedAera,.contentHeadArea').removeClass('almostTop');
+				// $('.fixedAera,.contentHeadArea').addClass('down');
+				// $('.fixedAera').addClass('fixed');
+				return false;
+			});
+			$(window).resize(function(){
+				var ww = $(window).width();
+				if(ww > 980){
+					$('.searchSideArea').hide();
+					$('.searchSideArea').show();
+					$('.searchSideArea').fadeIn();
+				}
+				if(ww < 979){
+					$('.searchSideArea').fadeOut();
+				}
+			  });
+			$('.searchSideArea .areaTitle .arr,.fixedSearchSideArea .spCloses').on('click', function(){
+				$('.searchSideArea').fadeOut();
+				$('.fixedAera,.contentHeadArea').addClass('up');
+				$('.fixedAera,.contentHeadArea').addClass('almostTop');
+				$('.fixedAera,.contentHeadArea').removeClass('down');
+				$('.fixedAera').removeClass('fixed');
+			});
+		}
+		// 商品モーダル表示制御
+		if($('.modalItemRefineBtn').length){
+			$('.modalItemRefineBtn').on('click', function(){
+				var
+					ttl = $('.intl',this).text(),
+					img = $('.inImg',this).html(),
+					ul = $(this).next('.modalItem').html();
+				$('.modalItemRefine .inTitle .inFlex .txt > div > div,.modalItemRefine .inTitle .inFlex .img,.modalItemRefine .list').empty();
+				$('.modalItemRefine .inTitle .inFlex .txt > div > div').append(ttl);
+				$('.modalItemRefine .inTitle .inFlex .img').append(img);
+				$('.modalItemRefine .list').append(ul);
+				$('.modalItemRefine').fadeIn(300);
+				var ww = $(window).width();
+				if(ww < 980){
+					bodyFix();
+				}
+				return false;
+			});
+			$('.modalItemRefine, .modalItemRefine .mdClose').on('click', function(){
+				$('.modalItemRefine').fadeOut(300);
+				var ww = $(window).width();
+				if(ww < 980){
+					bodyFixReset();
+				}
+			});
+			$('.modalItemRefine .inInner').on('click', function(e){
+				e.stopPropagation();
+			});
+		}
+	}
+
+/*--------------------------------------------------
+ horizontalScrollArea
+--------------------------------------------------*/
+var horizontalScrollArea = function() {
+	if($('.horizontalScrollArea.recipeCard').length){
+		$('.horizontalScrollArea.recipeCard ul').slick({
+			arrows: true,
+			slidesToShow: 4,
+			variableWidth: true,
+			responsive: [{
+				breakpoint: 980,
+				settings: {
+					arrows: false,
+					slidesToShow: 2,
+					swipeToSlide: true,
+				},
+			}]
+		});
+	}
+}
+
+/*--------------------------------------------------
+ horizontalScrollAreaRecipeCorner
+--------------------------------------------------*/
+var horizontalScrollAreaRecipeCorner = function() {
+	if ($('.horizontalScrollArea.recipeCorner').length){
+		$('.horizontalScrollArea.recipeCorner').each(function(index, el) {
+
+			$(this).prepend('<div class="arwL arwBtn sp"/>');
+			$(this).append('<div class="arwR arwBtn sp"/>');
+
+			var
+				this_Area = $(this),
+				push_count = 0,
+				timeoutId ;
+
+			$('ul',this).on('scroll', function(){
+				push_count = $(this).scrollLeft();
+				var
+					p_wide = $(this).outerWidth(),
+					wide = $('li:not(.spTxtBtn)',this).length * $('li',this).outerWidth();
+					$(this).closest('.horizontalScrollArea.recipeCorner').addClass('hide');
+					clearTimeout( timeoutId ) ;
+					timeoutId = setTimeout( function () {
+						this_Area.closest('.horizontalScrollArea.recipeCorner').removeClass('hide');
+						// 処理内容
+						if(push_count>45) {
+							this_Area.closest('.horizontalScrollArea.recipeCorner').addClass('move');
+						} else {
+							this_Area.closest('.horizontalScrollArea.recipeCorner').removeClass('move');
+						}
+						if(p_wide+push_count+45>wide) {
+							this_Area.closest('.horizontalScrollArea.recipeCorner').addClass('stop');
+						} else {
+							this_Area.closest('.horizontalScrollArea.recipeCorner').removeClass('stop');
+						}
+					}, 100 );
+			});
+		});
+	}
+}
+
+/*--------------------------------------------------
+ recipeCardMenuHeightSet
+--------------------------------------------------*/
+var recipeCardMenuHeightSet = function() {
+  if ($('.spScrollAreaType01 ul').length){
+		var len = $('.spScrollAreaType01 ul li').length;
+		switch( len ) {  // 必ず１つliが存在しているので要素数２からスタートする
+			// 要素数2の時
+			case 2:
+				$('.spScrollAreaType01 ul li').eq(0).addClass('margin-zero');
+				break;
+			// 要素数3の時
+			case 3:
+				$('.spScrollAreaType01 ul li').eq(0).addClass('margin-zero');
+				$('.spScrollAreaType01 ul li').eq(1).addClass('margin-zero');
+				break;
+			// 要素数4の時
+			case 4:
+				$('.spScrollAreaType01 ul li').eq(2).addClass('margin-zero');
+				break;
+			// 要素数5の時
+			case 5:
+				$('.spScrollAreaType01 ul li').eq(2).addClass('margin-zero');
+				$('.spScrollAreaType01 ul li').eq(3).addClass('margin-zero');
+				break;
+		}
+	}
+}
+/*--------------------------------------------------
+ spScrollAreaType01
+--------------------------------------------------*/
+var spScrollAreaType01 = function() {
+  if ($('.spScrollAreaType01').length){
+		$('.spScrollAreaType01').each(function(index, el) {
+			var scPoint = 0;
+			var timeoutId;
+			$('ul',this).on('scroll', function(){
+				$(this).closest('.spScrollAreaType01').addClass('hide');
+				clearTimeout( timeoutId ) ;
+				this_Area = $(this);
+				scPoint = $(this).scrollLeft();
+				timeoutId = setTimeout( function () {
+					this_Area.closest('.spScrollAreaType01').removeClass('hide');
+					var
+					p_wide = this_Area.outerWidth(),
+					wide = this_Area.find('li:not(.spTxtBtn)').length * this_Area.find('li').outerWidth();
+					if(scPoint>25) {
+						this_Area.closest('.spScrollAreaType01').addClass('move');
+					} else {
+						this_Area.closest('.spScrollAreaType01').removeClass('move');
+					}
+					if(p_wide+scPoint+25>wide) {
+						this_Area.closest('.spScrollAreaType01').addClass('stop');
+					} else {
+						this_Area.closest('.spScrollAreaType01').removeClass('stop');
+					}
+				}, 100 );
+			});
+		});
+	}
+}
+
+/*--------------------------------------------------
+ automaticMenuCarousel
+--------------------------------------------------*/
+var automaticMenuCarousel = function() {
+	if($('.automaticMenuCarousel').length){
+		// スライド数が3枚
+		if ($('.automaticMenuCarouselArea li').length == 3) {
+			$('.automaticMenuCarouselArea').slick({
+				arrows: true,
+				slidesToShow: 3,
+				variableWidth: true,
+				centerMode: false,
+				responsive: [
+					{
+						breakpoint: 980,
+						settings: {
+							arrows: false,
+							slidesToShow: 1,
+							swipeToSlide: true,
+							variableWidth: true,
+							centerMode: true,
+						},
+					}
+				]
+			});
+		// スライド数が2枚でない時
+		} else if($('.automaticMenuCarouselArea li').length != 2){
+			$('.automaticMenuCarouselArea').slick({
+				arrows: true,
+				slidesToShow: 3,
+				variableWidth: true,
+				centerMode: true,
+				responsive: [
+					{
+						breakpoint: 980,
+						settings: {
+							arrows: false,
+							slidesToShow: 1,
+							swipeToSlide: true,
+							variableWidth: true,
+							centerMode: true,
+						},
+					}
+				]
+			});
+		// スライドが2枚の場合
+		} else {
+			$('.automaticMenuCarouselArea').slick({
+				mobileFirst: true,
+				arrows: false,
+				slidesToShow: 1,
+				swipeToSlide: true,
+				variableWidth: true,
+				centerMode: true,
+				responsive: [
+					{
+						breakpoint: 980,
+						settings: 'unslick'
+					}
+				]
+			});
+
+			$(window).resize(function() {
+				$('.automaticMenuCarouselArea').slick('reinit');
+			});
+		}
+	}
+}
+
+/*--------------------------------------------------
+drugControl
+--------------------------------------------------*/
+var drugControl = function(){
+
+	if ($('.horizontalScrollArea.recipeCorner').length){
+
+		/* ドラッグ開始 */
+		$('.horizontalScrollArea.recipeCorner > .slider').mousedown(function(e){
+			var li_width = $(this).find('li').outerWidth() + 5;
+			this.touchX = event.pageX;
+			this.slideX = $(this).position().left;
+			this.li_length = $(this).find('li').length - 1;
+			this.disp_width = $(this).parents('.wrap1200').outerWidth();
+
+			if( (this.li_length * li_width) < this.disp_width ){
+        return;
+			}
+
+			this.maxlength = this.disp_width - (this.li_length * li_width);
+
+			/* ドラッグ中 */
+			$('.horizontalScrollArea.recipeCorner > .slider').mousemove(function(e){
+				e.preventDefault();
+				this.slideX = this.slideX - (this.touchX - e.pageX );
+
+				$(this).css({left:this.slideX});
+				this.accel = (e.pageX - this.touchX) * 5;
+				this.touchX = e.pageX;
+				$(this).parent().addClass('hide');
+			});
+
+		/* ドラッグ終了 */
+		}).mouseup(function(e){
+				$(this).parent().removeClass('hide');
+
+				this.slideX += this.accel
+				$(this).animate({left : this.slideX },200,'linear');
+				this.accel = 0;
+				if (this.slideX > 0) {
+					this.slideX = 0;
+					$(this).animate({left:"0px"},500);
+				}
+				if (this.slideX < (this.maxlength)) {
+					this.slideX = (this.maxlength);
+					$(this).animate({left:(this.maxlength) +  "px"},500);
+				}
+				var leftResult = $(this).css('left').replace('px','');
+				// leftの値によってクラスを変更する
+				if( leftResult >= 0 ){
+					$(this).parent().removeClass('move stop');
+				}else if(leftResult < 0 && leftResult > this.maxlength){
+					$(this).parent().addClass('move');
+					$(this).parent().removeClass('stop');
+				}else if(leftResult < 0 && leftResult <= this.maxlength){
+					$(this).parent().addClass('stop');
+				}
+
+				$('.horizontalScrollArea.recipeCorner > .slider').off("mousemove");
+		});
+		/* マウスが要素外へ出た時 */
+		$('.horizontalScrollArea.recipeCorner').parent().mouseout(function(e){
+			this_area = $(this).find('.horizontalScrollArea.recipeCorner');
+			$(this_area).removeClass('hide');
+			var li_width = $(this).find('li').outerWidth() + 5;
+			this.leftVal = $(this_area).children('ul').css('left').replace('px','');
+			this.disp_width = $(this_area).parents('.wrap1200').outerWidth();
+			this.li_length = $(this_area).find('li').length - 1;
+			this.maxlength = this.disp_width - (this.li_length * li_width);
+			if( (this.li_length * li_width) < this.disp_width ){
+				return;
+			}
+
+			if (this.leftVal > 0) {
+				$(this_area).children('ul').not(":animated").animate({left:"0px"});
+			}
+			if (this.leftVal < (this.maxlength)) {
+				$(this_area).children('ul').not(":animated").animate({left:(this.maxlength) +  "px"});
+			}
+			var leftResult = $(this_area).children('ul').css('left').replace('px','');
+			// leftの値によってクラスを変更する
+			if( leftResult >= 0 ){
+				$(this_area).removeClass('move stop')
+			}else if(leftResult < 0 && leftResult > this.maxlength){
+				$(this_area).addClass('move')
+				$(this_area).removeClass('stop')
+			}else if(leftResult < 0 && leftResult <= this.maxlength){
+				$(this_area).addClass('stop')
+			}
+			$('.slider').off("mousemove");
+		});
+
+		// ドラッグ時にリンクしないための処理
+		$('.horizontalScrollArea.recipeCorner ul').mousedown( function(e){
+			downPoint = e.clientX + ',' + e.clientY;
+		} )
+
+		$('.horizontalScrollArea.recipeCorner ul').mouseup( function(e){
+			upPoint = e.clientX + ',' + e.clientY;
+		} )
+		$('.horizontalScrollArea.recipeCorner ul').click( function(e){
+			if(downPoint !== upPoint){
+				if (e.target.classList.contains('pc-scroll')) {
+					e.preventDefault();
+				}
+				// 以下IE用
+				if(e.target.parentNode.parentNode.classList[0] === 'pc-scroll'){
+					e.preventDefault();
+				}
+				if(e.target.parentNode.classList[0] === 'pc-scroll'){
+					e.preventDefault();
+				}
+			}
+		})
+	}
+}
+
+/*--------------------------------------------------
+removeArwBtn
+--------------------------------------------------*/
+removeArwBtn = function(){
+	if ($('.horizontalScrollArea.recipeCorner ul').length){
+		var liWidth = $('.horizontalScrollArea.recipeCorner ul li:first').outerWidth();
+		var dispWidth = $('.wrap1200').outerWidth();
+		$('.horizontalScrollArea.recipeCorner ul').each(function(index, el) {
+			liLength = $(this).find('li').length - 1 ;
+			if( (liWidth * liLength) <= dispWidth && $(this).parent().find('.arwL.arwBtn.pc').length){
+				$(this).animate({left:'0px'});
+				$(this).parent().find('.arwL').remove();
+				$(this).parent().find('.arwR').remove();
+			}
+		});
+	}
+}
+/*--------------------------------------------------
+addArwBtnPC
+--------------------------------------------------*/
+addArwBtnPC = function(){
+	if ($('.horizontalScrollArea.recipeCorner ul').length){
+		var liWidth = $('.horizontalScrollArea.recipeCorner ul li:first').outerWidth();
+		var dispWidth = $('.wrap1200').outerWidth();
+		$('.horizontalScrollArea.recipeCorner ul').each(function(index, el) {
+			liLength = $(this).find('li').length - 1 ;
+			if( (liWidth * liLength) > dispWidth && !$(this).parent().find('.arwL.arwBtn.pc').length){
+				$(this).parent().prepend('<div class="arwL arwBtn pc"/>');
+				$(this).parent().append('<div class="arwR arwBtn pc"/>');
+			}
+		});
+	}
+}
+
+/*--------------------------------------------------
+scrollArwSet
+--------------------------------------------------*/
+scrollArwSet = function(){
+	$(window).resize(function() {
+		addArwBtnPC();
+		removeArwBtn();
+	});}
+/*--------------------------------------------------
+addArwBtn
+--------------------------------------------------*/
+addArwBtn = function(){
+	if ($('.rirekiArea .horizontalScrollArea ul').length){
+		var liWidth = $('.rirekiArea .horizontalScrollArea ul li:first').outerWidth();
+		var dispWidth = $('.wrap1200').outerWidth();
+		$('.rirekiArea .horizontalScrollArea ul').each(function(index, el) {
+			liLength = $(this).find('li').length - 1 ;
+			if( (liWidth * liLength) > dispWidth ){
+				$(this).parent().prepend('<div class="arwL arwBtn pc"/>');
+				$(this).parent().prepend('<div class="arwL arwBtn sp"/>');
+				$(this).parent().append('<div class="arwR arwBtn pc"/>');
+				$(this).parent().append('<div class="arwR arwBtn sp"/>');
+			}
+		});
+	}
+}
+
+/*--------------------------------------------------
+anchor link scroll
+--------------------------------------------------*/
+anchorLinkScroll = function() {
+	var hash = location.hash;
+	var headerHeight = $('.contentHeadArea').outerHeight();
+	if ($(hash).length > 0) {
+		if(hash) {
+			var target = $(hash);
+			var position = target.offset().top - headerHeight;
+			if($(window).width() < 980){
+				$('body,html').stop().animate({scrollTop:position - 54}, 100);
+			}else{
+				$('body,html').stop().animate({scrollTop:position}, 100);
+			}
+		}
+	}
+	$('[href^="#"]').click(function(){
+    	var href= $(this).attr("href");
+    	var target = $(href == "#" || href == "" ? 'html' : href);
+    	var position = target.offset().top - headerHeight;
+    	if($(window).width() < 980){
+			$('body,html').stop().animate({scrollTop:position - 54}, 100);
+		}else{
+			$('body,html').stop().animate({scrollTop:position}, 100);
+		}
+    });
+}
+
+/*--------------------------------------------------
+Accordion menu close
+--------------------------------------------------*/
+var accordionMenuClose = function() {
+  var $acdParent = $('#acdLabelMaterial');
+  var $acdChildLists = $('.acdSubCheckbox');
+  $acdParent.on('click', function() {
+    if (!$acdParent.prop('checked')) {
+      $acdChildLists.prop('checked', false);
+    }
+  });
+}
+
+/*--------------------------------------------------
+linkAreaHover
+--------------------------------------------------*/
+$(document).on({
+	mouseenter: function() {
+		$(this).css("opacity", ".5");
+		$(document).on({
+			mouseenter: function() {
+				var hover = $(this).parents(".linkHover");
+				$(hover).css("opacity", "1");
+			},
+			mouseleave: function() {
+				var hover = $(this).parents(".linkHover");
+				$(hover).css("opacity", "0.5");
+			}
+		}, ".btnHashtag, .btnClip");
+	},
+	mouseleave: function() {
+		$(this).css("opacity", "1");
+	}
+}, ".linkHover");
+
+/*--------------------------------------------------
+checkbox clear
+--------------------------------------------------*/
+$(function() {
+    $('#clear').on('click', function() {
+		$("input[name='category[]']").prop('checked', false);
+		$("input[name='slug[]']").prop('checked', false);
+    });
+});
+
+/* dom ready
+--------------------------------------------------*/
+	$(function(){
+		inc();
+		pj.init();
+		default_set();
+		// spJsReset();
+		recipeInfo();
+		snsArea();
+		recipeOther();
+		recipeMaterialBtn();
+		recipeSearchBtn();
+		recipeSearchResult();
+		recipeIndexList();
+		basic_page();
+		corner_page();
+		modalBtn();
+		clipPage();
+		rirekiPage();
+		menuCategory();
+		childMacthHeight();
+		nutrition_page();
+		magazineCategory();
+		colorboxModal();
+		kenko_page();
+		recipeIndexCampaignSlide();
+    	contentsSliderType01();
+		ajinomotoParkTop_page();
+		menuTop_page();
+		about_page();
+		deviceHomeAdd();
+		room_page();
+		bdrTitle();
+		pageTop();
+		breadcrumb();
+		recommendRecipeField();
+		updateHistory();
+		moreDisplayArea();
+		// popularityKeywordsList();
+		pickupSlideArea();
+		searchSideArea();
+		horizontalScrollArea();
+    	horizontalScrollAreaRecipeCorner();
+		recipeCardMenuHeightSet();
+		mode();
+		spScrollAreaType01();
+		automaticMenuCarousel();
+		drugControl();
+		removeArwBtn();
+		scrollArwSet();
+		anchorLinkScroll();
+		accordionMenuClose();
+	});
+
+})(jQuery);

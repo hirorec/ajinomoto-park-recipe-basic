@@ -1,0 +1,505 @@
+@charset "utf-8";
+/**
+ * style.css
+ */
+
+@media only screen and (min-width:980px) {}
+
+#about {
+	margin-bottom: 20px;
+}
+@media only screen and (min-width:980px) {
+	#about {
+		margin-bottom: 40px;
+	}
+}
+
+/* textArea
+--------------------------------------------------*/
+#about .textArea {
+	padding: 25px 0 30px;
+	text-align: center;
+	/*20191101 ISSUE-522 LIMING UPDATE*/
+	/*background: url(/wp-content/themes/ajinomoto/resources/images/common/sp/bg_wall01.jpg);*/
+}
+#about .textArea .title img {
+	max-width: 90%;
+}
+#about .textArea p {
+	margin-top: 2em;
+	font-size: 3.6vw;
+	line-height: 2;
+}
+#about .textArea p img {
+	display: inline-block;
+	height: 1em;
+	vertical-align: middle;
+}
+@media only screen and (min-width:980px) {
+	#about .textArea {
+		padding: 50px 0 60px;
+	}
+	#about .textArea .title img {
+		max-width: 70%;
+	}
+	#about .textArea p {
+		font-size: 17px;
+	}
+}
+
+
+/* introduction
+--------------------------------------------------*/
+#about .introduction {
+	margin: 10px 0 40px;
+}
+#about .introduction li a {
+	display: block;
+	padding: 30px 13px;
+	text-decoration: none;
+	border-bottom: #fb8079 solid 1px;
+}
+
+#about .introduction li a > * {
+	display: block;
+}
+#about .introduction .ttl {
+	margin-bottom: 18px;
+	text-align: center;
+}
+#about .introduction .ttl02 {
+	margin-bottom: 10px;
+	text-align: center;
+}
+#about .introduction .ttl > span,
+#about .introduction .ttl02 > span {
+	display: block;
+	margin-bottom: 0;
+}
+#about .introduction .logoTxt {
+	height: 2.5em;
+}
+@media only screen and (min-width:980px) {
+	#about .introduction .wrap1200 {
+		max-width: 600px;
+	}
+}
+@media only screen and (min-width:1220px) {
+	#about .introduction {
+		margin: 60px 0;
+	}
+	#about .introduction .wrap1200 {
+		max-width: 1000px;
+	}
+	#about .introduction ul {
+		margin: -50px 0 0 -40px;
+	}
+	#about .introduction li {
+		-webkit-box-sizing: border-box;
+		   -moz-box-sizing: border-box;
+		        box-sizing: border-box;
+		float: left;
+		width: 50%;
+		padding: 0 0 0 40px;
+		border-bottom: none;
+		height: 230px;
+	}
+	#about .introduction li a {
+		padding: 40px 0;
+		border-bottom: none;
+	}
+	#about .introduction .ttl,
+	#about .introduction .ttl02 {
+		display: table;
+		width: 100%;
+		margin-bottom: 18px;
+	}
+	#about .introduction .ttl > span,
+	#about .introduction .ttl02 > span {
+		display: table-cell;
+		vertical-align: middle;
+	}
+	#about .introduction .logoTxt {
+		height: 62px;
+		padding: 5px;
+	}
+}
+
+.linkAjinomoto{
+	font-size: 10px;
+/*	border-bottom: #fb8079 solid 1px;*/
+}
+
+#about .introduction li .linkAjinomoto a{
+	padding: 0px 0 ;
+	display: inline-block;
+	border-bottom: #ffffff solid 1px;
+}
+
+@media only screen and (max-device-width: 480px) {
+	#about .introduction li .linkAjinomoto{
+		padding-bottom: 30px;
+		padding-left: 13px;
+		padding-right: 13px;
+		border-bottom:#fb8079 solid 1px;
+	}
+	#about .introduction li .recipeList .txt span{
+		padding: unset;
+		border-bottom: #ffffff solid 1px;
+	}
+}
+
+#about .introduction li .recipeList{
+	padding-bottom: 5px;
+	border-bottom: #ffffff solid 1px;
+}
+
+#about .introduction li .recipeList .txt span{
+	border-bottom: #ffffff solid 1px;
+}
+
+/* introduction
+--------------------------------------------------*/
+#about .kaiinArea {
+	margin-bottom: 30px;
+}
+#about .kaiinArea .kaiinbtns {
+	margin-top: 16px;
+}
+@media only screen and (max-width:979px) {
+	#about .kaiinArea .kaiinbtns a {
+		font-size: 16px;
+	}
+}
+@media only screen and (min-width:980px) {
+	#about .kaiinArea {
+		margin-bottom: 60px;
+	}
+	#about .kaiinArea .kaiinbtns {
+		margin-top: 25px;
+	}
+}
+
+/** -----------------
+ * 20200715 renewal *
+ * -----------------*/
+
+.mem-about-content {
+  font-weight: 500;
+}
+
+.mem-about-content p {
+  font-weight: 500;
+}
+
+.mem-about-cover {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.mem-about-messagePanel {
+  line-height: 1.8;
+}
+
+.mem-about-concept {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.mem-about-concept__lead {
+  line-height: 2;
+}
+
+.mem-about-concept__img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+.mem-about-relatedLinks {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%;
+}
+
+.mem-about-borderBox {
+  position: relative;
+}
+
+.mem-about-borderBox__enTitle {
+  font-family: 'Lato', sans-serif;
+  font-weight: bold !important;
+}
+
+.mem-about-borderBox__jaTitle {
+  font-weight: bold !important;
+}
+
+.mem-about-borderBox__foot {
+  margin: 0 auto;
+}
+
+.mem-about-borderBox__placeholder {
+  position: absolute;
+}
+
+.mem-about-borderBox__icon {
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+  background-color: #fff;
+}
+
+.mem-about-textAnnotaion {
+  margin-top: 15px;
+  padding-left: 1.5em;
+  text-indent: -1.5em;
+}
+
+.mem-about-textAnnotaion::before {
+  content: "※";
+  padding-right: 0.5em;
+}
+
+.mem-about-imgAndText {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.mem-about-imgAndText__body {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1;
+          flex: 1 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.mem-about-imgAndText__text {
+  font-weight: bold !important;
+}
+
+body.IE .mem-gradText {
+  background: none;
+  color: #d92c6b;
+}
+
+@media screen and (min-width: 980px) {
+  .mem-about-content {
+    margin-top: 30px;
+    margin-bottom: 120px;
+  }
+  .mem-about-cover {
+    max-width: 1100px;
+  }
+  .mem-about-keyvisual {
+    margin-bottom: 80px;
+    padding-bottom: 52.27273%;
+    position: relative;
+    background-color: transparent;
+    overflow: hidden;
+  }
+  .mem-about-keyvisual__image {
+    position: absolute;
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+  .mem-about-messagePanel {
+    margin: 80px auto;
+    font-size: 20px;
+    max-width: 900px;
+  }
+  .mem-about-messagePanel__inner {
+    padding: 25px 0;
+    border-top: 4px solid #000;
+    border-bottom: 4px solid #000;
+  }
+  .mem-about-concept {
+    max-width: 900px;
+  }
+  .mem-about-concept__lead {
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 45px;
+  }
+  .mem-about-concept__logo {
+    max-width: 378px;
+    margin: 0 auto;
+    padding-bottom: 45px;
+  }
+  .mem-about-relatedLinks {
+    width: 900px;
+    margin-bottom: 80px;
+  }
+  .mem-about-relatedLinks__item:not(:last-child) {
+    padding-bottom: 40px;
+  }
+  .mem-about-borderBox {
+    border: solid 5px #000;
+  }
+  .mem-about-borderBox--icon {
+    margin-top: 40px;
+  }
+  .mem-about-borderBox__inner {
+    padding: 35px;
+  }
+  .mem-about-borderBox__enTitle {
+    font-size: 40px;
+  }
+  .mem-about-borderBox__jaTitle {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+  .mem-about-borderBox__description {
+    font-size: 20px;
+    margin-bottom: 35px;
+  }
+  .mem-about-borderBox__foot {
+    width: 506px;
+  }
+  .mem-about-borderBox__placeholder {
+    top: 0;
+    right: 30px;
+  }
+  .mem-about-borderBox__icon {
+    padding: 0 10px;
+  }
+  .mem-about-borderBox__icon--recipe {
+    width: 99px;
+  }
+  .mem-about-borderBox__icon--magazine {
+    width: 96px;
+  }
+  .mem-about-borderBox__icon--activity {
+    width: 96px;
+  }
+  .mem-about-textAnnotaion {
+    font-size: 14px;
+  }
+  .mem-about-imgAndText {
+    margin-bottom: 30px;
+  }
+  .mem-about-imgAndText__thumb {
+    margin-right: 30px;
+    width: 73px;
+  }
+  .mem-about-imgAndText__text {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 979px) {
+  .mem-about-content {
+    margin-top: 25px;
+    margin-bottom: 60px;
+  }
+  .mem-about-cover {
+    max-width: 100%;
+  }
+  .mem-about-keyvisual {
+    margin-bottom: 30px;
+    padding-bottom: 76%;
+    position: relative;
+    background-color: transparent;
+    overflow: hidden;
+  }
+  .mem-about-keyvisual__image {
+    position: absolute;
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+  .mem-about-messagePanel {
+    margin: 40px auto;
+    max-width: 100%;
+    padding-left: 8vw;
+    padding-right: 8vw;
+    font-size: 14px;
+  }
+  .mem-about-messagePanel__inner {
+    padding: 20px 0;
+    border-top: 2px solid #000;
+    border-bottom: 2px solid #000;
+  }
+  .mem-about-concept {
+    max-width: 100%;
+    padding-left: 8vw;
+    padding-right: 8vw;
+  }
+  .mem-about-concept__lead {
+    font-size: 14px;
+    margin-bottom: 30px;
+  }
+  .mem-about-concept__logo {
+    max-width: 242px;
+    padding-bottom: 50px;
+  }
+  .mem-about-relatedLinks {
+    padding-right: 4vw;
+    margin-bottom: 40px;
+  }
+  .mem-about-relatedLinks__item:not(:last-child) {
+    padding-bottom: 20px;
+  }
+  .mem-about-borderBox {
+    border: solid 3px #000;
+    border-left: none;
+  }
+  .mem-about-borderBox--icon {
+    margin-top: 20px;
+  }
+  .mem-about-borderBox__inner {
+    padding: 30px 4vw 30px 8vw;
+  }
+  .mem-about-borderBox__enTitle {
+    font-size: 20px;
+  }
+  .mem-about-borderBox__jaTitle {
+    font-size: 14px;
+    margin-bottom: 7px;
+  }
+  .mem-about-borderBox__description {
+    font-size: 14px;
+    margin-bottom: 17px;
+  }
+  .mem-about-borderBox__placeholder {
+    top: 0;
+    right: 20px;
+  }
+  .mem-about-borderBox__icon {
+    padding: 0 5px;
+  }
+  .mem-about-borderBox__icon--recipe {
+    width: 64px;
+  }
+  .mem-about-borderBox__icon--magazine {
+    width: 62px;
+  }
+  .mem-about-borderBox__icon--activity {
+    width: 62px;
+  }
+  .mem-about-textAnnotaion {
+    font-size: 12px;
+    padding-left: 8vw;
+    padding-right: 4vw;
+    margin-left: 1.5em;
+  }
+  .mem-about-imgAndText {
+    margin-bottom: 15px;
+  }
+  .mem-about-imgAndText__thumb {
+    margin-right: 15px;
+    width: 39px;
+  }
+  .mem-about-imgAndText__text {
+    font-size: 14px;
+  }
+}

@@ -1,0 +1,531 @@
+@media screen and (max-width: 979px) {
+    .checkContents {
+        width: 92%; 
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .labelArea {
+        display: -ms-grid;
+        display: grid;
+        -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+        margin-bottom: 30px;
+        border-bottom: double 5px #000000;
+        width: 100%;
+    }
+    
+    .labelArea label {
+        display: inline-block;
+        padding: 0 0 25px 0;
+        margin: 0;
+        text-align: center;
+        cursor: pointer;
+        -webkit-transition: ease .2s opacity;
+        -o-transition: ease .2s opacity;
+        transition: ease .2s opacity;
+        filter:alpha(opacity=50);
+        -moz-opacity: 0.5;
+        opacity: 0.5;
+        position: relative;
+    }
+
+    .labelArea h3 {
+        font-size: 15px;
+        font-weight: 500;
+    }
+
+    .labelArea .recipeTab_label {
+        -ms-grid-column: 1;
+        grid-column: 1 / 2;
+        -ms-grid-row: 1;
+        grid-row: 1 / 2;
+    }
+    .labelArea .magazineTab_label {
+        -ms-grid-column: 2;
+        grid-column: 2 / 3;
+        -ms-grid-row: 1;
+        grid-row: 1 / 2;
+    }
+    
+    .labelArea .recipeTab_label:before,
+    .labelArea .magazineTab_label:before {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 10px;
+        height: 5px;
+        bottom: 0;
+        left: calc(50% - 10px);
+        background: black;
+        border-radius:  100px 100px 0 0;
+        opacity: 0;
+    }
+    
+    .labelArea .catIcon {
+        display: block;
+        margin-bottom: 8px;
+        margin-left: auto;
+        margin-right: auto;
+        height: 13px;
+    }
+    
+    input[name="tab_btn"] {
+        display: none;
+    }
+    
+    .tab_content {
+        display: none;
+    }
+    
+    #recipeTab:checked ~ .labelArea .recipeTab_label,
+    #magazineTab:checked ~ .labelArea .magazineTab_label,
+    #recipeTab:checked ~ .labelArea .recipeTab_label:before,
+    #magazineTab:checked ~ .labelArea .magazineTab_label:before {
+        filter:alpha(opacity=1);
+        -moz-opacity: 1;
+        opacity: 1;
+    }
+    
+    #recipeTab:checked ~ .labelContents #listRankingRecipe,
+    #magazineTab:checked ~ .labelContents #listRankingMagazine {
+        display: block; 
+    }
+    
+    #recipeTab:checked ~ .recipeTab_label:before,
+    #magazineTab:checked ~ .magazineTab_label:before {
+        opacity: 1;
+    }
+
+    .ranking {
+        margin-top: 60px;
+    }
+
+    .listRanking {
+        margin: 0 15px 30px 15px;
+    }
+
+    .itemListRanking {
+        position: relative;
+        display: -ms-grid;
+        display: grid;
+        -ms-grid-columns: 100%;
+        -ms-grid-rows: auto auto;
+        grid-template-rows: auto auto;
+    }
+
+    .itemListRanking:nth-child(n+4){
+        position: relative;
+        display: -ms-grid;
+        display: grid;
+        -ms-grid-columns: minmax(52%,330px) minmax(48%,330px);
+        grid-template-columns: minmax(52%,330px) minmax(48%,330px);
+        -ms-grid-rows: auto;
+        grid-template-rows: auto;
+        margin-bottom: 20px;
+    }
+    .itemListRanking:nth-child(n+4) > *:nth-child(1){
+        -ms-grid-row: 1;
+        -ms-grid-column: 1;
+    }
+    .itemListRanking:nth-child(n+4) > *:nth-child(2){
+        -ms-grid-row: 1;
+        -ms-grid-column: 2;
+    }
+
+    .itemListRanking:nth-child(n+4) .btnRankingItem{
+        -ms-grid-row: 1;
+        -ms-grid-row-span: 1;
+        grid-row: 1 / 2;
+        -ms-grid-column: 1;
+        -ms-grid-column-span: 1;
+        grid-column: 1 / 2;
+    }
+    
+    .btnRankingItem a {
+        cursor: pointer;
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .btnRankingItem img {
+        border-radius: 10px;
+        max-width: 100%;
+    }
+    
+    .rankLabel {
+        display: -webkit-box;
+		display: -webkit-flex;
+  		display: -ms-flexbox;
+		display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: rgb(217,44,107);
+        background: -webkit-gradient(linear, left top, left bottom, from(rgba(217,44,107,1)), to(rgba(236,110,30,1)));
+        background: -o-linear-gradient(top, rgba(217,44,107,1) 0%, rgba(236,110,30,1) 100%);
+        background: linear-gradient(180deg, rgba(217,44,107,1) 0%, rgba(236,110,30,1) 100%);
+        border-radius: 10px 0;
+        width: 9vw;
+        max-width: 70px;
+        min-width: 35px;
+        height: 9vw;
+        max-height: 70px;
+        min-height: 35px;
+    }
+
+    .rankNumber {
+        color: #fff;
+        font-family: 'Lato', sans-serif;
+        font-size: 19px;
+        font-weight: 700;
+        line-height: 1.0;
+    }
+
+    .itemListRanking .infoRankingItem {
+        margin-left: 10px;
+        -ms-grid-column: 1;
+        -ms-grid-row: 2;
+    }
+
+    .itemListRanking:nth-child(-n+3) .infoRankingItem {
+        display: -webkit-box;
+		display: -webkit-flex;
+  		display: -ms-flexbox;
+		display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        position: relative;
+        top: -15px;
+    }
+
+    .itemListRanking:nth-child(n+4) .infoRankingItem{
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        -ms-grid-row: 1;
+        grid-row: 1 / 2;
+        -ms-grid-column: 2;
+        grid-column: 2 / 3;
+    }
+
+    .itemListRanking:nth-child(n+4) .hashtagRankingItem{
+        order: 2;
+    }
+
+    .itemListRanking:nth-child(n+4) .titleRankingItem {
+        order: 1;
+        margin-bottom: 12px;
+    }
+
+    .itemListRanking:nth-child(-n+3) .titleRankingItem {
+        margin: 8px 0 15px 0;
+    }
+
+    .itemListRanking:nth-child(-n+3) .titleRankingItem.noTags{
+        margin: 35px 0 35px 0;
+    }
+
+    .titleRankingItem p {
+        font-size: 14px;
+        font-weight: 700;
+    }
+
+    .titleRankingItem a {
+        color: #000;
+        text-decoration: none;
+    }
+
+    .itemListRanking:nth-child(-n+3) .hashtagRankingItem {
+        position: relative;
+    }
+
+    .hashtagRankingItem .listHashtag {
+        display: -webkit-box;
+		display: -webkit-flex;
+  		display: -ms-flexbox;
+		display: flex;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    }
+    .hashtagRankingItem .hashtagName {
+        font-size: 10px;
+    }
+}
+@media only screen and (min-width:980px) {
+    .checkContents {
+        max-width: 1100px;
+        margin: 0 auto;
+        margin-bottom: 120px;
+    }
+    .labelArea {
+        display: -ms-grid;
+        display: grid;
+        -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+        margin-bottom: 40px;
+        border-bottom: double 5px #000000;
+    }
+    .labelArea label {
+        padding: 0 0 40px 0;
+        margin: 0;
+        text-align: center;
+        font-size: 20px;
+        font-weight: 500;
+        cursor: pointer;
+        -webkit-transition: ease .2s opacity;
+        -o-transition: ease .2s opacity;
+        transition: ease .2s opacity;
+        filter:alpha(opacity=50);
+        -moz-opacity: 0.5;
+        opacity: 0.5;
+        position: relative;
+        display: -webkit-box;
+		display: -webkit-flex;
+  		display: -ms-flexbox;
+		display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+    }
+    .labelArea h3 {
+        font-size: 20px;
+        font-weight: 500;
+        margin: 0;
+    }
+    .labelArea .recipeTab_label {
+        -ms-grid-column: 1;
+        grid-column: 1 / 2;
+    }
+    .labelArea .magazineTab_label {
+        -ms-grid-column: 2;
+        grid-column: 2 / 3;
+    }
+    .labelArea .recipeTab_label:before,
+    .labelArea .magazineTab_label:before {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 20px;
+        height: 10px;
+        bottom: 0;
+        left: 50%;
+        background: black;
+        border-radius:  100px 100px 0 0;
+        opacity: 0;
+    }
+    .labelArea .catIcon {
+        width: 30px;
+        height: 20px;
+        margin-right: 15px;
+    }
+    input[name="tab_btn"] {
+        display: none;
+    }
+    .tab_content {
+        display: none;
+    }
+    #recipeTab:checked ~ .labelArea .recipeTab_label,
+    #magazineTab:checked ~ .labelArea .magazineTab_label,
+    #recipeTab:checked ~ .labelArea .recipeTab_label:before,
+    #magazineTab:checked ~ .labelArea .magazineTab_label:before {
+        filter: alpha(opacity=1);
+        -moz-opacity: 1;
+        opacity: 1;
+    }
+    #recipeTab:checked ~ .labelContents #listRankingRecipe,
+    #magazineTab:checked ~ .labelContents #listRankingMagazine {
+        display: block; 
+    }
+    #recipeTab:checked ~ .recipeTab_label:before,
+    #magazineTab:checked ~ .magazineTab_label:before {
+        opacity: 1;
+    }
+    /* 人気のマガジンランキング */
+    .ranking {
+        margin-top: 120px;
+    }
+
+    .listRanking {
+        display: -ms-grid;
+        display: grid;
+        -ms-grid-columns: 1fr 40px 1fr 40px 1fr 40px 1fr 40px 1fr 40px 1fr;
+        grid-template-columns: repeat(6, 1fr);
+        grid-column-gap: 40px;
+        -ms-grid-rows: auto 40px auto;
+        grid-row-gap: 40px;
+        max-width: 1100px;
+        margin: 0 auto;
+        margin-bottom: 60px;
+    }
+
+    .itemListRanking:nth-child(1) {
+        -ms-grid-column: 1;
+        -ms-grid-column-span: 3;
+        grid-column: 1 / 3;
+        -ms-grid-row: 1;
+        grid-row: 1 / 2;
+    }
+
+    .itemListRanking:nth-child(2) {
+        -ms-grid-column: 5;
+        -ms-grid-column-span: 3;
+        grid-column: 3 / 5;
+        -ms-grid-row: 1;
+        grid-row: 1 / 2;
+    }
+
+    .itemListRanking:nth-child(3) {
+        -ms-grid-column: 9;
+        -ms-grid-column-span: 3;
+        grid-column: 5 / 7;
+        -ms-grid-row: 1;
+        grid-row: 1 / 2;
+    }
+
+    .itemListRanking:nth-child(4) {
+        -ms-grid-column: 1;
+        -ms-grid-column-span: 5;
+        grid-column: 1 / 4;
+        -ms-grid-row: 3;
+        grid-row: 2 / 3;
+    }
+
+    .itemListRanking:nth-child(5) {
+        -ms-grid-column: 7;
+        -ms-grid-column-span: 5;
+        grid-column: 4 / 7;
+        -ms-grid-row: 3;
+        grid-row: 2 / 3;
+    }
+
+    .itemListRanking:nth-child(n+4) {
+        display: -ms-grid;
+        display: grid;
+        -ms-grid-columns: 1fr 20px 1fr;
+        grid-template-columns: repeat(2, 1fr);
+        grid-column-gap: 20px;
+    }
+    .btnRankingItem {
+        padding-bottom: 15px;
+        position: relative;
+    }
+    .itemListRanking .infoRankingItem {
+        display: -webkit-box;
+		display: -webkit-flex;
+  		display: -ms-flexbox;
+		display: flex;
+        flex-direction: column;
+    }
+    .itemListRanking .infoRankingItem .titleRankingItem {
+        order: 1;
+    }
+    .itemListRanking .infoRankingItem .hashtagRankingItem {
+        order: 2;
+    }
+    .itemListRanking:nth-child(n+4) .btnRankingItem {
+        -ms-grid-column: 1;
+        grid-column: 1 / 2;
+        margin-bottom: 0;
+    }
+    .itemListRanking:nth-child(n+4) .infoRankingItem {
+        -ms-grid-column: 3;
+        grid-column: 2 / 3;
+        margin-bottom: 0;
+    }
+    .btnRankingItem a {
+        cursor: pointer;
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 100;
+    }
+
+    .btnRankingItem img {
+        border-radius: 20px;
+        max-width: 100%;
+    }
+    
+    .rankLabel {
+        display: -webkit-box;
+		display: -webkit-flex;
+  		display: -ms-flexbox;
+		display: flex;
+        -webkit-box-pack: center;
+	    -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-box-align: center;
+	    -ms-flex-align: center;
+        align-items: center;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: rgb(217,44,107);
+        background: -webkit-gradient(linear, left top, left bottom, from(rgba(217,44,107,1)), to(rgba(236,110,30,1)));
+        background: -o-linear-gradient(top, rgba(217,44,107,1) 0%, rgba(236,110,30,1) 100%);
+        background: linear-gradient(180deg, rgba(217,44,107,1) 0%, rgba(236,110,30,1) 100%);
+        border-radius: 15px 0;
+        width: 55px;
+        height: 55px;
+    }
+
+    .rankNumber {
+        color: #fff;
+        font-family: 'Lato', sans-serif;
+        font-size: 30px;
+        font-weight: 400;
+        line-height: 1.0;
+    }
+
+    .titleRankingItem {
+        margin-bottom: 10px;
+    }
+    .titleRankingItem p {
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 1.5;
+    }
+
+    .titleRankingItem a {
+        color: #000;
+        text-decoration: none;
+    }
+
+    .hashtagRankingItem .listHashtag {
+        display: -webkit-box;
+		display: -webkit-flex;
+  		display: -ms-flexbox;
+		display: flex;
+        -ms-flex-wrap: nowrap;
+        flex-wrap: wrap;
+        -webkit-box-pack: start;
+            -ms-flex-pack: start;
+                justify-content: flex-start;
+    }
+    .hashtagRankingItem .hashtagName {
+        font-size: 14px;
+    }
+}

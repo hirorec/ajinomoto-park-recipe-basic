@@ -1,0 +1,192 @@
+jQuery(function($){
+    // 未ログイン時のCookieへの保存数が2件未満か確認
+    function getCookie(key) {
+        if (!document.cookie) return null;
+        var arr = document.cookie.split('; ');
+        var c = arr.find(function(c) {
+            return c.split('=')[0] === key;
+        });
+        if (!c) return null;
+        return decodeURIComponent(c.split('=')[1]);
+    }
+    function isTotalClipCount(clipItem) {
+        var itemCheck;
+
+        var cookie1 = getCookie('clip_content'),
+            item_list1 = [],
+            item_list1_length = 0;
+        if (cookie1 != null) {
+            item_list1 = cookie1.split(',');
+            item_list1_length = item_list1.length;
+            if(clipItem != null) {
+                itemCheck = item_list1.some(item => item.endsWith(`_${clipItem}`));
+                if(itemCheck) {
+                    item_list1_length--;
+                }
+            }
+        }
+        
+        var cookie2 = getCookie('clip_content_menu_card'),
+            item_list2 = [],
+            item_list2_length = 0;
+        if (cookie2 != null) {
+            item_list2 = cookie2.split(',');
+            item_list2_length = item_list2.length;
+            if(clipItem != null) {
+                itemCheck = item_list2.some(item => item.endsWith(`_${clipItem}`));
+                if(itemCheck) {
+                    item_list2_length--;
+                }
+            }
+        }
+        
+        return item_list1_length + item_list2_length;
+    }
+
+    // 保存時処理
+    function onClip(btn) {
+        var icon = set_obj.resource_path + '/resources/images/common/sp/AP_svg_icon_keep_grad_fill.svg';
+        // 記事中の全てのボタン表記を変更
+        if (btn.data("clip_btn_type") === 'article_button') {
+            $('a.clip_btn').find('p').text('サイトに保存済');
+            $('a.clip_btn').find('img').attr('src', icon);
+        } else {
+            // 閲覧履歴などページ中の対象記事のボタンのみを表記変更
+            btn.find('p').text('保存済み');
+            btn.find('img').attr('src', icon);
+        }
+        // 保存数加算
+        var clip_count_element = '#numClipedCount';
+        if ($('#numClipedCount').length == 0) {
+            clip_count_element = '#numClipedCountBottom';
+        }
+        var clip_count = Number($(clip_count_element + '.clipedCount').text());
+        clip_count = Number(clip_count);
+        if(!isNaN(clip_count)){
+            $('.clipedCount').text(clip_count + 1);
+        }
+    }
+    // 保存解除時処理
+    function offClip(btn) {
+        var btnText = '';
+        var icon = set_obj.resource_path + '/resources/images/common/sp/AP_svg_icon_keep_grad.svg';
+        // 献立カード
+        switch (btn.data("clip_flg")) {
+            case 'recipe_card':
+                btnText = 'レシピをサイトに保存する';
+                break;
+            case 'menu':
+                btnText = 'サイトに献立を保存する';
+                break;
+            case 'magazine':
+            case 'activity':
+                btnText = 'サイトにこの記事を保存する';
+                break;
+            default:
+                btnText = 'サイトに保存する';
+                break;
+        }
+        // 記事中の全てのボタン表記を変更
+        if (btn.data("clip_btn_type") === 'article_button') {
+            $('a.clip_btn').find('p').text(btnText);
+            $('a.clip_btn').find('img').attr('src', icon);
+        } else {
+            // 閲覧履歴などページ中の対象記事のボタンのみを表記変更
+            btn.find('p').text('保存する');
+            btn.find('img').attr('src', icon);
+        }
+        // 保存数減算
+        var clip_count_element = '#numClipedCount';
+        if ($('#numClipedCount').length == 0) {
+            clip_count_element = '#numClipedCountBottom';
+        }
+        var clip_count = Number($(clip_count_element + '.clipedCount').text());
+        clip_count = Number(clip_count);
+        if(!isNaN(clip_count)){
+            $('.clipedCount').text(clip_count - 1);
+	    }
+    }
+
+    var path = set_obj.path;
+    var post_ID = set_obj.post_ID;
+    var user_ID = set_obj.user_ID;
+    var clip_btn = $('a.clip_btn');
+    var result = '';
+    var errorLog = 'クリッピングができませんでした';
+
+    var clipLength = 0,
+        clipItem = '';
+
+    $(clip_btn).on('click',function(){
+        var btn = $(this);
+        var clip_flg = btn.data("clip_flg");
+
+        // 献立カード
+        if (clip_flg === 'menu') {
+            // 各レシピIDを取得
+            var recipe1 = btn.data("recipe1");
+            var recipe2 = btn.data("recipe2");
+            var recipe3 = btn.data("recipe3");
+
+            $.ajax({
+                type : 'POST',
+                url  : path,
+                dataType:'text',
+                data:{'action' : 'set_menu_clip','request': 'clip','recipe1':recipe1, 'recipe2':recipe2, 'recipe3':recipe3, 'user':user_ID}
+            })
+            .done(function(data){
+                data = data.replace(/\d$/,'');
+                data = $.parseJSON(data);
+                result = data.request;
+                clipItem = recipe1 + "_" + recipe2 + "_" + recipe3;
+                // 保存時
+                if (result === 'clip') {
+                    clipLength = isTotalClipCount(clipItem);
+                    if((clipLength < 2 && user_ID == null) || user_ID != null) {
+                        onClip(btn);
+                    }
+                }
+                // 保存解除
+                else {
+                    offClip(btn);
+                }
+            })
+            .fail(function(){
+                console.log(errorLog);
+            });
+        // 献立カード以外
+        } else {
+            // カスタムデータ属性からpost_idを取得する。
+            if($(this).data("post_id")){
+                post_ID = $(this).data("post_id");
+
+                $.ajax({
+                    type : 'POST',
+                    url  : path,
+                    dataType:'text',
+                    data:{'action' : 'set_clip','request': 'clip','post_ID':post_ID, 'user':user_ID}
+                })
+                .done(function(data){
+                    data = data.replace(/\d$/,'');
+                    data = $.parseJSON(data);
+                    result = data.request;
+                    // 保存時
+                    if (result === 'clip') {
+                        clipLength = isTotalClipCount(post_ID);
+                        if((clipLength < 2 && user_ID == null) || user_ID != null) {
+                            onClip(btn);
+                        }
+                    }
+                    // 保存解除
+                    else {
+                        offClip(btn);
+                    }
+                })
+                .fail(function(){
+                    console.log(errorLog);
+                });
+            }
+        }
+        return false;
+    });
+});

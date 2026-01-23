@@ -1,0 +1,1533 @@
+@charset "utf-8";
+/**
+ * style.css
+ */
+
+@media only screen and (min-width:980px) {}
+
+/* hover
+--------------------------------------------------*/
+/*#ajinomotoParkTop .topCarousel .slick-slide:hover,*/
+#ajinomotoParkTop .topCarousel .slick-slide:hover,
+#ajinomotoParkTop .checkedContents .slick-slide:hover,
+/* top_activityのタグ不具合のため追加  */
+#ajinomotoParkTop .activityRecruit .contentLinkArea:hover,
+#ajinomotoParkTop .clipContents .slick-slide:hover,
+#ajinomotoParkTop .bnrAreaCol1 li:hover,
+#ajinomotoParkTop .bnrAreaCol2 li:hover {
+    opacity: 0.5;
+}
+
+#ajinomotoParkTop .btnHashtag:hover {
+	background-color: #FBF3EF;
+}
+
+/* wallBg
+--------------------------------------------------*/
+/* #ajinomotoParkTop .wallBg {
+	padding-bottom: 50px; */
+	/*20191101 ISSUE-522 LIMING UPDATE*/
+	/*background: url(/wp-content/themes/ajinomoto/resources/images/common/sp/bg_wall01.jpg);*/
+/* }
+@media only screen and (min-width:980px) {
+	#ajinomotoParkTop .wallBg {
+		padding-bottom: 80px;
+	}
+} */
+
+#ajinomotoParkTop .topContentsArea {
+	margin-bottom: 60px;
+}
+#ajinomotoParkTop .sectionTitle {
+	margin-bottom: 30px;
+}
+#ajinomotoParkTop .sectionTitle p {
+	font-family: 'Lato', sans-serif;
+	font-size: 13px;
+	font-weight: 700;
+	line-height: 1.0;
+	text-align: center;
+	margin-bottom: 15px;
+}
+#ajinomotoParkTop .sectionTitle h2 {
+	font-family: 'Noto Sans Japanese', sans-serif;
+	font-size: 20px;
+	font-weight: 700;
+	line-height: 1.0;
+	text-align: center;
+}
+@media only screen and (min-width:980px) {
+	#ajinomotoParkTop .topContentsArea {
+		margin-bottom: 120px;
+	}
+	#ajinomotoParkTop .sectionTitle {
+		margin-bottom: 70px;
+	}
+	#ajinomotoParkTop .sectionTitle p {
+		font-family: 'Lato', sans-serif;
+		font-size: 20px;
+		font-weight: 700;
+		line-height: 1.0;
+		text-align: center;
+		margin-bottom: 25px;
+	}
+	#ajinomotoParkTop .sectionTitle h2 {
+		font-family: 'Noto Sans Japanese', sans-serif;
+		font-size: 30px;
+		font-weight: 700;
+		line-height: 1.0;
+		text-align: center;
+	}
+}
+
+/* topAlart
+--------------------------------------------------*/
+#ajinomotoParkTop .topAlart {
+	box-sizing: border-box;
+	border: #de0202 solid 2px;
+	width: 93.07vw;
+	max-width: 690px;
+	margin: 20px auto 25px auto;
+}
+#ajinomotoParkTop .topAlartTxt {
+	font-size: 12px;
+	font-weight: 600;
+	color: #de0202;
+	padding: 15px;
+}
+@media only screen and (min-width:980px) {
+	#ajinomotoParkTop .topAlart {
+		box-sizing: border-box;
+		border: #de0202 solid 2px;
+		max-width: 1100px;
+		margin: 30px auto 60px auto;
+	}
+	#ajinomotoParkTop .topAlartTxt {
+		font-size: 14px;
+		font-weight: 600;
+		color: #de0202;
+		padding: 15px;
+		text-align: center;
+	}
+}
+
+
+
+/* topCarousel
+--------------------------------------------------*/
+#ajinomotoParkTop .topCarousel {
+	margin-top: 22px;
+	margin-bottom: 30px;
+}
+#ajinomotoParkTop .topCarousel .carouselArea li {
+	width: 64vw;
+	margin: 0 7.5px;
+	font-size: 14px;
+	font-weight: 600;
+}
+#ajinomotoParkTop .topCarousel .carouselArea li a {
+	text-decoration: none;
+}
+#ajinomotoParkTop .topCarousel .carouselArea li * {
+	display: block;
+}
+#ajinomotoParkTop .topCarousel .carouselArea .object-fit {
+	width: 64vw;
+	height: 44vw;
+	-o-object-fit: cover;
+	   object-fit: cover;
+	border-radius: 10px;
+	margin-bottom: 8px;
+	font-family: 'object-fit: cover;'
+}
+#ajinomotoParkTop .topCarousel .carouselArea p {
+	font-size: 12px;
+	font-weight: 600;
+}
+#ajinomotoPark .carouselArea.slick-initialized.slick-slider.slick-dotted {
+	margin-bottom: 10px;
+ }
+#ajinomotoParkTop .slideNav {
+	width: 92%;
+	margin: 0 auto;
+	text-align: center;
+}
+#ajinomotoParkTop .slideNavInner {
+	width: 100%;
+	display: inline-block;
+	position: relative;
+}
+@media only screen and (min-width:980px) {
+	#ajinomotoParkTop .topCarousel {
+		max-width: 1500px;
+		margin-bottom: 50px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	#ajinomotoParkTop .topCarousel .carouselArea li {
+		max-width: 480px;
+		margin: 0 15px;
+	}
+	#ajinomotoParkTop .topCarousel .carouselArea .object-fit {
+		width: 480px;
+		height: 330px;
+		margin-bottom: 15px;
+		-o-object-fit: cover;
+		   object-fit: cover;
+		border-radius: 15px;
+		font-family: 'object-fit: cover;'
+	}
+	#ajinomotoParkTop .topCarousel .carouselArea p {
+		font-size: 16px;
+		text-overflow: ellipsis;
+		display: -webkit-box;
+		-webkit-line-clamp: 2;
+		-webkit-box-orient: vertical;
+		overflow: hidden;
+	}
+	#ajinomotoParkTop .slideNav {
+		width: 480px;
+		margin: 0 auto;
+		text-align: center;
+	}
+	#ajinomotoParkTop .slideNavInner {
+		width: 100%;
+		display: inline-block;
+		position: relative;
+	}
+}
+
+/* slideStyle01
+--------------------------------------------------*/
+#ajinomotoParkTop .slideStyle01 .slick-slider {
+	margin-bottom: 10px;
+}
+#ajinomotoParkTop .slideStyle01 .slick-dots {
+	margin-top: 5px;
+	text-align: center;
+}
+#ajinomotoParkTop .slideStyle01 .slick-dots li {
+	display: inline-block;
+	margin: 1.4vw;
+	width: 2.6vw;
+	height: 2.6vw;
+}
+#ajinomotoParkTop .slideStyle01 .slick-dots li button {
+	display: block;
+	border: none;
+	cursor: pointer;
+	outline: none;
+	padding: 0;
+	-webkit-appearance: none;
+	   -moz-appearance: none;
+	        appearance: none;
+	text-indent: -9999px;
+	width: 2.6vw;
+	height: 2.6vw;
+	border: solid 2px #de0202;
+	border-radius: 50%;
+}
+#ajinomotoParkTop .slideStyle01 .slick-dots li.slick-active button {
+	background-color: #de0202;
+	border: none
+}
+#ajinomotoParkTop .slideStyle01 .slick-prev,
+#ajinomotoParkTop .slideStyle01 .slick-next {
+	width: 13.33vw;
+	height: 6.67vw;
+	top: 70%;
+	border: solid 1px #000000;
+	border-radius: 2px;
+	content: '•';
+}
+#ajinomotoParkTop .slideStyle01 .slick-prev {
+	left: 0;
+}
+#ajinomotoParkTop .slideStyle01 .slick-next {
+	right: 0;
+}
+#ajinomotoParkTop .slideStyle01 .slick-prev img {
+	width: 1.4vw;
+	-ms-transform: rotate(180deg);
+	-webkit-transform: rotate(180deg);
+	transform: rotate(180deg);
+}
+#ajinomotoParkTop .slideStyle01 .slick-next img {
+	width: 1.4vw;
+}
+@media only screen and (min-width:980px) {
+	#ajinomotoParkTop .slideStyle01 .slick-slider {
+		margin-bottom: 40px;
+	}
+	#ajinomotoParkTop .slideStyle01 .slick-dots {
+		margin-top: 10;
+	}
+	#ajinomotoParkTop .slideStyle01 .slick-dots li {
+		margin: 6px;
+		width: 20px;
+		height: 20px;
+	}
+	#ajinomotoParkTop .slideStyle01 .slick-dots li button {
+		width: 14px;
+		height: 14px;
+	}
+	#ajinomotoParkTop .slideStyle01 .slick-prev,
+	#ajinomotoParkTop .slideStyle01 .slick-next {
+		width: 80px;
+		height: 40px;
+		top: 60%;
+		border: solid 2px #000000;
+		border-radius: 5px;
+		content: '•';
+	}
+	#ajinomotoParkTop .slideStyle01 .slick-prev:hover ,
+	#ajinomotoParkTop .slideStyle01 .slick-next:hover {
+		background-color: #eeeeee;
+	}
+	#ajinomotoParkTop .slideStyle01 .slick-prev {
+		left: 0;
+	}
+	#ajinomotoParkTop .slideStyle01 .slick-next {
+		right: 0;
+	}
+	#ajinomotoParkTop .slideStyle01 .slick-prev img {
+		width: 8px;
+	}
+	#ajinomotoParkTop .slideStyle01 .slick-next img {
+		width: 8px;
+	}
+}
+
+
+
+/* newRecipe
+--------------------------------------------------*/
+#ajinomotoParkTop .newContentsArea {
+	margin: 0 auto 25px;
+}
+#ajinomotoParkTop .newContentsLists {
+	margin-top: 0;
+}
+#ajinomotoParkTop .newContentsLists > li {
+	width: 88%;
+    max-width: 660px;
+	margin-bottom: 20px;
+}
+#ajinomotoParkTop .newContentsLists > li:nth-child(odd) {
+	margin-right: auto;
+}
+#ajinomotoParkTop .newContentsLists > li:nth-child(even) {
+	margin-left: auto;
+}
+#ajinomotoParkTop .newContentsLists > li:nth-child(odd) img {
+	border-radius: 0 10px 10px 0;
+}
+#ajinomotoParkTop .newContentsLists > li:nth-child(even) img {
+	border-radius: 10px 0 0 10px;
+}
+#ajinomotoParkTop .newContentsLists .contentLinkArea {
+	position: relative;
+}
+#ajinomotoParkTop .newContentsLists  .catLabel {
+	display: -webkit-box;
+	display: -webkit-flex;
+  	display: -ms-flexbox;
+	display: flex;
+	align-items: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	font-size: 13px;
+	font-weight: bold;
+	background-color: #ffffff;
+	-webkit-transform: rotate(90deg);
+	    -ms-transform: rotate(90deg);
+	        transform: rotate(90deg);
+	padding: 4px 20px 4px 0;
+}
+#ajinomotoParkTop .newContentsLists .catLabel svg {
+	height: 15px;
+	-webkit-transform: rotate(-90deg);
+	    -ms-transform: rotate(-90deg);
+	        transform: rotate(-90deg);
+	margin-right: 5px;
+}
+#ajinomotoParkTop .newContentsLists > li:nth-child(odd) .catRp {
+	position: absolute;
+	top: 30px;
+	right: -30px;
+}
+#ajinomotoParkTop .newContentsLists > li:nth-child(even) .catRp {
+	position: absolute;
+	top: 31px;
+	right: -31px;
+}
+#ajinomotoParkTop .newContentsLists > li:nth-child(odd) .catMag {
+	position: absolute;
+	top: 42px;
+	right: -43px;
+}
+#ajinomotoParkTop .newContentsLists > li:nth-child(even) .catMag {
+	position: absolute;
+	top: 42px;
+	right: -42px;
+}
+#ajinomotoParkTop .newContentsLists .contentInfo {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+	position: relative;
+	top: -15px;
+}
+#ajinomotoParkTop .newContentsLists .hashtagRankingItem{
+	position: relative;
+	padding-left: 10px;
+	display: inline-block;
+}
+#ajinomotoParkTop .newContentsLists .hashtagRankingItem .listHashtag {
+	font-size: 10px;
+}
+#ajinomotoParkTop .newContentsLists .ttl{
+	margin-top: 8px;
+	padding: 0 15px;
+}
+#ajinomotoParkTop .ttl a{
+	display: block;
+	height: auto;
+	font-size: 15px;
+	font-weight: 600;
+	text-decoration: none;
+}
+#ajinomotoParkTop .newContentsLists .noTags{
+	margin-top: 25px;
+}
+@media only screen and (min-width:980px) {
+	#ajinomotoParkTop .newContentsArea {
+		max-width: 920px;
+		margin-bottom: 55px;
+	}
+	#ajinomotoParkTop .newContentsLists {
+		display: grid;
+		display: -ms-grid;
+		grid-template-columns: 500px 420px;
+		-ms-grid-columns: 500px 420px;
+		margin-top: 0;
+	}
+	#ajinomotoParkTop .newContentsLists > li {
+		max-width: 420px;
+		width: 100%;
+		margin-bottom: 0;
+	}
+	#ajinomotoParkTop .newContentsLists .object-fit {
+		width: 420px;
+		height: 280px;
+		-o-object-fit: cover;
+		   object-fit: cover;
+		font-family: 'object-fit: cover;'
+	}
+	#ajinomotoParkTop .newContentsLists > li:nth-child(odd) {
+		margin-right: 80px;
+	}
+	#ajinomotoParkTop .newContentsLists > li:nth-child(even) {
+		margin-top: 60px;
+		margin-left: 0;
+	}
+	#ajinomotoParkTop .newContentsLists > li:nth-child(odd) img {
+		border-radius: 15px;
+	}
+	#ajinomotoParkTop .newContentsLists > li:nth-child(even) img {
+		border-radius: 15px;
+	}
+
+	#ajinomotoParkTop .newContentsLists > li:nth-child(1) {
+		-ms-grid-column: 1;
+		-ms-grid-row: 1;
+	}
+	#ajinomotoParkTop .newContentsLists > li:nth-child(2) {
+		-ms-grid-column: 2;
+		-ms-grid-row: 1;
+	}
+	#ajinomotoParkTop .newContentsLists > li:nth-child(3) {
+		-ms-grid-column: 1;
+		-ms-grid-row: 2;
+	}
+	#ajinomotoParkTop .newContentsLists > li:nth-child(4) {
+		-ms-grid-column: 2;
+		-ms-grid-row: 2;
+	}
+	#ajinomotoParkTop .newContentsLists > li:nth-child(5) {
+		-ms-grid-column: 1;
+		-ms-grid-row: 3;
+	}
+	#ajinomotoParkTop .newContentsLists > li:nth-child(6) {
+		-ms-grid-column: 2;
+		-ms-grid-row: 3;
+	}
+
+
+	#ajinomotoParkTop .newContentsLists .contentLinkArea {
+		position: relative;
+	}
+	#ajinomotoParkTop .newContentsLists .catLabel {
+		display: -webkit-box;
+		display: -webkit-flex;
+  		display: -ms-flexbox;
+		display: flex;
+		align-items: center;
+		-webkit-box-align: center;
+		-ms-flex-align: center;
+		font-size: 16px;
+		font-weight: bold;
+		background-color: #ffffff;
+		transform: rotate(90deg);
+		padding: 7px 30px 7px 0;
+	}
+	#ajinomotoParkTop .newContentsLists .catLabel svg {
+		width: 20px;
+		transform: rotate(-90deg);
+		margin-right: 10px;
+	}
+	#ajinomotoParkTop .newContentsLists > li:nth-child(odd) .catRp {
+		top: 38px;
+		right: -39px;
+	}
+	#ajinomotoParkTop .newContentsLists > li:nth-child(even) .catRp {
+		top: 39px;
+		right: -40px;
+	}
+	#ajinomotoParkTop .newContentsLists > li:nth-child(odd) .catMag {
+		top: 52px;
+		right: -53px;
+	}
+	#ajinomotoParkTop .newContentsLists > li:nth-child(even) .catMag {
+		top: 52px;
+		right: -54px;
+	}
+	#ajinomotoParkTop .newContentsLists .hashtagRankingItem{
+		padding-left: 15px;
+	}
+	#ajinomotoParkTop .newContentsLists .itemListHashtag {
+		text-decoration: none;
+		font-size: 14px;
+	}
+	#ajinomotoParkTop .newContentsLists .ttl{
+		margin-top: 5px;
+		padding: 0 20px;
+	}
+	#ajinomotoParkTop .newContentsLists .ttl a{
+		font-size: 18px;
+	}
+	#ajinomotoParkTop .newContentsLists .noTags{
+		margin-top: 30px;
+	}
+}
+
+@media all and (-ms-high-contrast: none) {
+	#ajinomotoParkTop .newContentsLists > li:nth-child(1) {
+		-ms-grid-column: 1;
+		-ms-grid-row: 1;
+	}
+	#ajinomotoParkTop .newContentsLists > li:nth-child(2) {
+		-ms-grid-column: 2;
+		-ms-grid-row: 1;
+	}
+	#ajinomotoParkTop .newContentsLists > li:nth-child(3) {
+		-ms-grid-column: 1;
+		-ms-grid-row: 2;
+	}
+	#ajinomotoParkTop .newContentsLists > li:nth-child(4) {
+		-ms-grid-column: 2;
+		-ms-grid-row: 2;
+	}
+	#ajinomotoParkTop .newContentsLists > li:nth-child(5) {
+		-ms-grid-column: 1;
+		-ms-grid-row: 3;
+	}
+	#ajinomotoParkTop .newContentsLists > li:nth-child(6) {
+		-ms-grid-column: 2;
+		-ms-grid-row: 3;
+	}
+}
+
+/* seasonalContents
+--------------------------------------------------*/
+@media only screen and (max-width: 979px) {
+	#ajinomotoParkTop #seasonal-content {
+		scroll-margin-top: 115px;
+	}
+}
+
+/* activityRecruit, topParkMagazine
+--------------------------------------------------*/
+#ajinomotoParkTop .activityRecruit,
+#ajinomotoParkTop .topParkMagazine {
+	position: relative;
+}
+#ajinomotoParkTop .activityRecruit .ContentArea,
+#ajinomotoParkTop .topParkMagazine .ContentArea {
+	width: 92vw;
+	height: 62vw;
+	max-height: 340px;
+    border: #000000 solid 4px;
+    border-left: none;
+    position: relative;
+}
+#ajinomotoParkTop .activityRecruit .catLabel,
+#ajinomotoParkTop .topParkMagazine .catLabel {
+	display: block;
+	position: absolute;
+	top: -5%;
+	right: 15vw;
+	width: 15vw;
+	max-width: 100px;
+	max-height: 100px;
+	padding: 0 6px 0 8px;
+	background-color: #ffffff;
+}
+#ajinomotoParkTop .activityRecruit .linkArea,
+#ajinomotoParkTop .topParkMagazine .linkArea,
+#ajinomotoParkTop .checkContents .linkArea {
+	max-width: 315px;
+	width: 84vw;
+    height: 45px;
+    margin: auto;
+    position: relative;
+    border: solid #000000 2px;
+    border-radius: 4px;
+    -webkit-box-shadow: 2px 2px;
+			box-shadow: 2px 2px;
+	background-color: #fff;
+}
+#ajinomotoParkTop .activityRecruit .linkArea:hover ,
+#ajinomotoParkTop .topParkMagazine .linkArea:hover ,
+#ajinomotoParkTop .checkContents .linkArea:hover {
+    background-color: #eeeeee;
+}
+#ajinomotoParkTop .activityRecruit .linkArea a,
+#ajinomotoParkTop .topParkMagazine .linkArea a,
+#ajinomotoParkTop .checkContents .linkArea a {
+	display: -webkit-box;
+		display: -webkit-flex;
+  		display: -ms-flexbox;
+		display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+    position: absolute;
+    text-decoration: none;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+#ajinomotoParkTop .activityRecruit .linkArea span,
+#ajinomotoParkTop .topParkMagazine .linkArea span,
+#ajinomotoParkTop .checkContents .linkArea span {
+	font-size: 14px;
+	font-weight: 500;
+}
+@media only screen and (min-width:980px) {
+    #ajinomotoParkTop .activityRecruit,
+    #ajinomotoParkTop .topParkMagazine {
+		max-width: 1220px;
+		position: relative;
+        margin: 0 auto;
+		margin-bottom: 100px;
+		
+	}
+    #ajinomotoParkTop .activityRecruit .ContentArea,
+    #ajinomotoParkTop .topParkMagazine .ContentArea {
+		max-width: 100%;
+		width: 100%;
+        border: #000000 solid 5px;
+        -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+		height: 360px;
+	}
+	#ajinomotoParkTop .activityRecruit .ttlArea,
+    #ajinomotoParkTop .topParkMagazine .ttlArea {
+		margin: 40px 0 40px 40px;
+	}
+	#ajinomotoParkTop .activityRecruit .catLabel,
+    #ajinomotoParkTop .topParkMagazine .catLabel {
+		top: -40px;
+		left: 86%;
+		width: 96px;
+		padding: 0 12px 0 17px;
+    }
+	#ajinomotoParkTop .activityRecruit .linkArea,
+	#ajinomotoParkTop .topParkMagazine .linkArea,
+	#ajinomotoParkTop .checkContents .linkArea {
+		max-width: 500px;
+        width: 500px;
+		height: 70px;
+    }
+    #ajinomotoParkTop .activityRecruit .linkArea span,
+	#ajinomotoParkTop .topParkMagazine .linkArea span,
+	#ajinomotoParkTop .checkContents .linkArea span {
+		font-size: 20px;
+    }
+}
+
+
+/* activityRecruit
+--------------------------------------------------*/
+#ajinomotoParkTop .activityRecruit .ContentArea {
+	width: 79.2vw;
+    max-height: 270px;
+    margin-bottom: 630px;
+}
+#ajinomotoParkTop .activityRecruit .mb1 {
+	margin-bottom: 75vw;
+}
+#ajinomotoParkTop .activityRecruit .mb2 {
+	margin-bottom: 750px;
+}
+@media only screen and (min-width:400px) {
+	#ajinomotoParkTop .activityRecruit .mb1 {
+		margin-bottom: 90vw;
+	}
+	#ajinomotoParkTop .activityRecruit .mb2 {
+		margin-bottom: 180vw;
+	}
+}
+@media only screen and (min-width:510px) {
+	#ajinomotoParkTop .activityRecruit .mb1 {
+		margin-bottom: 75vw;
+	}
+	#ajinomotoParkTop .activityRecruit .mb2 {
+		margin-bottom: 170vw;
+	}
+}
+
+@media only screen and (min-width:540px) {
+	#ajinomotoParkTop .activityRecruit .mb1 {
+		margin-bottom: 75vw;
+	}
+	#ajinomotoParkTop .activityRecruit .mb2 {
+		margin-bottom: 165vw;
+	}
+}
+@media only screen and (min-width:750px) {
+	#ajinomotoParkTop .activityRecruit .mb1 {
+		margin-bottom: 540px;
+	}
+	#ajinomotoParkTop .activityRecruit .mb2 {
+		margin-bottom: 1125px;
+	}
+}
+#ajinomotoParkTop .activityRecruit .ttlArea{
+    margin: 20px 15px 20px 15px;
+}
+#ajinomotoParkTop .activityRecruit .ttlArea .mainTitle {
+	margin-bottom: 1px;
+    font-size: 18px;
+    font-weight: 600;
+}
+#ajinomotoParkTop .activityRecruit .ttlArea .subTitle {
+    font-size: 13px;
+    font-weight: 600;
+}
+#ajinomotoParkTop .activityRecruit .recruitList {
+	position: absolute;
+    right: calc( -100vw + 79.2vw);
+    width: 96vw;
+    max-width: 720px;
+}
+#ajinomotoParkTop .activityRecruit .recruitList > li:nth-child(1) {
+	max-width: 720px;
+    width: 96vw;
+	margin-bottom: 30px;
+	background-color: #FFFFFF;
+}
+#ajinomotoParkTop .activityRecruit .recruitList > li:nth-child(2) {
+	max-width: 690px;
+	width: 92vw;
+	margin-bottom: 30px;
+	background-color: #FFFFFF;
+}
+#ajinomotoParkTop .activityRecruit .recruitList .contentLinkArea {
+    position: relative;
+}
+#ajinomotoParkTop .activityRecruit .recruitList .object-fit {
+	width: 100%;
+	max-height: 480px;
+	height: 64vw;
+	-o-object-fit: cover;
+	   object-fit: cover;
+	font-family: 'object-fit: cover;';
+}
+#ajinomotoParkTop .activityRecruit .recruitList > li:nth-child(1) .object-fit {
+	border-radius: 15px 0 0 15px;
+}
+#ajinomotoParkTop .activityRecruit .recruitList > li:nth-child(2) .object-fit {
+	border-radius: 15px;
+}
+#ajinomotoParkTop .categoryLabel {
+	padding-left: 35px;
+}
+#ajinomotoParkTop .categoryLabel:before {
+	top: calc(50% - 7.5px);
+	width: 20px;
+    height: 15px;
+	background-image: url( 'data:image/svg+xml;utf-8,<svg fill="%23000" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29.98 21.57"><title>AP_svg</title><path d="M29.59.21A1,1,0,0,0,28.74,0L7.08,5.43l-5.8-1.7a1,1,0,0,0-.88.16,1,1,0,0,0-.4.8V16.88a1,1,0,0,0,.4.81,1,1,0,0,0,.88.15l5.8-1.7,21.66,5.4a1,1,0,0,0,.24,0,1,1,0,0,0,.61-.21,1,1,0,0,0,.39-.79V1A1,1,0,0,0,29.59.21ZM2,6,6.37,7.31v7L2,15.55ZM28,19.29,8.37,14.4V7.17L28,2.28Z"/></svg>' );
+}
+#ajinomotoParkTop .categoryLabel.magazine::before {
+	top: calc(50% - 6.5px);
+	height: 13px;
+	background-image: url( 'data:image/svg+xml;utf-8,<svg fill="%23000" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30.2 24.62"><title></title><g><g><path d="M29.52,1.08A23.7,23.7,0,0,0,22.15,0a24.11,24.11,0,0,0-7,1,24.11,24.11,0,0,0-7-1A23.7,23.7,0,0,0,.68,1.08,1,1,0,0,0,0,2V19.62a1,1,0,0,0,.41.81,1,1,0,0,0,.91.14,24.47,24.47,0,0,1,13.47,0h.05a.76.76,0,0,0,.21,0h.08l.25,0h0a24.47,24.47,0,0,1,13.47,0,1.06,1.06,0,0,0,.31.05,1,1,0,0,0,.59-.19,1,1,0,0,0,.41-.81V2A1,1,0,0,0,29.52,1.08ZM8.05,17.59a25,25,0,0,0-6.05.7V2.77a24.78,24.78,0,0,1,12.1,0V18.29A25,25,0,0,0,8.05,17.59Zm20.15.7a25,25,0,0,0-6.05-.7,25,25,0,0,0-6,.7V2.77a24.78,24.78,0,0,1,12.1,0Z"/><path d="M29.51,22.67a23.88,23.88,0,0,0-7.36-1.08,24.12,24.12,0,0,0-7,1,24.12,24.12,0,0,0-7-1A23.59,23.59,0,0,0,.69,22.67a1,1,0,0,0-.64,1.27,1,1,0,0,0,1,.68,1.25,1.25,0,0,0,.32-.05,24.47,24.47,0,0,1,13.47,0,1,1,0,0,0,.63,0,24.47,24.47,0,0,1,13.47,0,1,1,0,1,0,.62-1.9Z"/></g></g></svg>' );
+}
+#ajinomotoParkTop .activityRecruit .contentInfo {
+	position: relative;
+}
+#ajinomotoParkTop .activityRecruit .contentInfo .hashtagRankingItem{
+	position: absolute;
+	display: inline-block;
+	top: -30px;
+	padding-left: 10px;
+}
+#ajinomotoParkTop .activityRecruit .contentInfo .itemListHashtag {
+	position: relative;
+    margin: 2.5px;
+}
+#ajinomotoParkTop .activityRecruit .contentInfo .listHashtag {
+	font-size: 10px;
+}
+#ajinomotoParkTop .activityRecruit .contentInfo .txtArea {
+	margin-top: 15px;
+    padding: 0 15px;
+}
+#ajinomotoParkTop .activityRecruit .contentInfo .txtArea .ttl {
+	margin-bottom: 10px;
+}
+#ajinomotoParkTop .activityRecruit  .contentInfo .txtArea .ttl a{
+	width: 100%;
+	display: block;
+	font-size: 15px;
+}
+#ajinomotoParkTop .activityRecruit .contentInfo .txtArea .txt {
+	font-size: 14px;
+   font-weight: 500;
+}
+#ajinomotoParkTop .activityRecruit .catLabel {
+	top: -18px;
+	right: 25vw;
+}
+/* top_activityのタグ不具合のため追加  */
+#ajinomotoParkTop .activityRecruit .btnHashtag {
+	pointer-events: none;
+}
+@media only screen and (min-width:980px) {
+	#ajinomotoParkTop .activityRecruit .ContentArea {
+		width: 100%;
+		max-height: 370px;
+    	height: 370px;
+	}
+	#ajinomotoParkTop .activityRecruit .mb1,
+	#ajinomotoParkTop .activityRecruit .mb2 {
+		margin-bottom: 400px;
+	}
+	#ajinomotoParkTop .activityRecruit .ttlArea {
+		margin: 40px 0 40px 40px;
+	}
+	#ajinomotoParkTop .activityRecruit .ttlArea .mainTitle {
+		font-size: 36px;
+		line-height: 1.0;
+		margin-bottom: 20px;
+	}
+    #ajinomotoParkTop .activityRecruit .ttlArea .subTitle {
+		font-size: 26px;
+		font-weight: bold;
+		line-height: 1.0;
+    }
+    #ajinomotoParkTop .activityRecruit .recruitList {
+		position: relative;
+		display: -webkit-box;
+		display: -webkit-flex;
+  		display: -ms-flexbox;
+		display: flex;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+		width: 100%;
+		max-width: 1100px;
+		margin: 0 auto;
+		transform: none;
+			-webkit-transform: none;
+			-ms-transform: none;
+		left: 0;
+    }
+	#ajinomotoParkTop .activityRecruit .recruitList > li:nth-child(1),
+	#ajinomotoParkTop .activityRecruit .recruitList > li:nth-child(2) {
+		width: 40vw;
+		max-width: 520px;
+	}
+	#ajinomotoParkTop .activityRecruit .recruitList > li:nth-child(2)
+	 {
+		margin-left: 60px;
+	}
+	#ajinomotoParkTop .activityRecruit .recruitList .contentLinkArea {
+		position: relative;
+	}
+	#ajinomotoParkTop .activityRecruit .recruitList .object-fit {
+		max-width: 520px;
+		width: 40vw;
+		max-height: 350px;
+		height: 27vw;
+		-o-object-fit: cover;
+		   object-fit: cover;
+		font-family: 'object-fit: cover;';
+	}
+	#ajinomotoParkTop .activityRecruit .recruitList > li:nth-child(1) .object-fit,
+	#ajinomotoParkTop .activityRecruit .recruitList > li:nth-child(2) .object-fit {
+		border-radius: 20px;
+	}
+	#ajinomotoParkTop .categoryLabel {
+        padding-left: 35px;
+    }
+    #ajinomotoParkTop .categoryLabel:before {
+        top: calc(50% - 8.5px);
+        height: 16px;
+    }
+	#ajinomotoParkTop .activityRecruit .recruitList .contentInfo{
+		position: relative;
+		top: -20px;
+	}
+	#ajinomotoParkTop .activityRecruit .contentInfo .hashtagRankingItem{
+		position: relative;
+		top: 0;
+		padding-left: 15px;
+	}
+	#ajinomotoParkTop .activityRecruit .contentInfo .itemListHashtag {
+		text-decoration: none;
+		font-size: 14px;
+		margin: 5px;
+	}
+	#ajinomotoParkTop .activityRecruit .contentInfo .listHashtag {
+		font-size: 10px;
+	}
+	#ajinomotoParkTop .activityRecruit .contentInfo .txtArea {
+		margin: 15px 16px 0 16px;
+	}
+	#ajinomotoParkTop .activityRecruit .contentInfo .txtArea .ttl {
+        margin-bottom: 15px;
+	}
+	#ajinomotoParkTop .activityRecruit  .contentInfo .txtArea .ttl a{
+        width: 100%;
+        display: block;
+		font-size: 18px;
+	}
+	#ajinomotoParkTop .activityRecruit .contentInfo .txtArea .txt {
+       font-weight: 500;
+	}
+	#ajinomotoParkTop .activityRecruit .catLabel {
+		top: -36px;
+		right: 25vw;
+	}
+}
+
+/* topParkMagazine
+--------------------------------------------------*/
+#ajinomotoParkTop .topParkMagazine .ContentArea {
+	margin-bottom: 100px;
+}
+@media only screen and (min-width:450px) {
+	#ajinomotoParkTop .topParkMagazine .ContentArea {
+		margin-bottom: 140px;
+	}
+}
+#ajinomotoParkTop .topParkMagazine .ttlArea {
+    margin: 25px 15px 30px 15px;
+}
+#ajinomotoParkTop .topParkMagazine .ttlArea .mainTitle {
+	font-size: 24.11px;
+	font-weight: 600;
+	margin-bottom: 5px;
+	letter-spacing: 3px;
+}
+#ajinomotoParkTop .topParkMagazine .ttlArea .subTitle {
+	font-size: 14px;
+	font-weight: 400;
+}
+#ajinomotoParkTop .topParkMagazine .magazineSlider {
+	position: absolute;
+	width: 100vw;
+	bottom: -32%;
+}
+#ajinomotoParkTop .magazineSlider li {
+	margin-right: 10px;
+	width: 40vw;
+	max-width: 300px;
+	max-height: 300px;
+}
+#ajinomotoParkTop .magazineSlider .object-fit {
+	border-radius: 15px;
+	width: 40vw;
+	height: 40vw;
+	max-width: 300px;
+	max-height: 300px;
+	-o-object-fit: cover;
+	   object-fit: cover;
+	font-family: 'object-fit: cover;'
+}
+@media only screen and (min-width:980px) {
+	#ajinomotoParkTop .activityRecruit .recruitList > li {
+		position: relative;
+		margin: 0;
+		margin-bottom: 30px;
+	}
+	#ajinomotoParkTop .topParkMagazine .ContentArea {
+		margin-bottom: 210px;
+		height: 370px;
+		max-height: 370px;
+	}
+    #ajinomotoParkTop .topParkMagazine .ttlArea {
+		margin: 40px 0 40px 40px;
+	}
+	#ajinomotoParkTop .topParkMagazine .ttlArea .mainTitle {
+		font-size: 48.23px;
+		margin-bottom: 0;
+		letter-spacing: 7px;
+	}
+	#ajinomotoParkTop .topParkMagazine .ttlArea .subTitle {
+		font-size: 20px;
+		width: 610px;
+	}
+	#ajinomotoParkTop .topParkMagazine .magazineSlider {
+		position: absolute;
+		width: calc(100vw + 40px);
+		max-width: 1300px;
+		min-width: 1015px;
+		left: -45px;
+		bottom: -42%;
+	}
+	#ajinomotoParkTop .magazineSlider li {
+		width: 300px;
+		margin-right: 30px;
+	}
+	#ajinomotoParkTop .magazineSlider .object-fit {
+		border-radius: 15px;
+		width: 300px;
+		height: 300px;
+		object-fit: cover;
+	}
+}
+
+
+/* .recommend_words
+--------------------------------------------------*/
+.recommendWords {
+    margin: 0 auto;
+	margin-bottom: 80px;
+}
+.recommendWords .sectionTitle {
+	margin-bottom: 30px;
+}
+.recommendWordsList {
+	position: relative;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    background-color: #eee;
+        background-image: -o-radial-gradient(#fff 25%, transparent 20%), -o-radial-gradient(#fff 25%, transparent 20%);
+        background-image: radial-gradient(#fff 25%, transparent 20%), radial-gradient(#fff 25%, transparent 20%);
+        background-position: 0 0, 5px 5px;
+        background-size: 10px 10px;
+	padding: 20px 15px 5px 15px;
+	margin: 0 15px;
+}
+.recommendWordsList:before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background:
+		-o-linear-gradient(45deg,  #fff 5px, transparent 5px),
+		-o-linear-gradient(315deg, #fff 5px, transparent 5px),
+		-o-linear-gradient(225deg, #fff 5px, transparent 5px),
+		-o-linear-gradient(135deg, #fff 5px, transparent 5px);
+	background:
+		linear-gradient(45deg, #fff 5px, transparent 5px),
+		linear-gradient(135deg, #fff 5px, transparent 5px),
+		linear-gradient(225deg, #fff 5px, transparent 5px),
+		linear-gradient(315deg, #fff 5px, transparent 5px);
+	background-position: bottom left, top left, top right, bottom right;
+	background-size: 50% 50%;
+	background-repeat: no-repeat;
+}
+.recommendWordsList ul {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-flow: wrap;
+	    flex-flow: wrap;
+	-ms-flex-wrap: wrap;
+	justify-content: center;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+}
+.recommendWordsList .itemListHashtag {
+    margin: 0 5px 15px 5px;
+}
+.recommendWordsList .btnHashtag {
+	padding: 4px 10px;
+}
+.recommendWordsList .btnHashtag .hashtagName {
+	font-size: 14px;
+}
+.recommendWordsList a {
+    text-decoration: none;
+}
+
+@media only screen and (min-width:980px) {
+    .recommendWords {
+        max-width: 1100px;
+		margin-bottom: 100px;
+    }
+	.recommendWords .sectionTitle {
+		margin-bottom: 70px;
+	}
+    .recommendWordsList {
+		margin: 0;
+        padding: 40px 30px 10px 30px;
+    }
+    .recommendWordsList .itemListHashtag {
+        border-radius: 21px;
+        margin: 0 7px 30px 7px;
+	}
+	.recommendWordsList .btnHashtag {
+		padding: 8px 15px;
+	}
+	.recommendWordsList .btnHashtag .hashtagName {
+		font-size: 22.4px;
+		font-weight: 500;
+	}
+	.recommendWordsList .btnHashtag .bg {
+		top: 2px;
+		left: 2px;
+		width: calc(100% - 4px);
+		height: calc(100% - 4px);
+	}
+}
+
+
+/* .checkedContents, clipContents
+--------------------------------------------------*/
+#ajinomotoParkTop .checkedContents,
+#ajinomotoParkTop .clipContents {
+	margin-left: 4%;
+
+}
+#ajinomotoParkTop .checkedContents .titleArea,
+#ajinomotoParkTop .clipContents .titleArea {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	justify-content: space-between;
+	-webkit-box-pack: justify;
+	-ms-flex-pack: justify;
+	max-width: 96%;
+	margin-right: auto;
+	margin-bottom: 10px
+}
+#ajinomotoParkTop .checkedContents .titleArea h2,
+#ajinomotoParkTop .clipContents .titleArea h2 {
+	display: inline-block;
+	font-size: 17px;
+	font-weight: 400;
+}
+#ajinomotoParkTop .checkedContents .linkArea,
+#ajinomotoParkTop .clipContents .linkArea {
+	width: 101px;
+	height: 30px;
+	position: relative;
+	border: solid #000000 2px;
+	border-radius: 4px;
+	-webkit-box-shadow: 1px 1px;
+	        box-shadow: 1px 1px;
+	text-align: center;
+	font-size: 12px;
+	font-weight: 400;
+}
+#ajinomotoParkTop .checkedContents .linkArea:hover ,
+#ajinomotoParkTop .clipContents .linkArea:hover {
+	background-color: #eeeeee;
+}
+#ajinomotoParkTop .checkedContents .linkArea a,
+#ajinomotoParkTop .clipContents .linkArea a {
+	position: absolute;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	justify-content: center;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	align-items: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	text-decoration: none;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+#ajinomotoParkTop .checkedContents .linkArea span,
+#ajinomotoParkTop .clipContents .linkArea span {
+	line-height: 29px;
+}
+#ajinomotoParkTop .contentsSliderType01 {
+	width: 100%;
+}
+#ajinomotoParkTop .contentsSliderType01 li {
+	max-width: 260px;
+	width: 34.67vw;
+	max-height: 172px;
+    height: 23.07vw;
+	margin-right: 15px;
+}
+#ajinomotoParkTop .contentsSliderType01 .img {
+	position: relative;
+	background-color: black;
+	border-radius: 10px;
+	max-width: 260px;
+	width: 34.67vw;
+}
+#ajinomotoParkTop .contentsSliderType01 .img.menu-card::before {
+	content: '';
+	display: block;
+	padding-top: 66.7%;
+}
+#ajinomotoParkTop .contentsSliderType01 .img .object-fit {
+	border-radius: 10px;
+	opacity: 0.6;
+	width: 34.67vw;
+	height: 23.07vw;
+	max-height: 172px;
+	-o-object-fit: cover;
+	   object-fit: cover;
+	font-family: 'object-fit: cover;'
+}
+#ajinomotoParkTop .contentsSliderType01 .menu-card img.object-fit {
+	position: absolute;
+	float: none;
+	top: 0;
+	right: 0;
+	width: 33.334%;
+	height: 50%;
+	object-fit: cover;
+	border-radius: 0 10px 0 0;
+}
+#ajinomotoParkTop .contentsSliderType01 .menu-card img.object-fit:nth-child(3)  {
+	top: 50%;
+	border-radius: 0 0 10px 0;
+}
+#ajinomotoParkTop .contentsSliderType01 .menu-card img.object-fit:first-child {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 66.667%;
+	height: 100%;
+	object-fit: cover;
+	border-radius: 10px 0 0 10px;
+}
+#ajinomotoParkTop .contentsSliderType01 .catLabel {
+	position: absolute;
+	top: 1vw;
+	left: 2vw;
+	width: 4vw;
+	fill: #ffffff;
+	opacity: 0.8;
+	background-color: transparent;
+}
+#ajinomotoParkTop .contentsSliderType01 .ttl {
+	position: absolute;
+	bottom: 10px;
+	border-radius: 10px;
+	font-size: 12px;
+	font-weight: 600;
+	color: #ffffff;
+	padding: 0 10px;
+}
+#ajinomotoParkTop .checkedContents .noCheckedContents,
+#ajinomotoParkTop .clipContents .noClipContents {
+	text-align: center;
+}
+#ajinomotoParkTop .checkedContents .noCheckedContents p,
+#ajinomotoParkTop .clipContents .noClipContents p {
+	font-weight: 500;
+}
+@media only screen and (min-width:980px) {
+	#ajinomotoParkTop .checkedContents,
+	#ajinomotoParkTop .clipContents {
+		max-width: 1220px;
+		margin: 0 auto;
+		margin-bottom: 80px;
+	}
+	#ajinomotoParkTop .checkedContents .titleArea,
+	#ajinomotoParkTop .clipContents .titleArea {
+		display: -webkit-box;
+		display: -webkit-flex;
+  		display: -ms-flexbox;
+		display: flex;
+		justify-content: space-between;
+		-webkit-box-pack: justify;
+		-ms-flex-pack: justify;
+		padding: 0 60px;
+		margin-bottom: 15px;
+	}
+	#ajinomotoParkTop .checkedContents .titleArea h2,
+	#ajinomotoParkTop .clipContents .titleArea h2 {
+		display: inline-block;
+		font-size: 25px;
+		font-weight: 400;
+	}
+	#ajinomotoParkTop .checkedContents .linkArea,
+	#ajinomotoParkTop .clipContents .linkArea {
+		width: 160px;
+		height: 50px;
+		position: relative;
+		border: solid #000000 2px;
+		border-radius: 4px;
+		-webkit-box-shadow: 2px 2px;
+		        box-shadow: 2px 2px;
+		text-align: center;
+		font-size: 16px;
+		font-weight: 400;
+	}
+	#ajinomotoParkTop .checkedContents .linkArea a,
+	#ajinomotoParkTop .clipContents .linkArea a {
+		position: absolute;
+		text-decoration: none;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+	#ajinomotoParkTop .contentsSliderType01 {
+		width: 100%;
+	}
+	#ajinomotoParkTop .contentsSliderType01 ul {
+		padding: 0 60px;
+	}
+	#ajinomotoParkTop .contentsSliderType01 li {
+		width: 260px;
+		height:	173px;
+		margin-right: 20px;
+	}
+	#ajinomotoParkTop .contentsSliderType01 .img {
+		position: relative;
+		background-color: black;
+		border-radius: 20px;
+		width: 260px;
+		height:	173px;
+		display: block;
+	}
+	#ajinomotoParkTop .contentsSliderType01 .img .object-fit {
+		border-radius: 20px;
+		opacity: 0.6;
+		width: 100%;
+		height:	100%;
+		-o-object-fit: cover;
+		   object-fit: cover;
+		font-family: 'object-fit: cover;'
+	}
+	#ajinomotoParkTop .contentsSliderType01 .menu-card img.object-fit {
+		position: absolute;
+		float: none;
+		top: 0;
+		right: 0;
+		width: 33.334%;
+		height: 50%;
+		object-fit: cover;
+		border-radius: 0 20px 0 0;
+	}
+	#ajinomotoParkTop .contentsSliderType01 .menu-card img.object-fit:nth-child(3)  {
+		top: 50%;
+		border-radius: 0 0 20px 0;
+	}
+	#ajinomotoParkTop .contentsSliderType01 .menu-card img.object-fit:first-child {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 66.667%;
+		height: 100%;
+		object-fit: cover;
+		border-radius: 20px 0 0 20px;
+	}
+	#ajinomotoParkTop .contentsSliderType01 .catLabel {
+		position: absolute;
+		top: 20px;
+		left: 20px;
+		width: 35px;
+		fill: #ffffff;
+		opacity: 0.8;
+		background-color: transparent;
+	}
+	#ajinomotoParkTop .contentsSliderType01 .ttl {
+		position: absolute;
+		bottom: 0;
+		width: 220px;
+		font-size: 18px;
+		color: #ffffff;
+		padding: 0 20px;
+	}
+	#ajinomotoParkTop .contentsSliderType01 li:nth-child(odd) .ttl {
+		bottom: 20px;
+	}
+	#ajinomotoParkTop .contentsSliderType01 li:nth-child(even) .ttl {
+		top: 100px;
+		height: 53px;
+	}
+	#ajinomotoParkTop .contentsSliderType01 .slick-prev {
+		border-top: black solid 4px ;
+		border-left: black solid 4px ;
+		-ms-transform: rotate(-45deg);
+		-webkit-transform: rotate(-45deg);
+		transform: rotate(-45deg);
+		top: 45%;
+		left: 0;
+	}
+	#ajinomotoParkTop .contentsSliderType01 .slick-prev img {
+		width: 10px;
+		-ms-transform: rotate(180deg);
+		-webkit-transform: rotate(180deg);
+		transform: rotate(180deg);
+	}
+	#ajinomotoParkTop .contentsSliderType01 .slick-next {
+		border-top: black solid 4px ;
+		border-right: black solid 4px ;
+		-ms-transform: rotate(45deg);
+		-webkit-transform: rotate(45deg);
+		transform: rotate(45deg);
+		top: 45%;
+		right: 0;
+	}
+	#ajinomotoParkTop .contentsSliderType01 .slick-next img {
+		width: 10px;
+	}
+}
+
+/* bnrAreaCol1
+--------------------------------------------------*/
+#ajinomotoParkTop .bnrAreaCol1{
+	max-width: 92%;
+	margin-right: auto;
+    margin-left: auto;
+	margin-bottom: 10px;
+}
+#ajinomotoParkTop .bnrAreaCol1 .ttl {
+	text-align: center;
+	position: relative;
+	margin-bottom: 30px;
+	padding-bottom: 20px;
+}
+#ajinomotoParkTop .bnrAreaCol1 .ttl h2 {
+	font-size: 18px;
+	font-weight: 500;
+}
+#ajinomotoParkTop .bnrAreaCol1 .ttl:before {
+	content: '';
+	position: absolute;
+	left: 50%;
+	bottom: 0;
+	display: inline-block;
+	width: 75px;
+	height: 5px;
+	-webkit-transform: translate(-50%);
+	    -ms-transform: translate(-50%);
+	        transform: translate(-50%);
+	background-color: #000000;
+}
+#ajinomotoParkTop .bnrAreaCol1 ul {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-wrap: wrap;
+	    flex-wrap: wrap;
+}
+#ajinomotoParkTop .bnrAreaCol1 li {
+	width: calc((100% - 25px) / 2);
+	margin-bottom: 15px;
+}
+#ajinomotoParkTop .bnrAreaCol1 li > a {
+	text-decoration: none;
+}
+#ajinomotoParkTop .bnrAreaCol1 .object-fit {
+	width: 100%;
+	height: 23.5vw;
+	border-radius: 10px;
+	object-fit: cover;
+	font-family: 'object-fit: cover;';
+}
+#ajinomotoParkTop .bnrAreaCol1 .bnrTitle {
+	font-size: 14px;
+	font-weight: 400;
+	padding-top: 10px;
+}
+#ajinomotoParkTop .bnrAreaCol1 li:nth-child(odd) {
+	margin-right: 25px;
+}
+
+@supports (-ms-ime-align:auto) {
+	#ajinomotoParkTop .bnrAreaCol1 li {
+		width: calc((100% - 26px) / 2);
+		margin-bottom: 15px;
+	}
+}
+
+@media only screen and (min-width:980px) {
+	#ajinomotoParkTop .bnrAreaCol1 {
+		max-width: 1100px;
+		margin-bottom: 80px;
+		padding: 0;
+	}
+	#ajinomotoParkTop .bnrAreaCol1 .ttl {
+		margin-bottom: 60px;
+		padding-bottom: 30px;
+	}
+	#ajinomotoParkTop .bnrAreaCol1 .ttl:before {
+		width: 110px;
+		height: 5px;
+	}
+	#ajinomotoParkTop .bnrAreaCol1 .ttl h2 {
+		font-size: 25px;
+		font-weight: 500;
+	}
+	#ajinomotoParkTop .bnrAreaCol1 ul {
+		flex-wrap: wrap;
+		-ms-flex-wrap: wrap;
+		justify-content: space-between;
+		-webkit-box-pack: justify;
+		-ms-flex-pack: justify;
+	}
+	#ajinomotoParkTop .bnrAreaCol1 li {
+		max-width: 245px;
+		margin-bottom: 25px;
+	}
+	#ajinomotoParkTop .bnrAreaCol1 .object-fit {
+		width:100%;
+		height: 130px;
+		border-radius: 15px;
+	}
+	#ajinomotoParkTop .bnrAreaCol1 .bnrTitle {
+		font-size: 20px;
+		font-weight: 400;
+		padding-top: 15px;
+	}
+	#ajinomotoParkTop .bnrAreaCol1 li:nth-child(odd) {
+		margin-left: 0;
+		margin: 0;
+	}
+}

@@ -1,0 +1,2014 @@
+@charset "utf-8";
+/**
+ * _recipe.css
+ */
+
+
+/* recipeTitleArea
+--------------------------------------------------*/
+.recipeTitleArea {
+	position: relative;
+	background: url(/wp-content/themes/ajinomoto/resources/images/common/sp/bg_wall01.jpg);
+}
+.recipeTitleArea .wrap1160 {
+	position: relative;
+}
+.recipeTitleArea .wrap1160 .in_table {
+	display: table;
+	width: 100%;
+    table-layout: fixed;
+}
+.recipeTitleArea .in_table > * {
+	display: table-cell;
+	padding: 13px 0;
+	vertical-align: top;
+}
+@media only screen and (min-width:980px) {
+	.recipeTitleArea .in_table > * {
+		padding: 11px 0;
+	}
+}
+
+/* recipeTitle */
+.recipeTitleArea .in_table .recipeTitle {
+	font-size: 5.41vw;
+	font-weight: 500;
+	line-height: 1.4;
+	vertical-align: middle;
+}
+@media only screen and (min-width:980px) {
+	.recipeTitleArea .in_table .recipeTitle {
+		font-size: 24px;
+	}
+}
+
+/* ptintBtn */
+.recipeTitleArea .in_table .ptintBtn {
+	width: 53px;
+	display: none;
+}
+@media only screen and (min-width:980px) {
+	.recipeTitleArea .in_table .ptintBtn {
+		display: table-cell;
+		padding-right: 15px;
+	}
+}
+
+/* clipBtn */
+.recipeTitleArea .in_table .clipBtn {
+	width: 40px;
+	font-size: 10px;
+	text-align: center;
+}
+.recipeTitleArea .in_table .clipBtn a {
+	display: block;
+	font-weight: 700;
+	text-decoration: none;
+}
+@media only screen and (min-width:980px) {
+	.recipeTitleArea .in_table .clipBtn {
+		width: 60px;
+		font-size: 14px;
+	}
+	.recipeTitleArea .in_table .clipBtn img {
+		display: block;
+		width: 45px;
+		margin: auto;
+	}
+	.recipeTitleArea .in_table .clipBtn .clipTxt{
+        width: 54px;
+		height: 20px;
+		margin-top: 1px;
+		margin-left: 3px;
+		background: url(/wp-content/themes/ajinomoto/resources/images/common/sp/txt_clip01.png) no-repeat left center;
+		background-size: 55px auto;
+	}
+}
+.snsArea .clip .modalBtnType02 .img .clipTxt{
+	width: 55px;
+	height: 20px;
+	margin-left: -1px;
+	background: url(/wp-content/themes/ajinomoto/resources/images/common/sp/txt_clip01.png) no-repeat left center;
+	background-size: 55px auto;
+}
+
+
+/* recipeDetailTop
+--------------------------------------------------*/
+@media only screen and (min-width:980px) {
+	.recipeDetailTop .recipeDetailInner {
+		overflow: hidden;
+		padding: 40px 0 55px;
+		background: url(/wp-content/themes/ajinomoto/resources/images/common/sp/bdr_dot01.png) repeat-x left bottom;
+		background-size: auto 3px;
+	}
+}
+
+/* recipeImageArea */
+.recipeDetailTop .recipeImageArea {
+	padding-bottom: 13px;
+}
+.recipeDetailTop .recipeImageArea .inImage {
+	margin: 0 -13px 13px;
+}
+.recipeDetailTop .recipeImageArea p + p {
+	margin-top: 1.5em;
+}
+@media only screen and (min-width:980px) {
+	.recipeDetailTop .recipeImageArea {
+		-webkit-box-sizing: border-box;
+		   -moz-box-sizing: border-box;
+		        box-sizing: border-box;
+		float: left;
+		width: 100%;
+		margin-left: -305px;
+		padding: 0 0 0 305px;
+	}
+	.recipeDetailTop .recipeImageArea .inImage {
+		margin: 0 0 15px;
+	}
+}
+
+/* recipeTextArea */
+@media only screen and (min-width:980px) {
+	.recipeDetailTop .recipeTextArea {
+		float: right;
+		width: 280px;
+	}
+}
+
+/* recipeInfo01 */
+.recipeDetailTop .recipeInfo01 {
+	position: relative;
+	display: table;
+	width: 100%;
+	padding: 7px 0;
+}
+.recipeDetailTop .recipeInfo01:before,
+.recipeDetailTop .recipeInfo01:after {
+	position: absolute;
+	left: 0;
+	display: block;
+	content: '';
+	width: 100%;
+	height: 2px;
+	background: url(/wp-content/themes/ajinomoto/resources/images/common/sp/bdr_dot01.png) repeat-x left top;
+	background-size: auto 100%;
+}
+.recipeDetailTop .recipeInfo01:before { top: 0; }
+.recipeDetailTop .recipeInfo01:after { bottom: 0; }
+
+.recipeDetailTop .recipeInfo01 > * {
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	        box-sizing: border-box;
+	display: table-cell;
+	vertical-align: middle;
+}
+@media only screen and (min-width:980px) {
+	.recipeDetailTop .recipeInfo01 {
+		padding: 12px 0;
+	}
+	.recipeDetailTop .recipeInfo01:before,
+	.recipeDetailTop .recipeInfo01:after {
+		height: 3px;
+	}
+}
+
+/* recipeInfo01 - recipeTime */
+.recipeDetailTop .recipeInfo01 .recipeTime {
+	width: 90px;
+	padding: 2px 7px 2px 0;
+	background: url(/wp-content/themes/ajinomoto/resources/images/common/sp/bdr_dot02.png) repeat-y right top;
+	background-size: 2px auto;
+}
+.recipeDetailTop .recipeInfo01 .recipeTime .inTime {
+	padding: 2px 0 2px 26px;
+	font-size: 15px;
+	font-weight: 500;
+	background: url(/wp-content/themes/ajinomoto/resources/images/common/sp/icon_timer.png) no-repeat left center;
+	background-size: 19px auto;
+}
+.recipeDetailTop .recipeInfo01 .recipeTime .inTime > * {
+	display: inline-block;
+	line-height: 1;
+}
+.recipeDetailTop .recipeInfo01 .recipeTime .inTime strong {
+	/* WANG_BIN 2019-04-03 AP_ISSUE-339 UPDATE START */
+	/* margin-right: 2px; */
+	margin-right: 1px;
+	/* WANG_BIN 2019-04-03 AP_ISSUE-339 UPDATE END */
+	font-size: 20px;
+	color: #e60013;
+}
+.recipeDetailTop .recipeInfo01 .recipeTime p {
+	font-size: 10px;
+}
+/* WANG_BIN 2019-04-03 AP_ISSUE-339 ADD START */
+.recipeDetailTop .recipeInfo01 .recipeTime .inTime small {
+	margin-bottom: 3px;
+	display: block;
+	font-size: 10px;
+}
+/* WANG_BIN 2019-04-03 AP_ISSUE-339 ADD END */
+@media only screen and (min-width:980px) {
+	.recipeDetailTop .recipeInfo01 .recipeTime {
+		width: 115px;
+		background-size: 3px auto;
+	}
+	.recipeDetailTop .recipeInfo01 .recipeTime .inTime {
+		padding-left: 34px;
+		font-size: 16px;
+		background-size: 28px auto;
+	}
+	.recipeDetailTop .recipeInfo01 .recipeTime .inTime strong {
+		font-size: 26px;
+	}
+	/* WANG_BIN 2019-04-03 AP_ISSUE-339 ADD START */
+	.recipeDetailTop .recipeInfo01 .recipeTime .inTime small {
+		margin-bottom: 0;
+		font-size: 12px;
+		line-height: 1.2;
+	}
+	/* WANG_BIN 2019-04-03 AP_ISSUE-339 ADD END */
+	.recipeDetailTop .recipeInfo01 .recipeTime p {
+		font-size: 14px;
+		text-align: right;
+	}
+}
+
+/* recipeInfo01 - recipeChara */
+.recipeDetailTop .recipeInfo01 .recipeChara {
+	padding: 5px 10px;
+}
+.recipeDetailTop .recipeInfo01 .recipeChara ul {
+	margin: -8px 0 0 -8px;
+}
+.recipeDetailTop .recipeInfo01 .recipeChara li {
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	        box-sizing: border-box;
+	float: left;
+	max-width: 50%;
+	padding: 8px 0 0 8px;
+}
+.recipeDetailTop .recipeInfo01 .recipeChara li img {
+	width: 100%;
+	max-width: 100px;
+}
+@media only screen and (min-width:980px) {
+	.recipeDetailTop .recipeInfo01 .recipeChara ul {
+		margin: 0;
+	}
+	.recipeDetailTop .recipeInfo01 .recipeChara li {
+		float: none;
+		width: auto;
+		max-width: none;
+		padding: 0;
+	}
+	.recipeDetailTop .recipeInfo01 .recipeChara li + li {
+		margin-top: 10px;
+	}
+	.recipeDetailTop .recipeInfo01 .recipeChara li img {
+		max-width: none;
+	}
+}
+
+/* recipeInfo02 */
+.recipeDetailTop .recipeInfo02 {
+	padding-top: 15px;
+}
+
+/* recipeInfo02 - btns */
+.recipeDetailTop .recipeInfo02 .btns {
+	margin: 0 -3px 15px -3px;
+	text-align: center;
+}
+.recipeDetailTop .recipeInfo02 .btns li {
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	        box-sizing: border-box;
+	display: inline-block;
+    /* PS change */
+	width: 60%
+    /* PS change end */;
+	padding: 0 3px;
+}
+.recipeDetailTop .recipeInfo02 .btns li.greenBtn a .txt span span {
+	position: relative;
+	display: inline-block;
+	padding-right: 8px;
+}
+.recipeDetailTop .recipeInfo02 .btns li.greenBtn a .txt span span:after {
+	position: absolute;
+	top: 50%;
+	left: 100%;
+	display: block;
+	content: '';
+	width: 6px;
+	height: 6px;
+	margin-top: -6px;
+	border-top: #fff solid 2px;
+	border-right: #fff solid 2px;
+	transform: rotate(135deg);
+	-ms-transform: rotate(135deg);
+	-webkit-transform: rotate(135deg);
+	-moz-transform: rotate(135deg);
+}
+.recipeDetailTop .recipeInfo02 .btns li.greenBtn a.on .txt span span:after {
+	margin-top: -3px;
+	transform: rotate(-45deg);
+	-ms-transform: rotate(-45deg);
+	-webkit-transform: rotate(-45deg);
+	-moz-transform: rotate(-45deg);
+}
+@media only screen and (min-width:980px) {
+	.recipeDetailTop .recipeInfo02 .btns {
+		margin: 0 0 20px;
+	}
+	.recipeDetailTop .recipeInfo02 .btns li {
+		float: none;
+		width: auto;
+		display: block;
+		padding-left: 0;
+	}
+	.recipeDetailTop .recipeInfo02 .btns li + li {
+		margin-top: 10px;
+	}
+	.recipeDetailTop .recipeInfo02 .btns li.greenBtn a .txt span span {
+		padding-right: 10px;
+	}
+	.recipeDetailTop .recipeInfo02 .btns li.greenBtn a .txt span span:after {
+		width: 8px;
+		height: 8px;
+		margin-top: -7px;
+	}
+}
+
+/* nutritionArea */
+.recipeDetailTop .nutritionArea {
+	display: none;
+	padding: 15px 10px 5px 10px;
+	background: url(/wp-content/themes/ajinomoto/resources/images/common/sp/bg_wall01.jpg);
+}
+.recipeDetailTop .nutritionArea dt {
+	margin-bottom: 10px;
+	text-align: center;
+}
+.recipeDetailTop .nutritionArea dd ul {
+	padding-left: 10px;
+}
+.recipeDetailTop .nutritionArea dd li {
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	        box-sizing: border-box;
+	float: left;
+	width: 50%;
+	margin: 5px 0 0 10px;
+	padding-top: 5px;
+	font-size: 12px;
+	background: url(/wp-content/themes/ajinomoto/resources/images/common/sp/bdr_dot01.png) repeat-x left top;
+	background-size: auto 2px;
+}
+.recipeDetailTop .nutritionArea dd li:nth-child(odd) {
+	margin-left: -10px;
+}
+.recipeDetailTop .nutritionArea dd li:nth-child(1),
+.recipeDetailTop .nutritionArea dd li:nth-child(2) {
+	margin-top: 0;
+	padding-top: 0;
+	background: none;
+}
+.recipeDetailTop .nutritionArea dd li > div {
+	display: table;
+	width: 100%;
+}
+
+.recipeDetailTop .nutritionArea dd > .vegetableTxt {
+	text-align: left;
+	font-size: xx-small;
+	padding-left: 10px;
+	padding-top: 15px;
+	color: #444;
+}
+
+@media only screen and (max-width:980px) {
+	.recipeDetailTop .nutritionArea dd > .vegetableTxt {
+		padding-top: 5px;
+		text-align: right;
+		font-size: xx-small;
+		color: #444;
+	}
+}
+.recipeDetailTop .nutritionArea dd li > div > * {
+	display: table-cell;
+	vertical-align: top;
+}
+.recipeDetailTop .nutritionArea dd li .ttl {
+	width: 7.5em;
+}
+.recipeDetailTop .nutritionArea dd li .ttl sub {
+	vertical-align: unset;
+}
+.recipeDetailTop .nutritionArea dd li .num {
+	text-align: right;
+}
+@media only screen and (min-width:980px) {
+	.recipeDetailTop .nutritionArea {
+		padding: 15px 15px 5px 15px;
+	}
+	.recipeDetailTop .nutritionArea dt {
+		margin-bottom: 12px;
+	}
+	.recipeDetailTop .nutritionArea dd li,
+	.recipeDetailTop .nutritionArea dd li:nth-child(2) {
+		float: none;
+		width: auto;
+		margin: 10px 0 0 0;
+		padding-top: 10px;
+		font-size: 16px;
+		background: url(/wp-content/themes/ajinomoto/resources/images/common/sp/bdr_dot01.png) repeat-x left top;
+		background-size: auto 3px;
+	}
+	.recipeDetailTop .nutritionArea dd li:nth-child(odd) {
+		margin-left: 0;
+	}
+	.recipeDetailTop .nutritionArea dd li .ttl {
+		width: 9.5em;
+	}
+	.recipeDetailTop .nutritionArea dd li .num {
+		text-align: left;
+	}
+}
+
+
+
+/* recipeMaterial
+--------------------------------------------------*/
+.recipeMaterial {
+	padding: 35px 0;
+}
+@media only screen and (min-width:980px) {
+	.recipeMaterial {
+		padding: 60px 0;
+	}
+}
+
+/* recipeMaterialList */
+.recipeMaterial .recipeMaterialList dl {
+	display: table;
+	width: 100%;
+	padding: 8px 0;
+	background: url(/wp-content/themes/ajinomoto/resources/images/common/sp/bdr_dot01.png) repeat-x left top;
+	background-size: auto 2px;
+}
+.recipeMaterial .recipeMaterialList dl > * {
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	        box-sizing: border-box;
+	display: table-cell;
+	vertical-align: top;
+}
+.recipeMaterial .recipeMaterialList dt {
+	width: 60%;
+	padding-right: 10px;
+}
+.recipeMaterial .recipeMaterialList dt a {
+	display: inline-block;
+	text-decoration: none;
+	/*border-bottom: #444 solid 1px;*/
+	transition: 0s;
+	-webkit-transition: 0s;
+	text-decoration: underline;
+}
+.noT .recipeMaterial .recipeMaterialList dt a:hover {
+	/*border-bottom: transparent solid 1px;*/
+	text-decoration: none;
+}
+.recipeMaterial .recipeMaterialList dd {
+	text-align: right;
+}
+
+/* recipeVideo
+--------------------------------------------------*/
+.recipeVideo {
+	padding: 35px 0 40px;
+	background: url(/wp-content/themes/ajinomoto/resources/images/common/sp/bg_wall01.jpg);
+}
+.recipeVideo .inVideo {
+	position: relative;
+	height: 0;
+	max-width: 850px;
+	padding-bottom: 55.88%;
+}
+.recipeVideo .inVideo > * {
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: block;
+	width: 100%;
+	height: 100%;
+	min-width: 100%;
+	min-height: 100%;
+}
+
+@media only screen and (min-width:980px) {
+	.recipeVideo {
+		padding: 50px 0 60px;
+	}
+}
+
+/* point_comment
+--------------------------------------------------*/
+.point_comment{
+	padding: 23px 0;
+}
+
+/* recipeMake
+--------------------------------------------------*/
+.recipeMake {
+	padding: 35px 0;
+}
+.recipeMake .makeList li {
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	        box-sizing: border-box;
+	position: relative;
+	display: table;
+	width: 100%;
+	/*padding: 12px 0 12px 25px;*/
+    padding: 12px 0 12px 0;
+	counter-increment:num;
+    table-layout: fixed;
+}
+.recipeMake .makeList li + li {
+	background: url(/wp-content/themes/ajinomoto/resources/images/common/sp/bdr_dot01.png) repeat-x left top;
+	background-size: auto 2px;
+}
+/*.recipeMake .makeList li:before {
+	position: absolute;
+	top: 12px;
+	left: 0;
+	width: 18px;
+	padding: 4px 0 5px;
+	font-size: 10px;
+	font-weight: 500;
+	color: #fff;
+	text-align: center;
+	background: #fb8079;
+	line-height: 1;
+	border-radius: 3px;
+	content:counter(num);
+}*/
+.recipeMake .makeList li > * {
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	        box-sizing: border-box;
+	display: table-cell;
+	vertical-align: top;
+}
+.recipeMake .makeList li .txt {
+	width: 64%;
+	padding-right: 10px;
+}
+.recipeMake .makeList li .numberTxt {
+	position: relative;
+	padding-left: 5.7vw;
+}
+.recipeMake .makeList li .numberTxt .num {
+	position: absolute;
+	top: 0.9vw;
+	left: 0;
+	font-size: 2.7vw;
+	width: 4.3vw;
+	line-height: 4.3vw;
+	color: #fff;
+	font-weight: bold;
+	text-align: center;
+	background-color: #f9736d;
+	border-radius: 3px;
+}
+.recipeMake .makeList li .txt h3 {
+	display: inline;
+}
+.recipeMake .makeList li .img {
+	width: 36%;
+}
+.recipeMake .makeList li .img a {
+	position: relative;
+	display: block;
+}
+.recipeMake .makeList li .img a:after {
+	position: absolute;
+	top: 3px;
+	right: 4px;
+	display: block;
+	content: '';
+	width: 15px;
+	height: 15px;
+	background: url(/wp-content/themes/ajinomoto/resources/images/common/sp/icon_plus.png) no-repeat left top;
+	background-size: 100% auto;
+}
+
+/* inGallery */
+.recipeMake .makeList li.inGallery,
+.recipeMake .makeList li.inGallery > * {
+	display: block;
+}
+.recipeMake .makeList li.inGallery .txt {
+	width: auto;
+}
+.recipeMake .makeList li.inGallery .img {
+	width: auto;
+	padding-left: 26px;
+}
+.recipeMake .makeList li.inGallery .img:after {
+	display: block;
+	clear: both;
+	height: 0;
+	content: '';
+}
+.recipeMake .makeList li.inGallery .img a {
+	position: relative;
+	display: block;
+	float: left;
+	width: 33.333%;
+	margin: 13px 0 0 13px;
+}
+.recipeMake .makeList li.inGallery .img a:before {
+	position: absolute;
+	top: 0;
+	left: -10px;
+	display: block;
+	content: '';
+	width: 7px;
+	height: 100%;
+	background: url(/wp-content/themes/ajinomoto/resources/images/common/sp/arw_pink01.png) no-repeat center center;
+	background-size: 100% auto;
+}
+.recipeMake .makeList li.inGallery .img a:first-child,
+.recipeMake .makeList li.inGallery .img a:nth-child(3n+1) {
+	margin-left: -26px;
+}
+.recipeMake .makeList li.inGallery .img a:first-child:before,
+.recipeMake .makeList li.inGallery .img a:nth-child(3n+1):before {
+	display: none;
+}
+.recipeMake .makeList{
+	background: url(/wp-content/themes/ajinomoto/resources/images/common/sp/bdr_dot01.png) repeat-x left bottom;
+	background-size: auto 2px;
+}
+.recipeMake .makeList li.inGallery{
+	background: url(/wp-content/themes/ajinomoto/resources/images/common/sp/bdr_dot01.png) repeat-x left top;
+	background-size: auto 2px;
+}
+
+@media only screen and (min-width:980px) {
+	.recipeMake {
+		padding: 55px 0 25px;
+	}
+	.recipeMake .wrap860 {
+		background-size: auto 3px;
+		padding-left : 0px;
+		padding-right : 0px;
+	}
+	.recipeMake .makeList li {
+		/*padding: 24px 0 24px 35px;*/
+		padding: 24px 0 24px 0;
+	}
+	.recipeMake .makeList li,
+	.recipeMake .makeList li + li {
+		background: url(/wp-content/themes/ajinomoto/resources/images/common/sp/bdr_dot01.png) repeat-x left top;
+		background-size: auto 3px;
+	}
+	.recipeMake .makeList li:before {
+		position: absolute;
+		top: 26px;
+		width: 24px;
+		padding: 4px 0 5px;
+		font-size: 14px;
+	}
+	.recipeMake .makeList li .txt {
+		width: auto;
+		padding-right: 30px;
+	}
+	.recipeMake .makeList li .numberTxt {
+		position: relative;
+		padding-left: 40px;
+	}
+	.recipeMake .makeList li .numberTxt .num {
+		position: absolute;
+		top: 2px;
+		left: 0;
+		font-size: 16px;
+		width: 24px;
+		line-height: 24px;
+		color: #fff;
+		font-weight: bold;
+		text-align: center;
+		background-color: #f9736d;
+		border-radius: 3px;
+	}
+	.recipeMake .makeList li .txt h3 {
+		display: inline;
+	}
+
+	.recipeMake .makeList li .img,
+	.recipeMake .makeList li .img img {
+		width: 125px;
+	}
+	.recipeMake .makeList li .img a {
+		display: block;
+	}
+	.recipeMake .makeList li .img a:after {
+		top: 5px;
+		right: 5px;
+		width: 20px;
+		height: 20px;
+	}
+	.recipeMake .makeList li.inGallery .img {
+		padding-left: 100px;
+	}
+	.recipeMake .makeList li.inGallery .img img {
+		width: auto;
+	}
+	.recipeMake .makeList li.inGallery .img a,
+	.recipeMake .makeList li.inGallery .img a:nth-child(3n+1) {
+		width: 16.6666%;
+		margin: 20px 0 0 20px;
+	}
+	.recipeMake .makeList li.inGallery .img a:before,
+	.recipeMake .makeList li.inGallery .img a:nth-child(3n+1):before {
+		display: block;
+		left: -15px;
+		width: 10px;
+	}
+	.recipeMake .makeList li.inGallery .img a:first-child,
+	.recipeMake .makeList li.inGallery .img a:nth-child(6n+1) {
+		margin-left: -100px;
+	}
+	.recipeMake .makeList li.inGallery .img a:first-child:before,
+	.recipeMake .makeList li.inGallery .img a:nth-child(6n+1):before {
+		display: none;
+	}
+}
+
+/* linkAboutArea
+--------------------------------------------------*/
+.linkAboutArea{
+	text-align: right;
+}
+
+/* recipeComb
+--------------------------------------------------*/
+.recipeComb {
+	padding: 35px 13px;
+}
+.recipeComb .circleTitle01 {
+	margin-bottom: 20px;
+}
+.recipeComb .wrap {
+	max-width: 545px;
+	margin: 0 auto;
+}
+.recipeComb ul {
+	margin: -15px 0 0 -7px;
+}
+.recipeComb li {
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	        box-sizing: border-box;
+	float: left;
+	width: 50%;
+	padding: 15px 0 0 7px;
+}
+.recipeComb li a {
+	display: block;
+	text-decoration: none;
+	font-weight: 500;
+}
+.recipeComb li a span {
+	display: block;
+	margin-top: 7px;
+}
+@media only screen and (min-width:980px) {
+	.recipeComb {
+		padding: 60px 13px;
+	}
+	.recipeComb .circleTitle01 {
+		margin-bottom: 30px;
+	}
+	.recipeComb ul {
+		margin: -30px 0 0 -30px;
+	}
+	.recipeComb li {
+		padding: 30px 0 0 30px;
+	}
+}
+
+
+/* recipeOther
+--------------------------------------------------*/
+.recipeOther {
+	padding-bottom: 35px;
+}
+.recipeOther .circleTitle01 {
+	margin-bottom: 0;
+}
+.recipeOther .number {
+	text-align: center;
+}
+.recipeOther .otherLink {
+    margin: auto;
+	width: 250px;
+	text-align: center;
+}
+
+.recipeOther .otherList {
+	margin-top: 15px;
+}
+.recipeOther .otherList li {
+}
+.recipeOther .otherList li a {
+	display: block;
+	width: 110px;
+	margin-left: 14px;
+	font-weight: 500;
+	text-decoration: none;
+}
+.recipeOther .otherList .slick-dots {
+	margin-top: 7px;
+	text-align: center;
+}
+.recipeOther .otherList .slick-dots li {
+	display: inline-block;
+	vertical-align: top;
+	margin: 3px;
+}
+.recipeOther .otherList .slick-dots li button {
+	background: #cccccc;
+	width: 8px;
+	height: 8px;
+	border: none;
+	border-radius: 50%;
+	cursor: pointer;
+	outline: none;
+	padding: 0;
+	appearance: none;
+	display: block;
+	text-indent: -9999px;
+}
+.recipeOther .otherList .slick-dots li.slick-active button {
+	background: #ffa6ae;
+}
+.recipeOtherName{
+	height: 48px;
+}
+
+/*iphone5/5s用*/
+@media screen and (max-width: 414px)  {
+	.recipeOther .otherList li a{
+		width: 110px;
+	}
+	.recipeOtherName{
+		height: 50px;
+	}
+}
+/*ipad用*/
+@media screen and (min-width: 415px)  and (max-width: 979px) {
+	.recipeOther .otherList li a{
+		width: 200px;
+	}
+	.recipeOtherName{
+		height: 100px;
+	}
+}
+@media only screen and (min-width:980px) {
+	.recipeOtherName{
+		height: 55px;
+
+	}
+	.recipeOther {
+		padding-bottom: 60px;
+	}
+	.recipeOther .otherList {
+		-webkit-box-sizing: border-box;
+		   -moz-box-sizing: border-box;
+		        box-sizing: border-box;
+		margin: 40px auto 0;
+		max-width: 1160px;
+		padding: 0 13px;
+	}
+	.recipeOther .otherList li a {
+		width: auto;
+	}
+	.recipeOther .otherList .slick-dots {
+		margin-top: 25px;
+	}
+	.recipeOther .otherList .slick-dots li {
+		margin: 5px;
+	}
+	.recipeOther .otherList .slick-dots li button {
+		width: 10px;
+		height: 10px;
+	}
+}
+
+/* recipeRelation
+--------------------------------------------------*/
+.recipeRelation {
+	margin-bottom: 35px;
+}
+.recipeRelation li + li {
+	margin-top: 12px;
+}
+/* AP_ISSUE-224 レシピカード：検索結果への戻しリンク 2019/3/11 TP永井 */
+.recipeRelation ul {
+	text-align: center;
+}
+@media only screen and (min-width:980px) {
+	.recipeRelation {
+		margin-bottom: 60px;
+	}
+	.recipeRelation ul {
+		margin: -20px 0 0 -45px;
+		/* AP_ISSUE-224 レシピカード：検索結果への戻しリンク 2019/3/11 TP永井 */
+		display: flex;
+		justify-content: center;
+	}
+	.recipeRelation li {
+		float: left;
+		padding: 20px 0 0 45px;
+	}
+	.recipeRelation li + li {
+		margin-top: 0;
+	}
+}
+
+/* recipeHelp
+--------------------------------------------------*/
+.recipeHelp {
+	padding: 35px 0;
+}
+.recipeHelp ul {
+	margin-top: -15px;
+}
+.recipeHelp li {
+	padding: 15px 0;
+}
+.recipeHelp li + li {
+	background: url(/wp-content/themes/ajinomoto/resources/images/common/sp/bdr_dot01.png) repeat-x left top;
+	background-size: auto 2px;
+}
+.recipeHelp li a {
+	display: table;
+	width: 100%;
+	text-decoration: none;
+    table-layout: fixed;
+}
+.recipeHelp li a > * {
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	        box-sizing: border-box;
+	display: table-cell;
+	vertical-align: middle;
+	font-weight: 500;
+}
+.recipeHelp li a .img {
+	width: 40%;
+	padding-right: 15px;
+}
+@media only screen and (min-width:980px) {
+	.recipeHelp {
+		padding: 60px 0;
+	}
+	.recipeHelp .ballTitle01 {
+		margin-bottom: 40px;
+	}
+	.recipeHelp ul {
+		margin: -35px 0 0 -35px;
+	}
+	.recipeHelp li {
+		-webkit-box-sizing: border-box;
+		   -moz-box-sizing: border-box;
+		        box-sizing: border-box;
+		float: left;
+		width: 50%;
+		padding: 35px 0 0 35px;
+	}
+	.recipeHelp li + li {
+		background: none;
+	}
+	.recipeHelp li a > * {
+		vertical-align: top;
+	}
+	.recipeHelp li a .img {
+		width: 200px;
+		padding-right: 15px;
+	}
+	.recipeHelp li a .img img {
+		width: 200px;
+	}
+}
+
+
+/* useProduct
+--------------------------------------------------*/
+.useProduct .panda {
+	text-align: center;
+}
+.useProduct .panda img {
+	max-width: 80%;
+}
+.useProduct .box {
+	padding: 35px 0;
+	background: url(/wp-content/themes/ajinomoto/resources/images/common/sp/bg_wall01.jpg);
+}
+.useProduct .item {
+	margin-bottom: 15px;
+}
+.useProduct .item .itemTb {
+	display: table;
+	margin: 0 auto;
+	max-width: 75%;
+    table-layout: fixed;
+}
+.useProduct .item .itemTb > * {
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	        box-sizing: border-box;
+	display: table-cell;
+	vertical-align: middle;
+}
+.useProduct .item .itemTb .img {
+	width: 44%;
+	padding-right: 15px;
+}
+.useProduct .item .itemTb .img img {
+    width:100%;
+}
+.useProduct .item .txt p {
+	font-weight: 500;
+}
+.useProduct .item .txt a {
+	display: block;
+}
+.useProduct .item .txt a .recipe-link{
+	font-weight: 200;
+}
+.useProduct .item .txt a .recipe-link:hover{
+	text-decoration: none;
+}
+.useProduct .item .txt a + a {
+	margin-top: 5px;
+}
+.useProduct .productlink a {
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	        box-sizing: border-box;
+	position: relative;
+	display: block;
+	max-width: 300px;
+	margin: 0 auto;
+	padding: 7px 0;
+	text-align: center;
+}
+
+@media only screen and (max-width:979px) {
+    .useProduct .productlink a{
+        font-size: 14px;
+    }
+}
+@media only screen and (min-width:980px) {
+	.useProduct .panda img {
+		max-width: 280px;
+	}
+	.useProduct .box {
+		padding: 60px 0;
+	}
+	.useProduct .box > div {
+		max-width: 35%;
+		margin: 0 auto;
+	}
+	.useProduct .item {
+		float: left;
+		margin-bottom: 0;
+	}
+	.useProduct .item .itemTb {
+		display: table;
+		margin: 0;
+		width: 100%;
+		max-width: 500px;
+	}
+	.useProduct .item .itemTb > * {
+		-webkit-box-sizing: border-box;
+		   -moz-box-sizing: border-box;
+		        box-sizing: border-box;
+		display: table-cell;
+		vertical-align: middle;
+	}
+	.useProduct .item .itemTb .img {
+		width: 175px;
+		padding-right: 20px;
+	}
+	.useProduct .item .txt {
+		font-size: 18px;
+	}
+	.useProduct .item .txt p {
+		margin-bottom: 5px;
+	}
+	.useProduct .productlink {
+		float: right;
+		width: 290px;
+		margin-top: 50px;
+	}
+	.useProduct .productlink a {
+		font-size: 18px;
+	}
+}
+
+
+/* recipeMaterialBtn
+--------------------------------------------------*/
+.recipeMaterialBtn {
+	position: relative;
+	margin: 0 -13px;
+	z-index: 10;
+}
+.recipeMaterialBtn a {
+	position: absolute;
+	bottom: 4px;
+	right: 13px;
+	display: table;
+	width: 45px;
+	height: 45px;
+	color: #fff;
+	font-weight: 500;
+	text-decoration: none;
+	background: rgba(0,0,0,0.6);
+	border-radius: 23px;
+	transition: 0.4s;
+	-webkit-transition: 0.4s;
+}
+.recipeMaterialBtn.fixed a {
+	position: fixed;
+	/* 2019/06/22 AP_ISSUE-399 Chg */
+	/* top: 50px; */
+	top: 120px;
+	bottom: auto;
+}
+.recipeMaterialBtn a span {
+	display: table-cell;
+	text-align: center;
+	vertical-align: middle;
+	font-size: 14px;
+}
+.recipeMaterialBtn.off a {
+	right: -50px;
+}
+
+@media print {
+	#wrapper {
+		font-size: 14px;
+	}
+	#header,#footer,.contentHeadArea,.spCommonSearch,.recipeVideo,.snsArea,.recipeComb,.recipeOther,.recipeRelation,.freeArea,.recipeHelp,.useProduct,.breadcrumb,.pageTop,.recipeMaterialBtn,.clipBtn,.ptintBtn, .recipeTitleArea .in_table .clipBtn,.recipeInfo02 {
+		display: none;
+	}
+	#content {
+		padding-bottom: 30px;
+		zoom: 1;
+	}
+	#content:after {
+		display: block;
+		clear: both;
+		height: 0;
+		content: '';
+	}
+	#content:before {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		font-size: 12px;
+		content: '味の素株式会社©';
+		text-align: center;
+	}
+	.recipeTitleArea .in_table > .recipeTitle{
+		padding: 0;
+	}
+	.recipeTitleArea .in_table .recipeTitle {
+		padding-top: 0;
+		font-size: 24px;
+	}
+	.recipeDetailTop .recipeDetailInner {
+		overflow: hidden;
+		padding: 20px 0 30px;
+		background: url(/wp-content/themes/ajinomoto/resources/images/common/sp/bdr_dot01.png) repeat-x left bottom;
+		background-size: auto 3px;
+	}
+	.recipeDetailTop .recipeImageArea {
+		-webkit-box-sizing: border-box;
+		   -moz-box-sizing: border-box;
+		        box-sizing: border-box;
+		float: left;
+		width: 100%;
+		margin-left: -305px;
+		padding: 0 0 0 305px;
+	}
+	.recipeDetailTop .recipeImageArea .inImage {
+		margin: 0 0 15px;
+	}
+	.recipeDetailTop .recipeImageArea p {
+		margin-right: -300px;
+	}
+	.recipeDetailTop .recipeTextArea {
+		float: right;
+		width: 280px;
+	}
+	.recipeDetailTop .recipeInfo01 {
+		padding: 12px 0;
+	}
+	.recipeDetailTop .recipeInfo01:before,
+	.recipeDetailTop .recipeInfo01:after {
+		height: 3px;
+	}
+	.recipeDetailTop .recipeInfo01 .recipeTime {
+		width: 115px;
+		background-size: 3px auto;
+	}
+	.recipeDetailTop .recipeInfo01 .recipeTime .inTime {
+		padding-left: 34px;
+		font-size: 16px;
+		background-size: 28px auto;
+	}
+	.recipeDetailTop .recipeInfo01 .recipeTime .inTime strong {
+		font-size: 26px;
+	}
+	.recipeDetailTop .recipeInfo01 .recipeTime p {
+		font-size: 14px;
+	}
+	.recipeMaterialList {
+		background: url(/wp-content/themes/ajinomoto/resources/images/common/sp/bdr_dot01.png) repeat-x left bottom;
+		background-size: auto 3px;
+	}
+	.recipeMaterial .recipeMaterialList dl {
+		padding: 7px 0;
+		background-size: auto 3px;
+	}
+	.recipeMaterial .recipeMaterialList dt a {
+		border-bottom: none;
+	}
+	.recipeMaterial {
+		float: left;
+		width: 50%;
+		padding: 15px 0;
+	}
+	.recipeMake {
+		float: right;
+		width: 50%;
+		padding: 15px 0;
+	}
+	.recipeMake .makeList li {
+		padding: 7px 0 7px 35px;
+	}
+	.recipeMake .makeList li,
+	.recipeMake .makeList li + li {
+		background: url(/wp-content/themes/ajinomoto/resources/images/common/sp/bdr_dot01.png) repeat-x left top;
+		background-size: auto 3px;
+	}
+	.recipeMake .makeList li:before {
+		position: absolute;
+		top: 26px;
+		width: 24px;
+		padding: 4px 0 5px;
+		font-size: 14px;
+	}
+	.recipeMake .makeList li .txt {
+		width: auto;
+	}
+	.recipeMake .makeList li .img,
+	.recipeMake .makeList li .img img {
+		display: none;
+	}
+	.recipeMake .makeList li .img a {
+		display: block;
+	}
+	.recipeMake .makeList li .img a:after {
+		top: 5px;
+		right: 5px;
+		width: 20px;
+		height: 20px;
+	}
+	.recipeMake .makeList li.inGallery .img {
+		padding-left: 100px;
+	}
+	.recipeMake .makeList li.inGallery .img img {
+		width: auto;
+	}
+	.recipeMake .makeList li.inGallery .img a,
+	.recipeMake .makeList li.inGallery .img a:nth-child(3n+1) {
+		width: 16.6666%;
+		margin: 20px 0 0 20px;
+	}
+	.recipeMake .makeList li.inGallery .img a:before,
+	.recipeMake .makeList li.inGallery .img a:nth-child(3n+1):before {
+		display: block;
+		left: -15px;
+		width: 10px;
+	}
+	.recipeMake .makeList li.inGallery .img a:first-child,
+	.recipeMake .makeList li.inGallery .img a:nth-child(6n+1) {
+		margin-left: -100px;
+	}
+	.recipeMake .makeList li.inGallery .img a:first-child:before,
+	.recipeMake .makeList li.inGallery .img a:nth-child(6n+1):before {
+		display: none;
+	}
+}
+
+
+/*--------------------------------------------------
+ recipeSearch
+--------------------------------------------------*/
+#recipeSearch .bgArea {
+	/* WANG_BIN 2019-04-11 AP_ISSUE-346 DEL START */
+	padding: 20px 0;
+	/* ackground: url(/wp-content/themes/ajinomoto/resources/images/common/sp/bg_wall01.jpg); */
+	/* WANG_BIN 2019-04-11 AP_ISSUE-346 DEL END */
+}
+@media only screen and (min-width:980px) {
+	#recipeSearch .bgArea {
+		/* WANG_BIN 2019-04-11 AP_ISSUE-346 UPD START */
+		/* padding: 40px 0 40px; */
+		padding: 30px 0 20px;
+		/* WANG_BIN 2019-04-11 AP_ISSUE-346 UPD END */
+	}
+}
+
+#recipeSearch .inSearch {
+	position: relative;
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	        box-sizing: border-box;
+	width: 100%;
+	padding-right: 40px;
+	margin-bottom: 20px;
+	transition: 0.2s;
+	-webkit-transition: 0.2s;
+}
+#recipeSearch .inSearch input,
+#recipeSearch .inSearch .resetBtn {
+	margin: 0;
+	padding: 0;
+	background: #fff;
+	border: none;
+	border-radius: 0;
+	outline: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+#recipeSearch .inSearch .formTxt {
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	        box-sizing: border-box;
+	display: block;
+	width: 100%;
+	padding: 11px 35px 7px 10px;
+	font-size: 14px;
+	line-height: 1;
+	border: #444444 solid 1px;
+	border-radius: 5px;
+}
+#recipeSearch .inSearch .resetBtn {
+	position: absolute;
+	top: 0;
+	right: 40px;
+	width: 30px;
+	height: 100%;
+	background: transparent;
+	text-indent: -9999px;
+	cursor: pointer;
+}
+#recipeSearch .inSearch .resetBtn:before,
+#recipeSearch .inSearch .resetBtn:after {
+	position: absolute;
+	top: 50%;
+	left: 5px;
+	display: block;
+	content: '';
+	width: 14px;
+	height: 2px;
+	margin-top: -1px;
+	background-color: #888888;
+}
+#recipeSearch .inSearch .resetBtn:before {
+	transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	-webkit-transform: rotate(45deg);
+	-moz-transform: rotate(45deg);
+}
+#recipeSearch .inSearch .resetBtn:after {
+	transform: rotate(-45deg);
+	-ms-transform: rotate(-45deg);
+	-webkit-transform: rotate(-45deg);
+	-moz-transform: rotate(-45deg);
+}
+#recipeSearch .inSearch .searchBtn {
+	position: absolute;
+	top: 0;
+	right: 0;
+	display: block;
+	width: 35px;
+	height: 100%;
+	background: url(/wp-content/themes/ajinomoto/resources/images/common/pc/bg_searchBtn.png) no-repeat center center;
+	background-size: cover;
+	cursor: pointer;
+	border-radius: 5px;
+}
+
+
+/* searchHeads
+--------------------------------------------------*/
+/* WANG_BIN 2019-04-11 AP_ISSUE-346 DEL START */
+/* #recipeSearch .searchHeads > * {
+	float: left;
+	width: 100%;
+} */
+/* WANG_BIN 2019-04-11 AP_ISSUE-346 DEL END */
+/* WANG_BIN 2019-04-11 AP_ISSUE-346 ADD START */
+#recipeSearch .searchHeads .btn {
+	max-width: 145px;
+	margin: 10px auto 0;
+}
+/* WANG_BIN 2019-04-11 AP_ISSUE-346 ADD END */
+#recipeSearch .searchHeads .searchTtl span {
+	display: block;
+	font-size: 5vw;
+	font-weight: 500;
+}
+#recipeSearch .searchHeads .searchTtl small {
+	display: block;
+	font-weight: 200;
+}
+/* WANG_BIN 2019-04-11 AP_ISSUE-346 DEL START */
+/*
+#recipeSearch .searchHeads .btn a .bg:after {
+	background-image: url(/wp-content/themes/ajinomoto/resources/images/common/sp/btn_green_right02.png);
+}
+#recipeSearch .searchHeads .btn a .bg:before {
+	background-image: url(/wp-content/themes/ajinomoto/resources/images/common/sp/btn_green_left02.png);
+}
+*/
+/* WANG_BIN 2019-04-11 AP_ISSUE-346 DEL END */
+#recipeSearch .searchHeads .btn > div {
+	max-width: 150px;
+    margin: 0 auto;
+}
+#recipeSearch .searchHeads .btn .arw {
+	position: relative;
+	display: inline-block;
+	padding-right: 18px;
+}
+#recipeSearch .searchHeads .btn .arw:after {
+	position: absolute;
+	top: 50%;
+	right: 0;
+	display: block;
+	content: '';
+	width: 5px;
+	height: 5px;
+	margin-top: -5px;
+	border-top: #fff solid 2px;
+	border-right: #fff solid 2px;
+	transform: rotate(135deg);
+	-ms-transform: rotate(135deg);
+	-webkit-transform: rotate(135deg);
+	-moz-transform: rotate(135deg);
+}
+#recipeSearch .searchHeads .btn .on .arw:after {
+	margin-top: -2px;
+	transform: rotate(-45deg);
+	-ms-transform: rotate(-45deg);
+	-webkit-transform: rotate(-45deg);
+	-moz-transform: rotate(-45deg);
+}
+@media only screen and (min-width:980px) {
+	#recipeSearch .searchHeads > * {
+		float: none;
+		width: auto;
+	}
+	#recipeSearch .searchHeads .searchTtl {
+		margin-bottom: 15px;
+		/* text-align: center; */
+	}
+	#recipeSearch .searchHeads .searchTtl span {
+		font-size: 28px;
+	}
+	#recipeSearch .searchHeads .searchTtl small {
+		font-size: 18px;
+	}
+	#recipeSearch .searchHeads .btn {
+		max-width: 275px;
+		margin: 0 auto;
+	}
+	#recipeSearch .searchHeads .btn .arw {
+		padding-right: 23px;
+	}
+	#recipeSearch .searchHeads .btn .arw:after {
+		width: 7px;
+		height: 7px;
+		margin-top: -6px;
+	}
+	#recipeSearch .searchHeads .btn .on .arw:after {
+		margin-top: -2px;
+	}
+	#recipeSearch .searchHeads .btn > div {
+		max-width: 280px;
+	}
+}
+
+/* searchSelect
+--------------------------------------------------*/
+#recipeSearch .searchSelect {
+	display: none;
+	margin-top: 15px;
+	/* WANG_BIN 2019-04-11 AP_ISSUE-346 UPD START */
+	/* background-color: #fff; */
+	background-color: #f3f3f3;
+	/* WANG_BIN 2019-04-11 AP_ISSUE-346 UPD END */
+}
+#recipeSearch .searchSelect table {
+	width: 100%;
+}
+#recipeSearch .searchSelect th,
+#recipeSearch .searchSelect td {
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	        box-sizing: border-box;
+	width: 25%;
+	font-size: 3.75vw;
+	/* WANG_BIN 2019-04-11 AP_ISSUE-346 UPD START */
+	/* border-bottom: #e5e5e5 solid 1px;
+	border-right: #e5e5e5 solid 1px; */
+	border-bottom: #e5e5e5 solid 2px;
+	border-right: #e5e5e5 solid 2px;
+	/* WANG_BIN 2019-04-11 AP_ISSUE-346 UPD END */
+	text-align: center;
+}
+#recipeSearch .searchSelect th {
+	padding: 7px 0;
+	/* WANG_BIN 2019-04-11 AP_ISSUE-346 UPD START */
+	/* background-color: #f3f3f3; */
+	background-color: #d8d8d8;
+	/* WANG_BIN 2019-04-11 AP_ISSUE-346 UPD END */
+	vertical-align: middle;
+	font-weight: bold;
+}
+#recipeSearch .searchSelect td label {
+	position: relative;
+	display: block;
+	padding: 7px 0;
+	cursor: pointer;
+}
+#recipeSearch .searchSelect td input {
+	display: none;
+}
+#recipeSearch .searchSelect td.empty {
+	background-color: #d8d8d8;
+}
+#recipeSearch .searchSelect td span {
+	position: relative;
+	display: block;
+	z-index: 2;
+}
+#recipeSearch .searchSelect td input + span {
+	position: absolute;
+	top: -1px;
+	left: -1px;
+	display: none;
+	content: '';
+	width: 100%;
+	height: 100%;
+	padding: 1px;
+	background-color: #ffc4c9;
+	z-index: 1;
+}
+#recipeSearch .searchSelect td input[type=checkbox]:checked + span {
+	display: block;
+}
+#recipeSearch .searchSelect .btn {
+	padding: 18px 0;
+}
+#recipeSearch .searchSelect .btn > div {
+	max-width: 150px;
+	margin: 0 auto;
+}
+/* WANG_BIN 2019-04-11 AP_ISSUE-346 ADD START */
+#recipeSearch .searchSelect .btn .pinkBtn button .bg:before,
+#recipeSearch .searchSelect .btn .pinkBtn button .bg:after {
+	background-color: #f3f3f3;
+}
+/* WANG_BIN 2019-04-11 AP_ISSUE-346 ADD END */
+@media only screen and (min-width:980px) {
+	#recipeSearch .searchSelect {
+		margin-top: 20px;
+	}
+	#recipeSearch .searchSelect th,
+	#recipeSearch .searchSelect td {
+		font-size: 17px;
+	}
+	#recipeSearch .searchSelect th,
+	#recipeSearch .searchSelect td label {
+		padding: 10px 0;
+	}
+	/* WANG_BIN 2019-04-18 AP_ISSUE-346 ADD START */
+	#recipeSearch .searchSelect .btn {
+		/* padding: 40px 0; */
+		padding: 20px 0;
+	}
+	/* WANG_BIN 2019-04-18 AP_ISSUE-346 ADD END */
+	#recipeSearch .searchSelect .btn > div {
+		max-width: 280px;
+	}
+}
+
+
+/* recipeSearchRecommend
+--------------------------------------------------*/
+#recipeSearch .recipeSearchRecommend {
+	/* WANG_BIN 2019-04-11 AP_ISSUE-346 UPD START */
+	/* margin: 40px 0; */
+	padding: 25px 0;
+	background: url(/wp-content/themes/ajinomoto/resources/images/common/sp/bg_wall01.jpg);
+	/* WANG_BIN 2019-04-11 AP_ISSUE-346 UPD END */
+}
+#recipeSearch .recipeSearchRecommend .inList li + li {
+	margin-top: 13px;
+	padding-top: 13px;
+	background: url(/wp-content/themes/ajinomoto/resources/images/common/sp/bdr_dot01.png) repeat-x left top;
+	background-size: auto 2px;
+}
+#recipeSearch .recipeSearchRecommend .inList a,
+#recipeSearch .recipeSearchRecommend .inList a span {
+	display: block;
+	text-decoration: none;
+}
+#recipeSearch .recipeSearchRecommend .inList a:after {
+	display: block;
+	clear: both;
+	height: 0;
+	content: '';
+}
+#recipeSearch .recipeSearchRecommend .inList a .img {
+	float: left;
+	width: 33.9%;
+}
+#recipeSearch .recipeSearchRecommend .inList a .txt {
+	float: right;
+	width: 60%;
+	font-weight: 500;
+}
+@media only screen and (min-width:980px) {
+	#recipeSearch .recipeSearchRecommend {
+		/* margin: 60px 0 70px;*/
+		margin: 40px 0;
+		padding: 40px 0;
+	}
+	#recipeSearch .recipeSearchRecommend .inList ul {
+		margin: -40px 0 0 -40px;
+	}
+	#recipeSearch .recipeSearchRecommend .inList li,
+	#recipeSearch .recipeSearchRecommend .inList li + li {
+		-webkit-box-sizing: border-box;
+		   -moz-box-sizing: border-box;
+		        box-sizing: border-box;
+		float: left;
+		/* width: 33.333%; */
+		width: 50%;
+		margin: 0;
+		padding: 40px 0 0 40px;
+		border-top: none;
+		background: none;
+	}
+	/* WANG_BIN 2019-04-11 AP_ISSUE-346 DEL START */
+	/* #recipeSearch .recipeSearchRecommend .inList a .img {
+		float: none;
+		width: auto;
+		margin-bottom: 10px;
+	}
+	#recipeSearch .recipeSearchRecommend .inList a .img img {
+		width: 100%;
+	}
+	#recipeSearch .recipeSearchRecommend .inList a .txt {
+		float: none;
+		width: auto;
+	} */
+	/* WANG_BIN 2019-04-11 AP_ISSUE-346 DEL END */
+}
+
+
+/* recipeSearchResult
+--------------------------------------------------*/
+#recipeSearch .recipeSearchResult {
+	margin-bottom: 30px;
+}
+#recipeSearch .recipeSearchResult .tabBtn {
+	overflow: hidden;
+	margin: 20px 0 15px;
+	border: #888888 solid 1px;
+	border-radius: 8px;
+}
+#recipeSearch .recipeSearchResult .tabBtn li {
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	        box-sizing: border-box;
+	float: left;
+	width: 50%;
+}
+#recipeSearch .recipeSearchResult .tabBtn li:first-child {
+	border-right: #888888 solid 1px;
+}
+#recipeSearch .recipeSearchResult .tabBtn li a {
+	display: block;
+	padding: 5px 0;
+	text-align: center;
+	text-decoration: none;
+	font-weight: 500;
+}
+#recipeSearch .recipeSearchResult .tabBtn li a.on {
+	background-color: #fc8b93;
+}
+@media only screen and (min-width:980px) {
+	#recipeSearch .recipeSearchResult {
+		margin-bottom: 60px;
+	}
+	#recipeSearch .recipeSearchResult .tabBtn {
+		margin: 20px 0 40px;
+		border: #888888 solid 2px;
+	}
+	#recipeSearch .recipeSearchResult .tabBtn li:first-child {
+		border-right: #888888 solid 2px;
+	}
+	#recipeSearch .recipeSearchResult .tabBtn li a {
+		padding: 12px 0;
+	}
+}
+
+
+#recipeSearch .recipeSearchResult .inList {
+	display: none;
+}
+#recipeSearch .recipeSearchResult .inList li + li {
+	margin-top: 13px;
+	padding-top: 13px;
+	background: url(/wp-content/themes/ajinomoto/resources/images/common/sp/bdr_dot01.png) repeat-x left top;
+	background-size: auto 2px;
+}
+#recipeSearch .recipeSearchResult .inList a,
+#recipeSearch .recipeSearchResult .inList a span {
+	display: block;
+	text-decoration: none;
+}
+#recipeSearch .recipeSearchResult .inList a:after {
+	display: block;
+	clear: both;
+	height: 0;
+	content: '';
+}
+#recipeSearch .recipeSearchResult .inList a .img {
+	float: left;
+	width: 33.9%;
+	/* WANG_BIN 2019-04-18 AP_ISSUE-329 ADD START */
+	position: relative;
+
+}
+#recipeSearch .recipeSearchResult .inList a .imgIcon {
+	position: absolute;
+	top: -6px;
+	left: 10px;
+}
+	/* WANG_BIN 2019-04-18 AP_ISSUE-329 ADD END */
+#recipeSearch .recipeSearchResult .inList a .texts {
+	float: right;
+	width: 60%;
+}
+#recipeSearch .recipeSearchResult .inList a .ttl {
+	margin-bottom: 3px;
+	font-weight: 500;
+}
+/* WANG_BIN 2019-04-18 AP_ISSUE-329 UPD START */
+#recipeSearch .recipeSearchResult .inList a .txt {
+	font-size: 14px;
+	font-weight: 300;
+}
+#recipeSearch .recipeSearchResult .inList a .arLabels {
+	/* text-align: right; */
+}
+/* WANG_BIN 2019-04-18 AP_ISSUE-329 UPD START */
+#recipeSearch .recipeSearchResult .inList a .arLabels span {
+	display: inline-block;
+	margin: 0 5px;
+	font-size: 3.14vw;
+	vertical-align: middle;
+}
+/* WANG_BIN 2019-04-18 AP_ISSUE-329 UPD START */
+/*
+#recipeSearch .recipeSearchResult .inList a .arLabels .recom {
+	padding: 0 4px;
+	color: #ff6270;
+	font-weight: 500;
+	background-color: #fff;
+	border: #ff6270 solid 1px;
+	border-radius: 10px;
+}
+#recipeSearch .recipeSearchResult .inList a .arLabels .time {
+	padding: 3px 7px 3px 26px;
+	border-radius: 3px;
+	background: #f5e9dc url(/wp-content/themes/ajinomoto/resources/images/common/sp/icon_timer.png) no-repeat 6px center;
+	background-size: 15px auto;
+}
+*/
+#recipeSearch .recipeSearchResult .inList a .arLabels .timeIcon,
+#recipeSearch .recipeSearchResult .inList a .arLabels .kcalIcon,
+#recipeSearch .recipeSearchResult .inList a .arLabels .gIcon {
+	font-size: 13px;
+	font-weight: 500;
+	background-repeat: no-repeat;
+	background-position: left center;
+}
+#recipeSearch .recipeSearchResult .inList a .arLabels .timeIcon{
+	background-image: url(/wp-content/themes/ajinomoto/resources/images/recipe/search/icon02.png);
+	background-size: 14px auto;
+	padding-left: 20px;
+}
+#recipeSearch .recipeSearchResult .inList a .arLabels .kcalIcon {
+	background-image: url(/wp-content/themes/ajinomoto/resources/images/recipe/search/icon03.png);
+	background-size: 10px auto;
+	padding-left: 15px;
+}
+#recipeSearch .recipeSearchResult .inList a .arLabels .gIcon {
+	background-image: url(/wp-content/themes/ajinomoto/resources/images/recipe/search/icon04.png);
+	background-size: 15px auto;
+	padding-left: 19px;
+}
+/* WANG_BIN 2019-04-18 AP_ISSUE-329 UPD END */
+@media only screen and (min-width:980px) {
+	#recipeSearch .recipeSearchResult .inList {
+		overflow: hidden;
+	}
+	#recipeSearch .recipeSearchResult .inList ul {
+		margin-left: -30px;
+	}
+	#recipeSearch .recipeSearchResult .inList li,
+	#recipeSearch .recipeSearchResult .inList li + li {
+		position: relative;
+		-webkit-box-sizing: border-box;
+		   -moz-box-sizing: border-box;
+		        box-sizing: border-box;
+		float: left;
+		width: 50%;
+		margin: 0;
+		padding: 20px 0 20px 30px;
+		border-top: none;
+		background: none;
+	}
+	#recipeSearch .recipeSearchResult .inList li:nth-child(2n+1):before {
+		position: absolute;
+		top: 0;
+		left: 0;
+		display: block;
+		content: '';
+		width: 200%;
+		height: 3px;
+		background: url(/wp-content/themes/ajinomoto/resources/images/common/sp/bdr_dot01.png) repeat-x left bottom;
+		background-size: auto 3px;
+	}
+	#recipeSearch .recipeSearchResult .inList li:first-child:before {
+		display: none;
+	}
+	#recipeSearch .recipeSearchResult .inList a .img {
+		width: 150px;
+	}
+	#recipeSearch .recipeSearchResult .inList a .texts {
+		float: none;
+		width: auto;
+		margin-left: 175px;
+	}
+	#recipeSearch .recipeSearchResult .inList a .ttl {
+		margin-bottom: 10px;
+	}
+	#recipeSearch .recipeSearchResult .inList a .arLabels {
+		margin-top: 5px;
+	}
+	#recipeSearch .recipeSearchResult .inList a .arLabels span {
+		margin: 0 5px;
+		font-size: 17px;
+	}
+	#recipeSearch .recipeSearchResult .inList a .arLabels .recom {
+		padding: 2px 8px;
+		border-radius: 20px;
+		border: #ff6270 solid 2px;
+	}
+	#recipeSearch .recipeSearchResult .inList a .arLabels .time {
+		padding: 8px 10px 8px 45px;
+		border-radius: 5px;
+		background: #f5e9dc url(/wp-content/themes/ajinomoto/resources/images/common/sp/icon_timer.png) no-repeat 10px center;
+		background-size: 30px auto;
+	}
+		#recipeSearch .recipeSearchResult .inList a .arLabels .timeIcon{
+		background-size: 18px auto;
+		padding-left: 20px;
+	}
+	#recipeSearch .recipeSearchResult .inList a .arLabels .kcalIcon {
+		background-size: 13px auto;
+		padding-left: 17px;
+
+	}
+	#recipeSearch .recipeSearchResult .inList a .arLabels .gIcon {
+		background-size: 20px auto;
+		padding-left: 22px;
+	}
+}
+
+/* PS add */
+.recipeSearchRecommend{
+    display:none;
+}
+/* PS add end*/
+
+
+/*
+* AP_ISSUE-385：【SEO課題 No.10】レシピカードの施策案（見出しタグのテキスト化）　TP石橋
+*/
+.circleTitle01 h2 span {
+	font-size: 110%;
+	font-weight: 400;
+}
+
+.circleTitle01 h2 span small{
+	font-weight: 100;
+}
+
+.ballTitle01 h2 span{
+	font-size: 110%;
+	font-weight: 400;
+}
+
+.ballTitle01 h2 span small{
+	font-weight: 100;
+}
+/*
+* AP_ISSUE-398：サイト改善：検索一覧 人気順がわかる表示方法へ変更 WANG_BIN 2019-06-20
+*/
+#recipeSearch .recipeSearchResult #popularityList.inList li a {
+	position: relative;
+}
+#recipeSearch .recipeSearchResult #popularityList.inList li a:before {
+	position: absolute;
+	top: -3px;
+	left: 5px;
+	display: block;
+	content: '';
+	width: 32px;
+	height: 14px;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: contain;
+	z-index: 2;
+}
+#recipeSearch .recipeSearchResult #popularityList.inList li.rank:nth-child(1) a:before {
+	background-image: url(/wp-content/themes/ajinomoto/resources/images/common/sp/ico_rank01.png);
+}
+#recipeSearch .recipeSearchResult #popularityList.inList li.rank:nth-child(2) a:before {
+	background-image: url(/wp-content/themes/ajinomoto/resources/images/common/sp/ico_rank02.png);
+}
+#recipeSearch .recipeSearchResult #popularityList.inList li.rank:nth-child(3) a:before {
+	background-image: url(/wp-content/themes/ajinomoto/resources/images/common/sp/ico_rank03.png);
+}
+@media only screen and (min-width:980px) {
+	#recipeSearch .recipeSearchResult #popularityList.inList li a:before {
+		top: -10px;
+		left: 5px;
+		width: 48px;
+		height: 30px;
+	}
+}
+@media only screen and (min-width: 980px){
+	div.lead_footer .searchTtl small {
+		font-weight: 200;
+		font-size: 14px;
+		display: inline-block;
+		margin-top: -20px;
+		margin-bottom: auto;
+	}
+}
+div.lead_footer {
+    max-width: 860px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 13px;
+    padding-right: 13px;
+    margin-top: -30px;
+    margin-bottom: 10px;
+}

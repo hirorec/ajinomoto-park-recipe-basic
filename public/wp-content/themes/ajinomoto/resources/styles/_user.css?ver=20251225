@@ -1,0 +1,987 @@
+@charset "utf-8";
+/**
+ * _user.css
+ */
+
+@media only screen and (min-width:980px) {}
+
+/* Common
+--------------------------------------*/
+.userCommon .pageTtl {
+	padding: 20px 0 20px;
+	/*20191101 ISSUE-522 LIMING UPDATE*/
+	/*background: url(/wp-content/themes/ajinomoto/resources/images/common/sp/bg_wall01.jpg);*/
+	font-size: 23px;
+	font-weight: bold;
+	text-align: center;
+	margin: 0 0 30px 0;
+}
+
+.userCommon .copy {
+	margin: 0 0 16px 0;
+}
+
+.userCommon .note {
+	font-size: 12px;
+	margin: 0 0 16px 0;
+}
+
+.userCommon .formArea {
+	margin: 0 0 15px 0;
+}
+
+.userCommon .formArea dl {
+	margin: 0 0 30px 0;
+}
+
+.userCommon .formArea dt {
+	margin: 0 0 20px 0;
+	font-size: 14px;
+	font-weight: 600;
+	position: relative;
+}
+
+.userCommon .formArea dt:after {
+	position: absolute;
+	right: 2%;
+	top: 50%;
+	margin-top: -13px;
+	background-color: #fff;
+	font-size: 14px;
+	padding: 2px 4px;
+	display: block;
+}
+
+.userCommon .formArea .required dt:after {
+	content: "必須";
+	border: 1px solid #ed1b24;
+	color: #ed1b24;
+}
+
+.userCommon .formArea .any dt:after {
+	content: "任意";
+	border: 1px solid #00a0e9;
+	color: #00a0e9;
+}
+
+.userCommon .formArea dd {
+	position: relative;
+	min-height: 26px;
+}
+
+.userCommon .formArea dd .errorTxt {
+	color: #ed1b24;
+	margin: 0 0 5px 0;
+	display: none;
+}
+
+.userCommon .formArea .error .errorTxt {
+	display: block;
+}
+
+.userCommon .formArea dd .note {
+	padding-top: 10px;
+	font-size: 13px;
+}
+
+.userCommon .formArea .formTxt {
+	padding: 22px 20px;
+	font-size: 14px;
+	width: 100%;
+	border: #444444 solid 1px;
+	border-radius: 5px;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+}
+
+.userCommon .formArea .formTxtMiddle {
+	width: 50%;
+}
+
+.userCommon .formArea .formTxtArea {
+	padding: 8px 10px;
+	font-size: 100%;
+	width: 100%;
+	height: 10em;
+	border: #444444 solid 1px;
+	border-radius: 5px;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+}
+
+.userCommon .formArea .formSelect {
+	padding: 7px 10px;
+	width: 100%;
+	border: #444444 solid 1px;
+	border-radius: 5px;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+}
+.userCommon .formArea .formSelect:disabled {
+	background: #efefef;
+	border: 1px solid #ccc;
+	color: #ccc;
+}
+
+.userCommon .formArea .formSelectMiddle {
+	width: 50%;
+}
+
+.userCommon .formArea .formSelectShort {
+	width: 30%;
+}
+
+.userCommon .formArea .formSelectMini {
+	width: 20%;
+}
+
+.userCommon .formArea .error .formTxt ,
+.userCommon .formArea .error .formTxtArea ,
+.userCommon .formArea .error .formSelect {
+	background-color: #fee;
+	border: 1px solid #faa;
+}
+
+.userCommon .formArea .passDisplayBtn {
+	text-align: right;
+	margin: 0 0 16px 0;
+}
+
+.userCommon .formArea .passDisplayBtn a {
+	color: #ed1b24;
+}
+
+.userCommon .flowArea {
+}
+
+.userCommon .flowArea .entryList {
+	text-align: center;
+}
+
+.userCommon .flowArea .entryList li {
+	display: inline-block;
+	border: 2px solid #444444;
+	border-radius: 5px;
+	width: 30.5%;
+	margin: 0 1% 16px 1%;
+	padding: 4px 0;
+	box-sizing: border-box;
+	position: relative;
+}
+
+.userCommon .flowArea .entryList li:after {
+	content: "";
+	display: block;
+	width: 0;
+	height: 0;
+	border: transparent 5px solid;
+	border-left: #fc8b93 5px solid;
+	position: absolute;
+	top: 50%;
+	right: -17px;
+	margin: -3px 0 0 0;
+}
+
+.userCommon .flowArea .entryList li:first-child {
+	margin-left: 10%;
+}
+
+.userCommon .flowArea .entryList li:nth-child(2) {
+	margin-right: 10%;
+}
+
+.userCommon .flowArea .entryList li:last-child:after {
+	display: none;
+}
+
+.userCommon .flowArea .entryList li.active {
+	background-color: #ffdcdc;
+}
+
+.userCommon .formArea .btnChange {
+	display: inline-block;
+	border: 1px solid #ccc;
+	font-size: 14px;
+	padding: 1px 8px 3px 8px;
+	background-color: #eee;
+	text-decoration: none;
+	line-height: 1.2em;
+	position: absolute;
+	right: 0;
+	top: 5px;
+}
+
+.userCommon .password_reminderFlowArea {
+}
+
+.userCommon .flowArea .password_reminderList {
+	text-align: center;
+}
+
+.userCommon .flowArea .password_reminderList li {
+	display: inline-block;
+	border: 2px solid #444444;
+	border-radius: 5px;
+	width: 47%;
+	margin: 0 1% 16px 1%;
+	padding: 4px 0;
+	box-sizing: border-box;
+	position: relative;
+	vertical-align: middle;
+}
+
+.userCommon .flowArea .password_reminderList li:after {
+	content: "";
+	display: block;
+	width: 0;
+	height: 0;
+	border: transparent 5px solid;
+	border-left: #fc8b93 5px solid;
+	position: absolute;
+	top: 50%;
+	right: -17px;
+	margin: -3px 0 0 0;
+}
+
+.userCommon .flowArea .password_reminderList li:nth-child(2) {
+	padding: 4% 0;
+}
+
+.userCommon .flowArea .password_reminderList li:last-child:after {
+	display: none;
+}
+
+.userCommon .flowArea .password_reminderList li.active {
+	background-color: #ffdcdc;
+}
+
+.userCommon .permissionArea {
+	border-top: 1px solid #ccc;
+	padding: 16px 0 0 0;
+	margin: 16px 0 0 0;
+}
+
+.userCommon .permissionArea .copy {
+	font-size: 14px;
+	text-align: center;
+}
+
+.userCommon .permissionArea .mail {
+	background-color: #ffdabc;
+	border: 2px solid #333333;
+	border-radius: 5px;
+	box-sizing: border-box;
+	text-align: center;
+	padding: 10px 0;
+	margin: 0 auto 16px auto;
+	max-width: 400px;
+	font-weight: bold;
+}
+
+.userCommon .consentArea .copy {
+	text-align: center;
+}
+
+.userCommon .consentArea .copy a {
+	color: #ed1b24;
+}
+
+.userCommon .registBtn {
+	margin: 0 0 15px 0;
+}
+
+.userCommon .registBtn a {
+	max-width: 315px;
+	margin-left: auto;
+	margin-right: auto;
+	font-size: 14px;
+}
+
+.userCommon .smallBtn {
+	text-align: center;
+	margin: 0 0 30px 0;
+}
+
+.userCommon .smallBtn a {
+	font-size: 12px;
+	font-weight: 500;
+	text-decoration: none;
+	position: relative;
+}
+
+.userCommon .smallBtn a:before {
+	content: "";
+    display: block;
+    border-top: 2px solid #444444;
+    border-right: 2px solid #444444;
+    transform: rotate(45deg);
+    width: 7px;
+    height: 7px;
+    top: 60%;
+    left: -15%;
+    margin: -6px 0 0 0;
+    position: absolute;
+}
+
+.userCommon .smallBtn a:hover {
+	opacity: 0.7;
+}
+
+.userCommon .sendArea {
+	margin: 0 0 32px 0;
+}
+
+.userCommon .backLogin {
+	margin: 0 0 16px 0;
+}
+
+.userCommon .backLogin a {
+	max-width: 260px;
+	margin: 0 auto;
+	font-size: 16px;
+}
+
+.userCommon .noteArea {
+	border-top: 1px solid #ccc;
+	margin: 0 0 32px 0;
+	padding: 16px 0 0 0;
+}
+
+@media only screen and (min-width:980px) {
+	br.pc {
+		display: inline-block;
+	}
+
+	br.sp {
+		display: none;
+	}
+
+	.userCommon .pageTtl {
+		font-size: 28px;
+		display: block;
+	}
+
+	.userCommon .copy {
+		margin: 0 0 32px 0;
+	}
+
+	.userCommon .note {
+		font-size: 14px;
+		margin: 0 0 32px 0;
+	}
+
+	.userCommon .registBtn {
+		margin-bottom: 20px;
+	}
+
+	.userCommon .registBtn a {
+		max-width: 505px;
+		margin: 0 auto;
+		font-size: 18px;
+	}
+
+	.userCommon .formArea {
+		margin: 0 0 64px 0;
+	}
+
+	.userCommon .formArea dl {
+		width: 100%;
+		margin: 0 0 40px 0;
+	}
+
+	.userCommon .formArea .error {
+		margin-top: 40px;
+	}
+
+	.userCommon .formArea .errorLong {
+		margin-top: 65px;
+	}
+
+	.userCommon .formArea dt {
+		width: 380px;
+		margin: 0;
+		padding: 0;
+		margin-bottom: 20px;
+		font-size: 18px;
+	}
+
+	.userCommon .formArea dt:after {
+		right: 6%;
+		top: 7px;
+		margin-top: 0;
+	}
+
+	.userCommon .formArea dd {
+		position: relative;
+	}
+
+	.userCommon .formArea dd .errorTxt {
+		position: absolute;
+		top: -25px;
+		font-size: 14px;
+	}
+
+	.userCommon .formArea .errorLong dd .errorTxt {
+		top: -50px;
+	}
+
+	.userCommon .formArea .long ,
+	.userCommon .formArea .long dt ,
+	.userCommon .formArea .long dd {
+		display: block;
+		width: 100%;
+	}
+
+	.userCommon .formArea .long dt {
+		background-color: #f3f3f3;
+		padding: 1.5% 2%;
+		margin: 0 0 2% 0;
+	}
+
+	.userCommon .formArea .passDisplayBtn {
+		margin-top: -16px;
+	}
+
+	.userCommon .flowArea {
+		margin: 0 0 32px 0;
+	}
+
+	.userCommon .flowArea .entryList li {
+		padding: 8px 0;
+		margin: 0 1.8% 0 0 !important;
+		width: 18%;
+	}
+
+	.userCommon .flowArea .entryList li:last-child {
+		margin: 0 !important;
+	}
+
+	.userCommon .flowArea .password_reminderList {
+		margin: 0 0 32px 0;
+	}
+
+	.userCommon .flowArea .password_reminderList li {
+		width: 23%;
+		margin: 0 1.8% 0 0 !important;
+	}
+
+	.userCommon .flowArea .password_reminderList li:nth-child(2) {
+		padding: 2% 0;
+	}
+
+	.userCommon .flowArea .password_reminderList li:last-child {
+		margin: 0 !important;
+	}
+
+	.userCommon .permissionArea {
+		padding: 32px 0 0 0;
+		margin: 32px 0 0 0;
+	}
+
+	.userCommon .smallBtn {
+		margin: 0 0 30px 0;
+	}
+
+	.userCommon .smallBtn a {
+		font-size: 16.05px;
+		font-weight: 500;
+		text-decoration: none;
+		position: relative;
+	}
+
+	.userCommon .smallBtn a:before {
+		border-top: 2px solid #444444;
+		border-right: 2px solid #444444;
+		width: 7px;
+		height: 7px;
+		margin: -6px 0 0 0;
+		position: absolute;
+	}
+
+	.userCommon .backLogin a {
+		max-width: 400px;
+		font-size: 18px;
+	}
+
+}
+
+@media only screen and (max-width:979px) {
+	br.pc {
+		display: none;
+	}
+
+	br.sp {
+		display: inline-block;
+	}
+
+	.userCommon {
+		padding-top: 20px;
+	}
+
+	.userCommon .flowArea .entryList li:nth-child(2):after {
+		display: none;
+	}
+
+}
+
+/*--------------------------------------------------
+ userLogin
+--------------------------------------------------*/
+
+#userLogin {
+	margin: 15px 30px 60px 30px;;
+}
+
+#userLogin .list {
+	margin-bottom: 50px;
+}
+
+#userLogin .list p{
+	padding-left: 20px;
+	font-size: 12px;
+	color: #787878;
+	position: relative;
+}
+
+#userLogin .list p:before {
+	content: "※";
+    display: block;
+    top: 18%;
+    left: 0;
+    margin: -6px 0 0 0;
+    position: absolute;
+}
+
+#userLogin .otherLoginArea {
+	margin: 0 0 60px 0;
+}
+
+#userLogin .otherLoginArea .copy {
+	font-size: 12px;
+	color: #787878;
+}
+
+#userLogin .otherLoginArea .bdrtitle_UD img {
+	min-width: 160px;
+	width: 25%;
+}
+
+@media only screen and (min-width:980px) {
+	#userLogin .list {
+		margin-bottom: 80px;
+	}
+
+	#userLogin .list p {
+		padding-left: 20px;
+		font-size: 14px;
+		color: #787878;
+		position: relative;
+	}
+
+	#userLogin .list p:before {
+		content: "※";
+		display: block;
+		top: 25%;
+		left: 0;
+		margin: -6px 0 0 0;
+		position: absolute;
+	}
+
+	#userLogin .otherLoginArea {
+		margin: 0 0 32px 0;
+	}
+
+	#userLogin .otherLoginArea .copy {
+		font-size: 14px;
+		font-weight: 500;
+		color: #787878;
+	}
+
+	#userLogin .otherLoginArea .bdrtitle_UD img {
+		min-width: 260px;
+	}
+}
+/*--------------------------------------------------
+ userEntry
+--------------------------------------------------*/
+
+/*--------------------------------------------------
+ userPassword_reminder
+--------------------------------------------------*/
+
+/*--------------------------------------------------
+ userPassword_reminderSend
+--------------------------------------------------*/
+
+/*--------------------------------------------------
+ userPassword_reminderEdit
+--------------------------------------------------*/
+
+#userPassword_reminderEdit .copy {
+	text-align: center;
+}
+
+/*--------------------------------------------------
+ userPassword_reminderComplete
+--------------------------------------------------*/
+#userEditLogin {
+	margin: 15px 15px 60px 15px;
+}
+
+#userEditLogin .copy {
+	font-size: 14px;
+	font-weight: 500;
+	text-align: center;
+	margin-bottom: 25px;
+}
+
+#userEditLogin .formsubmit {
+	width: 100%;
+	height: 100%;
+	font-size: 14px;
+}
+
+#userEditLogin .mem-faq-buttonArea{
+	margin-bottom: 15px;
+}
+
+@media only screen and (min-width:980px) {
+	#userEditLogin {
+		margin: 15px 30px 120px 30px;
+	}
+
+	#userEditLogin .copy {
+		font-size: 17px;
+		font-weight: 500;
+		text-align: center;
+		margin-bottom: 50px;
+	}
+
+	#userEditLogin .formsubmit {
+		font-size: 18px;
+	}
+}
+
+/*--------------------------------------------------
+ userEditLogin
+--------------------------------------------------*/
+
+/*--------------------------------------------------
+ userMail_change
+--------------------------------------------------*/
+
+/*--------------------------------------------------
+ userMail_change
+--------------------------------------------------*/
+
+/*--------------------------------------------------
+ userMail_changeSend
+--------------------------------------------------*/
+
+#userEditMail_changeSend .confirmArea {
+	margin: 0 0 32px 0;
+}
+
+#userEditMail_changeSend .confirmArea .mail {
+	text-align: center;
+	border: 2px solid #ccc;
+	border-radius: 5px;
+	box-sizing: border-box;
+	text-align: center;
+	padding: 10px 0;
+	margin: 0 auto 16px auto;
+	max-width: 400px;
+	width: 100%;
+	font-weight: bold;
+}
+
+/*--------------------------------------------------
+ userMail_changeInput
+--------------------------------------------------*/
+
+/*--------------------------------------------------
+ userMail_changeComplete_edit
+--------------------------------------------------*/
+
+/*--------------------------------------------------
+ userPassword_change
+--------------------------------------------------*/
+
+/*--------------------------------------------------
+ userEditPassword_change
+--------------------------------------------------*/
+
+/*--------------------------------------------------
+ userEditComplete_edit
+--------------------------------------------------*/
+
+/*--------------------------------------------------
+ userEditSns_deregister
+--------------------------------------------------*/
+
+#userEditSns_deregister .note {
+	margin: 0 0 16px 0;
+}
+
+/*--------------------------------------------------
+ userResign
+--------------------------------------------------*/
+
+/*--------------------------------------------------
+ userResignComplete_resign
+--------------------------------------------------*/
+
+
+@media only screen and (min-width:980px) {
+
+	#userLogin .otherLoginArea {
+		margin: 0 0 120px 0;
+	}
+
+	#userEntry .formArea {
+		margin: 0 0 64px 0;
+	}
+
+	#userEntrySend .sendArea {
+		margin: 0 0 64px 0;
+	}
+
+	#userEditMail_changeSend .confirmArea {
+		margin: 0 0 64px 0;
+	}
+
+	#userEditMail_changeSend .confirmArea .mail {
+		text-align: center;
+		margin: 0 auto 32px auto;
+	}
+
+}
+
+/* List
+--------------------------------------------------*/
+
+.userCommon .snsList {
+	margin: 0 0 30px 0;
+}
+
+.userCommon .snsList li {
+	max-width: 315px;
+	margin: 0 auto 20px auto;
+}
+
+/*
+.userCommon .snsList li {
+	border-bottom: 1px solid #cccccc;
+}
+
+.userCommon .snsList li a {
+	display: block;
+	position: relative;
+	padding: 15px;
+}
+
+
+.userCommon .snsList li a:hover {
+	opacity: 0.7;
+}
+
+.userCommon .snsList li a:after {
+	content: "";
+	display: block;
+	border-top: 2px solid #444444;
+	border-right: 2px solid #444444;
+	transform: rotate(45deg);
+	width: 10px;
+	height: 10px;
+	top: 50%;
+	right: 3%;
+	margin: -6px 0 0 0;
+	position: absolute;
+}
+
+.userCommon .snsList li .img {
+	display: inline-block;
+	vertical-align: middle;
+	width: 20%;
+	margin: 0 7% 0 0;
+}
+
+.userCommon .snsList li .txt {
+	display: inline-block;
+}
+*/
+
+#userEntry .formArea .list li {
+	margin: 0 0 16px 0;
+}
+
+.userCommon .formArea .labelList li {
+	margin: 0 0 1% 0;
+	line-height: 1.6em;
+	font-size: 14px;
+}
+
+.userCommon .formArea .labelList label {
+	display: inline-block;
+	text-indent: -1.3em;
+	padding: 0 0 0 1.3em;
+}
+
+.userCommon .formArea .aimPasssive {
+	display: none;
+}
+
+.userCommon .formArea .aimActive {
+	display: block;
+}
+.userCommon .formArea .aim2Passsive {
+	display: none;
+}
+
+.userCommon .formArea .aim2Active {
+	display: table;
+}
+
+.userCommon .snsDeregisterList {
+	margin: 0 0 16px 0;
+}
+
+.userCommon .snsDeregisterList li {
+	border-bottom: 1px solid #cccccc;
+	padding: 15px;
+	box-sizing: border-box;
+}
+
+.userCommon .snsDeregisterList li a {
+	display: inline-block;
+	position: relative;
+	border: 1px solid #ccc;
+	padding: 3% 0;
+	width: 68%;
+	border-radius: 5px;
+	vertical-align: middle;
+	text-align: center;
+	text-decoration: none;
+}
+
+.userCommon .snsDeregisterList li a:hover {
+	background-color: #eee;
+}
+
+.userCommon .snsDeregisterList li .deregister {
+	background-color: #ccc;
+}
+
+.userCommon .snsDeregisterList li .deregister:hover {
+	background-color: #aaa;
+}
+
+.userCommon .snsDeregisterList li .img {
+	display: inline-block;
+	vertical-align: middle;
+	width: 20%;
+	margin: 0 7% 0 0;
+}
+
+@media only screen and (min-width:980px) {
+
+	.userCommon .formArea .labelList li {
+		font-size: 16px;
+	}
+
+	.userCommon .snsList {
+		margin: 0 0 40px 0;
+	}
+
+	.userCommon .snsList li {
+		max-width: 505px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.userCommon .snsList li .img {
+		width: 20%;
+	}
+
+	.userCommon .snsDeregisterList {
+		overflow: hidden;
+		margin: 0 0 32px 0;
+	}
+
+	.userCommon .snsDeregisterList li {
+		width: 48%;
+		float: left;
+	}
+
+	.userCommon .snsDeregisterList li:nth-child(even) {
+		float: right;
+	}
+
+}
+
+@media only screen and (max-width:979px) {
+
+}
+
+/* Btn
+--------------------------------------------------*/
+
+@media only screen and (min-width:980px) {
+
+}
+
+/*--------------------------------------------------
+ message-area（24.05.22追加）
+--------------------------------------------------*/
+.message-area {
+	margin-bottom: 30px;
+    padding: 10px 20px;
+	border: 2px solid #000;
+}
+.message-area__wrap.mem_section {
+	margin-bottom: 60px;
+}
+.message-area .message-area__txt {
+    font-size: 16px;
+	font-weight: bold;
+}
+.message-area .message-area__txt a {
+	word-break: break-all;
+}
+.message-area .message-area__txt a[target="_blank"]::after {
+	content: '';
+	display: inline-block;
+	width: 12px;
+	height: 12px;
+	margin-left: .5em;
+	margin-right: .5em;
+	background-image: url('data:image/svg+xml;charset=utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2210%22%20height%3D%228.038%22%20viewBox%3D%220%200%2010%208.038%22%3E%20%3Cpath%20d%3D%22M11.033%2C0H4V6.028h8.038V0Zm0%2C5.023H5V1h6.028Z%22%20transform%3D%22translate(-2.038)%22%20fill%3D%22%23de0202%22%2F%3E%20%3Cpath%20d%3D%22M1%2C2H0V9.033H9v-1H1Z%22%20transform%3D%22translate(0%20-0.995)%22%20fill%3D%22%23de0202%22%2F%3E%3C%2Fsvg%3E');
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+.message-area.message-area__attention {
+	border-color: #de0202;
+}
+.message-area.message-area__attention .message-area__txt,
+.message-area.message-area__attention a {
+	color: #de0202;
+}
+.message-area.message-area__bottom {
+	margin-bottom: 0;
+}
+
+@media screen and (max-width: 979px) {
+    .message-area {
+		padding: 10px 15px;
+	}
+	.message-area__wrap.mem_section {
+		margin-bottom: 40px;
+	}
+	.message-area .message-area__txt {
+		font-size: 14px;
+	}
+}

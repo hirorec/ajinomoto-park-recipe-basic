@@ -1,0 +1,52 @@
+/**
+ * nav.js
+ * ナビゲーション系
+ */
+$(function() {
+    $(document).on('click', '#menuOpen', function() {
+        posY = $(window).scrollTop();
+        $('body').css({
+            position: 'fixed',
+            top: -1 * posY,
+            width: '100%'
+        });
+        $('.bgOpenedMenu').addClass('active');
+    });
+
+    $(document).on('click', '#menuClose', function() {
+        $('body').attr('style', '');
+        $('html, body').prop({
+            scrollTop: posY
+        });
+        $('.bgOpenedMenu').removeClass('active');
+    });
+
+    return false;
+});
+
+$('.modalBtn a').on('click', function() {
+    $('.bgOpenedMenu').removeClass('active');
+    return false;
+});
+
+/*$(function(){
+    $('.btnClip.btnLineBookmark').click(function(){
+        if(window.matchMedia("(min-width: 980px)").matches) {
+            $(".lineBookmarkQRModal").toggleClass("active");
+            return false;
+        }
+    })
+    $(".lineBookmarkQRModalClose").click(function(){
+        $(".lineBookmarkQRModal").removeClass("active");
+    })
+    $(document).on('click', function(e){
+        if(!$(e.target).closest('.lineBookmarkQRModal').length) {
+            $(".lineBookmarkQRModal").removeClass("active");
+        }
+    })
+})*/
+
+$(document).on('click', '.trend a,#closeTrendModal',function() {
+    $('.trendModal').toggleClass('active');
+    return false;
+});

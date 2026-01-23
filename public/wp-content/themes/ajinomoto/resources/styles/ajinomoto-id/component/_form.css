@@ -1,0 +1,39 @@
+@media screen and (min-width: 980px) {
+  .mem-formGroup--aid {
+    margin-left: -15px;
+    margin-right: -15px;
+    margin-bottom: -20px;
+  }
+  .mem-formGroup--aid .mem-formGroup__item {
+    width: 33.33%;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .mem-formGroup--aidConfirm {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .mem-formGroup--aidConfirm .mem-formGroup__item {
+    width: 100%;
+    padding-left: 0;
+  }
+  .mem-formGroup--aidConfirm .mem-formSuffix__control {
+    align-self: center;
+    flex: 0 0;
+  }
+}
+
+@media screen and (max-width: 979px) {
+  .mem-formGroup--aidConfirm {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .mem-formGroup--aidConfirm .mem-formGroup__item {
+    width: 100%;
+    padding-left: 0;
+  }
+  .mem-formGroup--aidConfirm .mem-formSuffix__control {
+    align-self: center;
+    flex: 0 0;
+  }
+}

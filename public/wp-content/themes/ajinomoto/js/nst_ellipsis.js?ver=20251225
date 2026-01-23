@@ -1,0 +1,253 @@
+// ▼文字列を省略して「…」を付与
+jQuery(function($) {
+  ellipsis = function() {
+    $('.ellipsis').each(function() {
+      var $target = $(this);
+      // オリジナルのDOMを渡して、三点リーダー付きのDOMを取得
+      $clone = getOmittedHtml( $target );
+
+      // 文章を入れ替えて、複製した要素を削除する
+      if ($clone.html() == '...'){
+      } else {
+        $target.html($clone.html());
+      }
+
+      var id = $(this).attr("id") ? $(this).attr("id") : '';
+      if(id.indexOf('recipe_name') != -1) {
+        //献立の場合、高さをautoに設定する
+        $('#'+id).css({'height':'auto'});
+        $('.ellipsis').css({'display':'block'});
+      }else if(id.indexOf('recommend') != -1) {
+          //おすすめ特集の場合、高さを中央表示に設定する
+          $('#'+id).css({'height':'auto', 'display':'table-cell', 'vertical-align':'middle'});
+      }else if(id.indexOf('menuRecipe') != -1) {
+        //今週の献立の場合、高さを中央表示に設定する
+        $('#'+id).css({'height':'auto'});
+        $('.ellipsis').css({'display':'block'});
+      }else if(id.indexOf('osusumeContents') != -1) {
+        //おすすめコンテンツの場合何もしない
+      }else if(id.indexOf('kanren') != -1) {
+        $('#'+id).css({'height':'auto'});
+        $('.ellipsis').css({'display':'block'});
+      }else if(id.indexOf('recipe_using_products') != -1) {
+        $('#'+id).css({'height':'auto'});
+        $('.ellipsis').css({'display':'block'});
+      }else{
+        //$('.ellipsis').css({'height':'auto', 'display':'block'});
+        $('.ellipsis').css({'display':'block'});
+      }
+
+      $clone.remove();
+    });
+  }
+
+  // 大百科TOP内の省略
+  // 各エリアごとに省略後スタイルが異なるため、別々の関数を実行する
+  ellipsisRecommendContentsCorner = function() {
+    $('.ellipsisRecommendContentsCorner').each(function() {
+      var $target = $(this);
+      // オリジナルのDOMを渡して、三点リーダー付きのDOMを取得
+      $clone = getOmittedHtml( $target );
+
+      // 文章を入れ替えて、複製した要素を削除する
+      if ($clone.html() == '...'){
+      } else {
+        $target.html($clone.html());
+      }
+
+      if ($clone.height() != 0){
+        var id = $(this).attr("id");
+        $('#'+id).css({'height':'auto'});
+      }
+      $clone.remove();
+    });
+  }
+
+  ellipsisRecommendCorner = function() {
+    $('.ellipsisRecommendCorner').each(function() {
+      var $target = $(this);
+      // オリジナルのDOMを渡して、三点リーダー付きのDOMを取得
+      $clone = getOmittedHtml( $target );
+
+      // 文章を入れ替えて、複製した要素を削除する
+      if ($clone.html() == '...'){
+      } else {
+        $target.html($clone.html());
+      }
+
+      if ($clone.height() != 0){
+        var id = $(this).attr("id");
+        $('#'+id).css({'height':'auto'});
+      }
+      $clone.remove();
+    });
+  }
+
+  ellipsisRecommendMagazine = function() {
+    $('.ellipsisRecommendMagazine').each(function() {
+      var $target = $(this);
+      // オリジナルのDOMを渡して、三点リーダー付きのDOMを取得
+      $clone = getOmittedHtml( $target );
+
+      // 文章を入れ替えて、複製した要素を削除する
+      if ($clone.html() == '...'){
+      } else {
+        $target.html($clone.html().replace(/®/g, '&ensp;<i class="r_mark"></i>'));
+      }
+
+      if ($clone.height() != 0){
+        var id = $(this).attr("id");
+        $('#'+id).css({'height':'auto'});
+      }
+      $clone.remove();
+    });
+  }
+
+  ellipsisStrengthRecipe = function() {
+    $('.ellipsisStrengthRecipe').each(function() {
+      var $target = $(this);
+      // オリジナルのDOMを渡して、三点リーダー付きのDOMを取得
+      $clone = getOmittedHtml( $target );
+
+      // 文章を入れ替えて、複製した要素を削除する
+      if ($clone.html() == '...'){
+      } else {
+        $target.html($clone.html());
+      }
+
+      if ($clone.height() != 0){
+        var id = $(this).attr("id");
+        $('#'+id).css({'height':'auto'});
+      }
+      $clone.remove();
+    });
+  }
+
+  ellipsisPopularityRecipe = function() {
+    $('.ellipsisPopularityRecipe').each(function() {
+      var $target = $(this);
+      // オリジナルのDOMを渡して、三点リーダー付きのDOMを取得
+      $clone = getOmittedHtml( $target );
+
+      // 文章を入れ替えて、複製した要素を削除する
+      if ($clone.html() == '...'){
+      } else {
+        $target.html($clone.html());
+      }
+
+      if ($clone.height() != 0){
+        var id = $(this).attr("id");
+        $('#'+id).css({'height':'auto'});
+      }
+      $clone.remove();
+    });
+  }
+
+  ellipsisNewRecipe = function() {
+    $('.ellipsisNewRecipe, .ellipsisSearchRecipe').each(function() {
+      var $target = $(this);
+      // オリジナルのDOMを渡して、三点リーダー付きのDOMを取得
+      $clone = getOmittedHtml( $target );
+
+      // 文章を入れ替えて、複製した要素を削除する
+      if ($clone.html() == '...'){
+      } else {
+        $target.html($clone.html());
+      }
+
+      if ($clone.height() != 0){
+        var id = $(this).attr("id");
+        $('#'+id).css({'height':'auto'});
+      }
+      $clone.remove();
+    });
+  }
+
+  ellipsisTagList = function() {
+    $('.ellipsisTagList').each(function() {
+      var $target = $(this);
+      $target.css({'height':'51px'});
+      // オリジナルのDOMを渡して、三点リーダー付きのDOMを取得
+      $clone = getOmittedHtml( $target );
+
+      // 文章を入れ替えて、複製した要素を削除する
+      if ($clone.html() == '...'){
+      } else {
+        $target.html($clone.html());
+      }
+
+      if ($clone.height() != 0){
+        var id = $(this).attr("id");
+        $('#'+id).css({'height':'auto'});
+      }
+      $clone.remove();
+    });
+
+    // タグと画像の高さを揃える
+    if($('#recipeTagSearch .tagList01').length){
+        var targetWidth = $('#recipeTagSearch .tagList01 li').width();
+        var targetHeight = targetWidth * 2 / 3;
+        $('.tagList01 li a > span.img').css('height', targetHeight);
+    }
+
+    if ($('#recipeTagSearch').length){
+			$('#recipeTagSearch .tagList01 > li .ttl').matchHeight();
+		}
+  }
+
+  replaceRMark = function() {
+    $('.ellipsisRecommendContentsCorner, ellipsisRecommendCorner').each(function() {
+      var $target = $(this);
+      // オリジナルの文章を取得する
+      var html_txt = $target.html();
+      if ($target.closest('li').css('display') != 'none'){
+        $target.html(html_txt.replace(/®/g, '&ensp;<i class="r_mark"></i>'));
+      }
+    });
+  }
+
+  $(function(){
+    ellipsis();
+    ellipsisRecommendContentsCorner();
+    ellipsisRecommendCorner();
+    ellipsisRecommendMagazine();
+    ellipsisStrengthRecipe();
+    ellipsisPopularityRecipe();
+    ellipsisNewRecipe();
+    ellipsisTagList();
+    replaceRMark();
+  });
+
+  $(window).resize(function() {
+    //リサイズされたときの処理
+    ellipsisTagList();
+  });
+
+});
+
+$(function() {
+  getOmittedHtml = function( $target ) {
+      // オリジナルの文章を取得する
+      var html = $target.html();
+      // 対象の要素を、高さにautoを指定し非表示で複製する
+      var $clone = $target.clone();
+      $clone
+        .css({
+          display: 'none',
+          position : 'absolute',
+          overflow : 'visible'
+        })
+        .width($target.width())
+        .height('auto');
+      // DOMを一旦追加
+      $target.after($clone);
+
+      // 指定した高さになるまで、1文字ずつ消去していく
+      while((html.length > 0) && ($clone.height() > $target.height())) {
+        html = html.substr(0, html.length - 1);
+        $clone.html(html + '...');
+      }
+      return $clone;
+  }
+
+});

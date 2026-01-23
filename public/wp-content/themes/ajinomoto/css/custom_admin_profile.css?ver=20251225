@@ -1,0 +1,4 @@
+.user-rich-editing-wrap,.user-admin-color-wrap,.user-comment-shortcuts-wrap,
+.user-admin-bar-front-wrap,.user-language-wrap,.user-url-wrap,#your-profile > h2:nth-of-type(4),#your-profile > table:nth-last-of-type(2){
+    display:none;
+}

@@ -1,0 +1,310 @@
+/* recommendCornerCategory
+--------------------------------------*/
+.recommendCornerCategory {
+	max-width: 100%;
+	margin-right: 7.5px;
+    margin-left: 7.5px;
+	margin-top: 30px;
+	margin-bottom: 17px;
+}
+
+.recommendCornerCategory .box .inTtl {
+	padding: 5px 5px;
+	font-weight: 600;
+	font-size: 14px;
+}
+.recommendCornerCategory .box .lists {
+	display: flex;
+	flex-wrap: wrap;
+	margin-bottom: 42px;
+}
+.recommendCornerCategory .box .lists li {
+	position: relative;
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	        box-sizing: border-box;
+	width: 50%;
+	padding: 8px 7.5px;
+	text-align: center;
+}
+.recommendCornerCategory .box .lists li a {
+	position: relative;
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	        box-sizing: border-box;
+	display: block;
+	width: 100%;
+	padding: 9px 0;
+	font-size: 4.16vw;
+	table-layout: fixed;
+	border: #000 solid 1.8px;
+	border-radius: 2pt;
+	text-decoration: none;
+	height: 48px;
+}
+.recommendCornerCategory .box .lists li .ico {
+	position: absolute;
+	display: block;
+	padding: 3px 3px;
+	top: 50%;
+	left: 3px;
+	width: 20px;
+	transform: translateY(-50%);
+	line-height: 0;
+}
+.recommendCornerCategory .box .lists li .ico img {
+	width: auto;
+	height: auto;
+	max-height: 1.4em;
+}
+.recommendCornerCategory .box .lists li .txt {
+	display: block;
+	font-weight: 400;
+	font-size: 12px;
+	padding-left: 22px;
+	text-align: center;
+	position: relative;
+	top :4px;
+}
+.recommendCornerCategory .box .lists li .txt.wide {
+	padding-left: 28px;
+}
+#cornerIndex .innerWrapperPageTitle {
+	display: inline-block;
+	padding-left: 0;
+}
+#cornerIndex .wrapperPageSubText {
+	font-family: 'Noto Sans Japanese', sans-serif;
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 1.5;
+	margin: 0 auto;
+	padding: 30px;
+	padding-bottom: 0px;
+	padding-top: 25px;
+}
+#cornerIndex .pageTitleRecommend{
+	font-family: 'Noto Sans Japanese', sans-serif;
+	font-size: 24px;
+	font-weight: 700;
+	letter-spacing: .06em;
+	line-height: 1.0;
+	text-align: center;
+	min-width: 320px;
+}
+#cornerIndex .recommendRecipeCorner .sectionTitle{
+	margin-top: 20px;
+}
+#cornerIndex .recommendRecipeCorner .linkArea{
+	display: none;
+}
+#cornerIndex .mainPopularCorner .moreLink a{
+	font-weight: 400;
+}
+#cornerIndex .ftrLinkArea{
+    display: none;
+}
+#cornerIndex .breadcrumb li a {
+    font-weight: 400;
+    text-decoration: none;
+}
+#cornerIndex .breadcrumb .breadLinkRecommend a{
+	font-weight: 300;
+}
+#cornerIndex .ftrLinkArea{
+	display: none;
+}
+
+@media only screen and (max-width:979px) {
+	.recommendCornerCategory .box .lists li .ico img{
+		padding-left: 3px;
+	}
+	#cornerIndex .popularityKeywordsSection .sectionTitle{
+		margin-top: 52px;
+	}
+	#cornerIndex .subTextPc{
+		display: none;
+	}
+	#cornerIndex .dispTextPc{
+		display: none;
+	}
+	#cornerIndex .displayPc{
+		display: none;
+	}
+	.recommendCornerCategory .box .lists li .txtIndentSp{
+		position: relative;
+		top: -4px;
+	}
+	.recommendCornerCategory .box .lists li .txtIndentPc {
+		top: -2px;
+	}
+}
+@media only screen and (min-width:980px) {
+	#cornerIndex .subTextSp{
+		display: none;
+	}
+	#cornerIndex .modalIconSearchArea{
+		margin-bottom: 0px;
+	}
+	#cornerIndex .modalIconSearchArea .box .lists{
+		margin-bottom: 0px;
+	}
+	#cornerIndex .popularityKeywordsList{
+		margin: 0 auto 90px auto;
+		border-radius: 20px;
+	}
+	#cornerIndex .popularityKeywordsSection {
+		max-width: 1100px;
+    	margin: 0 auto;
+	}
+	#cornerIndex .popularityKeywordsSection .sectionTitle{
+		margin-top: 90px;
+	}
+	#cornerIndex .mainPopularCorner .wrap1200 .moreLink{
+		margin-top: 30px;
+		margin-bottom: 60px;
+	}
+	#cornerIndex .itemPopularCorner .boxPopularCorner img{
+		margin-bottom: 12px;
+	}
+	#cornerIndex .itemPopularCorner .boxPopularCorner .ttl{
+		margin-bottom: 12px;
+	}
+	#cornerIndex .itemPopularCorner .boxPopularCorner img{
+		height: 168px;
+	}
+	#cornerIndex .mainPopularCorner .titleAndTxt01 h3 {
+		padding-top: 9px;
+		padding-bottom: 9px;
+	}
+	#cornerIndex .inCardSection:first-child{
+		margin-top: 0;
+	}
+	.recommendCornerCategory .box .lists li a {
+		position: relative;
+		-webkit-box-sizing: border-box;
+		   -moz-box-sizing: border-box;
+				box-sizing: border-box;
+		display: block;
+		width: 100%;
+		padding: 9px 0;
+		font-size: 4.16vw;
+		table-layout: fixed;
+		border: #000 solid 1.8px;
+		border-radius: 2pt;
+		text-decoration: none;
+	}
+	#cornerIndex .innerWrapperPageTitle {
+		display: inline-block;
+		padding-left: 0;
+	}
+	#cornerIndex .wrapperPageSubText {
+		font-family: 'Noto Sans Japanese', sans-serif;
+		font-size: 16px;
+		font-weight: 400;
+		line-height: 1.5;
+		margin: 0 auto;
+		padding-top: 25px;
+		padding-bottom: 35px;
+		width: 585px;
+		text-align: center;
+	}
+	#cornerIndex .pageTitleRecommend{
+		font-family: 'Lato', sans-serif;
+		font-size: 28px;
+		font-weight: 700;
+		letter-spacing: .06em;
+		line-height: 1.0;
+		text-align: center;
+		min-width: 320px;
+	}
+	.brText{
+		padding-top: 0;
+	}
+	.recommendCornerCategory .btnText{
+		vertical-align: middle;
+	}
+    .recommendCornerCategory {
+		padding: 20px 0;
+		margin-top: 50px;
+	}
+	.recommendCornerCategory > .clearfix {
+		max-width: 1100px;
+		margin: 0 auto;
+	}
+
+	.recommendCornerCategory .box .lists li .txt{
+		top: 11px;
+		font-size: 18px;
+		padding-left: 35px;
+	}
+	.recommendCornerCategory .box .lists li .txtIndentPc{
+		top: -3px;
+	}
+	.recommendCornerCategory .box .lists li .txtIndentSp{
+		top: -3px;
+	}
+	.recommendCornerCategory .box .lists li .txt.wide {
+		padding-left: 30px;
+	}
+	.recommendCornerCategory .box .lists li a small {
+		font-size: 10px;
+	}
+	.recommendCornerCategory .box .lists li > small {
+		/*display: none;*/
+		margin: 0 0 0 -0.7em;
+		text-align: right;
+		font-size: 10px;
+	}
+
+	.recommendCornerCategory .box {
+		-webkit-box-sizing: border-box;
+		   -moz-box-sizing: border-box;
+		        box-sizing: border-box;
+	}
+	.recommendCornerCategory .box .inTtl {
+		font-size: 18px;
+		font-weight: 600;
+		padding: 5px 0px;
+	}
+	.recommendCornerCategory .box .lists {
+		margin-bottom: 20px;
+	}
+	.recommendCornerCategory .box .lists li {
+		position: relative;
+		-webkit-box-sizing: border-box;
+		   -moz-box-sizing: border-box;
+		        box-sizing: border-box;
+		width: 23.2%;
+		padding: 8px 0px 22px;
+		margin: 0 1.2%;
+		text-align: center;
+	}
+	.recommendCornerCategory .box .lists li:nth-child(4n+1) {
+		margin: 0 1.2% 0 0;
+	}
+	.recommendCornerCategory .box .lists li:nth-child(4n) {
+		margin: 0 0 0 1.2%;
+	}
+	.recommendCornerCategory .box .lists li a {
+		padding: 13px 0;
+		font-size: 23px;
+		font-weight: bold;
+		border: #000 solid 2px;
+		border-radius: 5px;
+        height: 80px;
+	}
+	.recommendCornerCategory .box .lists li a:hover {
+		background-color: #eeeeee;
+	}
+	.recommendCornerCategory .box .lists li .ico {
+		left: 15px;
+		width: 35px;
+	}
+	.recommendCornerCategory .box .lists li .ico img {
+		width: auto;
+		height: auto;
+		max-height: 1.4em;
+		padding-left: 5px;
+	}
+}

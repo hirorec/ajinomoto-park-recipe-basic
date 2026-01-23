@@ -1,0 +1,123 @@
+@charset "utf-8";
+/**
+ * _terms_of_service.css
+ */
+
+/* Common
+--------------------------------------*/
+#termsOfService {
+  margin: 0 15px;
+}
+
+#termsOfService .pageTtl {
+  padding: 20px 0 20px;
+  /* 20191108 AP_ISSUE-522 CUBE UPDATE*/
+  /*background: url(/wp-content/themes/ajinomoto/resources/images/common/sp/bg_wall01.jpg);*/
+  font-size: 28px;
+  font-weight: bold;
+  text-align: center;
+  margin: 0 0 30px 0;
+}
+
+#termsOfService .bdrtitle_UD {
+  margin-top: 50px;
+}
+
+#termsOfService .copy {
+  font-weight: 500;
+  margin: 0 0 30px 0;
+  word-break: break-word;
+}
+
+#termsOfService .noList {
+  margin: 0 0 30px 0;
+}
+
+#termsOfService .noList li {
+  font-weight: 500;
+  text-indent: -1em;
+  padding-left: 1em;
+  margin-bottom: 8px;
+}
+
+#termsOfService .noList2 {
+  margin: 0 0 30px 0;
+}
+
+#termsOfService .noList2 li {
+  font-weight: 500;
+  text-indent: -1.5em;
+  padding-left: 1.5em;
+  margin-bottom: 8px;
+}
+
+#termsOfService .noList3 li {
+  word-break: break-all;
+}
+
+#termsOfService .dotList {
+  margin: 0 0 30px 0;
+}
+
+#termsOfService .dotList li {
+  font-weight: 500;
+  text-indent: -1.2em;
+  padding-left: 1.2em;
+  margin-bottom: 8px;
+}
+
+#termsOfService .noteList {
+  margin: 0 0 30px 0;
+}
+
+#termsOfService .noteList li {
+  font-weight: 500;
+  text-indent: -1.2em;
+  padding-left: 1.2em;
+  margin-bottom: 8px;
+}
+
+#termsOfService .update {
+  font-weight: 500;
+  text-align: right;
+  margin-bottom: 60px;
+}
+
+@media only screen and (min-width:980px) {
+  #termsOfService .pageTtl {
+    padding: 20px 0 30px;
+    font-size: 28px;
+    margin: 50px 0 30px 0;
+  }
+  
+  #termsOfService .bdrtitle_UD {
+    margin-top: 50px;
+  }
+
+  #termsOfService .copy {
+    margin: 0 0 50px 0;
+  }
+
+  #termsOfService .noList {
+    margin: 0 0 50px 0;
+  }
+
+  #termsOfService .noList2 {
+    margin: 0 0 32px 0;
+  }
+
+  #termsOfService .dotList {
+    margin: 0 0 32px 0;
+  }
+
+  #termsOfService .update {
+    margin-bottom: 120px;
+  }
+
+}
+
+@media only screen and (max-width:979px) {
+  #termsOfService{
+    padding-top: 20px;
+  }
+}

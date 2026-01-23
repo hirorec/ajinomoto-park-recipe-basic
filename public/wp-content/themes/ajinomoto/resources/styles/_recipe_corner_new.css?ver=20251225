@@ -1,0 +1,222 @@
+@charset "utf-8";
+/**
+ * _recipe_corner.css
+ */
+
+@media only screen and (min-width:980px){}
+@media only screen and (max-width:979px){}
+
+/* titleAndTxt01
+--------------------------------------*/
+.titleAndTxt01 {
+	margin-bottom: 20px;
+}
+.titleAndTxt01 dt {
+	margin-bottom: 5px;
+	font-size: 25px; /* 20190912 AP_ISSUE-464_LIMING UPDATE 元：20px*/
+	font-weight: 500;
+	text-align: center;
+}
+.titleAndTxt01 dt span {
+	display: inline-block;
+	border-bottom: #000 solid 1px;
+}
+.titleAndTxt01 dd {
+	text-align: center;
+	font-size: 17px; /* 20190912 AP_ISSUE-464_LIMING ADD*/
+}
+@media only screen and (max-width:979px) {
+	.titleAndTxt01 {
+		margin-bottom: 15px;
+	}
+	.titleAndTxt01 dt {
+		margin-bottom: 5px;
+		font-size: 4.16vw; /* 20190917 AP_ISSUE-464_LIMING UPDATE 元：4.79vw */
+	}
+	.titleAndTxt01 dd {
+		font-size: 3.54vw; /* 20190917 AP_ISSUE-464_LIMING UPDATE 元：3.54vw */
+	}
+}
+
+
+
+/* bigSection
+--------------------------------------*/
+#cornerIndex .bigSection {
+	margin: 50px 0;
+}
+#cornerIndex .bigSection .inFlex {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+#cornerIndex .bigSection .inFlex li {
+	width: 48.84%;
+	margin-bottom: 20px;
+}
+#cornerIndex .bigSection .inFlex li a {
+	position: relative;
+	display: block;
+	text-decoration: none;
+}
+#cornerIndex .bigSection .inFlex li a .txt {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	display: block;
+	color: #000;
+	font-size: 22px; /* 20190912 AP_ISSUE-464_LIMING UPDATE 元：17px*/
+	font-weight: 500;
+}
+#cornerIndex .bigSection .inFlex li a .txt > span {
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	        box-sizing: border-box;
+	display: table;
+	width: 100%;
+	height: 3em;
+	padding: 0 10px;
+	background-color: rgba(255,255,255,0.7);
+}
+#cornerIndex .bigSection .inFlex li a .txt span span {
+	display: table-cell;
+	vertical-align: middle;
+}
+@media only screen and (max-width:979px) {
+	#cornerIndex .bigSection {
+		margin: 20px 0;
+	}
+	#cornerIndex .bigSection .inFlex {
+		display: block;
+	}
+	#cornerIndex .bigSection .inFlex li {
+		width: auto;
+		margin-bottom: 13px;
+	}
+	#cornerIndex .bigSection .inFlex li img {
+		width: 100%;
+	}
+	#cornerIndex .bigSection .inFlex li a .txt {
+		font-size: 3.54vw; /* 20190917 AP_ISSUE-464_LIMING UPDATE 元：4.16*/
+	}
+}
+
+
+/* comnonBoderSection
+--------------------------------------*/
+#cornerIndex .comnonBoderSection{
+	padding: 20px 0;
+}
+@media only screen and (max-width:979px) {
+	#cornerIndex .comnonBoderSection{
+		padding: 13px 0 0 0;
+	}
+}
+
+
+/* ScrollArea
+--------------------------------------*/
+#cornerIndex .horizontalScrollArea li .ttl{
+	font-weight: 300;
+}
+
+
+/* 20190925 AP_ISSUE-464_LIMING ADD START レシピ特集カテゴリー*/
+/* cornerCategory
+--------------------------------------*/
+.cornerCategory {
+	padding: 30px 0 40px;
+	/*20191101 ISSUE-522 LIMING UPDATE*/
+	/*background: url(/wp-content/themes/ajinomoto/resources/images/common/sp/bg_wall01.jpg);*/
+}
+.cornerCategory ul {
+	margin: -10px 0 0 -10px;
+}
+.cornerCategory li {
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	        box-sizing: border-box;
+	float: left;
+	width: 50%;
+	padding: 10px 0 0 10px;
+}
+.cornerCategory li a {
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	        box-sizing: border-box;
+	display: table;
+	width: 100%;
+	padding: 0 0 0 35px;
+	min-height: 50px;
+	color: #000;
+	font-weight: 500;
+	text-decoration: none;
+	border: #89cd27 solid 2px;
+	border-radius: 5px;
+	background-color: #fff;
+	background-repeat: no-repeat;
+	background-position: 7px center;
+	background-size: 22px auto;
+	line-height: 1.2;
+}
+.android .cornerCategory li a {
+	height: 50px;
+}
+.cornerCategory li.lastLi {
+	overflow: hidden;
+	width: 0;
+}
+.cornerCategory li a > span {
+	display: table-cell;
+	vertical-align: middle;
+	font-weight: 500;
+}
+.cornerCategory li a > span span {
+	display: inline-block;
+	font-weight: 500;
+}
+.cornerCategory li.on a,
+.noT .cornerCategory li a:hover {
+	background-color: #d6f5a9;
+}
+.cornerCategory li.katsuyo a { background-image: url(/wp-content/themes/ajinomoto/resources/images/recipe/corner/index/icon_crown.png); }
+.cornerCategory li.kantan a { background-image: url(/wp-content/themes/ajinomoto/resources/images/recipe/corner/index/icon_time.png); }
+.cornerCategory li.obento a { background-image: url(/wp-content/themes/ajinomoto/resources/images/recipe/corner/index/icon_lunchbox.png); }
+.cornerCategory li.oki a { background-image: url(/wp-content/themes/ajinomoto/resources/images/recipe/corner/index/icon_box.png); }
+.cornerCategory li.teiban a { background-image: url(/wp-content/themes/ajinomoto/resources/images/recipe/corner/index/icon_toques.png); }
+.cornerCategory li.syokuzai a { background-image: url(/wp-content/themes/ajinomoto/resources/images/recipe/corner/index/icon_turnip.png); }
+.cornerCategory li.kisetsu a { background-image: url(/wp-content/themes/ajinomoto/resources/images/recipe/corner/index/icon_petal.png); }
+.cornerCategory li.eiyo a { background-image: url(/wp-content/themes/ajinomoto/resources/images/recipe/corner/index/icon_graph.png); }
+.cornerCategory li.lifestyle a { background-image: url(/wp-content/themes/ajinomoto/resources/images/recipe/corner/index/icon_house.png); }
+.cornerCategory li.omotenashi a { background-image: url(/wp-content/themes/ajinomoto/resources/images/recipe/corner/index/icon_cake.png); }
+.cornerCategory li.setsuyaku a { background-image: url(/wp-content/themes/ajinomoto/resources/images/recipe/corner/index/icon_coin.png); }
+.cornerCategory li.kyoudo a { background-image: url(/wp-content/themes/ajinomoto/resources/images/recipe/corner/index/icon_global.png); }
+.cornerCategory li.kigu a { background-image: url(/wp-content/themes/ajinomoto/resources/images/recipe/corner/index/icon_pot.png); }
+
+@media only screen and (min-width:980px) {
+	.cornerCategory {
+		padding: 50px 0 70px;
+	}
+	.cornerCategory ul {
+		margin: -20px 0 0 -20px;
+	}
+	.cornerCategory li {
+		padding: 20px 0 0 20px;
+	}
+	.cornerCategory li a {
+		padding: 0 10px 0 70px;
+		min-height: 70px;
+		font-size: 20px;
+		border: #89cd27 solid 3px;
+		border-radius: 8px;
+		background-position: 20px center;
+		background-size: 36px auto;
+	}
+}
+@media only screen and (min-width:1200px) {
+	.cornerCategory li {
+		width: 33.333%;
+	}
+}
+/* 20190925 AP_ISSUE-464_LIMING ADD END レシピ特集カテゴリー*/

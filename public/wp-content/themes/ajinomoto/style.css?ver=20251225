@@ -1,0 +1,358 @@
+/*
+Theme: ajinomoto
+Author: PRIME STRATEGY CO.,LTD.
+Author URI: https://www.prime-strategy.co.jp/
+Description: Template For Ajinomoto Park..
+Version: 1.0
+*/
+
+.dis_flex{
+	display:flex;
+}
+.f_l,.form_box select{
+	float:left;
+}
+.f_r{
+    float:right;
+}
+
+label{
+	margin: 0 20px 0 0 ;
+	font-weight: normal;
+	}
+
+
+#wpbody-content table,#wpbody-content table th,#wpbody-content table td{
+	border:1px solid #e5e5e5;
+	font-size:15px;
+	padding:10px;
+}
+
+table.search_table th{
+	background:#e5e5e5;
+	width: 15%;
+}
+
+table.kekka_table,table.kekka_table th,table.kekka_table td{
+	font-size:14px;
+}
+
+table.kekka_table th{
+	width:5%;
+	text-align:center;
+}
+table.kekka_table th.wid20{
+	width:20%;
+}
+table.kekka_table th.wid15{
+	width:15%;
+}
+table.search_table select+span,.kara{
+	padding:8px 0 0 3px;
+}
+
+table.kekka_table button{
+	margin-right:10px;
+}
+table.kekka_table button+button{
+	margin-right:0px;
+}
+.form_box {
+	margin-right:10px;
+
+}
+
+table.search_table,
+table.kekka_table{
+	margin-bottom:50px;
+}
+input[type="checkbox"],input[type="radio"]{
+	margin-right:8px;
+}
+button[type="submit"]{
+	padding:8px 80px;
+	display:table;
+	margin:0 auto;
+	background:rgb(255, 142, 23);
+	border:none;
+	border-radius: 2px;
+	color:#ffffff;
+}
+#kickmember{
+	padding:8px 80px;
+	display:table;
+	margin:0 auto;
+	background:rgb(192, 192, 192);
+	border:none;
+	border-radius: 2px;
+	color:#ffffff;
+    text-decoration: none;
+    border-bottom: solid 2px #808080;/*ボタン色より暗めに*/
+    border-right: solid 2px #808080;/*ボタン色より暗めに*/
+}
+.item_wrap{
+	margin-bottom:10px;
+}
+
+.small_text{
+	font-size:14px;
+}
+.csv_box{
+	float:right;
+	text-align: right;
+}
+.csv_box button{
+	margin-right:10px;
+}
+.attention{
+	color:#e30000;
+}
+
+.signupSend{
+	width: 100%;
+	padding: 10px;
+	background-color: white;
+	border: 1px red solid;
+	color: red;
+}
+
+.arrow-left {
+	border-top: 20px solid transparent;
+	border-bottom: 20px solid transparent; 
+	border-left: 20px solid grey; 
+	float: left;
+  	vertical-align: middle;
+	line-height: 50px;
+	margin: 5px;
+}
+
+.registerBreadcrumb.selected{
+	background-color:lightgrey;
+}
+
+.registerBreadcrumb{
+	border: solid 1px grey;
+	border-radius: 10px;
+    width: 100px;
+    height: 50px; 
+	text-align: center;
+	vertical-align: middle;
+	display: block;
+	line-height: 50px;
+	float: left;
+}
+
+.mwform-checkbox-field-vertical::before{
+}
+
+.mwform-datewidth{
+	width: 100px;
+	display: initial;
+}
+
+.invisibleReadonly{
+	background-color: white !important;
+	border: none !important;
+	box-shadow: none !important;
+	color: black !important;
+    display: none !important;
+}
+
+.formsubmit{
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.inputerror{
+    border: 1px solid #faa !important;
+    background-color: #fee !important;
+}
+
+.errortext{
+    color: #ed1b24;
+}
+
+.showAsText{
+    border: 0 !important;
+    cursor: default;
+    padding: 0 !important;
+}
+
+/* recipe_card css */
+/* AP_ISSUE-358:SEO：レシピカードのリード文がSPの場合に切れて表示される TP石橋 2019/05/16 */
+
+@media screen and (min-width: 980px) {
+    #recipeImageArea > p.introduction{
+
+    line-height: 1.4;
+    max-height: 5.5em;
+    background-color: #fff;
+
+    position: relative;
+    /* padding-right: 1em; */
+    overflow: hidden;
+    }
+}
+@media screen and (max-width: 980px) {
+    #recipeImageArea > p.introduction{
+
+    line-height: 1.4;
+    max-height: 5.5em;
+    background-color: #fff;
+
+    position: relative;
+    /* padding-right: 1em; */
+    overflow: hidden;
+
+    font-size: 85%;
+    }
+}
+
+/* #recipeImageArea > p.introduction:before{
+  content: "...";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  display: inline-block;
+  width: 1em;
+} */
+
+/* #recipeImageArea > p.introduction:after{
+
+  content: "";
+  position: relative;
+  right: -1em;
+  float: right;
+  width: 1em;
+  height: 100%;
+  background-color: inherit;
+  margin-left:-1em;
+} */
+
+/*終了 TP石橋*/
+
+/* recipe_search add */
+.inList > ul > li > a > span.texts > span.txt{
+  height: 3em;
+  position: relative;
+  padding-right: 1em;
+  overflow: hidden;
+}
+
+
+.inList > ul > li > a > span.texts > span.txt:before, .inList > ul > li > a > span.texts > span.txt:after {
+	position: absolute;
+	background: #fff;
+}
+
+.inList > ul > li > a > span.texts > span.txt:before {
+	content: "...";
+	bottom: 0;
+	right: 1em;
+}
+
+.inList > ul > li > a > span.texts > span.txt:after {
+	content: "";
+	width: 100%;
+	height: 100%;
+}
+
+/* 非会員時キャンペーンページのレイアウト調整 */
+#campaignDetail01 .btnBox ul.members_flag_false,
+#campaignDetail01 .btnBox02 ul.members_flag_false{
+    text-align:center;
+}
+
+#campaignDetail01 .btnBox ul.members_flag_false li,
+#campaignDetail01 .btnBox02 ul.members_flag_false li{
+    float: none;
+    display: inline-block;
+}
+
+
+@media only screen and (max-width:980px) {
+    #campaignDetail01 .btnBox ul.members_flag_false,
+    #campaignDetail01 .btnBox02 ul.members_flag_false{
+        text-align:center;
+        width:100%;
+    }
+
+    #campaignDetail01 .btnBox ul.members_flag_false li,
+    #campaignDetail01 .btnBox02 ul.members_flag_false li{
+        float: none;
+        display: inline-block;
+        width:100%;
+    }
+}
+
+
+
+/*材料レシピ*/
+
+.material_recipei_area{
+    border:1px solid #bbbbbb;
+    width:1004px;
+}
+.material_recipei_area .material_recipei_wrap{
+    padding:20px;
+}
+
+.material_recipei_area h3{
+    background: #757575;
+    padding:10px 0 10px 20px;
+    margin:0;
+    color:#fff;
+    font-size:18px;
+}
+.material_recipei_area h4{
+    font-size:16px;
+    margin:10px 0 10px 0;
+}
+.material_recipei_area h5{
+    font-size:15px;
+    margin:5px 0 4px 0;
+    font-weight:normal;
+}
+
+.equal{
+    padding-top:25px;
+}
+.mb20{
+    margin-bottom:20px;
+}
+.clearfix:after {
+    content:" ";
+    display:block;
+    clear:both;
+}
+.w1004{
+    width:1004px;
+}
+button[type="submit"].material_delete_btn,
+button[type="submit"].material_search_btn{
+    margin:0;
+    padding: 3px 20px;
+}
+input[type=text].search_text{
+    height:30px;
+    margin-right:10px;
+}
+.w50{
+    width:50%;
+}
+.w70{
+    width:70%;
+}
+.mr10{
+    margin-right:10px;
+}
+.mt40{
+    margin-top:40px;
+}
+ul.search-material-recipe{
+    padding: 0;
+    margin: 0;
+}

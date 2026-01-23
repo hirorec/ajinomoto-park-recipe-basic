@@ -1,0 +1,849 @@
+/** -----------------
+ * 20200715 renewal *
+ * -----------------*/
+
+ .mem-formDescription__text {
+  font-weight: 500;
+}
+
+.mem-formProgress {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-top: 2px solid #000;
+  border-bottom: 2px solid #000;
+  border-left: 2px solid #000;
+  border-right: 2px solid #000;
+  overflow: hidden;
+}
+
+.mem-formProgress__ul {
+  display: -webkit-box;
+	display: -webkit-flex;
+  display: -ms-flexbox;
+	display: flex;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+}
+
+.mem-formProgress__item {
+  position: relative;
+  width: 100%;
+  display: -webkit-box;
+	display: -webkit-flex;
+  display: -ms-flexbox;
+	display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  font-weight: 500;
+}
+
+.mem-formProgress__item:not(:last-child)::before, .mem-formProgress__item:not(:last-child)::after {
+  position: absolute;
+  margin-top: -2.5em;
+  top: 50%;
+  display: block;
+  border-style: solid;
+  border-width: 2.5em 0 2.5em 9px;
+}
+
+.mem-formProgress__item:not(:last-child)::before {
+  z-index: 1;
+  right: -9px;
+  content: "";
+  border-color: transparent transparent transparent #000;
+}
+
+.mem-formProgress__item:not(:last-child)::after {
+  z-index: 2;
+  right: -7px;
+  content: "";
+  border-color: transparent transparent transparent #fff;
+}
+
+.mem-formProgress__item--current {
+  background: -webkit-gradient(linear, left top, right top, from(#d92c6b), to(#ec6e1e));
+  background: -o-linear-gradient(left, #d92c6b, #ec6e1e);
+  background: linear-gradient(90deg, #d92c6b, #ec6e1e);
+  color: #fff;
+}
+
+.mem-formProgress__item--current:not(:last-child)::after {
+  border-color: transparent transparent transparent #ec6e1e;
+}
+
+.mem-formControl {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  margin: 0;
+  border-radius: 0;
+  background: none transparent;
+  background-clip: padding-box;
+  vertical-align: middle;
+  font-size: 16px;
+  display: block;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 100%;
+  color: #000000;
+  background-color: #fff;
+  border: 1px solid #e5e5e5;
+  position: relative;
+  -webkit-transition: border-color .15s ease-in-out, -webkit-box-shadow .15s ease-in-out;
+  transition: border-color .15s ease-in-out, -webkit-box-shadow .15s ease-in-out;
+  -o-transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+  transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+  transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out, -webkit-box-shadow .15s ease-in-out;
+  font-weight: 500;
+}
+
+.mem-formControl::-ms-clear {
+  display: none;
+}
+
+.mem-formControl::-ms-reveal {
+  display: none;
+}
+
+.mem-formControl::-ms-expand {
+  display: none;
+}
+
+.mem-formControl::-webkit-input-placeholder {
+  color: #787878;
+}
+
+.mem-formControl::-moz-placeholder {
+  color: #787878;
+}
+
+.mem-formControl:-ms-input-placeholder {
+  color: #787878;
+}
+
+.mem-formControl::-ms-input-placeholder {
+  color: #787878;
+}
+
+.mem-formControl::placeholder {
+  color: #787878;
+}
+
+.mem-formControl:-ms-input-placeholder {
+  color: #787878;
+}
+
+.mem-formControl::-ms-input-placeholder {
+  color: #787878;
+}
+
+.mem-formControl:focus {
+  outline: 0;
+  border-color: #ec6e1e;
+  -webkit-box-shadow: 0 0 0 0.2rem rgba(236, 110, 30, 0.6);
+          box-shadow: 0 0 0 0.2rem rgba(236, 110, 30, 0.6);
+}
+
+.mem-formControl--error {
+  border-color: #de0202;
+  background: #fff5f5;
+}
+
+.mem-formControl--error:focus {
+  border-color: #de0202;
+  -webkit-box-shadow: 0 0 0 0.2rem rgba(222, 2, 2, 0.4);
+          box-shadow: 0 0 0 0.2rem rgba(222, 2, 2, 0.4);
+}
+
+.mem-formControlWrap {
+  margin-top: 20px;
+  font-weight: 500;
+}
+
+.mem-formControlToggle {
+  margin-top: 20px;
+  display: none;
+  font-weight: 500;
+}
+
+.mem-formControlToggle--active {
+  display: block;
+}
+
+.mem-formGroup {
+  display: -webkit-box;
+	display: -webkit-flex;
+  display: -ms-flexbox;
+	display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  font-weight: 500;
+}
+
+.mem-formGroup__item {
+  position: relative;
+  margin-left: 0 !important;
+  font-weight: 500;
+}
+
+.mem-formCheck {
+  position: relative;
+  width: 100%;
+  display: block;
+}
+
+.mem-formCheck .mem-formControl {
+  position: absolute;
+  left: 0;
+  z-index: -1;
+  opacity: 0;
+}
+
+.mem-formCheck .mem-formControl[type="radio"] ~ .mem-formCheck__label::before,
+.mem-formCheck .mem-formControl[type="radio"] ~ .mem-formCheck__label::after {
+  border-radius: 50%;
+}
+
+.mem-formCheck .mem-formControl[type="checkbox"] ~ .mem-formCheck__label::after {
+  -webkit-transition: border 0.15s ease-in-out;
+  -o-transition: border 0.15s ease-in-out;
+  transition: border 0.15s ease-in-out;
+  width: 9px;
+  height: 5px;
+  border-left: 2px solid transparent;
+  border-bottom: 2px solid transparent;
+  -webkit-transform: translateY(-55%) rotate(-50deg);
+      -ms-transform: translateY(-55%) rotate(-50deg);
+          transform: translateY(-55%) rotate(-50deg);
+}
+
+.mem-formCheck .mem-formControl[type="radio"] ~ .mem-formCheck__label::after {
+  -webkit-transition: background 0.15s ease-in-out;
+  -o-transition: background 0.15s ease-in-out;
+  transition: background 0.15s ease-in-out;
+  width: 8px;
+  height: 8px;
+}
+
+.mem-formCheck .mem-formControl:checked ~ .mem-formCheck__label::before {
+  border-color: #de0202;
+  border-width: 2px;
+}
+
+.mem-formCheck .mem-formControl[type="radio"]:checked ~ .mem-formCheck__label::after {
+  background-color: #de0202;
+}
+
+.mem-formCheck .mem-formControl[type="checkbox"]:checked ~ .mem-formCheck__label::after {
+  border-color: #de0202;
+}
+
+.mem-formCheck__label {
+  display: block;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  text-align: center;
+  position: relative;
+  cursor: pointer;
+  width: 100%;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-transition: background 0.15s ease-in-out;
+  -o-transition: background 0.15s ease-in-out;
+  transition: background 0.15s ease-in-out;
+}
+
+.mem-formCheck__label:hover {
+  background: #FBF3EF;
+}
+
+.mem-formCheck__label::before, .mem-formCheck__label::after {
+  position: absolute;
+  top: 50%;
+  display: block;
+  pointer-events: none;
+  background-color: #fff;
+  content: "";
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.mem-formCheck__label::before {
+  border: solid 1px #e5e5e5;
+  -webkit-transition: border 0.15s ease-in-out;
+  -o-transition: border 0.15s ease-in-out;
+  transition: border 0.15s ease-in-out;
+  width: 16px;
+  height: 16px;
+}
+
+.mem-formSpecified {
+  margin-top: 15px;
+}
+
+.mem-formSpecified__text {
+  font-size: 16px;
+  text-align: right;
+  color: #787878;
+}
+
+.mem-formTitle__inner {
+  display: -webkit-box;
+	display: -webkit-flex;
+  display: -ms-flexbox;
+	display: flex;
+}
+
+.mem-formTitle__text {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1;
+          flex: 1 1;
+  font-weight: bold;
+}
+
+.mem-formFlag {
+  display: -webkit-box;
+	display: -webkit-flex;
+  display: -ms-flexbox;
+	display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-radius: 11px;
+  border: 2px solid #de0202;
+  padding: 4px 9px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  line-height: 1;
+  color: #de0202;
+  font-weight: 500;
+}
+
+.mem-formHeadError {
+  color: #E60012;
+  border: 1px solid #E60012;
+  background-color: #F7E6E6;
+  margin: 10px 0;
+  padding: 10px 15px;
+}
+
+.mem-formAnnotaion {
+  margin-top: 5px;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+.mem-formAnnotaion--error {
+  color: #de0202;
+}
+
+.mem-formAnnotaion--fontsize16 {
+  font-size: 16px !important;
+}
+
+.mem-formDomain {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-top: 1px solid #787878;
+  border-bottom: 1px solid #787878;
+}
+
+.mem-formDomain__text {
+  color: #787878;
+}
+
+.mem-formDomain__address {
+  background: #eeeeee;
+  text-align: center;
+  font-weight: 500;
+}
+
+.mem-formTerms {
+  border: 1px solid #e5e5e5;
+  overflow: auto;
+}
+
+.mem-formTerms__inner {
+  padding: 20px;
+}
+
+.mem-formTerms p {
+  font-weight: 500;
+}
+
+.mem-formSubmitArea {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.mem-formSubmitArea__confirm {
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: 500;
+}
+
+.mem-editPortalArea {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.mem-formSubmitArea__button {
+  margin: 20px auto;
+}
+
+.mem-formSubmitArea__remind {
+  margin-top: 20px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.mem-formSubmitArea__back {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.mem-formSubmitArea__annotation {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  color: #787878;
+}
+
+.mem-formRemindLink {
+  text-decoration: none;
+  position: relative;
+  font-weight: 500;
+  opacity: 1;
+  -webkit-transition: opacity .3s;
+  -o-transition: opacity .3s;
+  transition: opacity .3s;
+}
+
+.mem-formRemindLink:hover {
+  opacity: .5;
+}
+
+.mem-formRemindLink::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  background-image: url(data:image/svg+xml;base64,PHN2ZyBpZD0i44Os44Kk44Ok44O8XzEiIGRhdGEtbmFtZT0i44Os44Kk44Ok44O8IDEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmlld0JveD0iMCAwIDI5LjI1IDUyLjY2IiB3aWR0aD0iMTI2cHgiIGhlaWdodD0iMjI0cHgiPjxkZWZzPjxzdHlsZT4uY2xzLTF7ZmlsbC1ydWxlOmV2ZW5vZGQ7fTwvc3R5bGU+PC9kZWZzPjx0aXRsZT5BUF9zdmc8L3RpdGxlPjxwb2x5Z29uIGNsYXNzPSJjbHMtMSIgcG9pbnRzPSIyOS4yNSAyNi4zMyAyNS4yIDIyIDI1LjE1IDIyLjA1IDQuMDUgMCAwIDQuMzIgMjEuMDYgMjYuMzMgMCA0OC4zMyA0LjA1IDUyLjY2IDI1LjE1IDMwLjYxIDI1LjIgMzAuNjUgMjkuMjUgMjYuMzMiLz48L3N2Zz4=);
+  background-repeat: no-repeat;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.mem-formButtonArea {
+  margin: 40px auto;
+}
+
+.mem-formFootNote {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  color: #787878;
+}
+
+.mem-formHidden {
+  display: none;
+}
+
+.mem-formShowAsText {
+  border: 0 !important;
+  cursor: default;
+  padding: 0 !important;
+}
+
+.mem-formShowAsText:focus {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.mem-formSuffix {
+  display: -webkit-box;
+	display: -webkit-flex;
+  display: -ms-flexbox;
+	display: flex;
+}
+
+.mem-formSuffix__control {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1;
+          flex: 1 1;
+  font-weight: 500;
+}
+
+.mem-formSuffix__suffix {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-size: 14px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px;
+  font-weight: 500;
+}
+
+.mem-formSuffix > div:last-child {
+  padding-right: 0;
+}
+
+.mem-formSuffix > div:first-child {
+  padding-left: 0;
+}
+
+select.mem-formControl {
+  background-image: url(data:image/svg+xml;base64,PHN2ZyAKIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIKIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIgogd2lkdGg9IjE2cHgiIGhlaWdodD0iMTBweCI+CjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgIGZpbGw9InJnYigwLCAwLCAwKSIKIGQ9Ik0xNi4wMDYsMS4zODEgTDkuMzAyLDguNTk3IEw5LjMxNiw4LjYxMiBMOC4wMDIsOS45OTcgTDYuNjg3LDguNjEyIEw2LjcwMSw4LjU5NyBMLTAuMDAyLDEuMzgxIEwxLjMxMywtMC4wMDMgTDguMDAyLDcuMTk3IEwxNC42OTEsLTAuMDAzIEwxNi4wMDYsMS4zODEgWiIvPgo8L3N2Zz4=);
+  background-repeat: no-repeat;
+  background-size: 16px 10px;
+}
+
+textarea.mem-formControl {
+  height: auto;
+}
+
+#nicknamesuggestions {
+  margin-top: 20px;
+}
+
+#nicknamesuggestions > div {
+  display: block;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  text-align: center;
+  position: relative;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom: 20px;
+  border: 2px solid #000;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-transition: background 0.15s ease-in-out;
+  -o-transition: background 0.15s ease-in-out;
+  transition: background 0.15s ease-in-out;
+  font-weight: 500;
+}
+
+#nicknamesuggestions > div:hover {
+  background: #FBF3EF;
+}
+
+.mw_wp_form_input .mem-formDisabledInput {
+  display: none;
+}
+
+.mw_wp_form_confirm .mem-formDisabledConfirm {
+  display: none;
+}
+
+.mw_wp_form_confirm .mem-formGroup {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.mw_wp_form_confirm .mem-formGroup__item {
+  padding-left: 0;
+  padding-right: 0;
+  width: 100%;
+}
+
+.mw_wp_form_confirm .mem-formSuffix__control {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
+  padding: 10px 0;
+}
+
+.mw_wp_form_complete .mem-formDisabledComplete {
+  display: none;
+}
+
+.snsMailNoneMsg > p {
+  font-weight: 500;
+  text-align: center;
+}
+
+.snsMailNoneMsg .caption {
+  color: #787878;
+  margin-top: 20px;
+}
+
+.snsLoginFaild {
+  text-align: center;
+}
+
+.snsLoginFaild .loginBtn {
+  text-align: center;
+}
+
+.snsLoginFaild .loginBtn a {
+  padding: 0 20px;
+  font-size: 14px;
+  color: black;
+  font-weight: 500;
+}
+
+.snsLoginFaild .loginBtn a:before {
+  left: 0;
+  border-top: #000000 solid 2px;
+  border-right: #000000 solid 2px;
+}
+
+.mem-editPortal__text {
+  text-align: center;
+}
+
+@media screen and (min-width: 980px) {
+  .mem-formSection {
+    margin: 40px 0;
+  }
+  .mem-formDescription__text {
+    font-size: 16px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+  .mem-formProgress__item {
+    font-size: 16px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  .mem-formControl {
+    padding: 20px 22px;
+    font-size: 16px;
+  }
+  .mem-formGroup {
+    margin-left: -20px;
+    margin-right: -20px;
+  }
+  .mem-formGroup__item {
+    padding-left: 20px;
+    padding-right: 20px;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    width: 50%;
+  }
+  .mem-formGroup__item:not(:last-child):not(:nth-last-of-type(2)) {
+    margin: 0 0 20px;
+  }
+  .mem-formCheck .mem-formControl[type="checkbox"] ~ .mem-formCheck__label::after {
+    left: 24px;
+  }
+  .mem-formCheck .mem-formControl[type="radio"] ~ .mem-formCheck__label::after {
+    left: 24px;
+  }
+  .mem-formCheck__label {
+    border: 2px solid #000;
+    padding: 22px 50px;
+    font-size: 16px;
+  }
+  .mem-formCheck__label::before {
+    left: 20px;
+  }
+  .mem-formTitle__text {
+    font-size: 18px;
+  }
+  .mem-section.error-message {
+    display: none;
+    margin-top: 80px;
+  }
+  .mem-formTitle__text.error-message {
+    font-size: 16px;
+  }
+  .mem-formTitle__error {
+    font-size: 16px;
+    text-align: center;
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1;
+        flex: 1 1;
+    font-weight: bold;
+  }
+  .mem-formFlag {
+    font-size: 12px;
+  }
+  .mem-formAnnotaion {
+    font-size: 14px;
+  }
+  .mem-formDomain {
+    margin-top: 60px;
+    margin-bottom: 60px;
+  }
+  .mem-formDomain__text {
+    font-size: 14px;
+    margin-bottom: 30px;
+  }
+  .mem-formDomain__address {
+    padding-top: 22px;
+    padding-bottom: 22px;
+    font-size: 16px;
+  }
+  .mem-formTerms {
+    font-size: 14px;
+    height: 200px;
+    margin-top: 60px;
+    margin-bottom: 60px;
+  }
+  .mem-formSubmitArea__confirm {
+    font-size: 16px;
+  }
+  .mem-formSubmitArea__button {
+    width: 504px;
+  }
+  .mem-formRemindLink {
+    font-size: 16px;
+    padding-left: 20px;
+  }
+  .mem-formRemindLink::before {
+    width: 8px;
+    height: 14px;
+    background-size: 8px 14px;
+  }
+  .mem-formButtonArea {
+    width: 504px;
+  }
+  select.mem-formControl {
+    background-position: right 20px center;
+  }
+  #nicknamesuggestions > div {
+    border: 2px solid #000;
+    padding: 22px 20px;
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 979px) {
+  .mem-formSection {
+    margin-bottom: 30px;
+  }
+  .mem-formDescription__text {
+    font-size: 14px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+  .mem-formProgress__item {
+    font-size: 11px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+  .mem-formControl {
+    padding: 20px 15px;
+    font-size: 14px;
+  }
+  .mem-formGroup__item {
+    width: 100%;
+  }
+  .mem-formGroup__item:not(:last-child) {
+    margin: 0 0 20px;
+  }
+  .mem-formCheck .mem-formControl[type="checkbox"] ~ .mem-formCheck__label::after {
+    left: 19px;
+  }
+  .mem-formCheck .mem-formControl[type="radio"] ~ .mem-formCheck__label::after {
+    left: 19px;
+  }
+  .mem-formCheck__label {
+    border: 1px solid #000;
+    padding: 19px 40px;
+    font-size: 14px;
+  }
+  .mem-formCheck__label::before {
+    left: 15px;
+  }
+  .mem-section.error-message {
+    display: none;
+    padding-left: 1vw;
+    padding-right: 1vw;
+    margin-top: 50px;
+  }
+  .mem-formTitle__error {
+    font-size: 14px;
+    text-align: center;
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1;
+        flex: 1 1;
+    font-weight: bold;
+    margin-bottom: 50px;
+    padding-left: 9vw;
+    padding-right: 9vw;
+  }
+  .mem-formTitle__text {
+    font-size: 14px;
+  }
+  .mem-formFlag {
+    font-size: 10px;
+  }
+  .mem-formAnnotaion {
+    font-size: 12px;
+  }
+  .mem-formDomain {
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+  .mem-formDomain__text {
+    font-size: 12px;
+    margin-bottom: 20px;
+  }
+  .mem-formDomain__address {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    font-size: 14px;
+  }
+  .mem-formTerms {
+    font-size: 12px;
+    height: 200px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+  .mem-formSubmitArea__confirm {
+    font-size: 12px;
+  }
+  .mem-formSubmitArea__button {
+    width: 100%;
+  }
+  .mem-formRemindLink {
+    font-size: 14px;
+    padding-left: 15px;
+  }
+  .mem-formRemindLink::before {
+    width: 5px;
+    height: 9px;
+    background-size: 5px 9px;
+  }
+  .mem-formButtonArea {
+    width: 100%;
+  }
+  select.mem-formControl {
+    background-position: right 15px center;
+  }
+  #nicknamesuggestions > div {
+    border: 1px solid #000;
+    padding: 19px 15px;
+    font-size: 14px;
+  }
+  .snsMailNoneMsg {
+    margin-bottom: 40px;
+  }
+  .snsMailNoneMsg .caption {
+    font-size: 12px;
+  }
+  .snsLoginFaild {
+    padding-left: 8vw;
+    padding-right: 8vw;
+  }
+}

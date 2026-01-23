@@ -1,0 +1,85 @@
+@charset "utf-8";
+/**
+ * style.css
+ */
+
+@media only screen and (min-width:980px) {}
+
+/* index
+--------------------------------------------------*/
+/* layout */
+
+@media only screen and (min-width:979px) {
+	.topStyle .errorPage .siteLogo {
+		display: block;
+	}
+	.topStyle .errorPage .fixedAera {
+		position: static;
+	}
+}
+
+
+#errorCont {
+	padding: 40px 0 50px;
+	/*20191108 ISSUE-522 LIMING UPDATE*/
+	/*background: url(/wp-content/themes/ajinomoto/resources/images/common/sp/bg_wall01.jpg);*/
+}
+#errorCont .img {
+	max-width: 90px;
+	margin: 0 auto 30px;
+}
+#errorCont .text {
+	margin-bottom: 3em;
+	text-align: center;
+}
+#errorCont .text p {
+	font-size: 3.8vw;
+}
+#errorCont .text p + p {
+	margin-top: 1.5em;
+}
+#errorCont .ttl {
+	margin-bottom: 1.5em;
+	font-size: 4.7vw;
+	font-weight: 500;
+	text-align: center;
+}
+#errorCont .pinkBtn a {
+	max-width: 260px;
+	margin: 0 auto;
+}
+#errorCont .pinkBtn a .bg:before {
+	background-image: url(/wp-content/themes/ajinomoto/resources/images/common/sp/btn_pink_left02.png);
+}
+#errorCont .pinkBtn a .bg:after {
+	background-image: url(/wp-content/themes/ajinomoto/resources/images/common/sp/btn_pink_right02.png);
+}
+@media only screen and (min-width:980px) {
+	#errorCont {
+		padding: 110px 0 120px;
+	}
+	#errorCont .img {
+		max-width: 135px;
+		margin: 0 auto 40px;
+	}
+	#errorCont .text {
+		margin-bottom: 80px;
+		text-align: center;
+	}
+	#errorCont .text p {
+		font-size: 17px;
+	}
+	#errorCont .text p br {
+		display: none;
+	}
+	#errorCont .text p + p {
+		margin-top: 35px;
+	}
+	#errorCont .ttl {
+		margin-bottom: 45px;
+		font-size: 28px;
+	}
+	#errorCont .pinkBtn a {
+		max-width: 310px;
+	}
+}

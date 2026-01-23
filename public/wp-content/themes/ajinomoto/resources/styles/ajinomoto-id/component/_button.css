@@ -1,0 +1,303 @@
+@media screen and (min-width: 980px) {
+  .aid-button {}
+  .aid-button:nth-child(n+2) {
+    margin-top: 30px;
+  }
+  .aid-button .aid-button__button {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 505px;
+    width: 100%;
+    height: 70px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+    text-align: center;
+    text-decoration: none;
+    background: -webkit-gradient(linear, left top, right top, from(#d92c6b), to(#ec6e1e));
+    background: -o-linear-gradient(left, #d92c6b, #ec6e1e);
+    background: linear-gradient(90deg, #d92c6b, #ec6e1e);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: .2s ease;
+  }
+  .aid-button .aid-button__button:nth-child(n+2) {
+    margin-top: 20px;
+  }
+  .aid-button .aid-button__button::before {
+    content: '';
+    position: absolute;
+    top: 2px; bottom: 3px;
+    left: 2px; right: 3px;
+    background-color: #ffffff;
+    border-radius: 2px;
+    transition: .2s ease;
+    border-radius: 2px;
+    transition: .2s ease;
+  }
+  .aid-button .aid-button__button:hover::before {
+    background-color: #FBF3EF;
+  }
+  .aid-button .aid-button__button:not(.aid-button__button--fill):active {
+    top: 3px;
+    left: 3px;
+  }
+  .aid-button .aid-button__button:active::before {
+    bottom: 2px;
+    right: 2px;
+  }
+  .aid-button .aid-button__button--fill {
+    border-radius: 6px;
+  }
+  .aid-button .aid-button__button--fill::before {content: none;}
+  .aid-button .aid-button__button--fill::after {
+    content: '';
+    position: absolute;
+    top: 2px; bottom: 2px;
+    left: 2px; right: 2px;
+    border: 1px solid #fff;
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .aid-button .aid-button__text {
+    position: relative;
+    display: inline-block;
+    padding-left: 1em;
+    padding-right: 1em;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: 'Lato', 'Noto Sans Japanese', sans-serif;
+    background: -webkit-gradient(linear, left top, right top, from(#d92c6b), to(#ec6e1e));
+    background: -o-linear-gradient(left, #d92c6b, #ec6e1e);
+    background: linear-gradient(90deg, #d92c6b, #ec6e1e);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: #e60012;
+  }
+  .aid-button .aid-button__text--lg {
+    font-size: 20px;
+  }
+  .aid-button .aid-button__button--fill .aid-button__text {
+    background: transparent;
+    -webkit-text-fill-color: #ffffff;
+    color: #ffffff;
+  }
+  .aid-button .aid-button__button--disabled {
+    background: #cccccc;
+    pointer-events: none;
+  }
+  .aid-button .aid-button__button--disabled .aid-button__text {
+    background: transparent;
+    -webkit-text-fill-color: #c8c8c8;
+    color: #c8c8c8;
+  }
+  .aid-button .aid-button__button--fill.aid-button__button--disabled .aid-button__text {
+    -webkit-text-fill-color: #ffffff;
+    color: #ffffff;
+  }
+
+  .aid-socialButton {}
+  .aid-socialButton__button {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 340px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 12px 25px;
+    text-decoration: none;
+    border: 2px solid #000000;
+    border-radius: 4px;
+    background-color: #fff;    
+    box-shadow: 2px 2px;
+    cursor: pointer;
+    transition: .2s ease;
+  }
+  .aid-socialButton__button:hover {
+    background-color: rgba(0, 0, 0, .05);
+  }
+  .aid-socialButton__button--line {
+    color: #00b900;
+    border: 2px solid #00b900;
+    box-shadow: 2px 2px rgb(0 185 0);
+  }
+  .aid-socialButton__button--line:hover {
+    background-color: #f0faf0;
+  }
+  .aid-socialButton__button--disabled {
+    color: #000000;
+    border: 2px solid #000000;
+    box-shadow: none;
+    pointer-events: none;
+  }
+  .aid-socialButton__text {
+    display: block;
+    font-size: 14px;
+    font-weight: 700;
+  }
+  .aid-socialButton__desc {
+    display: block;
+    font-size: 12px;
+    font-weight: 400;
+  }
+  .aid-socialButton__icon {
+    width: 37px;
+    height: auto;
+  }
+}
+
+@media screen and (max-width: 979px) {
+  .aid-button {}
+  .aid-button:nth-child(n+2) {
+    margin-top: 30px;
+  }
+  .aid-button .aid-button__button {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 500px;
+    width: 100%;
+    height: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+    text-align: center;
+    text-decoration: none;
+    background: -webkit-gradient(linear, left top, right top, from(#d92c6b), to(#ec6e1e));
+    background: -o-linear-gradient(left, #d92c6b, #ec6e1e);
+    background: linear-gradient(90deg, #d92c6b, #ec6e1e);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: .2s ease;
+  }
+  .aid-button .aid-button__button:nth-child(n+2) {
+    margin-top: 20px;
+  }
+  .aid-button .aid-button__button::before {
+    content: '';
+    position: absolute;
+    top: 1px; bottom: 3px;
+    left: 1px; right: 3px;
+    background-color: #ffffff;
+    border-radius: 2px;
+    transition: .2s ease;
+  }
+  .aid-button .aid-button__button:hover::before {
+    background-color: #FBF3EF;
+  }
+  .aid-button .aid-button__button:not(.aid-button__button--fill):active {
+    top: 3px;
+    left: 3px;
+  }
+  .aid-button .aid-button__button:active::before {
+    top: 2px; bottom: 2px;
+    left: 2px; right: 2px;
+  }
+  .aid-button .aid-button__button--fill {
+    border-radius: 6px;
+  }
+  .aid-button .aid-button__button--fill::before {content: none;}
+  .aid-button .aid-button__button--fill::after {
+    content: '';
+    position: absolute;
+    top: 2px; bottom: 2px;
+    left: 2px; right: 2px;
+    border: 1px solid #fff;
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .aid-button .aid-button__text {
+    position: relative;
+    display: inline-block;
+    padding-left: 1em;
+    padding-right: 1em;
+    font-size: 12px;
+    font-weight: bold;
+    font-family: 'Lato', 'Noto Sans Japanese', sans-serif;
+    background: -webkit-gradient(linear, left top, right top, from(#d92c6b), to(#ec6e1e));
+    background: -o-linear-gradient(left, #d92c6b, #ec6e1e);
+    background: linear-gradient(90deg, #d92c6b, #ec6e1e);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: #e60012;
+  }
+  .aid-button .aid-button__text--lg {
+    font-size: 14px;
+  }
+  .aid-button .aid-button__button--fill .aid-button__text {
+    background: transparent;
+    -webkit-text-fill-color: #ffffff;
+    color: #ffffff;
+  }
+  .aid-button .aid-button__button--disabled {
+    background: #cccccc;
+    pointer-events: none;
+  }
+  .aid-button .aid-button__button--disabled .aid-button__text {
+    background: transparent;
+    -webkit-text-fill-color: #c8c8c8;
+    color: #c8c8c8;
+  }
+  .aid-button .aid-button__button--fill.aid-button__button--disabled .aid-button__text {
+    -webkit-text-fill-color: #ffffff;
+    color: #ffffff;
+  }
+
+  .aid-socialButton {}
+  .aid-socialButton__button {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    text-decoration: none;
+    border: 2px solid #000000;
+    border-radius: 4px;
+    background-color: #fff;    
+    box-shadow: 2px 2px;
+    cursor: pointer;
+    transition: .2s ease;
+  }
+  .aid-socialButton__button:hover {
+    background-color: rgba(0, 0, 0, .05);
+  }
+  .aid-socialButton__button--line {
+    color: #00b900;
+    border: 2px solid #00b900;
+    box-shadow: 2px 2px rgb(0 185 0);
+  }
+  .aid-socialButton__button--line:hover {
+    background-color: #f0faf0;
+  }
+  .aid-socialButton__button--disabled {
+    color: #000000;
+    border: 2px solid #000000;
+    box-shadow: none;
+    pointer-events: none;
+  }
+  .aid-socialButton__text {
+    display: block;
+    font-size: 14px;
+    font-weight: 700;
+  }
+  .aid-socialButton__desc {
+    display: block;
+    font-size: 12px;
+    font-weight: 400;
+  }
+  .aid-socialButton__icon {
+    width: 37px;
+    height: auto;
+  }
+}

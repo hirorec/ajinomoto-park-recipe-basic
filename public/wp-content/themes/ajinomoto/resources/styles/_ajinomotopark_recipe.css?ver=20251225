@@ -1,0 +1,217 @@
+@charset "utf-8";
+/**
+ * style.css
+ */
+
+@media only screen and (min-width:980px) {}
+
+/* wallBg
+--------------------------------------------------*/
+#recipeIndex .wallBg {
+	padding-bottom: 50px;
+	background: url(/wp-content/themes/ajinomoto/resources/images/common/sp/bg_wall01.jpg);
+}
+@media only screen and (min-width:980px) {
+	#recipeIndex .wallBg {
+		padding-bottom: 80px;
+	}
+}
+
+/* aboutBtn
+--------------------------------------------------*/
+#recipeIndex .aboutBtn {
+	padding: 20px 0;
+	text-align: center;
+	line-height: 0;
+}
+#recipeIndex .aboutBtn img {
+	max-width: 76%;
+}
+@media only screen and (min-width:980px) {
+	#recipeIndex .aboutBtn {
+		padding: 20px 0 40px;
+	}
+	#recipeIndex .aboutBtn img {
+		max-width: 415px;
+	}
+}
+
+
+
+/* bnrAreaCol2
+--------------------------------------------------*/
+#recipeIndex .bnrAreaSingle li {
+	margin-top: 15px;
+	padding-top: 15px;
+	border-top: #fb8079 solid 1px;
+}
+@media only screen and (min-width:980px) {
+	#recipeIndex .bnrAreaSingle li {
+		margin-top: 30px;
+		padding-top: 30px;
+		border-top: #fb8079 solid 2px;
+	}
+}
+
+
+
+/* campaignBox
+--------------------------------------------------*/
+#recipeIndex .campaignBox {
+	padding: 25px 0 33px;
+}
+@media only screen and (min-width:980px) {
+	#recipeIndex .campaignBox {
+		padding: 30px 0 50px;
+	}
+	#recipeIndex .campaignBox .campaignSlide {
+		max-width: 1092px;
+		margin: 0 auto;
+		text-align: center;
+	}
+	#recipeIndex .campaignBox .campaignSlide.only li {
+		display: inline-block;
+		text-align: left;
+	}
+}
+
+/* slideStyle01
+--------------------------------------------------*/
+#recipeIndex .slideStyle01 {
+	position: relative;
+}
+#recipeIndex .slideStyle01 li a {
+	display: block;
+	margin: 0 5px;
+	text-decoration: none;
+	/*background-color: #faf1e1;*/
+}
+#recipeIndex .slideStyle01 li * {
+	display: block;
+}
+#recipeIndex .slideStyle01 li img {
+	width: 100%;
+}
+#recipeIndex .slideStyle01 li .ttl {
+	padding: 10px 0;
+	font-weight: 500;
+}
+#recipeIndex .slideStyle01 .slick-dots {
+	margin-top: 10px;
+	text-align: center;
+}
+#recipeIndex .slideStyle01 .slick-dots li {
+	display: inline-block;
+	margin: 4px;
+}
+#recipeIndex .slideStyle01 .slick-dots li button {
+	display: block;
+	border: none;
+	cursor: pointer;
+	outline: none;
+	padding: 0;
+	appearance: none;
+	text-indent: -9999px;
+	width: 8px;
+	height: 8px;
+	background-color: #e5e5e5;
+	border-radius: 50%;
+}
+#recipeIndex .slideStyle01 .slick-dots li.slick-active button {
+	background-color: #ed1b24;
+}
+@media only screen and (min-width:980px) {
+	#recipeIndex .slideStyle01 li a {
+		max-width: 330px;
+		margin: 0 8px;
+	}
+	#recipeIndex .slideStyle01 li * {
+		display: block;
+	}
+	#recipeIndex .slideStyle01 li img {
+		width: 100%;
+	}
+	#recipeIndex .slideStyle01 li .ttl {
+		padding: 13px 0 20px;
+	}
+	#recipeIndex .slideStyle01 .slick-dots {
+		margin-top: 25px;
+	}
+	#recipeIndex .slideStyle01 .slick-dots li {
+		margin: 6px;
+	}
+	#recipeIndex .slideStyle01 .slick-dots li button {
+		width: 14px;
+		height: 14px;
+	}
+	#recipeIndex .slideStyle01 .slick-arrow {
+		position: absolute;
+		top: 110px;
+		display: block;
+		border: none;
+		cursor: pointer;
+		outline: none;
+		padding: 0;
+		appearance: none;
+		background-color: transparent;
+		text-indent: -9999px;
+		width: 48px;
+		height: 48px;
+		background-repeat: no-repeat;
+		background-position: center center;
+		background-size: cover;
+		cursor: pointer;
+		z-index: 10;
+	}
+	#recipeIndex .slideStyle01 .slick-prev {
+		left: 0;
+		background-image: url(/wp-content/themes/ajinomoto/resources/images/recipe/menu/index/arw_01.png);
+	}
+	#recipeIndex .slideStyle01 .slick-next {
+		right: 0;
+		background-image: url(/wp-content/themes/ajinomoto/resources/images/recipe/menu/index/arw_02.png);
+	}
+}
+
+
+/* kaiinArea
+--------------------------------------------------*/
+#recipeIndex .kaiinArea {
+	margin-bottom: 40px;
+}
+#recipeIndex .kaiinArea .kaiinbtns {
+	margin-top: 16px;
+}
+@media only screen and (max-width:979px) {
+	#recipeIndex .kaiinArea .kaiinbtns a {
+		font-size: 16px;
+	}
+}
+@media only screen and (min-width:980px) {
+	#recipeIndex .kaiinArea {
+		margin-bottom: 60px;
+	}
+	#recipeIndex .kaiinArea p {
+		text-align: center;
+	}
+	#recipeIndex .kaiinArea .kaiinbtns {
+		margin: 25px auto 0;
+		padding-left: 20px;
+	}
+}
+
+
+/* recomendBox
+--------------------------------------------------*/
+#recipeIndex .recomendBox {
+	margin: 40px 0;
+}
+@media only screen and (min-width:980px) {
+	#recipeIndex .recomendBox {
+		margin: 60px 0;
+	}
+	#recipeIndex .recomendBox .slideStyle01 .slick-arrow {
+		top: 46px;
+	}
+}
+

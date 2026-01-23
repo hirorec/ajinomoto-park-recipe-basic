@@ -1,0 +1,588 @@
+@charset "utf-8";
+/**
+ * _recipe.css
+ */
+
+
+@media only screen and (min-width:980px) {}
+
+/*--------------------------------------------------
+ menuKachimeshiStadium
+--------------------------------------------------*/
+#menuKachimeshiStadium {
+	background-color: #fff5e5;
+	padding-bottom: 10px;
+}
+#menuKachimeshiStadium .menuCategory {
+	margin-top: 60px;
+	background: #fff;
+}
+@media only screen and (min-width:980px) {
+	#menuKachimeshiStadium > * {
+		position: relative;
+		z-index: 2;
+	}
+	#menuKachimeshiStadium .menuCategory {
+		margin-top: 100px;
+	}
+}
+
+
+/* mainVisual
+--------------------------*/
+#menuKachimeshiStadium .mainVisual {
+	text-align: center;
+}
+#menuKachimeshiStadium .mainVisual span {
+	display: block;
+}
+#menuKachimeshiStadium .mainVisual .image img {
+	width: 100%;
+}
+#menuKachimeshiStadium .mainVisual .texts {
+	padding: 25px 0 25px;
+	background: url(/wp-content/themes/ajinomoto/resources/images/recipe/menu/kihon/kachimeshi-stadium/bg_sp.png) no-repeat center bottom;
+	background-size: 100% auto;
+}
+#menuKachimeshiStadium .mainVisual .texts img {
+	max-width: 90%;
+}
+#menuKachimeshiStadium .mainVisual .texts .mainTitle span {
+	display: block;
+	margin-top: 20px;
+	font-size: 16px;
+	font-weight: 700;
+	text-align: center;
+}
+#menuKachimeshiStadium .mainVisual .texts .mainTitle strong {
+	color: #d71518;
+	font-weight: 700;
+}
+#menuKachimeshiStadium .mainVisual .texts ul {
+	max-width: 80%;
+	margin: 10px auto 0;
+}
+#menuKachimeshiStadium .mainVisual .texts li {
+	float: left;
+	margin-right: 1em;
+	font-size: 13px;
+	text-align: left;
+}
+@media only screen and (min-width:980px) {
+	#menuKachimeshiStadium .mainVisual {
+		position: relative;
+		padding: 60px 15px 50px;
+		z-index: 1;
+	}
+	#menuKachimeshiStadium .mainVisual .flex {
+		position: relative;
+		display: flex;
+		max-width: 1130px;
+		margin: 0 auto;
+		justify-content: space-between;
+		align-items: center;
+		z-index: 2;
+	}
+	#menuKachimeshiStadium .mainVisual .image {
+		width: 45.58%;
+		order: 2;
+	}
+	#menuKachimeshiStadium .mainVisual .image span {
+		display: block;
+		transform: rotate(6deg);
+	}
+	#menuKachimeshiStadium .mainVisual .image span:before {
+		position: absolute;
+		top: 0;
+		left: 0;
+		display: block;
+		content: '';
+		width: 100%;
+		height: 100%;
+		opacity: 0.3;
+		box-shadow: 7px 7px 6px 3px #bb7d8c;
+	}
+	#menuKachimeshiStadium .mainVisual .image img {
+		position: relative;
+		z-index: 2;
+	}
+	#menuKachimeshiStadium .mainVisual .texts {
+		width: 51.77%;
+		background: none;
+		order: 1;
+	}
+	#menuKachimeshiStadium .mainVisual .texts img {
+		max-width: 100%;
+	}
+	#menuKachimeshiStadium .mainVisual .texts .mainTitle span {
+		margin-top: 40px;
+		font-size: 22px;
+		text-align: left;
+	}
+	#menuKachimeshiStadium .mainVisual .texts ul {
+		max-width: none;
+		margin-top: 20px;
+	}
+	#menuKachimeshiStadium .mainVisual .texts li {
+		font-size: 16px;
+	}
+	#menuKachimeshiStadium .mainVisual:before {
+		position: absolute;
+		top: 0;
+		left: 0;
+		display: block;
+		content: '';
+		width: 100%;
+		height: 0;
+		padding-bottom: 54.25%;
+		background: url(/wp-content/themes/ajinomoto/resources/images/recipe/menu/kihon/kachimeshi-stadium/bg.png) no-repeat center bottom;
+		background-size: cover;
+	}
+}
+
+/* kachimeshiRecipeBox
+--------------------------*/
+#menuKachimeshiStadium .kachimeshiRecipeBox {
+	margin-bottom: 25px;
+	padding: 15px 10px;
+	background-color: #fff;
+	border-radius: 10px;
+}
+@media only screen and (min-width:980px) {
+	#menuKachimeshiStadium .kachimeshiRecipeBox {
+		margin-bottom: 40px;
+		padding: 15px 30px 35px;
+	}
+}
+
+
+/* nameMeta */
+#menuKachimeshiStadium .kachimeshiRecipeBox .nameMeta {
+	margin-bottom: 20px;
+}
+#menuKachimeshiStadium .kachimeshiRecipeBox .nameMeta .name {
+	margin-bottom: 15px;
+	padding-bottom: 8px;
+	font-size: 16px;
+	font-weight: 700;
+	line-height: 1.4;
+	border-bottom: #dfdeda solid 1px;
+}
+#menuKachimeshiStadium .kachimeshiRecipeBox .nameMeta .metas dl {
+	display: table;
+	width: 100%;
+}
+#menuKachimeshiStadium .kachimeshiRecipeBox .nameMeta .metas dl + dl {
+	margin-top: 8px;
+}
+#menuKachimeshiStadium .kachimeshiRecipeBox .nameMeta .metas dl > * {
+	box-sizing: border-box;
+	display: table-cell;
+	vertical-align: top;
+}
+#menuKachimeshiStadium .kachimeshiRecipeBox .nameMeta .metas dt {
+	width: 85px;
+}
+#menuKachimeshiStadium .kachimeshiRecipeBox .nameMeta .metas dt span {
+	display: block;
+	padding: 3px 0 4px 10px;
+	color: #fff;
+	font-size: 10px;
+	font-weight: 700;
+	text-align: center;
+	background-color: #ff8b2d;
+	border-radius: 20px;
+}
+#menuKachimeshiStadium .kachimeshiRecipeBox .nameMeta .metas dt.area span {
+	background-image: url(/wp-content/themes/ajinomoto/resources/images/recipe/menu/kihon/kachimeshi-stadium/ico_pin.png);
+	background-position: 7px center;
+	background-repeat: no-repeat;
+	background-size: 7px auto;
+}
+#menuKachimeshiStadium .kachimeshiRecipeBox .nameMeta .metas dt.recommend span {
+	background-image: url(/wp-content/themes/ajinomoto/resources/images/recipe/menu/kihon/kachimeshi-stadium/ico_star.png);
+	background-position: 5px center;
+	background-repeat: no-repeat;
+	background-size: 10px auto;
+}
+#menuKachimeshiStadium .kachimeshiRecipeBox .nameMeta .metas dd {
+	padding-left: 10px;
+	font-size: 12px;
+}
+#menuKachimeshiStadium .kachimeshiRecipeBox .nameMeta .metas dd li {
+	float: left;
+	margin-right: 1em;
+}
+@media only screen and (min-width:980px) {
+	#menuKachimeshiStadium .kachimeshiRecipeBox .nameMeta {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: flex-end;
+		justify-content: space-between;
+		margin-bottom: 40px;
+		padding-bottom: 15px;
+		border-bottom: #dfdeda solid 1px;
+	}
+	#menuKachimeshiStadium .kachimeshiRecipeBox .nameMeta .name {
+		margin-bottom: 0;
+		padding-bottom: 0;
+		font-size: 24px;
+		border-bottom: none;
+	}
+	#menuKachimeshiStadium .kachimeshiRecipeBox .nameMeta .metas dl + dl {
+		margin-top: 10px;
+	}
+	#menuKachimeshiStadium .kachimeshiRecipeBox .nameMeta .metas dt {
+		width: 140px;
+	}
+	#menuKachimeshiStadium .kachimeshiRecipeBox .nameMeta .metas dt span {
+		padding: 3px 0 4px 20px;
+		font-size: 15px;
+	}
+	#menuKachimeshiStadium .kachimeshiRecipeBox .nameMeta .metas dt.area span {
+		background-position: 16px center;
+		background-size: 12px auto;
+	}
+	#menuKachimeshiStadium .kachimeshiRecipeBox .nameMeta .metas dt.recommend span {
+		background-position: 13px center;
+		background-size: 16px auto;
+	}
+	#menuKachimeshiStadium .kachimeshiRecipeBox .nameMeta .metas dd {
+		padding-left: 15px;
+		font-size: 17px;
+	}
+}
+
+
+
+
+/* detailArea */
+#menuKachimeshiStadium .kachimeshiRecipeBox .detailArea .images {
+	margin-bottom: 25px;
+}
+#menuKachimeshiStadium .kachimeshiRecipeBox .detailArea .images .inMain {
+	text-align: center;
+}
+#menuKachimeshiStadium .kachimeshiRecipeBox .detailArea .images .plusIcon {
+	position: relative;
+	height: 60px;
+	z-index: 2;
+}
+#menuKachimeshiStadium .kachimeshiRecipeBox .detailArea .images .plusIcon:before,
+#menuKachimeshiStadium .kachimeshiRecipeBox .detailArea .images .plusIcon:after {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	display: block;
+	content: '';
+	transform: translate(-50%,-50%);
+	background-color: #ffcc00;
+}
+#menuKachimeshiStadium .kachimeshiRecipeBox .detailArea .images .plusIcon:before {
+	width: 10px;
+	height: 34px;
+}
+#menuKachimeshiStadium .kachimeshiRecipeBox .detailArea .images .plusIcon:after {
+	width: 34px;
+	height: 10px;
+}
+#menuKachimeshiStadium .kachimeshiRecipeBox .detailArea .images .plusIcon .label {
+	position: absolute;
+	top: 12px;
+	left: 50%;
+	width: 100px;
+	margin-left: 30px;
+}
+#menuKachimeshiStadium .kachimeshiRecipeBox .detailArea .images .withBox {
+	position: relative;
+	box-sizing: border-box;
+	display: table;
+	width: 100%;
+	padding: 10px;
+	background-color: #fff6cc;
+}
+#menuKachimeshiStadium .kachimeshiRecipeBox .detailArea .images .withBox > * {
+	box-sizing: border-box;
+	display: table-cell;
+	vertical-align: top;
+}
+#menuKachimeshiStadium .kachimeshiRecipeBox .detailArea .images .withBox .img {
+	width: 42.11%;
+}
+#menuKachimeshiStadium .kachimeshiRecipeBox .detailArea .images .withBox .img img {
+	width: 100%;
+}
+#menuKachimeshiStadium .kachimeshiRecipeBox .detailArea .images .withBox .txts {
+	position: relative;
+	width: 57.89%;
+	padding-left: 12px;
+}
+#menuKachimeshiStadium .kachimeshiRecipeBox .detailArea .images .withBox .txts .ttl {
+	padding-bottom: 25px;
+	font-size: 12px;
+	font-weight: 700;
+}
+#menuKachimeshiStadium .kachimeshiRecipeBox .detailArea .images .withBox .txts .btn {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	width: calc(100% - 12px);
+}
+#menuKachimeshiStadium .kachimeshiRecipeBox .detailArea .images .withBox .txts .btn a {
+	position: relative;
+	display: table;
+	width: 100%;
+	height: 20px;
+	color: #fff;
+	font-size: 10px;
+	font-weight: 700;
+	text-align: center;
+	text-decoration: none;
+	background-color: #d71518;
+}
+#menuKachimeshiStadium .kachimeshiRecipeBox .detailArea .images .withBox .txts .btn a span {
+	display: table-cell;
+	vertical-align: middle;
+}
+#menuKachimeshiStadium .kachimeshiRecipeBox .detailArea .images .withBox .txts .btn a:before {
+	position: absolute;
+	top: 50%;
+	right: 10px;
+	display: block;
+	content: '';
+	width: 7px;
+	height: 7px;
+	border-top: #fff solid 1px;
+	border-right: #fff solid 1px;
+	transform: translateY(-50%) rotate(45deg);
+}
+@media only screen and (min-width:980px) {
+	#menuKachimeshiStadium .kachimeshiRecipeBox .detailArea .images {
+		float: left;
+		width: 52.19%;
+		margin-bottom: 0;
+	}
+	#menuKachimeshiStadium .kachimeshiRecipeBox .detailArea .images .plusIcon {
+		height: 105px;
+	}
+	#menuKachimeshiStadium .kachimeshiRecipeBox .detailArea .images .plusIcon:before {
+		width: 24px;
+		height: 74px;
+	}
+	#menuKachimeshiStadium .kachimeshiRecipeBox .detailArea .images .plusIcon:after {
+		width: 74px;
+		height: 24px;
+	}
+	#menuKachimeshiStadium .kachimeshiRecipeBox .detailArea .images .plusIcon .label {
+		top: 15px;
+		width: auto;
+		margin-left: 70px;
+	}
+	#menuKachimeshiStadium .kachimeshiRecipeBox .detailArea .images .withBox {
+		padding: 25px;
+		border-radius: 10px;
+	}
+	#menuKachimeshiStadium .kachimeshiRecipeBox .detailArea .images .withBox .img {
+		width: 150px;
+	}
+	#menuKachimeshiStadium .kachimeshiRecipeBox .detailArea .images .withBox .txts {
+		width: auto;
+		padding-left: 30px;
+	}
+	#menuKachimeshiStadium .kachimeshiRecipeBox .detailArea .images .withBox .txts .ttl {
+		padding-bottom: 60px;
+		font-size: 24px;
+	}
+	#menuKachimeshiStadium .kachimeshiRecipeBox .detailArea .images .withBox .txts .btn {
+		width: calc(100% - 30px);
+	}
+	#menuKachimeshiStadium .kachimeshiRecipeBox .detailArea .images .withBox .txts .btn a {
+		height: 46px;
+		font-size: 20px;
+	}
+	#menuKachimeshiStadium .kachimeshiRecipeBox .detailArea .images .withBox .txts .btn a:before {
+		right: 15px;
+		width: 13px;
+		height: 13px;
+	}
+}
+
+
+#menuKachimeshiStadium .kachimeshiRecipeBox .ttl {
+	padding: 4px 10px;
+	font-size: 14px;
+	font-weight: 700;
+	background-color: #e5e5e5;
+}
+#menuKachimeshiStadium .kachimeshiRecipeBox * + .ttl {
+	margin-top: 25px;
+}
+#menuKachimeshiStadium .kachimeshiRecipeBox .ttl span {
+	display: inline-block;
+	vertical-align: middle;
+	margin-left: 10px;
+	padding: 0 5px 2px;
+	font-size: 10px;
+	border-radius: 3px;
+	color: #fff;
+}
+#menuKachimeshiStadium .kachimeshiRecipeBox .ttl span + span {
+	margin-left: 5px;
+}
+#menuKachimeshiStadium .kachimeshiRecipeBox .ttl span.pink {
+	background-color: #fb8079;
+}
+#menuKachimeshiStadium .kachimeshiRecipeBox .ttl span.green {
+	background-color: #83c62b;
+}
+#menuKachimeshiStadium .kachimeshiRecipeBox .material li {
+	box-sizing: border-box;
+	padding: 10px 0;
+	border-bottom: #e5e5e5 solid 1px;
+	zoom: 1;
+}
+#menuKachimeshiStadium .kachimeshiRecipeBox .material li:after {
+	display: block;
+	clear: both;
+	height: 0;
+	content: '';
+}
+#menuKachimeshiStadium .kachimeshiRecipeBox .material li > p {
+	font-size: 12px;
+}
+#menuKachimeshiStadium .kachimeshiRecipeBox .material li > p:nth-child(1) {
+	float: left;
+}
+#menuKachimeshiStadium .kachimeshiRecipeBox .material li > p:nth-child(2) {
+	float: right;
+	padding-left: 1em;
+}
+#menuKachimeshiStadium .kachimeshiRecipeBox .material li [class^="icon"] {
+	position: relative;
+	padding-left: 1.5em;
+	display: inline-block;
+}
+#menuKachimeshiStadium .kachimeshiRecipeBox .material li [class^="icon"]:before {
+	box-sizing: border-box;
+	position: absolute;
+	left: 0;
+	top: 0.3em;
+	display: block;
+	content: '';
+	width: 1.5em;
+	height: 1.5em;
+	padding: 0.15em 0 0;
+	font-size: 0.8em;
+	border-radius: 50%;
+	text-align: center;
+	color: #fff;
+	font-weight: 700;
+	background-color: #000;
+	line-height: 1;
+}
+#menuKachimeshiStadium .kachimeshiRecipeBox .material li .iconA:before {
+	content: 'A';
+	background-color: #de9610;
+}
+#menuKachimeshiStadium .kachimeshiRecipeBox .material li .iconB:before {
+	content: 'B';
+	background-color: #c93a40;
+}
+#menuKachimeshiStadium .kachimeshiRecipeBox .material li .iconC:before {
+	content:'C';
+	background-color:#a0c238
+}
+#menuKachimeshiStadium .kachimeshiRecipeBox .material li .iconD:before {
+	content:'D';
+	background-color:#56a764
+}
+#menuKachimeshiStadium .kachimeshiRecipeBox .material li .iconE:before {
+	content:'E';
+	background-color:#cc528b
+}
+#menuKachimeshiStadium .kachimeshiRecipeBox .material li .iconF:before {
+	content:'F';
+	background-color:#9460a0
+}
+#menuKachimeshiStadium .kachimeshiRecipeBox .material li .iconG:before {
+	content:'G';
+	background-color:#0074bf
+}
+	
+#menuKachimeshiStadium .kachimeshiRecipeBox .numList {
+	counter-reset: num;
+}
+#menuKachimeshiStadium .kachimeshiRecipeBox .numList li {
+	padding: 2px 0;
+	border-bottom: #e5e5e5 solid 1px;
+	font-size: 12px;
+}
+#menuKachimeshiStadium .kachimeshiRecipeBox .numList li > div {
+	position: relative;
+	padding: 8px 5px 8px 23px;
+}
+#menuKachimeshiStadium .kachimeshiRecipeBox .numList  .cnt > div:before {
+	box-sizing: border-box;
+	position: absolute;
+	top: 8px;
+	left: 3px;
+	display: block;
+	font-size: 10px;
+	width: 1.6em;
+	font-weight: 700;
+	text-align: center;
+	counter-increment: num;
+	content: counter(num);
+	line-height: 1.6em;
+	border-radius: 3px;
+}
+#menuKachimeshiStadium .kachimeshiRecipeBox .numList li.pink > div {
+	background-color: #ffe5e7;
+}
+#menuKachimeshiStadium .kachimeshiRecipeBox .numList li.pink > div:before {
+	/*background-color: #fb8079;*/
+	color: #000;
+}
+#menuKachimeshiStadium .kachimeshiRecipeBox .numList li.green > div {
+	background-color: #ebf9a9;
+}
+#menuKachimeshiStadium .kachimeshiRecipeBox .numList li.green > div:before {
+	/*background-color: #83c62b;*/
+	color: #000;
+}
+
+@media only screen and (min-width:980px) {
+	#menuKachimeshiStadium .kachimeshiRecipeBox .detailArea .texts {
+		float: right;
+		width: 44.74%;
+	}
+	#menuKachimeshiStadium .kachimeshiRecipeBox  .ttl {
+		padding: 4px 15px;
+		font-size: 20px;
+	}
+	#menuKachimeshiStadium .kachimeshiRecipeBox  * + .ttl {
+		margin-top: 35px;
+	}
+	#menuKachimeshiStadium .kachimeshiRecipeBox  .ttl span {
+		margin-left: 15px;
+		padding: 0 4px 1px;
+		font-size: 14px;
+	}
+	#menuKachimeshiStadium .kachimeshiRecipeBox  .material li {
+		padding: 15px 0;
+	}
+	#menuKachimeshiStadium .kachimeshiRecipeBox  .material li > p {
+		font-size: 17px;
+	}
+	#menuKachimeshiStadium .kachimeshiRecipeBox  .numList li {
+		font-size: 17px;
+	}
+	#menuKachimeshiStadium .kachimeshiRecipeBox  .numList li > div {
+		padding: 15px 5px 15px 35px;
+	}
+	#menuKachimeshiStadium .kachimeshiRecipeBox  .numList .cnt > div:before {
+		top: 15px;
+		left: 5px;
+		font-size: 14px;
+	}
+}

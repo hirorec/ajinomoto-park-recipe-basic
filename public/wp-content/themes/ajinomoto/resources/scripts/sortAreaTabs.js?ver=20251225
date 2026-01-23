@@ -1,0 +1,37 @@
+jQuery(function(){
+	//新着順ボタン
+	$('ul.recipeSearchResult .\\#newList').on('click',function(){
+		if(!($('#sortAreaTabs').length)){
+			$('#customSearch').append(
+				$(document.createElement('input')).prop({
+					type: 'hidden',
+					id: 'sortAreaTabs',
+					value: 'new',
+					name: 'tab',
+				})
+			);
+		} else {
+			$('#sortAreaTabs').attr({
+				value: 'new',
+			});
+		}
+	});
+	
+	//人気順ボタン
+	$('ul.recipeSearchResult .\\#popularityList').on('click',function(){
+		if(!($('#sortAreaTabs').length)){
+			$('#customSearch').append(
+				$(document.createElement('input')).prop({
+					type: 'hidden',
+					id: 'sortAreaTabs',
+					value: 'pop',
+					name: 'tab',
+				})
+			);
+		} else {
+			$('#sortAreaTabs').attr({
+				value: 'pop',
+			});
+		}
+	})
+});

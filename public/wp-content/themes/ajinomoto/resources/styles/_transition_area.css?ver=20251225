@@ -1,0 +1,128 @@
+.linkTransitionRecipe img:hover,
+.linkTransitionRecipe img:active,
+.txtTransitionRecipe a:hover,
+.txtTransitionRecipe a:active,
+.itemListLinks:hover .btnLinkItem,
+.itemListLinks:active .btnLinkItem {
+    opacity: .5;
+}
+
+.transitionMenuArea img.object-fit,
+.transitionBasicArea img.object-fit{
+    object-fit: cover;
+    font-family: 'object-fit: cover;';
+}
+@media only screen and (min-width:980px) {
+    .indention { display:block; }
+
+    .transitionMenuArea .boxTransitionRecipe,
+    .transitionBasicArea .boxTransitionRecipe{
+        margin-left: auto;
+        margin-right: auto;
+        display: flex;
+        max-width: 900px;
+        margin-bottom: 80px;
+    }
+
+    .transitionMenuArea .bigTitle_uline,
+    .transitionBasicArea .bigTitle_uline{
+        font-size: 25px;
+        position: relative;
+        margin-bottom: 50px;
+        padding-bottom: 20px;
+    }
+    .transitionMenuArea .boxTransitionRecipe img{
+        border-radius: 20px;
+    }
+    .transitionMenuArea .boxTransitionRecipe .linkTransitionRecipe,
+    .transitionBasicArea .boxTransitionRecipe .linkTransitionRecipe{
+        width: 50%;
+    }
+    .transitionMenuArea .boxTransitionRecipe .linkTransitionRecipe a,
+    .transitionBasicArea .boxTransitionRecipe .linkTransitionRecipe a{
+        cursor: pointer;
+        display: block;
+        /*position: absolute;*/
+        top: 0;
+        left: 0;
+        z-index: 100;
+    }
+    .transitionMenuArea .linkTransitionRecipe,
+    .transitionBasicArea .linkTransitionRecipe{
+        -ms-grid-row: 1;
+        -ms-grid-row-span: 1;
+        grid-row: 1 / 2;
+        -ms-grid-column: 1;
+        -ms-grid-column-span: 1;
+        grid-column: 1 / 2;
+        position: relative;
+    }
+    .transitionMenuArea .imgTransitionRecipe,
+    .transitionBasicArea .imgTransitionRecipe{
+        position: relative;
+    }
+    .transitionMenuArea .txtTransitionRecipe,
+    .transitionBasicArea .txtTransitionRecipe{
+        width: 50%;
+    }
+    .transitionMenuArea .txtTransitionRecipe p,
+    .transitionBasicArea .txtTransitionRecipe p{
+        font-size: 20px;
+        padding-left: 3.5%;
+        padding-right: 3%;
+    }
+    .transitionMenuArea .txtTransitionRecipe a,
+    .transitionBasicArea .txtTransitionRecipe a{
+        font-family: 'Noto Sans Japanese', sans-serif;
+        font-size: 20px;
+        text-decoration: none;
+        font-weight: 400;
+        width: 100%;
+        display:block;
+        letter-spacing: 0;
+        word-wrap:break-word;
+        margin-top: 15px;
+    }
+}   
+@media screen and (max-width: 979px) {
+    .indention { display:none; }
+
+    .transitionMenuArea .bigTitle_uline,
+    .transitionBasicArea .bigTitle_uline{
+        font-size: 18.335px;
+        position: relative;
+        margin-bottom: 40px;
+        padding-bottom: 20px;
+    }
+
+    .transitionMenuArea .boxTransitionRecipe,
+    .transitionBasicArea .boxTransitionRecipe{
+        padding-left: 8%;
+        padding-right: 8%;
+    }
+    .transitionMenuArea .boxTransitionRecipe .linkTransitionRecipe,
+    .transitionBasicArea .boxTransitionRecipe .linkTransitionRecipe{
+        width: 100%;
+    }
+    .transitionMenuArea .boxTransitionRecipe img{
+        border-radius: 10px;
+        width: 100%;
+    }
+    .transitionBasicArea .boxTransitionRecipe img{
+        width: 100%;
+    }
+    .transitionMenuArea .txtTransitionRecipe a,
+    .transitionBasicArea .txtTransitionRecipe a{
+        font-family: 'Noto Sans Japanese', sans-serif;
+        font-size: 14.26px;
+        text-decoration: none;
+        font-weight: 400;
+        width: 100%;
+        display:block;
+        margin-top: 15px;
+        margin-bottom: 50px;
+    }
+}
+@media screen and (max-width: 380px) and (min-width: 356px){
+    .indention{ display:block; }
+}

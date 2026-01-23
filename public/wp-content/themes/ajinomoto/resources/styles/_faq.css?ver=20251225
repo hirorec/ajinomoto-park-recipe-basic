@@ -1,0 +1,300 @@
+@charset "utf-8";
+/** -----------------
+ * 20200715 renewal *
+ * -----------------*/
+
+.mem-faq-anchorList {
+  width: 100%;
+  overflow: hidden;
+}
+
+.mem-faq-anchorList__row {
+  display: -webkit-box;
+	display: -webkit-flex;
+  display: -ms-flexbox;
+	display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.mem-faq-anchorList__item {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.mem-faq-anchorList__anchor {
+  text-decoration: none;
+  position: relative;
+  display: block;
+  font-weight: 500;
+}
+
+.mem-faq-anchorList__anchor::before {
+  position: absolute;
+  content: "";
+  background-image: url(data:image/gif;base64,R0lGODlhHgAeAPUpAN4CAt4DA98ICOAODuAPD+AQEOAREeASEuAUFOEXF+IeHuMmJuQvL+U5OedJSehNTehOTuhPT+lTU+lXV+xqau1ycu12du+IiPOlpfa6uva+vve/v/fDw/jIyPnS0vrX1/rY2Pra2vrb2/vj4/zq6v3w8P719f/8/P/+/v///wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAEAACoALAAAAAAeAB4AAAahQFVIUgAYj8ikElCQhFSgw3JKNR5Akqp2Sdx6j4OveEwum8/otBqgyBi2hoxiy0lpBFWBJtXZPk4pGAFTARgpJxFeFCkpF1MXjBRikCmSSYuNY4WHEEgOgIJkeiklDEYMJSkbeGUIIikjCgojKSIJaAskKR4eKSQLag0mjCYNawATKCgTx0YVFs3R0tNrRdEDWdESH1LHBx9QEgRpBBIgKkEAOw==);
+  display: inline-block;
+  left: 0;
+}
+
+.mem-faq-anchorList__anchor:hover {
+  opacity: 0.8;
+}
+
+.mem-faq-buttonArea {
+  margin: 30px auto;
+}
+
+.mem-faq-accordion {
+  border-bottom: 1px solid #000;
+  background: #eeeeee;
+}
+
+.mem-faq-accordionGroup {
+  border-top: 1px solid #000;
+  margin-top: 30px;
+}
+
+.mem-faq-accordion__head {
+  padding-top: 14px;
+  padding-bottom: 14px;
+  position: relative;
+  cursor: pointer;
+  padding-left: 47px;
+  padding-right: 44px;
+  background: #ffffff;
+  font-weight: 500;
+}
+
+.mem-faq-accordion__head::before {
+  position: absolute;
+  content: "";
+  background-image: url(data:image/svg+xml;base64,PHN2ZyBpZD0iYWRmYjZhNmYtY2VlZC00ZjU0LWE0MDItYzM2MWEzZDU0YzBlIiBkYXRhLW5hbWU9IuODrOOCpOODpOODvCAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2aWV3Qm94PSIwIDAgMzYuMDAwNDkgMjUuMDA3OTMiPjxkZWZzPjxsaW5lYXJHcmFkaWVudCBpZD0iYTFlZWU1OGYtOWRhZi00YzRiLWI1YTUtYzVmNjUyZmEwMjFkIiB5MT0iMTIuNTAzOTciIHgyPSIzNi4wMDA0OSIgeTI9IjEyLjUwMzk3IiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yPSIjZDkyYzZiIi8+PHN0b3Agb2Zmc2V0PSIwLjQ3NjI4IiBzdG9wLWNvbG9yPSIjZTI0YTQ4Ii8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjZWM2ZTFlIi8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHBhdGggZD0iTTMzLjAwMDQ5LDE5LjAwNzYzYTMuMDAwMTUsMy4wMDAxNSwwLDEsMCwzLDMuMDAwMThBMy4wMDAxMSwzLjAwMDExLDAsMCwwLDMzLjAwMDQ5LDE5LjAwNzYzWm0tOS44OTMzMS0uNTY2NzFhMTIuOTc5NDIsMTIuOTc5NDIsMCwwLDAsLjk1Ny0yLjgsMTQuNDMyNzcsMTQuNDMyNzcsMCwwLDAsLjMzMjc2LTMuMTM4MTIsMTMuNzU4NzEsMTMuNzU4NzEsMCwwLDAtLjg4Mi00Ljk4MjM2QTExLjc0NDQ2LDExLjc0NDQ2LDAsMCwwLDIxLjAzNTQsMy41NjEyMiwxMS4zNzQ1MSwxMS4zNzQ1MSwwLDAsMCwxNy4xOTEuOTQ3NTEsMTIuNjc5NzQsMTIuNjc5NzQsMCwwLDAsMTIuMjE1MDksMCwxMi44NDU3OCwxMi44NDU3OCwwLDAsMCw3LjIzMS45Mzg1NCwxMS4yOTAzLDExLjI5MDMsMCwwLDAsMy4zNjk4NywzLjU1MjYxLDExLjc1NzU5LDExLjc1NzU5LDAsMCwwLC44ODIwOCw3LjUyMDQ1LDEzLjc1MzY0LDEzLjc1MzY0LDAsMCwwLDAsMTIuNTAyODFhMTMuNzU1OTQsMTMuNzU1OTQsMCwwLDAsLjg4MjA4LDQuOTgyMywxMS43NTQ0MywxMS43NTQ0MywwLDAsMCwyLjQ4Nzc5LDMuOTY3MUExMS4yODk2MywxMS4yODk2MywwLDAsMCw3LjIzMSwyNC4wNjYzNWExMi44Mzk0MywxMi44Mzk0MywwLDAsMCw0Ljk4NDEzLjkzODg0QTE0LjEzMzIxLDE0LjEzMzIxLDAsMCwwLDE0LjA3MDgsMjQuODg3YTEyLjYzNTA1LDEyLjYzNTA1LDAsMCwwLDEuNzM5LS4zNTU3MUwxOC44NTUsMjMuMDgwNDRsMS4zOTA2MywxLjc3NjY4aDQuNzU0ODhMMjEuNjc5LDIwLjcwNDlBMTEuNzA5OTQsMTEuNzA5OTQsMCwwLDAsMjMuMTA3MTgsMTguNDQwOTJabS0zLjgyNzUyLTIuMzI2YTguNjU5ODcsOC42NTk4NywwLDAsMS0uNDMwNTQsMS4wNTI2MWwtMy4yMDg3NC00LjAxMTIzLTIuNjk0NDYsMi4zNzUsMy40NzMyNyw0LjQzNzMyYTYuNzk2NDksNi43OTY0OSwwLDAsMS0xLjAzMzY5LjU1MzI4LDguMDk2MTEsOC4wOTYxMSwwLDAsMS0zLjE3MDQxLjU5MTgsOC4xNTM2Niw4LjE1MzY2LDAsMCwxLTMuMTc4NDctLjU5MTgsNi41ODQ5LDYuNTg0OSwwLDAsMS0yLjQwNDkxLTEuNzAwNSw3LjYwOTQ1LDcuNjA5NDUsMCwwLDEtMS41MjI1OC0yLjcwNjQ4LDExLjM5Njg3LDExLjM5Njg3LDAsMCwxLS41MzI1OS0zLjYxMjEyLDExLjM5NzU3LDExLjM5NzU3LDAsMCwxLC41MzI1OS0zLjYxMjQ5QTcuNjk5NDIsNy42OTk0MiwwLDAsMSw2LjYzMTcxLDYuMTc1MjMsNi41NDUxNyw2LjU0NTE3LDAsMCwxLDkuMDM2NjIsNC40NjY0OWE4LjE2MDQzLDguMTYwNDMsMCwwLDEsMy4xNzg0Ny0uNTkyNTksOC4xMDI4MSw4LjEwMjgxLDAsMCwxLDMuMTcwNDEuNTkyNTksNi40OSw2LjQ5LDAsMCwxLDIuMzg4MDYsMS43MDg3NCw3LjY3OCw3LjY3OCwwLDAsMSwxLjUwNjEsMi43MTUwOSwxMS41Njk3NywxMS41Njk3NywwLDAsMSwuNTI0MTcsMy42MTI0OUExMS41NjkwNiwxMS41NjkwNiwwLDAsMSwxOS4yNzk2NiwxNi4xMTQ5M1oiIHN0eWxlPSJmaWxsOnVybCgjYTFlZWU1OGYtOWRhZi00YzRiLWI1YTUtYzVmNjUyZmEwMjFkKSIvPjwvc3ZnPg==);
+  background-repeat: no-repeat;
+  display: inline-block;
+}
+
+.mem-faq-accordion__head::after {
+  position: absolute;
+  content: "";
+  background-image: url(data:image/svg+xml;base64,PHN2ZyBpZD0iZjhiYmRhNDctMzZlYi00YWE2LWI4ODUtM2UxN2RkZWFiMThjIiBkYXRhLW5hbWU9IuODrOOCpOODpOODvCAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyOCAyOCI+PHBvbHlnb24gcG9pbnRzPSIyOCAxMiAxNiAxMiAxNiAwIDEyIDAgMTIgMTIgMCAxMiAwIDE2IDEyIDE2IDEyIDI4IDE2IDI4IDE2IDE2IDI4IDE2IDI4IDEyIiBzdHlsZT0iZmlsbDojZGUwMzAzO2ZpbGwtcnVsZTpldmVub2RkIi8+PC9zdmc+);
+  display: inline-block;
+}
+
+.mem-faq-accordion--open .mem-faq-accordion__head::after {
+  background-image: url(data:image/svg+xml;base64,PHN2ZyBpZD0iYjdiNDA1NmYtMzdiYi00OTNmLWEzNTktNGQ0OGRiOTQwZjg3IiBkYXRhLW5hbWU9IuODrOOCpOODpOODvCAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyOCA0Ij48cmVjdCB4PSItMC4wMDAwMiIgd2lkdGg9IjI4IiBoZWlnaHQ9IjQiIHN0eWxlPSJmaWxsOiNkZTAzMDMiLz48L3N2Zz4=);
+}
+
+.mem-faq-accordion__body {
+  display: none;
+  font-weight: 500;
+}
+
+.mem-faq-accordion__inner {
+  padding: 15px 15px 0;
+  margin-bottom: 15px;
+}
+
+.mem-faq-accordion__inner p {
+  font-weight: 500;
+}
+
+.mem-faq-accordion__inner p,
+.mem-faq-accordion__inner img {
+  margin-bottom: 10px;
+}
+
+.mem-faq-accordion__inner .link {
+  padding: 15px 20px 0;
+  margin-bottom: 15px;
+  position: relative;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.mem-faq-accordion__inner .link::before {
+  content: "";
+  display: block;
+  border-top: 2px solid #444444;
+  border-right: 2px solid #444444;
+  transform: rotate(45deg);
+  width: 5px;
+  height: 5px;
+  top: 80%;
+  left: 0%;
+  margin: -6px 0 0 0;
+  position: absolute;
+}
+
+.mem-faq-accordion__inner a:hover {
+  opacity: 0.5;
+}
+
+.mem-faq-accordion__inner ul {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.mem-faq-accordion__inner ul,
+.mem-faq-accordion__inner li {
+  list-style-type: disc;
+  margin-left: 1em;
+  font-weight: 500;
+}
+
+.mem-faq-flex2column {
+  display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+  font-weight: 500;
+}
+
+.mem-faq-flex2column__fixed {
+  text-align: center;
+}
+
+.mem-faq-flex2column__liquid {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1;
+          flex: 1 1;
+}
+
+.mem-faq-flex2column img {
+  margin-bottom: 0;
+}
+
+.mem-faq-flex2column p {
+  font-weight: 500;
+}
+
+body.IE .mem-gradText {
+  background: none;
+  color: #d92c6b;
+}
+
+@media screen and (min-width: 980px) {
+  .mem-faq-anchorList {
+    margin-bottom: 5px;
+  }
+  .mem-faq-anchorList__row {
+    margin-left: -20px;
+    margin-right: -20px;
+  }
+  .mem-faq-anchorList__item {
+    width: 50%;
+    padding: 0 20px;
+  }
+  .mem-faq-anchorList__item:nth-of-type(n+3) {
+    margin-top: 20px;
+  }
+  .mem-faq-anchorList__anchor {
+    font-size: 16px;
+    padding-left: 24px;
+  }
+  .mem-faq-anchorList__anchor:not(:last-child) {
+    margin-bottom: 20px;
+  }
+  .mem-faq-anchorList__anchor::before {
+    background-size: 14px 14px;
+    width: 14px;
+    height: 14px;
+    top: 5px;
+  }
+  .mem-faq-buttonArea {
+    width: 504px;
+  }
+  .mem-faq-accordionGroup {
+    margin-bottom: 80px;
+  }
+  .mem-faq-accordion__head {
+    font-size: 14px;
+  }
+  .mem-faq-accordion__head::before {
+    background-size: 20px 14px;
+    width: 20px;
+    height: 14px;
+    left: 15px;
+    top: 17px;
+  }
+  .mem-faq-accordion__head::after {
+    background-size: 14px 14px;
+    width: 14px;
+    height: 14px;
+    right: 15px;
+    top: 17px;
+  }
+  .mem-faq-accordion__body {
+    font-size: 14px;
+  }
+  .mem-faq-flex2column > div:not(:last-child) {
+    padding-right: 15px;
+  }
+  .mem-faq-annotation {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 979px) {
+  .mem-faq-anchorList {
+    margin-bottom: 40px;
+  }
+  .mem-faq-anchorList__item {
+    width: 100%;
+  }
+  .mem-faq-anchorList__item:not(:last-child) {
+    margin-bottom: 22px;
+  }
+  .mem-faq-anchorList__anchor {
+    font-size: 14px;
+    padding-left: 25px;
+  }
+  .mem-faq-anchorList__anchor:not(:last-child) {
+    margin-bottom: 22px;
+  }
+  .mem-faq-anchorList__anchor::before {
+    background-size: 15px 15px;
+    width: 15px;
+    height: 15px;
+    top: 3px;
+  }
+  .mem-faq-buttonArea {
+    width: 100%;
+    max-width: 504px;
+  }
+  .mem-faq-accordionGroup {
+    margin-bottom: 50px;
+  }
+  .mem-faq-accordion__head {
+    font-size: 13px;
+  }
+  .mem-faq-accordion__head::before {
+    background-size: 18px 12px;
+    width: 18px;
+    height: 12px;
+    left: 15px;
+    top: 17px;
+  }
+  .mem-faq-accordion__head::after {
+    background-size: 14px 14px;
+    width: 14px;
+    height: 14px;
+    right: 15px;
+    top: 17px;
+  }
+  .mem-faq-accordion__body {
+    font-size: 13px;
+  }
+  .mem-faq-flex2column {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .mem-faq-flex2column > div:not(:last-child) {
+    margin-bottom: 15px;
+  }
+  .mem-faq-annotation {
+    font-size: 12px;
+  }
+}

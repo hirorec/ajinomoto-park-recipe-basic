@@ -1,0 +1,667 @@
+@charset "utf-8";
+/**
+ * rireki.css
+ */
+
+@media only screen and (min-width:980px) {}
+
+/* bdrTitle
+--------------------------------------------------*/
+#rirekiPage {
+	padding-top: 20px;
+    margin-bottom: 50px;
+}
+#rirekiPage .bdrTitle {
+	margin-bottom: 20px;
+}
+#rirekiPage .bdrTitle .ttl {
+	padding-bottom: 0;
+	flex-wrap: wrap;
+    font-weight: 700;
+}
+#rirekiPage .bdrTitle span {
+    display: inline-block;
+    font-size: 5.41vw;
+	padding-left: 29px;
+	background: url(/wp-content/themes/ajinomoto/resources/images/common/sp/AP_svg_icon_history.svg) no-repeat left center;
+	background-size: 20px auto;
+}
+#rirekiPage .categoryLabel.recipe::before {
+    top: calc(50% - 6.5px);
+    height: 13px;
+    background-image: url('/wp-content/themes/ajinomoto/resources/images/common/sp/AP_svg_icon_recipe.svg');
+}
+#rirekiPage .categoryLabel.magazine::before {
+    top: calc(50% - 6.5px);
+    height: 13px;
+    background-image: url('/wp-content/themes/ajinomoto/resources/images/common/sp/AP_svg_icon_magazine.svg');
+}
+#rirekiPage .categoryLabel.activity::before {
+    top: calc(50% - 6.5px);
+    height: 13px;
+    background-image: url('/wp-content/themes/ajinomoto/resources/images/common/sp/AP_svg_icon_activity.svg');
+}
+#rirekiPage .categoryLabel.menu::before {
+    top: calc(50% - 7px);
+    height: 16px;
+    background-image: url('/wp-content/themes/ajinomoto/resources/images/common/sp/AP_svg_icon_menu.svg');
+}
+#rirekiPage .wrapperClipBtn {
+	position: relative;
+	/* margin: 40px 40px 40px 0!important; */
+}
+:root {
+    --clip-item-bdr-radius: 10px;
+}
+#rirekiPage .activityLabel {
+    position: absolute;
+    z-index: 1;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 15%;
+    max-height: 35px;
+    border-radius: 0 0 var(--clip-item-bdr-radius) var(--clip-item-bdr-radius);
+    color: #ffffff;
+    text-align: center;
+}
+#rirekiPage .activityLabel.past {
+    background-color: #000000;
+    opacity: 0.7;
+}
+#rirekiPage .activityLabel.participation {
+    background: rgb(217,44,107);
+    background: -webkit-linear-gradient(0, rgba(217,44,107,1) 0%, rgba(236,110,30,1) 100%);
+    background: -moz-linear-gradient(0, rgba(217,44,107,1) 0%, rgba(236,110,30,1) 100%);
+    background: -ms-linear-gradient(0, rgba(217,44,107,1) 0%, rgba(236,110,30,1) 100%);
+    background: linear-gradient(90deg, rgba(217,44,107,1) 0%, rgba(236,110,30,1) 100%);
+}
+
+#rirekiPage .activityLabel.participation::before {
+    content: '';
+    position: absolute;
+    display: inline-block;
+    vertical-align: middle;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url('/wp-content/themes/ajinomoto/resources/images/common/sp/AP_icon_people.png');
+}
+/*/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
+/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/*/
+
+@media screen and (max-width: 979px) {
+
+    #rirekiPage {
+        padding-top: 5px;
+    }
+
+    #rirekiPage .bdrTitle {
+        display: none;
+    }
+
+    #rirekiPage .menuTab {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        margin: 0px auto 28px;
+        border-bottom: 3px solid #e4e3e3;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+    #rirekiPage .menuTab .tabTitle {
+        font-size: 14px;
+        margin: 5px 5px 0px;
+        font-weight: 700;
+        width: calc(100% - 20px);
+        text-align: center;
+        border: 1px solid #e4e3e3;
+        border-radius: 6px 6px 0px 0px / 6px 6px 0px 0px;
+        border-bottom: none;
+        background: #a5a4a4;
+        color: #fff;
+    }
+
+    #rirekiPage .menuTab .tabTitle:hover {
+        background: #c2c1c1;
+    }
+
+    #rirekiPage .menuTab .tabTitle.active {
+        background: -moz-linear-gradient(bottom, #e4e3e3, #FFF);
+        background: -webkit-linear-gradient(bottom, #e4e3e3, #FFF);
+        background: linear-gradient(to top, #e4e3e3, #FFF);
+        color: #000;
+    }
+
+    .tabTitle a {
+        display: block;
+        text-decoration: none;
+        padding: 6px 1px;
+    }
+
+    .tabTitle span.clip::before {
+        content: "";
+        display: inline-block;
+        background-image: url("/wp-content/themes/ajinomoto/resources/images/common/sp/AP_svg_icon_keep_fff_fill.svg");
+        background-repeat: no-repeat;
+        vertical-align: -3px;
+        background-size: contain;
+        height: 15px;
+        width: 15px;
+        padding-right: 10px;
+    }
+
+    .tabTitle.active span.history::before {
+        content: "";
+        display: inline-block;
+        background-image: url("/wp-content/themes/ajinomoto/resources/images/common/sp/AP_svg_icon_history_grad.svg");
+        background-repeat: no-repeat;
+        vertical-align: -3px;
+        background-size: contain;
+        height: 15px;
+        width: 15px;
+        padding-right: 10px;
+    }
+
+    .tabTitle a {
+        text-decoration: none;
+    }
+
+    /* コンテンツ */
+    #rirekiPage .listContents {
+        display: -webkit-box;
+		display: -webkit-flex;
+  		display: -ms-flexbox;
+		display: flex;
+        justify-content: start;
+		flex-wrap: wrap;
+	}
+
+    #rirekiPage .itemListContents {
+        width: calc((100% - 15px) / 2);
+        margin-bottom: 15px;
+    }
+
+    #rirekiPage .itemListContents:nth-child(odd) {
+        margin-right: 15px;
+    }
+
+    #rirekiPage .btnContents {
+        position: relative;
+    }
+
+    #rirekiPage .btnContentsItem a {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 2;
+    }
+
+    #rirekiPage .btnContentsItem,
+    #rirekiPage .btnContentsItemMenu {
+        position: relative;
+        margin-bottom: 10px;
+    }
+
+    #rirekiPage .btnContentsItem::before,
+    #rirekiPage .btnContentsItemMenu::before {
+        content: '';
+        display: block;
+        padding-top: 66.7%;
+    }
+
+    #rirekiPage .btnContentsItem img {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+
+    #rirekiPage .btnContentsItemMenu img {
+        position: absolute;
+        float: none;
+        top: 0;
+        right: 0;
+        width: 33.334%;
+        height: 50%;
+        object-fit: cover;
+        border-radius: 0 10px 0 0;
+    }
+    #rirekiPage .btnContentsItemMenu img:nth-child(3) {
+        top: 50%;
+        border-radius: 0 0 10px 0;
+    }
+    #rirekiPage .btnContentsItemMenu img:first-child {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 66.667%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 10px 0 0 10px;
+    }
+
+    #rirekiPage .titleContentsItem p {
+        font-family: 'Noto Sans Japanese', sans-serif;
+        font-size: 14px;
+        font-weight: 700;
+		margin-bottom: 5px;
+    }
+    #rirekiPage .titleContentsItem a {
+        color: #000;
+        text-decoration: none;
+    }
+    #rirekiPage .categoryLabel {
+        background-color: #fff;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+    }
+
+    #rirekiPage .categoryName {
+        background-color: #fff;
+        font-family: 'Lato', sans-serif;
+        font-size: 13px;
+        font-weight: 700;
+        line-height: 1.0;
+        text-align: center;
+        padding: 5px 10px;
+        padding-left: 24.5px;
+    }
+    
+    #rirekiPage .categoryName::before {
+        content: '';
+        display: inline-block;
+        position: absolute;
+        top: calc(50% - 10px);
+        left: 5px;
+        width: 15px;
+        height: 13px;
+        vertical-align: middle;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+
+    #rirekiPage .hashtagItem .listHashtag {
+        display: -webkit-box;
+		display: -webkit-flex;
+  		display: -ms-flexbox;
+		display: flex;
+        -ms-flex-wrap: wrap;
+		flex-wrap: wrap;
+		
+    }
+    #rirekiPage .hashtagItem .hashtagName {
+        font-size: 10px;
+	}
+    /* 保存ボタン */
+    #rirekiPage .wrapperActions {
+		display: -webkit-box;
+		display: -webkit-flex;
+  		display: -ms-flexbox;
+		display: flex;
+		margin: 0 2.5px;
+		margin-bottom: 10px;
+		margin-top: 10px;
+	}
+    #rirekiPage .wrapperClipBtn {
+		position: relative;
+    }
+    #rirekiPage .btnClip {
+        position: relative;
+        display: -webkit-box;
+		display: -webkit-flex;
+  		display: -ms-flexbox;
+		display: flex;
+        justify-content: flex-start!important;
+		border-radius: 30px;
+		border : solid 1px black ;
+        font-family: 'Noto Sans Japanese', sans-serif;
+		text-decoration: none;
+		color: black;
+		transition: .4s;
+        padding: 6px 0!important;
+    }
+    #rirekiPage .btnClip:hover,
+    #rirekiPage .btnClip:active {
+        background: #eee;
+    }
+    #rirekiPage .iconIsCliped {
+        display: -webkit-box;
+		display: -webkit-flex;
+  		display: -ms-flexbox;
+		display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        top: 0;
+        left: 0;
+        padding: 0 10px;
+	}
+	/* widthはアイコンのサイズ heightはボタンの高さ */
+    #rirekiPage .imgClipBtn {
+		width: 52.5px;
+		height: 18px;
+    }
+    #rirekiPage .numClipedCount {
+        margin-left: 10px;
+        font-family: 'Lato', sans-serif;
+		font-size: 14px;
+		font-weight: 400;
+    }
+    #rirekiPage .textBtnClip {
+		position: relative;
+        width: 100%;
+        padding: 0px 20px;
+		text-align: center;
+		text-decoration: none;
+        /* border-left: 1px solid #000; */
+        margin-left: -10px;
+	}
+    #rirekiPage .textBtnClip p {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		font-size: 14px;
+		font-weight: 400;
+		-webkit-transform : translate(-50%,-50%);
+		transform : translate(-50%,-50%);
+		width: 100px;
+    }
+    #rirekiPage .activityLabel {
+        height: 20%;
+        max-height: 25px;
+    }
+    #rirekiPage .activityLabel p {
+        /* margin-top: vw; */
+        font-size: 14px;
+        font-weight: 500;
+    }
+    #rirekiPage .activityLabel.participation::before {
+        top: calc(50% - 7px);
+        left: calc(50% - 57px);
+        /* left: 10px; */
+        width: 12px;
+        height: 12px;
+    }
+}
+
+@supports (-ms-ime-align:auto) {
+    #rirekiPage .itemListContents {
+        width: calc((100% - 16px) / 2);
+        margin-bottom: 15px;
+    }
+}
+
+/*/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
+/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/*/
+
+@media only screen and (min-width:980px) {
+	#rirekiPage {
+		padding-top: 50px;
+        margin-bottom: 100px;
+	}
+	#rirekiPage .bdrTitle {
+		margin-bottom: 18px;
+    }
+    #rirekiPage .bdrTitle .ttl {
+        text-align: center;
+    }
+	#rirekiPage .bdrTitle span {
+		padding-left: 42px;
+		background-size: 28px auto;
+		font-size: 28px;
+	}
+
+    #rirekiPage .menuTab {
+        display: none;
+    }
+	
+    /* コンテンツ */
+    #rirekiPage .listContents {
+        display: -webkit-box;
+		display: -webkit-flex;
+  		display: -ms-flexbox;
+		display: flex;
+        justify-content: start;
+        flex-wrap: wrap;
+    }
+
+    #rirekiPage .itemListContents {
+        width: calc((100% - 60px) / 3);
+		margin-bottom: 30px;
+    }
+
+    #rirekiPage .itemListContents:nth-child(3n+2) {
+        margin-right: 30px;
+        margin-left: 30px;
+    }
+
+    #rirekiPage .btnContents {
+        position: relative;
+    }
+
+    #rirekiPage .btnContentsItem a {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 2;
+    }
+
+    #rirekiPage .btnContentsItem,
+    #rirekiPage .btnContentsItemMenu {
+        position: relative;
+        margin-bottom: 10px;
+    }
+
+    #rirekiPage .btnContentsItem::before,
+    #rirekiPage .btnContentsItemMenu::before {
+        content: '';
+        display: block;
+        padding-top: 66.7%;
+    }
+
+    #rirekiPage .btnContentsItem img {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+    #rirekiPage .btnContentsItemMenu img {
+        position: absolute;
+        float: none;
+        top: 0;
+        right: 0;
+        width: 33.334%;
+        height: 50%;
+        object-fit: cover;
+        border-radius: 0 10px 0 0;
+    }
+    #rirekiPage .btnContentsItemMenu img:nth-child(3) {
+        top: 50%;
+        border-radius: 0 0 10px 0;
+    }
+    #rirekiPage .btnContentsItemMenu img:first-child {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 66.667%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 10px 0 0 10px;
+    }
+
+    #rirekiPage .titleContentsItem p {
+        font-family: 'Noto Sans Japanese', sans-serif;
+        font-size: 18px;
+        font-weight: 700;
+		margin-bottom: 10px;
+    }
+    #rirekiPage .titleContentsItem a {
+        color: #000;
+        text-decoration: none;
+    }
+    #rirekiPage .categoryLabel {
+        background-color: #fff;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+    }
+
+    #rirekiPage .categoryName {
+        background-color: #fff;
+        font-family: 'Lato', sans-serif;
+        font-size: 13px;
+        font-weight: 700;
+        line-height: 1.0;
+        text-align: center;
+        padding: 5px 10px;
+        padding-left: 24.5px;
+    }
+    
+    #rirekiPage .categoryName::before {
+        content: '';
+        display: inline-block;
+        position: absolute;
+        top: calc(50% - 10px);
+        left: 5px;
+        width: 15px;
+        height: 13px;
+        vertical-align: middle;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+
+
+	
+    #rirekiPage .hashtagItem .listHashtag {
+        display: -webkit-box;
+		display: -webkit-flex;
+  		display: -ms-flexbox;
+		display: flex;
+        -ms-flex-wrap: nowrap;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    }
+    #rirekiPage .hashtagItem .hashtagName {
+        font-size: 14px;
+	}
+    /* 保存ボタン */
+    #rirekiPage .wrapperActions {
+        display: -webkit-box;
+		display: -webkit-flex;
+  		display: -ms-flexbox;
+		display: flex;
+		margin: 0 5px;
+		margin-top: 10px;
+		margin-bottom: 10px;
+    }
+    #rirekiPage .btnClip {
+		display: -webkit-box;
+		display: -webkit-flex;
+  		display: -ms-flexbox;
+		display: flex;
+		justify-content: flex-start!important;
+		position: relative;
+		border-radius: 30px;
+		border : solid 1px black ;               
+        font-family: 'Noto Sans Japanese', sans-serif;
+		text-decoration: none;
+		color: black;
+		transition: .4s;
+        padding: 6px 0!important;
+    }
+    #rirekiPage .btnClip:hover,
+    #rirekiPage .btnClip:active {
+        background: #eee;
+	}
+
+    #rirekiPage .iconIsCliped {
+        display: -webkit-box;
+		display: -webkit-flex;
+  		display: -ms-flexbox;
+		display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        top: 0;
+        left: 0;
+		padding: 0 15px;
+		opacity: 1;
+	}
+	/* widthはアイコンのサイズ heightはボタンの高さ */
+	#rirekiPage .imgClipBtn {
+		width: 60px;
+		height: 25px;
+	}
+	
+    #rirekiPage .numClipedCount {
+        margin-left: 10px;
+        font-family: 'Lato', sans-serif;
+		font-size: 14px;
+		font-weight: 400;
+    }
+
+    #rirekiPage .textBtnClip {
+		position: relative;
+        width: 100%;
+        padding: 0 20px;
+		text-align: center;
+        /* border-left: 1px solid #000; */
+        margin-left: -10px;
+	}
+    #rirekiPage .textBtnClip p {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		font-size: 14px;
+		font-weight: 400;
+		-webkit-transform : translate(-50%,-50%);
+		transform : translate(-50%,-50%);
+		width: 100px;
+	}
+	#rirekiPage .mem-stripeBox {
+		width: 1200px;
+	}
+    #rirekiPage .activityLabel p {
+        margin-top: 2px;
+        font-size: 19.73px;
+        font-weight: 500;
+    }
+    #rirekiPage .activityLabel.participation::before {
+        top: calc(50% - 10px);
+        left: calc(50% - 85px);
+        width: 18px;
+        height: 18px;
+    }
+}
+/* cautText
+--------------------------------------------------*/
+#rirekiPage .cautText {
+    position: relative;
+    text-align: center;
+    font-weight: 500;
+    margin-top: 35px;
+    padding-bottom: 20px;
+    margin-bottom: 35px;
+}
