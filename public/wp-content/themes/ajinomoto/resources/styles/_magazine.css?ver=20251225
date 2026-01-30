@@ -486,7 +486,6 @@
 	float: left;
 	width: 43.82%;
 }
-}
 #magazineLower01 .list01 li .img img {
 	width: 100%;
 }
