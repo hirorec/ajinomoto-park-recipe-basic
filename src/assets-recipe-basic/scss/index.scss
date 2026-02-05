@@ -3,6 +3,7 @@
 @use './foundation/function' as *;
 @use './object/component/abstract' as *;
 @use './object/fonts' as *;
+@use './object/utility' as *;
 
 .main-visual {
   margin: 0 auto;
