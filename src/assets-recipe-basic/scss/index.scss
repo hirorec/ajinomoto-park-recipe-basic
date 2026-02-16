@@ -1,6 +1,7 @@
 @use './foundation/variables' as *;
 @use './foundation/mixins' as *;
 @use './foundation/function' as *;
+@use './foundation/override' as *;
 @use './object/component/abstract' as *;
 @use './object/fonts' as *;
 @use './object/utility' as *;
@@ -45,11 +46,10 @@
 
 .book-banner {
   position: relative;
-  margin: 78px auto;
 
   @include pc {
-    margin: 78px auto;
-    width: vw(1279);
+    margin: 78px 0;
+    width: vw(1277);
   }
 
   @include sp {
@@ -261,6 +261,11 @@
 
   .related-articles__items {
     &.swiper {
+      @include pc {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+      }
+
       @include sp {
         width: 100% !important;
       }

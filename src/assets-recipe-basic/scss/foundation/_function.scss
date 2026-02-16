@@ -10,10 +10,12 @@
 }
 
 @function vw($size, $viewport: $base-width-pc) {
-  $rate: calc(100 / $viewport);
-  @return $rate * $size * 1vw;
+  // $rate: calc(100 / $viewport);
+  // @return $rate * $size * 1vw;
+  @return $size * 1px;
 }
 
 @function vwsp($size, $viewport: $base-width-sp) {
-  @return vw($size, $viewport);
+  $rate: calc(100 / $viewport);
+  @return $rate * $size * 1vw;
 }

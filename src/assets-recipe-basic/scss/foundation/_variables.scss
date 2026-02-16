@@ -11,8 +11,8 @@ $header-heigh-sp: 50px;
 $kv-heigh-pc: calc(100dvh - $header-heigh-pc);
 $kv-heigh-sp: calc(100dvh - $header-heigh-sp);
 
-// $assetPath: 'https://s3-11.park.ajinomoto.co.jp/assets-recipe-basic';
-$assetPath: '/recipe/basic/assets-recipe-basic';
+$assetPath: 'https://s3-11.park.ajinomoto.co.jp/assets-recipe-basic';
+// $assetPath: '/recipe/basic/assets-recipe-basic';
 
 $ease-map: (
   ease-in-sine: cubic-bezier(0.47, 0, 0.745, 0.715),

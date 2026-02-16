@@ -30,6 +30,12 @@ header {
   max-width: 100% !important;
 }
 
+#basicIndex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .bottomMenu {
   display: none !important;
 }
